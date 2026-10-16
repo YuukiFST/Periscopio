@@ -3,6 +3,7 @@
   "ignorePatterns": [
     "src/routeTree.gen.ts",
     "pnpm-lock.yaml",
+    "dist-e2e",
     "public/data",
     "tests/pipeline/fixtures",
     "tests/pipeline/golden"

@@ -6,5 +6,5 @@
     "react/react-in-jsx-scope": "off",
     "import/no-unassigned-import": ["warn", { "allow": ["**/*.css", "@fontsource-variable/*"] }]
   },
-  "ignorePatterns": ["src/routeTree.gen.ts", "dist", "dev-dist"]
+  "ignorePatterns": ["src/routeTree.gen.ts", "dist", "dist-e2e", "dev-dist"]
 }

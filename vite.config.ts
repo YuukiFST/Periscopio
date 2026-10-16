@@ -6,6 +6,8 @@ import { defineConfig } from "vite";
 import { vercelHeadersInPreview } from "./vite/vercel-headers-in-preview.ts";
 
 export default defineConfig({
+  // The E2E build swaps in data the pipeline generated from the recorded excerpt.
+  publicDir: process.env.EYEJOKER_PUBLIC_DIR || "public",
   plugins: [
     tanstackRouter({ target: "react", autoCodeSplitting: true }),
     react(),

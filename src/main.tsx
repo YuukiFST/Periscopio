@@ -7,8 +7,14 @@ import { createRouter, RouterProvider } from "@tanstack/react-router";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { routeTree } from "./routeTree.gen";
+import { parseFlatSearch, stringifyFlatSearch } from "./search-params";
 
-const router = createRouter({ routeTree, defaultPreload: "intent" });
+const router = createRouter({
+  routeTree,
+  defaultPreload: "intent",
+  parseSearch: parseFlatSearch,
+  stringifySearch: stringifyFlatSearch,
+});
 
 declare module "@tanstack/react-router" {
   interface Register {

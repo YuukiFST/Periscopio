@@ -1,0 +1,87 @@
+- table "Teclados":
+    - rowgroup:
+        - row "Produto Nota geral Recomendação AliExpress Preço Resposta geral Desempenho real Polling rate efetivo Ponto de acionamento mínimo Zona morta inferior Erro de curso":
+            - columnheader "Produto":
+                - button "Produto"
+            - columnheader "Nota geral":
+                - button "Nota geral"
+            - columnheader "Recomendação":
+                - button "Recomendação"
+            - columnheader "AliExpress"
+            - columnheader "Preço":
+                - button "Preço"
+            - columnheader "Resposta geral":
+                - button "Resposta geral"
+            - columnheader "Desempenho real":
+                - button "Desempenho real"
+            - columnheader "Polling rate efetivo":
+                - button "Polling rate efetivo"
+            - columnheader "Ponto de acionamento mínimo":
+                - button "Ponto de acionamento mínimo"
+            - columnheader "Zona morta inferior":
+                - button "Zona morta inferior"
+            - columnheader "Erro de curso":
+                - button "Erro de curso"
+    - rowgroup:
+        - row /TENKO - ARC \d+ ARBITER STUDIO Impecável Recomendação fraca Sem dado ₩ \d+\.\d+ \d+,\d+ ms desvio padrão \d+,\d+ \d+\.\d+ Hz Sem dado \d+,\d+ mm \d+,\d+ mm \d+,\d+%/:
+            - rowheader /TENKO - ARC \d+ ARBITER STUDIO/:
+                - paragraph: /TENKO - ARC \d+/
+                - paragraph: ARBITER STUDIO
+            - cell "Impecável"
+            - cell "Recomendação fraca"
+            - cell "Sem dado"
+            - cell /₩ \d+\.\d+/
+            - cell /\d+,\d+ ms desvio padrão \d+,\d+/
+            - cell /\d+\.\d+ Hz/
+            - cell "Sem dado"
+            - cell /\d+,\d+ mm/
+            - cell /\d+,\d+ mm/
+            - cell /\d+,\d+%/
+        - row /EDGE 60HE Pro ATK Tier 1 Não recomendado EDGE 60HE Pro no AliExpress ₩ \d+\.\d+ \d+,\d+ ms desvio padrão \d+,\d+ \d+\.\d+ Hz \d+\.\d+ Hz Sem dado Sem dado Sem dado/:
+            - rowheader "EDGE 60HE Pro ATK":
+                - paragraph: EDGE 60HE Pro
+                - paragraph: ATK
+            - cell "Tier 1"
+            - cell "Não recomendado"
+            - cell "EDGE 60HE Pro no AliExpress":
+                - link "EDGE 60HE Pro no AliExpress":
+                    - /url: https://s.click.aliexpress.com/e/_opItnUw
+                    - text: ""
+            - cell /₩ \d+\.\d+/
+            - cell /\d+,\d+ ms desvio padrão \d+,\d+/
+            - cell /\d+\.\d+ Hz/
+            - cell /\d+\.\d+ Hz/
+            - cell "Sem dado"
+            - cell "Sem dado"
+            - cell "Sem dado"
+        - row /Raven61 TEAMWOLF Tier 1 Não recomendado Raven61 no AliExpress ₩ \d+\.\d+ \d+,\d+ ms desvio padrão \d+,\d+ \d+\.\d+ Hz Sem dado Sem dado Sem dado Sem dado/:
+            - rowheader "Raven61 TEAMWOLF":
+                - paragraph: Raven61
+                - paragraph: TEAMWOLF
+            - cell "Tier 1"
+            - cell "Não recomendado"
+            - cell "Raven61 no AliExpress":
+                - link "Raven61 no AliExpress":
+                    - /url: https://s.click.aliexpress.com/e/_oBw6LC9
+                    - text: ""
+            - cell /₩ \d+\.\d+/
+            - cell /\d+,\d+ ms desvio padrão \d+,\d+/
+            - cell /\d+\.\d+ Hz/
+            - cell "Sem dado"
+            - cell "Sem dado"
+            - cell "Sem dado"
+            - cell "Sem dado"
+        - row /Archon M3 \d+ MAX Preflow Sem dado Aguardado Sem dado ₩ \d+\.\d+ Sem dado Sem dado Sem dado Sem dado Sem dado Sem dado/:
+            - rowheader /Archon M3 \d+ MAX Preflow/:
+                - paragraph: /Archon M3 \d+ MAX/
+                - paragraph: Preflow
+            - cell "Sem dado"
+            - cell "Aguardado"
+            - cell "Sem dado"
+            - cell /₩ \d+\.\d+/
+            - cell "Sem dado"
+            - cell "Sem dado"
+            - cell "Sem dado"
+            - cell "Sem dado"
+            - cell "Sem dado"
+            - cell "Sem dado"

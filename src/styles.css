@@ -56,22 +56,22 @@
   --int-brand-solid-hover: var(--blue-10);
   --int-brand-solid-active: var(--blue-11);
   --int-brand-subtle: var(--blue-a3);
-  --int-brand-fg: var(--blue-a10);
+  --int-brand-fg: var(--blue-a11);
   --int-positive-solid: var(--green-9);
   --int-positive-subtle: var(--green-a3);
-  --int-positive-fg: var(--green-a10);
+  --int-positive-fg: var(--green-a11);
   --int-warning-solid: var(--orange-9);
   --int-warning-subtle: var(--orange-a3);
-  --int-warning-fg: var(--orange-a10);
+  --int-warning-fg: var(--orange-a11);
   --int-danger-solid: var(--tomato-9);
   --int-danger-subtle: var(--tomato-a2);
-  --int-danger-fg: var(--tomato-a10);
+  --int-danger-fg: var(--tomato-a11);
   --int-disabled: var(--gray-a3);
 
-  --int-border-default: var(--gray-a3);
-  --int-border-subtle: var(--gray-a2);
-  --int-border-strong: var(--gray-a6);
-  --int-border-focus: var(--blue-a8);
+  --int-border-default: var(--gray-a6);
+  --int-border-subtle: var(--gray-a4);
+  --int-border-strong: var(--gray-a8);
+  --int-border-focus: var(--blue-10);
 
   --shadow-inner-1: #0000;
   --shadow-drop-1: #0000000f;
@@ -125,7 +125,6 @@
   --int-inverted-solid: var(--white-a12);
   --int-on-inverted-fg: #000;
   --int-disabled: var(--gray-a2);
-  --int-border-focus: var(--blue-a9);
 
   --shadow-inner-1: #ffffff12;
   --shadow-drop-1: #0000;
@@ -250,7 +249,7 @@
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border outline-ring;
   }
   html {
     @apply font-sans;

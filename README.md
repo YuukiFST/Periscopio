@@ -8,6 +8,7 @@ Consultar e comparar, em português, os benchmarks de monitores, teclados e mous
 - `pnpm dev` abre o app em modo de desenvolvimento.
 - `pnpm build` gera o site estático em `dist/`; `pnpm preview` o serve com os mesmos cabeçalhos da Vercel.
 - `pnpm test` roda Vitest e Playwright; `pnpm exec playwright install chromium` antes da primeira vez.
+- O Playwright testa o build de produção com dados que o pipeline gera do recorte gravado do EyeJoker (`tests/e2e/serve-fixture-build.ts`, saída em `dist-e2e/`), não com `public/data`.
 - `pnpm exec playwright test --update-snapshots` regenera os snapshots de acessibilidade.
 - `pnpm format`, `pnpm lint`, `pnpm typecheck`.
 
