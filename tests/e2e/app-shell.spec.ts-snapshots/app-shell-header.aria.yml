@@ -1,0 +1,10 @@
+- banner:
+    - link "EyeJoker":
+        - /url: /
+    - navigation "Categorias":
+        - link "Mouses":
+            - /url: /mouse
+        - link "Teclados":
+            - /url: /teclado
+        - link "Monitores":
+            - /url: /monitor

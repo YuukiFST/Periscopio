@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <meta name="color-scheme" content="light dark" />
+    <title>EyeJoker PWA</title>
+    <script>
+      // Follows the system theme before the first paint, so dark mode never flashes light.
+      (() => {
+        const query = window.matchMedia("(prefers-color-scheme: dark)");
+        const apply = () => document.documentElement.classList.toggle("dark", query.matches);
+        apply();
+        query.addEventListener("change", apply);
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

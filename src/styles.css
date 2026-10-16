@@ -1,0 +1,262 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+/* Radix Colors 3.0.0, the palette the Interfere design system uses unchanged. */
+@import "@radix-ui/colors/gray.css";
+@import "@radix-ui/colors/gray-dark.css";
+@import "@radix-ui/colors/gray-alpha.css";
+@import "@radix-ui/colors/gray-dark-alpha.css";
+@import "@radix-ui/colors/black-alpha.css";
+@import "@radix-ui/colors/white-alpha.css";
+@import "@radix-ui/colors/blue.css";
+@import "@radix-ui/colors/blue-dark.css";
+@import "@radix-ui/colors/blue-alpha.css";
+@import "@radix-ui/colors/blue-dark-alpha.css";
+@import "@radix-ui/colors/green.css";
+@import "@radix-ui/colors/green-dark.css";
+@import "@radix-ui/colors/green-alpha.css";
+@import "@radix-ui/colors/green-dark-alpha.css";
+@import "@radix-ui/colors/orange.css";
+@import "@radix-ui/colors/orange-dark.css";
+@import "@radix-ui/colors/orange-alpha.css";
+@import "@radix-ui/colors/orange-dark-alpha.css";
+@import "@radix-ui/colors/tomato.css";
+@import "@radix-ui/colors/tomato-dark.css";
+@import "@radix-ui/colors/tomato-alpha.css";
+@import "@radix-ui/colors/tomato-dark-alpha.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Interfere semantic tokens (design.interfere.com globals CSS), prefixed `--int-`:
+ * Interfere names body text `--color-primary-foreground`, which shadcn uses for text on a
+ * primary button.
+ */
+:root {
+  --int-page: #fff;
+  --int-shell: oklch(97.3% 0 0);
+  --int-container: #fff;
+  --int-modal: oklch(100% 0 0);
+  --int-card: var(--gray-a2);
+  --int-sunken: var(--black-a1);
+  --int-standout: var(--gray-12);
+  --int-component: var(--gray-a3);
+  --int-component-hover: var(--gray-a4);
+  --int-component-active: var(--gray-a5);
+
+  --int-fg-primary: var(--gray-a12);
+  --int-fg-secondary: var(--gray-a11);
+  --int-fg-tertiary: var(--gray-a9);
+  --int-fg-disabled: var(--gray-a8);
+
+  --int-inverted-solid: var(--black-a12);
+  --int-on-inverted-fg: #fff;
+  --int-brand-solid: var(--blue-9);
+  --int-brand-solid-hover: var(--blue-10);
+  --int-brand-solid-active: var(--blue-11);
+  --int-brand-subtle: var(--blue-a3);
+  --int-brand-fg: var(--blue-a10);
+  --int-positive-solid: var(--green-9);
+  --int-positive-subtle: var(--green-a3);
+  --int-positive-fg: var(--green-a10);
+  --int-warning-solid: var(--orange-9);
+  --int-warning-subtle: var(--orange-a3);
+  --int-warning-fg: var(--orange-a10);
+  --int-danger-solid: var(--tomato-9);
+  --int-danger-subtle: var(--tomato-a2);
+  --int-danger-fg: var(--tomato-a10);
+  --int-disabled: var(--gray-a3);
+
+  --int-border-default: var(--gray-a3);
+  --int-border-subtle: var(--gray-a2);
+  --int-border-strong: var(--gray-a6);
+  --int-border-focus: var(--blue-a8);
+
+  --shadow-inner-1: #0000;
+  --shadow-drop-1: #0000000f;
+  --shadow-drop-2: #0000001a;
+  --shadow-drop-3: #0000000d;
+  --shadow-border-color: #00000012;
+  --shadow-xl-inner-1: #0000;
+  --shadow-xl-drop-1: #0000000f;
+  --shadow-xl-drop-2: #0000000d;
+  --shadow-xl-drop-3: #00000026;
+  --s-border: 0 0 0 1px var(--shadow-border-color);
+  --s-default:
+    0 0 0 0.5px var(--shadow-inner-1) inset, 0 0 0 0.5px var(--shadow-drop-1),
+    0 1px 1px -1px var(--shadow-drop-2), 0 1px 2px 0px var(--shadow-drop-3);
+  --s-large:
+    0 0 0 0.5px var(--gray-a3), 0 2px 3px -2px var(--gray-a3), 0 3px 12px -4px var(--black-a2),
+    0 4px 16px -8px var(--black-a1);
+  --s-extra-large:
+    0 0 0 0.5px var(--shadow-xl-inner-1) inset, 0 0 0 0.5px var(--shadow-xl-drop-1),
+    0 8px 40px 0px var(--shadow-xl-drop-2), 0 12px 32px -16px var(--shadow-xl-drop-3);
+
+  /* shadcn/ui theme variables, pointed at the Interfere tokens. */
+  --radius: 0.5rem;
+  --background: var(--int-page);
+  --foreground: var(--int-fg-primary);
+  --card: var(--int-container);
+  --card-foreground: var(--int-fg-primary);
+  --popover: var(--int-modal);
+  --popover-foreground: var(--int-fg-primary);
+  --primary: var(--int-inverted-solid);
+  --primary-foreground: var(--int-on-inverted-fg);
+  --secondary: var(--int-component);
+  --secondary-foreground: var(--int-fg-primary);
+  --muted: var(--int-component);
+  --muted-foreground: var(--int-fg-secondary);
+  --accent: var(--int-component-hover);
+  --accent-foreground: var(--int-fg-primary);
+  --destructive: var(--int-danger-solid);
+  --border: var(--int-border-default);
+  --input: var(--int-border-strong);
+  --ring: var(--int-border-focus);
+}
+
+.dark {
+  --int-page: oklch(15% 0 0);
+  --int-shell: #000;
+  --int-container: var(--gray-1);
+  --int-modal: oklch(25.2% 0 0);
+  --int-sunken: var(--black-a6);
+  --int-standout: var(--gray-3);
+  --int-inverted-solid: var(--white-a12);
+  --int-on-inverted-fg: #000;
+  --int-disabled: var(--gray-a2);
+  --int-border-focus: var(--blue-a9);
+
+  --shadow-inner-1: #ffffff12;
+  --shadow-drop-1: #0000;
+  --shadow-drop-2: #0000;
+  --shadow-drop-3: #0000;
+  --shadow-border-color: #ffffff12;
+  --shadow-xl-inner-1: #ffffff12;
+  --s-large:
+    0 0 0 1px var(--gray-a6), 0 2px 3px -2px var(--black-a3), 0 3px 8px -2px var(--black-a6),
+    0 4px 12px -4px var(--black-a7);
+}
+
+@theme inline {
+  --font-sans: "Inter Variable", sans-serif;
+  --font-serif: "EB Garamond Variable", serif;
+  --font-mono: "JetBrains Mono Variable", monospace;
+  --font-heading: var(--font-serif);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-page: var(--int-page);
+  --color-shell: var(--int-shell);
+  --color-container: var(--int-container);
+  --color-sunken: var(--int-sunken);
+  --color-standout: var(--int-standout);
+  --color-component: var(--int-component);
+  --color-component-hover: var(--int-component-hover);
+  --color-component-active: var(--int-component-active);
+  --color-fg-primary: var(--int-fg-primary);
+  --color-fg-secondary: var(--int-fg-secondary);
+  --color-fg-tertiary: var(--int-fg-tertiary);
+  --color-fg-disabled: var(--int-fg-disabled);
+  --color-brand: var(--int-brand-solid);
+  --color-brand-hover: var(--int-brand-solid-hover);
+  --color-brand-active: var(--int-brand-solid-active);
+  --color-brand-subtle: var(--int-brand-subtle);
+  --color-brand-fg: var(--int-brand-fg);
+  --color-positive: var(--int-positive-solid);
+  --color-positive-subtle: var(--int-positive-subtle);
+  --color-positive-fg: var(--int-positive-fg);
+  --color-warning: var(--int-warning-solid);
+  --color-warning-subtle: var(--int-warning-subtle);
+  --color-warning-fg: var(--int-warning-fg);
+  --color-danger: var(--int-danger-solid);
+  --color-danger-subtle: var(--int-danger-subtle);
+  --color-danger-fg: var(--int-danger-fg);
+  --color-border-subtle: var(--int-border-subtle);
+  --color-border-strong: var(--int-border-strong);
+
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 10px;
+  --radius-2xl: 12px;
+  --radius-3xl: 16px;
+  --radius-4xl: 20px;
+  --radius-5xl: 24px;
+
+  --shadow-border: var(--s-border);
+  --shadow-default: var(--s-default);
+  --shadow-large: var(--s-large);
+  --shadow-extra-large: var(--s-extra-large);
+
+  --text-heading-1: 56px;
+  --text-heading-1--line-height: 3.5rem;
+  --text-heading-1--letter-spacing: -0.01em;
+  --text-heading-2: 44px;
+  --text-heading-2--line-height: 3.5rem;
+  --text-heading-2--letter-spacing: -0.01em;
+  --text-heading-3: 36px;
+  --text-heading-3--line-height: 2.75rem;
+  --text-heading-3--letter-spacing: -0.01em;
+  --text-heading-4: 28px;
+  --text-heading-4--line-height: 2.25rem;
+  --text-heading-4--letter-spacing: -0.01em;
+  --text-heading-5: 24px;
+  --text-heading-5--line-height: 2rem;
+  --text-heading-5--letter-spacing: -0.01em;
+  --text-heading-6: 20px;
+  --text-heading-6--line-height: 1.5rem;
+  --text-heading-6--letter-spacing: -0.01em;
+  --text-body-lg: 18px;
+  --text-body-lg--line-height: 1.5rem;
+  --text-body-base: 15px;
+  --text-body-base--line-height: 1.5rem;
+  --text-body-sm: 13px;
+  --text-body-sm--line-height: 1.25rem;
+  --text-caption-lg: 12px;
+  --text-caption-lg--line-height: 1rem;
+  --text-caption-base: 11px;
+  --text-caption-base--line-height: 1rem;
+  --text-caption-sm: 10px;
+  --text-caption-sm--line-height: 1rem;
+  --text-code-sm: 13px;
+  --text-code-sm--line-height: 1.25rem;
+  --text-code-xs: 12px;
+  --text-code-xs--line-height: 1rem;
+
+  --ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+  --ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply font-sans;
+    font-feature-settings: "ss03";
+  }
+  body {
+    @apply bg-background text-body-sm text-foreground antialiased;
+  }
+}
