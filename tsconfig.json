@@ -22,6 +22,7 @@
   "include": [
     "src",
     "pipeline",
+    "scripts",
     "tests",
     "vite",
     "vite.config.ts",
