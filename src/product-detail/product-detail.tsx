@@ -1,4 +1,4 @@
-import { ExternalLink, ImageOff } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import { useEffect, useRef, type ReactNode, type RefObject } from "react";
 import { buttonVariants } from "@/components/ui/button";
 import type { CategoryData, Product } from "@/data/schema";
@@ -11,6 +11,7 @@ import {
 } from "@/product-fields/field-groups";
 import { formatPrice, priceOf } from "@/product-table/cell-values";
 import { cn } from "@/lib/utils";
+import { ProductPhoto } from "@/product-photo/product-photo";
 import { BackToTableLink } from "./back-to-table-link";
 
 type ProductDetailProps = { data: CategoryData; product: Product };
@@ -53,7 +54,12 @@ function ProductHeader({
     product.status && statusField ? valueLabel(statusField, product.status) : undefined;
   return (
     <header className="flex flex-col gap-4 sm:flex-row sm:items-start sm:gap-6">
-      <ProductPhoto product={product} />
+      <ProductPhoto
+        key={product.image}
+        src={product.image}
+        alt={`Foto de ${product.name}`}
+        size="detail"
+      />
       <div className="flex min-w-0 flex-col gap-4">
         <div>
           <h1
@@ -101,30 +107,6 @@ function HeaderFact({ label, children }: { label: string; children: ReactNode })
       <dt className="text-caption-lg text-fg-secondary">{label}</dt>
       <dd className="font-medium">{children}</dd>
     </div>
-  );
-}
-
-function ProductPhoto({ product }: { product: Product }) {
-  const frame = "size-24 shrink-0 rounded-xl sm:size-40";
-  if (!product.image) {
-    return (
-      <div
-        aria-hidden="true"
-        className={cn(frame, "grid place-items-center bg-component text-fg-tertiary")}
-      >
-        <ImageOff className="size-6" />
-      </div>
-    );
-  }
-  return (
-    <img
-      src={product.image}
-      alt={`Foto de ${product.name}`}
-      width={160}
-      height={160}
-      decoding="async"
-      className={cn(frame, "bg-white object-contain outline-1 -outline-offset-1 outline-border")}
-    />
   );
 }
 

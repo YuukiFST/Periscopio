@@ -111,3 +111,13 @@ test.describe("in a time zone behind Korea", () => {
     `);
   });
 });
+
+test("regression: a detail photo that fails to load leaves the photo space, not a broken image", async ({
+  page,
+}) => {
+  await page.route("**/images/**", (route) => route.abort());
+  await page.goto(`/mouse/${dragonflyA9UltraId}`);
+
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText("Dragonfly A9 Ultra");
+  await expect(page.getByRole("article").locator("img")).toHaveCount(0);
+});
