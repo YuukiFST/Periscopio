@@ -1,8 +1,7 @@
 import { Link } from "@tanstack/react-router";
-import { ImageOff } from "lucide-react";
-import { useState } from "react";
 import type { Product } from "@/data/schema";
 import { manufacturerName } from "@/i18n/labels";
+import { ProductPhoto } from "@/product-photo/product-photo";
 import {
   formatDeviation,
   formatFieldValue,
@@ -23,41 +22,11 @@ function MissingValue() {
   );
 }
 
-/**
- * Keeps the photo's space when there is no photo, or when it fails to load:
- * offline, a photo never seen before is not in the cache.
- */
-function ProductPhoto({ src }: { src: string | null }) {
-  const [failed, setFailed] = useState(false);
-  if (!src || failed) {
-    return (
-      <div
-        aria-hidden="true"
-        className="grid size-8 shrink-0 place-items-center rounded-md bg-component text-fg-tertiary sm:size-10"
-      >
-        <ImageOff className="size-4" />
-      </div>
-    );
-  }
-  return (
-    <img
-      src={src}
-      alt=""
-      width={40}
-      height={40}
-      loading="lazy"
-      decoding="async"
-      onError={() => setFailed(true)}
-      className="size-8 shrink-0 rounded-md bg-white object-contain outline-1 -outline-offset-1 outline-border sm:size-10"
-    />
-  );
-}
-
 export function ProductCell({ product }: { product: Product }) {
   const manufacturer = manufacturerName(product.manufacturer);
   return (
     <div className="flex items-center gap-2 sm:gap-3">
-      <ProductPhoto key={product.image} src={product.image} />
+      <ProductPhoto key={product.image} src={product.image} alt="" size="row" loading="lazy" />
       <div className="min-w-0">
         <p className="leading-[1.125rem] font-medium wrap-break-word text-fg-primary">
           {/* The table's search params ride along, so the detail screen can lead back to this view. */}
