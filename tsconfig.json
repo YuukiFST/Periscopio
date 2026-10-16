@@ -13,10 +13,19 @@
     "noFallthroughCasesInSwitch": true,
     "verbatimModuleSyntax": true,
     "isolatedModules": true,
+    "erasableSyntaxOnly": true,
     "skipLibCheck": true,
     "noEmit": true,
     "allowImportingTsExtensions": true,
     "paths": { "@/*": ["./src/*"] }
   },
-  "include": ["src", "tests", "vite", "vite.config.ts", "playwright.config.ts", "vitest.config.ts"]
+  "include": [
+    "src",
+    "pipeline",
+    "tests",
+    "vite",
+    "vite.config.ts",
+    "playwright.config.ts",
+    "vitest.config.ts"
+  ]
 }

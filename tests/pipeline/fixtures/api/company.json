@@ -1,0 +1,140 @@
+{
+  "data": [
+    {
+      "id": "22480810-61d4-45fe-afb4-a7003f31ea4b",
+      "koName": "앱코",
+      "enName": "ABKO",
+      "aliases": null,
+      "names": {
+        "ko": "앱코",
+        "en": "ABKO"
+      },
+      "aliasesList": []
+    },
+    {
+      "id": "34a50c6e-d70b-4896-ace6-2d18cb84fd01",
+      "koName": "에이수스",
+      "enName": "ASUS",
+      "aliases": null,
+      "names": {
+        "ko": "에이수스",
+        "en": "ASUS"
+      },
+      "aliasesList": []
+    },
+    {
+      "id": "5a93466b-ba57-4739-9b29-64d7eee63688",
+      "koName": "ATK",
+      "enName": "ATK",
+      "aliases": null,
+      "names": {
+        "ko": "ATK",
+        "en": "ATK"
+      },
+      "aliasesList": []
+    },
+    {
+      "id": "6c76c698-b1a4-4112-b1d8-5b1bde8ef46a",
+      "koName": "발키리",
+      "enName": "VALKYRIE",
+      "aliases": null,
+      "names": {
+        "ko": "발키리",
+        "en": "VALKYRIE"
+      },
+      "aliasesList": []
+    },
+    {
+      "id": "8535f0e7-792a-404f-86f5-1459f0fc218f",
+      "koName": "VGN",
+      "enName": "VGN",
+      "aliases": null,
+      "names": {
+        "ko": "VGN",
+        "en": "VGN"
+      },
+      "aliasesList": []
+    },
+    {
+      "id": "a07f9eb1-dabd-4750-b4c3-126294222c21",
+      "koName": "프리플로우",
+      "enName": "Preflow",
+      "aliases": null,
+      "names": {
+        "ko": "프리플로우",
+        "en": "Preflow"
+      },
+      "aliasesList": []
+    },
+    {
+      "id": "a5c1d07f-b650-41fc-894f-75f08a0da90b",
+      "koName": "아비터 스튜디오",
+      "enName": "ARBITER STUDIO",
+      "aliases": null,
+      "names": {
+        "ko": "아비터 스튜디오",
+        "en": "ARBITER STUDIO"
+      },
+      "aliasesList": []
+    },
+    {
+      "id": "ab795110-ddfe-46b9-b281-b55d1fd5caec",
+      "koName": "벤큐",
+      "enName": "BenQ",
+      "aliases": null,
+      "names": {
+        "ko": "벤큐",
+        "en": "BenQ"
+      },
+      "aliasesList": []
+    },
+    {
+      "id": "d85bd4c8-ece7-457b-8ac0-3f46ac054140",
+      "koName": "팀울프",
+      "enName": "TEAMWOLF",
+      "aliases": null,
+      "names": {
+        "ko": "팀울프",
+        "en": "TEAMWOLF"
+      },
+      "aliasesList": []
+    },
+    {
+      "id": "da696f9e-f6df-44e0-842c-3e1f554c244b",
+      "koName": "WL마우스",
+      "enName": "WLMouse",
+      "aliases": null,
+      "names": {
+        "ko": "WL마우스",
+        "en": "WLMouse"
+      },
+      "aliasesList": []
+    },
+    {
+      "id": "e434cbe5-fb13-49ea-bcd3-0e64f115ee35",
+      "koName": "와이즈아울",
+      "enName": "WAIZOWL",
+      "aliases": null,
+      "names": {
+        "ko": "와이즈아울",
+        "en": "WAIZOWL"
+      },
+      "aliasesList": []
+    },
+    {
+      "id": "e8e7fa38-181b-44e9-8bef-f49bc4fb5304",
+      "koName": "엘지전자",
+      "enName": "LGE",
+      "aliases": null,
+      "names": {
+        "ko": "엘지전자",
+        "en": "LGE"
+      },
+      "aliasesList": []
+    }
+  ],
+  "resultCode": "SUCCESS",
+  "resultMessage": "정상적으로 처리되었습니다.",
+  "requestId": null,
+  "errorLogId": null
+}

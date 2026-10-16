@@ -1,0 +1,6029 @@
+{
+  "data": {
+    "rows": [
+      {
+        "id": "021979aa-b222-47d3-b5ec-8b59d671aff4",
+        "values": {
+          "emWRlRtSdD0": "",
+          "solWPrRtAvg": "",
+          "solWRealPerf": "",
+          "solWPrRtSd": "",
+          "emWRlRtAvgD0": "",
+          "tag": "",
+          "emWPrRtAvgD0": "",
+          "driverLinkId": "[\"72e3fa1f-fc09-4407-b267-c0a22a9199e0\"]",
+          "strokeErrorRate": "",
+          "solution": "",
+          "emWPrRtSdD0": "",
+          "emWRealPerfD0": "",
+          "youtubeReviewUrl": "",
+          "status": "reviewed",
+          "saleStatus": "FOR_SALE",
+          "manufacturer": "5a93466b-ba57-4739-9b29-64d7eee63688",
+          "productName": "EDGE 60HE Pro",
+          "eyejokerRating": "NO_RECOMMENDATION",
+          "priceCurrency": "KRW",
+          "price": "229000",
+          "as": "",
+          "oneLineNote": "",
+          "benchVersion": "v1.03",
+          "firmwareVersion": "",
+          "productImage": "https://cdn.eyejokerdb.com/69555e6b-98a5-4ebc-a507-7f7280e59ccb.avif",
+          "purchasedDate": "",
+          "arrivedDate": "",
+          "testingStartDate": "",
+          "publicReleaseAt": "2025-01-01T00:00:00",
+          "overallRatingKeyboard": "TIER_1",
+          "connectionType": "유선",
+          "pollingRate": "8000",
+          "rapidTrigger": "true",
+          "keyboardLayout": "60%",
+          "keyboardMechanism": "자석축",
+          "profile": "",
+          "led": "",
+          "webDriver": "true",
+          "autoCalibration": "false",
+          "windowsLock": "false",
+          "socd": "true",
+          "remapping": "true",
+          "kkboard": "false",
+          "modeTap": "true",
+          "dks": "true",
+          "toggleKey": "true",
+          "minStroke": "",
+          "adjustmentUnit": "",
+          "detachStroke": "",
+          "rapidAdjustmentUnit": "",
+          "housingKeyboard": "aluminum",
+          "mounting": "",
+          "switchType": "게이트론 제이드 pro",
+          "hotswap": "true",
+          "connectionOption": "usbTypeC",
+          "soundAbsorption": "",
+          "angleAdjustment": "",
+          "housingFrontHeight": "",
+          "keycap": "",
+          "stabilizer": "",
+          "palmRest": "false",
+          "mcu": "",
+          "overallResponseSpeed": "0.20",
+          "overallStddev": "0.14",
+          "realPerformance": "2110",
+          "multiKeyDelay": "false",
+          "effectiveUpdateRate": "4000",
+          "key6PressResponseTime": "0.21",
+          "key6PressStandardDeviation": "0.13",
+          "key6PullResponseTime": "0.20",
+          "key6PullStandardDeviation": "0.13",
+          "key10PressResponseTime": "0.19",
+          "key10PressStandardDeviation": "0.13",
+          "key10ResponseTime": "0.19",
+          "key10PullStandardDeviation": "0.13",
+          "strokeMeasured": "",
+          "strokeMeasuredStddev": "",
+          "bottomDeadzone": "",
+          "detachStrokeMeasured": "",
+          "midInputMeasured": "",
+          "initialDetach": "",
+          "bottomDeadzoneStddev": "",
+          "debounceTime": "",
+          "keyGhosting": "false",
+          "simultaneousInput": "false",
+          "housingReverb": "",
+          "stabilizerWireNoise": "",
+          "keyFeel": "",
+          "keyboardPcbAvgWired": "0.2",
+          "stddevWired": "0.14",
+          "pcbAvgDetach": "0.19",
+          "stddevDetach": "0.13",
+          "keyboardPcbAvgWireless": "",
+          "stddevWireless": "",
+          "keyboardDetachAvgWireless": "",
+          "keyboardDetachStddevWireless": "",
+          "realPerformanceWireless": "",
+          "pollingrateWireless": "",
+          "rolloverWireless": "",
+          "bluetoothAvg": "",
+          "bluetoothStddev": ""
+        },
+        "priceKrw": 229000,
+        "createdAt": "1970-01-01T00:00:00Z",
+        "updatedAt": "2026-08-29T17:49:14.639814Z",
+        "isPrivate": false,
+        "hasMeshShell": false,
+        "hasFrequencyResponse": false,
+        "colors": {
+          "rapidTrigger": "#A456E1",
+          "overallResponseSpeed": "#A456E1",
+          "overallStddev": "#1681FF",
+          "realPerformance": "#15B67C",
+          "multiKeyDelay": "#A456E1",
+          "effectiveUpdateRate": "#1681FF",
+          "key6PressResponseTime": "#A456E1",
+          "key6PressStandardDeviation": "#A456E1",
+          "key6PullResponseTime": "#A456E1",
+          "key6PullStandardDeviation": "#A456E1",
+          "key10PressResponseTime": "#A456E1",
+          "key10PressStandardDeviation": "#A456E1",
+          "key10ResponseTime": "#A456E1",
+          "key10PullStandardDeviation": "#A456E1",
+          "keyboardPcbAvgWired": "#A456E1",
+          "stddevWired": "#1681FF",
+          "pcbAvgDetach": "#A456E1",
+          "stddevDetach": "#1681FF"
+        },
+        "affiliateLinks": [
+          {
+            "id": "54db0fc4-4e62-494d-99b0-6abed8b6704e",
+            "platform": "ALI",
+            "affiliateUrl": "https://s.click.aliexpress.com/e/_opItnUw",
+            "currency": "KRW",
+            "purchaseRoute": "IMPORT",
+            "status": "ACTIVE",
+            "approvalStatus": "APPROVED",
+            "isPrimary": true,
+            "priorityOrder": 0
+          },
+          {
+            "id": "7bfcc859-a633-4e92-9189-32d0c8e8de26",
+            "platform": "ATK",
+            "affiliateUrl": "https://www.atk.store/products/atk-edge-60-he-esports-magnetic-keyboard-leviatan-collaboration?ref=EJ",
+            "currency": "KRW",
+            "purchaseRoute": "IMPORT",
+            "status": "ACTIVE",
+            "approvalStatus": "APPROVED",
+            "isPrimary": false,
+            "priorityOrder": 0,
+            "effectiveDiscountCode": "EJ",
+            "effectiveDiscountDescription": "5% 할인"
+          }
+        ]
+      },
+      {
+        "id": "04ef23e4-e4bd-4212-be44-daabe2640afd",
+        "values": {
+          "solWPrRtSd": "",
+          "strokeErrorRate": "1.2396874999999974",
+          "tag": "",
+          "solWPrRtAvg": "",
+          "emWRlRtAvgD0": "0.9147099009900984",
+          "solWRealPerf": "",
+          "emWRealPerfD0": "4635",
+          "emWRlRtSdD0": "0.05415152924703212",
+          "emWPrRtSdD0": "0.07256940756828785",
+          "solution": "",
+          "emWPrRtAvgD0": "2.6465198019801974",
+          "driverLinkId": "[\"37c3d9cd-416b-4086-a926-7055c206ced0\"]",
+          "youtubeReviewUrl": "",
+          "status": "reviewed",
+          "saleStatus": "FOR_SALE",
+          "manufacturer": "a5c1d07f-b650-41fc-894f-75f08a0da90b",
+          "productName": "TENKO - ARC 60",
+          "eyejokerRating": "MILD_RECOMMENDATION",
+          "priceCurrency": "KRW",
+          "price": "195000",
+          "as": "",
+          "oneLineNote": "90달러 짜리 기판, 기판을 사는거면 커스텀이라 다른 제품들 대비 큰 장점은 몰루?",
+          "benchVersion": "",
+          "firmwareVersion": "0.1.1.0",
+          "productImage": "https://cdn.eyejokerdb.com/92ade085-9d94-4064-a2cd-1536f9a0f6a9.avif",
+          "purchasedDate": "2026-02-18",
+          "arrivedDate": "2026-02-24T09:51:00.000Z",
+          "testingStartDate": "2026-02-26T10:08:00.000Z",
+          "publicReleaseAt": "2026-05-27T11:17:00.000Z",
+          "overallRatingKeyboard": "FLAWLESS",
+          "connectionType": "유선",
+          "pollingRate": "8000",
+          "rapidTrigger": "true",
+          "keyboardLayout": "60%",
+          "keyboardMechanism": "자석축",
+          "profile": "",
+          "measuredSwitchType": "",
+          "led": "",
+          "webDriver": "true",
+          "autoCalibration": "false",
+          "windowsLock": "true",
+          "socd": "true",
+          "remapping": "true",
+          "kkboard": "false",
+          "modeTap": "true",
+          "dks": "true",
+          "toggleKey": "true",
+          "minStroke": "0.001",
+          "adjustmentUnit": "0.001",
+          "detachStroke": "0.001",
+          "rapidAdjustmentUnit": "0.001",
+          "housingKeyboard": "",
+          "mounting": "",
+          "switchType": "",
+          "hotswap": "true",
+          "connectionOption": "usbTypeC",
+          "soundAbsorption": "",
+          "angleAdjustment": "",
+          "housingFrontHeight": "",
+          "keycap": "",
+          "stabilizer": "cherryPlateMount",
+          "palmRest": "false",
+          "mcu": "",
+          "overallResponseSpeed": "0.25",
+          "overallStddev": "0.05",
+          "realPerformance": "6155",
+          "multiKeyDelay": "false",
+          "effectiveUpdateRate": "",
+          "key6PressResponseTime": "0.18",
+          "key6PressStandardDeviation": "0.04",
+          "key6PullResponseTime": "0.36",
+          "key6PullStandardDeviation": "0.06",
+          "key10PressResponseTime": "0.19",
+          "key10PressStandardDeviation": "0.04",
+          "key10ResponseTime": "0.36",
+          "key10PullStandardDeviation": "0.07",
+          "strokeMeasuredStddev": "0.015499435602627601",
+          "strokeMeasured": "0.12858599999999998",
+          "bottomDeadzone": "0.003838000000000041",
+          "detachStrokeMeasured": "",
+          "midInputMeasured": "",
+          "initialDetach": "",
+          "bottomDeadzoneStddev": "0.0005548013801610033",
+          "debounceTime": "",
+          "keyGhosting": "false",
+          "simultaneousInput": "false",
+          "housingReverb": "",
+          "stabilizerWireNoise": "",
+          "keyFeel": "",
+          "keyboardPcbAvgWired": "0.1532584158415839",
+          "stddevWired": "0.03763382133641932",
+          "pcbAvgDetach": "0.3417287128712875",
+          "stddevDetach": "0.0615689235238676",
+          "keyboardPcbAvgWireless": "",
+          "stddevWireless": "",
+          "keyboardDetachAvgWireless": "",
+          "keyboardDetachStddevWireless": "",
+          "realPerformanceWireless": "",
+          "pollingrateWireless": "",
+          "rolloverWireless": "",
+          "bluetoothAvg": "",
+          "bluetoothStddev": ""
+        },
+        "priceKrw": 195000,
+        "createdAt": "2026-01-02T19:13:52.680120Z",
+        "updatedAt": "2026-09-19T18:37:42.357012Z",
+        "isPrivate": false,
+        "hasMeshShell": false,
+        "hasFrequencyResponse": false,
+        "colors": {
+          "strokeErrorRate": "#A456E1",
+          "emWRlRtAvgD0": "#A456E1",
+          "emWRealPerfD0": "#1681FF",
+          "emWRlRtSdD0": "#A456E1",
+          "emWPrRtSdD0": "#1681FF",
+          "emWPrRtAvgD0": "#1681FF",
+          "rapidTrigger": "#A456E1",
+          "overallResponseSpeed": "#A456E1",
+          "overallStddev": "#A456E1",
+          "realPerformance": "#A456E1",
+          "multiKeyDelay": "#A456E1",
+          "key6PressResponseTime": "#A456E1",
+          "key6PressStandardDeviation": "#A456E1",
+          "key6PullResponseTime": "#A456E1",
+          "key6PullStandardDeviation": "#A456E1",
+          "key10PressResponseTime": "#A456E1",
+          "key10PressStandardDeviation": "#A456E1",
+          "key10ResponseTime": "#A456E1",
+          "key10PullStandardDeviation": "#A456E1",
+          "strokeMeasuredStddev": "#1681FF",
+          "strokeMeasured": "#A456E1",
+          "bottomDeadzone": "#A456E1",
+          "bottomDeadzoneStddev": "#A456E1",
+          "keyboardPcbAvgWired": "#A456E1",
+          "stddevWired": "#A456E1",
+          "pcbAvgDetach": "#A456E1",
+          "stddevDetach": "#A456E1"
+        }
+      },
+      {
+        "id": "479c4333-c25b-4e79-89a5-74d93565c4b5",
+        "values": {
+          "emWRlRtSdD0": "",
+          "solWRealPerf": "",
+          "strokeErrorRate": "",
+          "solution": "",
+          "tag": "",
+          "solWPrRtAvg": "",
+          "youtubeReviewUrl": "",
+          "driverLinkId": "[\"696641b3-819a-44c8-affe-dd5f9cda4d14\"]",
+          "solWPrRtSd": "",
+          "emWPrRtAvgD0": "",
+          "emWRlRtAvgD0": "",
+          "emWPrRtSdD0": "",
+          "emWRealPerfD0": "",
+          "driverSupportStatus": "",
+          "status": "reviewed",
+          "saleStatus": "FOR_SALE",
+          "manufacturer": "d85bd4c8-ece7-457b-8ac0-3f46ac054140",
+          "productName": "Raven61",
+          "eyejokerRating": "NO_RECOMMENDATION",
+          "priceCurrency": "KRW",
+          "price": "117000",
+          "as": "",
+          "oneLineNote": "레이븐의 GH60 기판 기판만 파는 제품. 성능은 레이븐 너프 전보다 조금 더 높은 수준인데. 이미 완성품 경쟁자가 많고 PCB 제품 중에서도 경쟁력이 좋지 못해서 추천까지는 애매",
+          "benchVersion": "v1.03",
+          "firmwareVersion": "07/31",
+          "productImage": "https://cdn.eyejokerdb.com/56d14ecc-bfc7-4c35-a911-58bcfad08828.avif",
+          "purchasedDate": "",
+          "arrivedDate": "",
+          "testingStartDate": "",
+          "publicReleaseAt": "2025-01-01T00:00:00",
+          "overallRatingKeyboard": "TIER_1",
+          "connectionType": "유선",
+          "pollingRate": "8000",
+          "rapidTrigger": "true",
+          "keyboardLayout": "60%",
+          "keyboardMechanism": "자석축",
+          "profile": "",
+          "led": "",
+          "webDriver": "false",
+          "autoCalibration": "false",
+          "windowsLock": "false",
+          "socd": "false",
+          "remapping": "false",
+          "kkboard": "false",
+          "modeTap": "false",
+          "dks": "false",
+          "toggleKey": "false",
+          "minStroke": "",
+          "adjustmentUnit": "",
+          "detachStroke": "",
+          "rapidAdjustmentUnit": "",
+          "housingKeyboard": "",
+          "mounting": "oring,tray",
+          "switchType": "",
+          "hotswap": "true",
+          "connectionOption": "usbTypeC",
+          "soundAbsorption": "",
+          "angleAdjustment": "",
+          "housingFrontHeight": "",
+          "keycap": "",
+          "stabilizer": "cherryPlateMount",
+          "palmRest": "false",
+          "mcu": "",
+          "overallResponseSpeed": "0.67",
+          "overallStddev": "0.11",
+          "realPerformance": "2630",
+          "multiKeyDelay": "true",
+          "effectiveUpdateRate": "",
+          "key6PressResponseTime": "",
+          "key6PressStandardDeviation": "",
+          "key6PullResponseTime": "",
+          "key6PullStandardDeviation": "",
+          "key10PressResponseTime": "",
+          "key10PressStandardDeviation": "",
+          "key10ResponseTime": "",
+          "key10PullStandardDeviation": "",
+          "strokeMeasured": "",
+          "strokeMeasuredStddev": "",
+          "bottomDeadzone": "",
+          "detachStrokeMeasured": "",
+          "midInputMeasured": "",
+          "initialDetach": "",
+          "bottomDeadzoneStddev": "",
+          "debounceTime": "",
+          "keyGhosting": "false",
+          "simultaneousInput": "false",
+          "housingReverb": "",
+          "stabilizerWireNoise": "",
+          "keyFeel": "",
+          "keyboardPcbAvgWired": "0.66",
+          "stddevWired": "0.11",
+          "pcbAvgDetach": "0.68",
+          "stddevDetach": "0.11",
+          "keyboardPcbAvgWireless": "",
+          "stddevWireless": "",
+          "keyboardDetachAvgWireless": "",
+          "keyboardDetachStddevWireless": "",
+          "realPerformanceWireless": "",
+          "pollingrateWireless": "",
+          "rolloverWireless": "",
+          "bluetoothAvg": "",
+          "bluetoothStddev": ""
+        },
+        "priceKrw": 117000,
+        "createdAt": "1970-01-01T00:00:00Z",
+        "updatedAt": "2026-08-27T23:39:01.136108Z",
+        "isPrivate": false,
+        "hasMeshShell": false,
+        "hasFrequencyResponse": false,
+        "colors": {
+          "rapidTrigger": "#A456E1",
+          "overallResponseSpeed": "#A456E1",
+          "overallStddev": "#1681FF",
+          "realPerformance": "#15B67C",
+          "multiKeyDelay": "#15B67C",
+          "keyboardPcbAvgWired": "#A456E1",
+          "stddevWired": "#1681FF",
+          "pcbAvgDetach": "#A456E1",
+          "stddevDetach": "#1681FF"
+        },
+        "affiliateLinks": [
+          {
+            "id": "01e2a29e-7a7f-46e2-92b9-6296701a1f82",
+            "platform": "ALI",
+            "affiliateUrl": "https://s.click.aliexpress.com/e/_oBw6LC9",
+            "currency": "KRW",
+            "purchaseRoute": "IMPORT",
+            "status": "ACTIVE",
+            "approvalStatus": "APPROVED",
+            "isPrimary": true,
+            "priorityOrder": 0
+          }
+        ]
+      },
+      {
+        "id": "49c95966-e910-4628-86d1-b7915439e9af",
+        "values": {
+          "emWRlRtAvgD0": "",
+          "solWPrRtAvg": "",
+          "youtubeReviewUrl": "",
+          "emWPrRtSdD0": "",
+          "emWRealPerfD0": "",
+          "solWPrRtSd": "",
+          "solWRealPerf": "",
+          "driverLinkId": "[\"98861083-90ef-4f4c-821f-3e21c656dfee\"]",
+          "emWPrRtAvgD0": "",
+          "tag": "",
+          "solution": "",
+          "emWRlRtSdD0": "",
+          "strokeErrorRate": "",
+          "status": "earlyAccess",
+          "driverSupportStatus": "",
+          "saleStatus": "FOR_SALE",
+          "manufacturer": "a07f9eb1-dabd-4750-b4c3-126294222c21",
+          "productName": "Archon M3 600 MAX",
+          "eyejokerRating": "ANTICIPATING",
+          "priceCurrency": "KRW",
+          "price": "109900",
+          "as": "1",
+          "oneLineNote": "뉴 노멀",
+          "benchVersion": "",
+          "firmwareVersion": "",
+          "productImage": "",
+          "purchasedDate": "",
+          "arrivedDate": "",
+          "testingStartDate": "2026-09-09T05:29:00.000Z",
+          "publicReleaseAt": "2026-10-20T07:23:00.000Z",
+          "overallRatingKeyboard": "",
+          "connectionType": "유선",
+          "pollingRate": "8000",
+          "rapidTrigger": "true",
+          "keyboardLayout": "full",
+          "keyboardMechanism": "자석축",
+          "measuredSwitchType": "자석축",
+          "profile": "cherryProfile",
+          "led": "rgb",
+          "webDriver": "true",
+          "autoCalibration": "false",
+          "windowsLock": "true",
+          "socd": "true",
+          "remapping": "true",
+          "kkboard": "true",
+          "modeTap": "true",
+          "dks": "true",
+          "toggleKey": "true",
+          "minStroke": "0.1",
+          "adjustmentUnit": "0.05",
+          "detachStroke": "0.05",
+          "rapidAdjustmentUnit": "0.05",
+          "housingKeyboard": "plastic",
+          "mounting": "leafspring",
+          "switchType": "탈론 / 퀵실버 고스트 / 저소음 퀵실버 V3",
+          "hotswap": "true",
+          "connectionOption": "usbTypeC",
+          "soundAbsorption": "기보강(포론), IXPE 스위치 패드, PET 패드, 하부(EPDM, 실리콘)",
+          "angleAdjustment": "3단계",
+          "housingFrontHeight": "29",
+          "keycap": "pbtDoubleShot",
+          "stabilizer": "cherryPlateMount",
+          "palmRest": "false",
+          "mcu": "armcortex600mhz",
+          "overallResponseSpeed": "",
+          "overallStddev": "",
+          "realPerformance": "",
+          "multiKeyDelay": "",
+          "effectiveUpdateRate": "",
+          "key6PressResponseTime": "",
+          "key6PressStandardDeviation": "",
+          "key6PullResponseTime": "",
+          "key6PullStandardDeviation": "",
+          "key10PressResponseTime": "",
+          "key10PressStandardDeviation": "",
+          "key10ResponseTime": "",
+          "key10PullStandardDeviation": "",
+          "strokeMeasuredStddev": "",
+          "strokeMeasured": "",
+          "bottomDeadzone": "",
+          "detachStrokeMeasured": "",
+          "midInputMeasured": "",
+          "initialDetach": "",
+          "bottomDeadzoneStddev": "",
+          "debounceTime": "",
+          "keyGhosting": "",
+          "simultaneousInput": "",
+          "housingReverb": "",
+          "stabilizerWireNoise": "",
+          "keyFeel": "",
+          "keyboardPcbAvgWired": "",
+          "stddevWired": "",
+          "pcbAvgDetach": "",
+          "stddevDetach": "",
+          "keyboardPcbAvgWireless": "",
+          "stddevWireless": "",
+          "keyboardDetachAvgWireless": "",
+          "keyboardDetachStddevWireless": "",
+          "realPerformanceWireless": "",
+          "pollingrateWireless": "",
+          "rolloverWireless": "",
+          "bluetoothAvg": "",
+          "bluetoothStddev": ""
+        },
+        "priceKrw": 109900,
+        "createdAt": "2026-09-09T05:29:44.732178Z",
+        "updatedAt": "2026-10-11T07:23:58.119671Z",
+        "isPrivate": false,
+        "hasMeshShell": false,
+        "hasFrequencyResponse": false,
+        "colors": {
+          "rapidTrigger": "#A456E1"
+        },
+        "affiliateLinks": [
+          {
+            "id": "7890814e-6102-4d35-aee8-3e9381f93c93",
+            "platform": "BRAND_STORE",
+            "affiliateUrl": "https://preflow.co.kr/surl/P/10768?ref=EYEJOKER",
+            "price": 109900,
+            "currency": "KRW",
+            "purchaseRoute": "DOMESTIC_OFFICIAL",
+            "status": "ACTIVE",
+            "approvalStatus": "APPROVED",
+            "isPrimary": false,
+            "priorityOrder": 0
+          }
+        ]
+      }
+    ],
+    "benchmarkType": {
+      "id": "keyboard",
+      "enName": "Keyboard",
+      "koName": "키보드",
+      "visibility": "PUBLIC"
+    },
+    "columns": {
+      "common": [
+        {
+          "id": "fa336b12-6b23-4e36-8a10-eeaf03547104",
+          "dataType": "COMPANY",
+          "field": "manufacturer",
+          "enName": "manufacturer",
+          "koName": "제조사",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 7,
+          "detailOrder": 6,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": true,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "제조사",
+            "en": "manufacturer"
+          }
+        },
+        {
+          "id": "d089bb4b-c935-434e-8607-1df473f50ced",
+          "dataType": "STRING",
+          "field": "productName",
+          "enName": "product name",
+          "koName": "제품 명",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 8,
+          "detailOrder": 8,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": true,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "제품 명",
+            "en": "product name"
+          }
+        },
+        {
+          "id": "13ad32a3-7028-4841-bb0a-5045ae488a09",
+          "dataType": "FILE",
+          "field": "productImage",
+          "enName": "Product Image",
+          "koName": "제품 사진",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 9,
+          "detailOrder": 17,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "제품 사진",
+            "en": "Product Image"
+          }
+        },
+        {
+          "id": "f790df98-e3a4-4d91-b091-2104c0e3e815",
+          "dataType": "ENUM",
+          "field": "eyejokerRating",
+          "enName": "Recommendation Grade",
+          "koName": "추천 등급",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 10,
+          "detailOrder": 9,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "HIGHLY_RECOMMENDED",
+              "enName": "Highly Recommend",
+              "koName": "매우추천",
+              "autoFill": {},
+              "names": {
+                "ko": "매우추천",
+                "en": "Highly Recommend"
+              }
+            },
+            {
+              "field": "MILD_RECOMMENDATION",
+              "enName": "Meh",
+              "koName": "추천까지는",
+              "autoFill": {},
+              "names": {
+                "ko": "추천까지는",
+                "en": "Meh"
+              }
+            },
+            {
+              "field": "NO_RECOMMENDATION",
+              "enName": "Not Recommend",
+              "koName": "추천안함",
+              "autoFill": {},
+              "names": {
+                "ko": "추천안함",
+                "en": "Not Recommend"
+              }
+            },
+            {
+              "field": "RECOMMENDED",
+              "enName": "Recommend",
+              "koName": "추천",
+              "autoFill": {},
+              "names": {
+                "ko": "추천",
+                "en": "Recommend"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "추천 등급",
+            "en": "Recommendation Grade",
+            "ja": "推奨グレード",
+            "zh": "推荐等级"
+          }
+        },
+        {
+          "id": "d3713a36-85d6-4107-94b3-e33f581cbacd",
+          "dataType": "ENUM",
+          "field": "status",
+          "enName": "Status",
+          "koName": "상태",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 11,
+          "detailOrder": 1,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "arrived",
+              "enName": "Arrived",
+              "koName": "제품 도착",
+              "autoFill": {},
+              "names": {
+                "ko": "제품 도착",
+                "en": "Arrived"
+              }
+            },
+            {
+              "field": "earlyAccess",
+              "enName": "Early Access",
+              "koName": "선 공개",
+              "autoFill": {},
+              "names": {
+                "ko": "선 공개",
+                "en": "Early Access"
+              }
+            },
+            {
+              "field": "proposed",
+              "enName": "Proposed",
+              "koName": "제안",
+              "autoFill": {},
+              "names": {
+                "ko": "제안",
+                "en": "Proposed"
+              }
+            },
+            {
+              "field": "purchased",
+              "enName": "Purchased",
+              "koName": "구매 완료",
+              "autoFill": {},
+              "names": {
+                "ko": "구매 완료",
+                "en": "Purchased"
+              }
+            },
+            {
+              "field": "reviewed",
+              "enName": "Reviewed",
+              "koName": "공개 완료",
+              "autoFill": {},
+              "names": {
+                "ko": "공개 완료",
+                "en": "Reviewed"
+              }
+            },
+            {
+              "field": "testing",
+              "enName": "Testing",
+              "koName": "벤치 진행",
+              "autoFill": {},
+              "names": {
+                "ko": "벤치 진행",
+                "en": "Testing"
+              }
+            },
+            {
+              "field": "unreleased",
+              "enName": "Unreleased",
+              "koName": "미출시",
+              "autoFill": {},
+              "names": {
+                "ko": "미출시",
+                "en": "Unreleased"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "상태",
+            "en": "Status"
+          }
+        },
+        {
+          "id": "a61ae634-0251-437c-933e-dd49522465f7",
+          "dataType": "NUMBER",
+          "field": "price",
+          "enName": "Price",
+          "koName": "가격",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 12,
+          "detailOrder": 12,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "가격",
+            "en": "Price"
+          }
+        },
+        {
+          "id": "e537ac0b-f39c-4800-9b4e-53130d02dfb3",
+          "dataType": "ENUM",
+          "field": "saleStatus",
+          "enName": "Sale Status",
+          "koName": "판매 상태",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 13,
+          "detailOrder": 2,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": true,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "DISCONTINUED",
+              "enName": "Discontinued",
+              "koName": "단종",
+              "autoFill": {},
+              "names": {
+                "ko": "단종",
+                "en": "Discontinued"
+              }
+            },
+            {
+              "field": "FOR_SALE",
+              "enName": "FOR_SALE",
+              "koName": "판매중",
+              "autoFill": {},
+              "names": {
+                "ko": "판매중",
+                "en": "FOR_SALE"
+              }
+            },
+            {
+              "field": "unreleased",
+              "enName": "Unreleased",
+              "koName": "미출시",
+              "autoFill": {},
+              "names": {
+                "ko": "미출시",
+                "en": "Unreleased"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "판매 상태",
+            "en": "Sale Status"
+          }
+        }
+      ],
+      "spec": [
+        {
+          "id": "a7c1ceef-0ac0-4133-aec2-0ba53107b306",
+          "dataType": "ENUM",
+          "field": "overallRatingKeyboard",
+          "enName": "OverallRatingKeyboard",
+          "koName": "종합 등급",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 35,
+          "detailOrder": 65,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "FLAWLESS",
+              "enName": "Flawless",
+              "koName": "무결점",
+              "autoFill": {},
+              "names": {
+                "ko": "무결점",
+                "en": "Flawless"
+              }
+            },
+            {
+              "field": "TIER_0",
+              "enName": "Tier0",
+              "koName": "0티어",
+              "autoFill": {},
+              "names": {
+                "ko": "0티어",
+                "en": "Tier0"
+              }
+            },
+            {
+              "field": "TIER_1",
+              "enName": "Tier1",
+              "koName": "1티어",
+              "autoFill": {},
+              "names": {
+                "ko": "1티어",
+                "en": "Tier1"
+              }
+            },
+            {
+              "field": "TIER_2",
+              "enName": "Tier2",
+              "koName": "2티어",
+              "autoFill": {},
+              "names": {
+                "ko": "2티어",
+                "en": "Tier2"
+              }
+            },
+            {
+              "field": "TIER_3",
+              "enName": "Tier3",
+              "koName": "3티어",
+              "autoFill": {},
+              "names": {
+                "ko": "3티어",
+                "en": "Tier3"
+              }
+            },
+            {
+              "field": "TIER_4",
+              "enName": "Tier4",
+              "koName": "4티어",
+              "autoFill": {},
+              "names": {
+                "ko": "4티어",
+                "en": "Tier4"
+              }
+            },
+            {
+              "field": "UNRATED",
+              "enName": "Unrated",
+              "koName": "등급외",
+              "autoFill": {},
+              "names": {
+                "ko": "등급외",
+                "en": "Unrated"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "종합 등급",
+            "en": "OverallRatingKeyboard"
+          }
+        },
+        {
+          "id": "7b72cf96-1a66-491b-bac5-656e330d1bf8",
+          "dataType": "ENUM",
+          "field": "housingKeyboard",
+          "enName": "Housing",
+          "koName": "하우징",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 36,
+          "detailOrder": 86,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "aluminum",
+              "enName": "Aluminum",
+              "koName": "알루미늄",
+              "autoFill": {},
+              "names": {
+                "ko": "알루미늄",
+                "en": "Aluminum"
+              }
+            },
+            {
+              "field": "custom",
+              "enName": "Custom",
+              "koName": "커스텀",
+              "autoFill": {},
+              "names": {
+                "ko": "커스텀",
+                "en": "Custom"
+              }
+            },
+            {
+              "field": "mixed",
+              "enName": "Mixed",
+              "koName": "혼합",
+              "autoFill": {},
+              "names": {
+                "ko": "혼합",
+                "en": "Mixed"
+              }
+            },
+            {
+              "field": "other",
+              "enName": "Other",
+              "koName": "기타",
+              "autoFill": {},
+              "names": {
+                "ko": "기타",
+                "en": "Other"
+              }
+            },
+            {
+              "field": "plastic",
+              "enName": "Plastic",
+              "koName": "플라스틱",
+              "autoFill": {},
+              "names": {
+                "ko": "플라스틱",
+                "en": "Plastic"
+              }
+            }
+          ],
+          "multiSelect": true,
+          "names": {
+            "ko": "하우징",
+            "en": "Housing"
+          }
+        }
+      ],
+      "bench": [
+        {
+          "id": "c41f8a8f-07dc-4ad0-a68b-da0200406ee8",
+          "dataType": "NUMBER",
+          "field": "overallResponseSpeed",
+          "enName": "Overall Resp",
+          "koName": "종합 응답속도",
+          "prefix": "",
+          "suffix": "ms",
+          "showInList": true,
+          "listOrder": 37,
+          "detailOrder": 98,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": 2,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "종합 응답속도",
+            "en": "Overall Resp"
+          }
+        },
+        {
+          "id": "1f0081fd-e7f2-4621-802c-54d8abcbec2b",
+          "dataType": "NUMBER",
+          "field": "overallStddev",
+          "enName": "Overall Std dev",
+          "koName": "종합 표준편차",
+          "prefix": "",
+          "suffix": "ms",
+          "showInList": true,
+          "listOrder": 38,
+          "detailOrder": 99,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": 2,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "종합 표준편차",
+            "en": "Overall Std dev"
+          }
+        },
+        {
+          "id": "bb78d7be-8025-4d41-b555-18e8680afe4d",
+          "dataType": "NUMBER",
+          "field": "realPerformance",
+          "enName": "Actual Performance",
+          "koName": "실성능",
+          "prefix": "",
+          "suffix": "Hz",
+          "showInList": true,
+          "listOrder": 39,
+          "detailOrder": 100,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "실성능",
+            "en": "Actual Performance"
+          }
+        },
+        {
+          "id": "80cd7086-0374-427a-8bac-8c3ab0e5b8b3",
+          "dataType": "ENUM",
+          "field": "effectiveUpdateRate",
+          "enName": "Effective Hz",
+          "koName": "유효 폴링레이트",
+          "prefix": "",
+          "suffix": "Hz",
+          "showInList": true,
+          "listOrder": 40,
+          "detailOrder": 102,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "1000",
+              "enName": "1000",
+              "koName": "1000",
+              "autoFill": {},
+              "names": {
+                "ko": "1000",
+                "en": "1000"
+              }
+            },
+            {
+              "field": "125",
+              "enName": "125",
+              "koName": "125",
+              "autoFill": {},
+              "names": {
+                "ko": "125",
+                "en": "125"
+              }
+            },
+            {
+              "field": "1333",
+              "enName": "1333",
+              "koName": "1333",
+              "autoFill": {},
+              "names": {
+                "ko": "1333",
+                "en": "1333"
+              }
+            },
+            {
+              "field": "1600",
+              "enName": "1600",
+              "koName": "1600",
+              "autoFill": {},
+              "names": {
+                "ko": "1600",
+                "en": "1600"
+              }
+            },
+            {
+              "field": "2000",
+              "enName": "2000",
+              "koName": "2000",
+              "autoFill": {},
+              "names": {
+                "ko": "2000",
+                "en": "2000"
+              }
+            },
+            {
+              "field": "250",
+              "enName": "250",
+              "koName": "250",
+              "autoFill": {},
+              "names": {
+                "ko": "250",
+                "en": "250"
+              }
+            },
+            {
+              "field": "2666",
+              "enName": "2666",
+              "koName": "2666",
+              "autoFill": {},
+              "names": {
+                "ko": "2666",
+                "en": "2666"
+              }
+            },
+            {
+              "field": "4000",
+              "enName": "4000",
+              "koName": "4000",
+              "autoFill": {},
+              "names": {
+                "ko": "4000",
+                "en": "4000"
+              }
+            },
+            {
+              "field": "500",
+              "enName": "500",
+              "koName": "500",
+              "autoFill": {},
+              "names": {
+                "ko": "500",
+                "en": "500"
+              }
+            },
+            {
+              "field": "8000",
+              "enName": "8000",
+              "koName": "8000",
+              "autoFill": {},
+              "names": {
+                "ko": "8000",
+                "en": "8000"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "유효 폴링레이트",
+            "en": "Effective Hz"
+          }
+        },
+        {
+          "id": "60916aea-f3d9-4c2c-8583-125ee4a9d941",
+          "dataType": "NUMBER",
+          "field": "strokeMeasured",
+          "enName": "Minimum input Stroke",
+          "koName": "최저 입력지점",
+          "prefix": "",
+          "suffix": "mm",
+          "showInList": true,
+          "listOrder": 41,
+          "detailOrder": 111,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": 2,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "최저 입력지점",
+            "en": "Minimum input Stroke"
+          }
+        },
+        {
+          "id": "7f9f6cef-2e0f-4412-806c-77c6fe3f4eec",
+          "dataType": "NUMBER",
+          "field": "strokeMeasuredStddev",
+          "enName": "Minimum Input Stroke StdDev",
+          "koName": "최저 입력지점 편차",
+          "prefix": "",
+          "suffix": "mm",
+          "showInList": true,
+          "listOrder": 41,
+          "detailOrder": 111,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": 2,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "최저 입력지점 편차",
+            "en": "Minimum Input Stroke StdDev"
+          }
+        },
+        {
+          "id": "eef22bf3-0817-4980-a63f-aae38266da65",
+          "dataType": "NUMBER",
+          "field": "bottomDeadzone",
+          "enName": "Bottom dead zone",
+          "koName": "하단 데드존",
+          "prefix": "",
+          "suffix": "mm",
+          "showInList": true,
+          "listOrder": 42,
+          "detailOrder": 112,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": 2,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "하단 데드존",
+            "en": "Bottom dead zone"
+          }
+        },
+        {
+          "id": "eb3970ae-3d25-4b8d-947a-1c0938be21b9",
+          "dataType": "NUMBER",
+          "field": "bottomDeadzoneStddev",
+          "enName": "Bottom Deadzone Stddev",
+          "koName": "하단 데드존 편차",
+          "prefix": "",
+          "suffix": "mm",
+          "showInList": true,
+          "listOrder": 43,
+          "detailOrder": 116,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": 2,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "하단 데드존 편차",
+            "en": "Bottom Deadzone Stddev"
+          }
+        },
+        {
+          "id": "7e1d0f3f-4ef6-4ed7-b73d-442f1c067a0e",
+          "dataType": "NUMBER",
+          "field": "strokeErrorRate",
+          "enName": "Stroke Error",
+          "koName": "스트로크 오차율",
+          "prefix": null,
+          "suffix": "%",
+          "showInList": true,
+          "listOrder": 44,
+          "detailOrder": 0,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": 2,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "스트로크 오차율",
+            "en": "Stroke Error"
+          }
+        }
+      ]
+    },
+    "detailColumns": {
+      "common": [
+        {
+          "id": "59412d3e-7076-4a32-897e-dad19fb3b17f",
+          "dataType": "STRING",
+          "field": "youtubeReviewUrl",
+          "enName": "youtubeReviewUrl",
+          "koName": "유튜브 리뷰 링크",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 0,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "유튜브 리뷰 링크",
+            "en": "youtubeReviewUrl"
+          }
+        },
+        {
+          "id": "85c761c8-41fe-42b2-ae31-63c63e8d3921",
+          "dataType": "STRING",
+          "field": "tag",
+          "enName": "tag",
+          "koName": "태그",
+          "prefix": null,
+          "suffix": null,
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 0,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "태그",
+            "en": "tag"
+          }
+        },
+        {
+          "id": "2d0b566e-fa58-42f4-a7d7-80c94f38fecb",
+          "dataType": "STRING",
+          "field": "driverLinkId",
+          "enName": "DriverLink",
+          "koName": "드라이버 링크",
+          "prefix": null,
+          "suffix": null,
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 0,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "드라이버 링크",
+            "en": "DriverLink"
+          }
+        },
+        {
+          "id": "d3713a36-85d6-4107-94b3-e33f581cbacd",
+          "dataType": "ENUM",
+          "field": "status",
+          "enName": "Status",
+          "koName": "상태",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 11,
+          "detailOrder": 1,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "arrived",
+              "enName": "Arrived",
+              "koName": "제품 도착",
+              "autoFill": {},
+              "names": {
+                "ko": "제품 도착",
+                "en": "Arrived"
+              }
+            },
+            {
+              "field": "earlyAccess",
+              "enName": "Early Access",
+              "koName": "선 공개",
+              "autoFill": {},
+              "names": {
+                "ko": "선 공개",
+                "en": "Early Access"
+              }
+            },
+            {
+              "field": "proposed",
+              "enName": "Proposed",
+              "koName": "제안",
+              "autoFill": {},
+              "names": {
+                "ko": "제안",
+                "en": "Proposed"
+              }
+            },
+            {
+              "field": "purchased",
+              "enName": "Purchased",
+              "koName": "구매 완료",
+              "autoFill": {},
+              "names": {
+                "ko": "구매 완료",
+                "en": "Purchased"
+              }
+            },
+            {
+              "field": "reviewed",
+              "enName": "Reviewed",
+              "koName": "공개 완료",
+              "autoFill": {},
+              "names": {
+                "ko": "공개 완료",
+                "en": "Reviewed"
+              }
+            },
+            {
+              "field": "testing",
+              "enName": "Testing",
+              "koName": "벤치 진행",
+              "autoFill": {},
+              "names": {
+                "ko": "벤치 진행",
+                "en": "Testing"
+              }
+            },
+            {
+              "field": "unreleased",
+              "enName": "Unreleased",
+              "koName": "미출시",
+              "autoFill": {},
+              "names": {
+                "ko": "미출시",
+                "en": "Unreleased"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "상태",
+            "en": "Status"
+          }
+        },
+        {
+          "id": "359ad016-0cd3-43ed-a375-b9c7c3437f13",
+          "dataType": "ENUM",
+          "field": "driverSupportStatus",
+          "enName": "Driver Support Status",
+          "koName": "드라이버 지원 상태",
+          "prefix": null,
+          "suffix": null,
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 1,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "notAvailable",
+              "enName": "No Official Configuration Software",
+              "koName": "공식 설정 소프트웨어 없음",
+              "autoFill": {},
+              "names": {
+                "ko": "공식 설정 소프트웨어 없음",
+                "en": "No Official Configuration Software",
+                "ja": "公式設定ソフトウェアなし",
+                "zh": "无官方配置软件"
+              }
+            },
+            {
+              "field": "notRequired",
+              "enName": "No Separate Configuration Software Required",
+              "koName": "별도 설정 소프트웨어 불필요",
+              "autoFill": {},
+              "names": {
+                "ko": "별도 설정 소프트웨어 불필요",
+                "en": "No Separate Configuration Software Required",
+                "ja": "個別の設定ソフトウェアは不要",
+                "zh": "无需单独的配置软件"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "드라이버 지원 상태",
+            "en": "Driver Support Status",
+            "ja": "ドライバー対応状況",
+            "zh": "驱动支持状态"
+          }
+        },
+        {
+          "id": "e537ac0b-f39c-4800-9b4e-53130d02dfb3",
+          "dataType": "ENUM",
+          "field": "saleStatus",
+          "enName": "Sale Status",
+          "koName": "판매 상태",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 13,
+          "detailOrder": 2,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": true,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "DISCONTINUED",
+              "enName": "Discontinued",
+              "koName": "단종",
+              "autoFill": {},
+              "names": {
+                "ko": "단종",
+                "en": "Discontinued"
+              }
+            },
+            {
+              "field": "FOR_SALE",
+              "enName": "FOR_SALE",
+              "koName": "판매중",
+              "autoFill": {},
+              "names": {
+                "ko": "판매중",
+                "en": "FOR_SALE"
+              }
+            },
+            {
+              "field": "unreleased",
+              "enName": "Unreleased",
+              "koName": "미출시",
+              "autoFill": {},
+              "names": {
+                "ko": "미출시",
+                "en": "Unreleased"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "판매 상태",
+            "en": "Sale Status"
+          }
+        },
+        {
+          "id": "fa336b12-6b23-4e36-8a10-eeaf03547104",
+          "dataType": "COMPANY",
+          "field": "manufacturer",
+          "enName": "manufacturer",
+          "koName": "제조사",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 7,
+          "detailOrder": 6,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": true,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "제조사",
+            "en": "manufacturer"
+          }
+        },
+        {
+          "id": "d089bb4b-c935-434e-8607-1df473f50ced",
+          "dataType": "STRING",
+          "field": "productName",
+          "enName": "product name",
+          "koName": "제품 명",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 8,
+          "detailOrder": 8,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": true,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "제품 명",
+            "en": "product name"
+          }
+        },
+        {
+          "id": "f790df98-e3a4-4d91-b091-2104c0e3e815",
+          "dataType": "ENUM",
+          "field": "eyejokerRating",
+          "enName": "Recommendation Grade",
+          "koName": "추천 등급",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 10,
+          "detailOrder": 9,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "HIGHLY_RECOMMENDED",
+              "enName": "Highly Recommend",
+              "koName": "매우추천",
+              "autoFill": {},
+              "names": {
+                "ko": "매우추천",
+                "en": "Highly Recommend"
+              }
+            },
+            {
+              "field": "MILD_RECOMMENDATION",
+              "enName": "Meh",
+              "koName": "추천까지는",
+              "autoFill": {},
+              "names": {
+                "ko": "추천까지는",
+                "en": "Meh"
+              }
+            },
+            {
+              "field": "NO_RECOMMENDATION",
+              "enName": "Not Recommend",
+              "koName": "추천안함",
+              "autoFill": {},
+              "names": {
+                "ko": "추천안함",
+                "en": "Not Recommend"
+              }
+            },
+            {
+              "field": "RECOMMENDED",
+              "enName": "Recommend",
+              "koName": "추천",
+              "autoFill": {},
+              "names": {
+                "ko": "추천",
+                "en": "Recommend"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "추천 등급",
+            "en": "Recommendation Grade",
+            "ja": "推奨グレード",
+            "zh": "推荐等级"
+          }
+        },
+        {
+          "id": "e1d84163-20c9-4ecb-95fc-793bfb2c9d71",
+          "dataType": "ENUM",
+          "field": "priceCurrency",
+          "enName": "PriceCurrency",
+          "koName": "통화코드",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 10,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "AED",
+              "enName": "AED",
+              "koName": "AED",
+              "autoFill": {},
+              "names": {
+                "ko": "AED",
+                "en": "AED"
+              }
+            },
+            {
+              "field": "CNY",
+              "enName": "CNY",
+              "koName": "CNY",
+              "autoFill": {},
+              "names": {
+                "ko": "CNY",
+                "en": "CNY",
+                "ja": "CNY",
+                "zh": "CNY"
+              }
+            },
+            {
+              "field": "EUR",
+              "enName": "EUR",
+              "koName": "EUR",
+              "autoFill": {},
+              "names": {
+                "ko": "EUR",
+                "en": "EUR",
+                "ja": "EUR",
+                "zh": "EUR"
+              }
+            },
+            {
+              "field": "GBP",
+              "enName": "GBP",
+              "koName": "GBP",
+              "autoFill": {},
+              "names": {
+                "ko": "GBP",
+                "en": "GBP",
+                "ja": "GBP",
+                "zh": "GBP"
+              }
+            },
+            {
+              "field": "INR",
+              "enName": "INR",
+              "koName": "INR",
+              "autoFill": {},
+              "names": {
+                "ko": "INR",
+                "en": "INR"
+              }
+            },
+            {
+              "field": "JPY",
+              "enName": "JPY",
+              "koName": "JPY",
+              "autoFill": {},
+              "names": {
+                "ko": "JPY",
+                "en": "JPY",
+                "ja": "JPY",
+                "zh": "JPY"
+              }
+            },
+            {
+              "field": "KRW",
+              "enName": "KRW",
+              "koName": "KRW",
+              "autoFill": {},
+              "names": {
+                "ko": "KRW",
+                "en": "KRW"
+              }
+            },
+            {
+              "field": "USD",
+              "enName": "USD",
+              "koName": "USD",
+              "autoFill": {},
+              "names": {
+                "ko": "USD",
+                "en": "USD"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "통화코드",
+            "en": "PriceCurrency"
+          }
+        },
+        {
+          "id": "a61ae634-0251-437c-933e-dd49522465f7",
+          "dataType": "NUMBER",
+          "field": "price",
+          "enName": "Price",
+          "koName": "가격",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 12,
+          "detailOrder": 12,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "가격",
+            "en": "Price"
+          }
+        },
+        {
+          "id": "3f6d06e4-1904-4210-976f-7b98099aad79",
+          "dataType": "NUMBER",
+          "field": "as",
+          "enName": "AS",
+          "koName": "보증 기간",
+          "prefix": "",
+          "suffix": "년",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 13,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "보증 기간",
+            "en": "AS"
+          }
+        },
+        {
+          "id": "c95edff9-a285-4554-a796-394f53f2f02a",
+          "dataType": "STRING",
+          "field": "oneLineNote",
+          "enName": "ShortReview",
+          "koName": "한줄평",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 6,
+          "detailOrder": 14,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "한줄평",
+            "en": "ShortReview"
+          }
+        },
+        {
+          "id": "861849f5-8189-408b-aa02-fac2d2d5d83b",
+          "dataType": "STRING",
+          "field": "benchVersion",
+          "enName": "BenchVersion",
+          "koName": "벤치버전",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 7,
+          "detailOrder": 15,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "벤치버전",
+            "en": "BenchVersion"
+          }
+        },
+        {
+          "id": "c62da328-85aa-46db-ab92-50e0e5ed2411",
+          "dataType": "STRING",
+          "field": "firmwareVersion",
+          "enName": "FirmwareVersion",
+          "koName": "펌웨어 버전",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 8,
+          "detailOrder": 16,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "펌웨어 버전",
+            "en": "FirmwareVersion"
+          }
+        },
+        {
+          "id": "13ad32a3-7028-4841-bb0a-5045ae488a09",
+          "dataType": "FILE",
+          "field": "productImage",
+          "enName": "Product Image",
+          "koName": "제품 사진",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 9,
+          "detailOrder": 17,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "제품 사진",
+            "en": "Product Image"
+          }
+        },
+        {
+          "id": "9db61dbd-15b2-4fcc-bee8-1fc64b74374b",
+          "dataType": "DATETIME",
+          "field": "purchasedDate",
+          "enName": "Purchased Date",
+          "koName": "구매 완료 시간",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 20,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "구매 완료 시간",
+            "en": "Purchased Date"
+          }
+        },
+        {
+          "id": "1a8848c0-053c-4c5a-bfd9-377d32ecc79f",
+          "dataType": "DATETIME",
+          "field": "arrivedDate",
+          "enName": "Arrived Date",
+          "koName": "제품 도착 시간",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 21,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "제품 도착 시간",
+            "en": "Arrived Date"
+          }
+        },
+        {
+          "id": "774a633f-e245-470c-9cbc-00cc537ea985",
+          "dataType": "DATETIME",
+          "field": "testingStartDate",
+          "enName": "Testing Start Date",
+          "koName": "벤치 진행 시작 날짜",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 22,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "벤치 진행 시작 날짜",
+            "en": "Testing Start Date"
+          }
+        },
+        {
+          "id": "2937e309-2712-40f4-8e48-56534c8e0237",
+          "dataType": "DATETIME",
+          "field": "publicReleaseAt",
+          "enName": "Public Release At",
+          "koName": "전체 공개 일자",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 23,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "전체 공개 일자",
+            "en": "Public Release At"
+          }
+        }
+      ],
+      "spec": [
+        {
+          "id": "7a019e15-5458-4829-a1d8-ff9453bd16fb",
+          "dataType": "ENUM",
+          "field": "solution",
+          "enName": "Solution",
+          "koName": "솔루션",
+          "prefix": null,
+          "suffix": null,
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 0,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "Beiying",
+              "enName": "Beiying",
+              "koName": "베이잉",
+              "autoFill": {},
+              "names": {
+                "ko": "베이잉",
+                "en": "Beiying"
+              }
+            },
+            {
+              "field": "ISO",
+              "enName": "ISO",
+              "koName": "ISO",
+              "autoFill": {},
+              "names": {
+                "ko": "ISO",
+                "en": "ISO"
+              }
+            },
+            {
+              "field": "MMD",
+              "enName": "MMD",
+              "koName": "MMD",
+              "autoFill": {},
+              "names": {
+                "ko": "MMD",
+                "en": "MMD"
+              }
+            },
+            {
+              "field": "MMStudio",
+              "enName": "MMStudio",
+              "koName": "MMStudio",
+              "autoFill": {},
+              "names": {
+                "ko": "MMStudio",
+                "en": "MMStudio"
+              }
+            },
+            {
+              "field": "Rongyuan",
+              "enName": "Rongyuan",
+              "koName": "롱위안",
+              "autoFill": {},
+              "names": {
+                "ko": "롱위안",
+                "en": "Rongyuan"
+              }
+            },
+            {
+              "field": "arbitor",
+              "enName": "arbitor",
+              "koName": "아비터",
+              "autoFill": {},
+              "names": {
+                "ko": "아비터",
+                "en": "arbitor"
+              }
+            },
+            {
+              "field": "etc",
+              "enName": "etc",
+              "koName": "기타",
+              "autoFill": {},
+              "names": {
+                "ko": "기타",
+                "en": "etc"
+              }
+            },
+            {
+              "field": "sparklink",
+              "enName": "SparkLink",
+              "koName": "스파크링크",
+              "autoFill": {},
+              "names": {
+                "ko": "스파크링크",
+                "en": "SparkLink"
+              }
+            },
+            {
+              "field": "자체 솔루션",
+              "enName": "In-house",
+              "koName": "자체 솔루션",
+              "autoFill": {},
+              "names": {
+                "ko": "자체 솔루션",
+                "en": "In-house"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "솔루션",
+            "en": "Solution"
+          }
+        },
+        {
+          "id": "a7c1ceef-0ac0-4133-aec2-0ba53107b306",
+          "dataType": "ENUM",
+          "field": "overallRatingKeyboard",
+          "enName": "OverallRatingKeyboard",
+          "koName": "종합 등급",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 35,
+          "detailOrder": 65,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "FLAWLESS",
+              "enName": "Flawless",
+              "koName": "무결점",
+              "autoFill": {},
+              "names": {
+                "ko": "무결점",
+                "en": "Flawless"
+              }
+            },
+            {
+              "field": "TIER_0",
+              "enName": "Tier0",
+              "koName": "0티어",
+              "autoFill": {},
+              "names": {
+                "ko": "0티어",
+                "en": "Tier0"
+              }
+            },
+            {
+              "field": "TIER_1",
+              "enName": "Tier1",
+              "koName": "1티어",
+              "autoFill": {},
+              "names": {
+                "ko": "1티어",
+                "en": "Tier1"
+              }
+            },
+            {
+              "field": "TIER_2",
+              "enName": "Tier2",
+              "koName": "2티어",
+              "autoFill": {},
+              "names": {
+                "ko": "2티어",
+                "en": "Tier2"
+              }
+            },
+            {
+              "field": "TIER_3",
+              "enName": "Tier3",
+              "koName": "3티어",
+              "autoFill": {},
+              "names": {
+                "ko": "3티어",
+                "en": "Tier3"
+              }
+            },
+            {
+              "field": "TIER_4",
+              "enName": "Tier4",
+              "koName": "4티어",
+              "autoFill": {},
+              "names": {
+                "ko": "4티어",
+                "en": "Tier4"
+              }
+            },
+            {
+              "field": "UNRATED",
+              "enName": "Unrated",
+              "koName": "등급외",
+              "autoFill": {},
+              "names": {
+                "ko": "등급외",
+                "en": "Unrated"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "종합 등급",
+            "en": "OverallRatingKeyboard"
+          }
+        },
+        {
+          "id": "ea2214e8-8e8a-4f9e-97eb-f326e084ed3a",
+          "dataType": "ENUM",
+          "field": "connectionType",
+          "enName": "ConnectionType",
+          "koName": "연결",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 1,
+          "detailOrder": 66,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "무선",
+              "enName": "Wireless",
+              "koName": "무선",
+              "autoFill": {},
+              "names": {
+                "ko": "무선",
+                "en": "Wireless"
+              }
+            },
+            {
+              "field": "유무선",
+              "enName": "Wired/Wireless",
+              "koName": "유무선",
+              "autoFill": {},
+              "names": {
+                "ko": "유무선",
+                "en": "Wired/Wireless"
+              }
+            },
+            {
+              "field": "유선",
+              "enName": "Wired",
+              "koName": "유선",
+              "autoFill": {},
+              "names": {
+                "ko": "유선",
+                "en": "Wired"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "연결",
+            "en": "ConnectionType"
+          }
+        },
+        {
+          "id": "683c0391-d602-48cc-bc4e-2cb481a4f8eb",
+          "dataType": "ENUM",
+          "field": "pollingRate",
+          "enName": "Pollingrate",
+          "koName": "폴링레이트",
+          "prefix": "",
+          "suffix": "Hz",
+          "showInList": false,
+          "listOrder": 2,
+          "detailOrder": 67,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "1000",
+              "enName": "1000",
+              "koName": "1000",
+              "autoFill": {},
+              "names": {
+                "ko": "1000",
+                "en": "1000"
+              }
+            },
+            {
+              "field": "125",
+              "enName": "125",
+              "koName": "125",
+              "autoFill": {},
+              "names": {
+                "ko": "125",
+                "en": "125"
+              }
+            },
+            {
+              "field": "16000",
+              "enName": "16000",
+              "koName": "16000",
+              "autoFill": {},
+              "names": {
+                "ko": "16000",
+                "en": "16000"
+              }
+            },
+            {
+              "field": "32000",
+              "enName": "32000",
+              "koName": "32000",
+              "autoFill": {},
+              "names": {
+                "ko": "32000",
+                "en": "32000"
+              }
+            },
+            {
+              "field": "8000",
+              "enName": "8000",
+              "koName": "8000",
+              "autoFill": {},
+              "names": {
+                "ko": "8000",
+                "en": "8000"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "폴링레이트",
+            "en": "Pollingrate"
+          }
+        },
+        {
+          "id": "4a4b7147-3866-4d3b-ad59-3d6cd85e590b",
+          "dataType": "BOOLEAN",
+          "field": "rapidTrigger",
+          "enName": "RapidTrigger",
+          "koName": "래피드 트리거",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 34,
+          "detailOrder": 68,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "래피드 트리거",
+            "en": "RapidTrigger"
+          }
+        },
+        {
+          "id": "9a54f94b-9dbc-4c97-9c8a-96da7f857b89",
+          "dataType": "ENUM",
+          "field": "keyboardLayout",
+          "enName": "Layout",
+          "koName": "배열",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 4,
+          "detailOrder": 69,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "60%",
+              "enName": "60%",
+              "koName": "60%",
+              "autoFill": {},
+              "names": {
+                "ko": "60%",
+                "en": "60%"
+              }
+            },
+            {
+              "field": "65%",
+              "enName": "65%",
+              "koName": "65%",
+              "autoFill": {},
+              "names": {
+                "ko": "65%",
+                "en": "65%"
+              }
+            },
+            {
+              "field": "75%",
+              "enName": "75%",
+              "koName": "75%",
+              "autoFill": {},
+              "names": {
+                "ko": "75%",
+                "en": "75%"
+              }
+            },
+            {
+              "field": "96%",
+              "enName": "96%",
+              "koName": "96%",
+              "autoFill": {},
+              "names": {
+                "ko": "96%",
+                "en": "96%"
+              }
+            },
+            {
+              "field": "etc",
+              "enName": "etc",
+              "koName": "기타",
+              "autoFill": {},
+              "names": {
+                "ko": "기타",
+                "en": "etc"
+              }
+            },
+            {
+              "field": "full",
+              "enName": "FULL",
+              "koName": "FULL",
+              "autoFill": {},
+              "names": {
+                "ko": "FULL",
+                "en": "FULL"
+              }
+            },
+            {
+              "field": "tkl",
+              "enName": "TKL",
+              "koName": "TKL",
+              "autoFill": {},
+              "names": {
+                "ko": "TKL",
+                "en": "TKL"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "배열",
+            "en": "Layout"
+          }
+        },
+        {
+          "id": "84f33a49-0e49-4515-a08b-82ba64ed4d4d",
+          "dataType": "ENUM",
+          "field": "keyboardMechanism",
+          "enName": "Supported Switch Types",
+          "koName": "지원 스위치 타입",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 5,
+          "detailOrder": 70,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "광축",
+              "enName": "Optical",
+              "koName": "광축",
+              "autoFill": {},
+              "names": {
+                "ko": "광축",
+                "en": "Optical"
+              }
+            },
+            {
+              "field": "기계식",
+              "enName": "Mechanical",
+              "koName": "기계식",
+              "autoFill": {},
+              "names": {
+                "ko": "기계식",
+                "en": "Mechanical"
+              }
+            },
+            {
+              "field": "멤브레인",
+              "enName": "Membrane",
+              "koName": "멤브레인",
+              "autoFill": {},
+              "names": {
+                "ko": "멤브레인",
+                "en": "Membrane"
+              }
+            },
+            {
+              "field": "무접점",
+              "enName": "Capacitive",
+              "koName": "무접점",
+              "autoFill": {},
+              "names": {
+                "ko": "무접점",
+                "en": "Capacitive"
+              }
+            },
+            {
+              "field": "자석축",
+              "enName": "Magnetic Switch",
+              "koName": "자석축",
+              "autoFill": {},
+              "names": {
+                "ko": "자석축",
+                "en": "Magnetic Switch"
+              }
+            }
+          ],
+          "multiSelect": true,
+          "names": {
+            "ko": "지원 스위치 타입",
+            "en": "Supported Switch Types"
+          }
+        },
+        {
+          "id": "fbeb605d-6908-4438-962b-917863d2c8db",
+          "dataType": "ENUM",
+          "field": "profile",
+          "enName": "Profile",
+          "koName": "프로파일",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 71,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "cherryProfile",
+              "enName": "Cherry Profile",
+              "koName": "체리 프로파일",
+              "autoFill": {},
+              "names": {
+                "ko": "체리 프로파일",
+                "en": "Cherry Profile"
+              }
+            },
+            {
+              "field": "lowProfile",
+              "enName": "Low Profile",
+              "koName": "Low Profile",
+              "autoFill": {},
+              "names": {
+                "ko": "Low Profile",
+                "en": "Low Profile"
+              }
+            },
+            {
+              "field": "oemProfile",
+              "enName": "OEM Profile",
+              "koName": "OEM 프로파일",
+              "autoFill": {},
+              "names": {
+                "ko": "OEM 프로파일",
+                "en": "OEM Profile"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "프로파일",
+            "en": "Profile"
+          }
+        },
+        {
+          "id": "57d773e3-af51-48ac-bb5e-3f35cd238a3d",
+          "dataType": "ENUM",
+          "field": "measuredSwitchType",
+          "enName": "Measured Switch Type",
+          "koName": "측정 기준 스위치",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 25,
+          "detailOrder": 71,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "광축",
+              "enName": "Optical Switch",
+              "koName": "광축",
+              "autoFill": {},
+              "names": {
+                "ko": "광축",
+                "en": "Optical Switch"
+              }
+            },
+            {
+              "field": "기계식",
+              "enName": "Mechanical Switch",
+              "koName": "기계식",
+              "autoFill": {},
+              "names": {
+                "ko": "기계식",
+                "en": "Mechanical Switch"
+              }
+            },
+            {
+              "field": "멤브레인",
+              "enName": "Membrane",
+              "koName": "멤브레인",
+              "autoFill": {},
+              "names": {
+                "ko": "멤브레인",
+                "en": "Membrane"
+              }
+            },
+            {
+              "field": "무접점",
+              "enName": "Capacitive Switch",
+              "koName": "무접점",
+              "autoFill": {},
+              "names": {
+                "ko": "무접점",
+                "en": "Capacitive Switch"
+              }
+            },
+            {
+              "field": "자석축",
+              "enName": "Magnetic Switch",
+              "koName": "자석축",
+              "autoFill": {},
+              "names": {
+                "ko": "자석축",
+                "en": "Magnetic Switch"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "측정 기준 스위치",
+            "en": "Measured Switch Type"
+          }
+        },
+        {
+          "id": "b90f9854-961c-4474-bc8f-11da35082c73",
+          "dataType": "ENUM",
+          "field": "led",
+          "enName": "LED",
+          "koName": "LED",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 72,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "false",
+              "enName": "X",
+              "koName": "X",
+              "autoFill": {},
+              "names": {
+                "ko": "X",
+                "en": "X"
+              }
+            },
+            {
+              "field": "part",
+              "enName": "part",
+              "koName": "부분",
+              "autoFill": {},
+              "names": {
+                "ko": "부분",
+                "en": "part"
+              }
+            },
+            {
+              "field": "rgb",
+              "enName": "RGB",
+              "koName": "RGB",
+              "autoFill": {},
+              "names": {
+                "ko": "RGB",
+                "en": "RGB"
+              }
+            },
+            {
+              "field": "true",
+              "enName": "O",
+              "koName": "O",
+              "autoFill": {},
+              "names": {
+                "ko": "O",
+                "en": "O"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "LED",
+            "en": "LED"
+          }
+        },
+        {
+          "id": "14ae50d9-e857-41b8-98a0-2300f8b8bc52",
+          "dataType": "STRING",
+          "field": "measuredSwitchName",
+          "enName": "Measured Switch Name",
+          "koName": "측정 스위치 제품명",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 26,
+          "detailOrder": 72,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "측정 스위치 제품명",
+            "en": "Measured Switch Name"
+          }
+        },
+        {
+          "id": "54657d05-73da-4977-83e2-ba240a6c8707",
+          "dataType": "BOOLEAN",
+          "field": "webDriver",
+          "enName": "WebDriver",
+          "koName": "웹 드라이버",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 6,
+          "detailOrder": 73,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "웹 드라이버",
+            "en": "WebDriver"
+          }
+        },
+        {
+          "id": "da78f1fb-ef8a-489d-a203-1540d7a60d5b",
+          "dataType": "BOOLEAN",
+          "field": "autoCalibration",
+          "enName": "AutoCalibration",
+          "koName": "자동 캘리",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 8,
+          "detailOrder": 74,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "자동 캘리",
+            "en": "AutoCalibration"
+          }
+        },
+        {
+          "id": "0cb0c10a-7243-49b7-9200-eb74f8dce28b",
+          "dataType": "BOOLEAN",
+          "field": "windowsLock",
+          "enName": "WindowsLock",
+          "koName": "윈도우락",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 9,
+          "detailOrder": 75,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "윈도우락",
+            "en": "WindowsLock"
+          }
+        },
+        {
+          "id": "4a3577c2-7f07-4bbd-bc0c-a860780da66d",
+          "dataType": "BOOLEAN",
+          "field": "socd",
+          "enName": "SOCD",
+          "koName": "SOCD",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 10,
+          "detailOrder": 76,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "SOCD",
+            "en": "SOCD"
+          }
+        },
+        {
+          "id": "410355a7-8bd8-4235-9485-856e1e19fb02",
+          "dataType": "BOOLEAN",
+          "field": "remapping",
+          "enName": "Remapping",
+          "koName": "리매핑",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 12,
+          "detailOrder": 77,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "리매핑",
+            "en": "Remapping"
+          }
+        },
+        {
+          "id": "42862782-4257-45fa-a014-05c947076005",
+          "dataType": "BOOLEAN",
+          "field": "kkboard",
+          "enName": "Kkboard",
+          "koName": "꾹보드",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 13,
+          "detailOrder": 78,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "꾹보드",
+            "en": "Kkboard"
+          }
+        },
+        {
+          "id": "64eaa190-45e1-43b9-a0b5-bcb43accb375",
+          "dataType": "BOOLEAN",
+          "field": "modeTap",
+          "enName": "ModeTap",
+          "koName": "모드 탭",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 14,
+          "detailOrder": 79,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "모드 탭",
+            "en": "ModeTap"
+          }
+        },
+        {
+          "id": "7bf4edd4-c8c3-413e-8ed7-408244155455",
+          "dataType": "BOOLEAN",
+          "field": "dks",
+          "enName": "DKS",
+          "koName": "DKS",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 15,
+          "detailOrder": 80,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "DKS",
+            "en": "DKS"
+          }
+        },
+        {
+          "id": "0a87fcfe-6f3d-4a96-a5b1-51bdbb639f8d",
+          "dataType": "BOOLEAN",
+          "field": "toggleKey",
+          "enName": "ToggleKey",
+          "koName": "토글 키",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 16,
+          "detailOrder": 81,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "토글 키",
+            "en": "ToggleKey"
+          }
+        },
+        {
+          "id": "a608eaf0-5c92-4994-8b22-701e4c6b3bb5",
+          "dataType": "NUMBER",
+          "field": "minStroke",
+          "enName": "MinStroke",
+          "koName": "최소 스트로크",
+          "prefix": "",
+          "suffix": "mm",
+          "showInList": false,
+          "listOrder": 18,
+          "detailOrder": 82,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "최소 스트로크",
+            "en": "MinStroke"
+          }
+        },
+        {
+          "id": "0e4d9c6c-7dfa-46af-a40b-cad755659249",
+          "dataType": "NUMBER",
+          "field": "adjustmentUnit",
+          "enName": "AdjustmentUnit",
+          "koName": "조절단위",
+          "prefix": "",
+          "suffix": "mm",
+          "showInList": false,
+          "listOrder": 19,
+          "detailOrder": 83,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "조절단위",
+            "en": "AdjustmentUnit"
+          }
+        },
+        {
+          "id": "e668d35a-4017-4a25-ba75-3365315fc529",
+          "dataType": "NUMBER",
+          "field": "detachStroke",
+          "enName": "DetachStroke",
+          "koName": "떼는 스트로크",
+          "prefix": "",
+          "suffix": "mm",
+          "showInList": false,
+          "listOrder": 20,
+          "detailOrder": 84,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "떼는 스트로크",
+            "en": "DetachStroke"
+          }
+        },
+        {
+          "id": "8577609c-5934-493e-867d-8e341295bd0c",
+          "dataType": "NUMBER",
+          "field": "rapidAdjustmentUnit",
+          "enName": "RapidAdjustmentUnit",
+          "koName": "래피드 조절단위",
+          "prefix": "",
+          "suffix": "mm",
+          "showInList": false,
+          "listOrder": 21,
+          "detailOrder": 85,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "래피드 조절단위",
+            "en": "RapidAdjustmentUnit"
+          }
+        },
+        {
+          "id": "7b72cf96-1a66-491b-bac5-656e330d1bf8",
+          "dataType": "ENUM",
+          "field": "housingKeyboard",
+          "enName": "Housing",
+          "koName": "하우징",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 36,
+          "detailOrder": 86,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "aluminum",
+              "enName": "Aluminum",
+              "koName": "알루미늄",
+              "autoFill": {},
+              "names": {
+                "ko": "알루미늄",
+                "en": "Aluminum"
+              }
+            },
+            {
+              "field": "custom",
+              "enName": "Custom",
+              "koName": "커스텀",
+              "autoFill": {},
+              "names": {
+                "ko": "커스텀",
+                "en": "Custom"
+              }
+            },
+            {
+              "field": "mixed",
+              "enName": "Mixed",
+              "koName": "혼합",
+              "autoFill": {},
+              "names": {
+                "ko": "혼합",
+                "en": "Mixed"
+              }
+            },
+            {
+              "field": "other",
+              "enName": "Other",
+              "koName": "기타",
+              "autoFill": {},
+              "names": {
+                "ko": "기타",
+                "en": "Other"
+              }
+            },
+            {
+              "field": "plastic",
+              "enName": "Plastic",
+              "koName": "플라스틱",
+              "autoFill": {},
+              "names": {
+                "ko": "플라스틱",
+                "en": "Plastic"
+              }
+            }
+          ],
+          "multiSelect": true,
+          "names": {
+            "ko": "하우징",
+            "en": "Housing"
+          }
+        },
+        {
+          "id": "c6f03846-190d-402f-a9f7-1afe45a68d81",
+          "dataType": "ENUM",
+          "field": "mounting",
+          "enName": "Mounting",
+          "koName": "마운트",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 23,
+          "detailOrder": 87,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "bottom",
+              "enName": "Bottom",
+              "koName": "바텀",
+              "autoFill": {},
+              "names": {
+                "ko": "바텀",
+                "en": "Bottom"
+              }
+            },
+            {
+              "field": "gasket",
+              "enName": "Gasket",
+              "koName": "가스켓",
+              "autoFill": {},
+              "names": {
+                "ko": "가스켓",
+                "en": "Gasket"
+              }
+            },
+            {
+              "field": "leafspring",
+              "enName": "Leaf-spring",
+              "koName": "리프스프링",
+              "autoFill": {},
+              "names": {
+                "ko": "리프스프링",
+                "en": "Leaf-spring"
+              }
+            },
+            {
+              "field": "oring",
+              "enName": "O-ring",
+              "koName": "거미오링",
+              "autoFill": {},
+              "names": {
+                "ko": "거미오링",
+                "en": "O-ring"
+              }
+            },
+            {
+              "field": "sandwitch",
+              "enName": "Sandwich",
+              "koName": "샌드위치",
+              "autoFill": {},
+              "names": {
+                "ko": "샌드위치",
+                "en": "Sandwich"
+              }
+            },
+            {
+              "field": "top",
+              "enName": "Top",
+              "koName": "탑",
+              "autoFill": {},
+              "names": {
+                "ko": "탑",
+                "en": "Top"
+              }
+            },
+            {
+              "field": "tray",
+              "enName": "Tray",
+              "koName": "트레이",
+              "autoFill": {},
+              "names": {
+                "ko": "트레이",
+                "en": "Tray"
+              }
+            }
+          ],
+          "multiSelect": true,
+          "names": {
+            "ko": "마운트",
+            "en": "Mounting"
+          }
+        },
+        {
+          "id": "122ef3b0-a22a-49ac-831d-7a14380eea9f",
+          "dataType": "STRING",
+          "field": "switchType",
+          "enName": "SwitchType",
+          "koName": "장착 스위치",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 24,
+          "detailOrder": 88,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "장착 스위치",
+            "en": "SwitchType"
+          }
+        },
+        {
+          "id": "11a2ee40-af1b-482f-a3d9-b6713a567674",
+          "dataType": "BOOLEAN",
+          "field": "hotswap",
+          "enName": "Hotswap",
+          "koName": "핫스왑",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 25,
+          "detailOrder": 89,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "핫스왑",
+            "en": "Hotswap"
+          }
+        },
+        {
+          "id": "9464a476-f688-447e-98f0-71ef48971aee",
+          "dataType": "ENUM",
+          "field": "connectionOption",
+          "enName": "ConnectionOption",
+          "koName": "연결타입",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 26,
+          "detailOrder": 90,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "Battery",
+              "enName": "Battery",
+              "koName": "배터리",
+              "autoFill": {},
+              "names": {
+                "ko": "배터리",
+                "en": "Battery"
+              }
+            },
+            {
+              "field": "fixedCable",
+              "enName": "Fixed Cable",
+              "koName": "고정형 케이블",
+              "autoFill": {},
+              "names": {
+                "ko": "고정형 케이블",
+                "en": "Fixed Cable"
+              }
+            },
+            {
+              "field": "ps2",
+              "enName": "PS/2",
+              "koName": "PS/2",
+              "autoFill": {},
+              "names": {
+                "ko": "PS/2",
+                "en": "PS/2"
+              }
+            },
+            {
+              "field": "usbMicroB",
+              "enName": "Micro-USB",
+              "koName": "Micro-USB",
+              "autoFill": {},
+              "names": {
+                "ko": "Micro-USB",
+                "en": "Micro-USB"
+              }
+            },
+            {
+              "field": "usbMiniB",
+              "enName": "Mini-USB",
+              "koName": "Mini-USB",
+              "autoFill": {},
+              "names": {
+                "ko": "Mini-USB",
+                "en": "Mini-USB"
+              }
+            },
+            {
+              "field": "usbTypeC",
+              "enName": "USB-C",
+              "koName": "USB-C",
+              "autoFill": {},
+              "names": {
+                "ko": "USB-C",
+                "en": "USB-C"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "연결타입",
+            "en": "ConnectionOption"
+          }
+        },
+        {
+          "id": "37a6ebc3-ad20-46c1-b6ba-c997df2f6d25",
+          "dataType": "STRING",
+          "field": "soundAbsorption",
+          "enName": "SoundAbsorption",
+          "koName": "흡음",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 27,
+          "detailOrder": 91,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "흡음",
+            "en": "SoundAbsorption"
+          }
+        },
+        {
+          "id": "1503e98f-2f6a-4248-b634-21a72e6d3b88",
+          "dataType": "STRING",
+          "field": "angleAdjustment",
+          "enName": "AngleAdjustment",
+          "koName": "각도 조절 (기본 포함)",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 28,
+          "detailOrder": 92,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "각도 조절 (기본 포함)",
+            "en": "AngleAdjustment"
+          }
+        },
+        {
+          "id": "9907a522-9cc1-4206-8b73-556382906233",
+          "dataType": "NUMBER",
+          "field": "housingFrontHeight",
+          "enName": "HousingFrontHeight",
+          "koName": "하우징 앞면높이 (mm)",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 29,
+          "detailOrder": 93,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "하우징 앞면높이 (mm)",
+            "en": "HousingFrontHeight"
+          }
+        },
+        {
+          "id": "4c868b2b-aedb-4fbf-8a85-29f088d8715a",
+          "dataType": "ENUM",
+          "field": "keycap",
+          "enName": "Keycap",
+          "koName": "키캡",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 30,
+          "detailOrder": 94,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "absDoubleShot",
+              "enName": "ABS Double-shot",
+              "koName": "ABS 이중사출",
+              "autoFill": {},
+              "names": {
+                "ko": "ABS 이중사출",
+                "en": "ABS Double-shot"
+              }
+            },
+            {
+              "field": "pbtDoubleShot",
+              "enName": "PBT Double-shot",
+              "koName": "PBT 이중사출",
+              "autoFill": {},
+              "names": {
+                "ko": "PBT 이중사출",
+                "en": "PBT Double-shot"
+              }
+            },
+            {
+              "field": "pbtDyeSub",
+              "enName": "PBT Dye-sub",
+              "koName": "PBT 염료승화",
+              "autoFill": {},
+              "names": {
+                "ko": "PBT 염료승화",
+                "en": "PBT Dye-sub"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "키캡",
+            "en": "Keycap"
+          }
+        },
+        {
+          "id": "c6fc3509-8a32-4817-bd91-df1c7bcc0be7",
+          "dataType": "ENUM",
+          "field": "stabilizer",
+          "enName": "Stabilizer",
+          "koName": "스테빌 라이저",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 31,
+          "detailOrder": 95,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "cherryPcbMount",
+              "enName": "Cherry PCB Mount",
+              "koName": "체리식 PCB 결합",
+              "autoFill": {},
+              "names": {
+                "ko": "체리식 PCB 결합",
+                "en": "Cherry PCB Mount"
+              }
+            },
+            {
+              "field": "cherryPlateMount",
+              "enName": "Cherry Plate Mount",
+              "koName": "체리식 보강판 결합",
+              "autoFill": {},
+              "names": {
+                "ko": "체리식 보강판 결합",
+                "en": "Cherry Plate Mount"
+              }
+            },
+            {
+              "field": "cherryPlatePcbMount",
+              "enName": "Cherry Plate, PCB Mount",
+              "koName": "체리식 보강판, PCB 결합",
+              "autoFill": {},
+              "names": {
+                "ko": "체리식 보강판, PCB 결합",
+                "en": "Cherry Plate, PCB Mount"
+              }
+            },
+            {
+              "field": "hybridPlateMount",
+              "enName": "Hybrid Plate Mount",
+              "koName": "하이브리드 보강판 결합",
+              "autoFill": {},
+              "names": {
+                "ko": "하이브리드 보강판 결합",
+                "en": "Hybrid Plate Mount"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "스테빌 라이저",
+            "en": "Stabilizer"
+          }
+        },
+        {
+          "id": "ef5c82a7-bddc-470d-8ed7-843ea51bc3b0",
+          "dataType": "BOOLEAN",
+          "field": "palmRest",
+          "enName": "Palmrest",
+          "koName": "팜레스트",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 32,
+          "detailOrder": 96,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "팜레스트",
+            "en": "Palmrest"
+          }
+        },
+        {
+          "id": "842d25ab-77bf-4a8d-baee-a72c7b6bc156",
+          "dataType": "ENUM",
+          "field": "mcu",
+          "enName": "MCU",
+          "koName": "MCU",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 33,
+          "detailOrder": 97,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "?",
+              "enName": "?",
+              "koName": "?",
+              "autoFill": {},
+              "names": {
+                "ko": "?",
+                "en": "?"
+              }
+            },
+            {
+              "field": "armcortex600mhz",
+              "enName": "ARM Cortex 600MHz",
+              "koName": "ARM Cortex 600MHz",
+              "autoFill": {},
+              "names": {
+                "ko": "ARM Cortex 600MHz",
+                "en": "ARM Cortex 600MHz"
+              }
+            },
+            {
+              "field": "armcortexm0",
+              "enName": "ARM Cortex M0",
+              "koName": "ARM Cortex M0",
+              "autoFill": {},
+              "names": {
+                "ko": "ARM Cortex M0",
+                "en": "ARM Cortex M0"
+              }
+            },
+            {
+              "field": "armm3mcu",
+              "enName": "ARM M3 MCU",
+              "koName": "ARM M3 MCU",
+              "autoFill": {},
+              "names": {
+                "ko": "ARM M3 MCU",
+                "en": "ARM M3 MCU"
+              }
+            },
+            {
+              "field": "atkv10h12b1g708h2523",
+              "enName": "ATK V10H12B1G708H2523",
+              "koName": "ATK V10H12B1G708H2523",
+              "autoFill": {},
+              "names": {
+                "ko": "ATK V10H12B1G708H2523",
+                "en": "ATK V10H12B1G708H2523"
+              }
+            },
+            {
+              "field": "atmel128a4uh(32m)",
+              "enName": "Atmel128A4U-H(32M)",
+              "koName": "Atmel128A4U-H(32M)",
+              "autoFill": {},
+              "names": {
+                "ko": "Atmel128A4U-H(32M)",
+                "en": "Atmel128A4U-H(32M)"
+              }
+            },
+            {
+              "field": "atmelmega32u4mu(16m)",
+              "enName": "ATMEL MEGA32U4-MU(16M)",
+              "koName": "ATMEL MEGA32U4-MU(16M)",
+              "autoFill": {},
+              "names": {
+                "ko": "ATMEL MEGA32U4-MU(16M)",
+                "en": "ATMEL MEGA32U4-MU(16M)"
+              }
+            },
+            {
+              "field": "byk916",
+              "enName": "BYK916",
+              "koName": "BYK916",
+              "autoFill": {},
+              "names": {
+                "ko": "BYK916",
+                "en": "BYK916"
+              }
+            },
+            {
+              "field": "ch32v307rct6(144m)",
+              "enName": "CH32V307 RCT6(144M)",
+              "koName": "CH32V307 RCT6(144M)",
+              "autoFill": {},
+              "names": {
+                "ko": "CH32V307 RCT6(144M)",
+                "en": "CH32V307 RCT6(144M)"
+              }
+            },
+            {
+              "field": "geehyapm32f465ret6(168m)",
+              "enName": "Geehy APM32F465RET6(168M)",
+              "koName": "Geehy APM32F465RET6(168M)",
+              "autoFill": {},
+              "names": {
+                "ko": "Geehy APM32F465RET6(168M)",
+                "en": "Geehy APM32F465RET6(168M)"
+              }
+            },
+            {
+              "field": "giadevicegd32f303cgt6(120m)",
+              "enName": "Giadevice GD32F303 CGT6(120M)",
+              "koName": "Giadevice GD32F303 CGT6(120M)",
+              "autoFill": {},
+              "names": {
+                "ko": "Giadevice GD32F303 CGT6(120M)",
+                "en": "Giadevice GD32F303 CGT6(120M)"
+              }
+            },
+            {
+              "field": "giadevicegd32f425rgtg(200mhz)",
+              "enName": "Giadevice GD32F425RGTG(200MHz)",
+              "koName": "Giadevice GD32F425RGTG(200MHz)",
+              "autoFill": {},
+              "names": {
+                "ko": "Giadevice GD32F425RGTG(200MHz)",
+                "en": "Giadevice GD32F425RGTG(200MHz)"
+              }
+            },
+            {
+              "field": "holtekht32f12365(96m)",
+              "enName": "HOLTEK HT32F12365(96M)",
+              "koName": "HOLTEK HT32F12365(96M)",
+              "autoFill": {},
+              "names": {
+                "ko": "HOLTEK HT32F12365(96M)",
+                "en": "HOLTEK HT32F12365(96M)"
+              }
+            },
+            {
+              "field": "holtekht32f52352(48m)",
+              "enName": "HOLTEK HT32F52352(48M)",
+              "koName": "HOLTEK HT32F52352(48M)",
+              "autoFill": {},
+              "names": {
+                "ko": "HOLTEK HT32F52352(48M)",
+                "en": "HOLTEK HT32F52352(48M)"
+              }
+            },
+            {
+              "field": "holtekht68fb560[8bit",
+              "enName": "HOLTEK HT68FB560 (16M 내부 / 12M 외부)",
+              "koName": "HOLTEK HT68FB560 (16M 내부 / 12M 외부)",
+              "autoFill": {},
+              "names": {
+                "ko": "HOLTEK HT68FB560 (16M 내부 / 12M 외부)",
+                "en": "HOLTEK HT68FB560 (16M 내부 / 12M 외부)"
+              }
+            },
+            {
+              "field": "nordicnrf52833(64m)",
+              "enName": "Nordic nRF52833(64M)",
+              "koName": "Nordic nRF52833(64M)",
+              "autoFill": {},
+              "names": {
+                "ko": "Nordic nRF52833(64M)",
+                "en": "Nordic nRF52833(64M)"
+              }
+            },
+            {
+              "field": "nordicnrf52840(64m)",
+              "enName": "Nordic nRF52840(64M)",
+              "koName": "Nordic nRF52840(64M)",
+              "autoFill": {},
+              "names": {
+                "ko": "Nordic nRF52840(64M)",
+                "en": "Nordic nRF52840(64M)"
+              }
+            },
+            {
+              "field": "nuc123sd4bn0[armcortexm0(72m)]",
+              "enName": "NUC123SD4BN0[ARM Cortex-M0(72M)]",
+              "koName": "NUC123SD4BN0[ARM Cortex-M0(72M)]",
+              "autoFill": {},
+              "names": {
+                "ko": "NUC123SD4BN0[ARM Cortex-M0(72M)]",
+                "en": "NUC123SD4BN0[ARM Cortex-M0(72M)]"
+              }
+            },
+            {
+              "field": "nuvotonm484s1dae2u(192m)",
+              "enName": "NUVOTON M484S1DAE2U(192M)",
+              "koName": "NUVOTON M484S1DAE2U(192M)",
+              "autoFill": {},
+              "names": {
+                "ko": "NUVOTON M484S1DAE2U(192M)",
+                "en": "NUVOTON M484S1DAE2U(192M)"
+              }
+            },
+            {
+              "field": "nuvotonm484sidae(192m)",
+              "enName": "NUVOTON M484SIDAE(192M)",
+              "koName": "NUVOTON M484SIDAE(192M)",
+              "autoFill": {},
+              "names": {
+                "ko": "NUVOTON M484SIDAE(192M)",
+                "en": "NUVOTON M484SIDAE(192M)"
+              }
+            },
+            {
+              "field": "nuvotonm484sidae2u(192m)",
+              "enName": "NUVOTON M484SIDAE2U(192M)",
+              "koName": "NUVOTON M484SIDAE2U(192M)",
+              "autoFill": {},
+              "names": {
+                "ko": "NUVOTON M484SIDAE2U(192M)",
+                "en": "NUVOTON M484SIDAE2U(192M)"
+              }
+            },
+            {
+              "field": "nuvotonnuc123sd4an0(72m)",
+              "enName": "Nuvoton NUC123SD4AN0(72M)",
+              "koName": "Nuvoton NUC123SD4AN0(72M)",
+              "autoFill": {},
+              "names": {
+                "ko": "Nuvoton NUC123SD4AN0(72M)",
+                "en": "Nuvoton NUC123SD4AN0(72M)"
+              }
+            },
+            {
+              "field": "nuvotonnuc123sd4bn0(72m)+m0518ld2ae(50m)",
+              "enName": "NUVOTON NUC123SD4BN0(72M) + M0518LD2AE(50M)",
+              "koName": "NUVOTON NUC123SD4BN0(72M) + M0518LD2AE(50M)",
+              "autoFill": {},
+              "names": {
+                "ko": "NUVOTON NUC123SD4BN0(72M) + M0518LD2AE(50M)",
+                "en": "NUVOTON NUC123SD4BN0(72M) + M0518LD2AE(50M)"
+              }
+            },
+            {
+              "field": "nuvotonnuc1261sg4ae(72m)",
+              "enName": "Nuvoton NUC1261SG4AE(72M)",
+              "koName": "Nuvoton NUC1261SG4AE(72M)",
+              "autoFill": {},
+              "names": {
+                "ko": "Nuvoton NUC1261SG4AE(72M)",
+                "en": "Nuvoton NUC1261SG4AE(72M)"
+              }
+            },
+            {
+              "field": "nxp9080(32m)",
+              "enName": "NXP 9080(32M)",
+              "koName": "NXP 9080(32M)",
+              "autoFill": {},
+              "names": {
+                "ko": "NXP 9080(32M)",
+                "en": "NXP 9080(32M)"
+              }
+            },
+            {
+              "field": "nxplpc11u37f(50m)",
+              "enName": "NXP LPC11U37F(50M)",
+              "koName": "NXP LPC11U37F(50M)",
+              "autoFill": {},
+              "names": {
+                "ko": "NXP LPC11U37F(50M)",
+                "en": "NXP LPC11U37F(50M)"
+              }
+            },
+            {
+              "field": "nxplpc11u68j(50m)",
+              "enName": "NXP LPC11U68J(50M)",
+              "koName": "NXP LPC11U68J(50M)",
+              "autoFill": {},
+              "names": {
+                "ko": "NXP LPC11U68J(50M)",
+                "en": "NXP LPC11U68J(50M)"
+              }
+            },
+            {
+              "field": "nxplpc11u68jbd100(50m)",
+              "enName": "NXP LPC11U68JBD100(50M)",
+              "koName": "NXP LPC11U68JBD100(50M)",
+              "autoFill": {},
+              "names": {
+                "ko": "NXP LPC11U68JBD100(50M)",
+                "en": "NXP LPC11U68JBD100(50M)"
+              }
+            },
+            {
+              "field": "nxplpc54605j512bd100(180m)",
+              "enName": "NXP LPC54605j512BD100(180M)",
+              "koName": "NXP LPC54605j512BD100(180M)",
+              "autoFill": {},
+              "names": {
+                "ko": "NXP LPC54605j512BD100(180M)",
+                "en": "NXP LPC54605j512BD100(180M)"
+              }
+            },
+            {
+              "field": "nxplpc5465j512bd100(220m)",
+              "enName": "NXP LPC5465J512BD100(220M)",
+              "koName": "NXP LPC5465J512BD100(220M)",
+              "autoFill": {},
+              "names": {
+                "ko": "NXP LPC5465J512BD100(220M)",
+                "en": "NXP LPC5465J512BD100(220M)"
+              }
+            },
+            {
+              "field": "nxplpc5516(150m)",
+              "enName": "NXP LPC5516(150M)",
+              "koName": "NXP LPC5516(150M)",
+              "autoFill": {},
+              "names": {
+                "ko": "NXP LPC5516(150M)",
+                "en": "NXP LPC5516(150M)"
+              }
+            },
+            {
+              "field": "nxplpc5516jbd100(150m)",
+              "enName": "NXP LPC5516JBD100(150M)",
+              "koName": "NXP LPC5516JBD100(150M)",
+              "autoFill": {},
+              "names": {
+                "ko": "NXP LPC5516JBD100(150M)",
+                "en": "NXP LPC5516JBD100(150M)"
+              }
+            },
+            {
+              "field": "nxplpc5516jbd64(150m)",
+              "enName": "NXP LPC5516JBD64(150M)",
+              "koName": "NXP LPC5516JBD64(150M)",
+              "autoFill": {},
+              "names": {
+                "ko": "NXP LPC5516JBD64(150M)",
+                "en": "NXP LPC5516JBD64(150M)"
+              }
+            },
+            {
+              "field": "nxplpc5528(150m)",
+              "enName": "NXP LPC5528(150M)",
+              "koName": "NXP LPC5528(150M)",
+              "autoFill": {},
+              "names": {
+                "ko": "NXP LPC5528(150M)",
+                "en": "NXP LPC5528(150M)"
+              }
+            },
+            {
+              "field": "nxplpc5528jbd100(150m)",
+              "enName": "NXP LPC5528JBD100(150M)",
+              "koName": "NXP LPC5528JBD100(150M)",
+              "autoFill": {},
+              "names": {
+                "ko": "NXP LPC5528JBD100(150M)",
+                "en": "NXP LPC5528JBD100(150M)"
+              }
+            },
+            {
+              "field": "razerchroma192v2727",
+              "enName": "RAZER CHROMA 192 V2727",
+              "koName": "RAZER CHROMA 192 V2727",
+              "autoFill": {},
+              "names": {
+                "ko": "RAZER CHROMA 192 V2727",
+                "en": "RAZER CHROMA 192 V2727"
+              }
+            },
+            {
+              "field": "rc30035302(72m)",
+              "enName": "RC30-035302(72M)",
+              "koName": "RC30-035302(72M)",
+              "autoFill": {},
+              "names": {
+                "ko": "RC30-035302(72M)",
+                "en": "RC30-035302(72M)"
+              }
+            },
+            {
+              "field": "riscpic32mzec(200m)",
+              "enName": "RISC PIC32MZ EC(200M)",
+              "koName": "RISC PIC32MZ EC(200M)",
+              "autoFill": {},
+              "names": {
+                "ko": "RISC PIC32MZ EC(200M)",
+                "en": "RISC PIC32MZ EC(200M)"
+              }
+            },
+            {
+              "field": "riscvch32v307rct6(144m)+ch32v2036개",
+              "enName": "RISC-V CH32V307RCT6(144M) + CH32V203 x6",
+              "koName": "RISC-V CH32V307RCT6(144M) + CH32V203 6개",
+              "autoFill": {},
+              "names": {
+                "ko": "RISC-V CH32V307RCT6(144M) + CH32V203 6개",
+                "en": "RISC-V CH32V307RCT6(144M) + CH32V203 x6"
+              }
+            },
+            {
+              "field": "riscvch32v307wcu6(144m)",
+              "enName": "RISC-V CH32V307WCU6(144M)",
+              "koName": "RISC-V CH32V307WCU6(144M)",
+              "autoFill": {},
+              "names": {
+                "ko": "RISC-V CH32V307WCU6(144M)",
+                "en": "RISC-V CH32V307WCU6(144M)"
+              }
+            },
+            {
+              "field": "ry7203n48cc2214cc",
+              "enName": "RY7203 N48C-C 2214-CC",
+              "koName": "RY7203 N48C-C 2214-CC",
+              "autoFill": {},
+              "names": {
+                "ko": "RY7203 N48C-C 2214-CC",
+                "en": "RY7203 N48C-C 2214-CC"
+              }
+            },
+            {
+              "field": "spmstm32u5a5rjt6(160m)",
+              "enName": "SPM STM32U5A5 RJT6(160M)",
+              "koName": "SPM STM32U5A5 RJT6(160M)",
+              "autoFill": {},
+              "names": {
+                "ko": "SPM STM32U5A5 RJT6(160M)",
+                "en": "SPM STM32U5A5 RJT6(160M)"
+              }
+            },
+            {
+              "field": "stm32f103rbt6(72m)",
+              "enName": "STM32F103 RBT6(72M)",
+              "koName": "STM32F103 RBT6(72M)",
+              "autoFill": {},
+              "names": {
+                "ko": "STM32F103 RBT6(72M)",
+                "en": "STM32F103 RBT6(72M)"
+              }
+            },
+            {
+              "field": "stm32f103vct6(72m)+stm32f103rct6(72m)",
+              "enName": "STM32F103 VCT6(72M) + STM32F103 RCT6(72M)",
+              "koName": "STM32F103 VCT6(72M) + STM32F103 RCT6(72M)",
+              "autoFill": {},
+              "names": {
+                "ko": "STM32F103 VCT6(72M) + STM32F103 RCT6(72M)",
+                "en": "STM32F103 VCT6(72M) + STM32F103 RCT6(72M)"
+              }
+            },
+            {
+              "field": "stm32g070cbt6(64m)+n52833(64m)",
+              "enName": "STM32G070 CBT6(64M) + N52833(64M)",
+              "koName": "STM32G070 CBT6(64M) + N52833(64M)",
+              "autoFill": {},
+              "names": {
+                "ko": "STM32G070 CBT6(64M) + N52833(64M)",
+                "en": "STM32G070 CBT6(64M) + N52833(64M)"
+              }
+            },
+            {
+              "field": "stm32l100r8t6(32m)",
+              "enName": "STM32L100 R8T6(32M)",
+              "koName": "STM32L100 R8T6(32M)",
+              "autoFill": {},
+              "names": {
+                "ko": "STM32L100 R8T6(32M)",
+                "en": "STM32L100 R8T6(32M)"
+              }
+            },
+            {
+              "field": "stm32l412rb(80m)",
+              "enName": "STM32L412RB(80M)",
+              "koName": "STM32L412RB(80M)",
+              "autoFill": {},
+              "names": {
+                "ko": "STM32L412RB(80M)",
+                "en": "STM32L412RB(80M)"
+              }
+            },
+            {
+              "field": "stm32l412rbt6(80m)",
+              "enName": "STM32L412 RBT6(80M)",
+              "koName": "STM32L412 RBT6(80M)",
+              "autoFill": {},
+              "names": {
+                "ko": "STM32L412 RBT6(80M)",
+                "en": "STM32L412 RBT6(80M)"
+              }
+            },
+            {
+              "field": "stm32l4p5rgt6(120m)",
+              "enName": "STM32L4P5 RGT6(120M)",
+              "koName": "STM32L4P5 RGT6(120M)",
+              "autoFill": {},
+              "names": {
+                "ko": "STM32L4P5 RGT6(120M)",
+                "en": "STM32L4P5 RGT6(120M)"
+              }
+            },
+            {
+              "field": "stm32u595rit6(160mhz)",
+              "enName": "STM32U595RIT6 (160MHz)",
+              "koName": "STM32U595RIT6 (160MHz)",
+              "autoFill": {},
+              "names": {
+                "ko": "STM32U595RIT6 (160MHz)",
+                "en": "STM32U595RIT6 (160MHz)"
+              }
+            },
+            {
+              "field": "vgndrm32f100(ep5889)",
+              "enName": "VGN DRM32F100(ep5889)",
+              "koName": "VGN DRM32F100(ep5889)",
+              "autoFill": {},
+              "names": {
+                "ko": "VGN DRM32F100(ep5889)",
+                "en": "VGN DRM32F100(ep5889)"
+              }
+            },
+            {
+              "field": "visionvs11k09a1(48m)",
+              "enName": "VISION VS11K09A-1(48M)",
+              "koName": "VISION VS11K09A-1(48M)",
+              "autoFill": {},
+              "names": {
+                "ko": "VISION VS11K09A-1(48M)",
+                "en": "VISION VS11K09A-1(48M)"
+              }
+            },
+            {
+              "field": "visionvs11k17a(48m)",
+              "enName": "Vision VS11K17A(48M)",
+              "koName": "Vision VS11K17A(48M)",
+              "autoFill": {},
+              "names": {
+                "ko": "Vision VS11K17A(48M)",
+                "en": "Vision VS11K17A(48M)"
+              }
+            },
+            {
+              "field": "wchch32v307(144m)",
+              "enName": "WCH CH32V307(144M)",
+              "koName": "WCH CH32V307(144M)",
+              "autoFill": {},
+              "names": {
+                "ko": "WCH CH32V307(144M)",
+                "en": "WCH CH32V307(144M)"
+              }
+            },
+            {
+              "field": "wchicch32v305(144m)",
+              "enName": "WCH-IC CH32V305(144M)",
+              "koName": "WCH-IC CH32V305(144M)",
+              "autoFill": {},
+              "names": {
+                "ko": "WCH-IC CH32V305(144M)",
+                "en": "WCH-IC CH32V305(144M)"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "MCU",
+            "en": "MCU"
+          }
+        }
+      ],
+      "bench": [
+        {
+          "id": "7e1d0f3f-4ef6-4ed7-b73d-442f1c067a0e",
+          "dataType": "NUMBER",
+          "field": "strokeErrorRate",
+          "enName": "Stroke Error",
+          "koName": "스트로크 오차율",
+          "prefix": null,
+          "suffix": "%",
+          "showInList": true,
+          "listOrder": 44,
+          "detailOrder": 0,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": 2,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "스트로크 오차율",
+            "en": "Stroke Error"
+          }
+        },
+        {
+          "id": "2a8a90fc-d799-4fe6-b566-81d1d338d441",
+          "dataType": "NUMBER",
+          "field": "emWPrRtAvgD0",
+          "enName": "Electromagnet response time mean[wired, press]",
+          "koName": "전자석 응답시간 평균[유선, 누름]",
+          "prefix": null,
+          "suffix": "ms",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 0,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": "raw.stats.clickResponse.profiles.electromagnet.wired.ms0.press.avg",
+          "hasComma": false,
+          "decimalPlaces": 2,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "전자석 응답시간 평균[유선, 누름]",
+            "en": "Electromagnet response time mean[wired, press]"
+          }
+        },
+        {
+          "id": "7260d8c0-363b-4a2f-acbf-0f5286b30c44",
+          "dataType": "NUMBER",
+          "field": "emWRlRtAvgD0",
+          "enName": "Electromagnet response time mean[wired, release]",
+          "koName": "전자석 응답시간 평균[유선, 뗌]",
+          "prefix": null,
+          "suffix": "ms",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 0,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": "raw.stats.clickResponse.profiles.electromagnet.wired.ms0.release.avg",
+          "hasComma": false,
+          "decimalPlaces": 2,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "전자석 응답시간 평균[유선, 뗌]",
+            "en": "Electromagnet response time mean[wired, release]"
+          }
+        },
+        {
+          "id": "1beebc7b-16e1-4f9c-bc85-eb819e905fee",
+          "dataType": "NUMBER",
+          "field": "emWPrRtSdD0",
+          "enName": "Electromagnet response time std dev[wired, press]",
+          "koName": "전자석 응답시간 표준편차[유선, 누름]",
+          "prefix": null,
+          "suffix": "ms",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 0,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": "raw.stats.clickResponse.profiles.electromagnet.wired.ms0.press.stdDev",
+          "hasComma": false,
+          "decimalPlaces": 2,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "전자석 응답시간 표준편차[유선, 누름]",
+            "en": "Electromagnet response time std dev[wired, press]"
+          }
+        },
+        {
+          "id": "76e3547d-bcca-4bcc-b747-2079b1af449b",
+          "dataType": "NUMBER",
+          "field": "emWRlRtSdD0",
+          "enName": "Electromagnet response time std dev[wired, release]",
+          "koName": "전자석 응답시간 표준편차[유선, 뗌]",
+          "prefix": null,
+          "suffix": "ms",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 0,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": "raw.stats.clickResponse.profiles.electromagnet.wired.ms0.release.stdDev",
+          "hasComma": false,
+          "decimalPlaces": 2,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "전자석 응답시간 표준편차[유선, 뗌]",
+            "en": "Electromagnet response time std dev[wired, release]"
+          }
+        },
+        {
+          "id": "a0556437-78a9-4f2b-aab2-66339d72e0b5",
+          "dataType": "NUMBER",
+          "field": "emWRealPerfD0",
+          "enName": "Electromagnet real performance",
+          "koName": "전자석 실성능",
+          "prefix": null,
+          "suffix": "Hz",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 0,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": "raw.stats.clickResponse.profiles.electromagnet.wired.ms0.combinedHz",
+          "hasComma": false,
+          "decimalPlaces": 0,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "전자석 실성능",
+            "en": "Electromagnet real performance"
+          }
+        },
+        {
+          "id": "339cc1f2-17b3-4cfc-8ac1-6b4bf590fd07",
+          "dataType": "NUMBER",
+          "field": "solWPrRtAvg",
+          "enName": "Solenoid response time mean[wired, press]",
+          "koName": "솔레노이드 응답시간 평균[유선, 누름]",
+          "prefix": null,
+          "suffix": "ms",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 0,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": false,
+          "decimalPlaces": 2,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "솔레노이드 응답시간 평균[유선, 누름]",
+            "en": "Solenoid response time mean[wired, press]"
+          }
+        },
+        {
+          "id": "5bb87f8a-cafd-448c-8650-51225e20161d",
+          "dataType": "NUMBER",
+          "field": "solWPrRtSd",
+          "enName": "Solenoid response time std dev[wired, press]",
+          "koName": "솔레노이드 응답시간 표준편차[유선, 누름]",
+          "prefix": null,
+          "suffix": "ms",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 0,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": false,
+          "decimalPlaces": 2,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "솔레노이드 응답시간 표준편차[유선, 누름]",
+            "en": "Solenoid response time std dev[wired, press]"
+          }
+        },
+        {
+          "id": "944732b7-e8c5-4109-982b-ba8f749bd6e1",
+          "dataType": "NUMBER",
+          "field": "solWRealPerf",
+          "enName": "Solenoid real performance",
+          "koName": "솔레노이드 실성능",
+          "prefix": null,
+          "suffix": "Hz",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 0,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": false,
+          "decimalPlaces": 0,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "솔레노이드 실성능",
+            "en": "Solenoid real performance"
+          }
+        },
+        {
+          "id": "c41f8a8f-07dc-4ad0-a68b-da0200406ee8",
+          "dataType": "NUMBER",
+          "field": "overallResponseSpeed",
+          "enName": "Overall Resp",
+          "koName": "종합 응답속도",
+          "prefix": "",
+          "suffix": "ms",
+          "showInList": true,
+          "listOrder": 37,
+          "detailOrder": 98,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": 2,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "종합 응답속도",
+            "en": "Overall Resp"
+          }
+        },
+        {
+          "id": "1f0081fd-e7f2-4621-802c-54d8abcbec2b",
+          "dataType": "NUMBER",
+          "field": "overallStddev",
+          "enName": "Overall Std dev",
+          "koName": "종합 표준편차",
+          "prefix": "",
+          "suffix": "ms",
+          "showInList": true,
+          "listOrder": 38,
+          "detailOrder": 99,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": 2,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "종합 표준편차",
+            "en": "Overall Std dev"
+          }
+        },
+        {
+          "id": "bb78d7be-8025-4d41-b555-18e8680afe4d",
+          "dataType": "NUMBER",
+          "field": "realPerformance",
+          "enName": "Actual Performance",
+          "koName": "실성능",
+          "prefix": "",
+          "suffix": "Hz",
+          "showInList": true,
+          "listOrder": 39,
+          "detailOrder": 100,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "실성능",
+            "en": "Actual Performance"
+          }
+        },
+        {
+          "id": "01e13008-973b-4de7-acf5-5d61c6368bdb",
+          "dataType": "BOOLEAN",
+          "field": "multiKeyDelay",
+          "enName": "MultiKeyDelay",
+          "koName": "동시입력 딜레이",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 38,
+          "detailOrder": 101,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "동시입력 딜레이",
+            "en": "MultiKeyDelay"
+          }
+        },
+        {
+          "id": "80cd7086-0374-427a-8bac-8c3ab0e5b8b3",
+          "dataType": "ENUM",
+          "field": "effectiveUpdateRate",
+          "enName": "Effective Hz",
+          "koName": "유효 폴링레이트",
+          "prefix": "",
+          "suffix": "Hz",
+          "showInList": true,
+          "listOrder": 40,
+          "detailOrder": 102,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "1000",
+              "enName": "1000",
+              "koName": "1000",
+              "autoFill": {},
+              "names": {
+                "ko": "1000",
+                "en": "1000"
+              }
+            },
+            {
+              "field": "125",
+              "enName": "125",
+              "koName": "125",
+              "autoFill": {},
+              "names": {
+                "ko": "125",
+                "en": "125"
+              }
+            },
+            {
+              "field": "1333",
+              "enName": "1333",
+              "koName": "1333",
+              "autoFill": {},
+              "names": {
+                "ko": "1333",
+                "en": "1333"
+              }
+            },
+            {
+              "field": "1600",
+              "enName": "1600",
+              "koName": "1600",
+              "autoFill": {},
+              "names": {
+                "ko": "1600",
+                "en": "1600"
+              }
+            },
+            {
+              "field": "2000",
+              "enName": "2000",
+              "koName": "2000",
+              "autoFill": {},
+              "names": {
+                "ko": "2000",
+                "en": "2000"
+              }
+            },
+            {
+              "field": "250",
+              "enName": "250",
+              "koName": "250",
+              "autoFill": {},
+              "names": {
+                "ko": "250",
+                "en": "250"
+              }
+            },
+            {
+              "field": "2666",
+              "enName": "2666",
+              "koName": "2666",
+              "autoFill": {},
+              "names": {
+                "ko": "2666",
+                "en": "2666"
+              }
+            },
+            {
+              "field": "4000",
+              "enName": "4000",
+              "koName": "4000",
+              "autoFill": {},
+              "names": {
+                "ko": "4000",
+                "en": "4000"
+              }
+            },
+            {
+              "field": "500",
+              "enName": "500",
+              "koName": "500",
+              "autoFill": {},
+              "names": {
+                "ko": "500",
+                "en": "500"
+              }
+            },
+            {
+              "field": "8000",
+              "enName": "8000",
+              "koName": "8000",
+              "autoFill": {},
+              "names": {
+                "ko": "8000",
+                "en": "8000"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "유효 폴링레이트",
+            "en": "Effective Hz"
+          }
+        },
+        {
+          "id": "7f4bc73b-c17a-4404-b787-8aa26dc5e3e7",
+          "dataType": "NUMBER",
+          "field": "key6PressResponseTime",
+          "enName": "6key response time(press)",
+          "koName": "6키 응답속도(누르는)",
+          "prefix": "",
+          "suffix": "ms",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 103,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": 2,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "6키 응답속도(누르는)",
+            "en": "6key response time(press)"
+          }
+        },
+        {
+          "id": "f95faf89-21ed-4d69-91e5-dbf884b8ee37",
+          "dataType": "NUMBER",
+          "field": "key6PressStandardDeviation",
+          "enName": "6key standard deviation(Press)",
+          "koName": "6키 표준편차(누르는)",
+          "prefix": "",
+          "suffix": "ms",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 104,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": 2,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "6키 표준편차(누르는)",
+            "en": "6key standard deviation(Press)"
+          }
+        },
+        {
+          "id": "60d89811-d8b2-4366-b2dc-fc44fc8936ef",
+          "dataType": "NUMBER",
+          "field": "key6PullResponseTime",
+          "enName": "6-key response time(Pull)",
+          "koName": "6키 응답속도(떼는)",
+          "prefix": "",
+          "suffix": "ms",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 105,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": 2,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "6키 응답속도(떼는)",
+            "en": "6-key response time(Pull)"
+          }
+        },
+        {
+          "id": "d4d1dc83-753c-4ecf-9288-474e04ae04e7",
+          "dataType": "NUMBER",
+          "field": "key6PullStandardDeviation",
+          "enName": "6key standard deviation(Pull)",
+          "koName": "6키 표준편차(떼는)",
+          "prefix": "",
+          "suffix": "ms",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 106,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": 2,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "6키 표준편차(떼는)",
+            "en": "6key standard deviation(Pull)"
+          }
+        },
+        {
+          "id": "ebe65465-17df-4a7f-b760-7fdf35e5014a",
+          "dataType": "NUMBER",
+          "field": "key10PressResponseTime",
+          "enName": "10key response time(Press)",
+          "koName": "10키 응답속도(누르는)",
+          "prefix": "",
+          "suffix": "ms",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 107,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": false,
+          "decimalPlaces": 2,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "10키 응답속도(누르는)",
+            "en": "10key response time(Press)"
+          }
+        },
+        {
+          "id": "472c63d2-461a-4669-8aa4-15b177eaea9d",
+          "dataType": "NUMBER",
+          "field": "key10PressStandardDeviation",
+          "enName": "10key standard deviation(Press)",
+          "koName": "10키 표준편차(누르는)",
+          "prefix": "",
+          "suffix": "ms",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 108,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": false,
+          "decimalPlaces": 2,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "10키 표준편차(누르는)",
+            "en": "10key standard deviation(Press)"
+          }
+        },
+        {
+          "id": "a02f4f38-5baa-4e75-b3a7-c4badbe6a47b",
+          "dataType": "NUMBER",
+          "field": "key10ResponseTime",
+          "enName": "10key response time(Pull)",
+          "koName": "10키 응답속도(떼는)",
+          "prefix": "",
+          "suffix": "ms",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 109,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": 2,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "10키 응답속도(떼는)",
+            "en": "10key response time(Pull)"
+          }
+        },
+        {
+          "id": "83583856-11bd-4f96-a57e-a82f4d987773",
+          "dataType": "NUMBER",
+          "field": "key10PullStandardDeviation",
+          "enName": "10key standard deviation(Pull)",
+          "koName": "10키 표준편차(떼는)",
+          "prefix": "",
+          "suffix": "ms",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 110,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": 2,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "10키 표준편차(떼는)",
+            "en": "10key standard deviation(Pull)"
+          }
+        },
+        {
+          "id": "60916aea-f3d9-4c2c-8583-125ee4a9d941",
+          "dataType": "NUMBER",
+          "field": "strokeMeasured",
+          "enName": "Minimum input Stroke",
+          "koName": "최저 입력지점",
+          "prefix": "",
+          "suffix": "mm",
+          "showInList": true,
+          "listOrder": 41,
+          "detailOrder": 111,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": 2,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "최저 입력지점",
+            "en": "Minimum input Stroke"
+          }
+        },
+        {
+          "id": "7f9f6cef-2e0f-4412-806c-77c6fe3f4eec",
+          "dataType": "NUMBER",
+          "field": "strokeMeasuredStddev",
+          "enName": "Minimum Input Stroke StdDev",
+          "koName": "최저 입력지점 편차",
+          "prefix": "",
+          "suffix": "mm",
+          "showInList": true,
+          "listOrder": 41,
+          "detailOrder": 111,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": 2,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "최저 입력지점 편차",
+            "en": "Minimum Input Stroke StdDev"
+          }
+        },
+        {
+          "id": "eef22bf3-0817-4980-a63f-aae38266da65",
+          "dataType": "NUMBER",
+          "field": "bottomDeadzone",
+          "enName": "Bottom dead zone",
+          "koName": "하단 데드존",
+          "prefix": "",
+          "suffix": "mm",
+          "showInList": true,
+          "listOrder": 42,
+          "detailOrder": 112,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": 2,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "하단 데드존",
+            "en": "Bottom dead zone"
+          }
+        },
+        {
+          "id": "f952dbc6-c178-4be6-9320-ded462747dc3",
+          "dataType": "NUMBER",
+          "field": "detachStrokeMeasured",
+          "enName": "DetachStrokeMeasured",
+          "koName": "떼는 스트로크 (측정)",
+          "prefix": "",
+          "suffix": "mm",
+          "showInList": false,
+          "listOrder": 13,
+          "detailOrder": 113,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "떼는 스트로크 (측정)",
+            "en": "DetachStrokeMeasured"
+          }
+        },
+        {
+          "id": "270ec3a1-20d0-41f8-a281-7cfe98f79571",
+          "dataType": "NUMBER",
+          "field": "midInputMeasured",
+          "enName": "MidInputMeasured",
+          "koName": "중간 입력 (측정)",
+          "prefix": "",
+          "suffix": "mm",
+          "showInList": false,
+          "listOrder": 14,
+          "detailOrder": 114,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "중간 입력 (측정)",
+            "en": "MidInputMeasured"
+          }
+        },
+        {
+          "id": "9bcfe40f-6cb9-470e-aef5-be050f19c8ae",
+          "dataType": "NUMBER",
+          "field": "initialDetach",
+          "enName": "InitialDetach",
+          "koName": "초기 뗌",
+          "prefix": "",
+          "suffix": "mm",
+          "showInList": false,
+          "listOrder": 12,
+          "detailOrder": 115,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "초기 뗌",
+            "en": "InitialDetach"
+          }
+        },
+        {
+          "id": "eb3970ae-3d25-4b8d-947a-1c0938be21b9",
+          "dataType": "NUMBER",
+          "field": "bottomDeadzoneStddev",
+          "enName": "Bottom Deadzone Stddev",
+          "koName": "하단 데드존 편차",
+          "prefix": "",
+          "suffix": "mm",
+          "showInList": true,
+          "listOrder": 43,
+          "detailOrder": 116,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": 2,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "하단 데드존 편차",
+            "en": "Bottom Deadzone Stddev"
+          }
+        },
+        {
+          "id": "f05b78f4-34e5-4b4a-9d2e-88ad4aee7c90",
+          "dataType": "NUMBER",
+          "field": "debounceTime",
+          "enName": "DebounceTime",
+          "koName": "디바운스 타임",
+          "prefix": "",
+          "suffix": "ms",
+          "showInList": false,
+          "listOrder": 17,
+          "detailOrder": 117,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "디바운스 타임",
+            "en": "DebounceTime"
+          }
+        },
+        {
+          "id": "c07640bd-c0dd-43c1-a867-8c030adbd5fa",
+          "dataType": "BOOLEAN",
+          "field": "keyGhosting",
+          "enName": "KeyGhosting",
+          "koName": "키씹힘",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 18,
+          "detailOrder": 118,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "키씹힘",
+            "en": "KeyGhosting"
+          }
+        },
+        {
+          "id": "26cc1fda-ed1e-43c8-8569-171643135a68",
+          "dataType": "BOOLEAN",
+          "field": "simultaneousInput",
+          "enName": "SimultaneousInput",
+          "koName": "동시입력",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 19,
+          "detailOrder": 119,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "동시입력",
+            "en": "SimultaneousInput"
+          }
+        },
+        {
+          "id": "8f3867da-e1c6-491a-8a4c-52ae0174442a",
+          "dataType": "STRING",
+          "field": "housingReverb",
+          "enName": "HousingReverb",
+          "koName": "하우징 통울림",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 21,
+          "detailOrder": 124,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "하우징 통울림",
+            "en": "HousingReverb"
+          }
+        },
+        {
+          "id": "47502c02-92d9-4e97-bedf-ef66e3c16a6f",
+          "dataType": "STRING",
+          "field": "stabilizerWireNoise",
+          "enName": "StabilizerWireNoise",
+          "koName": "스테빌 철심소리",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 22,
+          "detailOrder": 125,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "스테빌 철심소리",
+            "en": "StabilizerWireNoise"
+          }
+        },
+        {
+          "id": "979a60ae-a8b5-4784-99aa-fe16f05da8da",
+          "dataType": "STRING",
+          "field": "keyFeel",
+          "enName": "KeyFeel",
+          "koName": "키감",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 23,
+          "detailOrder": 126,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "키감",
+            "en": "KeyFeel"
+          }
+        },
+        {
+          "id": "de4632ba-6f3b-4846-a739-8d5db32eefec",
+          "dataType": "NUMBER",
+          "field": "keyboardPcbAvgWired",
+          "enName": "PcbAvgWired",
+          "koName": "기판 평균 응답속도 (누르는)",
+          "prefix": "",
+          "suffix": "ms",
+          "showInList": false,
+          "listOrder": 27,
+          "detailOrder": 127,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": 2,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "기판 평균 응답속도 (누르는)",
+            "en": "PcbAvgWired"
+          }
+        },
+        {
+          "id": "53d1e9ca-a895-47f0-a880-fe2111665a00",
+          "dataType": "NUMBER",
+          "field": "stddevWired",
+          "enName": "StddevWired",
+          "koName": "표준편차 (유선)",
+          "prefix": "",
+          "suffix": "ms",
+          "showInList": false,
+          "listOrder": 3,
+          "detailOrder": 128,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": 2,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "표준편차 (유선)",
+            "en": "StddevWired"
+          }
+        },
+        {
+          "id": "77a32d65-f35c-44a9-a01e-dec6864d2fb8",
+          "dataType": "NUMBER",
+          "field": "pcbAvgDetach",
+          "enName": "PcbAvgDetach",
+          "koName": "기판 평균 응답속도 (떼는)",
+          "prefix": "",
+          "suffix": "ms",
+          "showInList": false,
+          "listOrder": 4,
+          "detailOrder": 129,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": 2,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "기판 평균 응답속도 (떼는)",
+            "en": "PcbAvgDetach"
+          }
+        },
+        {
+          "id": "0453759c-34a9-40f3-a891-e59b02f62747",
+          "dataType": "NUMBER",
+          "field": "stddevDetach",
+          "enName": "StddevDetach",
+          "koName": "표준편차 (떼는)",
+          "prefix": "",
+          "suffix": "ms",
+          "showInList": false,
+          "listOrder": 5,
+          "detailOrder": 130,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": 2,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "표준편차 (떼는)",
+            "en": "StddevDetach"
+          }
+        },
+        {
+          "id": "325b4a58-f646-45fd-b30c-57420ca58856",
+          "dataType": "NUMBER",
+          "field": "keyboardPcbAvgWireless",
+          "enName": "PcbAvgWireless",
+          "koName": "기판 평균 응답속도(누르는)",
+          "prefix": "",
+          "suffix": "ms",
+          "showInList": false,
+          "listOrder": 24,
+          "detailOrder": 131,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": 2,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "기판 평균 응답속도(누르는)",
+            "en": "PcbAvgWireless"
+          }
+        },
+        {
+          "id": "56603745-0187-4c98-a85a-2fd5560a02f6",
+          "dataType": "NUMBER",
+          "field": "stddevWireless",
+          "enName": "StddevWireless",
+          "koName": "표준편차 (무선)",
+          "prefix": "",
+          "suffix": "ms",
+          "showInList": false,
+          "listOrder": 25,
+          "detailOrder": 132,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": 2,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "표준편차 (무선)",
+            "en": "StddevWireless"
+          }
+        },
+        {
+          "id": "24579ccc-dc82-4951-a050-b062f12c0e3c",
+          "dataType": "NUMBER",
+          "field": "keyboardDetachAvgWireless",
+          "enName": "DetachAvgWireless",
+          "koName": "기판 평균 응답속도 (떼는)",
+          "prefix": "",
+          "suffix": "ms",
+          "showInList": false,
+          "listOrder": 26,
+          "detailOrder": 133,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": 2,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "기판 평균 응답속도 (떼는)",
+            "en": "DetachAvgWireless"
+          }
+        },
+        {
+          "id": "a7645c3b-6d94-4cb8-9dba-ae30cf7995d5",
+          "dataType": "NUMBER",
+          "field": "keyboardDetachStddevWireless",
+          "enName": "DetachStddevWireless",
+          "koName": "떼는 편차 (무선)",
+          "prefix": "",
+          "suffix": "ms",
+          "showInList": false,
+          "listOrder": 27,
+          "detailOrder": 134,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": 2,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "떼는 편차 (무선)",
+            "en": "DetachStddevWireless"
+          }
+        },
+        {
+          "id": "16b94451-02a5-44c4-9269-5c659a79de4e",
+          "dataType": "NUMBER",
+          "field": "realPerformanceWireless",
+          "enName": "RealPerformanceWireless",
+          "koName": "실성능 (무선)",
+          "prefix": "",
+          "suffix": "Hz",
+          "showInList": false,
+          "listOrder": 28,
+          "detailOrder": 135,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "실성능 (무선)",
+            "en": "RealPerformanceWireless"
+          }
+        },
+        {
+          "id": "158a0507-9036-4931-acae-0a86ccaf0a69",
+          "dataType": "NUMBER",
+          "field": "pollingrateWireless",
+          "enName": "PollingrateWireless",
+          "koName": "폴링레이트 (무선)",
+          "prefix": "",
+          "suffix": "Hz",
+          "showInList": false,
+          "listOrder": 30,
+          "detailOrder": 136,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "폴링레이트 (무선)",
+            "en": "PollingrateWireless"
+          }
+        },
+        {
+          "id": "9706fc53-30e7-48aa-abf9-3e623fcb75e6",
+          "dataType": "STRING",
+          "field": "rolloverWireless",
+          "enName": "RolloverWireless",
+          "koName": "동시치기 (무선)",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 29,
+          "detailOrder": 137,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "동시치기 (무선)",
+            "en": "RolloverWireless"
+          }
+        },
+        {
+          "id": "c743271e-2a46-4949-b1d2-3d6965cbf5ce",
+          "dataType": "NUMBER",
+          "field": "bluetoothAvg",
+          "enName": "BluetoothAvg",
+          "koName": "블루투스 평균",
+          "prefix": "",
+          "suffix": "ms",
+          "showInList": false,
+          "listOrder": 31,
+          "detailOrder": 138,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": 2,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "블루투스 평균",
+            "en": "BluetoothAvg"
+          }
+        },
+        {
+          "id": "6c722435-5392-446b-acb0-c6770e74119c",
+          "dataType": "NUMBER",
+          "field": "bluetoothStddev",
+          "enName": "BluetoothStddev",
+          "koName": "블투 표준편차",
+          "prefix": "",
+          "suffix": "ms",
+          "showInList": false,
+          "listOrder": 32,
+          "detailOrder": 139,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": 2,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "블투 표준편차",
+            "en": "BluetoothStddev"
+          }
+        }
+      ]
+    },
+    "fieldGroups": {
+      "common": [
+        {
+          "id": "basic_product",
+          "koName": "기본 제품 정보",
+          "enName": null,
+          "names": {},
+          "order": 1,
+          "type": null,
+          "fieldIds": [
+            "d3713a36-85d6-4107-94b3-e33f581cbacd",
+            "__system:overall_rating__",
+            "f790df98-e3a4-4d91-b091-2104c0e3e815",
+            "a7c1ceef-0ac0-4133-aec2-0ba53107b306",
+            "d089bb4b-c935-434e-8607-1df473f50ced",
+            "fa336b12-6b23-4e36-8a10-eeaf03547104",
+            "c95edff9-a285-4554-a796-394f53f2f02a",
+            "13ad32a3-7028-4841-bb0a-5045ae488a09",
+            "85c761c8-41fe-42b2-ae31-63c63e8d3921",
+            "c62da328-85aa-46db-ab92-50e0e5ed2411"
+          ],
+          "subGroups": null,
+          "additionalFields": null
+        },
+        {
+          "id": "purchase",
+          "koName": "구매 정보",
+          "enName": null,
+          "names": {},
+          "order": 2,
+          "type": null,
+          "fieldIds": [
+            "e537ac0b-f39c-4800-9b4e-53130d02dfb3",
+            "2d0b566e-fa58-42f4-a7d7-80c94f38fecb",
+            "e1d84163-20c9-4ecb-95fc-793bfb2c9d71",
+            "a61ae634-0251-437c-933e-dd49522465f7"
+          ],
+          "subGroups": null,
+          "additionalFields": null
+        },
+        {
+          "id": "dates",
+          "koName": "날짜 정보",
+          "enName": null,
+          "names": {},
+          "order": 3,
+          "type": null,
+          "fieldIds": [
+            "9db61dbd-15b2-4fcc-bee8-1fc64b74374b",
+            "1a8848c0-053c-4c5a-bfd9-377d32ecc79f",
+            "774a633f-e245-470c-9cbc-00cc537ea985",
+            "2937e309-2712-40f4-8e48-56534c8e0237"
+          ],
+          "subGroups": null,
+          "additionalFields": null
+        }
+      ],
+      "spec": [
+        {
+          "id": "connection_spec",
+          "koName": "연결 방식",
+          "enName": "Connection",
+          "names": {},
+          "order": 0,
+          "type": null,
+          "fieldIds": [
+            "ea2214e8-8e8a-4f9e-97eb-f326e084ed3a",
+            "9464a476-f688-447e-98f0-71ef48971aee",
+            "683c0391-d602-48cc-bc4e-2cb481a4f8eb"
+          ],
+          "subGroups": null,
+          "additionalFields": null
+        },
+        {
+          "id": "switch_input_tech",
+          "koName": "스위치 및 입력 기술",
+          "enName": "Switch & Input Tech",
+          "names": {},
+          "order": 1,
+          "type": null,
+          "fieldIds": [
+            "84f33a49-0e49-4515-a08b-82ba64ed4d4d",
+            "57d773e3-af51-48ac-bb5e-3f35cd238a3d",
+            "14ae50d9-e857-41b8-98a0-2300f8b8bc52",
+            "122ef3b0-a22a-49ac-831d-7a14380eea9f",
+            "11a2ee40-af1b-482f-a3d9-b6713a567674",
+            "4a4b7147-3866-4d3b-ad59-3d6cd85e590b",
+            "a608eaf0-5c92-4994-8b22-701e4c6b3bb5",
+            "0e4d9c6c-7dfa-46af-a40b-cad755659249",
+            "e668d35a-4017-4a25-ba75-3365315fc529",
+            "8577609c-5934-493e-867d-8e341295bd0c"
+          ],
+          "subGroups": null,
+          "additionalFields": null
+        },
+        {
+          "id": "software_features",
+          "koName": "소프트웨어 기능",
+          "enName": "Software Features",
+          "names": {},
+          "order": 2,
+          "type": null,
+          "fieldIds": [
+            "54657d05-73da-4977-83e2-ba240a6c8707",
+            "da78f1fb-ef8a-489d-a203-1540d7a60d5b",
+            "0cb0c10a-7243-49b7-9200-eb74f8dce28b",
+            "4a3577c2-7f07-4bbd-bc0c-a860780da66d",
+            "410355a7-8bd8-4235-9485-856e1e19fb02",
+            "42862782-4257-45fa-a014-05c947076005",
+            "64eaa190-45e1-43b9-a0b5-bcb43accb375",
+            "7bf4edd4-c8c3-413e-8ed7-408244155455",
+            "0a87fcfe-6f3d-4a96-a5b1-51bdbb639f8d"
+          ],
+          "subGroups": null,
+          "additionalFields": null
+        },
+        {
+          "id": "structure_material",
+          "koName": "구조 및 재질",
+          "enName": "Structure & Materials",
+          "names": {},
+          "order": 3,
+          "type": null,
+          "fieldIds": [
+            "9a54f94b-9dbc-4c97-9c8a-96da7f857b89",
+            "7b72cf96-1a66-491b-bac5-656e330d1bf8",
+            "4c868b2b-aedb-4fbf-8a85-29f088d8715a",
+            "fbeb605d-6908-4438-962b-917863d2c8db",
+            "c6fc3509-8a32-4817-bd91-df1c7bcc0be7",
+            "c6f03846-190d-402f-a9f7-1afe45a68d81",
+            "37a6ebc3-ad20-46c1-b6ba-c997df2f6d25"
+          ],
+          "subGroups": null,
+          "additionalFields": null
+        },
+        {
+          "id": "design_convenience",
+          "koName": "디자인 및 편의성",
+          "enName": "Design & Convenience",
+          "names": {},
+          "order": 4,
+          "type": null,
+          "fieldIds": [
+            "b90f9854-961c-4474-bc8f-11da35082c73",
+            "9907a522-9cc1-4206-8b73-556382906233",
+            "1503e98f-2f6a-4248-b634-21a72e6d3b88",
+            "ef5c82a7-bddc-470d-8ed7-843ea51bc3b0"
+          ],
+          "subGroups": null,
+          "additionalFields": null
+        }
+      ],
+      "bench": [
+        {
+          "id": "overall_performance",
+          "koName": "종합 성능 지표",
+          "enName": "Overall Performance",
+          "names": {},
+          "order": 0,
+          "type": "composite",
+          "fieldIds": null,
+          "subGroups": [
+            {
+              "fieldIds": [
+                "c41f8a8f-07dc-4ad0-a68b-da0200406ee8",
+                "1f0081fd-e7f2-4621-802c-54d8abcbec2b"
+              ],
+              "formatKey": "sigmaMs",
+              "useColoredFormat": true
+            }
+          ],
+          "additionalFields": [
+            "bb78d7be-8025-4d41-b555-18e8680afe4d",
+            "01e13008-973b-4de7-acf5-5d61c6368bdb",
+            "80cd7086-0374-427a-8bac-8c3ab0e5b8b3"
+          ]
+        },
+        {
+          "id": "switch_characteristics",
+          "koName": "스위치 작동 특성",
+          "enName": "Switch Characteristics",
+          "names": {},
+          "order": 1,
+          "type": "composite",
+          "fieldIds": null,
+          "subGroups": [
+            {
+              "fieldIds": [
+                "60916aea-f3d9-4c2c-8583-125ee4a9d941",
+                "7f9f6cef-2e0f-4412-806c-77c6fe3f4eec"
+              ],
+              "formatKey": "sigmaMs",
+              "useColoredFormat": true
+            },
+            {
+              "fieldIds": [
+                "eef22bf3-0817-4980-a63f-aae38266da65",
+                "eb3970ae-3d25-4b8d-947a-1c0938be21b9"
+              ],
+              "formatKey": "sigmaMs",
+              "useColoredFormat": true
+            }
+          ],
+          "additionalFields": [
+            "7e1d0f3f-4ef6-4ed7-b73d-442f1c067a0e",
+            "9bcfe40f-6cb9-470e-aef5-be050f19c8ae",
+            "f952dbc6-c178-4be6-9320-ded462747dc3",
+            "270ec3a1-20d0-41f8-a281-7cfe98f79571"
+          ]
+        },
+        {
+          "id": "wired_performance",
+          "koName": "유선 성능",
+          "enName": "Wired Performance",
+          "names": {},
+          "order": 2,
+          "type": "composite",
+          "fieldIds": null,
+          "subGroups": [
+            {
+              "fieldIds": [
+                "de4632ba-6f3b-4846-a739-8d5db32eefec",
+                "53d1e9ca-a895-47f0-a880-fe2111665a00",
+                "77a32d65-f35c-44a9-a01e-dec6864d2fb8",
+                "0453759c-34a9-40f3-a891-e59b02f62747"
+              ],
+              "formatKey": "pressReleaseMsCompact",
+              "useColoredFormat": true
+            },
+            {
+              "fieldIds": [
+                "2a8a90fc-d799-4fe6-b566-81d1d338d441",
+                "1beebc7b-16e1-4f9c-bc85-eb819e905fee",
+                "7260d8c0-363b-4a2f-acbf-0f5286b30c44",
+                "76e3547d-bcca-4bcc-b747-2079b1af449b"
+              ],
+              "formatKey": "pressReleaseMsCompact",
+              "useColoredFormat": true
+            }
+          ],
+          "additionalFields": [
+            "a0556437-78a9-4f2b-aab2-66339d72e0b5"
+          ]
+        },
+        {
+          "id": "multikey_response",
+          "koName": "동시입력 응답 특성",
+          "enName": "Multi-key Response",
+          "names": {},
+          "order": 3,
+          "type": "composite",
+          "fieldIds": null,
+          "subGroups": [
+            {
+              "fieldIds": [
+                "7f4bc73b-c17a-4404-b787-8aa26dc5e3e7",
+                "f95faf89-21ed-4d69-91e5-dbf884b8ee37",
+                "60d89811-d8b2-4366-b2dc-fc44fc8936ef",
+                "d4d1dc83-753c-4ecf-9288-474e04ae04e7"
+              ],
+              "formatKey": "pressReleaseMsCompact",
+              "useColoredFormat": true
+            },
+            {
+              "fieldIds": [
+                "ebe65465-17df-4a7f-b760-7fdf35e5014a",
+                "472c63d2-461a-4669-8aa4-15b177eaea9d",
+                "a02f4f38-5baa-4e75-b3a7-c4badbe6a47b",
+                "83583856-11bd-4f96-a57e-a82f4d987773"
+              ],
+              "formatKey": "pressReleaseMsCompact",
+              "useColoredFormat": true
+            }
+          ],
+          "additionalFields": null
+        },
+        {
+          "id": "advanced_performance",
+          "koName": "고급 성능 지표",
+          "enName": "Advanced Performance",
+          "names": {},
+          "order": 4,
+          "type": null,
+          "fieldIds": [
+            "f05b78f4-34e5-4b4a-9d2e-88ad4aee7c90",
+            "c07640bd-c0dd-43c1-a867-8c030adbd5fa",
+            "26cc1fda-ed1e-43c8-8569-171643135a68"
+          ],
+          "subGroups": null,
+          "additionalFields": null
+        },
+        {
+          "id": "wireless_performance",
+          "koName": "무선 성능",
+          "enName": "Wireless Performance",
+          "names": {},
+          "order": 5,
+          "type": "composite",
+          "fieldIds": null,
+          "subGroups": [
+            {
+              "fieldIds": [
+                "325b4a58-f646-45fd-b30c-57420ca58856",
+                "56603745-0187-4c98-a85a-2fd5560a02f6",
+                "24579ccc-dc82-4951-a050-b062f12c0e3c",
+                "a7645c3b-6d94-4cb8-9dba-ae30cf7995d5"
+              ],
+              "formatKey": "pressReleaseMsCompact",
+              "useColoredFormat": true
+            }
+          ],
+          "additionalFields": [
+            "16b94451-02a5-44c4-9269-5c659a79de4e",
+            "158a0507-9036-4931-acae-0a86ccaf0a69",
+            "9706fc53-30e7-48aa-abf9-3e623fcb75e6"
+          ]
+        },
+        {
+          "id": "bluetooth_performance",
+          "koName": "블루투스 성능",
+          "enName": "Bluetooth Performance",
+          "names": {},
+          "order": 6,
+          "type": "composite",
+          "fieldIds": null,
+          "subGroups": [
+            {
+              "fieldIds": [
+                "c743271e-2a46-4949-b1d2-3d6965cbf5ce",
+                "6c722435-5392-446b-acb0-c6770e74119c"
+              ],
+              "formatKey": "sigmaMs",
+              "useColoredFormat": true
+            }
+          ],
+          "additionalFields": null
+        },
+        {
+          "id": "quality_compatibility",
+          "koName": "타건 품질",
+          "enName": "Typing Quality",
+          "names": {},
+          "order": 7,
+          "type": null,
+          "fieldIds": [
+            "8f3867da-e1c6-491a-8a4c-52ae0174442a",
+            "47502c02-92d9-4e97-bedf-ef66e3c16a6f",
+            "979a60ae-a8b5-4784-99aa-fe16f05da8da"
+          ],
+          "subGroups": null,
+          "additionalFields": null
+        }
+      ]
+    }
+  },
+  "resultCode": "SUCCESS",
+  "resultMessage": "정상적으로 처리되었습니다.",
+  "requestId": null,
+  "errorLogId": null
+}

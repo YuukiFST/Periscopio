@@ -1,0 +1,2321 @@
+{
+  "category": "teclado",
+  "fields": [
+    {
+      "key": "driverSupportStatus",
+      "group": "common",
+      "label": {
+        "ko": "드라이버 지원 상태",
+        "en": "Driver Support Status"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "notAvailable",
+          "label": {
+            "ko": "공식 설정 소프트웨어 없음",
+            "en": "No Official Configuration Software"
+          }
+        },
+        {
+          "value": "notRequired",
+          "label": {
+            "ko": "별도 설정 소프트웨어 불필요",
+            "en": "No Separate Configuration Software Required"
+          }
+        }
+      ]
+    },
+    {
+      "key": "status",
+      "group": "common",
+      "label": {
+        "ko": "상태",
+        "en": "Status"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "arrived",
+          "label": {
+            "ko": "제품 도착",
+            "en": "Arrived"
+          }
+        },
+        {
+          "value": "earlyAccess",
+          "label": {
+            "ko": "선 공개",
+            "en": "Early Access"
+          }
+        },
+        {
+          "value": "proposed",
+          "label": {
+            "ko": "제안",
+            "en": "Proposed"
+          }
+        },
+        {
+          "value": "purchased",
+          "label": {
+            "ko": "구매 완료",
+            "en": "Purchased"
+          }
+        },
+        {
+          "value": "reviewed",
+          "label": {
+            "ko": "공개 완료",
+            "en": "Reviewed"
+          }
+        },
+        {
+          "value": "testing",
+          "label": {
+            "ko": "벤치 진행",
+            "en": "Testing"
+          }
+        },
+        {
+          "value": "unreleased",
+          "label": {
+            "ko": "미출시",
+            "en": "Unreleased"
+          }
+        }
+      ]
+    },
+    {
+      "key": "saleStatus",
+      "group": "common",
+      "label": {
+        "ko": "판매 상태",
+        "en": "Sale Status"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "DISCONTINUED",
+          "label": {
+            "ko": "단종",
+            "en": "Discontinued"
+          }
+        },
+        {
+          "value": "FOR_SALE",
+          "label": {
+            "ko": "판매중",
+            "en": "FOR_SALE"
+          }
+        },
+        {
+          "value": "unreleased",
+          "label": {
+            "ko": "미출시",
+            "en": "Unreleased"
+          }
+        }
+      ]
+    },
+    {
+      "key": "eyejokerRating",
+      "group": "common",
+      "label": {
+        "ko": "추천 등급",
+        "en": "Recommendation Grade"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "HIGHLY_RECOMMENDED",
+          "label": {
+            "ko": "매우추천",
+            "en": "Highly Recommend"
+          }
+        },
+        {
+          "value": "MILD_RECOMMENDATION",
+          "label": {
+            "ko": "추천까지는",
+            "en": "Meh"
+          }
+        },
+        {
+          "value": "NO_RECOMMENDATION",
+          "label": {
+            "ko": "추천안함",
+            "en": "Not Recommend"
+          }
+        },
+        {
+          "value": "RECOMMENDED",
+          "label": {
+            "ko": "추천",
+            "en": "Recommend"
+          }
+        },
+        {
+          "value": "ANTICIPATING",
+          "label": null
+        }
+      ]
+    },
+    {
+      "key": "as",
+      "group": "common",
+      "label": {
+        "ko": "보증 기간",
+        "en": "AS"
+      },
+      "type": "number",
+      "unit": "년",
+      "decimals": null
+    },
+    {
+      "key": "firmwareVersion",
+      "group": "common",
+      "label": {
+        "ko": "펌웨어 버전",
+        "en": "FirmwareVersion"
+      },
+      "type": "text"
+    },
+    {
+      "key": "publicReleaseAt",
+      "group": "common",
+      "label": {
+        "ko": "전체 공개 일자",
+        "en": "Public Release At"
+      },
+      "type": "date"
+    },
+    {
+      "key": "solution",
+      "group": "spec",
+      "label": {
+        "ko": "솔루션",
+        "en": "Solution"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "Beiying",
+          "label": {
+            "ko": "베이잉",
+            "en": "Beiying"
+          }
+        },
+        {
+          "value": "ISO",
+          "label": {
+            "ko": "ISO",
+            "en": "ISO"
+          }
+        },
+        {
+          "value": "MMD",
+          "label": {
+            "ko": "MMD",
+            "en": "MMD"
+          }
+        },
+        {
+          "value": "MMStudio",
+          "label": {
+            "ko": "MMStudio",
+            "en": "MMStudio"
+          }
+        },
+        {
+          "value": "Rongyuan",
+          "label": {
+            "ko": "롱위안",
+            "en": "Rongyuan"
+          }
+        },
+        {
+          "value": "arbitor",
+          "label": {
+            "ko": "아비터",
+            "en": "arbitor"
+          }
+        },
+        {
+          "value": "etc",
+          "label": {
+            "ko": "기타",
+            "en": "etc"
+          }
+        },
+        {
+          "value": "sparklink",
+          "label": {
+            "ko": "스파크링크",
+            "en": "SparkLink"
+          }
+        },
+        {
+          "value": "자체 솔루션",
+          "label": {
+            "ko": "자체 솔루션",
+            "en": "In-house"
+          }
+        }
+      ]
+    },
+    {
+      "key": "overallRatingKeyboard",
+      "group": "spec",
+      "label": {
+        "ko": "종합 등급",
+        "en": "OverallRatingKeyboard"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "FLAWLESS",
+          "label": {
+            "ko": "무결점",
+            "en": "Flawless"
+          }
+        },
+        {
+          "value": "TIER_0",
+          "label": {
+            "ko": "0티어",
+            "en": "Tier0"
+          }
+        },
+        {
+          "value": "TIER_1",
+          "label": {
+            "ko": "1티어",
+            "en": "Tier1"
+          }
+        },
+        {
+          "value": "TIER_2",
+          "label": {
+            "ko": "2티어",
+            "en": "Tier2"
+          }
+        },
+        {
+          "value": "TIER_3",
+          "label": {
+            "ko": "3티어",
+            "en": "Tier3"
+          }
+        },
+        {
+          "value": "TIER_4",
+          "label": {
+            "ko": "4티어",
+            "en": "Tier4"
+          }
+        },
+        {
+          "value": "UNRATED",
+          "label": {
+            "ko": "등급외",
+            "en": "Unrated"
+          }
+        }
+      ]
+    },
+    {
+      "key": "connectionType",
+      "group": "spec",
+      "label": {
+        "ko": "연결",
+        "en": "ConnectionType"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "무선",
+          "label": {
+            "ko": "무선",
+            "en": "Wireless"
+          }
+        },
+        {
+          "value": "유무선",
+          "label": {
+            "ko": "유무선",
+            "en": "Wired/Wireless"
+          }
+        },
+        {
+          "value": "유선",
+          "label": {
+            "ko": "유선",
+            "en": "Wired"
+          }
+        }
+      ]
+    },
+    {
+      "key": "pollingRate",
+      "group": "spec",
+      "label": {
+        "ko": "폴링레이트",
+        "en": "Pollingrate"
+      },
+      "type": "enum",
+      "unit": "Hz",
+      "multiple": false,
+      "options": [
+        {
+          "value": "1000",
+          "label": {
+            "ko": "1000",
+            "en": "1000"
+          }
+        },
+        {
+          "value": "125",
+          "label": {
+            "ko": "125",
+            "en": "125"
+          }
+        },
+        {
+          "value": "16000",
+          "label": {
+            "ko": "16000",
+            "en": "16000"
+          }
+        },
+        {
+          "value": "32000",
+          "label": {
+            "ko": "32000",
+            "en": "32000"
+          }
+        },
+        {
+          "value": "8000",
+          "label": {
+            "ko": "8000",
+            "en": "8000"
+          }
+        }
+      ]
+    },
+    {
+      "key": "rapidTrigger",
+      "group": "spec",
+      "label": {
+        "ko": "래피드 트리거",
+        "en": "RapidTrigger"
+      },
+      "type": "boolean"
+    },
+    {
+      "key": "keyboardLayout",
+      "group": "spec",
+      "label": {
+        "ko": "배열",
+        "en": "Layout"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "60%",
+          "label": {
+            "ko": "60%",
+            "en": "60%"
+          }
+        },
+        {
+          "value": "65%",
+          "label": {
+            "ko": "65%",
+            "en": "65%"
+          }
+        },
+        {
+          "value": "75%",
+          "label": {
+            "ko": "75%",
+            "en": "75%"
+          }
+        },
+        {
+          "value": "96%",
+          "label": {
+            "ko": "96%",
+            "en": "96%"
+          }
+        },
+        {
+          "value": "etc",
+          "label": {
+            "ko": "기타",
+            "en": "etc"
+          }
+        },
+        {
+          "value": "full",
+          "label": {
+            "ko": "FULL",
+            "en": "FULL"
+          }
+        },
+        {
+          "value": "tkl",
+          "label": {
+            "ko": "TKL",
+            "en": "TKL"
+          }
+        }
+      ]
+    },
+    {
+      "key": "keyboardMechanism",
+      "group": "spec",
+      "label": {
+        "ko": "지원 스위치 타입",
+        "en": "Supported Switch Types"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": true,
+      "options": [
+        {
+          "value": "광축",
+          "label": {
+            "ko": "광축",
+            "en": "Optical"
+          }
+        },
+        {
+          "value": "기계식",
+          "label": {
+            "ko": "기계식",
+            "en": "Mechanical"
+          }
+        },
+        {
+          "value": "멤브레인",
+          "label": {
+            "ko": "멤브레인",
+            "en": "Membrane"
+          }
+        },
+        {
+          "value": "무접점",
+          "label": {
+            "ko": "무접점",
+            "en": "Capacitive"
+          }
+        },
+        {
+          "value": "자석축",
+          "label": {
+            "ko": "자석축",
+            "en": "Magnetic Switch"
+          }
+        }
+      ]
+    },
+    {
+      "key": "measuredSwitchType",
+      "group": "spec",
+      "label": {
+        "ko": "측정 기준 스위치",
+        "en": "Measured Switch Type"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "광축",
+          "label": {
+            "ko": "광축",
+            "en": "Optical Switch"
+          }
+        },
+        {
+          "value": "기계식",
+          "label": {
+            "ko": "기계식",
+            "en": "Mechanical Switch"
+          }
+        },
+        {
+          "value": "멤브레인",
+          "label": {
+            "ko": "멤브레인",
+            "en": "Membrane"
+          }
+        },
+        {
+          "value": "무접점",
+          "label": {
+            "ko": "무접점",
+            "en": "Capacitive Switch"
+          }
+        },
+        {
+          "value": "자석축",
+          "label": {
+            "ko": "자석축",
+            "en": "Magnetic Switch"
+          }
+        }
+      ]
+    },
+    {
+      "key": "profile",
+      "group": "spec",
+      "label": {
+        "ko": "프로파일",
+        "en": "Profile"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "cherryProfile",
+          "label": {
+            "ko": "체리 프로파일",
+            "en": "Cherry Profile"
+          }
+        },
+        {
+          "value": "lowProfile",
+          "label": {
+            "ko": "Low Profile",
+            "en": "Low Profile"
+          }
+        },
+        {
+          "value": "oemProfile",
+          "label": {
+            "ko": "OEM 프로파일",
+            "en": "OEM Profile"
+          }
+        }
+      ]
+    },
+    {
+      "key": "led",
+      "group": "spec",
+      "label": {
+        "ko": "LED",
+        "en": "LED"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "false",
+          "label": {
+            "ko": "X",
+            "en": "X"
+          }
+        },
+        {
+          "value": "part",
+          "label": {
+            "ko": "부분",
+            "en": "part"
+          }
+        },
+        {
+          "value": "rgb",
+          "label": {
+            "ko": "RGB",
+            "en": "RGB"
+          }
+        },
+        {
+          "value": "true",
+          "label": {
+            "ko": "O",
+            "en": "O"
+          }
+        }
+      ]
+    },
+    {
+      "key": "measuredSwitchName",
+      "group": "spec",
+      "label": {
+        "ko": "측정 스위치 제품명",
+        "en": "Measured Switch Name"
+      },
+      "type": "text"
+    },
+    {
+      "key": "webDriver",
+      "group": "spec",
+      "label": {
+        "ko": "웹 드라이버",
+        "en": "WebDriver"
+      },
+      "type": "boolean"
+    },
+    {
+      "key": "autoCalibration",
+      "group": "spec",
+      "label": {
+        "ko": "자동 캘리",
+        "en": "AutoCalibration"
+      },
+      "type": "boolean"
+    },
+    {
+      "key": "windowsLock",
+      "group": "spec",
+      "label": {
+        "ko": "윈도우락",
+        "en": "WindowsLock"
+      },
+      "type": "boolean"
+    },
+    {
+      "key": "socd",
+      "group": "spec",
+      "label": {
+        "ko": "SOCD",
+        "en": "SOCD"
+      },
+      "type": "boolean"
+    },
+    {
+      "key": "remapping",
+      "group": "spec",
+      "label": {
+        "ko": "리매핑",
+        "en": "Remapping"
+      },
+      "type": "boolean"
+    },
+    {
+      "key": "kkboard",
+      "group": "spec",
+      "label": {
+        "ko": "꾹보드",
+        "en": "Kkboard"
+      },
+      "type": "boolean"
+    },
+    {
+      "key": "modeTap",
+      "group": "spec",
+      "label": {
+        "ko": "모드 탭",
+        "en": "ModeTap"
+      },
+      "type": "boolean"
+    },
+    {
+      "key": "dks",
+      "group": "spec",
+      "label": {
+        "ko": "DKS",
+        "en": "DKS"
+      },
+      "type": "boolean"
+    },
+    {
+      "key": "toggleKey",
+      "group": "spec",
+      "label": {
+        "ko": "토글 키",
+        "en": "ToggleKey"
+      },
+      "type": "boolean"
+    },
+    {
+      "key": "minStroke",
+      "group": "spec",
+      "label": {
+        "ko": "최소 스트로크",
+        "en": "MinStroke"
+      },
+      "type": "number",
+      "unit": "mm",
+      "decimals": null
+    },
+    {
+      "key": "adjustmentUnit",
+      "group": "spec",
+      "label": {
+        "ko": "조절단위",
+        "en": "AdjustmentUnit"
+      },
+      "type": "number",
+      "unit": "mm",
+      "decimals": null
+    },
+    {
+      "key": "detachStroke",
+      "group": "spec",
+      "label": {
+        "ko": "떼는 스트로크",
+        "en": "DetachStroke"
+      },
+      "type": "number",
+      "unit": "mm",
+      "decimals": null
+    },
+    {
+      "key": "rapidAdjustmentUnit",
+      "group": "spec",
+      "label": {
+        "ko": "래피드 조절단위",
+        "en": "RapidAdjustmentUnit"
+      },
+      "type": "number",
+      "unit": "mm",
+      "decimals": null
+    },
+    {
+      "key": "housingKeyboard",
+      "group": "spec",
+      "label": {
+        "ko": "하우징",
+        "en": "Housing"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": true,
+      "options": [
+        {
+          "value": "aluminum",
+          "label": {
+            "ko": "알루미늄",
+            "en": "Aluminum"
+          }
+        },
+        {
+          "value": "custom",
+          "label": {
+            "ko": "커스텀",
+            "en": "Custom"
+          }
+        },
+        {
+          "value": "mixed",
+          "label": {
+            "ko": "혼합",
+            "en": "Mixed"
+          }
+        },
+        {
+          "value": "other",
+          "label": {
+            "ko": "기타",
+            "en": "Other"
+          }
+        },
+        {
+          "value": "plastic",
+          "label": {
+            "ko": "플라스틱",
+            "en": "Plastic"
+          }
+        }
+      ]
+    },
+    {
+      "key": "mounting",
+      "group": "spec",
+      "label": {
+        "ko": "마운트",
+        "en": "Mounting"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": true,
+      "options": [
+        {
+          "value": "bottom",
+          "label": {
+            "ko": "바텀",
+            "en": "Bottom"
+          }
+        },
+        {
+          "value": "gasket",
+          "label": {
+            "ko": "가스켓",
+            "en": "Gasket"
+          }
+        },
+        {
+          "value": "leafspring",
+          "label": {
+            "ko": "리프스프링",
+            "en": "Leaf-spring"
+          }
+        },
+        {
+          "value": "oring",
+          "label": {
+            "ko": "거미오링",
+            "en": "O-ring"
+          }
+        },
+        {
+          "value": "sandwitch",
+          "label": {
+            "ko": "샌드위치",
+            "en": "Sandwich"
+          }
+        },
+        {
+          "value": "top",
+          "label": {
+            "ko": "탑",
+            "en": "Top"
+          }
+        },
+        {
+          "value": "tray",
+          "label": {
+            "ko": "트레이",
+            "en": "Tray"
+          }
+        }
+      ]
+    },
+    {
+      "key": "switchType",
+      "group": "spec",
+      "label": {
+        "ko": "장착 스위치",
+        "en": "SwitchType"
+      },
+      "type": "text"
+    },
+    {
+      "key": "hotswap",
+      "group": "spec",
+      "label": {
+        "ko": "핫스왑",
+        "en": "Hotswap"
+      },
+      "type": "boolean"
+    },
+    {
+      "key": "connectionOption",
+      "group": "spec",
+      "label": {
+        "ko": "연결타입",
+        "en": "ConnectionOption"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "Battery",
+          "label": {
+            "ko": "배터리",
+            "en": "Battery"
+          }
+        },
+        {
+          "value": "fixedCable",
+          "label": {
+            "ko": "고정형 케이블",
+            "en": "Fixed Cable"
+          }
+        },
+        {
+          "value": "ps2",
+          "label": {
+            "ko": "PS/2",
+            "en": "PS/2"
+          }
+        },
+        {
+          "value": "usbMicroB",
+          "label": {
+            "ko": "Micro-USB",
+            "en": "Micro-USB"
+          }
+        },
+        {
+          "value": "usbMiniB",
+          "label": {
+            "ko": "Mini-USB",
+            "en": "Mini-USB"
+          }
+        },
+        {
+          "value": "usbTypeC",
+          "label": {
+            "ko": "USB-C",
+            "en": "USB-C"
+          }
+        }
+      ]
+    },
+    {
+      "key": "soundAbsorption",
+      "group": "spec",
+      "label": {
+        "ko": "흡음",
+        "en": "SoundAbsorption"
+      },
+      "type": "text"
+    },
+    {
+      "key": "angleAdjustment",
+      "group": "spec",
+      "label": {
+        "ko": "각도 조절 (기본 포함)",
+        "en": "AngleAdjustment"
+      },
+      "type": "text"
+    },
+    {
+      "key": "housingFrontHeight",
+      "group": "spec",
+      "label": {
+        "ko": "하우징 앞면높이 (mm)",
+        "en": "HousingFrontHeight"
+      },
+      "type": "number",
+      "unit": null,
+      "decimals": null
+    },
+    {
+      "key": "keycap",
+      "group": "spec",
+      "label": {
+        "ko": "키캡",
+        "en": "Keycap"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "absDoubleShot",
+          "label": {
+            "ko": "ABS 이중사출",
+            "en": "ABS Double-shot"
+          }
+        },
+        {
+          "value": "pbtDoubleShot",
+          "label": {
+            "ko": "PBT 이중사출",
+            "en": "PBT Double-shot"
+          }
+        },
+        {
+          "value": "pbtDyeSub",
+          "label": {
+            "ko": "PBT 염료승화",
+            "en": "PBT Dye-sub"
+          }
+        }
+      ]
+    },
+    {
+      "key": "stabilizer",
+      "group": "spec",
+      "label": {
+        "ko": "스테빌 라이저",
+        "en": "Stabilizer"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "cherryPcbMount",
+          "label": {
+            "ko": "체리식 PCB 결합",
+            "en": "Cherry PCB Mount"
+          }
+        },
+        {
+          "value": "cherryPlateMount",
+          "label": {
+            "ko": "체리식 보강판 결합",
+            "en": "Cherry Plate Mount"
+          }
+        },
+        {
+          "value": "cherryPlatePcbMount",
+          "label": {
+            "ko": "체리식 보강판, PCB 결합",
+            "en": "Cherry Plate, PCB Mount"
+          }
+        },
+        {
+          "value": "hybridPlateMount",
+          "label": {
+            "ko": "하이브리드 보강판 결합",
+            "en": "Hybrid Plate Mount"
+          }
+        }
+      ]
+    },
+    {
+      "key": "palmRest",
+      "group": "spec",
+      "label": {
+        "ko": "팜레스트",
+        "en": "Palmrest"
+      },
+      "type": "boolean"
+    },
+    {
+      "key": "mcu",
+      "group": "spec",
+      "label": {
+        "ko": "MCU",
+        "en": "MCU"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "?",
+          "label": {
+            "ko": "?",
+            "en": "?"
+          }
+        },
+        {
+          "value": "armcortex600mhz",
+          "label": {
+            "ko": "ARM Cortex 600MHz",
+            "en": "ARM Cortex 600MHz"
+          }
+        },
+        {
+          "value": "armcortexm0",
+          "label": {
+            "ko": "ARM Cortex M0",
+            "en": "ARM Cortex M0"
+          }
+        },
+        {
+          "value": "armm3mcu",
+          "label": {
+            "ko": "ARM M3 MCU",
+            "en": "ARM M3 MCU"
+          }
+        },
+        {
+          "value": "atkv10h12b1g708h2523",
+          "label": {
+            "ko": "ATK V10H12B1G708H2523",
+            "en": "ATK V10H12B1G708H2523"
+          }
+        },
+        {
+          "value": "atmel128a4uh(32m)",
+          "label": {
+            "ko": "Atmel128A4U-H(32M)",
+            "en": "Atmel128A4U-H(32M)"
+          }
+        },
+        {
+          "value": "atmelmega32u4mu(16m)",
+          "label": {
+            "ko": "ATMEL MEGA32U4-MU(16M)",
+            "en": "ATMEL MEGA32U4-MU(16M)"
+          }
+        },
+        {
+          "value": "byk916",
+          "label": {
+            "ko": "BYK916",
+            "en": "BYK916"
+          }
+        },
+        {
+          "value": "ch32v307rct6(144m)",
+          "label": {
+            "ko": "CH32V307 RCT6(144M)",
+            "en": "CH32V307 RCT6(144M)"
+          }
+        },
+        {
+          "value": "geehyapm32f465ret6(168m)",
+          "label": {
+            "ko": "Geehy APM32F465RET6(168M)",
+            "en": "Geehy APM32F465RET6(168M)"
+          }
+        },
+        {
+          "value": "giadevicegd32f303cgt6(120m)",
+          "label": {
+            "ko": "Giadevice GD32F303 CGT6(120M)",
+            "en": "Giadevice GD32F303 CGT6(120M)"
+          }
+        },
+        {
+          "value": "giadevicegd32f425rgtg(200mhz)",
+          "label": {
+            "ko": "Giadevice GD32F425RGTG(200MHz)",
+            "en": "Giadevice GD32F425RGTG(200MHz)"
+          }
+        },
+        {
+          "value": "holtekht32f12365(96m)",
+          "label": {
+            "ko": "HOLTEK HT32F12365(96M)",
+            "en": "HOLTEK HT32F12365(96M)"
+          }
+        },
+        {
+          "value": "holtekht32f52352(48m)",
+          "label": {
+            "ko": "HOLTEK HT32F52352(48M)",
+            "en": "HOLTEK HT32F52352(48M)"
+          }
+        },
+        {
+          "value": "holtekht68fb560[8bit",
+          "label": {
+            "ko": "HOLTEK HT68FB560 (16M 내부 / 12M 외부)",
+            "en": "HOLTEK HT68FB560 (16M 내부 / 12M 외부)"
+          }
+        },
+        {
+          "value": "nordicnrf52833(64m)",
+          "label": {
+            "ko": "Nordic nRF52833(64M)",
+            "en": "Nordic nRF52833(64M)"
+          }
+        },
+        {
+          "value": "nordicnrf52840(64m)",
+          "label": {
+            "ko": "Nordic nRF52840(64M)",
+            "en": "Nordic nRF52840(64M)"
+          }
+        },
+        {
+          "value": "nuc123sd4bn0[armcortexm0(72m)]",
+          "label": {
+            "ko": "NUC123SD4BN0[ARM Cortex-M0(72M)]",
+            "en": "NUC123SD4BN0[ARM Cortex-M0(72M)]"
+          }
+        },
+        {
+          "value": "nuvotonm484s1dae2u(192m)",
+          "label": {
+            "ko": "NUVOTON M484S1DAE2U(192M)",
+            "en": "NUVOTON M484S1DAE2U(192M)"
+          }
+        },
+        {
+          "value": "nuvotonm484sidae(192m)",
+          "label": {
+            "ko": "NUVOTON M484SIDAE(192M)",
+            "en": "NUVOTON M484SIDAE(192M)"
+          }
+        },
+        {
+          "value": "nuvotonm484sidae2u(192m)",
+          "label": {
+            "ko": "NUVOTON M484SIDAE2U(192M)",
+            "en": "NUVOTON M484SIDAE2U(192M)"
+          }
+        },
+        {
+          "value": "nuvotonnuc123sd4an0(72m)",
+          "label": {
+            "ko": "Nuvoton NUC123SD4AN0(72M)",
+            "en": "Nuvoton NUC123SD4AN0(72M)"
+          }
+        },
+        {
+          "value": "nuvotonnuc123sd4bn0(72m)+m0518ld2ae(50m)",
+          "label": {
+            "ko": "NUVOTON NUC123SD4BN0(72M) + M0518LD2AE(50M)",
+            "en": "NUVOTON NUC123SD4BN0(72M) + M0518LD2AE(50M)"
+          }
+        },
+        {
+          "value": "nuvotonnuc1261sg4ae(72m)",
+          "label": {
+            "ko": "Nuvoton NUC1261SG4AE(72M)",
+            "en": "Nuvoton NUC1261SG4AE(72M)"
+          }
+        },
+        {
+          "value": "nxp9080(32m)",
+          "label": {
+            "ko": "NXP 9080(32M)",
+            "en": "NXP 9080(32M)"
+          }
+        },
+        {
+          "value": "nxplpc11u37f(50m)",
+          "label": {
+            "ko": "NXP LPC11U37F(50M)",
+            "en": "NXP LPC11U37F(50M)"
+          }
+        },
+        {
+          "value": "nxplpc11u68j(50m)",
+          "label": {
+            "ko": "NXP LPC11U68J(50M)",
+            "en": "NXP LPC11U68J(50M)"
+          }
+        },
+        {
+          "value": "nxplpc11u68jbd100(50m)",
+          "label": {
+            "ko": "NXP LPC11U68JBD100(50M)",
+            "en": "NXP LPC11U68JBD100(50M)"
+          }
+        },
+        {
+          "value": "nxplpc54605j512bd100(180m)",
+          "label": {
+            "ko": "NXP LPC54605j512BD100(180M)",
+            "en": "NXP LPC54605j512BD100(180M)"
+          }
+        },
+        {
+          "value": "nxplpc5465j512bd100(220m)",
+          "label": {
+            "ko": "NXP LPC5465J512BD100(220M)",
+            "en": "NXP LPC5465J512BD100(220M)"
+          }
+        },
+        {
+          "value": "nxplpc5516(150m)",
+          "label": {
+            "ko": "NXP LPC5516(150M)",
+            "en": "NXP LPC5516(150M)"
+          }
+        },
+        {
+          "value": "nxplpc5516jbd100(150m)",
+          "label": {
+            "ko": "NXP LPC5516JBD100(150M)",
+            "en": "NXP LPC5516JBD100(150M)"
+          }
+        },
+        {
+          "value": "nxplpc5516jbd64(150m)",
+          "label": {
+            "ko": "NXP LPC5516JBD64(150M)",
+            "en": "NXP LPC5516JBD64(150M)"
+          }
+        },
+        {
+          "value": "nxplpc5528(150m)",
+          "label": {
+            "ko": "NXP LPC5528(150M)",
+            "en": "NXP LPC5528(150M)"
+          }
+        },
+        {
+          "value": "nxplpc5528jbd100(150m)",
+          "label": {
+            "ko": "NXP LPC5528JBD100(150M)",
+            "en": "NXP LPC5528JBD100(150M)"
+          }
+        },
+        {
+          "value": "razerchroma192v2727",
+          "label": {
+            "ko": "RAZER CHROMA 192 V2727",
+            "en": "RAZER CHROMA 192 V2727"
+          }
+        },
+        {
+          "value": "rc30035302(72m)",
+          "label": {
+            "ko": "RC30-035302(72M)",
+            "en": "RC30-035302(72M)"
+          }
+        },
+        {
+          "value": "riscpic32mzec(200m)",
+          "label": {
+            "ko": "RISC PIC32MZ EC(200M)",
+            "en": "RISC PIC32MZ EC(200M)"
+          }
+        },
+        {
+          "value": "riscvch32v307rct6(144m)+ch32v2036개",
+          "label": {
+            "ko": "RISC-V CH32V307RCT6(144M) + CH32V203 6개",
+            "en": "RISC-V CH32V307RCT6(144M) + CH32V203 x6"
+          }
+        },
+        {
+          "value": "riscvch32v307wcu6(144m)",
+          "label": {
+            "ko": "RISC-V CH32V307WCU6(144M)",
+            "en": "RISC-V CH32V307WCU6(144M)"
+          }
+        },
+        {
+          "value": "ry7203n48cc2214cc",
+          "label": {
+            "ko": "RY7203 N48C-C 2214-CC",
+            "en": "RY7203 N48C-C 2214-CC"
+          }
+        },
+        {
+          "value": "spmstm32u5a5rjt6(160m)",
+          "label": {
+            "ko": "SPM STM32U5A5 RJT6(160M)",
+            "en": "SPM STM32U5A5 RJT6(160M)"
+          }
+        },
+        {
+          "value": "stm32f103rbt6(72m)",
+          "label": {
+            "ko": "STM32F103 RBT6(72M)",
+            "en": "STM32F103 RBT6(72M)"
+          }
+        },
+        {
+          "value": "stm32f103vct6(72m)+stm32f103rct6(72m)",
+          "label": {
+            "ko": "STM32F103 VCT6(72M) + STM32F103 RCT6(72M)",
+            "en": "STM32F103 VCT6(72M) + STM32F103 RCT6(72M)"
+          }
+        },
+        {
+          "value": "stm32g070cbt6(64m)+n52833(64m)",
+          "label": {
+            "ko": "STM32G070 CBT6(64M) + N52833(64M)",
+            "en": "STM32G070 CBT6(64M) + N52833(64M)"
+          }
+        },
+        {
+          "value": "stm32l100r8t6(32m)",
+          "label": {
+            "ko": "STM32L100 R8T6(32M)",
+            "en": "STM32L100 R8T6(32M)"
+          }
+        },
+        {
+          "value": "stm32l412rb(80m)",
+          "label": {
+            "ko": "STM32L412RB(80M)",
+            "en": "STM32L412RB(80M)"
+          }
+        },
+        {
+          "value": "stm32l412rbt6(80m)",
+          "label": {
+            "ko": "STM32L412 RBT6(80M)",
+            "en": "STM32L412 RBT6(80M)"
+          }
+        },
+        {
+          "value": "stm32l4p5rgt6(120m)",
+          "label": {
+            "ko": "STM32L4P5 RGT6(120M)",
+            "en": "STM32L4P5 RGT6(120M)"
+          }
+        },
+        {
+          "value": "stm32u595rit6(160mhz)",
+          "label": {
+            "ko": "STM32U595RIT6 (160MHz)",
+            "en": "STM32U595RIT6 (160MHz)"
+          }
+        },
+        {
+          "value": "vgndrm32f100(ep5889)",
+          "label": {
+            "ko": "VGN DRM32F100(ep5889)",
+            "en": "VGN DRM32F100(ep5889)"
+          }
+        },
+        {
+          "value": "visionvs11k09a1(48m)",
+          "label": {
+            "ko": "VISION VS11K09A-1(48M)",
+            "en": "VISION VS11K09A-1(48M)"
+          }
+        },
+        {
+          "value": "visionvs11k17a(48m)",
+          "label": {
+            "ko": "Vision VS11K17A(48M)",
+            "en": "Vision VS11K17A(48M)"
+          }
+        },
+        {
+          "value": "wchch32v307(144m)",
+          "label": {
+            "ko": "WCH CH32V307(144M)",
+            "en": "WCH CH32V307(144M)"
+          }
+        },
+        {
+          "value": "wchicch32v305(144m)",
+          "label": {
+            "ko": "WCH-IC CH32V305(144M)",
+            "en": "WCH-IC CH32V305(144M)"
+          }
+        }
+      ]
+    },
+    {
+      "key": "emWPrRtAvgD0",
+      "group": "bench",
+      "label": {
+        "ko": "전자석 응답시간 평균[유선, 누름]",
+        "en": "Electromagnet response time mean[wired, press]"
+      },
+      "type": "number",
+      "unit": "ms",
+      "decimals": 2
+    },
+    {
+      "key": "emWPrRtSdD0",
+      "group": "bench",
+      "label": {
+        "ko": "전자석 응답시간 표준편차[유선, 누름]",
+        "en": "Electromagnet response time std dev[wired, press]"
+      },
+      "type": "number",
+      "unit": "ms",
+      "decimals": 2
+    },
+    {
+      "key": "emWRealPerfD0",
+      "group": "bench",
+      "label": {
+        "ko": "전자석 실성능",
+        "en": "Electromagnet real performance"
+      },
+      "type": "number",
+      "unit": "Hz",
+      "decimals": 0
+    },
+    {
+      "key": "emWRlRtAvgD0",
+      "group": "bench",
+      "label": {
+        "ko": "전자석 응답시간 평균[유선, 뗌]",
+        "en": "Electromagnet response time mean[wired, release]"
+      },
+      "type": "number",
+      "unit": "ms",
+      "decimals": 2
+    },
+    {
+      "key": "emWRlRtSdD0",
+      "group": "bench",
+      "label": {
+        "ko": "전자석 응답시간 표준편차[유선, 뗌]",
+        "en": "Electromagnet response time std dev[wired, release]"
+      },
+      "type": "number",
+      "unit": "ms",
+      "decimals": 2
+    },
+    {
+      "key": "solWPrRtAvg",
+      "group": "bench",
+      "label": {
+        "ko": "솔레노이드 응답시간 평균[유선, 누름]",
+        "en": "Solenoid response time mean[wired, press]"
+      },
+      "type": "number",
+      "unit": "ms",
+      "decimals": 2
+    },
+    {
+      "key": "solWPrRtSd",
+      "group": "bench",
+      "label": {
+        "ko": "솔레노이드 응답시간 표준편차[유선, 누름]",
+        "en": "Solenoid response time std dev[wired, press]"
+      },
+      "type": "number",
+      "unit": "ms",
+      "decimals": 2
+    },
+    {
+      "key": "solWRealPerf",
+      "group": "bench",
+      "label": {
+        "ko": "솔레노이드 실성능",
+        "en": "Solenoid real performance"
+      },
+      "type": "number",
+      "unit": "Hz",
+      "decimals": 0
+    },
+    {
+      "key": "strokeErrorRate",
+      "group": "bench",
+      "label": {
+        "ko": "스트로크 오차율",
+        "en": "Stroke Error"
+      },
+      "type": "number",
+      "unit": "%",
+      "decimals": 2
+    },
+    {
+      "key": "overallResponseSpeed",
+      "group": "bench",
+      "label": {
+        "ko": "종합 응답속도",
+        "en": "Overall Resp"
+      },
+      "type": "number",
+      "unit": "ms",
+      "decimals": 2
+    },
+    {
+      "key": "overallStddev",
+      "group": "bench",
+      "label": {
+        "ko": "종합 표준편차",
+        "en": "Overall Std dev"
+      },
+      "type": "number",
+      "unit": "ms",
+      "decimals": 2
+    },
+    {
+      "key": "realPerformance",
+      "group": "bench",
+      "label": {
+        "ko": "실성능",
+        "en": "Actual Performance"
+      },
+      "type": "number",
+      "unit": "Hz",
+      "decimals": null
+    },
+    {
+      "key": "multiKeyDelay",
+      "group": "bench",
+      "label": {
+        "ko": "동시입력 딜레이",
+        "en": "MultiKeyDelay"
+      },
+      "type": "boolean"
+    },
+    {
+      "key": "effectiveUpdateRate",
+      "group": "bench",
+      "label": {
+        "ko": "유효 폴링레이트",
+        "en": "Effective Hz"
+      },
+      "type": "enum",
+      "unit": "Hz",
+      "multiple": false,
+      "options": [
+        {
+          "value": "1000",
+          "label": {
+            "ko": "1000",
+            "en": "1000"
+          }
+        },
+        {
+          "value": "125",
+          "label": {
+            "ko": "125",
+            "en": "125"
+          }
+        },
+        {
+          "value": "1333",
+          "label": {
+            "ko": "1333",
+            "en": "1333"
+          }
+        },
+        {
+          "value": "1600",
+          "label": {
+            "ko": "1600",
+            "en": "1600"
+          }
+        },
+        {
+          "value": "2000",
+          "label": {
+            "ko": "2000",
+            "en": "2000"
+          }
+        },
+        {
+          "value": "250",
+          "label": {
+            "ko": "250",
+            "en": "250"
+          }
+        },
+        {
+          "value": "2666",
+          "label": {
+            "ko": "2666",
+            "en": "2666"
+          }
+        },
+        {
+          "value": "4000",
+          "label": {
+            "ko": "4000",
+            "en": "4000"
+          }
+        },
+        {
+          "value": "500",
+          "label": {
+            "ko": "500",
+            "en": "500"
+          }
+        },
+        {
+          "value": "8000",
+          "label": {
+            "ko": "8000",
+            "en": "8000"
+          }
+        }
+      ]
+    },
+    {
+      "key": "key6PressResponseTime",
+      "group": "bench",
+      "label": {
+        "ko": "6키 응답속도(누르는)",
+        "en": "6key response time(press)"
+      },
+      "type": "number",
+      "unit": "ms",
+      "decimals": 2
+    },
+    {
+      "key": "key6PressStandardDeviation",
+      "group": "bench",
+      "label": {
+        "ko": "6키 표준편차(누르는)",
+        "en": "6key standard deviation(Press)"
+      },
+      "type": "number",
+      "unit": "ms",
+      "decimals": 2
+    },
+    {
+      "key": "key6PullResponseTime",
+      "group": "bench",
+      "label": {
+        "ko": "6키 응답속도(떼는)",
+        "en": "6-key response time(Pull)"
+      },
+      "type": "number",
+      "unit": "ms",
+      "decimals": 2
+    },
+    {
+      "key": "key6PullStandardDeviation",
+      "group": "bench",
+      "label": {
+        "ko": "6키 표준편차(떼는)",
+        "en": "6key standard deviation(Pull)"
+      },
+      "type": "number",
+      "unit": "ms",
+      "decimals": 2
+    },
+    {
+      "key": "key10PressResponseTime",
+      "group": "bench",
+      "label": {
+        "ko": "10키 응답속도(누르는)",
+        "en": "10key response time(Press)"
+      },
+      "type": "number",
+      "unit": "ms",
+      "decimals": 2
+    },
+    {
+      "key": "key10PressStandardDeviation",
+      "group": "bench",
+      "label": {
+        "ko": "10키 표준편차(누르는)",
+        "en": "10key standard deviation(Press)"
+      },
+      "type": "number",
+      "unit": "ms",
+      "decimals": 2
+    },
+    {
+      "key": "key10ResponseTime",
+      "group": "bench",
+      "label": {
+        "ko": "10키 응답속도(떼는)",
+        "en": "10key response time(Pull)"
+      },
+      "type": "number",
+      "unit": "ms",
+      "decimals": 2
+    },
+    {
+      "key": "key10PullStandardDeviation",
+      "group": "bench",
+      "label": {
+        "ko": "10키 표준편차(떼는)",
+        "en": "10key standard deviation(Pull)"
+      },
+      "type": "number",
+      "unit": "ms",
+      "decimals": 2
+    },
+    {
+      "key": "strokeMeasured",
+      "group": "bench",
+      "label": {
+        "ko": "최저 입력지점",
+        "en": "Minimum input Stroke"
+      },
+      "type": "number",
+      "unit": "mm",
+      "decimals": 2
+    },
+    {
+      "key": "strokeMeasuredStddev",
+      "group": "bench",
+      "label": {
+        "ko": "최저 입력지점 편차",
+        "en": "Minimum Input Stroke StdDev"
+      },
+      "type": "number",
+      "unit": "mm",
+      "decimals": 2
+    },
+    {
+      "key": "bottomDeadzone",
+      "group": "bench",
+      "label": {
+        "ko": "하단 데드존",
+        "en": "Bottom dead zone"
+      },
+      "type": "number",
+      "unit": "mm",
+      "decimals": 2
+    },
+    {
+      "key": "detachStrokeMeasured",
+      "group": "bench",
+      "label": {
+        "ko": "떼는 스트로크 (측정)",
+        "en": "DetachStrokeMeasured"
+      },
+      "type": "number",
+      "unit": "mm",
+      "decimals": null
+    },
+    {
+      "key": "midInputMeasured",
+      "group": "bench",
+      "label": {
+        "ko": "중간 입력 (측정)",
+        "en": "MidInputMeasured"
+      },
+      "type": "number",
+      "unit": "mm",
+      "decimals": null
+    },
+    {
+      "key": "initialDetach",
+      "group": "bench",
+      "label": {
+        "ko": "초기 뗌",
+        "en": "InitialDetach"
+      },
+      "type": "number",
+      "unit": "mm",
+      "decimals": null
+    },
+    {
+      "key": "bottomDeadzoneStddev",
+      "group": "bench",
+      "label": {
+        "ko": "하단 데드존 편차",
+        "en": "Bottom Deadzone Stddev"
+      },
+      "type": "number",
+      "unit": "mm",
+      "decimals": 2
+    },
+    {
+      "key": "debounceTime",
+      "group": "bench",
+      "label": {
+        "ko": "디바운스 타임",
+        "en": "DebounceTime"
+      },
+      "type": "number",
+      "unit": "ms",
+      "decimals": null
+    },
+    {
+      "key": "keyGhosting",
+      "group": "bench",
+      "label": {
+        "ko": "키씹힘",
+        "en": "KeyGhosting"
+      },
+      "type": "boolean"
+    },
+    {
+      "key": "simultaneousInput",
+      "group": "bench",
+      "label": {
+        "ko": "동시입력",
+        "en": "SimultaneousInput"
+      },
+      "type": "boolean"
+    },
+    {
+      "key": "housingReverb",
+      "group": "bench",
+      "label": {
+        "ko": "하우징 통울림",
+        "en": "HousingReverb"
+      },
+      "type": "text"
+    },
+    {
+      "key": "stabilizerWireNoise",
+      "group": "bench",
+      "label": {
+        "ko": "스테빌 철심소리",
+        "en": "StabilizerWireNoise"
+      },
+      "type": "text"
+    },
+    {
+      "key": "keyFeel",
+      "group": "bench",
+      "label": {
+        "ko": "키감",
+        "en": "KeyFeel"
+      },
+      "type": "text"
+    },
+    {
+      "key": "keyboardPcbAvgWired",
+      "group": "bench",
+      "label": {
+        "ko": "기판 평균 응답속도 (누르는)",
+        "en": "PcbAvgWired"
+      },
+      "type": "number",
+      "unit": "ms",
+      "decimals": 2
+    },
+    {
+      "key": "stddevWired",
+      "group": "bench",
+      "label": {
+        "ko": "표준편차 (유선)",
+        "en": "StddevWired"
+      },
+      "type": "number",
+      "unit": "ms",
+      "decimals": 2
+    },
+    {
+      "key": "pcbAvgDetach",
+      "group": "bench",
+      "label": {
+        "ko": "기판 평균 응답속도 (떼는)",
+        "en": "PcbAvgDetach"
+      },
+      "type": "number",
+      "unit": "ms",
+      "decimals": 2
+    },
+    {
+      "key": "stddevDetach",
+      "group": "bench",
+      "label": {
+        "ko": "표준편차 (떼는)",
+        "en": "StddevDetach"
+      },
+      "type": "number",
+      "unit": "ms",
+      "decimals": 2
+    },
+    {
+      "key": "keyboardPcbAvgWireless",
+      "group": "bench",
+      "label": {
+        "ko": "기판 평균 응답속도(누르는)",
+        "en": "PcbAvgWireless"
+      },
+      "type": "number",
+      "unit": "ms",
+      "decimals": 2
+    },
+    {
+      "key": "stddevWireless",
+      "group": "bench",
+      "label": {
+        "ko": "표준편차 (무선)",
+        "en": "StddevWireless"
+      },
+      "type": "number",
+      "unit": "ms",
+      "decimals": 2
+    },
+    {
+      "key": "keyboardDetachAvgWireless",
+      "group": "bench",
+      "label": {
+        "ko": "기판 평균 응답속도 (떼는)",
+        "en": "DetachAvgWireless"
+      },
+      "type": "number",
+      "unit": "ms",
+      "decimals": 2
+    },
+    {
+      "key": "keyboardDetachStddevWireless",
+      "group": "bench",
+      "label": {
+        "ko": "떼는 편차 (무선)",
+        "en": "DetachStddevWireless"
+      },
+      "type": "number",
+      "unit": "ms",
+      "decimals": 2
+    },
+    {
+      "key": "realPerformanceWireless",
+      "group": "bench",
+      "label": {
+        "ko": "실성능 (무선)",
+        "en": "RealPerformanceWireless"
+      },
+      "type": "number",
+      "unit": "Hz",
+      "decimals": null
+    },
+    {
+      "key": "pollingrateWireless",
+      "group": "bench",
+      "label": {
+        "ko": "폴링레이트 (무선)",
+        "en": "PollingrateWireless"
+      },
+      "type": "number",
+      "unit": "Hz",
+      "decimals": null
+    },
+    {
+      "key": "rolloverWireless",
+      "group": "bench",
+      "label": {
+        "ko": "동시치기 (무선)",
+        "en": "RolloverWireless"
+      },
+      "type": "text"
+    },
+    {
+      "key": "bluetoothAvg",
+      "group": "bench",
+      "label": {
+        "ko": "블루투스 평균",
+        "en": "BluetoothAvg"
+      },
+      "type": "number",
+      "unit": "ms",
+      "decimals": 2
+    },
+    {
+      "key": "bluetoothStddev",
+      "group": "bench",
+      "label": {
+        "ko": "블투 표준편차",
+        "en": "BluetoothStddev"
+      },
+      "type": "number",
+      "unit": "ms",
+      "decimals": 2
+    }
+  ],
+  "products": [
+    {
+      "id": "021979aa-b222-47d3-b5ec-8b59d671aff4",
+      "name": "EDGE 60HE Pro",
+      "manufacturer": {
+        "ko": "ATK",
+        "en": "ATK"
+      },
+      "priceKrw": 229000,
+      "status": "reviewed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": "https://s.click.aliexpress.com/e/_opItnUw",
+      "image": "/images/69555e6b-98a5-4ebc-a507-7f7280e59ccb.avif",
+      "values": {
+        "autoCalibration": false,
+        "connectionOption": "usbTypeC",
+        "connectionType": "유선",
+        "dks": true,
+        "effectiveUpdateRate": "4000",
+        "eyejokerRating": "NO_RECOMMENDATION",
+        "hotswap": true,
+        "housingKeyboard": [
+          "aluminum"
+        ],
+        "key10PressResponseTime": 0.19,
+        "key10PressStandardDeviation": 0.13,
+        "key10PullStandardDeviation": 0.13,
+        "key10ResponseTime": 0.19,
+        "key6PressResponseTime": 0.21,
+        "key6PressStandardDeviation": 0.13,
+        "key6PullResponseTime": 0.2,
+        "key6PullStandardDeviation": 0.13,
+        "keyGhosting": false,
+        "keyboardLayout": "60%",
+        "keyboardMechanism": [
+          "자석축"
+        ],
+        "keyboardPcbAvgWired": 0.2,
+        "kkboard": false,
+        "modeTap": true,
+        "multiKeyDelay": false,
+        "overallRatingKeyboard": "TIER_1",
+        "overallResponseSpeed": 0.2,
+        "overallStddev": 0.14,
+        "palmRest": false,
+        "pcbAvgDetach": 0.19,
+        "pollingRate": "8000",
+        "publicReleaseAt": "2025-01-01T00:00:00",
+        "rapidTrigger": true,
+        "realPerformance": 2110,
+        "remapping": true,
+        "simultaneousInput": false,
+        "socd": true,
+        "stddevDetach": 0.13,
+        "stddevWired": 0.14,
+        "switchType": "게이트론 제이드 pro",
+        "toggleKey": true,
+        "webDriver": true,
+        "windowsLock": false
+      }
+    },
+    {
+      "id": "04ef23e4-e4bd-4212-be44-daabe2640afd",
+      "name": "TENKO - ARC 60",
+      "manufacturer": {
+        "ko": "아비터 스튜디오",
+        "en": "ARBITER STUDIO"
+      },
+      "priceKrw": 195000,
+      "status": "reviewed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/92ade085-9d94-4064-a2cd-1536f9a0f6a9.avif",
+      "values": {
+        "adjustmentUnit": 0.001,
+        "autoCalibration": false,
+        "bottomDeadzone": 0.003838000000000041,
+        "bottomDeadzoneStddev": 0.0005548013801610033,
+        "connectionOption": "usbTypeC",
+        "connectionType": "유선",
+        "detachStroke": 0.001,
+        "dks": true,
+        "emWPrRtAvgD0": 2.6465198019801974,
+        "emWPrRtSdD0": 0.07256940756828785,
+        "emWRealPerfD0": 4635,
+        "emWRlRtAvgD0": 0.9147099009900984,
+        "emWRlRtSdD0": 0.05415152924703212,
+        "eyejokerRating": "MILD_RECOMMENDATION",
+        "firmwareVersion": "0.1.1.0",
+        "hotswap": true,
+        "key10PressResponseTime": 0.19,
+        "key10PressStandardDeviation": 0.04,
+        "key10PullStandardDeviation": 0.07,
+        "key10ResponseTime": 0.36,
+        "key6PressResponseTime": 0.18,
+        "key6PressStandardDeviation": 0.04,
+        "key6PullResponseTime": 0.36,
+        "key6PullStandardDeviation": 0.06,
+        "keyGhosting": false,
+        "keyboardLayout": "60%",
+        "keyboardMechanism": [
+          "자석축"
+        ],
+        "keyboardPcbAvgWired": 0.1532584158415839,
+        "kkboard": false,
+        "minStroke": 0.001,
+        "modeTap": true,
+        "multiKeyDelay": false,
+        "overallRatingKeyboard": "FLAWLESS",
+        "overallResponseSpeed": 0.25,
+        "overallStddev": 0.05,
+        "palmRest": false,
+        "pcbAvgDetach": 0.3417287128712875,
+        "pollingRate": "8000",
+        "publicReleaseAt": "2026-05-27T11:17:00.000Z",
+        "rapidAdjustmentUnit": 0.001,
+        "rapidTrigger": true,
+        "realPerformance": 6155,
+        "remapping": true,
+        "simultaneousInput": false,
+        "socd": true,
+        "stabilizer": "cherryPlateMount",
+        "stddevDetach": 0.0615689235238676,
+        "stddevWired": 0.03763382133641932,
+        "strokeErrorRate": 1.2396874999999974,
+        "strokeMeasured": 0.12858599999999998,
+        "strokeMeasuredStddev": 0.015499435602627601,
+        "toggleKey": true,
+        "webDriver": true,
+        "windowsLock": true
+      }
+    },
+    {
+      "id": "479c4333-c25b-4e79-89a5-74d93565c4b5",
+      "name": "Raven61",
+      "manufacturer": {
+        "ko": "팀울프",
+        "en": "TEAMWOLF"
+      },
+      "priceKrw": 117000,
+      "status": "reviewed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": "https://s.click.aliexpress.com/e/_oBw6LC9",
+      "image": "/images/56d14ecc-bfc7-4c35-a911-58bcfad08828.avif",
+      "values": {
+        "autoCalibration": false,
+        "connectionOption": "usbTypeC",
+        "connectionType": "유선",
+        "dks": false,
+        "eyejokerRating": "NO_RECOMMENDATION",
+        "firmwareVersion": "07/31",
+        "hotswap": true,
+        "keyGhosting": false,
+        "keyboardLayout": "60%",
+        "keyboardMechanism": [
+          "자석축"
+        ],
+        "keyboardPcbAvgWired": 0.66,
+        "kkboard": false,
+        "modeTap": false,
+        "mounting": [
+          "oring",
+          "tray"
+        ],
+        "multiKeyDelay": true,
+        "overallRatingKeyboard": "TIER_1",
+        "overallResponseSpeed": 0.67,
+        "overallStddev": 0.11,
+        "palmRest": false,
+        "pcbAvgDetach": 0.68,
+        "pollingRate": "8000",
+        "publicReleaseAt": "2025-01-01T00:00:00",
+        "rapidTrigger": true,
+        "realPerformance": 2630,
+        "remapping": false,
+        "simultaneousInput": false,
+        "socd": false,
+        "stabilizer": "cherryPlateMount",
+        "stddevDetach": 0.11,
+        "stddevWired": 0.11,
+        "toggleKey": false,
+        "webDriver": false,
+        "windowsLock": false
+      }
+    },
+    {
+      "id": "49c95966-e910-4628-86d1-b7915439e9af",
+      "name": "Archon M3 600 MAX",
+      "manufacturer": {
+        "ko": "프리플로우",
+        "en": "Preflow"
+      },
+      "priceKrw": 109900,
+      "status": "earlyAccess",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": null,
+      "values": {
+        "adjustmentUnit": 0.05,
+        "angleAdjustment": "3단계",
+        "as": 1,
+        "autoCalibration": false,
+        "connectionOption": "usbTypeC",
+        "connectionType": "유선",
+        "detachStroke": 0.05,
+        "dks": true,
+        "eyejokerRating": "ANTICIPATING",
+        "hotswap": true,
+        "housingFrontHeight": 29,
+        "housingKeyboard": [
+          "plastic"
+        ],
+        "keyboardLayout": "full",
+        "keyboardMechanism": [
+          "자석축"
+        ],
+        "keycap": "pbtDoubleShot",
+        "kkboard": true,
+        "led": "rgb",
+        "mcu": "armcortex600mhz",
+        "measuredSwitchType": "자석축",
+        "minStroke": 0.1,
+        "modeTap": true,
+        "mounting": [
+          "leafspring"
+        ],
+        "palmRest": false,
+        "pollingRate": "8000",
+        "profile": "cherryProfile",
+        "publicReleaseAt": "2026-10-20T07:23:00.000Z",
+        "rapidAdjustmentUnit": 0.05,
+        "rapidTrigger": true,
+        "remapping": true,
+        "socd": true,
+        "soundAbsorption": "기보강(포론), IXPE 스위치 패드, PET 패드, 하부(EPDM, 실리콘)",
+        "stabilizer": "cherryPlateMount",
+        "switchType": "탈론 / 퀵실버 고스트 / 저소음 퀵실버 V3",
+        "toggleKey": true,
+        "webDriver": true,
+        "windowsLock": true
+      }
+    }
+  ]
+}
