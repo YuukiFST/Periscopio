@@ -13,7 +13,7 @@ export default defineConfig({
   },
   projects: [{ name: "chromium", use: { ...devices["Desktop Chrome"] } }],
   webServer: {
-    command: `pnpm build && pnpm preview --port ${previewPort} --strictPort`,
+    command: `node tests/e2e/serve-fixture-build.ts ${previewPort}`,
     url: `http://localhost:${previewPort}`,
     reuseExistingServer: false,
     timeout: 180_000,

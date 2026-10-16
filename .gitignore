@@ -1,6 +1,7 @@
 .scratch/
 node_modules/
 dist/
+dist-e2e/
 dev-dist/
 test-results/
 playwright-report/

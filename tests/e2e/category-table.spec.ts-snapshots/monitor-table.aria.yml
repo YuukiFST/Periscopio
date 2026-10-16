@@ -1,0 +1,102 @@
+- table "Monitores":
+    - rowgroup:
+        - row "Produto Nota geral Recomendação AliExpress Preço Tamanho da tela Taxa de atualização Resolução Certificação HDR Resposta geral Gama de cores (DCI-P3) Brilho máximo (SDR) Brilho máximo (HDR) Reflexão total (SCI)":
+            - columnheader "Produto":
+                - button "Produto"
+            - columnheader "Nota geral":
+                - button "Nota geral"
+            - columnheader "Recomendação":
+                - button "Recomendação"
+            - columnheader "AliExpress"
+            - columnheader "Preço":
+                - button "Preço"
+            - columnheader "Tamanho da tela":
+                - button "Tamanho da tela"
+            - columnheader "Taxa de atualização":
+                - button "Taxa de atualização"
+            - columnheader "Resolução":
+                - button "Resolução"
+            - columnheader "Certificação HDR":
+                - button "Certificação HDR"
+            - columnheader "Resposta geral":
+                - button "Resposta geral"
+            - columnheader "Gama de cores (DCI-P3)":
+                - button "Gama de cores (DCI-P3)"
+            - columnheader "Brilho máximo (SDR)":
+                - button "Brilho máximo (SDR)"
+            - columnheader "Brilho máximo (HDR)":
+                - button "Brilho máximo (HDR)"
+            - columnheader "Reflexão total (SCI)":
+                - button "Reflexão total (SCI)"
+    - rowgroup:
+        - row /UltraGear 32GS95UE [\d,.]+[bkmBKM]+ Mode LGE Tier 0 Não recomendado Sem dado Sem dado \d+" \d+ Hz UHD \(\d+×\d+\) DisplayHDR True Black \d+ \d+,\d+ ms \d+,\d+% \d+ cd\/m² Sem dado Sem dado/:
+            - rowheader /UltraGear 32GS95UE [\d,.]+[bkmBKM]+ Mode LGE/:
+                - paragraph: /UltraGear 32GS95UE [\d,.]+[bkmBKM]+ Mode/
+                - paragraph: LGE
+            - cell "Tier 0"
+            - cell "Não recomendado"
+            - cell "Sem dado"
+            - cell "Sem dado"
+            - cell /\d+"/
+            - cell /\d+ Hz/
+            - cell /UHD \(\d+×\d+\)/
+            - cell /DisplayHDR True Black \d+/
+            - cell /\d+,\d+ ms/
+            - cell /\d+,\d+%/
+            - cell /\d+ cd\/m²/
+            - cell "Sem dado"
+            - cell "Sem dado"
+        - row /XG259QDNS Ace ASUS Sem dado Sem dado Sem dado Sem dado \d+,\d+" \d+ Hz FHD \(\d+×\d+\) DisplayHDR True Black \d+ Sem dado Sem dado Sem dado Sem dado Sem dado/:
+            - rowheader "XG259QDNS Ace ASUS":
+                - paragraph: XG259QDNS Ace
+                - paragraph: ASUS
+            - cell "Sem dado"
+            - cell "Sem dado"
+            - cell "Sem dado"
+            - cell "Sem dado"
+            - cell /\d+,\d+"/
+            - cell /\d+ Hz/
+            - cell /FHD \(\d+×\d+\)/
+            - cell /DisplayHDR True Black \d+/
+            - cell "Sem dado"
+            - cell "Sem dado"
+            - cell "Sem dado"
+            - cell "Sem dado"
+            - cell "Sem dado"
+        - row /모비우스 EX2510S BenQ Sem dado Sem dado Sem dado ₩ \d+\.\d+ \d+,\d+" \d+ Hz FHD \(\d+×\d+\) Sem dado Sem dado Sem dado Sem dado Sem dado Sem dado/:
+            - rowheader "모비우스 EX2510S BenQ":
+                - paragraph: 모비우스 EX2510S
+                - paragraph: BenQ
+            - cell "Sem dado"
+            - cell "Sem dado"
+            - cell "Sem dado"
+            - cell /₩ \d+\.\d+/
+            - cell /\d+,\d+"/
+            - cell /\d+ Hz/
+            - cell /FHD \(\d+×\d+\)/
+            - cell "Sem dado"
+            - cell "Sem dado"
+            - cell "Sem dado"
+            - cell "Sem dado"
+            - cell "Sem dado"
+            - cell "Sem dado"
+        - row /ROG SWIFT PG259QN ASUS Sem dado Sem dado ROG SWIFT PG259QN no AliExpress ₩ \d+\.\d+ \d+" \d+ Hz FHD \(\d+×\d+\) Sem dado Sem dado Sem dado Sem dado Sem dado Sem dado/:
+            - rowheader "ROG SWIFT PG259QN ASUS":
+                - paragraph: ROG SWIFT PG259QN
+                - paragraph: ASUS
+            - cell "Sem dado"
+            - cell "Sem dado"
+            - cell "ROG SWIFT PG259QN no AliExpress":
+                - link "ROG SWIFT PG259QN no AliExpress":
+                    - /url: https://s.click.aliexpress.com/e/_oEZbgCi
+                    - text: ""
+            - cell /₩ \d+\.\d+/
+            - cell /\d+"/
+            - cell /\d+ Hz/
+            - cell /FHD \(\d+×\d+\)/
+            - cell "Sem dado"
+            - cell "Sem dado"
+            - cell "Sem dado"
+            - cell "Sem dado"
+            - cell "Sem dado"
+            - cell "Sem dado"
