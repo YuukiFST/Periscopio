@@ -1,4 +1,5 @@
 import { ImageOff } from "lucide-react";
+import { useState } from "react";
 import type { Product } from "@/data/schema";
 import { manufacturerName } from "@/i18n/labels";
 import {
@@ -21,28 +22,41 @@ function MissingValue() {
   );
 }
 
+/**
+ * Keeps the photo's space when there is no photo, or when it fails to load:
+ * offline, a photo never seen before is not in the cache.
+ */
+function ProductPhoto({ src }: { src: string | null }) {
+  const [failed, setFailed] = useState(false);
+  if (!src || failed) {
+    return (
+      <div
+        aria-hidden="true"
+        className="grid size-8 shrink-0 place-items-center rounded-md bg-component text-fg-tertiary sm:size-10"
+      >
+        <ImageOff className="size-4" />
+      </div>
+    );
+  }
+  return (
+    <img
+      src={src}
+      alt=""
+      width={40}
+      height={40}
+      loading="lazy"
+      decoding="async"
+      onError={() => setFailed(true)}
+      className="size-8 shrink-0 rounded-md bg-white object-contain outline-1 -outline-offset-1 outline-border sm:size-10"
+    />
+  );
+}
+
 export function ProductCell({ product }: { product: Product }) {
   const manufacturer = manufacturerName(product.manufacturer);
   return (
     <div className="flex items-center gap-2 sm:gap-3">
-      {product.image ? (
-        <img
-          src={product.image}
-          alt=""
-          width={40}
-          height={40}
-          loading="lazy"
-          decoding="async"
-          className="size-8 shrink-0 rounded-md bg-white object-contain outline-1 -outline-offset-1 outline-border sm:size-10"
-        />
-      ) : (
-        <div
-          aria-hidden="true"
-          className="grid size-8 shrink-0 place-items-center rounded-md bg-component text-fg-tertiary sm:size-10"
-        >
-          <ImageOff className="size-4" />
-        </div>
-      )}
+      <ProductPhoto key={product.image} src={product.image} />
       <div className="min-w-0">
         <p className="leading-[1.125rem] font-medium wrap-break-word text-fg-primary">
           {product.name}
