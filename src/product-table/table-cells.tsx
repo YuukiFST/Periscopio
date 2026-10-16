@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import { ImageOff } from "lucide-react";
 import { useState } from "react";
 import type { Product } from "@/data/schema";
@@ -59,7 +60,16 @@ export function ProductCell({ product }: { product: Product }) {
       <ProductPhoto key={product.image} src={product.image} />
       <div className="min-w-0">
         <p className="leading-[1.125rem] font-medium wrap-break-word text-fg-primary">
-          {product.name}
+          {/* The table's search params ride along, so the detail screen can lead back to this view. */}
+          <Link
+            from="/$categoria/"
+            to="/$categoria/$id"
+            params={(current) => ({ ...current, id: product.id })}
+            search={true}
+            className="underline-offset-4 after:absolute after:inset-0 hover:underline focus-visible:outline-none focus-visible:after:outline-2 focus-visible:after:-outline-offset-2 focus-visible:after:outline-ring"
+          >
+            {product.name}
+          </Link>
         </p>
         <p className="text-caption-lg wrap-break-word text-fg-secondary">{manufacturer}</p>
       </div>

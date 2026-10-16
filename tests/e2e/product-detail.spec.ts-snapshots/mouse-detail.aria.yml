@@ -1,0 +1,108 @@
+- article "Dragonfly A9 Ultra":
+    - link "Voltar para Mouses":
+        - /url: /mouse?ordem=-peso&status=testados&q=dragon&outro=1
+    - img "Foto de Dragonfly A9 Ultra"
+    - heading "Dragonfly A9 Ultra" [level=1]
+    - paragraph: ATK
+    - term: Preço
+    - definition: /₩ \d+\.\d+/
+    - term: Status de teste
+    - definition: Publicado
+    - link "Ver no AliExpress (abre em nova aba)":
+        - /url: https://s.click.aliexpress.com/e/_oFLhAg6
+    - region "Especificações":
+        - heading "Especificações" [level=2]
+        - term: Nota geral
+        - definition: Tier 0
+        - term: Recomendação
+        - definition: Recomendado
+        - term: Formato
+        - definition: Simétrico
+        - term: Polling rate máximo
+        - definition: /\d+\.\d+ Hz/
+        - term: Conexão
+        - definition: Com e sem fio
+        - term: Comprimento
+        - definition: /\d+ mm/
+        - term: Peso
+        - definition: /\d+ g/
+        - term: Largura máxima
+        - definition: /\d+ mm/
+        - term: Altura
+        - definition: /\d+ mm/
+        - term: Carcaça furada
+        - definition: Não
+        - term: MCU
+        - definition: Nordic nRF52840
+        - term: Bateria
+        - definition: 500mAh
+        - term: Sensor
+        - definition: /PAW3950 Ultra \([\d,.]+[bkmBKM]+\)/
+        - term: Switch
+        - definition: Omron Optical / ATK Custom Tuned Optical
+        - term: Switch lateral
+        - definition: huano
+        - term: Switch da roda
+        - definition: Tact switch de 2 pinos
+        - term: Encoder
+        - definition: TTC Gold
+        - term: Velocidade máxima de rastreio
+        - definition: /\d+ IPS/
+        - term: Aceleração máxima
+        - definition: /\d+ G/
+        - term: DPI máximo
+        - definition: /\d+\.\d+ DPI/
+        - term: Passo de DPI
+        - definition: /\d+ DPI/
+        - term: Conector
+        - definition: USB-C
+        - term: Modo de LOD do sensor
+        - definition: Faixa
+        - term: Valores de LOD do sensor
+        - definition: /0\.7~1\.7 mm \(0\.1 mm step, \d+ levels\)/
+        - term: Situação de venda
+        - definition: À venda
+        - term: Versão do firmware
+        - definition: /v2\.\d+/
+        - term: Data de publicação
+        - definition: /\d+ de jul\. de \d+/
+    - region "Medições":
+        - heading "Medições" [level=2]
+        - term: Resposta média do sensor
+        - definition: /\d+,\d+ ms/
+        - term: Desvio padrão do sensor
+        - definition: /\d+,\d+ ms/
+        - term: Resposta do clique
+        - definition: /\d+,\d+ ms/
+        - term: Desvio padrão do clique
+        - definition: /\d+,\d+ ms/
+        - term: Debounce
+        - definition: /\d+ ms/
+        - term: Clique perdido
+        - definition: Não
+        - term: Slam click
+        - definition: Não
+        - term: Proteção contra slam click
+        - definition: Sim
+        - term: LOD mínimo
+        - definition: /\d+,\d+ mm/
+        - term: Resposta média do clique (ideal, ao pressionar)
+        - definition: /\d+,\d+ ms/
+        - term: Desvio padrão do clique (ideal, ao pressionar)
+        - definition: /\d+,\d+ ms/
+        - term: Resposta média do clique (ideal, ao soltar)
+        - definition: /\d+,\d+ ms/
+        - term: Desvio padrão do clique (ideal, ao soltar)
+        - definition: /\d+,\d+ ms/
+        - term: Resposta média do clique (sem fio, ao pressionar)
+        - definition: /\d+,\d+ ms/
+        - term: Desvio padrão do clique (sem fio, ao pressionar)
+        - definition: /\d+,\d+ ms/
+        - term: Resposta média do clique (sem fio, ao soltar)
+        - definition: /\d+,\d+ ms/
+        - term: Desvio padrão do clique (sem fio, ao soltar)
+        - definition: /\d+,\d+ ms/
+        - term: Resposta média do sensor (sem fio)
+        - definition: /\d+,\d+ ms/
+        - term: Desvio padrão do sensor (sem fio)
+        - definition: /\d+,\d+ ms/

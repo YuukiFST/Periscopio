@@ -25,7 +25,9 @@
     - rowgroup:
         - row /Dragonfly A9 Ultra ATK Tier 0 Recomendado Dragonfly A9 Ultra no AliExpress ₩ \d+\.\d+ PAW3950 Ultra \([\d,.]+[bkmBKM]+\) Nordic nRF52840 Simétrico \d+ g \d+,\d+ ms desvio padrão \d+,\d+ \d+,\d+ ms desvio padrão \d+,\d+/:
             - rowheader "Dragonfly A9 Ultra ATK":
-                - paragraph: Dragonfly A9 Ultra
+                - paragraph:
+                    - link "Dragonfly A9 Ultra":
+                        - /url: /mouse/003586ba-0cbf-4932-843c-24e5f56e47c2
                 - paragraph: ATK
             - cell "Tier 0"
             - cell "Recomendado"
@@ -42,7 +44,9 @@
             - cell /\d+,\d+ ms desvio padrão \d+,\d+/
         - row /Huan WLMouse Tier 3 Recomendação fraca Sem dado ₩ \d+\.\d+ PAW3950 HS Nordic nRF54H20 Simétrico \d+ g \d+,\d+ ms desvio padrão \d+,\d+ \d+,\d+ ms desvio padrão \d+,\d+/:
             - rowheader "Huan WLMouse":
-                - paragraph: Huan
+                - paragraph:
+                    - link "Huan":
+                        - /url: /mouse/201270eb-b392-4e41-96a9-1b609a77e795
                 - paragraph: WLMouse
             - cell "Tier 3"
             - cell "Recomendação fraca"
@@ -56,7 +60,9 @@
             - cell /\d+,\d+ ms desvio padrão \d+,\d+/
         - row /Dragonfly 3 PRO VGN Sem nota Não recomendado Dragonfly 3 PRO no AliExpress ₩ \d+\.\d+ PAW3395 Sem dado Simétrico \d+ g \d+,\d+ ms desvio padrão \d+,\d+ \d+,\d+ ms desvio padrão \d+,\d+/:
             - rowheader "Dragonfly 3 PRO VGN":
-                - paragraph: Dragonfly 3 PRO
+                - paragraph:
+                    - link "Dragonfly 3 PRO":
+                        - /url: /mouse/0390fea6-efb9-45ea-a1a3-71b170224e58
                 - paragraph: VGN
             - cell "Sem nota"
             - cell "Não recomendado"
@@ -73,7 +79,9 @@
             - cell /\d+,\d+ ms desvio padrão \d+,\d+/
         - row /H200A ABKO Sem nota Recomendação fraca Sem dado ₩ \d+\.\d+ PAW3395 CompX Tech CX52850 Simétrico e Assimétrico \d+ g \d+,\d+ ms desvio padrão \d+,\d+ \d+,\d+ ms desvio padrão \d+,\d+/:
             - rowheader "H200A ABKO":
-                - paragraph: H200A
+                - paragraph:
+                    - link "H200A":
+                        - /url: /mouse/2cf40f05-fa65-4a5c-936a-c67de7025af3
                 - paragraph: ABKO
             - cell "Sem nota"
             - cell "Recomendação fraca"
@@ -87,7 +95,9 @@
             - cell /\d+,\d+ ms desvio padrão \d+,\d+/
         - row /VK M5 Max THOR VALKYRIE Sem dado Sem dado Sem dado Sem dado Sem dado Sem dado Assimétrico \d+ g Sem dado Sem dado/:
             - rowheader "VK M5 Max THOR VALKYRIE":
-                - paragraph: VK M5 Max THOR
+                - paragraph:
+                    - link "VK M5 Max THOR":
+                        - /url: /mouse/0fbec015-8d94-469d-993e-1d9d5138fb9b
                 - paragraph: VALKYRIE
             - cell "Sem dado"
             - cell "Sem dado"
@@ -101,7 +111,9 @@
             - cell "Sem dado"
         - row /Cloud XS WAIZOWL Sem dado Aguardado Cloud XS no AliExpress ₩ \d+\.\d+ PAW3950 Nordic nRF52840 Simétrico \d+ g Sem dado Sem dado/:
             - rowheader "Cloud XS WAIZOWL":
-                - paragraph: Cloud XS
+                - paragraph:
+                    - link "Cloud XS":
+                        - /url: /mouse/1f2e9ba6-5ac5-4f0d-b986-7cb4203b5d6c
                 - paragraph: WAIZOWL
             - cell "Sem dado"
             - cell "Aguardado"
