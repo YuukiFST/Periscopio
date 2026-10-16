@@ -99,19 +99,15 @@ export function ProductTable({
   });
   const rows = table.getRowModel().rows;
 
-  // Rows outside the scroll window are unmounted, so the focused row and the rows holding the
-  // links before and after it stay rendered: Tab and Shift+Tab keep moving through the table.
+  // Rows outside the scroll window are unmounted, so the focused row and the rows before and
+  // after it, each holding its Produto link, stay rendered: Tab and Shift+Tab keep moving.
   const [focusedRowId, setFocusedRowId] = useState<string>();
   const keptIndexes = useMemo(() => {
     const focusedIndex = rows.findIndex((row) => row.id === focusedRowId);
     if (focusedIndex === -1) return [];
-    const hasLink = (index: number) => Boolean(rows[index]?.original.aliUrl);
-    const kept = [focusedIndex];
-    const previous = rows.findLastIndex((_, index) => index < focusedIndex && hasLink(index));
-    const next = rows.findIndex((_, index) => index > focusedIndex && hasLink(index));
-    if (previous !== -1) kept.push(previous);
-    if (next !== -1) kept.push(next);
-    return kept;
+    return [focusedIndex - 1, focusedIndex, focusedIndex + 1].filter(
+      (index) => index >= 0 && index < rows.length,
+    );
   }, [rows, focusedRowId]);
   const rangeExtractor = useCallback(
     (range: Range) =>

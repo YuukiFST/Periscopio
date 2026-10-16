@@ -31,7 +31,9 @@
     - rowgroup:
         - row /UltraGear 32GS95UE [\d,.]+[bkmBKM]+ Mode LGE Tier 0 Não recomendado Sem dado Sem dado \d+" \d+ Hz UHD \(\d+×\d+\) DisplayHDR True Black \d+ \d+,\d+ ms \d+,\d+% \d+ cd\/m² Sem dado Sem dado/:
             - rowheader /UltraGear 32GS95UE [\d,.]+[bkmBKM]+ Mode LGE/:
-                - paragraph: /UltraGear 32GS95UE [\d,.]+[bkmBKM]+ Mode/
+                - paragraph:
+                    - link /UltraGear 32GS95UE [\d,.]+[bkmBKM]+ Mode/:
+                        - /url: /monitor/168e2700-995b-4632-86e9-08613515a315
                 - paragraph: LGE
             - cell "Tier 0"
             - cell "Não recomendado"
@@ -48,7 +50,9 @@
             - cell "Sem dado"
         - row /XG259QDNS Ace ASUS Sem dado Sem dado Sem dado Sem dado \d+,\d+" \d+ Hz FHD \(\d+×\d+\) DisplayHDR True Black \d+ Sem dado Sem dado Sem dado Sem dado Sem dado/:
             - rowheader "XG259QDNS Ace ASUS":
-                - paragraph: XG259QDNS Ace
+                - paragraph:
+                    - link "XG259QDNS Ace":
+                        - /url: /monitor/0138f613-dedd-4d4c-86a6-74798a5baf14
                 - paragraph: ASUS
             - cell "Sem dado"
             - cell "Sem dado"
@@ -65,7 +69,9 @@
             - cell "Sem dado"
         - row /모비우스 EX2510S BenQ Sem dado Sem dado Sem dado ₩ \d+\.\d+ \d+,\d+" \d+ Hz FHD \(\d+×\d+\) Sem dado Sem dado Sem dado Sem dado Sem dado Sem dado/:
             - rowheader "모비우스 EX2510S BenQ":
-                - paragraph: 모비우스 EX2510S
+                - paragraph:
+                    - link "모비우스 EX2510S":
+                        - /url: /monitor/0780a9f3-3c88-41ac-97e9-1c45f31c9a38
                 - paragraph: BenQ
             - cell "Sem dado"
             - cell "Sem dado"
@@ -82,7 +88,9 @@
             - cell "Sem dado"
         - row /ROG SWIFT PG259QN ASUS Sem dado Sem dado ROG SWIFT PG259QN no AliExpress ₩ \d+\.\d+ \d+" \d+ Hz FHD \(\d+×\d+\) Sem dado Sem dado Sem dado Sem dado Sem dado Sem dado/:
             - rowheader "ROG SWIFT PG259QN ASUS":
-                - paragraph: ROG SWIFT PG259QN
+                - paragraph:
+                    - link "ROG SWIFT PG259QN":
+                        - /url: /monitor/7aa60f74-aa55-44f0-9858-9d672a19fba5
                 - paragraph: ASUS
             - cell "Sem dado"
             - cell "Sem dado"

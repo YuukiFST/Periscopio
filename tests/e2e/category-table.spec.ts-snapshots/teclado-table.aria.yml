@@ -25,7 +25,9 @@
     - rowgroup:
         - row /TENKO - ARC \d+ ARBITER STUDIO Impecável Recomendação fraca Sem dado ₩ \d+\.\d+ \d+,\d+ ms desvio padrão \d+,\d+ \d+\.\d+ Hz Sem dado \d+,\d+ mm \d+,\d+ mm \d+,\d+%/:
             - rowheader /TENKO - ARC \d+ ARBITER STUDIO/:
-                - paragraph: /TENKO - ARC \d+/
+                - paragraph:
+                    - link /TENKO - ARC \d+/:
+                        - /url: /teclado/04ef23e4-e4bd-4212-be44-daabe2640afd
                 - paragraph: ARBITER STUDIO
             - cell "Impecável"
             - cell "Recomendação fraca"
@@ -39,7 +41,9 @@
             - cell /\d+,\d+%/
         - row /EDGE 60HE Pro ATK Tier 1 Não recomendado EDGE 60HE Pro no AliExpress ₩ \d+\.\d+ \d+,\d+ ms desvio padrão \d+,\d+ \d+\.\d+ Hz \d+\.\d+ Hz Sem dado Sem dado Sem dado/:
             - rowheader "EDGE 60HE Pro ATK":
-                - paragraph: EDGE 60HE Pro
+                - paragraph:
+                    - link "EDGE 60HE Pro":
+                        - /url: /teclado/021979aa-b222-47d3-b5ec-8b59d671aff4
                 - paragraph: ATK
             - cell "Tier 1"
             - cell "Não recomendado"
@@ -56,7 +60,9 @@
             - cell "Sem dado"
         - row /Raven61 TEAMWOLF Tier 1 Não recomendado Raven61 no AliExpress ₩ \d+\.\d+ \d+,\d+ ms desvio padrão \d+,\d+ \d+\.\d+ Hz Sem dado Sem dado Sem dado Sem dado/:
             - rowheader "Raven61 TEAMWOLF":
-                - paragraph: Raven61
+                - paragraph:
+                    - link "Raven61":
+                        - /url: /teclado/479c4333-c25b-4e79-89a5-74d93565c4b5
                 - paragraph: TEAMWOLF
             - cell "Tier 1"
             - cell "Não recomendado"
@@ -73,7 +79,9 @@
             - cell "Sem dado"
         - row /Archon M3 \d+ MAX Preflow Sem dado Aguardado Sem dado ₩ \d+\.\d+ Sem dado Sem dado Sem dado Sem dado Sem dado Sem dado/:
             - rowheader /Archon M3 \d+ MAX Preflow/:
-                - paragraph: /Archon M3 \d+ MAX/
+                - paragraph:
+                    - link /Archon M3 \d+ MAX/:
+                        - /url: /teclado/49c95966-e910-4628-86d1-b7915439e9af
                 - paragraph: Preflow
             - cell "Sem dado"
             - cell "Aguardado"
