@@ -1,8 +1,9 @@
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Search } from "lucide-react";
 import { useId, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
+import { normalizeForSearch } from "@/product-table/product-filter";
 import {
   isFilterActive,
   type CategoryFilter,
@@ -55,7 +56,7 @@ export function FilterPanel({ filters, values, onValuesChange, clearCount }: Fil
       />
     ) : (
       <ChoiceFilterFields
-        key={filter.param}
+        key={`${filter.param}-${clearCount}`}
         filter={filter}
         marked={values.choices[filter.param] ?? []}
         onMarkedChange={(id, marked) =>
@@ -100,6 +101,22 @@ function FilterLegend({ children }: { children: string }) {
   return <legend className="mb-2 font-medium text-fg-primary">{children}</legend>;
 }
 
+/** A list Filtro past this many choices gets a search box (spec: "com busca acima de 12 itens"). */
+const searchableChoiceCount = 12;
+
+/** Letters and digits only, so "paw 3950", "3950hs" and "owl-eye" find "PAW3950 HS" and "Owl-Eye 19K". */
+function compactForSearch(text: string): string {
+  return normalizeForSearch(text).replace(/[^\p{L}\p{N}]/gu, "");
+}
+
+function choiceMatchesQuery(label: string, query: string): boolean {
+  const compactLabel = compactForSearch(label);
+  return query
+    .split(/\s+/)
+    .map(compactForSearch)
+    .every((word) => compactLabel.includes(word));
+}
+
 type ChoiceFilterFieldsProps = {
   filter: ChoiceFilter;
   marked: readonly string[];
@@ -107,11 +124,54 @@ type ChoiceFilterFieldsProps = {
 };
 
 function ChoiceFilterFields({ filter, marked, onMarkedChange }: ChoiceFilterFieldsProps) {
+  const [query, setQuery] = useState("");
+  const isSearchable = filter.choices.length > searchableChoiceCount;
+  const trimmedQuery = query.trim();
+  const matching = filter.choices.filter((choice) => choiceMatchesQuery(choice.label, query));
+  // A marked choice stays in the list while searching, so the search never hides what is on.
+  const shown = filter.choices.filter(
+    (choice) => marked.includes(choice.id) || matching.includes(choice),
+  );
+  const searchLabel = `Buscar ${filter.label.toLocaleLowerCase("pt-BR")}`;
+
   return (
     <fieldset className="min-w-0">
       <FilterLegend>{filter.label}</FilterLegend>
-      <div className="flex flex-wrap gap-1.5">
-        {filter.choices.map((choice) => (
+      {isSearchable && (
+        <div className="relative mb-2">
+          <Search
+            aria-hidden="true"
+            className="pointer-events-none absolute start-2.5 top-1/2 size-4 -translate-y-1/2 text-fg-tertiary"
+          />
+          <Input
+            type="search"
+            name={`${filter.param}-busca`}
+            autoComplete="off"
+            autoCapitalize="none"
+            autoCorrect="off"
+            spellCheck={false}
+            enterKeyHint="search"
+            aria-label={searchLabel}
+            placeholder={searchLabel}
+            value={query}
+            onChange={(event) => setQuery(event.target.value)}
+            onKeyDown={(event) => {
+              // Escape clears a typed search before it closes the drawer around it.
+              if (event.key !== "Escape" || query === "") return;
+              event.stopPropagation();
+              setQuery("");
+            }}
+            className="h-9 ps-8"
+          />
+        </div>
+      )}
+      <div
+        className={cn(
+          "flex flex-wrap gap-1.5",
+          isSearchable && "scroll-fade-y -m-1 max-h-52 overflow-y-auto p-1 [scrollbar-width:thin]",
+        )}
+      >
+        {shown.map((choice) => (
           <label key={choice.id} className="relative">
             <input
               type="checkbox"
@@ -125,6 +185,13 @@ function ChoiceFilterFields({ filter, marked, onMarkedChange }: ChoiceFilterFiel
           </label>
         ))}
       </div>
+      {isSearchable && (
+        <p role="status" className="mt-1.5 text-caption-lg text-fg-secondary empty:hidden">
+          {trimmedQuery !== "" && matching.length === 0
+            ? `Nenhuma opção para “${trimmedQuery}”.`
+            : ""}
+        </p>
+      )}
     </fieldset>
   );
 }
