@@ -1,0 +1,4844 @@
+{
+  "data": {
+    "rows": [
+      {
+        "id": "0138f613-dedd-4d4c-86a6-74798a5baf14",
+        "values": {
+          "driverLinkId": "",
+          "youtubeReviewUrl": "",
+          "tag": "",
+          "status": "unreleased",
+          "driverSupportStatus": "",
+          "saleStatus": "unreleased",
+          "manufacturer": "34a50c6e-d70b-4896-ace6-2d18cb84fd01",
+          "productName": "XG259QDNS Ace",
+          "eyejokerRating": "",
+          "priceCurrency": "",
+          "price": "",
+          "as": "",
+          "oneLineNote": "",
+          "benchVersion": "",
+          "firmwareVersion": "",
+          "productImage": "https://cdn.eyejokerdb.com/aecb4fdd-af5d-40a9-affa-a2e944e07210.avif",
+          "purchasedDate": "",
+          "arrivedDate": "",
+          "testingStartDate": "",
+          "publicReleaseAt": "",
+          "overallRatingMonitor": "",
+          "sizeInch": "24.5",
+          "resolution": "FHD",
+          "panelType": "QD_OLED",
+          "refreshRate": "360",
+          "maxBrightnessSdrSpec": "",
+          "hdrCertification": "displayHdrTrueBlack600",
+          "maxBrightnessHdrSpec": "1800",
+          "colorGamutSrgbSpec": "",
+          "colorGamutDcip3Spec": "99",
+          "panelMaker": "",
+          "bfi": "",
+          "adaptiveSync": "gsyncCompatible, freeSyncPremiumPro",
+          "hdmiPortCount": "2",
+          "responseAverage": "",
+          "hdmiLinkClass": "",
+          "inputLagMonitor": "",
+          "responseAverageRgb10": "",
+          "displayPortCount": "",
+          "responseMax": "",
+          "displayPortLinkClass": "",
+          "overshootAverage": "",
+          "displayStreamCompression": "",
+          "usbCVideo": "",
+          "overshootMax": "",
+          "usbCPowerDeliveryW": "",
+          "maxBrightnessSdrMeasured": "",
+          "kvmType": "",
+          "maxBrightnessHdrMeasured": "",
+          "audioReturnChannel": "",
+          "colorGamutDciP3Measured": "",
+          "colorGamutSrgbBench": "",
+          "multiViewSupport": "",
+          "contrastMeasured": "",
+          "hdrFormatSupport": "hdr10",
+          "colorDeAvg": "",
+          "localDimmingType": "",
+          "bfiOnMaxBrightness": "",
+          "localDimmingZones": "",
+          "colorGamutBt2020Measured": "",
+          "colorVolumeDciP3Measured": "",
+          "colorVolumeBt2020Measured": "",
+          "hdrPeak2PercentMeasured": "",
+          "hdrPeak10PercentMeasured": "",
+          "hdrFullFieldBrightnessMeasured": "",
+          "vrrFlickerGrade": "",
+          "textClarityGrade": "",
+          "pwmFrequencyMeasured": "",
+          "standType": "",
+          "standAdjustments": "",
+          "heightAdjustMm": "",
+          "vesaMountPattern": "",
+          "screenCoating": ""
+        },
+        "createdAt": "2026-08-28T22:16:45.230208Z",
+        "updatedAt": "2026-08-29T18:35:55.457295Z",
+        "isPrivate": false,
+        "hasMeshShell": false,
+        "hasFrequencyResponse": false,
+        "colors": {
+          "hdrCertification": "#A456E1",
+          "hdrFormatSupport": "#94A9D2"
+        }
+      },
+      {
+        "id": "0780a9f3-3c88-41ac-97e9-1c45f31c9a38",
+        "values": {
+          "status": "proposed",
+          "saleStatus": "DISCONTINUED",
+          "manufacturer": "ab795110-ddfe-46b9-b281-b55d1fd5caec",
+          "productName": "모비우스 EX2510S",
+          "eyejokerRating": "",
+          "priceCurrency": "KRW",
+          "price": "280000",
+          "as": "",
+          "oneLineNote": "",
+          "benchVersion": "",
+          "firmwareVersion": "",
+          "productImage": "https://cdn.eyejokerdb.com/92a57242-74e4-46e1-9c36-c72000b4a7bb.avif",
+          "purchasedDate": "",
+          "arrivedDate": "",
+          "testingStartDate": "",
+          "publicReleaseAt": "",
+          "overallRatingMonitor": "",
+          "sizeInch": "24.5",
+          "resolution": "FHD",
+          "panelType": "IPS",
+          "refreshRate": "165",
+          "maxBrightnessSdrSpec": "280",
+          "maxBrightnessHdrSpec": "400",
+          "hdrCertification": "",
+          "colorGamutSrgbSpec": "99",
+          "colorGamutDcip3Spec": "",
+          "panelMaker": "",
+          "bfi": "true",
+          "adaptiveSync": "freeSyncPremium",
+          "hdmiPortCount": "2",
+          "responseAverage": "",
+          "inputLagMonitor": "",
+          "hdmiLinkClass": "",
+          "displayPortCount": "1",
+          "responseAverageRgb10": "",
+          "displayPortLinkClass": "",
+          "responseMax": "",
+          "displayStreamCompression": "",
+          "overshootAverage": "",
+          "overshootMax": "",
+          "usbCPowerDeliveryW": "",
+          "maxBrightnessSdrMeasured": "",
+          "kvmType": "",
+          "maxBrightnessHdrMeasured": "",
+          "colorGamutDciP3Measured": "",
+          "audioReturnChannel": "",
+          "multiViewSupport": "",
+          "colorGamutSrgbBench": "",
+          "hdrFormatSupport": "hdr10",
+          "contrastMeasured": "",
+          "localDimmingType": "",
+          "colorDeAvg": "",
+          "bfiOnMaxBrightness": "",
+          "colorGamutBt2020Measured": "",
+          "localDimmingZones": "",
+          "colorVolumeDciP3Measured": "",
+          "colorVolumeBt2020Measured": "",
+          "hdrPeak2PercentMeasured": "",
+          "hdrPeak10PercentMeasured": "",
+          "hdrFullFieldBrightnessMeasured": "",
+          "vrrFlickerGrade": "",
+          "textClarityGrade": "",
+          "standType": "",
+          "pwmFrequencyMeasured": "",
+          "vesaMountPattern": "vesa100x100",
+          "screenCoating": "matteAntiGlare"
+        },
+        "priceKrw": 280000,
+        "createdAt": "1970-01-01T00:00:00Z",
+        "updatedAt": "2026-08-29T18:33:47.743175Z",
+        "isPrivate": false,
+        "hasMeshShell": false,
+        "hasFrequencyResponse": false,
+        "colors": {
+          "hdrFormatSupport": "#94A9D2",
+          "vesaMountPattern": "#1681FF"
+        }
+      },
+      {
+        "id": "168e2700-995b-4632-86e9-08613515a315",
+        "values": {
+          "youtubeReviewUrl": "",
+          "tag": "",
+          "status": "reviewed",
+          "saleStatus": "DISCONTINUED",
+          "manufacturer": "e8e7fa38-181b-44e9-8bef-f49bc4fb5304",
+          "productName": "UltraGear 32GS95UE 4K Mode",
+          "eyejokerRating": "NO_RECOMMENDATION",
+          "priceCurrency": "KRW",
+          "price": "15",
+          "as": "",
+          "oneLineNote": "FHD 480Hz 전환이 되는 다재다능 제품. FHD 480 전환기능은 선예도 때문에 생각보다 아쉽고 4k 240이 메인이라면 고려해볼만한 모델 / 32GS95UV로 너프됨",
+          "benchVersion": "v1.0",
+          "firmwareVersion": "",
+          "productImage": "https://cdn.eyejokerdb.com/af5305fe-057a-4caa-a504-a0655a13c3bd.avif",
+          "purchasedDate": "",
+          "arrivedDate": "",
+          "testingStartDate": "",
+          "publicReleaseAt": "2025-01-01T00:00:00",
+          "overallRatingMonitor": "TIER_0",
+          "sizeInch": "32",
+          "resolution": "UHD",
+          "panelType": "WOLED",
+          "refreshRate": "240",
+          "maxBrightnessSdrSpec": "275",
+          "maxBrightnessHdrSpec": "",
+          "hdrCertification": "displayHdrTrueBlack400",
+          "colorGamutSrgbSpec": "",
+          "colorGamutDcip3Spec": "98.5",
+          "panelMaker": "LGD",
+          "bfi": "false",
+          "adaptiveSync": "gsyncCompatible,freeSyncPremiumPro",
+          "hdmiPortCount": "2",
+          "responseAverage": "3.53",
+          "inputLagMonitor": "0.81",
+          "hdmiLinkClass": "",
+          "displayPortCount": "1",
+          "responseAverageRgb10": "0.64",
+          "displayPortLinkClass": "dp1_4Hbr3_32_4",
+          "responseMax": "1",
+          "overshootAverage": "1.9",
+          "displayStreamCompression": "supported",
+          "overshootMax": "5",
+          "usbCPowerDeliveryW": "",
+          "maxBrightnessSdrMeasured": "277",
+          "maxBrightnessHdrMeasured": "",
+          "kvmType": "",
+          "colorGamutDciP3Measured": "96.5",
+          "audioReturnChannel": "",
+          "colorGamutSrgbBench": "",
+          "multiViewSupport": "",
+          "contrastMeasured": "1",
+          "hdrFormatSupport": "hdr10",
+          "localDimmingType": "",
+          "colorDeAvg": "",
+          "bfiOnMaxBrightness": "",
+          "localDimmingZones": "",
+          "colorGamutBt2020Measured": "",
+          "colorVolumeDciP3Measured": "",
+          "colorVolumeBt2020Measured": "",
+          "hdrPeak2PercentMeasured": "",
+          "hdrPeak10PercentMeasured": "",
+          "hdrFullFieldBrightnessMeasured": "",
+          "vrrFlickerGrade": "",
+          "textClarityGrade": "",
+          "standType": "included",
+          "pwmFrequencyMeasured": "",
+          "standAdjustments": "tilt,height,swivel,pivot",
+          "heightAdjustMm": "120",
+          "vesaMountPattern": "vesa100x100",
+          "screenCoating": "matteAntiGlare"
+        },
+        "priceKrw": 15,
+        "createdAt": "1970-01-01T00:00:00Z",
+        "updatedAt": "2026-08-29T18:31:01.346590Z",
+        "isPrivate": false,
+        "hasMeshShell": false,
+        "hasFrequencyResponse": false,
+        "colors": {
+          "hdrCertification": "#15B67C",
+          "responseAverage": "#A456E1",
+          "inputLagMonitor": "#A456E1",
+          "responseAverageRgb10": "#A456E1",
+          "displayPortLinkClass": "#FF9900",
+          "displayStreamCompression": "#1681FF",
+          "maxBrightnessSdrMeasured": "#15B67C",
+          "colorGamutDciP3Measured": "#1681FF",
+          "hdrFormatSupport": "#94A9D2",
+          "standType": "#15B67C",
+          "vesaMountPattern": "#1681FF"
+        }
+      },
+      {
+        "id": "7aa60f74-aa55-44f0-9858-9d672a19fba5",
+        "values": {
+          "status": "proposed",
+          "saleStatus": "FOR_SALE",
+          "manufacturer": "34a50c6e-d70b-4896-ace6-2d18cb84fd01",
+          "productName": "ROG SWIFT PG259QN",
+          "eyejokerRating": "",
+          "priceCurrency": "KRW",
+          "price": "800000",
+          "as": "",
+          "oneLineNote": "",
+          "benchVersion": "v1.0",
+          "firmwareVersion": "",
+          "productImage": "https://cdn.eyejokerdb.com/b3a521e2-83ea-48b9-aa17-1b1e41802d40.avif",
+          "purchasedDate": "",
+          "arrivedDate": "",
+          "testingStartDate": "",
+          "publicReleaseAt": "",
+          "overallRatingMonitor": "",
+          "sizeInch": "24",
+          "resolution": "FHD",
+          "panelType": "FAST_IPS",
+          "refreshRate": "360",
+          "maxBrightnessSdrSpec": "400",
+          "maxBrightnessHdrSpec": "400",
+          "hdrCertification": "",
+          "colorGamutSrgbSpec": "99",
+          "colorGamutDcip3Spec": "",
+          "panelMaker": "",
+          "bfi": "false",
+          "adaptiveSync": "gsync",
+          "responseAverage": "",
+          "hdmiPortCount": "1",
+          "inputLagMonitor": "",
+          "hdmiLinkClass": "",
+          "displayPortCount": "1",
+          "responseAverageRgb10": "",
+          "displayPortLinkClass": "dp1_4Hbr3_32_4",
+          "responseMax": "",
+          "displayStreamCompression": "",
+          "overshootAverage": "",
+          "overshootMax": "",
+          "usbCPowerDeliveryW": "",
+          "maxBrightnessSdrMeasured": "",
+          "maxBrightnessHdrMeasured": "",
+          "kvmType": "",
+          "audioReturnChannel": "",
+          "colorGamutDciP3Measured": "",
+          "colorGamutSrgbBench": "",
+          "multiViewSupport": "",
+          "hdrFormatSupport": "hdr10",
+          "contrastMeasured": "",
+          "colorDeAvg": "",
+          "localDimmingType": "",
+          "localDimmingZones": "",
+          "bfiOnMaxBrightness": "",
+          "colorGamutBt2020Measured": "",
+          "colorVolumeDciP3Measured": "",
+          "colorVolumeBt2020Measured": "",
+          "hdrPeak2PercentMeasured": "",
+          "hdrPeak10PercentMeasured": "",
+          "hdrFullFieldBrightnessMeasured": "",
+          "vrrFlickerGrade": "",
+          "textClarityGrade": "",
+          "standType": "included",
+          "pwmFrequencyMeasured": "",
+          "standAdjustments": "tilt,swivel,pivot",
+          "vesaMountPattern": "vesa100x100",
+          "screenCoating": "matteAntiGlare"
+        },
+        "priceKrw": 800000,
+        "createdAt": "1970-01-01T00:00:00Z",
+        "updatedAt": "2026-08-29T18:35:23.588412Z",
+        "isPrivate": false,
+        "hasMeshShell": false,
+        "hasFrequencyResponse": false,
+        "colors": {
+          "displayPortLinkClass": "#FF9900",
+          "hdrFormatSupport": "#94A9D2",
+          "standType": "#15B67C",
+          "vesaMountPattern": "#1681FF"
+        },
+        "affiliateLinks": [
+          {
+            "id": "94ac40e7-d542-4a86-80b4-a19e003737d9",
+            "platform": "ALI",
+            "affiliateUrl": "https://s.click.aliexpress.com/e/_oEZbgCi",
+            "currency": "KRW",
+            "purchaseRoute": "IMPORT",
+            "status": "ACTIVE",
+            "approvalStatus": "APPROVED",
+            "isPrimary": true,
+            "priorityOrder": 0
+          },
+          {
+            "id": "fee45e9d-fecc-4bcd-a64c-4ba1baaede03",
+            "platform": "ASUS",
+            "affiliateUrl": "https://www.awin1.com/cread.php?awinmid=31828&awinaffid=2537383&ued=https%3A%2F%2Frog.asus.com%2Fmonitors%2F23-to-24-5-inches%2Frog-swift-360hz-pg259qn-model%2F",
+            "currency": "USD",
+            "purchaseRoute": "IMPORT",
+            "status": "ACTIVE",
+            "approvalStatus": "APPROVED",
+            "isPrimary": false,
+            "priorityOrder": 0
+          }
+        ]
+      }
+    ],
+    "benchmarkType": {
+      "id": "monitor",
+      "enName": "Monitor",
+      "koName": "모니터",
+      "visibility": "PUBLIC"
+    },
+    "columns": {
+      "common": [
+        {
+          "id": "fa336b12-6b23-4e36-8a10-eeaf03547104",
+          "dataType": "COMPANY",
+          "field": "manufacturer",
+          "enName": "manufacturer",
+          "koName": "제조사",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 7,
+          "detailOrder": 6,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": true,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "제조사",
+            "en": "manufacturer"
+          }
+        },
+        {
+          "id": "d089bb4b-c935-434e-8607-1df473f50ced",
+          "dataType": "STRING",
+          "field": "productName",
+          "enName": "product name",
+          "koName": "제품 명",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 8,
+          "detailOrder": 8,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": true,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "제품 명",
+            "en": "product name"
+          }
+        },
+        {
+          "id": "13ad32a3-7028-4841-bb0a-5045ae488a09",
+          "dataType": "FILE",
+          "field": "productImage",
+          "enName": "Product Image",
+          "koName": "제품 사진",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 9,
+          "detailOrder": 17,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "제품 사진",
+            "en": "Product Image"
+          }
+        },
+        {
+          "id": "f790df98-e3a4-4d91-b091-2104c0e3e815",
+          "dataType": "ENUM",
+          "field": "eyejokerRating",
+          "enName": "Recommendation Grade",
+          "koName": "추천 등급",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 10,
+          "detailOrder": 9,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "HIGHLY_RECOMMENDED",
+              "enName": "Highly Recommend",
+              "koName": "매우추천",
+              "autoFill": {},
+              "names": {
+                "ko": "매우추천",
+                "en": "Highly Recommend"
+              }
+            },
+            {
+              "field": "RECOMMENDED",
+              "enName": "Recommend",
+              "koName": "추천",
+              "autoFill": {},
+              "names": {
+                "ko": "추천",
+                "en": "Recommend"
+              }
+            },
+            {
+              "field": "MILD_RECOMMENDATION",
+              "enName": "Meh",
+              "koName": "추천까지는",
+              "autoFill": {},
+              "names": {
+                "ko": "추천까지는",
+                "en": "Meh"
+              }
+            },
+            {
+              "field": "NO_RECOMMENDATION",
+              "enName": "Not Recommend",
+              "koName": "추천안함",
+              "autoFill": {},
+              "names": {
+                "ko": "추천안함",
+                "en": "Not Recommend"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "추천 등급",
+            "en": "Recommendation Grade",
+            "ja": "推奨グレード",
+            "zh": "推荐等级"
+          }
+        },
+        {
+          "id": "d3713a36-85d6-4107-94b3-e33f581cbacd",
+          "dataType": "ENUM",
+          "field": "status",
+          "enName": "Status",
+          "koName": "상태",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 11,
+          "detailOrder": 1,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "unreleased",
+              "enName": "Unreleased",
+              "koName": "미출시",
+              "autoFill": {},
+              "names": {
+                "ko": "미출시",
+                "en": "Unreleased"
+              }
+            },
+            {
+              "field": "proposed",
+              "enName": "Proposed",
+              "koName": "제안",
+              "autoFill": {},
+              "names": {
+                "ko": "제안",
+                "en": "Proposed"
+              }
+            },
+            {
+              "field": "purchased",
+              "enName": "Purchased",
+              "koName": "구매 완료",
+              "autoFill": {},
+              "names": {
+                "ko": "구매 완료",
+                "en": "Purchased"
+              }
+            },
+            {
+              "field": "arrived",
+              "enName": "Arrived",
+              "koName": "제품 도착",
+              "autoFill": {},
+              "names": {
+                "ko": "제품 도착",
+                "en": "Arrived"
+              }
+            },
+            {
+              "field": "testing",
+              "enName": "Testing",
+              "koName": "벤치 진행",
+              "autoFill": {},
+              "names": {
+                "ko": "벤치 진행",
+                "en": "Testing"
+              }
+            },
+            {
+              "field": "earlyAccess",
+              "enName": "Early Access",
+              "koName": "선 공개",
+              "autoFill": {},
+              "names": {
+                "ko": "선 공개",
+                "en": "Early Access"
+              }
+            },
+            {
+              "field": "reviewed",
+              "enName": "Reviewed",
+              "koName": "공개 완료",
+              "autoFill": {},
+              "names": {
+                "ko": "공개 완료",
+                "en": "Reviewed"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "상태",
+            "en": "Status"
+          }
+        },
+        {
+          "id": "a61ae634-0251-437c-933e-dd49522465f7",
+          "dataType": "NUMBER",
+          "field": "price",
+          "enName": "Price",
+          "koName": "가격",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 12,
+          "detailOrder": 12,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "가격",
+            "en": "Price"
+          }
+        },
+        {
+          "id": "e537ac0b-f39c-4800-9b4e-53130d02dfb3",
+          "dataType": "ENUM",
+          "field": "saleStatus",
+          "enName": "Sale Status",
+          "koName": "판매 상태",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 13,
+          "detailOrder": 2,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": true,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "unreleased",
+              "enName": "Unreleased",
+              "koName": "미출시",
+              "autoFill": {},
+              "names": {
+                "ko": "미출시",
+                "en": "Unreleased"
+              }
+            },
+            {
+              "field": "FOR_SALE",
+              "enName": "FOR_SALE",
+              "koName": "판매중",
+              "autoFill": {},
+              "names": {
+                "ko": "판매중",
+                "en": "FOR_SALE"
+              }
+            },
+            {
+              "field": "DISCONTINUED",
+              "enName": "Discontinued",
+              "koName": "단종",
+              "autoFill": {},
+              "names": {
+                "ko": "단종",
+                "en": "Discontinued"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "판매 상태",
+            "en": "Sale Status"
+          }
+        }
+      ],
+      "spec": [
+        {
+          "id": "30b76215-226d-4b79-8f14-7c97877b572b",
+          "dataType": "ENUM",
+          "field": "overallRatingMonitor",
+          "enName": "OverallRating",
+          "koName": "종합 등급",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 45,
+          "detailOrder": 168,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "FLAWLESS",
+              "enName": "Flawless",
+              "koName": "무결점",
+              "autoFill": {},
+              "names": {
+                "ko": "무결점",
+                "en": "Flawless"
+              }
+            },
+            {
+              "field": "TIER_0",
+              "enName": "Tier0",
+              "koName": "0티어",
+              "autoFill": {},
+              "names": {
+                "ko": "0티어",
+                "en": "Tier0"
+              }
+            },
+            {
+              "field": "TIER_1",
+              "enName": "Tier1",
+              "koName": "1티어",
+              "autoFill": {},
+              "names": {
+                "ko": "1티어",
+                "en": "Tier1"
+              }
+            },
+            {
+              "field": "TIER_2",
+              "enName": "Tier2",
+              "koName": "2티어",
+              "autoFill": {},
+              "names": {
+                "ko": "2티어",
+                "en": "Tier2"
+              }
+            },
+            {
+              "field": "TIER_3",
+              "enName": "Tier3",
+              "koName": "3티어",
+              "autoFill": {},
+              "names": {
+                "ko": "3티어",
+                "en": "Tier3"
+              }
+            },
+            {
+              "field": "TIER_4",
+              "enName": "Tier4",
+              "koName": "4티어",
+              "autoFill": {},
+              "names": {
+                "ko": "4티어",
+                "en": "Tier4"
+              }
+            },
+            {
+              "field": "UNRATED",
+              "enName": "Unrated",
+              "koName": "등급외",
+              "autoFill": {},
+              "names": {
+                "ko": "등급외",
+                "en": "Unrated"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "종합 등급",
+            "en": "OverallRating"
+          }
+        },
+        {
+          "id": "c6ff242d-40d6-4f0a-a39b-0ad5db83ca4c",
+          "dataType": "NUMBER",
+          "field": "sizeInch",
+          "enName": "Size",
+          "koName": "크기",
+          "prefix": "",
+          "suffix": "\"",
+          "showInList": true,
+          "listOrder": 46,
+          "detailOrder": 169,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "크기",
+            "en": "Size"
+          }
+        },
+        {
+          "id": "e199a870-4ba7-401f-a0ed-2b275671b45b",
+          "dataType": "NUMBER",
+          "field": "refreshRate",
+          "enName": "Refresh Rate",
+          "koName": "주사율",
+          "prefix": "",
+          "suffix": "Hz",
+          "showInList": true,
+          "listOrder": 47,
+          "detailOrder": 172,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "주사율",
+            "en": "Refresh Rate"
+          }
+        },
+        {
+          "id": "30ce823e-70f9-4c00-b976-7582ad20547b",
+          "dataType": "ENUM",
+          "field": "resolution",
+          "enName": "Resolution",
+          "koName": "해상도",
+          "prefix": "",
+          "suffix": null,
+          "showInList": true,
+          "listOrder": 48,
+          "detailOrder": 170,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "FHD",
+              "enName": "FHD (1920×1080)",
+              "koName": "FHD",
+              "autoFill": {},
+              "names": {
+                "ko": "FHD",
+                "en": "FHD (1920×1080)"
+              }
+            },
+            {
+              "field": "QHD",
+              "enName": "QHD (2560×1440)",
+              "koName": "QHD",
+              "autoFill": {},
+              "names": {
+                "ko": "QHD",
+                "en": "QHD (2560×1440)"
+              }
+            },
+            {
+              "field": "UHD",
+              "enName": "UHD (3840×2160)",
+              "koName": "UHD",
+              "autoFill": {},
+              "names": {
+                "ko": "UHD",
+                "en": "UHD (3840×2160)"
+              }
+            },
+            {
+              "field": "UWQHD",
+              "enName": "UWQHD (3440×1440)",
+              "koName": "UWQHD",
+              "autoFill": {},
+              "names": {
+                "ko": "UWQHD",
+                "en": "UWQHD (3440×1440)"
+              }
+            },
+            {
+              "field": "DQHD",
+              "enName": "Dual QHD (5120×1440)",
+              "koName": "DQHD",
+              "autoFill": {},
+              "names": {
+                "ko": "DQHD",
+                "en": "Dual QHD (5120×1440)"
+              }
+            },
+            {
+              "field": "5K2K",
+              "enName": "5K2K (5120×2160)",
+              "koName": "5K2K",
+              "autoFill": {},
+              "names": {
+                "ko": "5K2K",
+                "en": "5K2K (5120×2160)"
+              }
+            },
+            {
+              "field": "6K",
+              "enName": "6K",
+              "koName": "6K",
+              "autoFill": {},
+              "names": {
+                "ko": "6K",
+                "en": "6K"
+              }
+            },
+            {
+              "field": "RES2240X1400",
+              "enName": "2.2K (2240×1400)",
+              "koName": "2.2K (2240×1400)",
+              "autoFill": {},
+              "names": {
+                "ko": "2.2K (2240×1400)",
+                "en": "2.2K (2240×1400)"
+              }
+            },
+            {
+              "field": "RES2880X1800",
+              "enName": "2.8K (2880×1800)",
+              "koName": "2.8K (2880×1800)",
+              "autoFill": {},
+              "names": {
+                "ko": "2.8K (2880×1800)",
+                "en": "2.8K (2880×1800)"
+              }
+            },
+            {
+              "field": "DUHD",
+              "enName": "Dual UHD (7680×2160)",
+              "koName": "DUHD (7680×2160)",
+              "autoFill": {},
+              "names": {
+                "ko": "DUHD (7680×2160)",
+                "en": "Dual UHD (7680×2160)"
+              }
+            },
+            {
+              "field": "RES5120X2880",
+              "enName": "5K (5120×2880)",
+              "koName": "5K (5120×2880)",
+              "autoFill": {},
+              "names": {
+                "ko": "5K (5120×2880)",
+                "en": "5K (5120×2880)"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "해상도",
+            "en": "Resolution"
+          }
+        }
+      ],
+      "bench": [
+        {
+          "id": "02245e5a-228e-4dab-b245-1bac789dbae8",
+          "dataType": "NUMBER",
+          "field": "responseAverage",
+          "enName": "Overall Resp.",
+          "koName": "종합 응답속도",
+          "prefix": "",
+          "suffix": "ms",
+          "showInList": true,
+          "listOrder": 49,
+          "detailOrder": 180,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": 2,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "종합 응답속도",
+            "en": "Overall Resp."
+          }
+        },
+        {
+          "id": "a94fe211-014f-4cd4-ae8f-2da7b8fbb20e",
+          "dataType": "NUMBER",
+          "field": "responseAverageRgb10",
+          "enName": "Avg. Resp.",
+          "koName": "평균 응답속도",
+          "prefix": "",
+          "suffix": "ms",
+          "showInList": true,
+          "listOrder": 50,
+          "detailOrder": 182,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": 2,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "평균 응답속도",
+            "en": "Avg. Resp."
+          }
+        },
+        {
+          "id": "b809193c-df89-4742-bf65-659828aa1bb2",
+          "dataType": "NUMBER",
+          "field": "colorGamutDciP3Measured",
+          "enName": "Gamut (DCI‑P3)",
+          "koName": "색역 (DCI‑P3)",
+          "prefix": "",
+          "suffix": "%",
+          "showInList": true,
+          "listOrder": 51,
+          "detailOrder": 188,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "색역 (DCI‑P3)",
+            "en": "Gamut (DCI‑P3)"
+          }
+        },
+        {
+          "id": "644c3d85-d79b-43ad-b6cf-88f197e7078c",
+          "dataType": "NUMBER",
+          "field": "maxBrightnessSdrMeasured",
+          "enName": "Peak Brightness",
+          "koName": "최대 밝기 (SDR)",
+          "prefix": "",
+          "suffix": "cd/m²",
+          "showInList": true,
+          "listOrder": 52,
+          "detailOrder": 186,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "최대 밝기 (SDR)",
+            "en": "Peak Brightness"
+          }
+        },
+        {
+          "id": "cf8262c6-ffb1-46fb-865c-2153bcc88f27",
+          "dataType": "NUMBER",
+          "field": "maxBrightnessHdrMeasured",
+          "enName": "Peak Brightness (HDR)",
+          "koName": "최대 밝기 (HDR)",
+          "prefix": "",
+          "suffix": "cd/m²",
+          "showInList": true,
+          "listOrder": 53,
+          "detailOrder": 187,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "최대 밝기 (HDR)",
+            "en": "Peak Brightness (HDR)"
+          }
+        },
+        {
+          "id": "bf755253-048e-491d-b8ea-1efb22eae6a0",
+          "dataType": "NUMBER",
+          "field": "totalReflectanceMeasured",
+          "enName": "Total Reflectance (SCI)",
+          "koName": "총 반사율 (SCI)",
+          "prefix": "",
+          "suffix": "%",
+          "showInList": true,
+          "listOrder": 54,
+          "detailOrder": 201,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": 2,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "총 반사율 (SCI)",
+            "en": "Total Reflectance (SCI)"
+          }
+        }
+      ]
+    },
+    "detailColumns": {
+      "common": [
+        {
+          "id": "59412d3e-7076-4a32-897e-dad19fb3b17f",
+          "dataType": "STRING",
+          "field": "youtubeReviewUrl",
+          "enName": "youtubeReviewUrl",
+          "koName": "유튜브 리뷰 링크",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 0,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "유튜브 리뷰 링크",
+            "en": "youtubeReviewUrl"
+          }
+        },
+        {
+          "id": "85c761c8-41fe-42b2-ae31-63c63e8d3921",
+          "dataType": "STRING",
+          "field": "tag",
+          "enName": "tag",
+          "koName": "태그",
+          "prefix": null,
+          "suffix": null,
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 0,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "태그",
+            "en": "tag"
+          }
+        },
+        {
+          "id": "2d0b566e-fa58-42f4-a7d7-80c94f38fecb",
+          "dataType": "STRING",
+          "field": "driverLinkId",
+          "enName": "DriverLink",
+          "koName": "드라이버 링크",
+          "prefix": null,
+          "suffix": null,
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 0,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "드라이버 링크",
+            "en": "DriverLink"
+          }
+        },
+        {
+          "id": "d3713a36-85d6-4107-94b3-e33f581cbacd",
+          "dataType": "ENUM",
+          "field": "status",
+          "enName": "Status",
+          "koName": "상태",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 11,
+          "detailOrder": 1,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "unreleased",
+              "enName": "Unreleased",
+              "koName": "미출시",
+              "autoFill": {},
+              "names": {
+                "ko": "미출시",
+                "en": "Unreleased"
+              }
+            },
+            {
+              "field": "proposed",
+              "enName": "Proposed",
+              "koName": "제안",
+              "autoFill": {},
+              "names": {
+                "ko": "제안",
+                "en": "Proposed"
+              }
+            },
+            {
+              "field": "purchased",
+              "enName": "Purchased",
+              "koName": "구매 완료",
+              "autoFill": {},
+              "names": {
+                "ko": "구매 완료",
+                "en": "Purchased"
+              }
+            },
+            {
+              "field": "arrived",
+              "enName": "Arrived",
+              "koName": "제품 도착",
+              "autoFill": {},
+              "names": {
+                "ko": "제품 도착",
+                "en": "Arrived"
+              }
+            },
+            {
+              "field": "testing",
+              "enName": "Testing",
+              "koName": "벤치 진행",
+              "autoFill": {},
+              "names": {
+                "ko": "벤치 진행",
+                "en": "Testing"
+              }
+            },
+            {
+              "field": "earlyAccess",
+              "enName": "Early Access",
+              "koName": "선 공개",
+              "autoFill": {},
+              "names": {
+                "ko": "선 공개",
+                "en": "Early Access"
+              }
+            },
+            {
+              "field": "reviewed",
+              "enName": "Reviewed",
+              "koName": "공개 완료",
+              "autoFill": {},
+              "names": {
+                "ko": "공개 완료",
+                "en": "Reviewed"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "상태",
+            "en": "Status"
+          }
+        },
+        {
+          "id": "359ad016-0cd3-43ed-a375-b9c7c3437f13",
+          "dataType": "ENUM",
+          "field": "driverSupportStatus",
+          "enName": "Driver Support Status",
+          "koName": "드라이버 지원 상태",
+          "prefix": null,
+          "suffix": null,
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 1,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "notAvailable",
+              "enName": "No Official Configuration Software",
+              "koName": "공식 설정 소프트웨어 없음",
+              "autoFill": {},
+              "names": {
+                "ko": "공식 설정 소프트웨어 없음",
+                "en": "No Official Configuration Software",
+                "ja": "公式設定ソフトウェアなし",
+                "zh": "无官方配置软件"
+              }
+            },
+            {
+              "field": "notRequired",
+              "enName": "No Separate Configuration Software Required",
+              "koName": "별도 설정 소프트웨어 불필요",
+              "autoFill": {},
+              "names": {
+                "ko": "별도 설정 소프트웨어 불필요",
+                "en": "No Separate Configuration Software Required",
+                "ja": "個別の設定ソフトウェアは不要",
+                "zh": "无需单独的配置软件"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "드라이버 지원 상태",
+            "en": "Driver Support Status",
+            "ja": "ドライバー対応状況",
+            "zh": "驱动支持状态"
+          }
+        },
+        {
+          "id": "e537ac0b-f39c-4800-9b4e-53130d02dfb3",
+          "dataType": "ENUM",
+          "field": "saleStatus",
+          "enName": "Sale Status",
+          "koName": "판매 상태",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 13,
+          "detailOrder": 2,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": true,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "unreleased",
+              "enName": "Unreleased",
+              "koName": "미출시",
+              "autoFill": {},
+              "names": {
+                "ko": "미출시",
+                "en": "Unreleased"
+              }
+            },
+            {
+              "field": "FOR_SALE",
+              "enName": "FOR_SALE",
+              "koName": "판매중",
+              "autoFill": {},
+              "names": {
+                "ko": "판매중",
+                "en": "FOR_SALE"
+              }
+            },
+            {
+              "field": "DISCONTINUED",
+              "enName": "Discontinued",
+              "koName": "단종",
+              "autoFill": {},
+              "names": {
+                "ko": "단종",
+                "en": "Discontinued"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "판매 상태",
+            "en": "Sale Status"
+          }
+        },
+        {
+          "id": "fa336b12-6b23-4e36-8a10-eeaf03547104",
+          "dataType": "COMPANY",
+          "field": "manufacturer",
+          "enName": "manufacturer",
+          "koName": "제조사",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 7,
+          "detailOrder": 6,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": true,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "제조사",
+            "en": "manufacturer"
+          }
+        },
+        {
+          "id": "d089bb4b-c935-434e-8607-1df473f50ced",
+          "dataType": "STRING",
+          "field": "productName",
+          "enName": "product name",
+          "koName": "제품 명",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 8,
+          "detailOrder": 8,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": true,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "제품 명",
+            "en": "product name"
+          }
+        },
+        {
+          "id": "f790df98-e3a4-4d91-b091-2104c0e3e815",
+          "dataType": "ENUM",
+          "field": "eyejokerRating",
+          "enName": "Recommendation Grade",
+          "koName": "추천 등급",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 10,
+          "detailOrder": 9,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "HIGHLY_RECOMMENDED",
+              "enName": "Highly Recommend",
+              "koName": "매우추천",
+              "autoFill": {},
+              "names": {
+                "ko": "매우추천",
+                "en": "Highly Recommend"
+              }
+            },
+            {
+              "field": "RECOMMENDED",
+              "enName": "Recommend",
+              "koName": "추천",
+              "autoFill": {},
+              "names": {
+                "ko": "추천",
+                "en": "Recommend"
+              }
+            },
+            {
+              "field": "MILD_RECOMMENDATION",
+              "enName": "Meh",
+              "koName": "추천까지는",
+              "autoFill": {},
+              "names": {
+                "ko": "추천까지는",
+                "en": "Meh"
+              }
+            },
+            {
+              "field": "NO_RECOMMENDATION",
+              "enName": "Not Recommend",
+              "koName": "추천안함",
+              "autoFill": {},
+              "names": {
+                "ko": "추천안함",
+                "en": "Not Recommend"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "추천 등급",
+            "en": "Recommendation Grade",
+            "ja": "推奨グレード",
+            "zh": "推荐等级"
+          }
+        },
+        {
+          "id": "e1d84163-20c9-4ecb-95fc-793bfb2c9d71",
+          "dataType": "ENUM",
+          "field": "priceCurrency",
+          "enName": "PriceCurrency",
+          "koName": "통화코드",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 10,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "CNY",
+              "enName": "CNY",
+              "koName": "CNY",
+              "autoFill": {},
+              "names": {
+                "ko": "CNY",
+                "en": "CNY",
+                "ja": "CNY",
+                "zh": "CNY"
+              }
+            },
+            {
+              "field": "EUR",
+              "enName": "EUR",
+              "koName": "EUR",
+              "autoFill": {},
+              "names": {
+                "ko": "EUR",
+                "en": "EUR",
+                "ja": "EUR",
+                "zh": "EUR"
+              }
+            },
+            {
+              "field": "GBP",
+              "enName": "GBP",
+              "koName": "GBP",
+              "autoFill": {},
+              "names": {
+                "ko": "GBP",
+                "en": "GBP",
+                "ja": "GBP",
+                "zh": "GBP"
+              }
+            },
+            {
+              "field": "INR",
+              "enName": "INR",
+              "koName": "INR",
+              "autoFill": {},
+              "names": {
+                "ko": "INR",
+                "en": "INR"
+              }
+            },
+            {
+              "field": "JPY",
+              "enName": "JPY",
+              "koName": "JPY",
+              "autoFill": {},
+              "names": {
+                "ko": "JPY",
+                "en": "JPY",
+                "ja": "JPY",
+                "zh": "JPY"
+              }
+            },
+            {
+              "field": "KRW",
+              "enName": "KRW",
+              "koName": "KRW",
+              "autoFill": {},
+              "names": {
+                "ko": "KRW",
+                "en": "KRW"
+              }
+            },
+            {
+              "field": "USD",
+              "enName": "USD",
+              "koName": "USD",
+              "autoFill": {},
+              "names": {
+                "ko": "USD",
+                "en": "USD"
+              }
+            },
+            {
+              "field": "AED",
+              "enName": "AED",
+              "koName": "AED",
+              "autoFill": {},
+              "names": {
+                "ko": "AED",
+                "en": "AED"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "통화코드",
+            "en": "PriceCurrency"
+          }
+        },
+        {
+          "id": "a61ae634-0251-437c-933e-dd49522465f7",
+          "dataType": "NUMBER",
+          "field": "price",
+          "enName": "Price",
+          "koName": "가격",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 12,
+          "detailOrder": 12,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "가격",
+            "en": "Price"
+          }
+        },
+        {
+          "id": "3f6d06e4-1904-4210-976f-7b98099aad79",
+          "dataType": "NUMBER",
+          "field": "as",
+          "enName": "AS",
+          "koName": "보증 기간",
+          "prefix": "",
+          "suffix": "년",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 13,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "보증 기간",
+            "en": "AS"
+          }
+        },
+        {
+          "id": "c95edff9-a285-4554-a796-394f53f2f02a",
+          "dataType": "STRING",
+          "field": "oneLineNote",
+          "enName": "ShortReview",
+          "koName": "한줄평",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 6,
+          "detailOrder": 14,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "한줄평",
+            "en": "ShortReview"
+          }
+        },
+        {
+          "id": "861849f5-8189-408b-aa02-fac2d2d5d83b",
+          "dataType": "STRING",
+          "field": "benchVersion",
+          "enName": "BenchVersion",
+          "koName": "벤치버전",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 7,
+          "detailOrder": 15,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "벤치버전",
+            "en": "BenchVersion"
+          }
+        },
+        {
+          "id": "c62da328-85aa-46db-ab92-50e0e5ed2411",
+          "dataType": "STRING",
+          "field": "firmwareVersion",
+          "enName": "FirmwareVersion",
+          "koName": "펌웨어 버전",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 8,
+          "detailOrder": 16,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "펌웨어 버전",
+            "en": "FirmwareVersion"
+          }
+        },
+        {
+          "id": "13ad32a3-7028-4841-bb0a-5045ae488a09",
+          "dataType": "FILE",
+          "field": "productImage",
+          "enName": "Product Image",
+          "koName": "제품 사진",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 9,
+          "detailOrder": 17,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "제품 사진",
+            "en": "Product Image"
+          }
+        },
+        {
+          "id": "9db61dbd-15b2-4fcc-bee8-1fc64b74374b",
+          "dataType": "DATETIME",
+          "field": "purchasedDate",
+          "enName": "Purchased Date",
+          "koName": "구매 완료 시간",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 20,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "구매 완료 시간",
+            "en": "Purchased Date"
+          }
+        },
+        {
+          "id": "1a8848c0-053c-4c5a-bfd9-377d32ecc79f",
+          "dataType": "DATETIME",
+          "field": "arrivedDate",
+          "enName": "Arrived Date",
+          "koName": "제품 도착 시간",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 21,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "제품 도착 시간",
+            "en": "Arrived Date"
+          }
+        },
+        {
+          "id": "774a633f-e245-470c-9cbc-00cc537ea985",
+          "dataType": "DATETIME",
+          "field": "testingStartDate",
+          "enName": "Testing Start Date",
+          "koName": "벤치 진행 시작 날짜",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 22,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "벤치 진행 시작 날짜",
+            "en": "Testing Start Date"
+          }
+        },
+        {
+          "id": "2937e309-2712-40f4-8e48-56534c8e0237",
+          "dataType": "DATETIME",
+          "field": "publicReleaseAt",
+          "enName": "Public Release At",
+          "koName": "전체 공개 일자",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 23,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "전체 공개 일자",
+            "en": "Public Release At"
+          }
+        }
+      ],
+      "spec": [
+        {
+          "id": "30b76215-226d-4b79-8f14-7c97877b572b",
+          "dataType": "ENUM",
+          "field": "overallRatingMonitor",
+          "enName": "OverallRating",
+          "koName": "종합 등급",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 45,
+          "detailOrder": 168,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "FLAWLESS",
+              "enName": "Flawless",
+              "koName": "무결점",
+              "autoFill": {},
+              "names": {
+                "ko": "무결점",
+                "en": "Flawless"
+              }
+            },
+            {
+              "field": "TIER_0",
+              "enName": "Tier0",
+              "koName": "0티어",
+              "autoFill": {},
+              "names": {
+                "ko": "0티어",
+                "en": "Tier0"
+              }
+            },
+            {
+              "field": "TIER_1",
+              "enName": "Tier1",
+              "koName": "1티어",
+              "autoFill": {},
+              "names": {
+                "ko": "1티어",
+                "en": "Tier1"
+              }
+            },
+            {
+              "field": "TIER_2",
+              "enName": "Tier2",
+              "koName": "2티어",
+              "autoFill": {},
+              "names": {
+                "ko": "2티어",
+                "en": "Tier2"
+              }
+            },
+            {
+              "field": "TIER_3",
+              "enName": "Tier3",
+              "koName": "3티어",
+              "autoFill": {},
+              "names": {
+                "ko": "3티어",
+                "en": "Tier3"
+              }
+            },
+            {
+              "field": "TIER_4",
+              "enName": "Tier4",
+              "koName": "4티어",
+              "autoFill": {},
+              "names": {
+                "ko": "4티어",
+                "en": "Tier4"
+              }
+            },
+            {
+              "field": "UNRATED",
+              "enName": "Unrated",
+              "koName": "등급외",
+              "autoFill": {},
+              "names": {
+                "ko": "등급외",
+                "en": "Unrated"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "종합 등급",
+            "en": "OverallRating"
+          }
+        },
+        {
+          "id": "c6ff242d-40d6-4f0a-a39b-0ad5db83ca4c",
+          "dataType": "NUMBER",
+          "field": "sizeInch",
+          "enName": "Size",
+          "koName": "크기",
+          "prefix": "",
+          "suffix": "\"",
+          "showInList": true,
+          "listOrder": 46,
+          "detailOrder": 169,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "크기",
+            "en": "Size"
+          }
+        },
+        {
+          "id": "30ce823e-70f9-4c00-b976-7582ad20547b",
+          "dataType": "ENUM",
+          "field": "resolution",
+          "enName": "Resolution",
+          "koName": "해상도",
+          "prefix": "",
+          "suffix": null,
+          "showInList": true,
+          "listOrder": 48,
+          "detailOrder": 170,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "FHD",
+              "enName": "FHD (1920×1080)",
+              "koName": "FHD",
+              "autoFill": {},
+              "names": {
+                "ko": "FHD",
+                "en": "FHD (1920×1080)"
+              }
+            },
+            {
+              "field": "QHD",
+              "enName": "QHD (2560×1440)",
+              "koName": "QHD",
+              "autoFill": {},
+              "names": {
+                "ko": "QHD",
+                "en": "QHD (2560×1440)"
+              }
+            },
+            {
+              "field": "UHD",
+              "enName": "UHD (3840×2160)",
+              "koName": "UHD",
+              "autoFill": {},
+              "names": {
+                "ko": "UHD",
+                "en": "UHD (3840×2160)"
+              }
+            },
+            {
+              "field": "UWQHD",
+              "enName": "UWQHD (3440×1440)",
+              "koName": "UWQHD",
+              "autoFill": {},
+              "names": {
+                "ko": "UWQHD",
+                "en": "UWQHD (3440×1440)"
+              }
+            },
+            {
+              "field": "DQHD",
+              "enName": "Dual QHD (5120×1440)",
+              "koName": "DQHD",
+              "autoFill": {},
+              "names": {
+                "ko": "DQHD",
+                "en": "Dual QHD (5120×1440)"
+              }
+            },
+            {
+              "field": "5K2K",
+              "enName": "5K2K (5120×2160)",
+              "koName": "5K2K",
+              "autoFill": {},
+              "names": {
+                "ko": "5K2K",
+                "en": "5K2K (5120×2160)"
+              }
+            },
+            {
+              "field": "6K",
+              "enName": "6K",
+              "koName": "6K",
+              "autoFill": {},
+              "names": {
+                "ko": "6K",
+                "en": "6K"
+              }
+            },
+            {
+              "field": "RES2240X1400",
+              "enName": "2.2K (2240×1400)",
+              "koName": "2.2K (2240×1400)",
+              "autoFill": {},
+              "names": {
+                "ko": "2.2K (2240×1400)",
+                "en": "2.2K (2240×1400)"
+              }
+            },
+            {
+              "field": "RES2880X1800",
+              "enName": "2.8K (2880×1800)",
+              "koName": "2.8K (2880×1800)",
+              "autoFill": {},
+              "names": {
+                "ko": "2.8K (2880×1800)",
+                "en": "2.8K (2880×1800)"
+              }
+            },
+            {
+              "field": "DUHD",
+              "enName": "Dual UHD (7680×2160)",
+              "koName": "DUHD (7680×2160)",
+              "autoFill": {},
+              "names": {
+                "ko": "DUHD (7680×2160)",
+                "en": "Dual UHD (7680×2160)"
+              }
+            },
+            {
+              "field": "RES5120X2880",
+              "enName": "5K (5120×2880)",
+              "koName": "5K (5120×2880)",
+              "autoFill": {},
+              "names": {
+                "ko": "5K (5120×2880)",
+                "en": "5K (5120×2880)"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "해상도",
+            "en": "Resolution"
+          }
+        },
+        {
+          "id": "e9bb1d26-6512-43a2-872b-a1c012fd49fa",
+          "dataType": "ENUM",
+          "field": "panelType",
+          "enName": "PanelType",
+          "koName": "종류",
+          "prefix": "",
+          "suffix": null,
+          "showInList": false,
+          "listOrder": 3,
+          "detailOrder": 171,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "TN",
+              "enName": "TN",
+              "koName": "TN",
+              "autoFill": {},
+              "names": {
+                "ko": "TN",
+                "en": "TN"
+              }
+            },
+            {
+              "field": "FAST_TN",
+              "enName": "Fast TN",
+              "koName": "Fast TN",
+              "autoFill": {},
+              "names": {
+                "ko": "Fast TN",
+                "en": "Fast TN"
+              }
+            },
+            {
+              "field": "E_TN",
+              "enName": "E-TN",
+              "koName": "E-TN",
+              "autoFill": {},
+              "names": {
+                "ko": "E-TN",
+                "en": "E-TN"
+              }
+            },
+            {
+              "field": "VA",
+              "enName": "VA",
+              "koName": "VA",
+              "autoFill": {},
+              "names": {
+                "ko": "VA",
+                "en": "VA"
+              }
+            },
+            {
+              "field": "IPS",
+              "enName": "IPS",
+              "koName": "IPS",
+              "autoFill": {},
+              "names": {
+                "ko": "IPS",
+                "en": "IPS"
+              }
+            },
+            {
+              "field": "FAST_IPS",
+              "enName": "Fast IPS",
+              "koName": "Fast IPS",
+              "autoFill": {},
+              "names": {
+                "ko": "Fast IPS",
+                "en": "Fast IPS"
+              }
+            },
+            {
+              "field": "NANO_IPS",
+              "enName": "Nano IPS",
+              "koName": "Nano IPS",
+              "autoFill": {},
+              "names": {
+                "ko": "Nano IPS",
+                "en": "Nano IPS"
+              }
+            },
+            {
+              "field": "RAPID_IPS",
+              "enName": "Rapid IPS",
+              "koName": "Rapid IPS",
+              "autoFill": {},
+              "names": {
+                "ko": "Rapid IPS",
+                "en": "Rapid IPS"
+              }
+            },
+            {
+              "field": "QD_FAST_IPS",
+              "enName": "QD Fast IPS",
+              "koName": "QD Fast IPS",
+              "autoFill": {},
+              "names": {
+                "ko": "QD Fast IPS",
+                "en": "QD Fast IPS"
+              }
+            },
+            {
+              "field": "QD_IPS_MINILED",
+              "enName": "QD-IPS (Mini LED)",
+              "koName": "QD-IPS(Mini LED)",
+              "autoFill": {},
+              "names": {
+                "ko": "QD-IPS(Mini LED)",
+                "en": "QD-IPS (Mini LED)"
+              }
+            },
+            {
+              "field": "OLED",
+              "enName": "OLED",
+              "koName": "OLED",
+              "autoFill": {},
+              "names": {
+                "ko": "OLED",
+                "en": "OLED"
+              }
+            },
+            {
+              "field": "WOLED",
+              "enName": "WOLED",
+              "koName": "WOLED",
+              "autoFill": {},
+              "names": {
+                "ko": "WOLED",
+                "en": "WOLED"
+              }
+            },
+            {
+              "field": "TANDEM_WOLED",
+              "enName": "Tandem WOLED",
+              "koName": "Tandem WOLED",
+              "autoFill": {},
+              "names": {
+                "ko": "Tandem WOLED",
+                "en": "Tandem WOLED"
+              }
+            },
+            {
+              "field": "RGB_TANDEM_OLED",
+              "enName": "RGB-Stripe Tandem OLED",
+              "koName": "RGB-Stripe Tandem OLED",
+              "autoFill": {},
+              "names": {
+                "ko": "RGB-Stripe Tandem OLED",
+                "en": "RGB-Stripe Tandem OLED"
+              }
+            },
+            {
+              "field": "QD_OLED",
+              "enName": "QD-OLED",
+              "koName": "QD-OLED",
+              "autoFill": {},
+              "names": {
+                "ko": "QD-OLED",
+                "en": "QD-OLED"
+              }
+            },
+            {
+              "field": "PENTA_TANDEM_QD_OLED",
+              "enName": "Penta Tandem QD-OLED",
+              "koName": "Penta Tandem QD-OLED",
+              "autoFill": {},
+              "names": {
+                "ko": "Penta Tandem QD-OLED",
+                "en": "Penta Tandem QD-OLED"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "종류",
+            "en": "PanelType"
+          }
+        },
+        {
+          "id": "e199a870-4ba7-401f-a0ed-2b275671b45b",
+          "dataType": "NUMBER",
+          "field": "refreshRate",
+          "enName": "Refresh Rate",
+          "koName": "주사율",
+          "prefix": "",
+          "suffix": "Hz",
+          "showInList": true,
+          "listOrder": 47,
+          "detailOrder": 172,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "주사율",
+            "en": "Refresh Rate"
+          }
+        },
+        {
+          "id": "b393585b-b9ad-455f-aee6-ad8fe4307754",
+          "dataType": "NUMBER",
+          "field": "maxBrightnessSdrSpec",
+          "enName": "MaxBrightness(SDR)",
+          "koName": "최대 밝기 (SDR)",
+          "prefix": "",
+          "suffix": "cd/m²",
+          "showInList": false,
+          "listOrder": 5,
+          "detailOrder": 173,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "최대 밝기 (SDR)",
+            "en": "MaxBrightness(SDR)"
+          }
+        },
+        {
+          "id": "5e21d250-8735-4726-8259-8471ae68e7fe",
+          "dataType": "NUMBER",
+          "field": "maxBrightnessHdrSpec",
+          "enName": "MaxBrightness(HDR)",
+          "koName": "최대 밝기 (HDR)",
+          "prefix": "",
+          "suffix": "cd/m²",
+          "showInList": false,
+          "listOrder": 6,
+          "detailOrder": 174,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "최대 밝기 (HDR)",
+            "en": "MaxBrightness(HDR)"
+          }
+        },
+        {
+          "id": "29973d60-f46e-4e23-ada3-f7dc5455b42a",
+          "dataType": "ENUM",
+          "field": "hdrCertification",
+          "enName": "HDR Certification",
+          "koName": "HDR 인증",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 49,
+          "detailOrder": 174,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "displayHdrTrueBlack400",
+              "enName": "DisplayHDR True Black 400",
+              "koName": "DisplayHDR True Black 400",
+              "autoFill": {},
+              "names": {
+                "ko": "DisplayHDR True Black 400",
+                "en": "DisplayHDR True Black 400"
+              }
+            },
+            {
+              "field": "displayHdrTrueBlack500",
+              "enName": "DisplayHDR True Black 500",
+              "koName": "DisplayHDR True Black 500",
+              "autoFill": {},
+              "names": {
+                "ko": "DisplayHDR True Black 500",
+                "en": "DisplayHDR True Black 500"
+              }
+            },
+            {
+              "field": "displayHdrTrueBlack600",
+              "enName": "DisplayHDR True Black 600",
+              "koName": "DisplayHDR True Black 600",
+              "autoFill": {},
+              "names": {
+                "ko": "DisplayHDR True Black 600",
+                "en": "DisplayHDR True Black 600"
+              }
+            },
+            {
+              "field": "displayHdrTrueBlack1000",
+              "enName": "DisplayHDR True Black 1000",
+              "koName": "DisplayHDR True Black 1000",
+              "autoFill": {},
+              "names": {
+                "ko": "DisplayHDR True Black 1000",
+                "en": "DisplayHDR True Black 1000"
+              }
+            },
+            {
+              "field": "displayHdr400",
+              "enName": "DisplayHDR 400",
+              "koName": "DisplayHDR 400",
+              "autoFill": {},
+              "names": {
+                "ko": "DisplayHDR 400",
+                "en": "DisplayHDR 400"
+              }
+            },
+            {
+              "field": "displayHdr500",
+              "enName": "DisplayHDR 500",
+              "koName": "DisplayHDR 500",
+              "autoFill": {},
+              "names": {
+                "ko": "DisplayHDR 500",
+                "en": "DisplayHDR 500"
+              }
+            },
+            {
+              "field": "displayHdr600",
+              "enName": "DisplayHDR 600",
+              "koName": "DisplayHDR 600",
+              "autoFill": {},
+              "names": {
+                "ko": "DisplayHDR 600",
+                "en": "DisplayHDR 600"
+              }
+            },
+            {
+              "field": "displayHdr1000",
+              "enName": "DisplayHDR 1000",
+              "koName": "DisplayHDR 1000",
+              "autoFill": {},
+              "names": {
+                "ko": "DisplayHDR 1000",
+                "en": "DisplayHDR 1000"
+              }
+            },
+            {
+              "field": "displayHdr1400",
+              "enName": "DisplayHDR 1400",
+              "koName": "DisplayHDR 1400",
+              "autoFill": {},
+              "names": {
+                "ko": "DisplayHDR 1400",
+                "en": "DisplayHDR 1400"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "HDR 인증",
+            "en": "HDR Certification"
+          }
+        },
+        {
+          "id": "ddfa66a7-ecd2-43f9-b8c2-186634c14da5",
+          "dataType": "NUMBER",
+          "field": "colorGamutSrgbSpec",
+          "enName": "ColorGamut(sRGB)",
+          "koName": "색역 (sRGB)",
+          "prefix": "",
+          "suffix": "%",
+          "showInList": false,
+          "listOrder": 7,
+          "detailOrder": 175,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "색역 (sRGB)",
+            "en": "ColorGamut(sRGB)"
+          }
+        },
+        {
+          "id": "4a1114b5-4879-4431-8d95-fd557c9f7b24",
+          "dataType": "NUMBER",
+          "field": "colorGamutDcip3Spec",
+          "enName": "ColorGamut(DCI-P3)",
+          "koName": "색역 (DCI-P3)",
+          "prefix": "",
+          "suffix": "%",
+          "showInList": false,
+          "listOrder": 8,
+          "detailOrder": 176,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "색역 (DCI-P3)",
+            "en": "ColorGamut(DCI-P3)"
+          }
+        },
+        {
+          "id": "3905d134-7385-4bab-9962-4c0e1563fd22",
+          "dataType": "STRING",
+          "field": "panelMaker",
+          "enName": "PanelMaker",
+          "koName": "패널 제조사",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 9,
+          "detailOrder": 177,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "패널 제조사",
+            "en": "PanelMaker"
+          }
+        },
+        {
+          "id": "45e131b8-8e61-41b4-8071-6cd7818529d5",
+          "dataType": "BOOLEAN",
+          "field": "bfi",
+          "enName": "BFI",
+          "koName": "BFI",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 10,
+          "detailOrder": 178,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "BFI",
+            "en": "BFI"
+          }
+        },
+        {
+          "id": "01176c00-76fa-4c6d-854b-a6149aeb100f",
+          "dataType": "ENUM",
+          "field": "adaptiveSync",
+          "enName": "AdaptiveSync",
+          "koName": "적응형 동기화",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 11,
+          "detailOrder": 179,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "gsync",
+              "enName": "G-SYNC",
+              "koName": "지싱크",
+              "autoFill": {},
+              "names": {
+                "ko": "지싱크",
+                "en": "G-SYNC"
+              }
+            },
+            {
+              "field": "freesync",
+              "enName": "FreeSync",
+              "koName": "프리싱크",
+              "autoFill": {},
+              "names": {
+                "ko": "프리싱크",
+                "en": "FreeSync"
+              }
+            },
+            {
+              "field": "none",
+              "enName": "None",
+              "koName": "없음",
+              "autoFill": {},
+              "names": {
+                "ko": "없음",
+                "en": "None"
+              }
+            },
+            {
+              "field": "gsyncPulsar",
+              "enName": "G-SYNC Pulsar",
+              "koName": "지싱크 펄사",
+              "autoFill": {},
+              "names": {
+                "ko": "지싱크 펄사",
+                "en": "G-SYNC Pulsar"
+              }
+            },
+            {
+              "field": "gsyncCompatible",
+              "enName": "G-SYNC Compatible",
+              "koName": "G-SYNC 호환",
+              "autoFill": {},
+              "names": {
+                "ko": "G-SYNC 호환",
+                "en": "G-SYNC Compatible"
+              }
+            },
+            {
+              "field": "freeSyncPremiumPro",
+              "enName": "FreeSync Premium PRO",
+              "koName": "프리싱크 프리미엄 프로",
+              "autoFill": {},
+              "names": {
+                "ko": "프리싱크 프리미엄 프로",
+                "en": "FreeSync Premium PRO"
+              }
+            },
+            {
+              "field": "freeSyncPremium",
+              "enName": "FreeSync Premium",
+              "koName": "프리싱크 프리미엄",
+              "autoFill": {},
+              "names": {
+                "ko": "프리싱크 프리미엄",
+                "en": "FreeSync Premium"
+              }
+            },
+            {
+              "field": "gSyncUltimate",
+              "enName": "G-SYNC ULTIMATE",
+              "koName": "지싱크 울티메이트",
+              "autoFill": {},
+              "names": {
+                "ko": "지싱크 울티메이트",
+                "en": "G-SYNC ULTIMATE"
+              }
+            },
+            {
+              "field": "gsyncCompatibleVerify",
+              "enName": "G-SYNC Compatible Verify",
+              "koName": "G-SYNC 호환 인증",
+              "autoFill": {},
+              "names": {
+                "ko": "G-SYNC 호환 인증",
+                "en": "G-SYNC Compatible Verify"
+              }
+            }
+          ],
+          "multiSelect": true,
+          "names": {
+            "ko": "적응형 동기화",
+            "en": "AdaptiveSync"
+          }
+        },
+        {
+          "id": "2900625e-6ad3-497a-b626-cd63faa57719",
+          "dataType": "NUMBER",
+          "field": "hdmiPortCount",
+          "enName": "HDMI Port Count",
+          "koName": "HDMI 포트 수",
+          "prefix": "",
+          "suffix": "개",
+          "showInList": false,
+          "listOrder": 60,
+          "detailOrder": 180,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": 0,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "HDMI 포트 수",
+            "en": "HDMI Port Count"
+          }
+        },
+        {
+          "id": "2a3861fa-0225-4dd1-a59e-6907abaa4150",
+          "dataType": "ENUM",
+          "field": "hdmiLinkClass",
+          "enName": "HDMI Max Link",
+          "koName": "HDMI 최고 링크",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 61,
+          "detailOrder": 181,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "hdmi2_1Frl6_48",
+              "enName": "HDMI 2.1 FRL6 / 48Gbps",
+              "koName": "HDMI 2.1 FRL6 / 48Gbps",
+              "autoFill": {},
+              "names": {
+                "ko": "HDMI 2.1 FRL6 / 48Gbps",
+                "en": "HDMI 2.1 FRL6 / 48Gbps"
+              }
+            },
+            {
+              "field": "hdmi2_1Frl5_40",
+              "enName": "HDMI 2.1 FRL5 / 40Gbps",
+              "koName": "HDMI 2.1 FRL5 / 40Gbps",
+              "autoFill": {},
+              "names": {
+                "ko": "HDMI 2.1 FRL5 / 40Gbps",
+                "en": "HDMI 2.1 FRL5 / 40Gbps"
+              }
+            },
+            {
+              "field": "hdmi2_1Frl4_32",
+              "enName": "HDMI 2.1 FRL4 / 32Gbps",
+              "koName": "HDMI 2.1 FRL4 / 32Gbps",
+              "autoFill": {},
+              "names": {
+                "ko": "HDMI 2.1 FRL4 / 32Gbps",
+                "en": "HDMI 2.1 FRL4 / 32Gbps"
+              }
+            },
+            {
+              "field": "hdmi2_1Frl3_24",
+              "enName": "HDMI 2.1 FRL3 / 24Gbps",
+              "koName": "HDMI 2.1 FRL3 / 24Gbps",
+              "autoFill": {},
+              "names": {
+                "ko": "HDMI 2.1 FRL3 / 24Gbps",
+                "en": "HDMI 2.1 FRL3 / 24Gbps"
+              }
+            },
+            {
+              "field": "hdmi2_1Tmds18",
+              "enName": "HDMI 2.1 TMDS / 18Gbps",
+              "koName": "HDMI 2.1 TMDS / 18Gbps",
+              "autoFill": {},
+              "names": {
+                "ko": "HDMI 2.1 TMDS / 18Gbps",
+                "en": "HDMI 2.1 TMDS / 18Gbps"
+              }
+            },
+            {
+              "field": "hdmi2_0Tmds18",
+              "enName": "HDMI 2.0 / 18Gbps",
+              "koName": "HDMI 2.0 / 18Gbps",
+              "autoFill": {},
+              "names": {
+                "ko": "HDMI 2.0 / 18Gbps",
+                "en": "HDMI 2.0 / 18Gbps"
+              }
+            },
+            {
+              "field": "hdmi1_4",
+              "enName": "HDMI 1.4",
+              "koName": "HDMI 1.4",
+              "autoFill": {},
+              "names": {
+                "ko": "HDMI 1.4",
+                "en": "HDMI 1.4"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "HDMI 최고 링크",
+            "en": "HDMI Max Link"
+          }
+        },
+        {
+          "id": "0e6df0b6-f117-48ac-a00c-df2e3ef90bcf",
+          "dataType": "NUMBER",
+          "field": "displayPortCount",
+          "enName": "DisplayPort Count",
+          "koName": "DP 포트 수",
+          "prefix": "",
+          "suffix": "개",
+          "showInList": false,
+          "listOrder": 62,
+          "detailOrder": 182,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": 0,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "DP 포트 수",
+            "en": "DisplayPort Count"
+          }
+        },
+        {
+          "id": "f4bcb625-291c-4913-9585-2be2b6597086",
+          "dataType": "ENUM",
+          "field": "displayPortLinkClass",
+          "enName": "DisplayPort Max Link",
+          "koName": "DP 최고 링크",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 63,
+          "detailOrder": 183,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "dp2_1Uhbr20_80",
+              "enName": "DP 2.1 UHBR20 / 80Gbps",
+              "koName": "DP 2.1 UHBR20 / 80Gbps",
+              "autoFill": {},
+              "names": {
+                "ko": "DP 2.1 UHBR20 / 80Gbps",
+                "en": "DP 2.1 UHBR20 / 80Gbps"
+              }
+            },
+            {
+              "field": "dp2_1Uhbr13_5_54",
+              "enName": "DP 2.1 UHBR13.5 / 54Gbps",
+              "koName": "DP 2.1 UHBR13.5 / 54Gbps",
+              "autoFill": {},
+              "names": {
+                "ko": "DP 2.1 UHBR13.5 / 54Gbps",
+                "en": "DP 2.1 UHBR13.5 / 54Gbps"
+              }
+            },
+            {
+              "field": "dp2_1Uhbr10_40",
+              "enName": "DP 2.1 UHBR10 / 40Gbps",
+              "koName": "DP 2.1 UHBR10 / 40Gbps",
+              "autoFill": {},
+              "names": {
+                "ko": "DP 2.1 UHBR10 / 40Gbps",
+                "en": "DP 2.1 UHBR10 / 40Gbps"
+              }
+            },
+            {
+              "field": "dp1_4Hbr3_32_4",
+              "enName": "DP 1.4 HBR3 / 32.4Gbps",
+              "koName": "DP 1.4 HBR3 / 32.4Gbps",
+              "autoFill": {},
+              "names": {
+                "ko": "DP 1.4 HBR3 / 32.4Gbps",
+                "en": "DP 1.4 HBR3 / 32.4Gbps"
+              }
+            },
+            {
+              "field": "dp1_2Hbr2_21_6",
+              "enName": "DP 1.2 HBR2 / 21.6Gbps",
+              "koName": "DP 1.2 HBR2 / 21.6Gbps",
+              "autoFill": {},
+              "names": {
+                "ko": "DP 1.2 HBR2 / 21.6Gbps",
+                "en": "DP 1.2 HBR2 / 21.6Gbps"
+              }
+            },
+            {
+              "field": "dp1_1Hbr_10_8",
+              "enName": "DP 1.1 HBR / 10.8Gbps",
+              "koName": "DP 1.1 HBR / 10.8Gbps",
+              "autoFill": {},
+              "names": {
+                "ko": "DP 1.1 HBR / 10.8Gbps",
+                "en": "DP 1.1 HBR / 10.8Gbps"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "DP 최고 링크",
+            "en": "DisplayPort Max Link"
+          }
+        },
+        {
+          "id": "a58aa1e2-19c8-4576-89d8-019e29c2ffba",
+          "dataType": "ENUM",
+          "field": "displayStreamCompression",
+          "enName": "Display Stream Compression",
+          "koName": "DSC",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 64,
+          "detailOrder": 184,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "noneConfirmed",
+              "enName": "None",
+              "koName": "없음",
+              "autoFill": {},
+              "names": {
+                "ko": "없음",
+                "en": "None"
+              }
+            },
+            {
+              "field": "supported",
+              "enName": "Supported",
+              "koName": "지원",
+              "autoFill": {},
+              "names": {
+                "ko": "지원",
+                "en": "Supported"
+              }
+            },
+            {
+              "field": "requiredForMaxMode",
+              "enName": "Required for Max Mode",
+              "koName": "최대 모드 필수",
+              "autoFill": {},
+              "names": {
+                "ko": "최대 모드 필수",
+                "en": "Required for Max Mode"
+              }
+            },
+            {
+              "field": "modeDependent",
+              "enName": "Mode-dependent",
+              "koName": "조건부/모드별",
+              "autoFill": {},
+              "names": {
+                "ko": "조건부/모드별",
+                "en": "Mode-dependent"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "DSC",
+            "en": "Display Stream Compression"
+          }
+        },
+        {
+          "id": "e290c070-72c1-41ed-9746-18a86e35d11e",
+          "dataType": "BOOLEAN",
+          "field": "usbCVideo",
+          "enName": "USB-C Video Input",
+          "koName": "USB‑C 영상 입력",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 65,
+          "detailOrder": 185,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "USB‑C 영상 입력",
+            "en": "USB-C Video Input"
+          }
+        },
+        {
+          "id": "97c7f987-41be-44b5-8178-04a97e325940",
+          "dataType": "NUMBER",
+          "field": "usbCPowerDeliveryW",
+          "enName": "USB-C Power Delivery",
+          "koName": "USB‑C PD",
+          "prefix": "",
+          "suffix": "W",
+          "showInList": false,
+          "listOrder": 66,
+          "detailOrder": 186,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": 0,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "USB‑C PD",
+            "en": "USB-C Power Delivery"
+          }
+        },
+        {
+          "id": "a0c3854e-6111-4791-adf9-debbd33ef165",
+          "dataType": "ENUM",
+          "field": "kvmType",
+          "enName": "KVM",
+          "koName": "KVM",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 67,
+          "detailOrder": 187,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "noneConfirmed",
+              "enName": "None",
+              "koName": "없음",
+              "autoFill": {},
+              "names": {
+                "ko": "없음",
+                "en": "None"
+              }
+            },
+            {
+              "field": "usbBPlusUsbC",
+              "enName": "USB-B + USB-C KVM",
+              "koName": "USB‑B + USB‑C KVM",
+              "autoFill": {},
+              "names": {
+                "ko": "USB‑B + USB‑C KVM",
+                "en": "USB-B + USB-C KVM"
+              }
+            },
+            {
+              "field": "dualUsbC",
+              "enName": "Dual USB-C KVM",
+              "koName": "듀얼 USB‑C KVM",
+              "autoFill": {},
+              "names": {
+                "ko": "듀얼 USB‑C KVM",
+                "en": "Dual USB-C KVM"
+              }
+            },
+            {
+              "field": "thunderboltKvm",
+              "enName": "Thunderbolt KVM",
+              "koName": "Thunderbolt KVM",
+              "autoFill": {},
+              "names": {
+                "ko": "Thunderbolt KVM",
+                "en": "Thunderbolt KVM"
+              }
+            },
+            {
+              "field": "manualUsbSwitch",
+              "enName": "Manual USB Switch",
+              "koName": "수동 USB 전환",
+              "autoFill": {},
+              "names": {
+                "ko": "수동 USB 전환",
+                "en": "Manual USB Switch"
+              }
+            },
+            {
+              "field": "unknownTopology",
+              "enName": "KVM, topology unknown",
+              "koName": "KVM 있음, 구조 미확인",
+              "autoFill": {},
+              "names": {
+                "ko": "KVM 있음, 구조 미확인",
+                "en": "KVM, topology unknown"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "KVM",
+            "en": "KVM"
+          }
+        },
+        {
+          "id": "a038cb41-b7ae-45d4-9dd3-54b05a7fa640",
+          "dataType": "ENUM",
+          "field": "audioReturnChannel",
+          "enName": "ARC/eARC",
+          "koName": "ARC/eARC",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 68,
+          "detailOrder": 188,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "arc",
+              "enName": "ARC",
+              "koName": "ARC",
+              "autoFill": {},
+              "names": {
+                "ko": "ARC",
+                "en": "ARC"
+              }
+            },
+            {
+              "field": "earc",
+              "enName": "eARC",
+              "koName": "eARC",
+              "autoFill": {},
+              "names": {
+                "ko": "eARC",
+                "en": "eARC"
+              }
+            },
+            {
+              "field": "noneConfirmed",
+              "enName": "None",
+              "koName": "없음",
+              "autoFill": {},
+              "names": {
+                "ko": "없음",
+                "en": "None"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "ARC/eARC",
+            "en": "ARC/eARC"
+          }
+        },
+        {
+          "id": "8638c9ad-f900-4ba7-8ed7-b9bb06ea29f6",
+          "dataType": "ENUM",
+          "field": "multiViewSupport",
+          "enName": "PiP/PbP",
+          "koName": "PiP/PbP",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 69,
+          "detailOrder": 189,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "pbp",
+              "enName": "PbP",
+              "koName": "PbP",
+              "autoFill": {},
+              "names": {
+                "ko": "PbP",
+                "en": "PbP"
+              }
+            },
+            {
+              "field": "pip",
+              "enName": "PiP",
+              "koName": "PiP",
+              "autoFill": {},
+              "names": {
+                "ko": "PiP",
+                "en": "PiP"
+              }
+            },
+            {
+              "field": "quadPbp",
+              "enName": "Quad PbP",
+              "koName": "4분할 PbP",
+              "autoFill": {},
+              "names": {
+                "ko": "4분할 PbP",
+                "en": "Quad PbP"
+              }
+            },
+            {
+              "field": "noneConfirmed",
+              "enName": "None",
+              "koName": "없음",
+              "autoFill": {},
+              "names": {
+                "ko": "없음",
+                "en": "None"
+              }
+            }
+          ],
+          "multiSelect": true,
+          "names": {
+            "ko": "PiP/PbP",
+            "en": "PiP/PbP"
+          }
+        },
+        {
+          "id": "a262676f-1af0-44b2-97ea-1909b2bef344",
+          "dataType": "ENUM",
+          "field": "hdrFormatSupport",
+          "enName": "HDR Formats",
+          "koName": "HDR 포맷",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 75,
+          "detailOrder": 190,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "hdr10",
+              "enName": "HDR10",
+              "koName": "HDR10",
+              "autoFill": {},
+              "names": {
+                "ko": "HDR10",
+                "en": "HDR10"
+              }
+            },
+            {
+              "field": "hdr10Plus",
+              "enName": "HDR10+",
+              "koName": "HDR10+",
+              "autoFill": {},
+              "names": {
+                "ko": "HDR10+",
+                "en": "HDR10+"
+              }
+            },
+            {
+              "field": "dolbyVision",
+              "enName": "Dolby Vision",
+              "koName": "Dolby Vision",
+              "autoFill": {},
+              "names": {
+                "ko": "Dolby Vision",
+                "en": "Dolby Vision"
+              }
+            },
+            {
+              "field": "hlg",
+              "enName": "HLG",
+              "koName": "HLG",
+              "autoFill": {},
+              "names": {
+                "ko": "HLG",
+                "en": "HLG"
+              }
+            }
+          ],
+          "multiSelect": true,
+          "names": {
+            "ko": "HDR 포맷",
+            "en": "HDR Formats"
+          }
+        },
+        {
+          "id": "c8c40607-92ca-4fac-ae91-1b40f308f000",
+          "dataType": "ENUM",
+          "field": "localDimmingType",
+          "enName": "Backlight Dimming",
+          "koName": "백라이트 디밍",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 76,
+          "detailOrder": 191,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "globalDimming",
+              "enName": "Global Dimming",
+              "koName": "글로벌 디밍",
+              "autoFill": {},
+              "names": {
+                "ko": "글로벌 디밍",
+                "en": "Global Dimming"
+              }
+            },
+            {
+              "field": "edgeLocalDimming",
+              "enName": "Edge Local Dimming",
+              "koName": "엣지 로컬디밍",
+              "autoFill": {},
+              "names": {
+                "ko": "엣지 로컬디밍",
+                "en": "Edge Local Dimming"
+              }
+            },
+            {
+              "field": "fald",
+              "enName": "FALD",
+              "koName": "FALD",
+              "autoFill": {},
+              "names": {
+                "ko": "FALD",
+                "en": "FALD"
+              }
+            },
+            {
+              "field": "miniLed",
+              "enName": "Mini LED",
+              "koName": "Mini LED",
+              "autoFill": {},
+              "names": {
+                "ko": "Mini LED",
+                "en": "Mini LED"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "백라이트 디밍",
+            "en": "Backlight Dimming",
+            "ja": "バックライト調光",
+            "zh": "背光调光"
+          }
+        },
+        {
+          "id": "c28fe7d5-711e-4a24-b6ba-99116fea3de7",
+          "dataType": "NUMBER",
+          "field": "localDimmingZones",
+          "enName": "Local Dimming Zones",
+          "koName": "로컬디밍 존 수",
+          "prefix": "",
+          "suffix": "존",
+          "showInList": false,
+          "listOrder": 77,
+          "detailOrder": 192,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": 0,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "로컬디밍 존 수",
+            "en": "Local Dimming Zones"
+          }
+        },
+        {
+          "id": "984174b5-be5a-4fdc-9f7c-69818b2be82c",
+          "dataType": "ENUM",
+          "field": "standType",
+          "enName": "Stand Configuration",
+          "koName": "스탠드 구성",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 70,
+          "detailOrder": 200,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "included",
+              "enName": "Stand Included",
+              "koName": "기본 스탠드 포함",
+              "autoFill": {},
+              "names": {
+                "ko": "기본 스탠드 포함",
+                "en": "Stand Included"
+              }
+            },
+            {
+              "field": "notIncluded",
+              "enName": "Stand Not Included",
+              "koName": "스탠드 미포함",
+              "autoFill": {},
+              "names": {
+                "ko": "스탠드 미포함",
+                "en": "Stand Not Included"
+              }
+            },
+            {
+              "field": "optional",
+              "enName": "Optional Stand",
+              "koName": "별매/옵션",
+              "autoFill": {},
+              "names": {
+                "ko": "별매/옵션",
+                "en": "Optional Stand"
+              }
+            },
+            {
+              "field": "armOnly",
+              "enName": "Arm-only",
+              "koName": "모니터암 전제",
+              "autoFill": {},
+              "names": {
+                "ko": "모니터암 전제",
+                "en": "Arm-only"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "스탠드 구성",
+            "en": "Stand Configuration"
+          }
+        },
+        {
+          "id": "25666b30-e26b-47e0-a0e9-5c7c2e587460",
+          "dataType": "ENUM",
+          "field": "standAdjustments",
+          "enName": "Stand Adjustments",
+          "koName": "스탠드 조절",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 71,
+          "detailOrder": 201,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "tilt",
+              "enName": "Tilt",
+              "koName": "틸트",
+              "autoFill": {},
+              "names": {
+                "ko": "틸트",
+                "en": "Tilt"
+              }
+            },
+            {
+              "field": "height",
+              "enName": "Height",
+              "koName": "높낮이",
+              "autoFill": {},
+              "names": {
+                "ko": "높낮이",
+                "en": "Height"
+              }
+            },
+            {
+              "field": "swivel",
+              "enName": "Swivel",
+              "koName": "스위블",
+              "autoFill": {},
+              "names": {
+                "ko": "스위블",
+                "en": "Swivel"
+              }
+            },
+            {
+              "field": "pivot",
+              "enName": "Pivot",
+              "koName": "피벗",
+              "autoFill": {},
+              "names": {
+                "ko": "피벗",
+                "en": "Pivot"
+              }
+            },
+            {
+              "field": "rotationBothWays",
+              "enName": "Bi-directional Pivot",
+              "koName": "양방향 피벗",
+              "autoFill": {},
+              "names": {
+                "ko": "양방향 피벗",
+                "en": "Bi-directional Pivot"
+              }
+            },
+            {
+              "field": "cableManagement",
+              "enName": "Cable Management",
+              "koName": "케이블 정리",
+              "autoFill": {},
+              "names": {
+                "ko": "케이블 정리",
+                "en": "Cable Management"
+              }
+            }
+          ],
+          "multiSelect": true,
+          "names": {
+            "ko": "스탠드 조절",
+            "en": "Stand Adjustments"
+          }
+        },
+        {
+          "id": "3719df68-696e-4fc6-b12b-4d94b3d008e3",
+          "dataType": "NUMBER",
+          "field": "heightAdjustMm",
+          "enName": "Height Adjustment",
+          "koName": "높낮이 조절",
+          "prefix": "",
+          "suffix": "mm",
+          "showInList": false,
+          "listOrder": 72,
+          "detailOrder": 202,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": 0,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "높낮이 조절",
+            "en": "Height Adjustment"
+          }
+        },
+        {
+          "id": "945edc86-dd24-498f-9ee7-2572cc9d005b",
+          "dataType": "ENUM",
+          "field": "vesaMountPattern",
+          "enName": "VESA Mount",
+          "koName": "VESA 마운트",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 73,
+          "detailOrder": 203,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "noneConfirmed",
+              "enName": "None",
+              "koName": "없음",
+              "autoFill": {},
+              "names": {
+                "ko": "없음",
+                "en": "None"
+              }
+            },
+            {
+              "field": "vesa75x75",
+              "enName": "75x75",
+              "koName": "75×75",
+              "autoFill": {},
+              "names": {
+                "ko": "75×75",
+                "en": "75x75"
+              }
+            },
+            {
+              "field": "vesa100x100",
+              "enName": "100x100",
+              "koName": "100×100",
+              "autoFill": {},
+              "names": {
+                "ko": "100×100",
+                "en": "100x100"
+              }
+            },
+            {
+              "field": "vesa200x100",
+              "enName": "200x100",
+              "koName": "200×100",
+              "autoFill": {},
+              "names": {
+                "ko": "200×100",
+                "en": "200x100"
+              }
+            },
+            {
+              "field": "vesa200x200",
+              "enName": "200x200",
+              "koName": "200×200",
+              "autoFill": {},
+              "names": {
+                "ko": "200×200",
+                "en": "200x200"
+              }
+            },
+            {
+              "field": "adapterRequired",
+              "enName": "Adapter Required",
+              "koName": "어댑터 필요",
+              "autoFill": {},
+              "names": {
+                "ko": "어댑터 필요",
+                "en": "Adapter Required"
+              }
+            },
+            {
+              "field": "custom",
+              "enName": "Custom",
+              "koName": "특수 규격",
+              "autoFill": {},
+              "names": {
+                "ko": "특수 규격",
+                "en": "Custom"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "VESA 마운트",
+            "en": "VESA Mount"
+          }
+        },
+        {
+          "id": "77b9eb9e-f4b3-49e5-8b60-3995fea9c937",
+          "dataType": "ENUM",
+          "field": "screenCoating",
+          "enName": "Screen Coating",
+          "koName": "화면 코팅",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 74,
+          "detailOrder": 204,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "glossy",
+              "enName": "Glossy",
+              "koName": "글레어",
+              "autoFill": {},
+              "names": {
+                "ko": "글레어",
+                "en": "Glossy"
+              }
+            },
+            {
+              "field": "semiGlossy",
+              "enName": "Semi-glossy",
+              "koName": "세미글로시",
+              "autoFill": {},
+              "names": {
+                "ko": "세미글로시",
+                "en": "Semi-glossy"
+              }
+            },
+            {
+              "field": "semiMatte",
+              "enName": "Semi-matte",
+              "koName": "세미매트",
+              "autoFill": {},
+              "names": {
+                "ko": "세미매트",
+                "en": "Semi-matte"
+              }
+            },
+            {
+              "field": "matteAntiGlare",
+              "enName": "Matte Anti-glare",
+              "koName": "무광 AG",
+              "autoFill": {},
+              "names": {
+                "ko": "무광 AG",
+                "en": "Matte Anti-glare"
+              }
+            },
+            {
+              "field": "heavyMatteAntiGlare",
+              "enName": "Heavy Matte Anti-glare",
+              "koName": "강한 무광 AG",
+              "autoFill": {},
+              "names": {
+                "ko": "강한 무광 AG",
+                "en": "Heavy Matte Anti-glare"
+              }
+            },
+            {
+              "field": "etchedGlass",
+              "enName": "Etched Glass",
+              "koName": "에칭 글래스",
+              "autoFill": {},
+              "names": {
+                "ko": "에칭 글래스",
+                "en": "Etched Glass"
+              }
+            },
+            {
+              "field": "antiReflection",
+              "enName": "Anti-reflection",
+              "koName": "반사 방지",
+              "autoFill": {},
+              "names": {
+                "ko": "반사 방지",
+                "en": "Anti-reflection"
+              }
+            },
+            {
+              "field": "nonglare",
+              "enName": "Non-Glare",
+              "koName": "논글레어",
+              "autoFill": {},
+              "names": {
+                "ko": "논글레어",
+                "en": "Non-Glare"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "화면 코팅",
+            "en": "Screen Coating"
+          }
+        }
+      ],
+      "bench": [
+        {
+          "id": "02245e5a-228e-4dab-b245-1bac789dbae8",
+          "dataType": "NUMBER",
+          "field": "responseAverage",
+          "enName": "Overall Resp.",
+          "koName": "종합 응답속도",
+          "prefix": "",
+          "suffix": "ms",
+          "showInList": true,
+          "listOrder": 49,
+          "detailOrder": 180,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": 2,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "종합 응답속도",
+            "en": "Overall Resp."
+          }
+        },
+        {
+          "id": "33f663cb-7eb0-4c5d-a283-eea566c1f958",
+          "dataType": "NUMBER",
+          "field": "inputLagMonitor",
+          "enName": "InputLag",
+          "koName": "인풋렉",
+          "prefix": "",
+          "suffix": "ms",
+          "showInList": false,
+          "listOrder": 38,
+          "detailOrder": 181,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "인풋렉",
+            "en": "InputLag"
+          }
+        },
+        {
+          "id": "a94fe211-014f-4cd4-ae8f-2da7b8fbb20e",
+          "dataType": "NUMBER",
+          "field": "responseAverageRgb10",
+          "enName": "Avg. Resp.",
+          "koName": "평균 응답속도",
+          "prefix": "",
+          "suffix": "ms",
+          "showInList": true,
+          "listOrder": 50,
+          "detailOrder": 182,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": 2,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "평균 응답속도",
+            "en": "Avg. Resp."
+          }
+        },
+        {
+          "id": "c50ae155-38fa-40c5-a33f-5ed869a6346f",
+          "dataType": "NUMBER",
+          "field": "responseMax",
+          "enName": "ResponseMax",
+          "koName": "최대 응답속도",
+          "prefix": "",
+          "suffix": "ms",
+          "showInList": false,
+          "listOrder": 3,
+          "detailOrder": 183,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": 2,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "최대 응답속도",
+            "en": "ResponseMax"
+          }
+        },
+        {
+          "id": "3ed367bc-116b-4c05-8690-bc07c29482df",
+          "dataType": "NUMBER",
+          "field": "overshootAverage",
+          "enName": "OvershootAverage",
+          "koName": "평균 오버슛",
+          "prefix": "",
+          "suffix": "%",
+          "showInList": false,
+          "listOrder": 4,
+          "detailOrder": 184,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "평균 오버슛",
+            "en": "OvershootAverage"
+          }
+        },
+        {
+          "id": "79954513-20a2-46be-85db-63556752434f",
+          "dataType": "NUMBER",
+          "field": "overshootMax",
+          "enName": "OvershootMax",
+          "koName": "최대 오버슛",
+          "prefix": "",
+          "suffix": "%",
+          "showInList": false,
+          "listOrder": 5,
+          "detailOrder": 185,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "최대 오버슛",
+            "en": "OvershootMax"
+          }
+        },
+        {
+          "id": "644c3d85-d79b-43ad-b6cf-88f197e7078c",
+          "dataType": "NUMBER",
+          "field": "maxBrightnessSdrMeasured",
+          "enName": "Peak Brightness",
+          "koName": "최대 밝기 (SDR)",
+          "prefix": "",
+          "suffix": "cd/m²",
+          "showInList": true,
+          "listOrder": 52,
+          "detailOrder": 186,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "최대 밝기 (SDR)",
+            "en": "Peak Brightness"
+          }
+        },
+        {
+          "id": "cf8262c6-ffb1-46fb-865c-2153bcc88f27",
+          "dataType": "NUMBER",
+          "field": "maxBrightnessHdrMeasured",
+          "enName": "Peak Brightness (HDR)",
+          "koName": "최대 밝기 (HDR)",
+          "prefix": "",
+          "suffix": "cd/m²",
+          "showInList": true,
+          "listOrder": 53,
+          "detailOrder": 187,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "최대 밝기 (HDR)",
+            "en": "Peak Brightness (HDR)"
+          }
+        },
+        {
+          "id": "b809193c-df89-4742-bf65-659828aa1bb2",
+          "dataType": "NUMBER",
+          "field": "colorGamutDciP3Measured",
+          "enName": "Gamut (DCI‑P3)",
+          "koName": "색역 (DCI‑P3)",
+          "prefix": "",
+          "suffix": "%",
+          "showInList": true,
+          "listOrder": 51,
+          "detailOrder": 188,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "색역 (DCI‑P3)",
+            "en": "Gamut (DCI‑P3)"
+          }
+        },
+        {
+          "id": "1f4f56dd-1df6-4c61-ac44-a9e79d93af35",
+          "dataType": "NUMBER",
+          "field": "colorGamutSrgbBench",
+          "enName": "ColorGamut(sRGB)",
+          "koName": "색역 (sRGB)",
+          "prefix": "",
+          "suffix": "%",
+          "showInList": false,
+          "listOrder": 9,
+          "detailOrder": 189,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "색역 (sRGB)",
+            "en": "ColorGamut(sRGB)"
+          }
+        },
+        {
+          "id": "4106e056-3dfd-4b3d-9abb-72a4f3e0b3e1",
+          "dataType": "NUMBER",
+          "field": "contrastMeasured",
+          "enName": "Contrast",
+          "koName": "명암비",
+          "prefix": "",
+          "suffix": ":1",
+          "showInList": false,
+          "listOrder": 10,
+          "detailOrder": 190,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "명암비",
+            "en": "Contrast"
+          }
+        },
+        {
+          "id": "b00d286b-00f2-406d-9b5c-e67817dc4cf2",
+          "dataType": "NUMBER",
+          "field": "colorDeAvg",
+          "enName": "ColorDeAvg",
+          "koName": "색정확도 dE 평균",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 28,
+          "detailOrder": 191,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "색정확도 dE 평균",
+            "en": "ColorDeAvg"
+          }
+        },
+        {
+          "id": "0f41fffc-ba3a-4f64-b447-4665625c1271",
+          "dataType": "NUMBER",
+          "field": "bfiOnMaxBrightness",
+          "enName": "MaxBrightness(BFI ON)",
+          "koName": "최대 밝기(BFI ON)",
+          "prefix": "",
+          "suffix": "cd/m²",
+          "showInList": false,
+          "listOrder": 12,
+          "detailOrder": 192,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "최대 밝기(BFI ON)",
+            "en": "MaxBrightness(BFI ON)"
+          }
+        },
+        {
+          "id": "eb46a072-8fea-40eb-adff-3ff41768c4b4",
+          "dataType": "NUMBER",
+          "field": "colorGamutBt2020Measured",
+          "enName": "Gamut (BT.2020)",
+          "koName": "색역 (BT.2020)",
+          "prefix": "",
+          "suffix": "%",
+          "showInList": false,
+          "listOrder": 54,
+          "detailOrder": 192,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "색역 (BT.2020)",
+            "en": "Gamut (BT.2020)"
+          }
+        },
+        {
+          "id": "63696129-380b-456f-80bd-46a62bc6fdcf",
+          "dataType": "NUMBER",
+          "field": "colorVolumeDciP3Measured",
+          "enName": "Color Volume (DCI‑P3)",
+          "koName": "색볼륨 (DCI‑P3)",
+          "prefix": "",
+          "suffix": "%",
+          "showInList": false,
+          "listOrder": 55,
+          "detailOrder": 193,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "색볼륨 (DCI‑P3)",
+            "en": "Color Volume (DCI‑P3)"
+          }
+        },
+        {
+          "id": "422fc9c7-d9f0-427c-b2d1-0c1edc5d43b2",
+          "dataType": "NUMBER",
+          "field": "colorVolumeBt2020Measured",
+          "enName": "Color Volume (BT.2020)",
+          "koName": "색볼륨 (BT.2020)",
+          "prefix": "",
+          "suffix": "%",
+          "showInList": false,
+          "listOrder": 56,
+          "detailOrder": 194,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "색볼륨 (BT.2020)",
+            "en": "Color Volume (BT.2020)"
+          }
+        },
+        {
+          "id": "720914c3-4537-4de6-bd74-d10c6b4da199",
+          "dataType": "NUMBER",
+          "field": "hdrPeak2PercentMeasured",
+          "enName": "HDR Peak 2%",
+          "koName": "HDR 피크 2%",
+          "prefix": "",
+          "suffix": "cd/m²",
+          "showInList": false,
+          "listOrder": 78,
+          "detailOrder": 195,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": 0,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "HDR 피크 2%",
+            "en": "HDR Peak 2%"
+          }
+        },
+        {
+          "id": "0d82bdfc-77fc-4358-8934-a04d5845bf87",
+          "dataType": "NUMBER",
+          "field": "hdrPeak10PercentMeasured",
+          "enName": "HDR Peak 10%",
+          "koName": "HDR 피크 10%",
+          "prefix": "",
+          "suffix": "cd/m²",
+          "showInList": false,
+          "listOrder": 79,
+          "detailOrder": 196,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": 0,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "HDR 피크 10%",
+            "en": "HDR Peak 10%"
+          }
+        },
+        {
+          "id": "a3470415-3c7a-43b1-b5b5-03c06e341e33",
+          "dataType": "NUMBER",
+          "field": "hdrFullFieldBrightnessMeasured",
+          "enName": "HDR Full-field Brightness",
+          "koName": "HDR 100% 밝기",
+          "prefix": "",
+          "suffix": "cd/m²",
+          "showInList": false,
+          "listOrder": 80,
+          "detailOrder": 197,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": 0,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "HDR 100% 밝기",
+            "en": "HDR Full-field Brightness"
+          }
+        },
+        {
+          "id": "36477ced-639f-4631-8629-c5b83b4bce01",
+          "dataType": "ENUM",
+          "field": "vrrFlickerGrade",
+          "enName": "VRR Flicker",
+          "koName": "VRR 플리커",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 81,
+          "detailOrder": 198,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "none",
+              "enName": "None",
+              "koName": "거의 없음",
+              "autoFill": {},
+              "names": {
+                "ko": "거의 없음",
+                "en": "None"
+              }
+            },
+            {
+              "field": "minor",
+              "enName": "Minor",
+              "koName": "약함",
+              "autoFill": {},
+              "names": {
+                "ko": "약함",
+                "en": "Minor"
+              }
+            },
+            {
+              "field": "moderate",
+              "enName": "Moderate",
+              "koName": "보통",
+              "autoFill": {},
+              "names": {
+                "ko": "보통",
+                "en": "Moderate"
+              }
+            },
+            {
+              "field": "severe",
+              "enName": "Severe",
+              "koName": "심함",
+              "autoFill": {},
+              "names": {
+                "ko": "심함",
+                "en": "Severe"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "VRR 플리커",
+            "en": "VRR Flicker"
+          }
+        },
+        {
+          "id": "329c7754-3d2a-4a6d-921a-833272a19a52",
+          "dataType": "ENUM",
+          "field": "textClarityGrade",
+          "enName": "Text Clarity",
+          "koName": "텍스트 선명도",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 82,
+          "detailOrder": 199,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "excellent",
+              "enName": "Excellent",
+              "koName": "매우 좋음",
+              "autoFill": {},
+              "names": {
+                "ko": "매우 좋음",
+                "en": "Excellent"
+              }
+            },
+            {
+              "field": "good",
+              "enName": "Good",
+              "koName": "좋음",
+              "autoFill": {},
+              "names": {
+                "ko": "좋음",
+                "en": "Good"
+              }
+            },
+            {
+              "field": "fair",
+              "enName": "Fair",
+              "koName": "보통",
+              "autoFill": {},
+              "names": {
+                "ko": "보통",
+                "en": "Fair"
+              }
+            },
+            {
+              "field": "poor",
+              "enName": "Poor",
+              "koName": "나쁨",
+              "autoFill": {},
+              "names": {
+                "ko": "나쁨",
+                "en": "Poor"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "텍스트 선명도",
+            "en": "Text Clarity"
+          }
+        },
+        {
+          "id": "57d4b497-4225-4000-915e-444454a1c1ed",
+          "dataType": "NUMBER",
+          "field": "pwmFrequencyMeasured",
+          "enName": "PWM/Flicker Frequency",
+          "koName": "PWM/플리커 주파수",
+          "prefix": "",
+          "suffix": "Hz",
+          "showInList": false,
+          "listOrder": 83,
+          "detailOrder": 200,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": 0,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "PWM/플리커 주파수",
+            "en": "PWM/Flicker Frequency"
+          }
+        },
+        {
+          "id": "bf755253-048e-491d-b8ea-1efb22eae6a0",
+          "dataType": "NUMBER",
+          "field": "totalReflectanceMeasured",
+          "enName": "Total Reflectance (SCI)",
+          "koName": "총 반사율 (SCI)",
+          "prefix": "",
+          "suffix": "%",
+          "showInList": true,
+          "listOrder": 54,
+          "detailOrder": 201,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": 2,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "총 반사율 (SCI)",
+            "en": "Total Reflectance (SCI)"
+          }
+        },
+        {
+          "id": "0a41060a-1084-4782-a162-d52cbe5041b4",
+          "dataType": "NUMBER",
+          "field": "diffuseReflectanceMeasured",
+          "enName": "Diffuse Reflectance (SCE)",
+          "koName": "확산 반사율 (SCE)",
+          "prefix": "",
+          "suffix": "%",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 202,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": 2,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "확산 반사율 (SCE)",
+            "en": "Diffuse Reflectance (SCE)"
+          }
+        }
+      ]
+    },
+    "fieldGroups": {
+      "common": [
+        {
+          "id": "basic_product",
+          "koName": "기본 제품 정보",
+          "enName": null,
+          "names": {},
+          "order": 1,
+          "type": null,
+          "fieldIds": [
+            "d3713a36-85d6-4107-94b3-e33f581cbacd",
+            "__system:overall_rating__",
+            "f790df98-e3a4-4d91-b091-2104c0e3e815",
+            "30b76215-226d-4b79-8f14-7c97877b572b",
+            "d089bb4b-c935-434e-8607-1df473f50ced",
+            "fa336b12-6b23-4e36-8a10-eeaf03547104",
+            "c95edff9-a285-4554-a796-394f53f2f02a",
+            "13ad32a3-7028-4841-bb0a-5045ae488a09",
+            "85c761c8-41fe-42b2-ae31-63c63e8d3921",
+            "c62da328-85aa-46db-ab92-50e0e5ed2411"
+          ],
+          "subGroups": null,
+          "additionalFields": null
+        },
+        {
+          "id": "purchase",
+          "koName": "구매 정보",
+          "enName": null,
+          "names": {},
+          "order": 2,
+          "type": null,
+          "fieldIds": [
+            "e537ac0b-f39c-4800-9b4e-53130d02dfb3",
+            "2d0b566e-fa58-42f4-a7d7-80c94f38fecb",
+            "e1d84163-20c9-4ecb-95fc-793bfb2c9d71",
+            "a61ae634-0251-437c-933e-dd49522465f7"
+          ],
+          "subGroups": null,
+          "additionalFields": null
+        },
+        {
+          "id": "dates",
+          "koName": "날짜 정보",
+          "enName": null,
+          "names": {},
+          "order": 3,
+          "type": null,
+          "fieldIds": [
+            "9db61dbd-15b2-4fcc-bee8-1fc64b74374b",
+            "1a8848c0-053c-4c5a-bfd9-377d32ecc79f",
+            "774a633f-e245-470c-9cbc-00cc537ea985",
+            "2937e309-2712-40f4-8e48-56534c8e0237"
+          ],
+          "subGroups": null,
+          "additionalFields": null
+        }
+      ],
+      "spec": [
+        {
+          "id": "overall_spec",
+          "koName": "종합",
+          "enName": "Overall",
+          "names": {},
+          "order": 0,
+          "type": null,
+          "fieldIds": [
+            "30b76215-226d-4b79-8f14-7c97877b572b"
+          ],
+          "subGroups": null,
+          "additionalFields": null
+        },
+        {
+          "id": "display_spec",
+          "koName": "디스플레이 사양",
+          "enName": "Display Specs",
+          "names": {},
+          "order": 1,
+          "type": null,
+          "fieldIds": [
+            "c6ff242d-40d6-4f0a-a39b-0ad5db83ca4c",
+            "30ce823e-70f9-4c00-b976-7582ad20547b",
+            "e9bb1d26-6512-43a2-872b-a1c012fd49fa",
+            "e199a870-4ba7-401f-a0ed-2b275671b45b",
+            "3905d134-7385-4bab-9962-4c0e1563fd22"
+          ],
+          "subGroups": null,
+          "additionalFields": null
+        },
+        {
+          "id": "brightness_color_spec",
+          "koName": "밝기 및 색상",
+          "enName": "Brightness & Color",
+          "names": {},
+          "order": 2,
+          "type": null,
+          "fieldIds": [
+            "b393585b-b9ad-455f-aee6-ad8fe4307754",
+            "5e21d250-8735-4726-8259-8471ae68e7fe",
+            "29973d60-f46e-4e23-ada3-f7dc5455b42a",
+            "ddfa66a7-ecd2-43f9-b8c2-186634c14da5",
+            "4a1114b5-4879-4431-8d95-fd557c9f7b24"
+          ],
+          "subGroups": null,
+          "additionalFields": null
+        },
+        {
+          "id": "gaming_features",
+          "koName": "게이밍 기능",
+          "enName": "Gaming Features",
+          "names": {},
+          "order": 6,
+          "type": null,
+          "fieldIds": [
+            "45e131b8-8e61-41b4-8071-6cd7818529d5",
+            "01176c00-76fa-4c6d-854b-a6149aeb100f"
+          ],
+          "subGroups": null,
+          "additionalFields": null
+        },
+        {
+          "id": "hdr_panel_structure",
+          "koName": "HDR/패널 구조",
+          "enName": "HDR / Panel Structure",
+          "names": {
+            "ko": "HDR/패널 구조",
+            "en": "HDR / Panel Structure"
+          },
+          "order": 3,
+          "type": null,
+          "fieldIds": [
+            "a262676f-1af0-44b2-97ea-1909b2bef344",
+            "c8c40607-92ca-4fac-ae91-1b40f308f000",
+            "c28fe7d5-711e-4a24-b6ba-99116fea3de7"
+          ],
+          "subGroups": null,
+          "additionalFields": null
+        },
+        {
+          "id": "inputs_bandwidth",
+          "koName": "입출력/대역폭",
+          "enName": "Inputs & Bandwidth",
+          "names": {
+            "ko": "입출력/대역폭",
+            "en": "Inputs & Bandwidth"
+          },
+          "order": 4,
+          "type": null,
+          "fieldIds": [
+            "2900625e-6ad3-497a-b626-cd63faa57719",
+            "2a3861fa-0225-4dd1-a59e-6907abaa4150",
+            "0e6df0b6-f117-48ac-a00c-df2e3ef90bcf",
+            "f4bcb625-291c-4913-9585-2be2b6597086",
+            "a58aa1e2-19c8-4576-89d8-019e29c2ffba",
+            "e290c070-72c1-41ed-9746-18a86e35d11e",
+            "97c7f987-41be-44b5-8178-04a97e325940",
+            "a0c3854e-6111-4791-adf9-debbd33ef165",
+            "a038cb41-b7ae-45d4-9dd3-54b05a7fa640",
+            "8638c9ad-f900-4ba7-8ed7-b9bb06ea29f6"
+          ],
+          "subGroups": null,
+          "additionalFields": null
+        },
+        {
+          "id": "stand_design",
+          "koName": "스탠드/외형",
+          "enName": "Stand & Design",
+          "names": {
+            "ko": "스탠드/외형",
+            "en": "Stand & Design"
+          },
+          "order": 5,
+          "type": null,
+          "fieldIds": [
+            "984174b5-be5a-4fdc-9f7c-69818b2be82c",
+            "25666b30-e26b-47e0-a0e9-5c7c2e587460",
+            "3719df68-696e-4fc6-b12b-4d94b3d008e3",
+            "945edc86-dd24-498f-9ee7-2572cc9d005b",
+            "77b9eb9e-f4b3-49e5-8b60-3995fea9c937"
+          ],
+          "subGroups": null,
+          "additionalFields": null
+        }
+      ],
+      "bench": [
+        {
+          "id": "response_performance",
+          "koName": "응답속도 성능",
+          "enName": "Response Time",
+          "names": {},
+          "order": 5,
+          "type": null,
+          "fieldIds": [
+            "02245e5a-228e-4dab-b245-1bac789dbae8",
+            "33f663cb-7eb0-4c5d-a283-eea566c1f958",
+            "a94fe211-014f-4cd4-ae8f-2da7b8fbb20e",
+            "c50ae155-38fa-40c5-a33f-5ed869a6346f"
+          ],
+          "subGroups": null,
+          "additionalFields": null
+        },
+        {
+          "id": "overshoot_performance",
+          "koName": "오버슛 특성",
+          "enName": "Overshoot Characteristics",
+          "names": {},
+          "order": 6,
+          "type": null,
+          "fieldIds": [
+            "3ed367bc-116b-4c05-8690-bc07c29482df",
+            "79954513-20a2-46be-85db-63556752434f"
+          ],
+          "subGroups": null,
+          "additionalFields": null
+        },
+        {
+          "id": "brightness_measured",
+          "koName": "밝기 측정값",
+          "enName": "Brightness Measurements",
+          "names": {},
+          "order": 7,
+          "type": null,
+          "fieldIds": [
+            "644c3d85-d79b-43ad-b6cf-88f197e7078c",
+            "cf8262c6-ffb1-46fb-865c-2153bcc88f27",
+            "0f41fffc-ba3a-4f64-b447-4665625c1271"
+          ],
+          "subGroups": null,
+          "additionalFields": null
+        },
+        {
+          "id": "color_performance",
+          "koName": "색상 성능",
+          "enName": "Color Performance",
+          "names": {},
+          "order": 8,
+          "type": null,
+          "fieldIds": [
+            "b809193c-df89-4742-bf65-659828aa1bb2",
+            "eb46a072-8fea-40eb-adff-3ff41768c4b4",
+            "1f4f56dd-1df6-4c61-ac44-a9e79d93af35",
+            "63696129-380b-456f-80bd-46a62bc6fdcf",
+            "422fc9c7-d9f0-427c-b2d1-0c1edc5d43b2",
+            "4106e056-3dfd-4b3d-9abb-72a4f3e0b3e1",
+            "b00d286b-00f2-406d-9b5c-e67817dc4cf2"
+          ],
+          "subGroups": null,
+          "additionalFields": null
+        },
+        {
+          "id": "hdr_brightness_windows",
+          "koName": "HDR 밝기 윈도우",
+          "enName": "HDR Brightness Windows",
+          "names": {
+            "ko": "HDR 밝기 윈도우",
+            "en": "HDR Brightness Windows"
+          },
+          "order": 9,
+          "type": null,
+          "fieldIds": [
+            "720914c3-4537-4de6-bd74-d10c6b4da199",
+            "0d82bdfc-77fc-4358-8934-a04d5845bf87",
+            "a3470415-3c7a-43b1-b5b5-03c06e341e33"
+          ],
+          "subGroups": null,
+          "additionalFields": null
+        },
+        {
+          "id": "usability_measured",
+          "koName": "체감 품질",
+          "enName": "Usability Measurements",
+          "names": {
+            "ko": "체감 품질",
+            "en": "Usability Measurements"
+          },
+          "order": 10,
+          "type": null,
+          "fieldIds": [
+            "36477ced-639f-4631-8629-c5b83b4bce01",
+            "329c7754-3d2a-4a6d-921a-833272a19a52",
+            "57d4b497-4225-4000-915e-444454a1c1ed"
+          ],
+          "subGroups": null,
+          "additionalFields": null
+        },
+        {
+          "id": "surface_reflectance",
+          "koName": "표면 반사",
+          "enName": "Surface Reflectance",
+          "names": {
+            "ko": "표면 반사",
+            "en": "Surface Reflectance"
+          },
+          "order": 11,
+          "type": null,
+          "fieldIds": [
+            "bf755253-048e-491d-b8ea-1efb22eae6a0",
+            "0a41060a-1084-4782-a162-d52cbe5041b4"
+          ],
+          "subGroups": null,
+          "additionalFields": null
+        }
+      ]
+    }
+  },
+  "resultCode": "SUCCESS",
+  "resultMessage": "정상적으로 처리되었습니다.",
+  "requestId": null,
+  "errorLogId": null
+}

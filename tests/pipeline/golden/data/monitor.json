@@ -1,0 +1,1858 @@
+{
+  "category": "monitor",
+  "fields": [
+    {
+      "key": "driverSupportStatus",
+      "group": "common",
+      "label": {
+        "ko": "드라이버 지원 상태",
+        "en": "Driver Support Status"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "notAvailable",
+          "label": {
+            "ko": "공식 설정 소프트웨어 없음",
+            "en": "No Official Configuration Software"
+          }
+        },
+        {
+          "value": "notRequired",
+          "label": {
+            "ko": "별도 설정 소프트웨어 불필요",
+            "en": "No Separate Configuration Software Required"
+          }
+        }
+      ]
+    },
+    {
+      "key": "status",
+      "group": "common",
+      "label": {
+        "ko": "상태",
+        "en": "Status"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "unreleased",
+          "label": {
+            "ko": "미출시",
+            "en": "Unreleased"
+          }
+        },
+        {
+          "value": "proposed",
+          "label": {
+            "ko": "제안",
+            "en": "Proposed"
+          }
+        },
+        {
+          "value": "purchased",
+          "label": {
+            "ko": "구매 완료",
+            "en": "Purchased"
+          }
+        },
+        {
+          "value": "arrived",
+          "label": {
+            "ko": "제품 도착",
+            "en": "Arrived"
+          }
+        },
+        {
+          "value": "testing",
+          "label": {
+            "ko": "벤치 진행",
+            "en": "Testing"
+          }
+        },
+        {
+          "value": "earlyAccess",
+          "label": {
+            "ko": "선 공개",
+            "en": "Early Access"
+          }
+        },
+        {
+          "value": "reviewed",
+          "label": {
+            "ko": "공개 완료",
+            "en": "Reviewed"
+          }
+        }
+      ]
+    },
+    {
+      "key": "saleStatus",
+      "group": "common",
+      "label": {
+        "ko": "판매 상태",
+        "en": "Sale Status"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "unreleased",
+          "label": {
+            "ko": "미출시",
+            "en": "Unreleased"
+          }
+        },
+        {
+          "value": "FOR_SALE",
+          "label": {
+            "ko": "판매중",
+            "en": "FOR_SALE"
+          }
+        },
+        {
+          "value": "DISCONTINUED",
+          "label": {
+            "ko": "단종",
+            "en": "Discontinued"
+          }
+        }
+      ]
+    },
+    {
+      "key": "eyejokerRating",
+      "group": "common",
+      "label": {
+        "ko": "추천 등급",
+        "en": "Recommendation Grade"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "HIGHLY_RECOMMENDED",
+          "label": {
+            "ko": "매우추천",
+            "en": "Highly Recommend"
+          }
+        },
+        {
+          "value": "RECOMMENDED",
+          "label": {
+            "ko": "추천",
+            "en": "Recommend"
+          }
+        },
+        {
+          "value": "MILD_RECOMMENDATION",
+          "label": {
+            "ko": "추천까지는",
+            "en": "Meh"
+          }
+        },
+        {
+          "value": "NO_RECOMMENDATION",
+          "label": {
+            "ko": "추천안함",
+            "en": "Not Recommend"
+          }
+        }
+      ]
+    },
+    {
+      "key": "as",
+      "group": "common",
+      "label": {
+        "ko": "보증 기간",
+        "en": "AS"
+      },
+      "type": "number",
+      "unit": "년",
+      "decimals": null
+    },
+    {
+      "key": "firmwareVersion",
+      "group": "common",
+      "label": {
+        "ko": "펌웨어 버전",
+        "en": "FirmwareVersion"
+      },
+      "type": "text"
+    },
+    {
+      "key": "publicReleaseAt",
+      "group": "common",
+      "label": {
+        "ko": "전체 공개 일자",
+        "en": "Public Release At"
+      },
+      "type": "date"
+    },
+    {
+      "key": "overallRatingMonitor",
+      "group": "spec",
+      "label": {
+        "ko": "종합 등급",
+        "en": "OverallRating"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "FLAWLESS",
+          "label": {
+            "ko": "무결점",
+            "en": "Flawless"
+          }
+        },
+        {
+          "value": "TIER_0",
+          "label": {
+            "ko": "0티어",
+            "en": "Tier0"
+          }
+        },
+        {
+          "value": "TIER_1",
+          "label": {
+            "ko": "1티어",
+            "en": "Tier1"
+          }
+        },
+        {
+          "value": "TIER_2",
+          "label": {
+            "ko": "2티어",
+            "en": "Tier2"
+          }
+        },
+        {
+          "value": "TIER_3",
+          "label": {
+            "ko": "3티어",
+            "en": "Tier3"
+          }
+        },
+        {
+          "value": "TIER_4",
+          "label": {
+            "ko": "4티어",
+            "en": "Tier4"
+          }
+        },
+        {
+          "value": "UNRATED",
+          "label": {
+            "ko": "등급외",
+            "en": "Unrated"
+          }
+        }
+      ]
+    },
+    {
+      "key": "sizeInch",
+      "group": "spec",
+      "label": {
+        "ko": "크기",
+        "en": "Size"
+      },
+      "type": "number",
+      "unit": "\"",
+      "decimals": null
+    },
+    {
+      "key": "resolution",
+      "group": "spec",
+      "label": {
+        "ko": "해상도",
+        "en": "Resolution"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "FHD",
+          "label": {
+            "ko": "FHD",
+            "en": "FHD (1920×1080)"
+          }
+        },
+        {
+          "value": "QHD",
+          "label": {
+            "ko": "QHD",
+            "en": "QHD (2560×1440)"
+          }
+        },
+        {
+          "value": "UHD",
+          "label": {
+            "ko": "UHD",
+            "en": "UHD (3840×2160)"
+          }
+        },
+        {
+          "value": "UWQHD",
+          "label": {
+            "ko": "UWQHD",
+            "en": "UWQHD (3440×1440)"
+          }
+        },
+        {
+          "value": "DQHD",
+          "label": {
+            "ko": "DQHD",
+            "en": "Dual QHD (5120×1440)"
+          }
+        },
+        {
+          "value": "5K2K",
+          "label": {
+            "ko": "5K2K",
+            "en": "5K2K (5120×2160)"
+          }
+        },
+        {
+          "value": "6K",
+          "label": {
+            "ko": "6K",
+            "en": "6K"
+          }
+        },
+        {
+          "value": "RES2240X1400",
+          "label": {
+            "ko": "2.2K (2240×1400)",
+            "en": "2.2K (2240×1400)"
+          }
+        },
+        {
+          "value": "RES2880X1800",
+          "label": {
+            "ko": "2.8K (2880×1800)",
+            "en": "2.8K (2880×1800)"
+          }
+        },
+        {
+          "value": "DUHD",
+          "label": {
+            "ko": "DUHD (7680×2160)",
+            "en": "Dual UHD (7680×2160)"
+          }
+        },
+        {
+          "value": "RES5120X2880",
+          "label": {
+            "ko": "5K (5120×2880)",
+            "en": "5K (5120×2880)"
+          }
+        }
+      ]
+    },
+    {
+      "key": "panelType",
+      "group": "spec",
+      "label": {
+        "ko": "종류",
+        "en": "PanelType"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "TN",
+          "label": {
+            "ko": "TN",
+            "en": "TN"
+          }
+        },
+        {
+          "value": "FAST_TN",
+          "label": {
+            "ko": "Fast TN",
+            "en": "Fast TN"
+          }
+        },
+        {
+          "value": "E_TN",
+          "label": {
+            "ko": "E-TN",
+            "en": "E-TN"
+          }
+        },
+        {
+          "value": "VA",
+          "label": {
+            "ko": "VA",
+            "en": "VA"
+          }
+        },
+        {
+          "value": "IPS",
+          "label": {
+            "ko": "IPS",
+            "en": "IPS"
+          }
+        },
+        {
+          "value": "FAST_IPS",
+          "label": {
+            "ko": "Fast IPS",
+            "en": "Fast IPS"
+          }
+        },
+        {
+          "value": "NANO_IPS",
+          "label": {
+            "ko": "Nano IPS",
+            "en": "Nano IPS"
+          }
+        },
+        {
+          "value": "RAPID_IPS",
+          "label": {
+            "ko": "Rapid IPS",
+            "en": "Rapid IPS"
+          }
+        },
+        {
+          "value": "QD_FAST_IPS",
+          "label": {
+            "ko": "QD Fast IPS",
+            "en": "QD Fast IPS"
+          }
+        },
+        {
+          "value": "QD_IPS_MINILED",
+          "label": {
+            "ko": "QD-IPS(Mini LED)",
+            "en": "QD-IPS (Mini LED)"
+          }
+        },
+        {
+          "value": "OLED",
+          "label": {
+            "ko": "OLED",
+            "en": "OLED"
+          }
+        },
+        {
+          "value": "WOLED",
+          "label": {
+            "ko": "WOLED",
+            "en": "WOLED"
+          }
+        },
+        {
+          "value": "TANDEM_WOLED",
+          "label": {
+            "ko": "Tandem WOLED",
+            "en": "Tandem WOLED"
+          }
+        },
+        {
+          "value": "RGB_TANDEM_OLED",
+          "label": {
+            "ko": "RGB-Stripe Tandem OLED",
+            "en": "RGB-Stripe Tandem OLED"
+          }
+        },
+        {
+          "value": "QD_OLED",
+          "label": {
+            "ko": "QD-OLED",
+            "en": "QD-OLED"
+          }
+        },
+        {
+          "value": "PENTA_TANDEM_QD_OLED",
+          "label": {
+            "ko": "Penta Tandem QD-OLED",
+            "en": "Penta Tandem QD-OLED"
+          }
+        }
+      ]
+    },
+    {
+      "key": "refreshRate",
+      "group": "spec",
+      "label": {
+        "ko": "주사율",
+        "en": "Refresh Rate"
+      },
+      "type": "number",
+      "unit": "Hz",
+      "decimals": null
+    },
+    {
+      "key": "maxBrightnessSdrSpec",
+      "group": "spec",
+      "label": {
+        "ko": "최대 밝기 (SDR)",
+        "en": "MaxBrightness(SDR)"
+      },
+      "type": "number",
+      "unit": "cd/m²",
+      "decimals": null
+    },
+    {
+      "key": "hdrCertification",
+      "group": "spec",
+      "label": {
+        "ko": "HDR 인증",
+        "en": "HDR Certification"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "displayHdrTrueBlack400",
+          "label": {
+            "ko": "DisplayHDR True Black 400",
+            "en": "DisplayHDR True Black 400"
+          }
+        },
+        {
+          "value": "displayHdrTrueBlack500",
+          "label": {
+            "ko": "DisplayHDR True Black 500",
+            "en": "DisplayHDR True Black 500"
+          }
+        },
+        {
+          "value": "displayHdrTrueBlack600",
+          "label": {
+            "ko": "DisplayHDR True Black 600",
+            "en": "DisplayHDR True Black 600"
+          }
+        },
+        {
+          "value": "displayHdrTrueBlack1000",
+          "label": {
+            "ko": "DisplayHDR True Black 1000",
+            "en": "DisplayHDR True Black 1000"
+          }
+        },
+        {
+          "value": "displayHdr400",
+          "label": {
+            "ko": "DisplayHDR 400",
+            "en": "DisplayHDR 400"
+          }
+        },
+        {
+          "value": "displayHdr500",
+          "label": {
+            "ko": "DisplayHDR 500",
+            "en": "DisplayHDR 500"
+          }
+        },
+        {
+          "value": "displayHdr600",
+          "label": {
+            "ko": "DisplayHDR 600",
+            "en": "DisplayHDR 600"
+          }
+        },
+        {
+          "value": "displayHdr1000",
+          "label": {
+            "ko": "DisplayHDR 1000",
+            "en": "DisplayHDR 1000"
+          }
+        },
+        {
+          "value": "displayHdr1400",
+          "label": {
+            "ko": "DisplayHDR 1400",
+            "en": "DisplayHDR 1400"
+          }
+        }
+      ]
+    },
+    {
+      "key": "maxBrightnessHdrSpec",
+      "group": "spec",
+      "label": {
+        "ko": "최대 밝기 (HDR)",
+        "en": "MaxBrightness(HDR)"
+      },
+      "type": "number",
+      "unit": "cd/m²",
+      "decimals": null
+    },
+    {
+      "key": "colorGamutSrgbSpec",
+      "group": "spec",
+      "label": {
+        "ko": "색역 (sRGB)",
+        "en": "ColorGamut(sRGB)"
+      },
+      "type": "number",
+      "unit": "%",
+      "decimals": null
+    },
+    {
+      "key": "colorGamutDcip3Spec",
+      "group": "spec",
+      "label": {
+        "ko": "색역 (DCI-P3)",
+        "en": "ColorGamut(DCI-P3)"
+      },
+      "type": "number",
+      "unit": "%",
+      "decimals": null
+    },
+    {
+      "key": "panelMaker",
+      "group": "spec",
+      "label": {
+        "ko": "패널 제조사",
+        "en": "PanelMaker"
+      },
+      "type": "text"
+    },
+    {
+      "key": "bfi",
+      "group": "spec",
+      "label": {
+        "ko": "BFI",
+        "en": "BFI"
+      },
+      "type": "boolean"
+    },
+    {
+      "key": "adaptiveSync",
+      "group": "spec",
+      "label": {
+        "ko": "적응형 동기화",
+        "en": "AdaptiveSync"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": true,
+      "options": [
+        {
+          "value": "gsync",
+          "label": {
+            "ko": "지싱크",
+            "en": "G-SYNC"
+          }
+        },
+        {
+          "value": "freesync",
+          "label": {
+            "ko": "프리싱크",
+            "en": "FreeSync"
+          }
+        },
+        {
+          "value": "none",
+          "label": {
+            "ko": "없음",
+            "en": "None"
+          }
+        },
+        {
+          "value": "gsyncPulsar",
+          "label": {
+            "ko": "지싱크 펄사",
+            "en": "G-SYNC Pulsar"
+          }
+        },
+        {
+          "value": "gsyncCompatible",
+          "label": {
+            "ko": "G-SYNC 호환",
+            "en": "G-SYNC Compatible"
+          }
+        },
+        {
+          "value": "freeSyncPremiumPro",
+          "label": {
+            "ko": "프리싱크 프리미엄 프로",
+            "en": "FreeSync Premium PRO"
+          }
+        },
+        {
+          "value": "freeSyncPremium",
+          "label": {
+            "ko": "프리싱크 프리미엄",
+            "en": "FreeSync Premium"
+          }
+        },
+        {
+          "value": "gSyncUltimate",
+          "label": {
+            "ko": "지싱크 울티메이트",
+            "en": "G-SYNC ULTIMATE"
+          }
+        },
+        {
+          "value": "gsyncCompatibleVerify",
+          "label": {
+            "ko": "G-SYNC 호환 인증",
+            "en": "G-SYNC Compatible Verify"
+          }
+        }
+      ]
+    },
+    {
+      "key": "hdmiPortCount",
+      "group": "spec",
+      "label": {
+        "ko": "HDMI 포트 수",
+        "en": "HDMI Port Count"
+      },
+      "type": "number",
+      "unit": "개",
+      "decimals": 0
+    },
+    {
+      "key": "hdmiLinkClass",
+      "group": "spec",
+      "label": {
+        "ko": "HDMI 최고 링크",
+        "en": "HDMI Max Link"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "hdmi2_1Frl6_48",
+          "label": {
+            "ko": "HDMI 2.1 FRL6 / 48Gbps",
+            "en": "HDMI 2.1 FRL6 / 48Gbps"
+          }
+        },
+        {
+          "value": "hdmi2_1Frl5_40",
+          "label": {
+            "ko": "HDMI 2.1 FRL5 / 40Gbps",
+            "en": "HDMI 2.1 FRL5 / 40Gbps"
+          }
+        },
+        {
+          "value": "hdmi2_1Frl4_32",
+          "label": {
+            "ko": "HDMI 2.1 FRL4 / 32Gbps",
+            "en": "HDMI 2.1 FRL4 / 32Gbps"
+          }
+        },
+        {
+          "value": "hdmi2_1Frl3_24",
+          "label": {
+            "ko": "HDMI 2.1 FRL3 / 24Gbps",
+            "en": "HDMI 2.1 FRL3 / 24Gbps"
+          }
+        },
+        {
+          "value": "hdmi2_1Tmds18",
+          "label": {
+            "ko": "HDMI 2.1 TMDS / 18Gbps",
+            "en": "HDMI 2.1 TMDS / 18Gbps"
+          }
+        },
+        {
+          "value": "hdmi2_0Tmds18",
+          "label": {
+            "ko": "HDMI 2.0 / 18Gbps",
+            "en": "HDMI 2.0 / 18Gbps"
+          }
+        },
+        {
+          "value": "hdmi1_4",
+          "label": {
+            "ko": "HDMI 1.4",
+            "en": "HDMI 1.4"
+          }
+        }
+      ]
+    },
+    {
+      "key": "displayPortCount",
+      "group": "spec",
+      "label": {
+        "ko": "DP 포트 수",
+        "en": "DisplayPort Count"
+      },
+      "type": "number",
+      "unit": "개",
+      "decimals": 0
+    },
+    {
+      "key": "displayPortLinkClass",
+      "group": "spec",
+      "label": {
+        "ko": "DP 최고 링크",
+        "en": "DisplayPort Max Link"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "dp2_1Uhbr20_80",
+          "label": {
+            "ko": "DP 2.1 UHBR20 / 80Gbps",
+            "en": "DP 2.1 UHBR20 / 80Gbps"
+          }
+        },
+        {
+          "value": "dp2_1Uhbr13_5_54",
+          "label": {
+            "ko": "DP 2.1 UHBR13.5 / 54Gbps",
+            "en": "DP 2.1 UHBR13.5 / 54Gbps"
+          }
+        },
+        {
+          "value": "dp2_1Uhbr10_40",
+          "label": {
+            "ko": "DP 2.1 UHBR10 / 40Gbps",
+            "en": "DP 2.1 UHBR10 / 40Gbps"
+          }
+        },
+        {
+          "value": "dp1_4Hbr3_32_4",
+          "label": {
+            "ko": "DP 1.4 HBR3 / 32.4Gbps",
+            "en": "DP 1.4 HBR3 / 32.4Gbps"
+          }
+        },
+        {
+          "value": "dp1_2Hbr2_21_6",
+          "label": {
+            "ko": "DP 1.2 HBR2 / 21.6Gbps",
+            "en": "DP 1.2 HBR2 / 21.6Gbps"
+          }
+        },
+        {
+          "value": "dp1_1Hbr_10_8",
+          "label": {
+            "ko": "DP 1.1 HBR / 10.8Gbps",
+            "en": "DP 1.1 HBR / 10.8Gbps"
+          }
+        }
+      ]
+    },
+    {
+      "key": "displayStreamCompression",
+      "group": "spec",
+      "label": {
+        "ko": "DSC",
+        "en": "Display Stream Compression"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "noneConfirmed",
+          "label": {
+            "ko": "없음",
+            "en": "None"
+          }
+        },
+        {
+          "value": "supported",
+          "label": {
+            "ko": "지원",
+            "en": "Supported"
+          }
+        },
+        {
+          "value": "requiredForMaxMode",
+          "label": {
+            "ko": "최대 모드 필수",
+            "en": "Required for Max Mode"
+          }
+        },
+        {
+          "value": "modeDependent",
+          "label": {
+            "ko": "조건부/모드별",
+            "en": "Mode-dependent"
+          }
+        }
+      ]
+    },
+    {
+      "key": "usbCVideo",
+      "group": "spec",
+      "label": {
+        "ko": "USB‑C 영상 입력",
+        "en": "USB-C Video Input"
+      },
+      "type": "boolean"
+    },
+    {
+      "key": "usbCPowerDeliveryW",
+      "group": "spec",
+      "label": {
+        "ko": "USB‑C PD",
+        "en": "USB-C Power Delivery"
+      },
+      "type": "number",
+      "unit": "W",
+      "decimals": 0
+    },
+    {
+      "key": "kvmType",
+      "group": "spec",
+      "label": {
+        "ko": "KVM",
+        "en": "KVM"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "noneConfirmed",
+          "label": {
+            "ko": "없음",
+            "en": "None"
+          }
+        },
+        {
+          "value": "usbBPlusUsbC",
+          "label": {
+            "ko": "USB‑B + USB‑C KVM",
+            "en": "USB-B + USB-C KVM"
+          }
+        },
+        {
+          "value": "dualUsbC",
+          "label": {
+            "ko": "듀얼 USB‑C KVM",
+            "en": "Dual USB-C KVM"
+          }
+        },
+        {
+          "value": "thunderboltKvm",
+          "label": {
+            "ko": "Thunderbolt KVM",
+            "en": "Thunderbolt KVM"
+          }
+        },
+        {
+          "value": "manualUsbSwitch",
+          "label": {
+            "ko": "수동 USB 전환",
+            "en": "Manual USB Switch"
+          }
+        },
+        {
+          "value": "unknownTopology",
+          "label": {
+            "ko": "KVM 있음, 구조 미확인",
+            "en": "KVM, topology unknown"
+          }
+        }
+      ]
+    },
+    {
+      "key": "audioReturnChannel",
+      "group": "spec",
+      "label": {
+        "ko": "ARC/eARC",
+        "en": "ARC/eARC"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "arc",
+          "label": {
+            "ko": "ARC",
+            "en": "ARC"
+          }
+        },
+        {
+          "value": "earc",
+          "label": {
+            "ko": "eARC",
+            "en": "eARC"
+          }
+        },
+        {
+          "value": "noneConfirmed",
+          "label": {
+            "ko": "없음",
+            "en": "None"
+          }
+        }
+      ]
+    },
+    {
+      "key": "multiViewSupport",
+      "group": "spec",
+      "label": {
+        "ko": "PiP/PbP",
+        "en": "PiP/PbP"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": true,
+      "options": [
+        {
+          "value": "pbp",
+          "label": {
+            "ko": "PbP",
+            "en": "PbP"
+          }
+        },
+        {
+          "value": "pip",
+          "label": {
+            "ko": "PiP",
+            "en": "PiP"
+          }
+        },
+        {
+          "value": "quadPbp",
+          "label": {
+            "ko": "4분할 PbP",
+            "en": "Quad PbP"
+          }
+        },
+        {
+          "value": "noneConfirmed",
+          "label": {
+            "ko": "없음",
+            "en": "None"
+          }
+        }
+      ]
+    },
+    {
+      "key": "hdrFormatSupport",
+      "group": "spec",
+      "label": {
+        "ko": "HDR 포맷",
+        "en": "HDR Formats"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": true,
+      "options": [
+        {
+          "value": "hdr10",
+          "label": {
+            "ko": "HDR10",
+            "en": "HDR10"
+          }
+        },
+        {
+          "value": "hdr10Plus",
+          "label": {
+            "ko": "HDR10+",
+            "en": "HDR10+"
+          }
+        },
+        {
+          "value": "dolbyVision",
+          "label": {
+            "ko": "Dolby Vision",
+            "en": "Dolby Vision"
+          }
+        },
+        {
+          "value": "hlg",
+          "label": {
+            "ko": "HLG",
+            "en": "HLG"
+          }
+        }
+      ]
+    },
+    {
+      "key": "localDimmingType",
+      "group": "spec",
+      "label": {
+        "ko": "백라이트 디밍",
+        "en": "Backlight Dimming"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "globalDimming",
+          "label": {
+            "ko": "글로벌 디밍",
+            "en": "Global Dimming"
+          }
+        },
+        {
+          "value": "edgeLocalDimming",
+          "label": {
+            "ko": "엣지 로컬디밍",
+            "en": "Edge Local Dimming"
+          }
+        },
+        {
+          "value": "fald",
+          "label": {
+            "ko": "FALD",
+            "en": "FALD"
+          }
+        },
+        {
+          "value": "miniLed",
+          "label": {
+            "ko": "Mini LED",
+            "en": "Mini LED"
+          }
+        }
+      ]
+    },
+    {
+      "key": "localDimmingZones",
+      "group": "spec",
+      "label": {
+        "ko": "로컬디밍 존 수",
+        "en": "Local Dimming Zones"
+      },
+      "type": "number",
+      "unit": "존",
+      "decimals": 0
+    },
+    {
+      "key": "standType",
+      "group": "spec",
+      "label": {
+        "ko": "스탠드 구성",
+        "en": "Stand Configuration"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "included",
+          "label": {
+            "ko": "기본 스탠드 포함",
+            "en": "Stand Included"
+          }
+        },
+        {
+          "value": "notIncluded",
+          "label": {
+            "ko": "스탠드 미포함",
+            "en": "Stand Not Included"
+          }
+        },
+        {
+          "value": "optional",
+          "label": {
+            "ko": "별매/옵션",
+            "en": "Optional Stand"
+          }
+        },
+        {
+          "value": "armOnly",
+          "label": {
+            "ko": "모니터암 전제",
+            "en": "Arm-only"
+          }
+        }
+      ]
+    },
+    {
+      "key": "standAdjustments",
+      "group": "spec",
+      "label": {
+        "ko": "스탠드 조절",
+        "en": "Stand Adjustments"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": true,
+      "options": [
+        {
+          "value": "tilt",
+          "label": {
+            "ko": "틸트",
+            "en": "Tilt"
+          }
+        },
+        {
+          "value": "height",
+          "label": {
+            "ko": "높낮이",
+            "en": "Height"
+          }
+        },
+        {
+          "value": "swivel",
+          "label": {
+            "ko": "스위블",
+            "en": "Swivel"
+          }
+        },
+        {
+          "value": "pivot",
+          "label": {
+            "ko": "피벗",
+            "en": "Pivot"
+          }
+        },
+        {
+          "value": "rotationBothWays",
+          "label": {
+            "ko": "양방향 피벗",
+            "en": "Bi-directional Pivot"
+          }
+        },
+        {
+          "value": "cableManagement",
+          "label": {
+            "ko": "케이블 정리",
+            "en": "Cable Management"
+          }
+        }
+      ]
+    },
+    {
+      "key": "heightAdjustMm",
+      "group": "spec",
+      "label": {
+        "ko": "높낮이 조절",
+        "en": "Height Adjustment"
+      },
+      "type": "number",
+      "unit": "mm",
+      "decimals": 0
+    },
+    {
+      "key": "vesaMountPattern",
+      "group": "spec",
+      "label": {
+        "ko": "VESA 마운트",
+        "en": "VESA Mount"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "noneConfirmed",
+          "label": {
+            "ko": "없음",
+            "en": "None"
+          }
+        },
+        {
+          "value": "vesa75x75",
+          "label": {
+            "ko": "75×75",
+            "en": "75x75"
+          }
+        },
+        {
+          "value": "vesa100x100",
+          "label": {
+            "ko": "100×100",
+            "en": "100x100"
+          }
+        },
+        {
+          "value": "vesa200x100",
+          "label": {
+            "ko": "200×100",
+            "en": "200x100"
+          }
+        },
+        {
+          "value": "vesa200x200",
+          "label": {
+            "ko": "200×200",
+            "en": "200x200"
+          }
+        },
+        {
+          "value": "adapterRequired",
+          "label": {
+            "ko": "어댑터 필요",
+            "en": "Adapter Required"
+          }
+        },
+        {
+          "value": "custom",
+          "label": {
+            "ko": "특수 규격",
+            "en": "Custom"
+          }
+        }
+      ]
+    },
+    {
+      "key": "screenCoating",
+      "group": "spec",
+      "label": {
+        "ko": "화면 코팅",
+        "en": "Screen Coating"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "glossy",
+          "label": {
+            "ko": "글레어",
+            "en": "Glossy"
+          }
+        },
+        {
+          "value": "semiGlossy",
+          "label": {
+            "ko": "세미글로시",
+            "en": "Semi-glossy"
+          }
+        },
+        {
+          "value": "semiMatte",
+          "label": {
+            "ko": "세미매트",
+            "en": "Semi-matte"
+          }
+        },
+        {
+          "value": "matteAntiGlare",
+          "label": {
+            "ko": "무광 AG",
+            "en": "Matte Anti-glare"
+          }
+        },
+        {
+          "value": "heavyMatteAntiGlare",
+          "label": {
+            "ko": "강한 무광 AG",
+            "en": "Heavy Matte Anti-glare"
+          }
+        },
+        {
+          "value": "etchedGlass",
+          "label": {
+            "ko": "에칭 글래스",
+            "en": "Etched Glass"
+          }
+        },
+        {
+          "value": "antiReflection",
+          "label": {
+            "ko": "반사 방지",
+            "en": "Anti-reflection"
+          }
+        },
+        {
+          "value": "nonglare",
+          "label": {
+            "ko": "논글레어",
+            "en": "Non-Glare"
+          }
+        }
+      ]
+    },
+    {
+      "key": "responseAverage",
+      "group": "bench",
+      "label": {
+        "ko": "종합 응답속도",
+        "en": "Overall Resp."
+      },
+      "type": "number",
+      "unit": "ms",
+      "decimals": 2
+    },
+    {
+      "key": "inputLagMonitor",
+      "group": "bench",
+      "label": {
+        "ko": "인풋렉",
+        "en": "InputLag"
+      },
+      "type": "number",
+      "unit": "ms",
+      "decimals": null
+    },
+    {
+      "key": "responseAverageRgb10",
+      "group": "bench",
+      "label": {
+        "ko": "평균 응답속도",
+        "en": "Avg. Resp."
+      },
+      "type": "number",
+      "unit": "ms",
+      "decimals": 2
+    },
+    {
+      "key": "responseMax",
+      "group": "bench",
+      "label": {
+        "ko": "최대 응답속도",
+        "en": "ResponseMax"
+      },
+      "type": "number",
+      "unit": "ms",
+      "decimals": 2
+    },
+    {
+      "key": "overshootAverage",
+      "group": "bench",
+      "label": {
+        "ko": "평균 오버슛",
+        "en": "OvershootAverage"
+      },
+      "type": "number",
+      "unit": "%",
+      "decimals": null
+    },
+    {
+      "key": "overshootMax",
+      "group": "bench",
+      "label": {
+        "ko": "최대 오버슛",
+        "en": "OvershootMax"
+      },
+      "type": "number",
+      "unit": "%",
+      "decimals": null
+    },
+    {
+      "key": "maxBrightnessSdrMeasured",
+      "group": "bench",
+      "label": {
+        "ko": "최대 밝기 (SDR)",
+        "en": "Peak Brightness"
+      },
+      "type": "number",
+      "unit": "cd/m²",
+      "decimals": null
+    },
+    {
+      "key": "maxBrightnessHdrMeasured",
+      "group": "bench",
+      "label": {
+        "ko": "최대 밝기 (HDR)",
+        "en": "Peak Brightness (HDR)"
+      },
+      "type": "number",
+      "unit": "cd/m²",
+      "decimals": null
+    },
+    {
+      "key": "colorGamutDciP3Measured",
+      "group": "bench",
+      "label": {
+        "ko": "색역 (DCI‑P3)",
+        "en": "Gamut (DCI‑P3)"
+      },
+      "type": "number",
+      "unit": "%",
+      "decimals": null
+    },
+    {
+      "key": "colorGamutSrgbBench",
+      "group": "bench",
+      "label": {
+        "ko": "색역 (sRGB)",
+        "en": "ColorGamut(sRGB)"
+      },
+      "type": "number",
+      "unit": "%",
+      "decimals": null
+    },
+    {
+      "key": "contrastMeasured",
+      "group": "bench",
+      "label": {
+        "ko": "명암비",
+        "en": "Contrast"
+      },
+      "type": "number",
+      "unit": ":1",
+      "decimals": null
+    },
+    {
+      "key": "colorDeAvg",
+      "group": "bench",
+      "label": {
+        "ko": "색정확도 dE 평균",
+        "en": "ColorDeAvg"
+      },
+      "type": "number",
+      "unit": null,
+      "decimals": null
+    },
+    {
+      "key": "bfiOnMaxBrightness",
+      "group": "bench",
+      "label": {
+        "ko": "최대 밝기(BFI ON)",
+        "en": "MaxBrightness(BFI ON)"
+      },
+      "type": "number",
+      "unit": "cd/m²",
+      "decimals": null
+    },
+    {
+      "key": "colorGamutBt2020Measured",
+      "group": "bench",
+      "label": {
+        "ko": "색역 (BT.2020)",
+        "en": "Gamut (BT.2020)"
+      },
+      "type": "number",
+      "unit": "%",
+      "decimals": null
+    },
+    {
+      "key": "colorVolumeDciP3Measured",
+      "group": "bench",
+      "label": {
+        "ko": "색볼륨 (DCI‑P3)",
+        "en": "Color Volume (DCI‑P3)"
+      },
+      "type": "number",
+      "unit": "%",
+      "decimals": null
+    },
+    {
+      "key": "colorVolumeBt2020Measured",
+      "group": "bench",
+      "label": {
+        "ko": "색볼륨 (BT.2020)",
+        "en": "Color Volume (BT.2020)"
+      },
+      "type": "number",
+      "unit": "%",
+      "decimals": null
+    },
+    {
+      "key": "hdrPeak2PercentMeasured",
+      "group": "bench",
+      "label": {
+        "ko": "HDR 피크 2%",
+        "en": "HDR Peak 2%"
+      },
+      "type": "number",
+      "unit": "cd/m²",
+      "decimals": 0
+    },
+    {
+      "key": "hdrPeak10PercentMeasured",
+      "group": "bench",
+      "label": {
+        "ko": "HDR 피크 10%",
+        "en": "HDR Peak 10%"
+      },
+      "type": "number",
+      "unit": "cd/m²",
+      "decimals": 0
+    },
+    {
+      "key": "hdrFullFieldBrightnessMeasured",
+      "group": "bench",
+      "label": {
+        "ko": "HDR 100% 밝기",
+        "en": "HDR Full-field Brightness"
+      },
+      "type": "number",
+      "unit": "cd/m²",
+      "decimals": 0
+    },
+    {
+      "key": "vrrFlickerGrade",
+      "group": "bench",
+      "label": {
+        "ko": "VRR 플리커",
+        "en": "VRR Flicker"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "none",
+          "label": {
+            "ko": "거의 없음",
+            "en": "None"
+          }
+        },
+        {
+          "value": "minor",
+          "label": {
+            "ko": "약함",
+            "en": "Minor"
+          }
+        },
+        {
+          "value": "moderate",
+          "label": {
+            "ko": "보통",
+            "en": "Moderate"
+          }
+        },
+        {
+          "value": "severe",
+          "label": {
+            "ko": "심함",
+            "en": "Severe"
+          }
+        }
+      ]
+    },
+    {
+      "key": "textClarityGrade",
+      "group": "bench",
+      "label": {
+        "ko": "텍스트 선명도",
+        "en": "Text Clarity"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "excellent",
+          "label": {
+            "ko": "매우 좋음",
+            "en": "Excellent"
+          }
+        },
+        {
+          "value": "good",
+          "label": {
+            "ko": "좋음",
+            "en": "Good"
+          }
+        },
+        {
+          "value": "fair",
+          "label": {
+            "ko": "보통",
+            "en": "Fair"
+          }
+        },
+        {
+          "value": "poor",
+          "label": {
+            "ko": "나쁨",
+            "en": "Poor"
+          }
+        }
+      ]
+    },
+    {
+      "key": "pwmFrequencyMeasured",
+      "group": "bench",
+      "label": {
+        "ko": "PWM/플리커 주파수",
+        "en": "PWM/Flicker Frequency"
+      },
+      "type": "number",
+      "unit": "Hz",
+      "decimals": 0
+    },
+    {
+      "key": "totalReflectanceMeasured",
+      "group": "bench",
+      "label": {
+        "ko": "총 반사율 (SCI)",
+        "en": "Total Reflectance (SCI)"
+      },
+      "type": "number",
+      "unit": "%",
+      "decimals": 2
+    },
+    {
+      "key": "diffuseReflectanceMeasured",
+      "group": "bench",
+      "label": {
+        "ko": "확산 반사율 (SCE)",
+        "en": "Diffuse Reflectance (SCE)"
+      },
+      "type": "number",
+      "unit": "%",
+      "decimals": 2
+    }
+  ],
+  "products": [
+    {
+      "id": "0138f613-dedd-4d4c-86a6-74798a5baf14",
+      "name": "XG259QDNS Ace",
+      "manufacturer": {
+        "ko": "에이수스",
+        "en": "ASUS"
+      },
+      "priceKrw": null,
+      "status": "unreleased",
+      "saleStatus": "unreleased",
+      "aliUrl": null,
+      "image": "/images/aecb4fdd-af5d-40a9-affa-a2e944e07210.avif",
+      "values": {
+        "adaptiveSync": [
+          "gsyncCompatible",
+          "freeSyncPremiumPro"
+        ],
+        "colorGamutDcip3Spec": 99,
+        "hdmiPortCount": 2,
+        "hdrCertification": "displayHdrTrueBlack600",
+        "hdrFormatSupport": [
+          "hdr10"
+        ],
+        "maxBrightnessHdrSpec": 1800,
+        "panelType": "QD_OLED",
+        "refreshRate": 360,
+        "resolution": "FHD",
+        "sizeInch": 24.5
+      }
+    },
+    {
+      "id": "0780a9f3-3c88-41ac-97e9-1c45f31c9a38",
+      "name": "모비우스 EX2510S",
+      "manufacturer": {
+        "ko": "벤큐",
+        "en": "BenQ"
+      },
+      "priceKrw": 280000,
+      "status": "proposed",
+      "saleStatus": "DISCONTINUED",
+      "aliUrl": null,
+      "image": "/images/92a57242-74e4-46e1-9c36-c72000b4a7bb.avif",
+      "values": {
+        "adaptiveSync": [
+          "freeSyncPremium"
+        ],
+        "bfi": true,
+        "colorGamutSrgbSpec": 99,
+        "displayPortCount": 1,
+        "hdmiPortCount": 2,
+        "hdrFormatSupport": [
+          "hdr10"
+        ],
+        "maxBrightnessHdrSpec": 400,
+        "maxBrightnessSdrSpec": 280,
+        "panelType": "IPS",
+        "refreshRate": 165,
+        "resolution": "FHD",
+        "screenCoating": "matteAntiGlare",
+        "sizeInch": 24.5,
+        "vesaMountPattern": "vesa100x100"
+      }
+    },
+    {
+      "id": "168e2700-995b-4632-86e9-08613515a315",
+      "name": "UltraGear 32GS95UE 4K Mode",
+      "manufacturer": {
+        "ko": "엘지전자",
+        "en": "LGE"
+      },
+      "priceKrw": 0,
+      "status": "reviewed",
+      "saleStatus": "DISCONTINUED",
+      "aliUrl": null,
+      "image": "/images/af5305fe-057a-4caa-a504-a0655a13c3bd.avif",
+      "values": {
+        "adaptiveSync": [
+          "gsyncCompatible",
+          "freeSyncPremiumPro"
+        ],
+        "bfi": false,
+        "colorGamutDciP3Measured": 96.5,
+        "colorGamutDcip3Spec": 98.5,
+        "contrastMeasured": 1,
+        "displayPortCount": 1,
+        "displayPortLinkClass": "dp1_4Hbr3_32_4",
+        "displayStreamCompression": "supported",
+        "eyejokerRating": "NO_RECOMMENDATION",
+        "hdmiPortCount": 2,
+        "hdrCertification": "displayHdrTrueBlack400",
+        "hdrFormatSupport": [
+          "hdr10"
+        ],
+        "heightAdjustMm": 120,
+        "inputLagMonitor": 0.81,
+        "maxBrightnessSdrMeasured": 277,
+        "maxBrightnessSdrSpec": 275,
+        "overallRatingMonitor": "TIER_0",
+        "overshootAverage": 1.9,
+        "overshootMax": 5,
+        "panelMaker": "LGD",
+        "panelType": "WOLED",
+        "publicReleaseAt": "2025-01-01T00:00:00",
+        "refreshRate": 240,
+        "resolution": "UHD",
+        "responseAverage": 3.53,
+        "responseAverageRgb10": 0.64,
+        "responseMax": 1,
+        "screenCoating": "matteAntiGlare",
+        "sizeInch": 32,
+        "standAdjustments": [
+          "tilt",
+          "height",
+          "swivel",
+          "pivot"
+        ],
+        "standType": "included",
+        "vesaMountPattern": "vesa100x100"
+      }
+    },
+    {
+      "id": "7aa60f74-aa55-44f0-9858-9d672a19fba5",
+      "name": "ROG SWIFT PG259QN",
+      "manufacturer": {
+        "ko": "에이수스",
+        "en": "ASUS"
+      },
+      "priceKrw": 800000,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": "https://s.click.aliexpress.com/e/_oEZbgCi",
+      "image": "/images/b3a521e2-83ea-48b9-aa17-1b1e41802d40.avif",
+      "values": {
+        "adaptiveSync": [
+          "gsync"
+        ],
+        "bfi": false,
+        "colorGamutSrgbSpec": 99,
+        "displayPortCount": 1,
+        "displayPortLinkClass": "dp1_4Hbr3_32_4",
+        "hdmiPortCount": 1,
+        "hdrFormatSupport": [
+          "hdr10"
+        ],
+        "maxBrightnessHdrSpec": 400,
+        "maxBrightnessSdrSpec": 400,
+        "panelType": "FAST_IPS",
+        "refreshRate": 360,
+        "resolution": "FHD",
+        "screenCoating": "matteAntiGlare",
+        "sizeInch": 24,
+        "standAdjustments": [
+          "tilt",
+          "swivel",
+          "pivot"
+        ],
+        "standType": "included",
+        "vesaMountPattern": "vesa100x100"
+      }
+    }
+  ]
+}
