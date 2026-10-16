@@ -1,6 +1,5 @@
 import { defineConfig, devices } from "@playwright/test";
-
-const previewPort = Number(process.env.E2E_PORT ?? 4173);
+import { previewPort } from "./tests/e2e/e2e-ports.ts";
 
 export default defineConfig({
   testDir: "tests/e2e",
@@ -13,7 +12,7 @@ export default defineConfig({
   },
   projects: [{ name: "chromium", use: { ...devices["Desktop Chrome"] } }],
   webServer: {
-    command: `node tests/e2e/serve-fixture-build.ts ${previewPort}`,
+    command: "node tests/e2e/serve-fixture-build.ts",
     url: `http://localhost:${previewPort}`,
     reuseExistingServer: false,
     timeout: 180_000,

@@ -9,6 +9,7 @@ Consultar e comparar, em português, os benchmarks de monitores, teclados e mous
 - `pnpm build` gera o site estático em `dist/`; `pnpm preview` o serve com os mesmos cabeçalhos da Vercel.
 - `pnpm test` roda Vitest e Playwright; `pnpm exec playwright install chromium` antes da primeira vez.
 - O Playwright testa o build de produção com dados que o pipeline gera do recorte gravado do EyeJoker (`tests/e2e/serve-fixture-build.ts`, saída em `dist-e2e/`), não com `public/data`.
+- O mesmo servidor faz um segundo build com a próxima Atualização (`meta.json` uma semana depois) e serve os dois builds na mesma origem, na porta `E2E_PORT` + 1000, para o teste de atualização trocar de um deploy para o outro (`tests/e2e/release-server.ts`); o build seguinte fica na porta `E2E_PORT` + 2000.
 - `pnpm exec playwright test --update-snapshots` regenera os snapshots de acessibilidade.
 - `pnpm format`, `pnpm lint`, `pnpm typecheck`.
 
