@@ -36,7 +36,10 @@ function volumeChoice(
   };
 }
 
-/** EyeJoker's mouse Filtros (`_a` in its bundle), in its order; the last three are advanced. */
+/**
+ * EyeJoker's mouse Filtros (`_a` in its bundle), in its order, with Sensor and
+ * Resposta do clique after Peso; the last three are advanced, as on EyeJoker.
+ */
 export const mouseFilters: readonly FilterDefinition[] = [
   {
     kind: "buckets",
@@ -85,6 +88,14 @@ export const mouseFilters: readonly FilterDefinition[] = [
       numberChoice("80-100", "80 a 100 g", "weight", (grams) => grams > 80 && grams <= 100),
       numberChoice("acima100", "Mais de 100 g", "weight", (grams) => grams > 100),
     ],
+  },
+  { kind: "options", param: "sensor", label: "Sensor", fieldKey: "sensor" },
+  {
+    kind: "range",
+    param: "clique",
+    label: "Resposta do clique",
+    fieldKey: "optimalResponseSpeed",
+    unit: "ms",
   },
   {
     kind: "buckets",

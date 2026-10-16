@@ -260,6 +260,52 @@ test("a copied link opens the same Filtros in a new tab", async ({ page, context
   ).toHaveAttribute("aria-expanded", "false");
 });
 
+test("marked sensors and a maximum Resposta do clique narrow the mouses and reopen from the link", async ({
+  page,
+  context,
+}) => {
+  await page.goto("/mouse");
+  const sensorGroup = filterPanel(page).getByRole("group", { name: "Sensor", exact: true });
+  // The sensors the excerpt's mouses have, by EyeJoker's label; four choices need no search box.
+  const sensorChoices = sensorGroup.getByRole("checkbox");
+  const sensorNames = ["PAW3395", "PAW3950", "PAW3950 HS", "PAW3950 Ultra (42K)"];
+  await expect(sensorChoices).toHaveCount(sensorNames.length);
+  for (const [index, name] of sensorNames.entries()) {
+    await expect(sensorChoices.nth(index)).toHaveAccessibleName(name);
+  }
+  await expect(sensorGroup.getByRole("searchbox")).toHaveCount(0);
+
+  await choice(page, "Sensor", "PAW3950").check();
+  await choice(page, "Sensor", "PAW3395").check();
+  await expect(page).toHaveURL("/mouse?sensor=paw3395,paw3950");
+  await expect.poll(() => productNames(page)).toEqual(["Dragonfly 3 PRO", "H200A", "Cloud XS"]);
+
+  // Dragonfly 3 PRO answers in 20.5 ms; Cloud XS has no Resposta do clique, so it leaves too.
+  const clickRange = filterPanel(page).getByRole("group", { name: "Resposta do clique (ms)" });
+  await clickRange.getByRole("textbox", { name: "Máximo" }).fill("9");
+  await expect(page).toHaveURL("/mouse?sensor=paw3395,paw3950&clique=-9");
+  await expect.poll(() => productNames(page)).toEqual(["H200A"]);
+
+  const newTab = await context.newPage();
+  await newTab.goto(page.url());
+  await expect.poll(() => productNames(newTab)).toEqual(["H200A"]);
+  await expect(choice(newTab, "Sensor", "PAW3950")).toBeChecked();
+  await expect(choice(newTab, "Sensor", "PAW3395")).toBeChecked();
+  const newTabClickRange = filterPanel(newTab).getByRole("group", {
+    name: "Resposta do clique (ms)",
+  });
+  await expect(newTabClickRange.getByRole("textbox", { name: "Mínimo" })).toHaveValue("");
+  await expect(newTabClickRange.getByRole("textbox", { name: "Máximo" })).toHaveValue("9");
+
+  // Only mouses have them: on teclado the same params show no Filtro and narrow nothing.
+  await newTab.goto("/teclado?sensor=paw3395,paw3950&clique=-9");
+  await expect(newTab.getByText("4 produtos", { exact: true })).toBeVisible();
+  await expect(filterPanel(newTab).getByRole("group", { name: "Sensor" })).toHaveCount(0);
+  await expect(filterPanel(newTab).getByRole("group", { name: /Resposta do clique/ })).toHaveCount(
+    0,
+  );
+});
+
 test("a link with invalid Filtro values keeps the valid ones and opens without an error", async ({
   page,
 }) => {

@@ -87,6 +87,21 @@
         - text: /\d+ a \d+ g/
         - checkbox /Mais de \d+ g/
         - text: /Mais de \d+ g/
+    - group "Sensor":
+        - text: ""
+        - checkbox "PAW3395"
+        - text: PAW3395
+        - checkbox "PAW3950"
+        - text: PAW3950
+        - checkbox "PAW3950 HS"
+        - text: PAW3950 HS
+        - checkbox /PAW3950 Ultra \([\d,.]+[bkmBKM]+\)/
+        - text: /PAW3950 Ultra \([\d,.]+[bkmBKM]+\)/
+    - group "Resposta do clique (ms)":
+        - text: Resposta do clique (ms) Mínimo
+        - textbox "Mínimo"
+        - text: Máximo
+        - textbox "Máximo"
     - button "Filtros avançados" [expanded]
     - group "Velocidade máxima de rastreio":
         - text: ""

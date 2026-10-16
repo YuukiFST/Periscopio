@@ -8,7 +8,7 @@ function isTested(product: Product): boolean {
   return product.status === "reviewed";
 }
 
-function normalizeForSearch(text: string): string {
+export function normalizeForSearch(text: string): string {
   return text
     .normalize("NFD")
     .replace(/\p{Diacritic}/gu, "")
