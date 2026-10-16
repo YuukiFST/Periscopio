@@ -12,6 +12,12 @@ Consultar e comparar, em português, os benchmarks de monitores, teclados e mous
 - `pnpm exec playwright test --update-snapshots` regenera os snapshots de acessibilidade.
 - `pnpm format`, `pnpm lint`, `pnpm typecheck`.
 
+## Instalável e offline
+
+- `vite-plugin-pwa` gera o service worker (`sw.js`) no build: o app e `data/*.json` entram no precache no primeiro acesso, e as fotos em `/images/` ficam em cache quando aparecem pela primeira vez (até 2000).
+- Cada deploy instala o novo service worker sozinho, e o app aberto recarrega uma vez com os dados novos.
+- Os ícones PNG saem de `public/favicon.svg`: depois de mudar o SVG, `node scripts/render-app-icons.ts` os regera.
+
 ## Atualização dos dados
 
 - `pnpm update-data` busca no EyeJoker os Produtos das três Categorias e `/api/company`, valida, normaliza e grava `public/data/{mouse,teclado,monitor}.json`, `public/data/meta.json` e as fotos novas em `public/images/<uuid>.avif`, apagando as que nenhum Produto usa.

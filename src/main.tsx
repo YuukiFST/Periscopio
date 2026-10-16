@@ -6,6 +6,7 @@ import "./styles.css";
 import { createRouter, RouterProvider } from "@tanstack/react-router";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
+import { registerSW } from "virtual:pwa-register";
 import { routeTree } from "./routeTree.gen";
 import { parseFlatSearch, stringifyFlatSearch } from "./search-params";
 
@@ -30,3 +31,6 @@ createRoot(appElement).render(
     <RouterProvider router={router} />
   </StrictMode>,
 );
+
+// A new deploy (each Atualização) installs in the background and reloads the open app once.
+registerSW({ immediate: true });
