@@ -1,0 +1,109 @@
+- complementary "Filtros":
+    - heading "Filtros" [level=2]
+    - button "Limpar" [disabled]
+    - group "Nota geral":
+        - text: ""
+        - checkbox "Impecável"
+        - text: Impecável
+        - checkbox "Tier 0"
+        - text: Tier 0
+        - checkbox "Tier 1"
+        - text: Tier 1
+        - checkbox "Tier 2"
+        - text: Tier 2
+        - checkbox "Tier 3"
+        - text: Tier 3
+        - checkbox "Tier 4"
+        - text: Tier 4
+        - checkbox "Sem nota"
+        - text: Sem nota
+    - group "Recomendação":
+        - text: ""
+        - checkbox "Aguardado"
+        - text: Aguardado
+        - checkbox "Muito recomendado"
+        - text: Muito recomendado
+        - checkbox "Recomendado"
+        - text: Recomendado
+        - checkbox "Recomendação fraca"
+        - text: Recomendação fraca
+        - checkbox "Não recomendado"
+        - text: Não recomendado
+    - group "Preço":
+        - text: ""
+        - checkbox /Até ₩ \d+ mil/
+        - text: /Até ₩ \d+ mil/
+        - checkbox /₩ \d+ a \d+ mil/
+        - text: /₩ \d+ a \d+ mil/
+        - checkbox /₩ \d+ a \d+ mil/
+        - text: /₩ \d+ a \d+ mil/
+        - checkbox /Mais de ₩ \d+ mil/
+        - text: /Mais de ₩ \d+ mil/
+    - group "Layout":
+        - text: ""
+        - checkbox "TKL"
+        - text: TKL
+        - checkbox /\d+%/
+        - text: /\d+%/
+        - checkbox /\d+%/
+        - text: /\d+%/
+        - checkbox /\d+%/
+        - text: /\d+%/
+        - checkbox "Completo"
+        - text: Completo
+        - checkbox /\d+%/
+        - text: /\d+%/
+        - checkbox "Outro"
+        - text: Outro
+    - group "Conexão":
+        - text: ""
+        - checkbox "Com fio"
+        - text: Com fio
+        - checkbox "Sem fio"
+        - text: Sem fio
+        - checkbox "Com e sem fio"
+        - text: Com e sem fio
+    - group "Material da carcaça":
+        - text: ""
+        - checkbox "Alumínio"
+        - text: Alumínio
+        - checkbox "Plástico"
+        - text: Plástico
+        - checkbox "Alumínio e plástico"
+        - text: Alumínio e plástico
+        - checkbox "Outro"
+        - text: Outro
+    - group "Tipo de switch":
+        - text: ""
+        - checkbox "Magnético"
+        - text: Magnético
+        - checkbox "Mecânico"
+        - text: Mecânico
+        - checkbox "Capacitivo"
+        - text: Capacitivo
+        - checkbox "Óptico"
+        - text: Óptico
+        - checkbox "Membrana"
+        - text: Membrana
+    - group "Rapid trigger":
+        - text: ""
+        - checkbox "Sim"
+        - text: Sim
+        - checkbox "Não"
+        - text: Não
+    - group "Atraso com várias teclas":
+        - text: ""
+        - checkbox "Sem atraso"
+        - text: Sem atraso
+        - checkbox "Com atraso"
+        - text: Com atraso
+    - group "Desempenho real":
+        - text: ""
+        - checkbox /\d+\.\d+ Hz ou mais/
+        - text: /\d+\.\d+ Hz ou mais/
+        - checkbox /\d+\.\d+ a \d+\.\d+ Hz/
+        - text: /\d+\.\d+ a \d+\.\d+ Hz/
+        - checkbox /\d+\.\d+ a \d+\.\d+ Hz/
+        - text: /\d+\.\d+ a \d+\.\d+ Hz/
+        - checkbox /Menos de \d+\.\d+ Hz/
+        - text: /Menos de \d+\.\d+ Hz/

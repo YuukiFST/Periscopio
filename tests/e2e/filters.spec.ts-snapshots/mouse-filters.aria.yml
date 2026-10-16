@@ -1,0 +1,115 @@
+- complementary "Filtros":
+    - heading "Filtros" [level=2]
+    - button "Limpar" [disabled]
+    - group "Nota geral":
+        - text: ""
+        - checkbox "Impecável"
+        - text: Impecável
+        - checkbox "Tier 0"
+        - text: Tier 0
+        - checkbox "Tier 1"
+        - text: Tier 1
+        - checkbox "Tier 2"
+        - text: Tier 2
+        - checkbox "Tier 3"
+        - text: Tier 3
+        - checkbox "Tier 4"
+        - text: Tier 4
+        - checkbox "Sem nota"
+        - text: Sem nota
+    - group "Recomendação":
+        - text: ""
+        - checkbox "Aguardado"
+        - text: Aguardado
+        - checkbox "Muito recomendado"
+        - text: Muito recomendado
+        - checkbox "Recomendado"
+        - text: Recomendado
+        - checkbox "Recomendação fraca"
+        - text: Recomendação fraca
+        - checkbox "Não recomendado"
+        - text: Não recomendado
+    - group "Preço":
+        - text: ""
+        - checkbox /Até ₩ \d+ mil/
+        - text: /Até ₩ \d+ mil/
+        - checkbox /₩ \d+ a \d+ mil/
+        - text: /₩ \d+ a \d+ mil/
+        - checkbox /₩ \d+ a \d+ mil/
+        - text: /₩ \d+ a \d+ mil/
+        - checkbox /Mais de ₩ \d+ mil/
+        - text: /Mais de ₩ \d+ mil/
+    - group "Formato":
+        - text: ""
+        - checkbox "Simétrico"
+        - text: Simétrico
+        - checkbox "Assimétrico"
+        - text: Assimétrico
+    - group "Classe do sensor":
+        - text: ""
+        - checkbox /Focus Pro [\d,.]+[bkmBKM]+/
+        - text: /Focus Pro [\d,.]+[bkmBKM]+/
+        - checkbox "Topo de linha atual"
+        - text: Topo de linha atual
+        - checkbox "Alto desempenho"
+        - text: Alto desempenho
+        - checkbox "Intermediário ou topo antigo"
+        - text: Intermediário ou topo antigo
+        - checkbox "Básico ou antigo"
+        - text: Básico ou antigo
+        - checkbox "Simples ou especial"
+        - text: Simples ou especial
+    - group "Tamanho":
+        - text: ""
+        - checkbox "Pequeno"
+        - text: Pequeno
+        - checkbox "Médio"
+        - text: Médio
+        - checkbox "Grande"
+        - text: Grande
+    - group "Conexão":
+        - text: ""
+        - checkbox "Com fio"
+        - text: Com fio
+        - checkbox "Sem fio"
+        - text: Sem fio
+        - checkbox "Com e sem fio"
+        - text: Com e sem fio
+    - group "Peso":
+        - text: ""
+        - checkbox /Até \d+ g/
+        - text: /Até \d+ g/
+        - checkbox /\d+ a \d+ g/
+        - text: /\d+ a \d+ g/
+        - checkbox /\d+ a \d+ g/
+        - text: /\d+ a \d+ g/
+        - checkbox /\d+ a \d+ g/
+        - text: /\d+ a \d+ g/
+        - checkbox /Mais de \d+ g/
+        - text: /Mais de \d+ g/
+    - button "Filtros avançados" [expanded]
+    - group "Velocidade máxima de rastreio":
+        - text: ""
+        - checkbox /Até \d+ IPS/
+        - text: /Até \d+ IPS/
+        - checkbox /\d+ a \d+ IPS/
+        - text: /\d+ a \d+ IPS/
+        - checkbox /\d+ a \d+ IPS/
+        - text: /\d+ a \d+ IPS/
+        - checkbox /\d+ IPS ou mais/
+        - text: /\d+ IPS ou mais/
+    - group "Carcaça furada":
+        - text: ""
+        - checkbox "Sim"
+        - text: Sim
+        - checkbox "Não"
+        - text: Não
+        - checkbox "Só embaixo"
+        - text: Só embaixo
+        - checkbox "Depende do modelo"
+        - text: Depende do modelo
+    - group "Faixa de peso (g)":
+        - text: Faixa de peso (g) Mínimo
+        - textbox "Mínimo"
+        - text: Máximo
+        - textbox "Máximo"

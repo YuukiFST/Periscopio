@@ -1,0 +1,107 @@
+- complementary "Filtros":
+    - heading "Filtros" [level=2]
+    - button "Limpar" [disabled]
+    - group "Nota geral":
+        - text: ""
+        - checkbox "Impecável"
+        - text: Impecável
+        - checkbox "Tier 0"
+        - text: Tier 0
+        - checkbox "Tier 1"
+        - text: Tier 1
+        - checkbox "Tier 2"
+        - text: Tier 2
+        - checkbox "Tier 3"
+        - text: Tier 3
+        - checkbox "Tier 4"
+        - text: Tier 4
+        - checkbox "Sem nota"
+        - text: Sem nota
+    - group "Recomendação":
+        - text: ""
+        - checkbox "Aguardado"
+        - text: Aguardado
+        - checkbox "Muito recomendado"
+        - text: Muito recomendado
+        - checkbox "Recomendado"
+        - text: Recomendado
+        - checkbox "Recomendação fraca"
+        - text: Recomendação fraca
+        - checkbox "Não recomendado"
+        - text: Não recomendado
+    - group "Preço":
+        - text: ""
+        - checkbox /Até ₩ \d+ mil/
+        - text: /Até ₩ \d+ mil/
+        - checkbox /₩ \d+ a \d+ mil/
+        - text: /₩ \d+ a \d+ mil/
+        - checkbox /₩ \d+ a \d+ mil/
+        - text: /₩ \d+ a \d+ mil/
+        - checkbox /₩ \d+ mil a 1 mi/
+        - text: /₩ \d+ mil a 1 mi/
+        - checkbox "Mais de ₩ 1 mi"
+        - text: Mais de ₩ 1 mi
+    - group "Tamanho da tela":
+        - text: ""
+        - checkbox /Até \d+"/
+        - text: /Até \d+"/
+        - checkbox /\d+ a \d+"/
+        - text: /\d+ a \d+"/
+        - checkbox /\d+"/
+        - text: /\d+"/
+        - checkbox /\d+"/
+        - text: /\d+"/
+        - checkbox /\d+"/
+        - text: /\d+"/
+        - checkbox /\d+"/
+        - text: /\d+"/
+        - checkbox /\d+"/
+        - text: /\d+"/
+        - checkbox /\d+" ou mais/
+        - text: /\d+" ou mais/
+    - group "Resolução":
+        - text: ""
+        - checkbox /FHD \(\d+×\d+\)/
+        - text: /FHD \(\d+×\d+\)/
+        - checkbox /QHD \(\d+×\d+\)/
+        - text: /QHD \(\d+×\d+\)/
+        - checkbox /UHD \(\d+×\d+\)/
+        - text: /UHD \(\d+×\d+\)/
+        - checkbox "Ultrawide"
+        - text: Ultrawide
+    - group "Taxa de atualização":
+        - text: ""
+        - checkbox /\d+ a \d+ Hz/
+        - text: /\d+ a \d+ Hz/
+        - checkbox /\d+ a \d+ Hz/
+        - text: /\d+ a \d+ Hz/
+        - checkbox /\d+ a \d+ Hz/
+        - text: /\d+ a \d+ Hz/
+        - checkbox /\d+ a \d+ Hz/
+        - text: /\d+ a \d+ Hz/
+        - checkbox /\d+ Hz ou mais/
+        - text: /\d+ Hz ou mais/
+    - group "Painel":
+        - text: ""
+        - checkbox "TN"
+        - text: TN
+        - checkbox "VA"
+        - text: VA
+        - checkbox "IPS"
+        - text: IPS
+        - checkbox "OLED"
+        - text: OLED
+    - group "Certificação HDR":
+        - text: ""
+        - checkbox /True Black \d+/
+        - text: /True Black \d+/
+        - checkbox /True Black \d+/
+        - text: /True Black \d+/
+        - checkbox /True Black \d+ ou mais/
+        - text: /True Black \d+ ou mais/
+        - checkbox "DisplayHDR comum"
+        - text: DisplayHDR comum
+    - group "Escurecimento da retroiluminação":
+        - text: ""
+        - checkbox "Mini LED"
+        - text: Mini LED
