@@ -6,8 +6,16 @@ import type { TableColumn } from "./table-columns.ts";
 const locale = "pt-BR";
 const priceFormat = new Intl.NumberFormat(locale, { style: "currency", currency: "KRW" });
 const listFormat = new Intl.ListFormat(locale, { type: "conjunction" });
-const dateFormat = new Intl.DateTimeFormat(locale, { dateStyle: "medium" });
 const textCollator = new Intl.Collator(locale, { numeric: true, sensitivity: "base" });
+/** EyeJoker is a Korean site: its dates read as the day in Korea, wherever the app is opened. */
+const dateFormat = new Intl.DateTimeFormat(locale, { dateStyle: "medium", timeZone: "Asia/Seoul" });
+const timeZoneSuffix = /(?:Z|[+-]\d{2}:\d{2})$/;
+
+/** EyeJoker writes some dates without a time zone; those are Korean wall-clock times. */
+function formatDate(value: string): string {
+  const date = new Date(timeZoneSuffix.test(value) ? value : `${value}+09:00`);
+  return Number.isNaN(date.getTime()) ? value : dateFormat.format(date);
+}
 
 /** Units written right after the number, without a space: `27"`, `95%`, `1000:1`. */
 const unitsWithoutSpace = new Set(['"', "%", ":1"]);
@@ -19,7 +27,12 @@ function numberFormatFor(decimals: number | null): Intl.NumberFormat {
     format = new Intl.NumberFormat(
       locale,
       decimals === null
-        ? { maximumFractionDigits: 2 }
+        ? // Two decimals, unless that rounds a small value such as 0.001 mm away to 0.
+          {
+            maximumFractionDigits: 2,
+            maximumSignificantDigits: 2,
+            roundingPriority: "morePrecision",
+          }
         : { minimumFractionDigits: decimals, maximumFractionDigits: decimals },
     );
     numberFormats.set(decimals, format);
@@ -74,7 +87,7 @@ export function formatFieldValue(field: Field, value: FieldValue): string {
     case "boolean":
       return value === true ? "Sim" : "Não";
     case "date":
-      return typeof value === "string" ? dateFormat.format(new Date(value)) : String(value);
+      return typeof value === "string" ? formatDate(value) : String(value);
     case "text":
       return valueLabel(field, String(value));
   }

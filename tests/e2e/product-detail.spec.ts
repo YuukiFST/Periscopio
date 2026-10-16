@@ -86,3 +86,28 @@ test("an unknown Produto shows Produto não encontrado with the way back to its 
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("Página não encontrada");
 });
 
+test("regression: a value smaller than two decimals, such as 0,001 mm, is not shown as 0", async ({
+  page,
+}) => {
+  await page.goto("/teclado/04ef23e4-e4bd-4212-be44-daabe2640afd");
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText("TENKO - ARC 60");
+  await expect(page.getByRole("region", { name: "Especificações" })).toMatchAriaSnapshot(`
+    - term: Acionamento mínimo
+    - definition: 0,001 mm
+  `);
+});
+
+test.describe("in a time zone behind Korea", () => {
+  test.use({ timezoneId: "America/Sao_Paulo" });
+
+  test("regression: Data de publicação shows EyeJoker's day, not the viewer's", async ({
+    page,
+  }) => {
+    // H200A was published at 2025-10-31T20:19Z: 1 November in Korea, 31 October in São Paulo.
+    await page.goto("/mouse/2cf40f05-fa65-4a5c-936a-c67de7025af3");
+    await expect(page.getByRole("region", { name: "Especificações" })).toMatchAriaSnapshot(`
+      - term: Data de publicação
+      - definition: 1 de nov. de 2025
+    `);
+  });
+});
