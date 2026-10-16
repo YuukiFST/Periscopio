@@ -1,0 +1,159 @@
+import { ExternalLink, ImageOff } from "lucide-react";
+import { useEffect, useRef, type ReactNode, type RefObject } from "react";
+import { buttonVariants } from "@/components/ui/button";
+import type { CategoryData, Product } from "@/data/schema";
+import { fieldLabel, manufacturerName, valueLabel } from "@/i18n/labels";
+import { FieldValueText, isFigureField } from "@/product-fields/field-value-text";
+import {
+  productFieldGroups,
+  productFieldValue,
+  type ProductFieldGroup,
+} from "@/product-fields/field-groups";
+import { formatPrice, priceOf } from "@/product-table/cell-values";
+import { cn } from "@/lib/utils";
+import { BackToTableLink } from "./back-to-table-link";
+
+type ProductDetailProps = { data: CategoryData; product: Product };
+
+export function ProductDetail({ data, product }: ProductDetailProps) {
+  const headingRef = useRef<HTMLHeadingElement>(null);
+  useEffect(() => {
+    document.title = `${product.name} · EyeJoker`;
+    // A new view in a single-page app: screen readers and the keyboard start from its title.
+    headingRef.current?.focus();
+  }, [product.name]);
+  const groups = productFieldGroups(data, [product]);
+  const hasMeasurements = groups.some((group) => group.id === "medicoes");
+  return (
+    <article aria-labelledby="produto-titulo" className="flex w-full max-w-6xl flex-col gap-8 pb-4">
+      <BackToTableLink category={data.category} />
+      <ProductHeader data={data} product={product} headingRef={headingRef} />
+      <div className="grid items-start gap-x-12 gap-y-8 lg:grid-cols-2">
+        {groups.map((group) => (
+          <FieldGroupSection key={group.id} group={group} product={product} />
+        ))}
+        {!hasMeasurements && (
+          <p className="max-w-prose text-fg-secondary">
+            O EyeJoker ainda não publicou medições deste produto.
+          </p>
+        )}
+      </div>
+    </article>
+  );
+}
+
+function ProductHeader({
+  data,
+  product,
+  headingRef,
+}: ProductDetailProps & { headingRef: RefObject<HTMLHeadingElement | null> }) {
+  const price = priceOf(product);
+  const statusField = data.fields.find((field) => field.key === "status");
+  const status =
+    product.status && statusField ? valueLabel(statusField, product.status) : undefined;
+  return (
+    <header className="flex flex-col gap-4 sm:flex-row sm:items-start sm:gap-6">
+      <ProductPhoto product={product} />
+      <div className="flex min-w-0 flex-col gap-4">
+        <div>
+          <h1
+            ref={headingRef}
+            id="produto-titulo"
+            tabIndex={-1}
+            className="font-serif text-heading-4 text-balance wrap-break-word outline-none"
+          >
+            {product.name}
+          </h1>
+          <p className="text-body-base text-fg-secondary wrap-break-word">
+            {manufacturerName(product.manufacturer)}
+          </p>
+        </div>
+        <dl className="flex flex-wrap gap-x-8 gap-y-3">
+          <HeaderFact label="Preço">
+            {price === undefined ? (
+              <span className="text-fg-secondary">Sem preço</span>
+            ) : (
+              <span className="whitespace-nowrap tabular-nums">{formatPrice(price)}</span>
+            )}
+          </HeaderFact>
+          {status !== undefined && <HeaderFact label="Status de teste">{status}</HeaderFact>}
+        </dl>
+        {product.aliUrl && (
+          <a
+            href={product.aliUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={cn(buttonVariants({ size: "lg" }), "self-start touch-manipulation")}
+          >
+            Ver no AliExpress
+            <span className="sr-only">(abre em nova aba)</span>
+            <ExternalLink aria-hidden="true" data-icon="inline-end" />
+          </a>
+        )}
+      </div>
+    </header>
+  );
+}
+
+function HeaderFact({ label, children }: { label: string; children: ReactNode }) {
+  return (
+    <div className="flex flex-col gap-0.5">
+      <dt className="text-caption-lg text-fg-secondary">{label}</dt>
+      <dd className="font-medium">{children}</dd>
+    </div>
+  );
+}
+
+function ProductPhoto({ product }: { product: Product }) {
+  const frame = "size-24 shrink-0 rounded-xl sm:size-40";
+  if (!product.image) {
+    return (
+      <div
+        aria-hidden="true"
+        className={cn(frame, "grid place-items-center bg-component text-fg-tertiary")}
+      >
+        <ImageOff className="size-6" />
+      </div>
+    );
+  }
+  return (
+    <img
+      src={product.image}
+      alt={`Foto de ${product.name}`}
+      width={160}
+      height={160}
+      decoding="async"
+      className={cn(frame, "bg-white object-contain outline-1 -outline-offset-1 outline-border")}
+    />
+  );
+}
+
+function FieldGroupSection({ group, product }: { group: ProductFieldGroup; product: Product }) {
+  const headingId = `grupo-${group.id}`;
+  return (
+    <section aria-labelledby={headingId} className="flex min-w-0 flex-col gap-2">
+      <h2 id={headingId} className="font-serif text-heading-6 font-medium">
+        {group.title}
+      </h2>
+      <dl className="divide-y divide-border-subtle">
+        {group.fields.map((field) => {
+          const value = productFieldValue(product, field);
+          if (value === undefined) return null;
+          return (
+            <div key={field.key} className="flex items-baseline justify-between gap-4 py-2">
+              <dt className="min-w-0 text-pretty text-fg-secondary">{fieldLabel(field)}</dt>
+              <dd
+                className={cn(
+                  "min-w-0 text-end",
+                  isFigureField(field) ? "shrink-0" : "max-w-[60%] font-medium text-pretty",
+                )}
+              >
+                <FieldValueText field={field} value={value} />
+              </dd>
+            </div>
+          );
+        })}
+      </dl>
+    </section>
+  );
+}

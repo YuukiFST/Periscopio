@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as CategoriaIndexRouteImport } from './routes/$categoria/index'
+import { Route as CategoriaIdRouteImport } from './routes/$categoria/$id'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -22,30 +23,39 @@ const CategoriaIndexRoute = CategoriaIndexRouteImport.update({
   path: '/$categoria/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CategoriaIdRoute = CategoriaIdRouteImport.update({
+  id: '/$categoria/$id',
+  path: '/$categoria/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/$categoria/$id': typeof CategoriaIdRoute
   '/$categoria/': typeof CategoriaIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/$categoria/$id': typeof CategoriaIdRoute
   '/$categoria': typeof CategoriaIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/$categoria/$id': typeof CategoriaIdRoute
   '/$categoria/': typeof CategoriaIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/$categoria/'
+  fullPaths: '/' | '/$categoria/$id' | '/$categoria/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/$categoria'
-  id: '__root__' | '/' | '/$categoria/'
+  to: '/' | '/$categoria/$id' | '/$categoria'
+  id: '__root__' | '/' | '/$categoria/$id' | '/$categoria/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CategoriaIdRoute: typeof CategoriaIdRoute
   CategoriaIndexRoute: typeof CategoriaIndexRoute
 }
 
@@ -65,11 +75,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CategoriaIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/$categoria/$id': {
+      id: '/$categoria/$id'
+      path: '/$categoria/$id'
+      fullPath: '/$categoria/$id'
+      preLoaderRoute: typeof CategoriaIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CategoriaIdRoute: CategoriaIdRoute,
   CategoriaIndexRoute: CategoriaIndexRoute,
 }
 export const routeTree = rootRouteImport
