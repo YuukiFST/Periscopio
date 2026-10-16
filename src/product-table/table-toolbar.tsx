@@ -1,4 +1,5 @@
 import { Search } from "lucide-react";
+import type { ReactNode } from "react";
 import { Input } from "@/components/ui/input";
 import type { TestStatusFilter } from "./product-filter";
 
@@ -28,6 +29,8 @@ type TableToolbarProps = {
   testStatus: TestStatusFilter | undefined;
   onTestStatusChange: (testStatus: TestStatusFilter | undefined) => void;
   countText: string;
+  /** Controls placed after the Status de teste, such as the Filtros button on a phone. */
+  children?: ReactNode;
 };
 
 export function TableToolbar({
@@ -36,6 +39,7 @@ export function TableToolbar({
   testStatus,
   onTestStatusChange,
   countText,
+  children,
 }: TableToolbarProps) {
   return (
     <div className="flex flex-wrap items-center gap-x-4 gap-y-3">
@@ -75,6 +79,7 @@ export function TableToolbar({
           </label>
         ))}
       </fieldset>
+      {children}
       <p aria-live="polite" className="text-fg-secondary tabular-nums">
         {countText}
       </p>

@@ -7,6 +7,20 @@ import { CopyLinkButton } from "@/components/copy-link-button";
 import { StaleDataAlert, UpdatedAtLabel, updateAgeOf } from "@/components/update-notice";
 import { loadCategoryData } from "@/data/load-data";
 import type { CategoryData } from "@/data/schema";
+import { categoryFiltersFor } from "@/product-filters/category-filters";
+import { FilterDrawer } from "@/product-filters/filter-drawer";
+import {
+  activeFilterCount,
+  applyFilters,
+  noFilterValues,
+  type FilterValues,
+} from "@/product-filters/filter-engine";
+import {
+  filterSearchOf,
+  filterValuesFromSearch,
+  pickFilterSearch,
+} from "@/product-filters/filter-link";
+import { FilterPanel } from "@/product-filters/filter-panel";
 import {
   filterProducts,
   testStatusFilters,
@@ -29,7 +43,11 @@ const categorySearchSchema = z.object({
 });
 
 export const Route = createFileRoute("/$categoria/")({
-  validateSearch: categorySearchSchema,
+  // Filtro params stay raw text here: only the Categoria's Filtros know which values are valid.
+  validateSearch: (search: Record<string, unknown>) => ({
+    ...categorySearchSchema.parse(search),
+    ...pickFilterSearch(search),
+  }),
   beforeLoad: ({ params }) => {
     if (!isCategorySlug(params.categoria)) throw notFound();
     return { categorySlug: params.categoria };
@@ -60,17 +78,41 @@ const statusAdjective: Record<TestStatusFilter, string> = {
   "nao-testados": "não testado",
 };
 
-function emptyResultText(searchText: string, status: TestStatusFilter | undefined): string {
+function emptyResultText(
+  searchText: string,
+  status: TestStatusFilter | undefined,
+  hasFilters: boolean,
+): string {
   const kind = status ? `Nenhum produto ${statusAdjective[status]}` : "Nenhum produto";
-  return searchText ? `${kind} encontrado para “${searchText}”.` : `${kind} nesta categoria.`;
+  if (searchText && hasFilters) return `${kind} encontrado para “${searchText}” com esses filtros.`;
+  if (searchText) return `${kind} encontrado para “${searchText}”.`;
+  return hasFilters ? `${kind} com esses filtros.` : `${kind} nesta categoria.`;
 }
 
 const headingId = "categoria-titulo";
+const filtersHeadingId = "filtros-titulo";
 
 function CategoryTable({ data }: { data: CategoryData }) {
   const meta = rootRoute.useLoaderData();
-  const { ordem, status, q } = Route.useSearch();
+  const search = Route.useSearch();
+  const { ordem, status, q } = search;
   const navigate = useNavigate({ from: Route.fullPath });
+
+  const filters = useMemo(() => categoryFiltersFor(data), [data]);
+  const filterValues = useMemo(() => filterValuesFromSearch(filters, search), [filters, search]);
+  const filterCount = activeFilterCount(filters, filterValues);
+  const filterSearch = filterSearchOf(filters, filterValues);
+  function changeFilterValues(values: FilterValues) {
+    void navigate({
+      search: (previous) => ({ ...previous, ...filterSearchOf(filters, values) }),
+      replace: true,
+    });
+  }
+  const [clearCount, setClearCount] = useState(0);
+  function clearFilters() {
+    setClearCount((count) => count + 1);
+    changeFilterValues(noFilterValues);
+  }
 
   const columns = useMemo(() => tableColumnsFor(data), [data]);
   const defaultSort = defaultSortFor(data.category);
@@ -84,8 +126,13 @@ function CategoryTable({ data }: { data: CategoryData }) {
   const [searchText, setSearchText] = useState(q ?? "");
   const deferredSearchText = useDeferredValue(searchText);
   const products = useMemo(
-    () => filterProducts(data.products, status, deferredSearchText),
-    [data.products, status, deferredSearchText],
+    () =>
+      filterProducts(
+        applyFilters(data.products, filters, filterValues),
+        status,
+        deferredSearchText,
+      ),
+    [data.products, filters, filterValues, status, deferredSearchText],
   );
 
   function changeSearchText(text: string) {
@@ -95,8 +142,14 @@ function CategoryTable({ data }: { data: CategoryData }) {
 
   function showAllProducts() {
     setSearchText("");
+    setClearCount((count) => count + 1);
     void navigate({
-      search: (previous) => ({ ...previous, q: undefined, status: undefined }),
+      search: (previous) => ({
+        ...previous,
+        ...filterSearchOf(filters, noFilterValues),
+        q: undefined,
+        status: undefined,
+      }),
       replace: true,
     });
     // The button goes away with the empty result; focus moves to the search it just cleared.
@@ -121,45 +174,89 @@ function CategoryTable({ data }: { data: CategoryData }) {
         <CopyLinkButton />
       </div>
       {updateAge.isStale && <StaleDataAlert age={updateAge} />}
-      <TableToolbar
-        searchText={searchText}
-        onSearchTextChange={changeSearchText}
-        testStatus={status}
-        onTestStatusChange={(nextStatus) =>
-          void navigate({
-            search: (previous) => ({ ...previous, status: nextStatus }),
-            replace: true,
-          })
-        }
-        countText={resultCountText(products.length, data.products.length)}
-      />
-      {products.length === 0 ? (
-        <div className="flex flex-col items-start gap-3 rounded-lg border border-border px-4 py-6">
-          <p className="font-medium wrap-anywhere">
-            {emptyResultText(deferredSearchText.trim(), status)}
-          </p>
-          <Button variant="outline" size="lg" onClick={showAllProducts}>
-            Mostrar todos os produtos
-          </Button>
+      <div className="flex min-h-0 flex-1 gap-6">
+        <aside
+          aria-labelledby={filtersHeadingId}
+          className="-ms-1 hidden w-64 shrink-0 scroll-pt-12 flex-col gap-3 overflow-y-auto overscroll-contain ps-1 pe-2 pb-4 lg:flex xl:w-72"
+        >
+          <div className="sticky top-0 z-20 flex min-h-9 items-center justify-between gap-2 bg-page">
+            <h2 id={filtersHeadingId} className="text-body-base font-medium">
+              Filtros
+            </h2>
+            <Button
+              variant="ghost"
+              disabled={filterCount === 0}
+              focusableWhenDisabled
+              onClick={clearFilters}
+              className="data-disabled:opacity-50"
+            >
+              Limpar
+            </Button>
+          </div>
+          <FilterPanel
+            filters={filters}
+            values={filterValues}
+            onValuesChange={changeFilterValues}
+            clearCount={clearCount}
+          />
+        </aside>
+        <div className="flex min-w-0 flex-1 flex-col gap-4">
+          <TableToolbar
+            searchText={searchText}
+            onSearchTextChange={changeSearchText}
+            testStatus={status}
+            onTestStatusChange={(nextStatus) =>
+              void navigate({
+                search: (previous) => ({ ...previous, status: nextStatus }),
+                replace: true,
+              })
+            }
+            countText={resultCountText(products.length, data.products.length)}
+          >
+            <FilterDrawer
+              activeCount={filterCount}
+              resultCount={products.length}
+              onClear={clearFilters}
+            >
+              <FilterPanel
+                filters={filters}
+                values={filterValues}
+                onValuesChange={changeFilterValues}
+                clearCount={clearCount}
+              />
+            </FilterDrawer>
+          </TableToolbar>
+          {products.length === 0 ? (
+            <div className="flex flex-col items-start gap-3 rounded-lg border border-border px-4 py-6">
+              <p className="font-medium wrap-anywhere">
+                {emptyResultText(deferredSearchText.trim(), status, filterCount > 0)}
+              </p>
+              <Button variant="outline" size="lg" onClick={showAllProducts}>
+                Mostrar todos os produtos
+              </Button>
+            </div>
+          ) : (
+            <ProductTable
+              columns={columns}
+              products={products}
+              sorting={sorting}
+              resultKey={[ordem, status, deferredSearchText, ...Object.values(filterSearch)].join(
+                "|",
+              )}
+              labelledBy={headingId}
+              onSortClick={(slug) =>
+                void navigate({
+                  search: (previous) => ({
+                    ...previous,
+                    ordem: sortParamAfterHeaderClick(sorting, slug, defaultSort),
+                  }),
+                  replace: true,
+                })
+              }
+            />
+          )}
         </div>
-      ) : (
-        <ProductTable
-          columns={columns}
-          products={products}
-          sorting={sorting}
-          resultKey={`${ordem}|${status}|${deferredSearchText}`}
-          labelledBy={headingId}
-          onSortClick={(slug) =>
-            void navigate({
-              search: (previous) => ({
-                ...previous,
-                ordem: sortParamAfterHeaderClick(sorting, slug, defaultSort),
-              }),
-              replace: true,
-            })
-          }
-        />
-      )}
+      </div>
     </div>
   );
 }
