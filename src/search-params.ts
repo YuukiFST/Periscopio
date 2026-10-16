@@ -16,6 +16,7 @@ export function stringifyFlatSearch(search: Record<string, unknown>): string {
   for (const [key, value] of Object.entries(search)) {
     if (typeof value === "string" && value !== "") params.set(key, value);
   }
-  const text = params.toString();
+  // A comma is legal in a query (RFC 3986 sub-delims) and keeps lists readable: `peso=ate50,50-60`.
+  const text = params.toString().replaceAll("%2C", ",");
   return text === "" ? "" : `?${text}`;
 }
