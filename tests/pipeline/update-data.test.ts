@@ -181,6 +181,17 @@ const refusals: Refusal[] = [
     },
     reason: /mouse: 5 de 5 Produtos com foto têm um endereço de foto inesperado/,
   },
+  {
+    name: "the photo field comes back empty (regression: every photo was deleted)",
+    edit: (routes) => {
+      for (const category of ["mouse", "keyboard", "monitor"] as const) {
+        editRecordedSnapshot(routes, category, (snapshot) => {
+          for (const row of snapshot.data.rows) row.values.productImage = "";
+        });
+      }
+    },
+    reason: /mouse: 4 de 4 Produtos publicados com foto ficariam sem foto/,
+  },
 ];
 
 test.each(refusals)(

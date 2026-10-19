@@ -33,6 +33,15 @@ const minimumRowShare = 0.9;
 /** Above this share of photo URLs that are not `/<uuid>.avif`, EyeJoker moved its photos. */
 const maximumUnusableImageShare = 0.1;
 
+/** A Categoria may take the photo away from at most 10% of the published Produtos it keeps. */
+const maximumLostImageShare = 0.1;
+
+/** Only what the photo check reads, so an older published file still parses. */
+const publishedImagesSchema = z.object({
+  products: z.array(z.object({ id: z.string(), image: z.string().nullable() })),
+});
+type PublishedImages = z.infer<typeof publishedImagesSchema>;
+
 type UpdateConfig = {
   apiUrl: string;
   cdnUrl: string;
@@ -49,10 +58,10 @@ function readConfig(env: NodeJS.ProcessEnv): UpdateConfig {
   };
 }
 
-async function readPublishedMeta(metaPath: string): Promise<Meta | null> {
+async function readPublishedFile<T>(path: string, schema: z.ZodType<T>): Promise<T | null> {
   let text: string;
   try {
-    text = await readFile(metaPath, "utf8");
+    text = await readFile(path, "utf8");
   } catch (error) {
     if (error instanceof Error && "code" in error && error.code === "ENOENT") return null;
     throw error;
@@ -61,11 +70,11 @@ async function readPublishedMeta(metaPath: string): Promise<Meta | null> {
   try {
     body = JSON.parse(text);
   } catch {
-    throw new UpdateRefusedError(`${metaPath} não é JSON.`);
+    throw new UpdateRefusedError(`${path} não é JSON.`);
   }
-  const result = metaSchema.safeParse(body);
+  const result = schema.safeParse(body);
   if (result.success) return result.data;
-  throw new UpdateRefusedError(`${metaPath} é inválido:\n${z.prettifyError(result.error)}`);
+  throw new UpdateRefusedError(`${path} é inválido:\n${z.prettifyError(result.error)}`);
 }
 
 function refuseRowDrop(normalized: CategoryData[], published: Meta | null): void {
@@ -87,6 +96,19 @@ function refuseUnusableImages(normalized: NormalizedCategory[]): void {
       `${data.category}: ${unusable} de ${imageUrlCount} Produtos com foto têm um endereço de foto inesperado (não é /<uuid>.avif), acima de 10%; as fotos publicadas seriam apagadas.`,
     );
   }
+}
+
+function refuseLostImages(data: CategoryData, published: PublishedImages | null): void {
+  if (!published) return;
+  const imageById = new Map(data.products.map((product) => [product.id, product.image]));
+  const kept = published.products.filter(
+    (product) => product.image !== null && imageById.has(product.id),
+  );
+  const lost = kept.filter((product) => imageById.get(product.id) === null).length;
+  if (lost <= kept.length * maximumLostImageShare) return;
+  throw new UpdateRefusedError(
+    `${data.category}: ${lost} de ${kept.length} Produtos publicados com foto ficariam sem foto, acima de 10%; as fotos publicadas seriam apagadas.`,
+  );
 }
 
 function validateOutput(data: CategoryData): CategoryData {
@@ -134,7 +156,11 @@ async function runUpdate(config: UpdateConfig): Promise<void> {
   );
   refuseUnusableImages(normalized);
   const validated = normalized.map(({ data }) => validateOutput(data));
-  refuseRowDrop(validated, await readPublishedMeta(metaPath));
+  refuseRowDrop(validated, await readPublishedFile(metaPath, metaSchema));
+  for (const data of validated) {
+    const publishedPath = join(dataDir, `${data.category}.json`);
+    refuseLostImages(data, await readPublishedFile(publishedPath, publishedImagesSchema));
+  }
 
   await mkdir(dataDir, { recursive: true });
   await mkdir(imagesDir, { recursive: true });
