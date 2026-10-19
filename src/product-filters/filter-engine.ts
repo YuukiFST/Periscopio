@@ -72,16 +72,21 @@ export function booleanValue(product: Product, fieldKey: string): boolean | unde
   return typeof value === "boolean" ? value : undefined;
 }
 
+/** "PAW3360" before "PAW3950", and case or accents never split the order. */
+const choiceLabelOrder = new Intl.Collator("pt-BR", { numeric: true, sensitivity: "base" });
+
+/** The field's values some Produto has, by label: EyeJoker's own option order is not sorted. */
 function optionChoices(field: Field, products: readonly Product[]): FilterChoice[] {
   if (field.type !== "enum") return [];
   const used = new Set(products.flatMap((product) => enumValues(product, field.key)));
   return field.options
     .filter((option) => used.has(option.value))
-    .map((option) => ({
+    .map((option): FilterChoice => ({
       id: option.value,
       label: valueLabel(field, option.value),
       matches: (product) => enumValues(product, field.key).includes(option.value),
-    }));
+    }))
+    .toSorted((a, b) => choiceLabelOrder.compare(a.label, b.label));
 }
 
 /**
