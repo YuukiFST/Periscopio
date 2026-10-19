@@ -47,7 +47,7 @@ export function FilterDrawer({ activeCount, resultCount, onClear, children }: Fi
         {activeCount === 0 ? "Filtros" : `Filtros (${activeCount})`}
       </DrawerTrigger>
       <DrawerContent className="text-body-sm">
-        <DrawerHeader className="flex-row items-center justify-between gap-4 px-4 pt-2 pb-3 group-data-[swipe-axis=y]/drawer-popup:text-start">
+        <DrawerHeader className="flex-row items-center justify-between gap-4 border-b border-border-subtle px-4 pt-2 pb-3 group-data-[swipe-axis=y]/drawer-popup:text-start">
           <DrawerTitle className="text-heading-6">Filtros</DrawerTitle>
           <Button
             variant="ghost"
@@ -55,7 +55,7 @@ export function FilterDrawer({ activeCount, resultCount, onClear, children }: Fi
             disabled={activeCount === 0}
             focusableWhenDisabled
             onClick={onClear}
-            className="data-disabled:opacity-50"
+            className="-me-2 pe-2"
           >
             Limpar
           </Button>
@@ -64,10 +64,10 @@ export function FilterDrawer({ activeCount, resultCount, onClear, children }: Fi
         <p role="status" className="sr-only">
           {resultCountText(resultCount)}
         </p>
-        <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain border-y border-border-subtle px-4 py-4">
+        <div className="scroll-fade-y min-h-0 flex-1 overflow-y-auto overscroll-contain px-4 py-4">
           {children}
         </div>
-        <DrawerFooter className="p-4">
+        <DrawerFooter className="border-t border-border-subtle p-4">
           <Button size="lg" className="h-10" onClick={() => setOpen(false)}>
             {showProductsText(resultCount)}
           </Button>

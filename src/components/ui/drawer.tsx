@@ -118,7 +118,7 @@ function DrawerContent({ className, children, ...props }: DrawerPrimitive.Popup.
             // Transitions.
             "data-ending-style:transform-(--closed-transform) data-ending-style:opacity-[0.9999] data-ending-style:duration-[calc(var(--drawer-swipe-strength)*400ms)] data-nested-drawer-swiping:duration-0 data-ending-style:data-nested-drawer-swiping:duration-[calc(var(--drawer-swipe-strength)*400ms)] data-starting-style:transform-(--closed-transform) data-swiping:duration-0 data-ending-style:data-swiping:duration-[calc(var(--drawer-swipe-strength)*400ms)]",
             // Reduced motion: a crossfade instead of the slide.
-            "motion-reduce:data-starting-style:transform-none! motion-reduce:data-starting-style:opacity-0 motion-reduce:data-ending-style:transform-none! motion-reduce:data-ending-style:opacity-0!",
+            "motion-reduce:data-starting-style:transform-none! motion-reduce:data-starting-style:opacity-0 motion-reduce:data-ending-style:transform-[translate3d(var(--translate-x,0px),var(--translate-y,0px),0)_scale(var(--stack-scale))]! motion-reduce:data-ending-style:opacity-0!",
             // Axis: y.
             "data-[swipe-axis=y]:inset-x-0 data-[swipe-axis=y]:data-nested-drawer-open:h-(--stack-height)",
             // Axis: x.

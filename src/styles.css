@@ -111,7 +111,7 @@
   --accent-foreground: var(--int-fg-primary);
   --destructive: var(--int-danger-solid);
   --border: var(--int-border-default);
-  --input: var(--int-border-strong);
+  --input: var(--gray-a9);
   --ring: var(--int-border-focus);
 }
 

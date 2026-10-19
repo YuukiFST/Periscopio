@@ -161,7 +161,6 @@ function CompareToggleButton({
       disabled={isFull}
       focusableWhenDisabled
       aria-describedby={isFull ? compareStatusId : undefined}
-      className="data-disabled:opacity-50"
     >
       <Plus aria-hidden="true" data-icon="inline-start" />
       Adicionar à comparação

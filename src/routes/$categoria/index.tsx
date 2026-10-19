@@ -209,7 +209,7 @@ function CategoryTable({ data }: { data: CategoryData }) {
       <div className="flex min-h-0 flex-1 gap-6">
         <aside
           aria-labelledby={filtersHeadingId}
-          className="-ms-1 hidden w-64 shrink-0 scroll-pt-12 flex-col gap-3 overflow-y-auto overscroll-contain ps-1 pe-2 pb-4 lg:flex xl:w-72"
+          className="scroll-fade-b -ms-2 hidden w-64 shrink-0 scroll-pt-12 flex-col gap-3 overflow-y-auto overscroll-contain ps-2 pe-2 pb-4 lg:flex xl:w-72"
         >
           <div className="sticky top-0 z-20 flex min-h-9 items-center justify-between gap-2 bg-page">
             <h2 id={filtersHeadingId} className="text-body-base font-medium">
@@ -220,7 +220,7 @@ function CategoryTable({ data }: { data: CategoryData }) {
               disabled={filterCount === 0}
               focusableWhenDisabled
               onClick={clearFilters}
-              className="data-disabled:opacity-50"
+              className="-me-2 pe-2"
             >
               Limpar
             </Button>

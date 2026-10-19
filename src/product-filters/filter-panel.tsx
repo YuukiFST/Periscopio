@@ -75,7 +75,7 @@ export function FilterPanel({ filters, values, onValuesChange, clearCount }: Fil
             aria-expanded={advancedOpen}
             aria-controls={advancedId}
             onClick={() => setAdvancedOpen((open) => !open)}
-            className="-mx-2 justify-between px-2 text-fg-secondary aria-expanded:bg-transparent aria-expanded:hover:bg-muted"
+            className="-mx-2 justify-between px-2 text-fg-secondary aria-expanded:bg-transparent aria-expanded:hover:bg-muted aria-expanded:active:bg-component-hover"
           >
             {!advancedOpen && activeAdvancedCount > 0
               ? `Filtros avançados (${activeAdvancedCount})`
@@ -125,13 +125,20 @@ type ChoiceFilterFieldsProps = {
 
 function ChoiceFilterFields({ filter, marked, onMarkedChange }: ChoiceFilterFieldsProps) {
   const [query, setQuery] = useState("");
+  const [toggledIds, setToggledIds] = useState<readonly string[]>([]);
   const isSearchable = filter.choices.length > searchableChoiceCount;
   const trimmedQuery = query.trim();
   const matching = filter.choices.filter((choice) => choiceMatchesQuery(choice.label, query));
-  // A marked choice stays in the list while searching, so the search never hides what is on.
+  // A marked choice stays in the list while searching, so the search never hides what is on;
+  // one toggled during this search stays too, so unmarking it never drops the focus.
   const shown = filter.choices.filter(
-    (choice) => marked.includes(choice.id) || matching.includes(choice),
+    (choice) =>
+      marked.includes(choice.id) || toggledIds.includes(choice.id) || matching.includes(choice),
   );
+  function changeQuery(text: string) {
+    setQuery(text);
+    setToggledIds([]);
+  }
   const searchLabel = `Buscar ${filter.label.toLocaleLowerCase("pt-BR")}`;
 
   return (
@@ -154,18 +161,20 @@ function ChoiceFilterFields({ filter, marked, onMarkedChange }: ChoiceFilterFiel
             aria-label={searchLabel}
             placeholder={searchLabel}
             value={query}
-            onChange={(event) => setQuery(event.target.value)}
+            onChange={(event) => changeQuery(event.target.value)}
             onKeyDown={(event) => {
               // Escape clears a typed search before it closes the drawer around it.
               if (event.key !== "Escape" || query === "") return;
               event.stopPropagation();
-              setQuery("");
+              changeQuery("");
             }}
             className="h-9 ps-8"
           />
         </div>
       )}
       <div
+        // In the drawer a drag on this list scrolls it, instead of pulling the drawer closed.
+        data-base-ui-swipe-ignore={isSearchable ? "y" : undefined}
         className={cn(
           "flex flex-wrap gap-1.5",
           isSearchable && "scroll-fade-y -m-1 max-h-52 overflow-y-auto p-1 [scrollbar-width:thin]",
@@ -177,7 +186,10 @@ function ChoiceFilterFields({ filter, marked, onMarkedChange }: ChoiceFilterFiel
               type="checkbox"
               className="peer absolute inset-0 cursor-pointer appearance-none rounded-md opacity-0"
               checked={marked.includes(choice.id)}
-              onChange={(event) => onMarkedChange(choice.id, event.target.checked)}
+              onChange={(event) => {
+                setToggledIds((ids) => (ids.includes(choice.id) ? ids : [...ids, choice.id]));
+                onMarkedChange(choice.id, event.target.checked);
+              }}
             />
             <span className="flex min-h-8 cursor-pointer items-center rounded-md border border-border px-2.5 py-1 text-fg-secondary transition-[color,background-color,border-color] duration-150 ease-out-quint peer-checked:border-primary peer-checked:bg-primary peer-checked:text-primary-foreground peer-focus-visible:outline-2 peer-focus-visible:outline-offset-1 peer-focus-visible:outline-ring peer-hover:border-border-strong peer-hover:text-fg-primary peer-checked:peer-hover:border-primary peer-checked:peer-hover:text-primary-foreground peer-active:bg-component-hover peer-checked:peer-active:bg-primary/80 forced-colors:peer-checked:border-[Highlight] forced-colors:peer-checked:outline-1 forced-colors:peer-checked:outline-[Highlight]">
               {choice.label}
@@ -186,7 +198,10 @@ function ChoiceFilterFields({ filter, marked, onMarkedChange }: ChoiceFilterFiel
         ))}
       </div>
       {isSearchable && (
-        <p role="status" className="mt-1.5 text-caption-lg text-fg-secondary empty:hidden">
+        <p
+          role="status"
+          className="mt-1.5 text-caption-lg wrap-anywhere text-fg-secondary empty:sr-only"
+        >
           {trimmedQuery !== "" && matching.length === 0
             ? `Nenhuma opção para “${trimmedQuery}”.`
             : ""}

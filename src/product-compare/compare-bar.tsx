@@ -84,13 +84,7 @@ export function CompareBar({
               <ArrowRight aria-hidden="true" data-icon="inline-end" />
             </Link>
           ) : (
-            <Button
-              size="lg"
-              disabled
-              focusableWhenDisabled
-              aria-describedby={compareStatusId}
-              className="data-disabled:opacity-50"
-            >
+            <Button size="lg" disabled focusableWhenDisabled aria-describedby={compareStatusId}>
               {label}
               <ArrowRight aria-hidden="true" data-icon="inline-end" />
             </Button>
