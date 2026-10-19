@@ -40,13 +40,18 @@ import {
   sortingFromParam,
   sortParamPattern,
 } from "@/product-table/table-sorting";
-import { resultCountText, searchInputId, TableToolbar } from "@/product-table/table-toolbar";
+import {
+  resultCountText,
+  searchInputId,
+  searchTextMaxLength,
+  TableToolbar,
+} from "@/product-table/table-toolbar";
 
 /** Every param falls back to "absent" on its own, so a broken link still opens. */
 const categorySearchSchema = z.object({
   ordem: z.string().regex(sortParamPattern).optional().catch(undefined),
   status: z.enum(testStatusFilters).optional().catch(undefined),
-  q: z.string().max(100).optional().catch(undefined),
+  q: z.string().max(searchTextMaxLength).optional().catch(undefined),
   cmp: compareParamSchema,
 });
 
@@ -144,6 +149,13 @@ function CategoryTable({ data }: { data: CategoryData }) {
   }, [columns, ordem, defaultSort]);
 
   const [searchText, setSearchText] = useState(q ?? "");
+  // The link changes `q` after each keystroke, a render later (the router commits in a
+  // microtask); only a `q` other than the typed text, such as a link without it, replaces it.
+  const [linkSearchText, setLinkSearchText] = useState(q);
+  if (q !== linkSearchText) {
+    setLinkSearchText(q);
+    if ((q ?? "") !== searchText) setSearchText(q ?? "");
+  }
   const deferredSearchText = useDeferredValue(searchText);
   const products = useMemo(
     () =>

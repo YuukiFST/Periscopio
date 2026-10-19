@@ -22,6 +22,8 @@ export function resultCountText(shown: number, total: number): string {
 }
 
 export const searchInputId = "busca-produto";
+/** A longer `q` is dropped from the link, so the box stops typing there. */
+export const searchTextMaxLength = 100;
 
 type TableToolbarProps = {
   searchText: string;
@@ -57,6 +59,7 @@ export function TableToolbar({
           enterKeyHint="search"
           aria-label="Buscar por produto ou fabricante"
           placeholder="Produto ou fabricante"
+          maxLength={searchTextMaxLength}
           value={searchText}
           onChange={(event) => onSearchTextChange(event.target.value)}
           className="h-9 ps-8"

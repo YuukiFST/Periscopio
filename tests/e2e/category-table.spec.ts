@@ -216,6 +216,27 @@ test("the search finds Products by name or manufacturer and the Status de teste 
   await expect.poll(() => productNames(page)).toEqual(mouseDefaultOrder);
 });
 
+test("regression: the search box follows the link when the header's Categoria link drops the search", async ({
+  page,
+}) => {
+  await page.goto("/mouse?q=wlmouse");
+  await expect(searchBox(page)).toHaveValue("wlmouse");
+  await expect.poll(() => productNames(page)).toEqual(["Huan"]);
+
+  await page
+    .getByRole("navigation", { name: "Categorias" })
+    .getByRole("link", { name: "Mouses" })
+    .click();
+  await expect(page).toHaveURL("/mouse");
+  await expect(searchBox(page)).toHaveValue("");
+  await expect.poll(() => productNames(page)).toEqual(mouseDefaultOrder);
+
+  // The link drops a `q` over 100 characters, so the box stops at 100 and the link keeps them.
+  await searchBox(page).fill("a".repeat(101));
+  await expect(searchBox(page)).toHaveValue("a".repeat(100));
+  await expect(page).toHaveURL(`/mouse?q=${"a".repeat(100)}`);
+});
+
 test("a copied link opens the same sort, search and Status de teste in a new tab", async ({
   page,
   context,
