@@ -7,7 +7,13 @@ import { CopyLinkButton } from "@/components/copy-link-button";
 import { StaleDataAlert, UpdatedAtLabel, updateAgeOf } from "@/components/update-notice";
 import { loadCategoryData } from "@/data/load-data";
 import type { CategoryData } from "@/data/schema";
-import { compareParamSchema } from "@/product-compare/compare-selection";
+import { CompareBar } from "@/product-compare/compare-bar";
+import {
+  compareParamSchema,
+  comparedIdsFromParam,
+  productIdsParam,
+  toggleComparedId,
+} from "@/product-compare/compare-selection";
 import { categoryFiltersFor } from "@/product-filters/category-filters";
 import { FilterDrawer } from "@/product-filters/filter-drawer";
 import {
@@ -97,8 +103,20 @@ const filtersHeadingId = "filtros-titulo";
 function CategoryTable({ data }: { data: CategoryData }) {
   const meta = rootRoute.useLoaderData();
   const search = Route.useSearch();
-  const { ordem, status, q } = search;
+  const { ordem, status, q, cmp } = search;
   const navigate = useNavigate({ from: Route.fullPath });
+
+  const productIds = useMemo(
+    () => new Set(data.products.map((product) => product.id)),
+    [data.products],
+  );
+  const comparedIds = useMemo(() => comparedIdsFromParam(cmp, productIds), [cmp, productIds]);
+  function changeComparedIds(ids: readonly string[]) {
+    void navigate({
+      search: (previous) => ({ ...previous, cmp: productIdsParam(ids) }),
+      replace: true,
+    });
+  }
 
   const filters = useMemo(() => categoryFiltersFor(data), [data]);
   const filterValues = useMemo(() => filterValuesFromSearch(filters, search), [filters, search]);
@@ -246,6 +264,8 @@ function CategoryTable({ data }: { data: CategoryData }) {
                 "|",
               )}
               labelledBy={headingId}
+              comparedIds={comparedIds}
+              onComparedToggle={(id) => changeComparedIds(toggleComparedId(comparedIds, id))}
               onSortClick={(slug) =>
                 void navigate({
                   search: (previous) => ({
@@ -257,6 +277,12 @@ function CategoryTable({ data }: { data: CategoryData }) {
               }
             />
           )}
+          <CompareBar
+            category={data.category}
+            comparedIds={comparedIds}
+            onClear={() => changeComparedIds([])}
+            focusAfterClearId={searchInputId}
+          />
         </div>
       </div>
     </div>

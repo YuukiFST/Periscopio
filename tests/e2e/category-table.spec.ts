@@ -109,12 +109,16 @@ for (const category of categoryTables) {
     await expect(page.getByRole("table")).toMatchAriaSnapshot({
       name: `${category.slug}-table.aria.yml`,
     });
+    // The leading cell holds the row's mark for the Comparação.
     const exactRow = [
+      "- cell",
       `- rowheader ${JSON.stringify(category.rowHeader)}`,
       ...category.cells.map((cell) => `- cell ${JSON.stringify(cell)}`),
     ].join("\n");
     await expect(
-      page.getByRole("row", { name: new RegExp(`^${category.rowHeader}`) }),
+      page
+        .getByRole("row")
+        .filter({ has: page.getByRole("rowheader", { name: category.rowHeader, exact: true }) }),
     ).toMatchAriaSnapshot(exactRow);
   });
 }

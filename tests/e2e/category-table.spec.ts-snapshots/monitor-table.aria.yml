@@ -1,6 +1,7 @@
 - table "Monitores":
     - rowgroup:
-        - row "Produto Nota geral Recomendação AliExpress Preço Tamanho da tela Taxa de atualização Resolução Certificação HDR Resposta geral Gama de cores (DCI-P3) Brilho máximo (SDR) Brilho máximo (HDR) Reflexão total (SCI)":
+        - row "Comparar Produto Nota geral Recomendação AliExpress Preço Tamanho da tela Taxa de atualização Resolução Certificação HDR Resposta geral Gama de cores (DCI-P3) Brilho máximo (SDR) Brilho máximo (HDR) Reflexão total (SCI)":
+            - columnheader "Comparar"
             - columnheader "Produto":
                 - button "Produto"
             - columnheader "Nota geral":
@@ -29,7 +30,9 @@
             - columnheader "Reflexão total (SCI)":
                 - button "Reflexão total (SCI)"
     - rowgroup:
-        - row /UltraGear 32GS95UE [\d,.]+[bkmBKM]+ Mode LGE Tier 0 Não recomendado Sem dado Sem dado \d+" \d+ Hz UHD \(\d+×\d+\) DisplayHDR True Black \d+ \d+,\d+ ms \d+,\d+% \d+ cd\/m² Sem dado Sem dado/:
+        - row /Comparar UltraGear 32GS95UE [\d,.]+[bkmBKM]+ Mode UltraGear 32GS95UE [\d,.]+[bkmBKM]+ Mode LGE Tier 0 Não recomendado Sem dado Sem dado \d+" \d+ Hz UHD \(\d+×\d+\) DisplayHDR True Black \d+ \d+,\d+ ms \d+,\d+% \d+ cd\/m² Sem dado Sem dado/:
+            - cell /Comparar UltraGear 32GS95UE [\d,.]+[bkmBKM]+ Mode/:
+                - checkbox /Comparar UltraGear 32GS95UE [\d,.]+[bkmBKM]+ Mode/
             - rowheader /UltraGear 32GS95UE [\d,.]+[bkmBKM]+ Mode LGE/:
                 - paragraph:
                     - link /UltraGear 32GS95UE [\d,.]+[bkmBKM]+ Mode/:
@@ -48,7 +51,9 @@
             - cell /\d+ cd\/m²/
             - cell "Sem dado"
             - cell "Sem dado"
-        - row /XG259QDNS Ace ASUS Sem dado Sem dado Sem dado Sem dado \d+,\d+" \d+ Hz FHD \(\d+×\d+\) DisplayHDR True Black \d+ Sem dado Sem dado Sem dado Sem dado Sem dado/:
+        - row /Comparar XG259QDNS Ace XG259QDNS Ace ASUS Sem dado Sem dado Sem dado Sem dado \d+,\d+" \d+ Hz FHD \(\d+×\d+\) DisplayHDR True Black \d+ Sem dado Sem dado Sem dado Sem dado Sem dado/:
+            - cell "Comparar XG259QDNS Ace":
+                - checkbox "Comparar XG259QDNS Ace"
             - rowheader "XG259QDNS Ace ASUS":
                 - paragraph:
                     - link "XG259QDNS Ace":
@@ -67,7 +72,9 @@
             - cell "Sem dado"
             - cell "Sem dado"
             - cell "Sem dado"
-        - row /모비우스 EX2510S BenQ Sem dado Sem dado Sem dado ₩ \d+\.\d+ \d+,\d+" \d+ Hz FHD \(\d+×\d+\) Sem dado Sem dado Sem dado Sem dado Sem dado Sem dado/:
+        - row /Comparar 모비우스 EX2510S 모비우스 EX2510S BenQ Sem dado Sem dado Sem dado ₩ \d+\.\d+ \d+,\d+" \d+ Hz FHD \(\d+×\d+\) Sem dado Sem dado Sem dado Sem dado Sem dado Sem dado/:
+            - cell "Comparar 모비우스 EX2510S":
+                - checkbox "Comparar 모비우스 EX2510S"
             - rowheader "모비우스 EX2510S BenQ":
                 - paragraph:
                     - link "모비우스 EX2510S":
@@ -86,7 +93,9 @@
             - cell "Sem dado"
             - cell "Sem dado"
             - cell "Sem dado"
-        - row /ROG SWIFT PG259QN ASUS Sem dado Sem dado ROG SWIFT PG259QN no AliExpress ₩ \d+\.\d+ \d+" \d+ Hz FHD \(\d+×\d+\) Sem dado Sem dado Sem dado Sem dado Sem dado Sem dado/:
+        - row /Comparar ROG SWIFT PG259QN ROG SWIFT PG259QN ASUS Sem dado Sem dado ROG SWIFT PG259QN no AliExpress ₩ \d+\.\d+ \d+" \d+ Hz FHD \(\d+×\d+\) Sem dado Sem dado Sem dado Sem dado Sem dado Sem dado/:
+            - cell "Comparar ROG SWIFT PG259QN":
+                - checkbox "Comparar ROG SWIFT PG259QN"
             - rowheader "ROG SWIFT PG259QN ASUS":
                 - paragraph:
                     - link "ROG SWIFT PG259QN":
