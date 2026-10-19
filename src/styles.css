@@ -256,6 +256,8 @@
   }
   html {
     @apply font-sans;
+    /* Keeps a focused control clear of the detail screen's sticky Comparação bar. */
+    scroll-padding-bottom: 6rem;
     font-feature-settings: "ss03";
   }
   body {
