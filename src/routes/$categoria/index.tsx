@@ -7,6 +7,7 @@ import { CopyLinkButton } from "@/components/copy-link-button";
 import { StaleDataAlert, UpdatedAtLabel, updateAgeOf } from "@/components/update-notice";
 import { loadCategoryData } from "@/data/load-data";
 import type { CategoryData } from "@/data/schema";
+import { compareParamSchema } from "@/product-compare/compare-selection";
 import { categoryFiltersFor } from "@/product-filters/category-filters";
 import { FilterDrawer } from "@/product-filters/filter-drawer";
 import {
@@ -40,6 +41,7 @@ const categorySearchSchema = z.object({
   ordem: z.string().regex(sortParamPattern).optional().catch(undefined),
   status: z.enum(testStatusFilters).optional().catch(undefined),
   q: z.string().max(100).optional().catch(undefined),
+  cmp: compareParamSchema,
 });
 
 export const Route = createFileRoute("/$categoria/")({

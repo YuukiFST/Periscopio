@@ -188,6 +188,9 @@
   --color-danger: var(--int-danger-solid);
   --color-danger-subtle: var(--int-danger-subtle);
   --color-danger-fg: var(--int-danger-fg);
+  /* The Destaque in a Comparação ("Layout no celular e forma do Destaque"). */
+  --color-highlight: var(--green-a3);
+  --color-highlight-fg: var(--green-11);
   --color-border-subtle: var(--int-border-subtle);
   --color-border-strong: var(--int-border-strong);
 

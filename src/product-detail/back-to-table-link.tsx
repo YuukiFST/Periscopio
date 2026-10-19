@@ -2,16 +2,22 @@ import { Link } from "@tanstack/react-router";
 import { ArrowLeft } from "lucide-react";
 import { categoryLabels, type CategorySlug } from "@/categories";
 
+type BackToTableLinkProps = {
+  category: CategorySlug;
+  /** The table's search; by default every search param of the current URL. */
+  search?: { cmp?: string };
+};
+
 /**
  * Back to the Categoria table with every search param of the current URL,
  * whichever the table declares, so its Filtros and ordem come back as left.
  */
-export function BackToTableLink({ category }: { category: CategorySlug }) {
+export function BackToTableLink({ category, search }: BackToTableLinkProps) {
   return (
     <Link
       to="/$categoria"
       params={{ categoria: category }}
-      search={true}
+      search={search ?? true}
       className="-ms-1 inline-flex min-h-8 touch-manipulation items-center gap-1.5 self-start rounded-md px-1 font-medium text-fg-secondary hover:text-fg-primary focus-visible:outline-2 focus-visible:outline-ring"
     >
       <ArrowLeft aria-hidden="true" className="size-4 shrink-0" />
