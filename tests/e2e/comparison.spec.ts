@@ -195,6 +195,25 @@ test("the detail screen adds its Produto to the Comparação, and the table keep
     .toEqual([mouses.dragonflyA9Ultra.name, mouses.huan.name]);
 });
 
+test("regression: the browser's back after adding from the detail screen keeps both marks", async ({
+  page,
+}) => {
+  await page.goto("/mouse");
+  await compareCheckbox(page, mouses.dragonflyA9Ultra.name).check();
+  await expect(page).toHaveURL(`/mouse?cmp=${mouses.dragonflyA9Ultra.id}`);
+  await page.getByRole("link", { name: mouses.huan.name, exact: true }).click();
+  await page.getByRole("button", { name: "Adicionar à comparação" }).click();
+  const bothIds = `${mouses.dragonflyA9Ultra.id},${mouses.huan.id}`;
+  await expect(page).toHaveURL(`/mouse/${mouses.huan.id}?cmp=${bothIds}`);
+  await expect(page.getByRole("button", { name: "Remover da comparação" })).toBeFocused();
+
+  await page.goBack();
+  await expect(page).toHaveURL(`/mouse?cmp=${bothIds}`);
+  await expect(compareCheckbox(page, mouses.dragonflyA9Ultra.name)).toBeChecked();
+  await expect(compareCheckbox(page, mouses.huan.name)).toBeChecked();
+  await expect(compareBar(page).getByRole("link", { name: "Comparar (2/4)" })).toBeVisible();
+});
+
 test.describe("with a weight that rounds to the one beside it", () => {
   // The data request is rewritten below; a service worker would answer it from its cache instead.
   test.use({ serviceWorkers: "block" });
