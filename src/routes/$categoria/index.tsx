@@ -142,9 +142,7 @@ function CategoryTable({ data }: { data: CategoryData }) {
   const columns = useMemo(() => tableColumnsFor(data), [data]);
   const defaultSort = defaultSortFor(data.category);
   const sorting = useMemo(() => {
-    const sortable = new Set(
-      columns.flatMap((column) => (column.kind === "aliexpress" ? [] : [column.slug])),
-    );
+    const sortable = new Set(columns.map((column) => column.slug));
     return sortingFromParam(ordem, sortable, defaultSort);
   }, [columns, ordem, defaultSort]);
 
@@ -190,7 +188,7 @@ function CategoryTable({ data }: { data: CategoryData }) {
 
   const categoryLabel = categoryLabels[data.category];
   useEffect(() => {
-    document.title = `${categoryLabel} · EyeJoker`;
+    document.title = `${categoryLabel} · Periscópio`;
   }, [categoryLabel]);
   const [openedAt] = useState(() => Date.now());
   const updateAge = updateAgeOf(meta, openedAt);

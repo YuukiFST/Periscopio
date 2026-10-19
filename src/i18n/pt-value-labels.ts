@@ -2,13 +2,14 @@ import { shortTextLabelsPt } from "./pt-short-text-labels.ts";
 
 type ValueLabels = Readonly<Record<string, string>>;
 
+/** EyeJoker's Impecável and Tier 0 to 4 as letter tiers, S on top. */
 const overallRatingPt: ValueLabels = {
-  FLAWLESS: "Impecável",
-  TIER_0: "Tier 0",
-  TIER_1: "Tier 1",
-  TIER_2: "Tier 2",
-  TIER_3: "Tier 3",
-  TIER_4: "Tier 4",
+  FLAWLESS: "S",
+  TIER_0: "A+",
+  TIER_1: "A",
+  TIER_2: "B",
+  TIER_3: "C",
+  TIER_4: "D",
   UNRATED: "Sem nota",
 };
 
@@ -53,12 +54,13 @@ export const valueLabelsPt: Readonly<Record<string, ValueLabels>> = {
     FOR_SALE: "À venda",
     DISCONTINUED: "Descontinuado",
   },
+  // One word each, read after the column name: "Recomendação: Boa".
   eyejokerRating: {
-    ANTICIPATING: "Aguardado",
-    HIGHLY_RECOMMENDED: "Muito recomendado",
-    RECOMMENDED: "Recomendado",
-    MILD_RECOMMENDATION: "Recomendação fraca",
-    NO_RECOMMENDATION: "Não recomendado",
+    ANTICIPATING: "Pendente",
+    HIGHLY_RECOMMENDED: "Ótima",
+    RECOMMENDED: "Boa",
+    MILD_RECOMMENDATION: "Fraca",
+    NO_RECOMMENDATION: "Evitar",
   },
   overallRatingMouse: overallRatingPt,
   overallRatingKeyboard: overallRatingPt,

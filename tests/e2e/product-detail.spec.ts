@@ -15,11 +15,11 @@ test("a Produto opened from the table shows its header and fields grouped in pt,
   // `outro` stands for any param the table reads: the detail screen keeps them all, not a list.
   const tableSearch = "?ordem=-peso&status=testados&q=dragon&outro=1";
   await page.goto(`/mouse${tableSearch}`);
-  await page.getByRole("link", { name: "Dragonfly A9 Ultra", exact: true }).click();
+  await page.getByRole("link", { name: "Detalhes de Dragonfly A9 Ultra" }).click();
 
   await expect(page).toHaveURL(`/mouse/${dragonflyA9UltraId}${tableSearch}`);
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("Dragonfly A9 Ultra");
-  await expect(page).toHaveTitle("Dragonfly A9 Ultra · EyeJoker");
+  await expect(page).toHaveTitle("Dragonfly A9 Ultra · Periscópio");
   await expect(page.getByRole("link", { name: "Ver no AliExpress" })).toHaveAttribute(
     "href",
     "https://s.click.aliexpress.com/e/_oFLhAg6",
@@ -27,7 +27,7 @@ test("a Produto opened from the table shows its header and fields grouped in pt,
   await expect(page.getByRole("article")).toMatchAriaSnapshot({ name: "mouse-detail.aria.yml" });
   await expect(page.getByRole("region", { name: "Especificações" })).toMatchAriaSnapshot(`
     - term: Nota geral
-    - definition: Tier 0
+    - definition: A+
     - term: Formato
     - definition: Simétrico
     - term: Peso

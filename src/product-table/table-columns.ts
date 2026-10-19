@@ -8,7 +8,6 @@ import type { CategoryData, Field } from "../data/schema.ts";
  */
 export type ColumnSpec =
   | { kind: "product"; slug: "produto" }
-  | { kind: "aliexpress"; slug: "aliexpress" }
   | { kind: "price"; slug: "preco" }
   | { kind: "field"; slug: string; fieldKey: string; deviationKey?: string };
 
@@ -22,11 +21,10 @@ type CategoryTable = { columns: ColumnSpec[]; defaultSort: SortEntry[] };
 
 const productColumn: ColumnSpec = { kind: "product", slug: "produto" };
 
-function ratingAndShopColumns(ratingKey: string): ColumnSpec[] {
+function ratingAndPriceColumns(ratingKey: string): ColumnSpec[] {
   return [
     { kind: "field", slug: "nota", fieldKey: ratingKey },
     { kind: "field", slug: "recomendacao", fieldKey: "eyejokerRating" },
-    { kind: "aliexpress", slug: "aliexpress" },
     { kind: "price", slug: "preco" },
   ];
 }
@@ -34,7 +32,8 @@ function ratingAndShopColumns(ratingKey: string): ColumnSpec[] {
 /**
  * The columns EyeJoker lists per Categoria, in its order (research file, 2026-10-16),
  * except the mouses' two response times: they matter most, so they follow the Produto
- * instead of closing a row too wide for a laptop.
+ * instead of closing a row too wide for a laptop. EyeJoker's AliExpress column is left
+ * out: a Produto with the link shows its name as that link instead.
  */
 const categoryTables: Record<CategorySlug, CategoryTable> = {
   mouse: {
@@ -52,7 +51,7 @@ const categoryTables: Record<CategorySlug, CategoryTable> = {
         fieldKey: "optimalResponseSpeed",
         deviationKey: "optimalStddev",
       },
-      ...ratingAndShopColumns("overallRatingMouse"),
+      ...ratingAndPriceColumns("overallRatingMouse"),
       { kind: "field", slug: "sensor", fieldKey: "sensor" },
       { kind: "field", slug: "mcu", fieldKey: "mouseMcu" },
       { kind: "field", slug: "formato", fieldKey: "housingMouse" },
@@ -63,7 +62,7 @@ const categoryTables: Record<CategorySlug, CategoryTable> = {
   teclado: {
     columns: [
       productColumn,
-      ...ratingAndShopColumns("overallRatingKeyboard"),
+      ...ratingAndPriceColumns("overallRatingKeyboard"),
       {
         kind: "field",
         slug: "resposta",
@@ -81,7 +80,7 @@ const categoryTables: Record<CategorySlug, CategoryTable> = {
   monitor: {
     columns: [
       productColumn,
-      ...ratingAndShopColumns("overallRatingMonitor"),
+      ...ratingAndPriceColumns("overallRatingMonitor"),
       { kind: "field", slug: "tamanho", fieldKey: "sizeInch" },
       { kind: "field", slug: "taxa", fieldKey: "refreshRate" },
       { kind: "field", slug: "resolucao", fieldKey: "resolution" },

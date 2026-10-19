@@ -5,7 +5,7 @@ import { BackToTableLink } from "./back-to-table-link";
 export function ProductNotFound({ category }: { category: CategorySlug }) {
   const headingRef = useRef<HTMLHeadingElement>(null);
   useEffect(() => {
-    document.title = "Produto não encontrado · EyeJoker";
+    document.title = "Produto não encontrado · Periscópio";
     headingRef.current?.focus();
   }, []);
   return (

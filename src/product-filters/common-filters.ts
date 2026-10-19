@@ -7,6 +7,7 @@ import {
   numberValue,
   type BucketsDefinition,
   type FilterChoice,
+  type FilterDefinition,
 } from "./filter-engine.ts";
 
 /** The pt label of one ENUM value, as the table shows it. */
@@ -66,12 +67,12 @@ export function booleanChoice(
 
 const gradedRatings = ["FLAWLESS", "TIER_0", "TIER_1", "TIER_2", "TIER_3", "TIER_4"];
 const ratingIds: Readonly<Record<string, string>> = {
-  FLAWLESS: "impecavel",
-  TIER_0: "tier0",
-  TIER_1: "tier1",
-  TIER_2: "tier2",
-  TIER_3: "tier3",
-  TIER_4: "tier4",
+  FLAWLESS: "s",
+  TIER_0: "a-mais",
+  TIER_1: "a",
+  TIER_2: "b",
+  TIER_3: "c",
+  TIER_4: "d",
 };
 
 function overallRatingFilter(ratingKey: string): BucketsDefinition {
@@ -82,7 +83,7 @@ function overallRatingFilter(ratingKey: string): BucketsDefinition {
     buckets: [
       ...enumValueChoices(ratingKey, ratingIds),
       {
-        // EyeJoker's "등급외" holds every grade outside Impecável to Tier 4.
+        // EyeJoker's "등급외" holds every grade outside S to D (its Impecável to Tier 4).
         id: "sem-nota",
         label: ptValueLabel(ratingKey, "UNRATED"),
         matches: (product) =>
@@ -97,44 +98,27 @@ const recommendationFilter: BucketsDefinition = {
   param: "recomendacao",
   label: "Recomendação",
   buckets: enumValueChoices("eyejokerRating", {
-    ANTICIPATING: "aguardado",
-    HIGHLY_RECOMMENDED: "muito-recomendado",
-    RECOMMENDED: "recomendado",
-    MILD_RECOMMENDATION: "recomendacao-fraca",
-    NO_RECOMMENDATION: "nao-recomendado",
+    HIGHLY_RECOMMENDED: "otima",
+    RECOMMENDED: "boa",
+    MILD_RECOMMENDATION: "fraca",
+    NO_RECOMMENDATION: "evitar",
+    ANTICIPATING: "pendente",
   }),
 };
 
-/** EyeJoker leaves discontinued Produtos out of every price band. */
-function priceChoice(
-  id: string,
-  label: string,
-  inBand: (priceKrw: number) => boolean,
-): FilterChoice {
-  return {
-    id,
-    label,
-    matches: (product) => {
-      const price = priceOf(product);
-      return price !== undefined && product.saleStatus !== "DISCONTINUED" && inBand(price);
-    },
-  };
-}
-
-const priceBuckets: Record<"accessory" | "monitor", FilterChoice[]> = {
-  accessory: [
-    priceChoice("ate50mil", "Até ₩ 50 mil", (price) => price <= 50_000),
-    priceChoice("50-100mil", "₩ 50 a 100 mil", (price) => price > 50_000 && price <= 100_000),
-    priceChoice("100-200mil", "₩ 100 a 200 mil", (price) => price > 100_000 && price <= 200_000),
-    priceChoice("acima200mil", "Mais de ₩ 200 mil", (price) => price > 200_000),
-  ],
-  monitor: [
-    priceChoice("ate200mil", "Até ₩ 200 mil", (price) => price <= 200_000),
-    priceChoice("200-400mil", "₩ 200 a 400 mil", (price) => price > 200_000 && price <= 400_000),
-    priceChoice("400-600mil", "₩ 400 a 600 mil", (price) => price > 400_000 && price <= 600_000),
-    priceChoice("600mil-1mi", "₩ 600 mil a 1 mi", (price) => price > 600_000 && price <= 1_000_000),
-    priceChoice("acima1mi", "Mais de ₩ 1 mi", (price) => price > 1_000_000),
-  ],
+/**
+ * Preço in thousands of won, so "50" is ₩ 50 mil and a typed "50.000" never
+ * reads as ₩ 50; EyeJoker leaves discontinued Produtos out of every price band.
+ */
+const priceFilter: FilterDefinition = {
+  kind: "range",
+  param: "preco",
+  label: "Preço",
+  unit: "mil ₩",
+  readValue: (product) => {
+    const price = priceOf(product);
+    return price === undefined || product.saleStatus === "DISCONTINUED" ? undefined : price / 1000;
+  },
 };
 
 const overallRatingKeys: Record<CategorySlug, string> = {
@@ -144,15 +128,6 @@ const overallRatingKeys: Record<CategorySlug, string> = {
 };
 
 /** Nota geral, Recomendação and Preço, in EyeJoker's order. */
-export function commonFilters(category: CategorySlug): BucketsDefinition[] {
-  return [
-    overallRatingFilter(overallRatingKeys[category]),
-    recommendationFilter,
-    {
-      kind: "buckets",
-      param: "preco",
-      label: "Preço",
-      buckets: priceBuckets[category === "monitor" ? "monitor" : "accessory"],
-    },
-  ];
+export function commonFilters(category: CategorySlug): FilterDefinition[] {
+  return [overallRatingFilter(overallRatingKeys[category]), recommendationFilter, priceFilter];
 }

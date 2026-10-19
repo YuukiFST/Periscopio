@@ -21,8 +21,8 @@ export default defineConfig({
       registerType: "autoUpdate",
       includeAssets: ["apple-touch-icon.png"],
       manifest: {
-        name: "EyeJoker em português",
-        short_name: "EyeJoker",
+        name: "Periscópio",
+        short_name: "Periscópio",
         description: "Benchmarks de mouses, teclados e monitores do EyeJoker, em português.",
         lang: "pt-BR",
         start_url: "/",

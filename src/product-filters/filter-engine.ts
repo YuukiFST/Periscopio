@@ -9,7 +9,7 @@ import type { FilterParam } from "./filter-params.ts";
  * never passes it while it is active, as on EyeJoker.
  */
 
-/** One choice of a list Filtro; `id` is its name in the link (`peso=ate50`). */
+/** One choice of a list Filtro; `id` is its name in the link (`formato=simetrico`). */
 export type FilterChoice = {
   id: string;
   label: string;
@@ -19,11 +19,9 @@ export type FilterChoice = {
 type DefinitionBase = {
   param: FilterParam;
   label: string;
-  /** Listed under "Filtros avançados", like EyeJoker's `isAdvanced`. */
-  advanced?: boolean;
 };
 
-/** Named groups with their own rule, EyeJoker's cuts (weight bands, sensor class). */
+/** Named groups with their own rule, EyeJoker's cuts (connection, size by volume). */
 export type BucketsDefinition = DefinitionBase & {
   kind: "buckets";
   buckets: readonly FilterChoice[];
@@ -32,8 +30,14 @@ export type BucketsDefinition = DefinitionBase & {
 /** The values of an ENUM field that some Produto has, each one a choice. */
 export type OptionsDefinition = DefinitionBase & { kind: "options"; fieldKey: string };
 
-/** Minimum and maximum of a number field, both optional. */
-export type RangeDefinition = DefinitionBase & { kind: "range"; fieldKey: string; unit: string };
+/**
+ * Minimum and maximum, both optional, of a number field or of a number the
+ * Produto holds outside its fields (the Preço), read by `readValue`.
+ */
+export type RangeDefinition = DefinitionBase & { kind: "range"; unit: string } & (
+    | { fieldKey: string }
+    | { readValue: (product: Product) => number | undefined }
+  );
 
 export type FilterDefinition = BucketsDefinition | OptionsDefinition | RangeDefinition;
 
@@ -42,7 +46,11 @@ export type ChoiceFilter = DefinitionBase & {
   kind: "buckets" | "options";
   choices: readonly FilterChoice[];
 };
-export type RangeFilter = DefinitionBase & { kind: "range"; fieldKey: string; unit: string };
+export type RangeFilter = DefinitionBase & {
+  kind: "range";
+  unit: string;
+  readValue: (product: Product) => number | undefined;
+};
 export type CategoryFilter = ChoiceFilter | RangeFilter;
 
 export type NumberRange = { min: number | undefined; max: number | undefined };
@@ -109,8 +117,22 @@ export function resolveFilters(
         const field = fieldsByKey.get(fieldKey);
         return field ? [{ ...rest, choices: optionChoices(field, data.products) }] : [];
       }
-      case "range":
-        return fieldsByKey.get(definition.fieldKey)?.type === "number" ? [definition] : [];
+      case "range": {
+        const { param, label, unit } = definition;
+        if ("readValue" in definition)
+          return [{ kind: "range", param, label, unit, readValue: definition.readValue }];
+        const { fieldKey } = definition;
+        if (fieldsByKey.get(fieldKey)?.type !== "number") return [];
+        return [
+          {
+            kind: "range",
+            param,
+            label,
+            unit,
+            readValue: (product) => numberValue(product, fieldKey),
+          },
+        ];
+      }
     }
   });
 }
@@ -127,7 +149,7 @@ export function isFilterActive(filter: CategoryFilter, values: FilterValues): bo
 function passesFilter(product: Product, filter: CategoryFilter, values: FilterValues): boolean {
   if (filter.kind === "range") {
     const range = values.ranges[filter.param];
-    const value = numberValue(product, filter.fieldKey);
+    const value = filter.readValue(product);
     if (value === undefined || range === undefined) return false;
     return (
       (range.min === undefined || value >= range.min) &&

@@ -1,11 +1,9 @@
-import { ChevronDown, Search } from "lucide-react";
+import { Search } from "lucide-react";
 import { useId, useState } from "react";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import { normalizeForSearch } from "@/product-table/product-filter";
 import {
-  isFilterActive,
   type CategoryFilter,
   type ChoiceFilter,
   type FilterValues,
@@ -38,60 +36,28 @@ function withRange(values: FilterValues, param: FilterParam, range: NumberRange)
   return { ...values, ranges: { ...values.ranges, [param]: range } };
 }
 
-/** Every Filtro of the Categoria, the advanced ones behind a disclosure, as on EyeJoker. */
+/** Every Filtro of the Categoria, one under the other. */
 export function FilterPanel({ filters, values, onValuesChange, clearCount }: FilterPanelProps) {
-  const advancedId = useId();
-  const advancedFilters = filters.filter((filter) => filter.advanced);
-  const activeAdvancedCount = advancedFilters.filter((filter) =>
-    isFilterActive(filter, values),
-  ).length;
-  const [advancedOpen, setAdvancedOpen] = useState(activeAdvancedCount > 0);
-  const renderFilter = (filter: CategoryFilter) =>
-    filter.kind === "range" ? (
-      <RangeFilterFields
-        key={`${filter.param}-${clearCount}`}
-        filter={filter}
-        range={values.ranges[filter.param]}
-        onRangeChange={(range) => onValuesChange(withRange(values, filter.param, range))}
-      />
-    ) : (
-      <ChoiceFilterFields
-        key={`${filter.param}-${clearCount}`}
-        filter={filter}
-        marked={values.choices[filter.param] ?? []}
-        onMarkedChange={(id, marked) =>
-          onValuesChange(withChoice(values, filter.param, id, marked))
-        }
-      />
-    );
-
   return (
     <div className="flex flex-col gap-5">
-      {filters.filter((filter) => !filter.advanced).map(renderFilter)}
-      {advancedFilters.length > 0 && (
-        <div className="flex flex-col gap-5">
-          <Button
-            variant="ghost"
-            aria-expanded={advancedOpen}
-            aria-controls={advancedId}
-            onClick={() => setAdvancedOpen((open) => !open)}
-            className="-mx-2 justify-between px-2 text-fg-secondary aria-expanded:bg-transparent aria-expanded:hover:bg-muted aria-expanded:active:bg-component-hover"
-          >
-            {!advancedOpen && activeAdvancedCount > 0
-              ? `Filtros avançados (${activeAdvancedCount})`
-              : "Filtros avançados"}
-            <ChevronDown
-              aria-hidden="true"
-              className={cn(
-                "motion-safe:transition-[rotate] motion-safe:duration-150 motion-safe:ease-out-quint",
-                advancedOpen && "rotate-180",
-              )}
-            />
-          </Button>
-          <div id={advancedId} hidden={!advancedOpen} className="flex flex-col gap-5">
-            {advancedFilters.map(renderFilter)}
-          </div>
-        </div>
+      {filters.map((filter) =>
+        filter.kind === "range" ? (
+          <RangeFilterFields
+            key={`${filter.param}-${clearCount}`}
+            filter={filter}
+            range={values.ranges[filter.param]}
+            onRangeChange={(range) => onValuesChange(withRange(values, filter.param, range))}
+          />
+        ) : (
+          <ChoiceFilterFields
+            key={`${filter.param}-${clearCount}`}
+            filter={filter}
+            marked={values.choices[filter.param] ?? []}
+            onMarkedChange={(id, marked) =>
+              onValuesChange(withChoice(values, filter.param, id, marked))
+            }
+          />
+        ),
       )}
     </div>
   );

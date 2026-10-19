@@ -40,65 +40,71 @@ export function ComparisonTable({ data, products, labelledBy, onRemove }: Compar
     "--peek": "calc(clamp(0, var(--compared-count) - var(--visible-columns), 1) * 1.5rem)",
     "--product-column":
       "calc((100cqw - var(--label-column) - var(--peek)) / min(var(--visible-columns), var(--compared-count)))",
-    // Two Produtos on a wide screen keep readable columns instead of stretching across it.
-    maxWidth: `calc(var(--label-column) + ${columnCount} * 24rem + 2px)`,
   };
+  // The border sits on a wrapper, so the scroll fade dissolves the columns and not the frame;
+  // the fade waits for a touch screen, where it would not hide a scrollbar at the end.
   return (
     <div
-      style={layout}
-      className="relative @container min-h-72 flex-1 scroll-ps-(--label-column) overflow-auto overscroll-contain rounded-lg border border-border [--label-column:7.5rem] [--visible-columns:2] sm:[--label-column:11rem] md:[--visible-columns:3] lg:[--label-column:14rem] lg:[--visible-columns:4]"
+      // Two Produtos on a wide screen keep readable columns instead of stretching across it.
+      style={{ maxWidth: `calc(var(--label-column) + ${columnCount} * 24rem + 2px)` }}
+      className="flex min-h-72 flex-1 flex-col overflow-hidden rounded-lg border border-border [--label-column:7.5rem] [--visible-columns:2] sm:[--label-column:11rem] md:[--visible-columns:3] lg:[--label-column:14rem] lg:[--visible-columns:4]"
     >
-      <table
-        aria-labelledby={labelledBy}
-        className="table-fixed border-separate border-spacing-0 text-body-sm"
-        style={{
-          width: `calc(var(--label-column) + ${columnCount} * var(--product-column))`,
-          minWidth: "100%",
-        }}
+      <div
+        style={layout}
+        className="relative @container min-h-0 flex-1 scroll-ps-(--label-column) overflow-auto overscroll-contain pointer-coarse:scroll-fade-e"
       >
-        <colgroup>
-          <col style={{ width: "var(--label-column)" }} />
-          {products.map((product) => (
-            <col key={product.id} style={{ width: "var(--product-column)" }} />
-          ))}
-        </colgroup>
-        <thead>
-          <tr>
-            <td className="sticky start-0 top-0 z-30 border-e border-b border-border bg-page" />
+        <table
+          aria-labelledby={labelledBy}
+          className="table-fixed border-separate border-spacing-0 text-body-sm"
+          style={{
+            width: `calc(var(--label-column) + ${columnCount} * var(--product-column))`,
+            minWidth: "100%",
+          }}
+        >
+          <colgroup>
+            <col style={{ width: "var(--label-column)" }} />
             {products.map((product) => (
-              <ProductColumnHeader
-                key={product.id}
-                category={data.category}
-                product={product}
-                comparedIdsParam={comparedIdsParam}
-                onRemove={() => onRemove(product.id)}
-              />
+              <col key={product.id} style={{ width: "var(--product-column)" }} />
             ))}
-          </tr>
-        </thead>
-        {groups.map((group) => {
-          const groupHeadingId = `comparacao-${group.id}`;
-          return (
-            <tbody key={group.id} aria-labelledby={groupHeadingId}>
-              <tr>
-                <th
-                  id={groupHeadingId}
-                  scope="rowgroup"
-                  colSpan={columnCount + 1}
-                  className="border-b border-border-subtle bg-component p-0 text-start"
-                >
-                  <span className="sticky start-0 inline-block px-2 py-1.5 font-serif text-body-base font-medium sm:px-3">
-                    {group.title}
-                  </span>
-                </th>
-              </tr>
-              {group.fields.map((field) => (
-                <FieldRow key={field.key} field={field} products={products} />
+          </colgroup>
+          <thead>
+            <tr>
+              <td className="sticky start-0 top-0 z-30 border-e border-b border-border bg-page" />
+              {products.map((product) => (
+                <ProductColumnHeader
+                  key={product.id}
+                  category={data.category}
+                  product={product}
+                  comparedIdsParam={comparedIdsParam}
+                  onRemove={() => onRemove(product.id)}
+                />
               ))}
-            </tbody>
-          );
-        })}
-      </table>
+            </tr>
+          </thead>
+          {groups.map((group) => {
+            const groupHeadingId = `comparacao-${group.id}`;
+            return (
+              <tbody key={group.id} aria-labelledby={groupHeadingId}>
+                <tr>
+                  <th
+                    id={groupHeadingId}
+                    scope="rowgroup"
+                    colSpan={columnCount + 1}
+                    className="border-b border-border-subtle bg-component p-0 text-start"
+                  >
+                    <span className="sticky start-0 inline-block px-2 py-1.5 font-serif text-body-base font-medium sm:px-3">
+                      {group.title}
+                    </span>
+                  </th>
+                </tr>
+                {group.fields.map((field) => (
+                  <FieldRow key={field.key} field={field} products={products} />
+                ))}
+              </tbody>
+            );
+          })}
+        </table>
+      </div>
     </div>
   );
 }

@@ -48,9 +48,8 @@ const categoryTables = [
     cells: [
       "0,70 ms desvio padrão 0,29",
       "0,49 ms desvio padrão 0,08",
-      "Tier 0",
-      "Recomendado",
-      "Dragonfly A9 Ultra no AliExpress",
+      "A+",
+      "Boa",
       "₩ 98.900",
       "PAW3950 Ultra (42K)",
       "Nordic nRF52840",
@@ -64,9 +63,8 @@ const categoryTables = [
     count: 4,
     rowHeader: "TENKO - ARC 60 ARBITER STUDIO",
     cells: [
-      "Impecável",
-      "Recomendação fraca",
-      "Sem dado",
+      "S",
+      "Fraca",
       "₩ 195.000",
       "0,25 ms desvio padrão 0,05",
       "6.155 Hz",
@@ -82,9 +80,8 @@ const categoryTables = [
     count: 4,
     rowHeader: "UltraGear 32GS95UE 4K Mode LGE",
     cells: [
-      "Tier 0",
-      "Não recomendado",
-      "Sem dado",
+      "A+",
+      "Evitar",
       "Sem dado",
       '32"',
       "240 Hz",
@@ -100,7 +97,7 @@ const categoryTables = [
 ];
 
 for (const category of categoryTables) {
-  test(`/${category.slug} lists every Product with EyeJoker's columns in pt, its default order and AliExpress links only where they exist`, async ({
+  test(`/${category.slug} lists every Product with EyeJoker's columns in pt, its default order and the name as the AliExpress link only where one exists`, async ({
     page,
   }) => {
     await page.goto(`/${category.slug}`);

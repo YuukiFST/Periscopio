@@ -13,7 +13,7 @@ import { fieldLabel } from "@/i18n/labels";
 import { cn } from "@/lib/utils";
 import { CompareCheckbox } from "@/product-compare/compare-checkbox";
 import { compareSortValues, isCountEnum, sortValueOf } from "./cell-values";
-import { ProductCell, TableCellValue } from "./table-cells";
+import { ProductCell, productCellLabelIds, TableCellValue } from "./table-cells";
 import type { SortEntry, TableColumn } from "./table-columns";
 
 /** The shortest row; rows with long names or values grow and are measured. */
@@ -26,8 +26,6 @@ function headerLabel(column: TableColumn): string {
   switch (column.kind) {
     case "product":
       return "Produto";
-    case "aliexpress":
-      return "AliExpress";
     case "price":
       return "Preço";
     case "field":
@@ -37,7 +35,6 @@ function headerLabel(column: TableColumn): string {
 
 /** Width in px of every column but the Product one, which follows the viewport. */
 function columnWidth(column: TableColumn): number {
-  if (column.kind === "aliexpress") return 96;
   if (column.kind === "price") return 104;
   if (column.kind !== "field") return 0;
   if (column.slug === "nota") return 112;
@@ -80,7 +77,6 @@ export function ProductTable({
         columns.map((column) =>
           columnHelper.accessor((product) => sortValueOf(column, product), {
             id: column.slug,
-            enableSorting: column.kind !== "aliexpress",
             sortUndefined: "last",
             sortFn: (rowA, rowB) =>
               compareSortValues(
@@ -148,63 +144,63 @@ export function ProductTable({
   const fixedWidth = columns.reduce((total, column) => total + columnWidth(column), 0);
   const primarySort = sorting[0];
 
+  // The border sits on a wrapper, so the scroll fade dissolves the columns and not the frame;
+  // the fade waits for a touch screen, where it would not hide the scrollbar at the end.
   return (
-    <div
-      ref={scrollRef}
-      className="relative min-h-72 flex-1 scroll-ps-[calc(var(--select-column)+var(--product-column))] scroll-pt-21 overflow-auto overscroll-contain rounded-lg border border-border [--product-column:9.5rem] [--select-column:2.25rem] min-[22rem]:[--product-column:11rem] sm:[--product-column:14rem] sm:[--select-column:2.75rem]"
-    >
-      <table
-        aria-labelledby={labelledBy}
-        aria-rowcount={rows.length + 1}
-        className="table-fixed border-separate border-spacing-0 text-body-sm"
-        style={{
-          width: `calc(var(--select-column) + var(--product-column) + ${fixedWidth}px)`,
-          minWidth: "100%",
-        }}
+    <div className="flex min-h-72 flex-1 flex-col overflow-hidden rounded-lg border border-border">
+      <div
+        ref={scrollRef}
+        className="relative min-h-0 flex-1 scroll-ps-[calc(var(--select-column)+var(--product-column))] scroll-pt-21 overflow-auto overscroll-contain pointer-coarse:scroll-fade-e [--product-column:9.5rem] [--select-column:2.25rem] min-[22rem]:[--product-column:11rem] sm:[--product-column:14rem] sm:[--select-column:2.75rem]"
       >
-        <colgroup>
-          <col style={{ width: "var(--select-column)" }} />
-          {columns.map((column) => (
-            <col
-              key={column.slug}
-              style={{
-                width: column.kind === "product" ? "var(--product-column)" : columnWidth(column),
-              }}
-            />
-          ))}
-        </colgroup>
-        <thead>
-          <tr aria-rowindex={1}>
-            <th
-              scope="col"
-              className="sticky start-0 top-0 z-30 border-b border-border bg-page p-0"
-            >
-              <span className="sr-only">Comparar</span>
-            </th>
-            {columns.map((column) => {
-              const sortIndex = sorting.findIndex(({ slug }) => slug === column.slug);
-              const sortEntry = sorting[sortIndex];
-              const isPrimary = primarySort?.slug === column.slug;
-              const ariaSort = !isPrimary
-                ? undefined
-                : primarySort.desc
-                  ? "descending"
-                  : "ascending";
-              const SortIcon = !sortEntry ? ChevronsUpDown : sortEntry.desc ? ArrowDown : ArrowUp;
-              const label = headerLabel(column);
-              return (
-                <th
-                  key={column.slug}
-                  scope="col"
-                  aria-sort={ariaSort}
-                  className={cn(
-                    "sticky top-0 z-20 border-b border-border bg-page p-0 align-bottom font-medium text-fg-secondary",
-                    column.kind === "product" && "start-(--select-column) z-30 border-e",
-                  )}
-                >
-                  {column.kind === "aliexpress" ? (
-                    <span className="block px-2 py-2.5 text-start sm:px-3">{label}</span>
-                  ) : (
+        <table
+          aria-labelledby={labelledBy}
+          aria-rowcount={rows.length + 1}
+          className="table-fixed border-separate border-spacing-0 text-body-sm"
+          style={{
+            width: `calc(var(--select-column) + var(--product-column) + ${fixedWidth}px)`,
+            minWidth: "100%",
+          }}
+        >
+          <colgroup>
+            <col style={{ width: "var(--select-column)" }} />
+            {columns.map((column) => (
+              <col
+                key={column.slug}
+                style={{
+                  width: column.kind === "product" ? "var(--product-column)" : columnWidth(column),
+                }}
+              />
+            ))}
+          </colgroup>
+          <thead>
+            <tr aria-rowindex={1}>
+              <th
+                scope="col"
+                className="sticky start-0 top-0 z-30 border-b border-border bg-page p-0"
+              >
+                <span className="sr-only">Comparar</span>
+              </th>
+              {columns.map((column) => {
+                const sortIndex = sorting.findIndex(({ slug }) => slug === column.slug);
+                const sortEntry = sorting[sortIndex];
+                const isPrimary = primarySort?.slug === column.slug;
+                const ariaSort = !isPrimary
+                  ? undefined
+                  : primarySort.desc
+                    ? "descending"
+                    : "ascending";
+                const SortIcon = !sortEntry ? ChevronsUpDown : sortEntry.desc ? ArrowDown : ArrowUp;
+                const label = headerLabel(column);
+                return (
+                  <th
+                    key={column.slug}
+                    scope="col"
+                    aria-sort={ariaSort}
+                    className={cn(
+                      "sticky top-0 z-20 border-b border-border bg-page p-0 align-bottom font-medium text-fg-secondary",
+                      column.kind === "product" && "start-(--select-column) z-30 border-e",
+                    )}
+                  >
                     <button
                       type="button"
                       onClick={() => onSortClick(column.slug)}
@@ -221,67 +217,68 @@ export function ProductTable({
                         className={cn("mb-0.5 size-3.5 shrink-0", !sortEntry && "text-fg-tertiary")}
                       />
                     </button>
+                  </th>
+                );
+              })}
+            </tr>
+          </thead>
+          <tbody onFocus={handleRowFocus} onBlur={handleRowBlur}>
+            {virtualRows.flatMap((virtualRow, position) => {
+              const row = rows[virtualRow.index];
+              if (!row) return [];
+              const product = row.original;
+              // Rows kept for focus can sit apart from the scroll window; a spacer fills each gap.
+              const gap = virtualRow.start - (virtualRows[position - 1]?.end ?? 0);
+              return [
+                <SpacerRow key={`gap-${row.id}`} height={gap} columnCount={columns.length + 1} />,
+                <tr
+                  key={row.id}
+                  ref={virtualizer.measureElement}
+                  data-index={virtualRow.index}
+                  data-row-id={row.id}
+                  aria-rowindex={virtualRow.index + 2}
+                  style={{ height: rowHeight }}
+                >
+                  <td className="sticky start-0 z-10 border-b border-border-subtle bg-page p-0">
+                    <CompareCheckbox
+                      productName={product.name}
+                      checked={comparedIds.includes(product.id)}
+                      comparedCount={comparedIds.length}
+                      onToggle={() => onComparedToggle(product.id)}
+                    />
+                  </td>
+                  {columns.map((column) =>
+                    column.kind === "product" ? (
+                      <th
+                        key={column.slug}
+                        scope="row"
+                        aria-labelledby={productCellLabelIds(product)}
+                        className="sticky start-(--select-column) z-10 border-e border-b border-border-subtle bg-page py-1.5 ps-0 pe-2 text-start font-normal sm:pe-3"
+                      >
+                        <ProductCell product={product} />
+                      </th>
+                    ) : (
+                      <td
+                        key={column.slug}
+                        className={cn(
+                          "border-b border-border-subtle px-2 py-1.5 tabular-nums sm:px-3",
+                          isNumericColumn(column) && "text-end",
+                        )}
+                      >
+                        <TableCellValue column={column} product={product} />
+                      </td>
+                    ),
                   )}
-                </th>
-              );
+                </tr>,
+              ];
             })}
-          </tr>
-        </thead>
-        <tbody onFocus={handleRowFocus} onBlur={handleRowBlur}>
-          {virtualRows.flatMap((virtualRow, position) => {
-            const row = rows[virtualRow.index];
-            if (!row) return [];
-            const product = row.original;
-            // Rows kept for focus can sit apart from the scroll window; a spacer fills each gap.
-            const gap = virtualRow.start - (virtualRows[position - 1]?.end ?? 0);
-            return [
-              <SpacerRow key={`gap-${row.id}`} height={gap} columnCount={columns.length + 1} />,
-              <tr
-                key={row.id}
-                ref={virtualizer.measureElement}
-                data-index={virtualRow.index}
-                data-row-id={row.id}
-                aria-rowindex={virtualRow.index + 2}
-                style={{ height: rowHeight }}
-              >
-                <td className="sticky start-0 z-10 border-b border-border-subtle bg-page p-0">
-                  <CompareCheckbox
-                    productName={product.name}
-                    checked={comparedIds.includes(product.id)}
-                    comparedCount={comparedIds.length}
-                    onToggle={() => onComparedToggle(product.id)}
-                  />
-                </td>
-                {columns.map((column) =>
-                  column.kind === "product" ? (
-                    <th
-                      key={column.slug}
-                      scope="row"
-                      className="sticky start-(--select-column) z-10 border-e border-b border-border-subtle bg-page py-1.5 ps-0 pe-2 text-start font-normal sm:pe-3"
-                    >
-                      <ProductCell product={product} />
-                    </th>
-                  ) : (
-                    <td
-                      key={column.slug}
-                      className={cn(
-                        "border-b border-border-subtle px-2 py-1.5 tabular-nums sm:px-3",
-                        isNumericColumn(column) && "text-end",
-                      )}
-                    >
-                      <TableCellValue column={column} product={product} />
-                    </td>
-                  ),
-                )}
-              </tr>,
-            ];
-          })}
-          <SpacerRow
-            height={virtualizer.getTotalSize() - (virtualRows.at(-1)?.end ?? 0)}
-            columnCount={columns.length + 1}
-          />
-        </tbody>
-      </table>
+            <SpacerRow
+              height={virtualizer.getTotalSize() - (virtualRows.at(-1)?.end ?? 0)}
+              columnCount={columns.length + 1}
+            />
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }

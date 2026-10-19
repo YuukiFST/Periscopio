@@ -1,6 +1,6 @@
 - table "Teclados":
     - rowgroup:
-        - row "Comparar Produto Nota geral Recomendação AliExpress Preço Resposta geral Desempenho real Polling rate efetivo Ponto de acionamento mínimo Zona morta inferior Erro de curso":
+        - row "Comparar Produto Nota geral Recomendação Preço Resposta geral Desempenho real Polling rate efetivo Ponto de acionamento mínimo Zona morta inferior Erro de curso":
             - columnheader "Comparar"
             - columnheader "Produto":
                 - button "Produto"
@@ -8,7 +8,6 @@
                 - button "Nota geral"
             - columnheader "Recomendação":
                 - button "Recomendação"
-            - columnheader "AliExpress"
             - columnheader "Preço":
                 - button "Preço"
             - columnheader "Resposta geral":
@@ -24,17 +23,16 @@
             - columnheader "Erro de curso":
                 - button "Erro de curso"
     - rowgroup:
-        - row /Comparar TENKO - ARC \d+ TENKO - ARC \d+ ARBITER STUDIO Impecável Recomendação fraca Sem dado ₩ \d+\.\d+ \d+,\d+ ms desvio padrão \d+,\d+ \d+\.\d+ Hz Sem dado \d+,\d+ mm \d+,\d+ mm \d+,\d+%/:
+        - row /Comparar TENKO - ARC \d+ TENKO - ARC \d+ ARBITER STUDIO S Fraca ₩ \d+\.\d+ \d+,\d+ ms desvio padrão \d+,\d+ \d+\.\d+ Hz Sem dado \d+,\d+ mm \d+,\d+ mm \d+,\d+%/:
             - cell /Comparar TENKO - ARC \d+/:
                 - checkbox /Comparar TENKO - ARC \d+/
             - rowheader /TENKO - ARC \d+ ARBITER STUDIO/:
-                - paragraph:
-                    - link /TENKO - ARC \d+/:
-                        - /url: /teclado/04ef23e4-e4bd-4212-be44-daabe2640afd
+                - link /Detalhes de TENKO - ARC \d+/:
+                    - /url: /teclado/04ef23e4-e4bd-4212-be44-daabe2640afd
+                - paragraph: /TENKO - ARC \d+/
                 - paragraph: ARBITER STUDIO
-            - cell "Impecável"
-            - cell "Recomendação fraca"
-            - cell "Sem dado"
+            - cell "S"
+            - cell "Fraca"
             - cell /₩ \d+\.\d+/
             - cell /\d+,\d+ ms desvio padrão \d+,\d+/
             - cell /\d+\.\d+ Hz/
@@ -42,20 +40,18 @@
             - cell /\d+,\d+ mm/
             - cell /\d+,\d+ mm/
             - cell /\d+,\d+%/
-        - row /Comparar EDGE 60HE Pro EDGE 60HE Pro ATK Tier 1 Não recomendado EDGE 60HE Pro no AliExpress ₩ \d+\.\d+ \d+,\d+ ms desvio padrão \d+,\d+ \d+\.\d+ Hz \d+\.\d+ Hz Sem dado Sem dado Sem dado/:
+        - row /Comparar EDGE 60HE Pro EDGE 60HE Pro ATK A Evitar ₩ \d+\.\d+ \d+,\d+ ms desvio padrão \d+,\d+ \d+\.\d+ Hz \d+\.\d+ Hz Sem dado Sem dado Sem dado/:
             - cell "Comparar EDGE 60HE Pro":
                 - checkbox "Comparar EDGE 60HE Pro"
             - rowheader "EDGE 60HE Pro ATK":
+                - link "Detalhes de EDGE 60HE Pro":
+                    - /url: /teclado/021979aa-b222-47d3-b5ec-8b59d671aff4
                 - paragraph:
-                    - link "EDGE 60HE Pro":
-                        - /url: /teclado/021979aa-b222-47d3-b5ec-8b59d671aff4
+                    - link "EDGE 60HE Pro no AliExpress":
+                        - /url: https://s.click.aliexpress.com/e/_opItnUw
                 - paragraph: ATK
-            - cell "Tier 1"
-            - cell "Não recomendado"
-            - cell "EDGE 60HE Pro no AliExpress":
-                - link "EDGE 60HE Pro no AliExpress":
-                    - /url: https://s.click.aliexpress.com/e/_opItnUw
-                    - text: ""
+            - cell "A"
+            - cell "Evitar"
             - cell /₩ \d+\.\d+/
             - cell /\d+,\d+ ms desvio padrão \d+,\d+/
             - cell /\d+\.\d+ Hz/
@@ -63,20 +59,18 @@
             - cell "Sem dado"
             - cell "Sem dado"
             - cell "Sem dado"
-        - row /Comparar Raven61 Raven61 TEAMWOLF Tier 1 Não recomendado Raven61 no AliExpress ₩ \d+\.\d+ \d+,\d+ ms desvio padrão \d+,\d+ \d+\.\d+ Hz Sem dado Sem dado Sem dado Sem dado/:
+        - row /Comparar Raven61 Raven61 TEAMWOLF A Evitar ₩ \d+\.\d+ \d+,\d+ ms desvio padrão \d+,\d+ \d+\.\d+ Hz Sem dado Sem dado Sem dado Sem dado/:
             - cell "Comparar Raven61":
                 - checkbox "Comparar Raven61"
             - rowheader "Raven61 TEAMWOLF":
+                - link "Detalhes de Raven61":
+                    - /url: /teclado/479c4333-c25b-4e79-89a5-74d93565c4b5
                 - paragraph:
-                    - link "Raven61":
-                        - /url: /teclado/479c4333-c25b-4e79-89a5-74d93565c4b5
+                    - link "Raven61 no AliExpress":
+                        - /url: https://s.click.aliexpress.com/e/_oBw6LC9
                 - paragraph: TEAMWOLF
-            - cell "Tier 1"
-            - cell "Não recomendado"
-            - cell "Raven61 no AliExpress":
-                - link "Raven61 no AliExpress":
-                    - /url: https://s.click.aliexpress.com/e/_oBw6LC9
-                    - text: ""
+            - cell "A"
+            - cell "Evitar"
             - cell /₩ \d+\.\d+/
             - cell /\d+,\d+ ms desvio padrão \d+,\d+/
             - cell /\d+\.\d+ Hz/
@@ -84,17 +78,16 @@
             - cell "Sem dado"
             - cell "Sem dado"
             - cell "Sem dado"
-        - row /Comparar Archon M3 \d+ MAX Archon M3 \d+ MAX Preflow Sem dado Aguardado Sem dado ₩ \d+\.\d+ Sem dado Sem dado Sem dado Sem dado Sem dado Sem dado/:
+        - row /Comparar Archon M3 \d+ MAX Archon M3 \d+ MAX Preflow Sem dado Pendente ₩ \d+\.\d+ Sem dado Sem dado Sem dado Sem dado Sem dado Sem dado/:
             - cell /Comparar Archon M3 \d+ MAX/:
                 - checkbox /Comparar Archon M3 \d+ MAX/
             - rowheader /Archon M3 \d+ MAX Preflow/:
-                - paragraph:
-                    - link /Archon M3 \d+ MAX/:
-                        - /url: /teclado/49c95966-e910-4628-86d1-b7915439e9af
+                - link /Detalhes de Archon M3 \d+ MAX/:
+                    - /url: /teclado/49c95966-e910-4628-86d1-b7915439e9af
+                - paragraph: /Archon M3 \d+ MAX/
                 - paragraph: Preflow
             - cell "Sem dado"
-            - cell "Aguardado"
-            - cell "Sem dado"
+            - cell "Pendente"
             - cell /₩ \d+\.\d+/
             - cell "Sem dado"
             - cell "Sem dado"

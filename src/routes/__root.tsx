@@ -17,7 +17,7 @@ function AppShell({ children }: { children: ReactNode }) {
       <header className="shrink-0 border-b border-border bg-page">
         <div className="flex min-h-14 flex-wrap items-center gap-x-4 gap-y-1 px-4 py-2 sm:gap-x-6">
           <Link to="/" className="font-serif text-heading-6 font-medium">
-            EyeJoker
+            Periscópio
           </Link>
           <nav aria-label="Categorias" className="-mx-2.5 flex gap-1 sm:mx-0">
             {categorySlugs.map((slug) => (

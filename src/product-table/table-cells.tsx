@@ -22,26 +22,56 @@ export function MissingValue() {
   );
 }
 
+/**
+ * The ids that name the row: the Produto and its manufacturer, so neither link
+ * in the cell ("Detalhes de …", "… no AliExpress") repeats on every cell read.
+ */
+export function productCellLabelIds(product: Product): string {
+  return `produto-${product.id} fabricante-${product.id}`;
+}
+
+/**
+ * The whole cell opens the detail screen; a Produto with the Link AliExpress
+ * shows its name in blue as that link, above the cell's.
+ */
 export function ProductCell({ product }: { product: Product }) {
   const manufacturer = manufacturerName(product.manufacturer);
+  const name = <span id={`produto-${product.id}`}>{product.name}</span>;
   return (
-    <div className="flex items-center gap-2 sm:gap-3">
+    <div className="group/cell flex items-center gap-2 sm:gap-3">
+      {/* The table's search params ride along, so the detail screen can lead back to this view. */}
+      <Link
+        from="/$categoria/"
+        to="/$categoria/$id"
+        params={(current) => ({ ...current, id: product.id })}
+        search={true}
+        state={{ fromCategoryTable: true }}
+        aria-label={`Detalhes de ${product.name}`}
+        className="absolute inset-0 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-ring"
+      />
       <ProductPhoto key={product.image} src={product.image} alt="" size="row" loading="lazy" />
       <div className="min-w-0">
         <p className="leading-[1.125rem] font-medium wrap-break-word text-fg-primary">
-          {/* The table's search params ride along, so the detail screen can lead back to this view. */}
-          <Link
-            from="/$categoria/"
-            to="/$categoria/$id"
-            params={(current) => ({ ...current, id: product.id })}
-            search={true}
-            state={{ fromCategoryTable: true }}
-            className="underline-offset-4 after:absolute after:inset-0 hover:underline focus-visible:outline-none focus-visible:after:outline-2 focus-visible:after:-outline-offset-2 focus-visible:after:outline-ring"
-          >
-            {product.name}
-          </Link>
+          {product.aliUrl ? (
+            <a
+              href={product.aliUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative rounded-xs text-brand-fg underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+            >
+              {name}
+              <span className="sr-only"> no AliExpress</span>
+            </a>
+          ) : (
+            <span className="underline-offset-4 group-has-[a:hover]/cell:underline">{name}</span>
+          )}
         </p>
-        <p className="text-caption-lg wrap-break-word text-fg-secondary">{manufacturer}</p>
+        <p
+          id={`fabricante-${product.id}`}
+          className="text-caption-lg wrap-break-word text-fg-secondary"
+        >
+          {manufacturer}
+        </p>
       </div>
     </div>
   );
@@ -51,20 +81,6 @@ export function TableCellValue({ column, product }: { column: TableColumn; produ
   switch (column.kind) {
     case "product":
       return <ProductCell product={product} />;
-    case "aliexpress":
-      return product.aliUrl ? (
-        <a
-          href={product.aliUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={`${product.name} no AliExpress`}
-          className="inline-flex min-h-8 touch-manipulation items-center font-medium text-brand-fg underline-offset-4 hover:underline active:underline"
-        >
-          AliExpress
-        </a>
-      ) : (
-        <MissingValue />
-      );
     case "price": {
       const price = priceOf(product);
       return price === undefined ? (

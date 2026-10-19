@@ -32,7 +32,7 @@ export function ProductDetail({
 }: ProductDetailProps) {
   const headingRef = useRef<HTMLHeadingElement>(null);
   useEffect(() => {
-    document.title = `${product.name} · EyeJoker`;
+    document.title = `${product.name} · Periscópio`;
     // A new view in a single-page app: screen readers and the keyboard start from its title.
     headingRef.current?.focus();
   }, [product.name]);

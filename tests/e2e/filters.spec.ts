@@ -34,40 +34,41 @@ const allMouses = [
 
 /**
  * The golden generalizes numbers into patterns, so the cuts EyeJoker draws
- * (weight bands, price bands, screen sizes) are spelled out here exactly.
+ * (screen sizes, refresh rates) and the letter tiers are spelled out here exactly.
  */
-const accessoryPriceBands = [
-  "Até ₩ 50 mil",
-  "₩ 50 a 100 mil",
-  "₩ 100 a 200 mil",
-  "Mais de ₩ 200 mil",
-];
+const ratingTiers = ["S", "A+", "A", "B", "C", "D", "Sem nota"];
+const recommendations = ["Ótima", "Boa", "Fraca", "Evitar", "Pendente"];
 
-const categoryCases = [
+type SecondFilter =
+  | { filter: string; choices: string[] }
+  | { range: string; min?: string; max?: string };
+
+const categoryCases: {
+  slug: string;
+  exactChoices: Record<string, string[]>;
+  first: { filter: string; choices: string[] };
+  afterFirst: string[];
+  second: SecondFilter;
+  afterSecond: string[];
+  url: string;
+}[] = [
   {
     slug: "mouse",
-    hasAdvancedFilters: true,
     exactChoices: {
-      Preço: accessoryPriceBands,
-      "Velocidade máxima de rastreio": [
-        "Até 300 IPS",
-        "301 a 499 IPS",
-        "500 a 749 IPS",
-        "750 IPS ou mais",
-      ],
+      "Nota geral": ratingTiers,
+      Recomendação: recommendations,
       "Carcaça furada": ["Sim", "Não", "Só embaixo"],
     },
-    first: { filter: "Velocidade máxima de rastreio", choices: ["750 IPS ou mais"] },
-    afterFirst: ["Dragonfly A9 Ultra", "Huan", "Cloud XS"],
-    second: { filter: "Carcaça furada", choices: ["Só embaixo"] },
-    afterSecond: ["Huan", "Cloud XS"],
-    url: "/mouse?ips=750-ou-mais&furada=so-embaixo",
+    first: { filter: "Formato", choices: ["Simétrico"] },
+    afterFirst: ["Dragonfly A9 Ultra", "Huan", "Dragonfly 3 PRO", "H200A", "Cloud XS"],
+    // Dragonfly 3 PRO and H200A track up to 650 IPS, the other three up to 750.
+    second: { range: "Velocidade máxima de rastreio (IPS)", min: "700" },
+    afterSecond: ["Dragonfly A9 Ultra", "Huan", "Cloud XS"],
+    url: "/mouse?formato=simetrico&ips=700-",
   },
   {
     slug: "teclado",
-    hasAdvancedFilters: false,
     exactChoices: {
-      Preço: accessoryPriceBands,
       Layout: ["TKL", "75%", "65%", "60%", "Completo", "96%", "Outro"],
       "Desempenho real": [
         "4.000 Hz ou mais",
@@ -84,15 +85,7 @@ const categoryCases = [
   },
   {
     slug: "monitor",
-    hasAdvancedFilters: false,
     exactChoices: {
-      Preço: [
-        "Até ₩ 200 mil",
-        "₩ 200 a 400 mil",
-        "₩ 400 a 600 mil",
-        "₩ 600 mil a 1 mi",
-        "Mais de ₩ 1 mi",
-      ],
       "Tamanho da tela": ['Até 23"', '24 a 25"', '27"', '32"', '34"', '39"', '45"', '49" ou mais'],
       Resolução: ["FHD (1920×1080)", "QHD (2560×1440)", "UHD (3840×2160)", "Ultrawide"],
       "Taxa de atualização": [
@@ -111,10 +104,10 @@ const categoryCases = [
     },
     first: { filter: "Tamanho da tela", choices: ['24 a 25"'] },
     afterFirst: ["XG259QDNS Ace", "모비우스 EX2510S", "ROG SWIFT PG259QN"],
-    // 모비우스 costs ₩ 280.000 but is discontinued, so no Preço band holds it.
-    second: { filter: "Preço", choices: ["₩ 200 a 400 mil", "₩ 600 mil a 1 mi"] },
+    // 모비우스 costs ₩ 280.000 but is discontinued, so no Preço holds it; XG259QDNS has none.
+    second: { range: "Preço (mil ₩)", max: "900" },
     afterSecond: ["ROG SWIFT PG259QN"],
-    url: "/monitor?tamanho=24-25&preco=200-400mil,600mil-1mi",
+    url: "/monitor?tamanho=24-25&preco=-900",
   },
 ];
 
@@ -123,9 +116,8 @@ for (const category of categoryCases) {
     page,
   }) => {
     await page.goto(`/${category.slug}`);
-    const advancedToggle = filterPanel(page).getByRole("button", { name: "Filtros avançados" });
-    await expect(advancedToggle).toHaveCount(category.hasAdvancedFilters ? 1 : 0);
-    if (category.hasAdvancedFilters) await advancedToggle.click();
+    // Every Filtro is listed one under the other: none hides behind a disclosure.
+    await expect(filterPanel(page).getByRole("button", { name: /avançados/ })).toHaveCount(0);
     await expect(filterPanel(page)).toMatchAriaSnapshot({
       name: `${category.slug}-filters.aria.yml`,
     });
@@ -144,8 +136,13 @@ for (const category of categoryCases) {
     }
     await expect.poll(() => productNames(page)).toEqual(category.afterFirst);
 
-    for (const name of category.second.choices) {
-      await choice(page, category.second.filter, name).check();
+    const { second } = category;
+    if ("choices" in second) {
+      for (const name of second.choices) await choice(page, second.filter, name).check();
+    } else {
+      const range = filterPanel(page).getByRole("group", { name: second.range });
+      if (second.min) await range.getByRole("textbox", { name: "Mínimo" }).fill(second.min);
+      if (second.max) await range.getByRole("textbox", { name: "Máximo" }).fill(second.max);
     }
     await expect(page).toHaveURL(category.url);
     await expect.poll(() => productNames(page)).toEqual(category.afterSecond);
@@ -156,7 +153,6 @@ test("choices within one Filtro add up, and a Produto without the value leaves w
   page,
 }) => {
   await page.goto("/mouse");
-  await filterPanel(page).getByRole("button", { name: "Filtros avançados" }).click();
   await choice(page, "Carcaça furada", "Não").check();
   await choice(page, "Carcaça furada", "Só embaixo").check();
   // VK M5 Max THOR does not say whether its shell has holes, so even both choices leave it out.
@@ -219,7 +215,6 @@ test("regression: a weight typed key by key keeps the text the link has not caug
 test("a copied link opens the same Filtros in a new tab", async ({ page, context }) => {
   await context.grantPermissions(["clipboard-read", "clipboard-write"]);
   await page.goto("/mouse");
-  await filterPanel(page).getByRole("button", { name: "Filtros avançados" }).click();
   await choice(page, "Carcaça furada", "Só embaixo").check();
   await filterPanel(page)
     .getByRole("group", { name: "Peso (g)" })
@@ -243,10 +238,6 @@ test("a copied link opens the same Filtros in a new tab", async ({ page, context
   const weightRange = filterPanel(newTab).getByRole("group", { name: "Peso (g)" });
   await expect(weightRange.getByRole("textbox", { name: "Mínimo" })).toHaveValue("");
   await expect(weightRange.getByRole("textbox", { name: "Máximo" })).toHaveValue("50");
-  await filterPanel(newTab).getByRole("button", { name: "Filtros avançados" }).click();
-  await expect(
-    filterPanel(newTab).getByRole("button", { name: "Filtros avançados (1)" }),
-  ).toHaveAttribute("aria-expanded", "false");
 });
 
 test("marked sensors and a maximum Resposta do clique narrow the mouses and reopen from the link", async ({

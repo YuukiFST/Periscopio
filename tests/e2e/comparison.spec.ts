@@ -66,7 +66,7 @@ test("three mouses marked on the table open side by side, with the Destaque wher
 
   await expect(page).toHaveURL(`/comparar/mouse?p=${comparedIds}`);
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("Comparação de mouses");
-  await expect(page).toHaveTitle("Comparação de mouses · EyeJoker");
+  await expect(page).toHaveTitle("Comparação de mouses · Periscópio");
   await expect(page.getByRole("article")).toMatchAriaSnapshot({
     name: "mouse-comparison.aria.yml",
   });
@@ -79,7 +79,7 @@ test("three mouses marked on the table open side by side, with the Destaque wher
     ["Velocidade máxima de rastreio", ["Dragonfly A9 Ultra", "Huan"]],
     // Huan has no Debounce and stays out; 19 ms beats 22 ms.
     ["Debounce", ["Dragonfly A9 Ultra"]],
-    // Grades in EyeJoker's order: Tier 0 beats Tier 3 and Sem nota.
+    // Grades in EyeJoker's order: A+ beats C and Sem nota.
     ["Nota geral", ["Dragonfly A9 Ultra"]],
     // All three at 8000 Hz: nobody is better.
     ["Polling rate máximo", []],
@@ -174,7 +174,7 @@ test("the detail screen adds its Produto to the Comparação, and the table keep
 }) => {
   await page.goto("/mouse?ordem=-peso");
   await compareCheckbox(page, mouses.dragonflyA9Ultra.name).check();
-  await page.getByRole("link", { name: mouses.huan.name, exact: true }).click();
+  await page.getByRole("link", { name: `Detalhes de ${mouses.huan.name}` }).click();
   await expect(page).toHaveURL(
     `/mouse/${mouses.huan.id}?ordem=-peso&cmp=${mouses.dragonflyA9Ultra.id}`,
   );
@@ -201,7 +201,7 @@ test("regression: the browser's back after adding from the detail screen keeps b
   await page.goto("/mouse");
   await compareCheckbox(page, mouses.dragonflyA9Ultra.name).check();
   await expect(page).toHaveURL(`/mouse?cmp=${mouses.dragonflyA9Ultra.id}`);
-  await page.getByRole("link", { name: mouses.huan.name, exact: true }).click();
+  await page.getByRole("link", { name: `Detalhes de ${mouses.huan.name}` }).click();
   await page.getByRole("button", { name: "Adicionar à comparação" }).click();
   const bothIds = `${mouses.dragonflyA9Ultra.id},${mouses.huan.id}`;
   await expect(page).toHaveURL(`/mouse/${mouses.huan.id}?cmp=${bothIds}`);

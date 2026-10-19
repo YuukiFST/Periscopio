@@ -1,6 +1,6 @@
 - table "Monitores":
     - rowgroup:
-        - row "Comparar Produto Nota geral Recomendação AliExpress Preço Tamanho da tela Taxa de atualização Resolução Certificação HDR Resposta geral Gama de cores (DCI-P3) Brilho máximo (SDR) Brilho máximo (HDR) Reflexão total (SCI)":
+        - row "Comparar Produto Nota geral Recomendação Preço Tamanho da tela Taxa de atualização Resolução Certificação HDR Resposta geral Gama de cores (DCI-P3) Brilho máximo (SDR) Brilho máximo (HDR) Reflexão total (SCI)":
             - columnheader "Comparar"
             - columnheader "Produto":
                 - button "Produto"
@@ -8,7 +8,6 @@
                 - button "Nota geral"
             - columnheader "Recomendação":
                 - button "Recomendação"
-            - columnheader "AliExpress"
             - columnheader "Preço":
                 - button "Preço"
             - columnheader "Tamanho da tela":
@@ -30,17 +29,16 @@
             - columnheader "Reflexão total (SCI)":
                 - button "Reflexão total (SCI)"
     - rowgroup:
-        - row /Comparar UltraGear 32GS95UE [\d,.]+[bkmBKM]+ Mode UltraGear 32GS95UE [\d,.]+[bkmBKM]+ Mode LGE Tier 0 Não recomendado Sem dado Sem dado \d+" \d+ Hz UHD \(\d+×\d+\) DisplayHDR True Black \d+ \d+,\d+ ms \d+,\d+% \d+ cd\/m² Sem dado Sem dado/:
+        - row /Comparar UltraGear 32GS95UE [\d,.]+[bkmBKM]+ Mode UltraGear 32GS95UE [\d,.]+[bkmBKM]+ Mode LGE A\+ Evitar Sem dado \d+" \d+ Hz UHD \(\d+×\d+\) DisplayHDR True Black \d+ \d+,\d+ ms \d+,\d+% \d+ cd\/m² Sem dado Sem dado/:
             - cell /Comparar UltraGear 32GS95UE [\d,.]+[bkmBKM]+ Mode/:
                 - checkbox /Comparar UltraGear 32GS95UE [\d,.]+[bkmBKM]+ Mode/
             - rowheader /UltraGear 32GS95UE [\d,.]+[bkmBKM]+ Mode LGE/:
-                - paragraph:
-                    - link /UltraGear 32GS95UE [\d,.]+[bkmBKM]+ Mode/:
-                        - /url: /monitor/168e2700-995b-4632-86e9-08613515a315
+                - link /Detalhes de UltraGear 32GS95UE [\d,.]+[bkmBKM]+ Mode/:
+                    - /url: /monitor/168e2700-995b-4632-86e9-08613515a315
+                - paragraph: /UltraGear 32GS95UE [\d,.]+[bkmBKM]+ Mode/
                 - paragraph: LGE
-            - cell "Tier 0"
-            - cell "Não recomendado"
-            - cell "Sem dado"
+            - cell "A+"
+            - cell "Evitar"
             - cell "Sem dado"
             - cell /\d+"/
             - cell /\d+ Hz/
@@ -51,15 +49,14 @@
             - cell /\d+ cd\/m²/
             - cell "Sem dado"
             - cell "Sem dado"
-        - row /Comparar XG259QDNS Ace XG259QDNS Ace ASUS Sem dado Sem dado Sem dado Sem dado \d+,\d+" \d+ Hz FHD \(\d+×\d+\) DisplayHDR True Black \d+ Sem dado Sem dado Sem dado Sem dado Sem dado/:
+        - row /Comparar XG259QDNS Ace XG259QDNS Ace ASUS Sem dado Sem dado Sem dado \d+,\d+" \d+ Hz FHD \(\d+×\d+\) DisplayHDR True Black \d+ Sem dado Sem dado Sem dado Sem dado Sem dado/:
             - cell "Comparar XG259QDNS Ace":
                 - checkbox "Comparar XG259QDNS Ace"
             - rowheader "XG259QDNS Ace ASUS":
-                - paragraph:
-                    - link "XG259QDNS Ace":
-                        - /url: /monitor/0138f613-dedd-4d4c-86a6-74798a5baf14
+                - link "Detalhes de XG259QDNS Ace":
+                    - /url: /monitor/0138f613-dedd-4d4c-86a6-74798a5baf14
+                - paragraph: XG259QDNS Ace
                 - paragraph: ASUS
-            - cell "Sem dado"
             - cell "Sem dado"
             - cell "Sem dado"
             - cell "Sem dado"
@@ -72,15 +69,14 @@
             - cell "Sem dado"
             - cell "Sem dado"
             - cell "Sem dado"
-        - row /Comparar 모비우스 EX2510S 모비우스 EX2510S BenQ Sem dado Sem dado Sem dado ₩ \d+\.\d+ \d+,\d+" \d+ Hz FHD \(\d+×\d+\) Sem dado Sem dado Sem dado Sem dado Sem dado Sem dado/:
+        - row /Comparar 모비우스 EX2510S 모비우스 EX2510S BenQ Sem dado Sem dado ₩ \d+\.\d+ \d+,\d+" \d+ Hz FHD \(\d+×\d+\) Sem dado Sem dado Sem dado Sem dado Sem dado Sem dado/:
             - cell "Comparar 모비우스 EX2510S":
                 - checkbox "Comparar 모비우스 EX2510S"
             - rowheader "모비우스 EX2510S BenQ":
-                - paragraph:
-                    - link "모비우스 EX2510S":
-                        - /url: /monitor/0780a9f3-3c88-41ac-97e9-1c45f31c9a38
+                - link "Detalhes de 모비우스 EX2510S":
+                    - /url: /monitor/0780a9f3-3c88-41ac-97e9-1c45f31c9a38
+                - paragraph: 모비우스 EX2510S
                 - paragraph: BenQ
-            - cell "Sem dado"
             - cell "Sem dado"
             - cell "Sem dado"
             - cell /₩ \d+\.\d+/
@@ -93,20 +89,18 @@
             - cell "Sem dado"
             - cell "Sem dado"
             - cell "Sem dado"
-        - row /Comparar ROG SWIFT PG259QN ROG SWIFT PG259QN ASUS Sem dado Sem dado ROG SWIFT PG259QN no AliExpress ₩ \d+\.\d+ \d+" \d+ Hz FHD \(\d+×\d+\) Sem dado Sem dado Sem dado Sem dado Sem dado Sem dado/:
+        - row /Comparar ROG SWIFT PG259QN ROG SWIFT PG259QN ASUS Sem dado Sem dado ₩ \d+\.\d+ \d+" \d+ Hz FHD \(\d+×\d+\) Sem dado Sem dado Sem dado Sem dado Sem dado Sem dado/:
             - cell "Comparar ROG SWIFT PG259QN":
                 - checkbox "Comparar ROG SWIFT PG259QN"
             - rowheader "ROG SWIFT PG259QN ASUS":
+                - link "Detalhes de ROG SWIFT PG259QN":
+                    - /url: /monitor/7aa60f74-aa55-44f0-9858-9d672a19fba5
                 - paragraph:
-                    - link "ROG SWIFT PG259QN":
-                        - /url: /monitor/7aa60f74-aa55-44f0-9858-9d672a19fba5
+                    - link "ROG SWIFT PG259QN no AliExpress":
+                        - /url: https://s.click.aliexpress.com/e/_oEZbgCi
                 - paragraph: ASUS
             - cell "Sem dado"
             - cell "Sem dado"
-            - cell "ROG SWIFT PG259QN no AliExpress":
-                - link "ROG SWIFT PG259QN no AliExpress":
-                    - /url: https://s.click.aliexpress.com/e/_oEZbgCi
-                    - text: ""
             - cell /₩ \d+\.\d+/
             - cell /\d+"/
             - cell /\d+ Hz/

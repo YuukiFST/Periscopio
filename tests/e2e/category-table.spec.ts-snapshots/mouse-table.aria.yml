@@ -1,6 +1,6 @@
 - table "Mouses":
     - rowgroup:
-        - row "Comparar Produto Resposta média do sensor Resposta do clique Nota geral Recomendação AliExpress Preço Sensor MCU Formato Peso":
+        - row "Comparar Produto Resposta média do sensor Resposta do clique Nota geral Recomendação Preço Sensor MCU Formato Peso":
             - columnheader "Comparar"
             - columnheader "Produto":
                 - button "Produto"
@@ -12,7 +12,6 @@
                 - button "Nota geral"
             - columnheader "Recomendação":
                 - button "Recomendação"
-            - columnheader "AliExpress"
             - columnheader "Preço":
                 - button "Preço"
             - columnheader "Sensor":
@@ -24,93 +23,86 @@
             - columnheader "Peso":
                 - button "Peso"
     - rowgroup:
-        - row /Comparar Dragonfly A9 Ultra Dragonfly A9 Ultra ATK \d+,\d+ ms desvio padrão \d+,\d+ \d+,\d+ ms desvio padrão \d+,\d+ Tier 0 Recomendado Dragonfly A9 Ultra no AliExpress ₩ \d+\.\d+ PAW3950 Ultra \([\d,.]+[bkmBKM]+\) Nordic nRF52840 Simétrico \d+ g/:
+        - row /Comparar Dragonfly A9 Ultra Dragonfly A9 Ultra ATK \d+,\d+ ms desvio padrão \d+,\d+ \d+,\d+ ms desvio padrão \d+,\d+ A\+ Boa ₩ \d+\.\d+ PAW3950 Ultra \([\d,.]+[bkmBKM]+\) Nordic nRF52840 Simétrico \d+ g/:
             - cell "Comparar Dragonfly A9 Ultra":
                 - checkbox "Comparar Dragonfly A9 Ultra"
             - rowheader "Dragonfly A9 Ultra ATK":
+                - link "Detalhes de Dragonfly A9 Ultra":
+                    - /url: /mouse/003586ba-0cbf-4932-843c-24e5f56e47c2
                 - paragraph:
-                    - link "Dragonfly A9 Ultra":
-                        - /url: /mouse/003586ba-0cbf-4932-843c-24e5f56e47c2
+                    - link "Dragonfly A9 Ultra no AliExpress":
+                        - /url: https://s.click.aliexpress.com/e/_oFLhAg6
                 - paragraph: ATK
             - cell /\d+,\d+ ms desvio padrão \d+,\d+/
             - cell /\d+,\d+ ms desvio padrão \d+,\d+/
-            - cell "Tier 0"
-            - cell "Recomendado"
-            - cell "Dragonfly A9 Ultra no AliExpress":
-                - link "Dragonfly A9 Ultra no AliExpress":
-                    - /url: https://s.click.aliexpress.com/e/_oFLhAg6
-                    - text: ""
+            - cell "A+"
+            - cell "Boa"
             - cell /₩ \d+\.\d+/
             - cell /PAW3950 Ultra \([\d,.]+[bkmBKM]+\)/
             - cell "Nordic nRF52840"
             - cell "Simétrico"
             - cell /\d+ g/
-        - row /Comparar Huan Huan WLMouse \d+,\d+ ms desvio padrão \d+,\d+ \d+,\d+ ms desvio padrão \d+,\d+ Tier 3 Recomendação fraca Sem dado ₩ \d+\.\d+ PAW3950 HS Nordic nRF54H20 Simétrico \d+ g/:
+        - row /Comparar Huan Huan WLMouse \d+,\d+ ms desvio padrão \d+,\d+ \d+,\d+ ms desvio padrão \d+,\d+ C Fraca ₩ \d+\.\d+ PAW3950 HS Nordic nRF54H20 Simétrico \d+ g/:
             - cell "Comparar Huan":
                 - checkbox "Comparar Huan"
             - rowheader "Huan WLMouse":
-                - paragraph:
-                    - link "Huan":
-                        - /url: /mouse/201270eb-b392-4e41-96a9-1b609a77e795
+                - link "Detalhes de Huan":
+                    - /url: /mouse/201270eb-b392-4e41-96a9-1b609a77e795
+                - paragraph: Huan
                 - paragraph: WLMouse
             - cell /\d+,\d+ ms desvio padrão \d+,\d+/
             - cell /\d+,\d+ ms desvio padrão \d+,\d+/
-            - cell "Tier 3"
-            - cell "Recomendação fraca"
-            - cell "Sem dado"
+            - cell "C"
+            - cell "Fraca"
             - cell /₩ \d+\.\d+/
             - cell "PAW3950 HS"
             - cell "Nordic nRF54H20"
             - cell "Simétrico"
             - cell /\d+ g/
-        - row /Comparar Dragonfly 3 PRO Dragonfly 3 PRO VGN \d+,\d+ ms desvio padrão \d+,\d+ \d+,\d+ ms desvio padrão \d+,\d+ Sem nota Não recomendado Dragonfly 3 PRO no AliExpress ₩ \d+\.\d+ PAW3395 Sem dado Simétrico \d+ g/:
+        - row /Comparar Dragonfly 3 PRO Dragonfly 3 PRO VGN \d+,\d+ ms desvio padrão \d+,\d+ \d+,\d+ ms desvio padrão \d+,\d+ Sem nota Evitar ₩ \d+\.\d+ PAW3395 Sem dado Simétrico \d+ g/:
             - cell "Comparar Dragonfly 3 PRO":
                 - checkbox "Comparar Dragonfly 3 PRO"
             - rowheader "Dragonfly 3 PRO VGN":
+                - link "Detalhes de Dragonfly 3 PRO":
+                    - /url: /mouse/0390fea6-efb9-45ea-a1a3-71b170224e58
                 - paragraph:
-                    - link "Dragonfly 3 PRO":
-                        - /url: /mouse/0390fea6-efb9-45ea-a1a3-71b170224e58
+                    - link "Dragonfly 3 PRO no AliExpress":
+                        - /url: https://s.click.aliexpress.com/e/_c4UrtAu7
                 - paragraph: VGN
             - cell /\d+,\d+ ms desvio padrão \d+,\d+/
             - cell /\d+,\d+ ms desvio padrão \d+,\d+/
             - cell "Sem nota"
-            - cell "Não recomendado"
-            - cell "Dragonfly 3 PRO no AliExpress":
-                - link "Dragonfly 3 PRO no AliExpress":
-                    - /url: https://s.click.aliexpress.com/e/_c4UrtAu7
-                    - text: ""
+            - cell "Evitar"
             - cell /₩ \d+\.\d+/
             - cell "PAW3395"
             - cell "Sem dado"
             - cell "Simétrico"
             - cell /\d+ g/
-        - row /Comparar H200A H200A ABKO \d+,\d+ ms desvio padrão \d+,\d+ \d+,\d+ ms desvio padrão \d+,\d+ Sem nota Recomendação fraca Sem dado ₩ \d+\.\d+ PAW3395 CompX Tech CX52850 Simétrico e Assimétrico \d+ g/:
+        - row /Comparar H200A H200A ABKO \d+,\d+ ms desvio padrão \d+,\d+ \d+,\d+ ms desvio padrão \d+,\d+ Sem nota Fraca ₩ \d+\.\d+ PAW3395 CompX Tech CX52850 Simétrico e Assimétrico \d+ g/:
             - cell "Comparar H200A":
                 - checkbox "Comparar H200A"
             - rowheader "H200A ABKO":
-                - paragraph:
-                    - link "H200A":
-                        - /url: /mouse/2cf40f05-fa65-4a5c-936a-c67de7025af3
+                - link "Detalhes de H200A":
+                    - /url: /mouse/2cf40f05-fa65-4a5c-936a-c67de7025af3
+                - paragraph: H200A
                 - paragraph: ABKO
             - cell /\d+,\d+ ms desvio padrão \d+,\d+/
             - cell /\d+,\d+ ms desvio padrão \d+,\d+/
             - cell "Sem nota"
-            - cell "Recomendação fraca"
-            - cell "Sem dado"
+            - cell "Fraca"
             - cell /₩ \d+\.\d+/
             - cell "PAW3395"
             - cell "CompX Tech CX52850"
             - cell "Simétrico e Assimétrico"
             - cell /\d+ g/
-        - row /Comparar VK M5 Max THOR VK M5 Max THOR VALKYRIE Sem dado Sem dado Sem dado Sem dado Sem dado Sem dado Sem dado Sem dado Assimétrico \d+ g/:
+        - row /Comparar VK M5 Max THOR VK M5 Max THOR VALKYRIE Sem dado Sem dado Sem dado Sem dado Sem dado Sem dado Sem dado Assimétrico \d+ g/:
             - cell "Comparar VK M5 Max THOR":
                 - checkbox "Comparar VK M5 Max THOR"
             - rowheader "VK M5 Max THOR VALKYRIE":
-                - paragraph:
-                    - link "VK M5 Max THOR":
-                        - /url: /mouse/0fbec015-8d94-469d-993e-1d9d5138fb9b
+                - link "Detalhes de VK M5 Max THOR":
+                    - /url: /mouse/0fbec015-8d94-469d-993e-1d9d5138fb9b
+                - paragraph: VK M5 Max THOR
                 - paragraph: VALKYRIE
-            - cell "Sem dado"
             - cell "Sem dado"
             - cell "Sem dado"
             - cell "Sem dado"
@@ -120,22 +112,20 @@
             - cell "Sem dado"
             - cell "Assimétrico"
             - cell /\d+ g/
-        - row /Comparar Cloud XS Cloud XS WAIZOWL Sem dado Sem dado Sem dado Aguardado Cloud XS no AliExpress ₩ \d+\.\d+ PAW3950 Nordic nRF52840 Simétrico \d+ g/:
+        - row /Comparar Cloud XS Cloud XS WAIZOWL Sem dado Sem dado Sem dado Pendente ₩ \d+\.\d+ PAW3950 Nordic nRF52840 Simétrico \d+ g/:
             - cell "Comparar Cloud XS":
                 - checkbox "Comparar Cloud XS"
             - rowheader "Cloud XS WAIZOWL":
+                - link "Detalhes de Cloud XS":
+                    - /url: /mouse/1f2e9ba6-5ac5-4f0d-b986-7cb4203b5d6c
                 - paragraph:
-                    - link "Cloud XS":
-                        - /url: /mouse/1f2e9ba6-5ac5-4f0d-b986-7cb4203b5d6c
+                    - link "Cloud XS no AliExpress":
+                        - /url: https://s.click.aliexpress.com/e/_oo1XMw2
                 - paragraph: WAIZOWL
             - cell "Sem dado"
             - cell "Sem dado"
             - cell "Sem dado"
-            - cell "Aguardado"
-            - cell "Cloud XS no AliExpress":
-                - link "Cloud XS no AliExpress":
-                    - /url: https://s.click.aliexpress.com/e/_oo1XMw2
-                    - text: ""
+            - cell "Pendente"
             - cell /₩ \d+\.\d+/
             - cell "PAW3950"
             - cell "Nordic nRF52840"

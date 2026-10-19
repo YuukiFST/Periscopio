@@ -1,6 +1,6 @@
 import type { Product } from "../data/schema.ts";
 import { numberValue, type FilterChoice, type FilterDefinition } from "./filter-engine.ts";
-import { enumValueChoices, numberChoice } from "./common-filters.ts";
+import { enumValueChoices } from "./common-filters.ts";
 
 /** Volume of the bounding box in mm³, EyeJoker's measure of a mouse's size. */
 function volumeOf(product: Product): number | undefined {
@@ -28,9 +28,9 @@ function volumeChoice(
 
 /**
  * EyeJoker's mouse Filtros (`_a` in its bundle), in its order, with Sensor and
- * Resposta do clique after Peso; the last two are advanced, as on EyeJoker.
+ * Resposta do clique after Peso, all in one list: none is set apart as advanced.
  * Left out on purpose: the sensor class (the Sensor Filtro picks the sensors
- * themselves), the weight bands (Peso takes typed grams instead) and
+ * themselves), the weight and IPS bands (both take typed bounds instead) and
  * "Depende do modelo" in Carcaça furada.
  */
 export const mouseFilters: readonly FilterDefinition[] = [
@@ -70,22 +70,16 @@ export const mouseFilters: readonly FilterDefinition[] = [
     unit: "ms",
   },
   {
-    kind: "buckets",
+    kind: "range",
     param: "ips",
     label: "Velocidade máxima de rastreio",
-    advanced: true,
-    buckets: [
-      numberChoice("ate300", "Até 300 IPS", "ips", (ips) => ips >= 0 && ips <= 300),
-      numberChoice("301-499", "301 a 499 IPS", "ips", (ips) => ips >= 301 && ips <= 499),
-      numberChoice("500-749", "500 a 749 IPS", "ips", (ips) => ips >= 500 && ips <= 749),
-      numberChoice("750-ou-mais", "750 IPS ou mais", "ips", (ips) => ips >= 750),
-    ],
+    fieldKey: "ips",
+    unit: "IPS",
   },
   {
     kind: "buckets",
     param: "furada",
     label: "Carcaça furada",
-    advanced: true,
     buckets: enumValueChoices("holeBody", {
       yes: "sim",
       no: "nao",

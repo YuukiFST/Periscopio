@@ -3,42 +3,37 @@
     - button "Limpar" [disabled]
     - group "Nota geral":
         - text: ""
-        - checkbox "Impecável"
-        - text: Impecável
-        - checkbox "Tier 0"
-        - text: Tier 0
-        - checkbox "Tier 1"
-        - text: Tier 1
-        - checkbox "Tier 2"
-        - text: Tier 2
-        - checkbox "Tier 3"
-        - text: Tier 3
-        - checkbox "Tier 4"
-        - text: Tier 4
+        - checkbox "S"
+        - text: S
+        - checkbox "A+"
+        - text: A+
+        - checkbox "A"
+        - text: A
+        - checkbox "B"
+        - text: B
+        - checkbox "C"
+        - text: C
+        - checkbox "D"
+        - text: D
         - checkbox "Sem nota"
         - text: Sem nota
     - group "Recomendação":
         - text: ""
-        - checkbox "Aguardado"
-        - text: Aguardado
-        - checkbox "Muito recomendado"
-        - text: Muito recomendado
-        - checkbox "Recomendado"
-        - text: Recomendado
-        - checkbox "Recomendação fraca"
-        - text: Recomendação fraca
-        - checkbox "Não recomendado"
-        - text: Não recomendado
-    - group "Preço":
-        - text: ""
-        - checkbox /Até ₩ \d+ mil/
-        - text: /Até ₩ \d+ mil/
-        - checkbox /₩ \d+ a \d+ mil/
-        - text: /₩ \d+ a \d+ mil/
-        - checkbox /₩ \d+ a \d+ mil/
-        - text: /₩ \d+ a \d+ mil/
-        - checkbox /Mais de ₩ \d+ mil/
-        - text: /Mais de ₩ \d+ mil/
+        - checkbox "Ótima"
+        - text: Ótima
+        - checkbox "Boa"
+        - text: Boa
+        - checkbox "Fraca"
+        - text: Fraca
+        - checkbox "Evitar"
+        - text: Evitar
+        - checkbox "Pendente"
+        - text: Pendente
+    - group "Preço (mil ₩)":
+        - text: Preço (mil ₩) Mínimo
+        - textbox "Mínimo"
+        - text: Máximo
+        - textbox "Máximo"
     - group "Layout":
         - text: ""
         - checkbox "TKL"

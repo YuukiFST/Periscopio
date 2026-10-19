@@ -71,7 +71,7 @@ export function ProductComparison({
 
   const headingRef = useRef<HTMLHeadingElement>(null);
   useEffect(() => {
-    document.title = `Comparação de ${categoryName} · EyeJoker`;
+    document.title = `Comparação de ${categoryName} · Periscópio`;
     // A new view in a single-page app: screen readers and the keyboard start from its title.
     headingRef.current?.focus();
   }, [categoryName]);

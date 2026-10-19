@@ -128,8 +128,6 @@ export function sortValueOf(column: TableColumn, product: Product): SortValue {
   switch (column.kind) {
     case "product":
       return product.name;
-    case "aliexpress":
-      return product.aliUrl ?? undefined;
     case "price":
       return priceOf(product);
     case "field": {

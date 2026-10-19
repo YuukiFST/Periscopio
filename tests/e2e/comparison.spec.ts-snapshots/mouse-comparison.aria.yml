@@ -33,20 +33,20 @@
         - rowgroup "Especificações":
             - row "Especificações":
                 - rowheader "Especificações"
-            - row "Nota geral Tier 0 melhor nesta medida Tier 3 Sem nota":
+            - row "Nota geral A+ melhor nesta medida C Sem nota":
                 - rowheader "Nota geral"
-                - cell "Tier 0 melhor nesta medida":
+                - cell "A+ melhor nesta medida":
                     - text: ""
                     - img "melhor nesta medida"
-                - cell "Tier 3"
+                - cell "C"
                 - cell "Sem nota"
-            - row "Recomendação Recomendado melhor nesta medida Recomendação fraca Recomendação fraca":
+            - row "Recomendação Boa melhor nesta medida Fraca Fraca":
                 - rowheader "Recomendação"
-                - cell "Recomendado melhor nesta medida":
+                - cell "Boa melhor nesta medida":
                     - text: ""
                     - img "melhor nesta medida"
-                - cell "Recomendação fraca"
-                - cell "Recomendação fraca"
+                - cell "Fraca"
+                - cell "Fraca"
             - row "Formato Simétrico Simétrico Simétrico e Assimétrico":
                 - rowheader "Formato"
                 - cell "Simétrico"

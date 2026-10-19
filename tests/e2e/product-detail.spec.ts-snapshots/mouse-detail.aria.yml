@@ -10,12 +10,13 @@
     - definition: Publicado
     - link "Ver no AliExpress (abre em nova aba)":
         - /url: https://s.click.aliexpress.com/e/_oFLhAg6
+    - button "Adicionar à comparação"
     - region "Especificações":
         - heading "Especificações" [level=2]
         - term: Nota geral
-        - definition: Tier 0
+        - definition: A+
         - term: Recomendação
-        - definition: Recomendado
+        - definition: Boa
         - term: Formato
         - definition: Simétrico
         - term: Polling rate máximo
@@ -106,3 +107,4 @@
         - definition: /\d+,\d+ ms/
         - term: Desvio padrão do sensor (sem fio)
         - definition: /\d+,\d+ ms/
+    - paragraph
