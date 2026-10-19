@@ -164,6 +164,23 @@ const refusals: Refusal[] = [
       }),
     reason: /o fabricante ".+" do Produto .+ não está em \/api\/company/,
   },
+  {
+    name: "the photo URLs move to /products/ (regression: every photo was deleted)",
+    edit: (routes) => {
+      for (const category of ["mouse", "keyboard", "monitor"] as const) {
+        editRecordedSnapshot(routes, category, (snapshot) => {
+          for (const row of snapshot.data.rows) {
+            const imageUrl = row.values.productImage;
+            if (!imageUrl) continue;
+            const moved = new URL(imageUrl);
+            moved.pathname = `/products${moved.pathname}`;
+            row.values.productImage = moved.href;
+          }
+        });
+      }
+    },
+    reason: /mouse: 5 de 5 Produtos com foto têm um endereço de foto inesperado/,
+  },
 ];
 
 test.each(refusals)(

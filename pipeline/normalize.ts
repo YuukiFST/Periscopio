@@ -65,6 +65,8 @@ export type NormalizedCategory = {
   data: CategoryData;
   /** EyeJoker fields with no normalized type (FILE, COMPANY) beyond the known ones. */
   ignoredFieldKeys: string[];
+  /** Products with a non-empty photo URL, usable or not. */
+  imageUrlCount: number;
   /** Products whose photo URL is not a `<uuid>.avif` file. */
   unusableImageProductIds: string[];
 };
@@ -228,6 +230,7 @@ export function normalizeCategory(
   }
   const valueFields = fields.filter((field) => !productPropertyFieldKeys.has(field.key));
 
+  let imageUrlCount = 0;
   const unusableImageProductIds: string[] = [];
   const products: Product[] = [];
   for (const row of snapshot.rows) {
@@ -241,6 +244,7 @@ export function normalizeCategory(
       );
     }
     const image = imagePathFrom(row.values[productImageKey] ?? "");
+    if (image !== null) imageUrlCount++;
     if (image === undefined) unusableImageProductIds.push(row.id);
     products.push({
       id: row.id,
@@ -256,5 +260,10 @@ export function normalizeCategory(
   }
   products.sort((left, right) => compareText(left.id, right.id));
 
-  return { data: { category: slug, fields, products }, ignoredFieldKeys, unusableImageProductIds };
+  return {
+    data: { category: slug, fields, products },
+    ignoredFieldKeys,
+    imageUrlCount,
+    unusableImageProductIds,
+  };
 }

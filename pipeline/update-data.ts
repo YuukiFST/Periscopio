@@ -30,6 +30,9 @@ const slugByEyejokerCategory = {
 /** A Categoria may shrink by at most 10% from the published version. */
 const minimumRowShare = 0.9;
 
+/** Above this share of photo URLs that are not `/<uuid>.avif`, EyeJoker moved its photos. */
+const maximumUnusableImageShare = 0.1;
+
 type UpdateConfig = {
   apiUrl: string;
   cdnUrl: string;
@@ -72,6 +75,16 @@ function refuseRowDrop(normalized: CategoryData[], published: Meta | null): void
     if (products.length >= previous * minimumRowShare) continue;
     throw new UpdateRefusedError(
       `${category}: ${products.length} Produtos, abaixo de 90% dos ${previous} publicados antes.`,
+    );
+  }
+}
+
+function refuseUnusableImages(normalized: NormalizedCategory[]): void {
+  for (const { data, imageUrlCount, unusableImageProductIds } of normalized) {
+    const unusable = unusableImageProductIds.length;
+    if (unusable <= imageUrlCount * maximumUnusableImageShare) continue;
+    throw new UpdateRefusedError(
+      `${data.category}: ${unusable} de ${imageUrlCount} Produtos com foto têm um endereço de foto inesperado (não é /<uuid>.avif), acima de 10%; as fotos publicadas seriam apagadas.`,
     );
   }
 }
@@ -119,6 +132,7 @@ async function runUpdate(config: UpdateConfig): Promise<void> {
   const normalized: NormalizedCategory[] = [...snapshots].map(([category, snapshot]) =>
     normalizeCategory(slugByEyejokerCategory[category], snapshot, companies),
   );
+  refuseUnusableImages(normalized);
   const validated = normalized.map(({ data }) => validateOutput(data));
   refuseRowDrop(validated, await readPublishedMeta(metaPath));
 

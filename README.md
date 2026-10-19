@@ -22,7 +22,7 @@ Consultar e comparar, em português, os benchmarks de monitores, teclados e mous
 ## Atualização dos dados
 
 - `pnpm update-data` busca no EyeJoker os Produtos das três Categorias e `/api/company`, valida, normaliza e grava `public/data/{mouse,teclado,monitor}.json`, `public/data/meta.json` e as fotos novas em `public/images/<uuid>.avif`, apagando as que nenhum Produto usa.
-- A Atualização é recusada, sem mudar nenhum arquivo e com saída de erro, se o EyeJoker falhar 3 vezes seguidas, mudar o formato, citar um fabricante fora de `/api/company` ou se uma Categoria cair abaixo de 90% dos Produtos publicados antes; foto que falha só fica nula.
+- A Atualização é recusada, sem mudar nenhum arquivo e com saída de erro, se o EyeJoker falhar 3 vezes seguidas, mudar o formato, citar um fabricante fora de `/api/company`, se uma Categoria cair abaixo de 90% dos Produtos publicados antes ou se mais de 10% dos Produtos com foto de uma Categoria vierem com endereço que não é `/<uuid>.avif`; foto que falha só fica nula.
 - Variáveis de ambiente: `EYEJOKER_API_URL` (padrão `https://eyejokerdb.com`), `EYEJOKER_CDN_URL` (padrão `https://cdn.eyejokerdb.com`), `EYEJOKER_OUT_DIR` (padrão `public/`) e `GITHUB_STEP_SUMMARY` (o resumo vai para a saída padrão quando ela não existe).
 - O resumo lista cada chave sem tradução pt (`campo:`, `unidade:`, `valor:`); a tabela fica em `src/i18n/`.
 - O workflow `.github/workflows/update-data.yml` roda toda segunda às 09:00 UTC (e à mão por `workflow_dispatch`), commita em `main` só se algo mudou e chama o Deploy Hook do segredo `VERCEL_DEPLOY_HOOK_URL`.
