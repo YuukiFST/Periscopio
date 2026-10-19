@@ -1,0 +1,359 @@
+- article "Comparação de mouses":
+    - link "Voltar para Mouses":
+        - /url: /mouse?cmp=003586ba-0cbf-4932-843c-24e5f56e47c2,201270eb-b392-4e41-96a9-1b609a77e795,2cf40f05-fa65-4a5c-936a-c67de7025af3
+    - heading "Comparação de mouses" [level=1]
+    - button "Copiar link"
+    - status
+    - paragraph: O Preço fica de fora da comparação porque preços mudam, e o EyeJoker não registra o preço da sua região.
+    - table "Comparação de mouses":
+        - rowgroup:
+            - row "Dragonfly A9 Ultra Huan H200A":
+                - cell
+                - columnheader "Dragonfly A9 Ultra":
+                    - paragraph:
+                        - link "Dragonfly A9 Ultra":
+                            - /url: /mouse/003586ba-0cbf-4932-843c-24e5f56e47c2?cmp=003586ba-0cbf-4932-843c-24e5f56e47c2,201270eb-b392-4e41-96a9-1b609a77e795,2cf40f05-fa65-4a5c-936a-c67de7025af3
+                    - paragraph: ATK
+                    - link "Dragonfly A9 Ultra no AliExpress (abre em nova aba)":
+                        - /url: https://s.click.aliexpress.com/e/_oFLhAg6
+                        - text: ""
+                    - button "Remover Dragonfly A9 Ultra da comparação"
+                - columnheader "Huan":
+                    - paragraph:
+                        - link "Huan":
+                            - /url: /mouse/201270eb-b392-4e41-96a9-1b609a77e795?cmp=003586ba-0cbf-4932-843c-24e5f56e47c2,201270eb-b392-4e41-96a9-1b609a77e795,2cf40f05-fa65-4a5c-936a-c67de7025af3
+                    - paragraph: WLMouse
+                    - button "Remover Huan da comparação"
+                - columnheader "H200A":
+                    - paragraph:
+                        - link "H200A":
+                            - /url: /mouse/2cf40f05-fa65-4a5c-936a-c67de7025af3?cmp=003586ba-0cbf-4932-843c-24e5f56e47c2,201270eb-b392-4e41-96a9-1b609a77e795,2cf40f05-fa65-4a5c-936a-c67de7025af3
+                    - paragraph: ABKO
+                    - button "Remover H200A da comparação"
+        - rowgroup "Especificações":
+            - row "Especificações":
+                - rowheader "Especificações"
+            - row "Nota geral Tier 0 melhor nesta medida Tier 3 Sem nota":
+                - rowheader "Nota geral"
+                - cell "Tier 0 melhor nesta medida":
+                    - text: ""
+                    - img "melhor nesta medida"
+                - cell "Tier 3"
+                - cell "Sem nota"
+            - row "Recomendação Recomendado melhor nesta medida Recomendação fraca Recomendação fraca":
+                - rowheader "Recomendação"
+                - cell "Recomendado melhor nesta medida":
+                    - text: ""
+                    - img "melhor nesta medida"
+                - cell "Recomendação fraca"
+                - cell "Recomendação fraca"
+            - row "Formato Simétrico Simétrico Simétrico e Assimétrico":
+                - rowheader "Formato"
+                - cell "Simétrico"
+                - cell "Simétrico"
+                - cell "Simétrico e Assimétrico"
+            - row /Polling rate máximo \d+\.\d+ Hz \d+\.\d+ Hz \d+\.\d+ Hz/:
+                - rowheader "Polling rate máximo"
+                - cell /\d+\.\d+ Hz/
+                - cell /\d+\.\d+ Hz/
+                - cell /\d+\.\d+ Hz/
+            - row "Conexão Com e sem fio Com e sem fio Com e sem fio":
+                - rowheader "Conexão"
+                - cell "Com e sem fio"
+                - cell "Com e sem fio"
+                - cell "Com e sem fio"
+            - row "Material Sem dado Liga de magnésio e Plástico Sem dado":
+                - rowheader "Material"
+                - cell "Sem dado"
+                - cell "Liga de magnésio e Plástico"
+                - cell "Sem dado"
+            - row /Comprimento \d+ mm \d+ mm \d+ mm/:
+                - rowheader "Comprimento"
+                - cell /\d+ mm/
+                - cell /\d+ mm/
+                - cell /\d+ mm/
+            - row /Peso \d+ g \d+ g melhor nesta medida \d+ g/:
+                - rowheader "Peso"
+                - cell /\d+ g/
+                - cell /\d+ g melhor nesta medida/:
+                    - text: ""
+                    - img "melhor nesta medida"
+                - cell /\d+ g/
+            - row /Largura máxima \d+ mm \d+ mm \d+ mm/:
+                - rowheader "Largura máxima"
+                - cell /\d+ mm/
+                - cell /\d+ mm/
+                - cell /\d+ mm/
+            - row /Altura \d+ mm \d+ mm \d+,\d+ mm/:
+                - rowheader "Altura"
+                - cell /\d+ mm/
+                - cell /\d+ mm/
+                - cell /\d+,\d+ mm/
+            - row "Carcaça furada Não Só embaixo Não":
+                - rowheader "Carcaça furada"
+                - cell "Não"
+                - cell "Só embaixo"
+                - cell "Não"
+            - row "MCU Nordic nRF52840 Nordic nRF54H20 CompX Tech CX52850":
+                - rowheader "MCU"
+                - cell "Nordic nRF52840"
+                - cell "Nordic nRF54H20"
+                - cell "CompX Tech CX52850"
+            - row "Bateria 500mAh 300mAh 600mAh":
+                - rowheader "Bateria"
+                - cell "500mAh"
+                - cell "300mAh"
+                - cell "600mAh"
+            - row /Sensor PAW3950 Ultra \([\d,.]+[bkmBKM]+\) PAW3950 HS PAW3395/:
+                - rowheader "Sensor"
+                - cell /PAW3950 Ultra \([\d,.]+[bkmBKM]+\)/
+                - cell "PAW3950 HS"
+                - cell "PAW3395"
+            - row "Switch Omron Optical / ATK Custom Tuned Optical Omron Optical Huano Blue Shell White Dot":
+                - rowheader "Switch"
+                - cell "Omron Optical / ATK Custom Tuned Optical"
+                - cell "Omron Optical"
+                - cell "Huano Blue Shell White Dot"
+            - row "Switch lateral huano omronMicroSwitch unknownMakerThreePinSwitch":
+                - rowheader "Switch lateral"
+                - cell "huano"
+                - cell "omronMicroSwitch"
+                - cell "unknownMakerThreePinSwitch"
+            - row "Switch da roda Tact switch de 2 pinos Tact switch de 2 pinos Switch de 3 pinos (marca desconhecida)":
+                - rowheader "Switch da roda"
+                - cell "Tact switch de 2 pinos"
+                - cell "Tact switch de 2 pinos"
+                - cell "Switch de 3 pinos (marca desconhecida)"
+            - row /Encoder TTC Gold TTC Dustproof Silver [\d,.]+[bkmBKM]+ F-Switch [\d,.]+[bkmBKM]+/:
+                - rowheader "Encoder"
+                - cell "TTC Gold"
+                - cell /TTC Dustproof Silver [\d,.]+[bkmBKM]+/
+                - cell /F-Switch [\d,.]+[bkmBKM]+/
+            - row /Velocidade máxima de rastreio \d+ IPS melhor nesta medida \d+ IPS melhor nesta medida \d+ IPS/:
+                - rowheader "Velocidade máxima de rastreio"
+                - cell /\d+ IPS melhor nesta medida/:
+                    - text: ""
+                    - img "melhor nesta medida"
+                - cell /\d+ IPS melhor nesta medida/:
+                    - text: ""
+                    - img "melhor nesta medida"
+                - cell /\d+ IPS/
+            - row /Aceleração máxima \d+ G \d+ G \d+ G/:
+                - rowheader "Aceleração máxima"
+                - cell /\d+ G/
+                - cell /\d+ G/
+                - cell /\d+ G/
+            - row /DPI máximo \d+\.\d+ DPI melhor nesta medida \d+\.\d+ DPI \d+\.\d+ DPI/:
+                - rowheader "DPI máximo"
+                - cell /\d+\.\d+ DPI melhor nesta medida/:
+                    - text: ""
+                    - img "melhor nesta medida"
+                - cell /\d+\.\d+ DPI/
+                - cell /\d+\.\d+ DPI/
+            - row /Passo de DPI \d+ DPI Sem dado \d+ DPI/:
+                - rowheader "Passo de DPI"
+                - cell /\d+ DPI/
+                - cell "Sem dado"
+                - cell /\d+ DPI/
+            - row "Conector USB-C USB-C USB-C":
+                - rowheader "Conector"
+                - cell "USB-C"
+                - cell "USB-C"
+                - cell "USB-C"
+            - row "Modo de LOD do sensor Faixa Sem dado Valores selecionáveis":
+                - rowheader "Modo de LOD do sensor"
+                - cell "Faixa"
+                - cell "Sem dado"
+                - cell "Valores selecionáveis"
+            - row /Valores de LOD do sensor 0\.7~1\.7 mm \(0\.1 mm step, \d+ levels\) Sem dado 1\.0, 2\.0 mm/:
+                - rowheader "Valores de LOD do sensor"
+                - cell /0\.7~1\.7 mm \(0\.1 mm step, \d+ levels\)/
+                - cell "Sem dado"
+                - cell "1.0, 2.0 mm"
+            - row "Situação de venda À venda À venda À venda":
+                - rowheader "Situação de venda"
+                - cell "À venda"
+                - cell "À venda"
+                - cell "À venda"
+            - row /Versão do firmware v2\.\d+ 0\.0\.8\.0 1\.0/:
+                - rowheader "Versão do firmware"
+                - cell /v2\.\d+/
+                - cell "0.0.8.0"
+                - cell "1.0"
+            - row /Data de publicação \d+ de jul\. de \d+ \d+ de abr\. de \d+ 1 de nov\. de \d+/:
+                - rowheader "Data de publicação"
+                - cell /\d+ de jul\. de \d+/
+                - cell /\d+ de abr\. de \d+/
+                - cell /1 de nov\. de \d+/
+        - rowgroup "Medições":
+            - row "Medições":
+                - rowheader "Medições"
+            - row /Resposta média do sensor \d+,\d+ ms melhor nesta medida \d+,\d+ ms \d+,\d+ ms/:
+                - rowheader "Resposta média do sensor"
+                - cell /\d+,\d+ ms melhor nesta medida/:
+                    - text: ""
+                    - img "melhor nesta medida"
+                - cell /\d+,\d+ ms/
+                - cell /\d+,\d+ ms/
+            - row /Desvio padrão do sensor \d+,\d+ ms \d+,\d+ ms melhor nesta medida \d+,\d+ ms/:
+                - rowheader "Desvio padrão do sensor"
+                - cell /\d+,\d+ ms/
+                - cell /\d+,\d+ ms melhor nesta medida/:
+                    - text: ""
+                    - img "melhor nesta medida"
+                - cell /\d+,\d+ ms/
+            - row /Resposta do clique \d+,\d+ ms melhor nesta medida \d+,\d+ ms \d+,\d+ ms/:
+                - rowheader "Resposta do clique"
+                - cell /\d+,\d+ ms melhor nesta medida/:
+                    - text: ""
+                    - img "melhor nesta medida"
+                - cell /\d+,\d+ ms/
+                - cell /\d+,\d+ ms/
+            - row /Desvio padrão do clique \d+,\d+ ms \d+,\d+ ms melhor nesta medida \d+,\d+ ms/:
+                - rowheader "Desvio padrão do clique"
+                - cell /\d+,\d+ ms/
+                - cell /\d+,\d+ ms melhor nesta medida/:
+                    - text: ""
+                    - img "melhor nesta medida"
+                - cell /\d+,\d+ ms/
+            - row /Debounce \d+ ms melhor nesta medida Sem dado \d+ ms/:
+                - rowheader "Debounce"
+                - cell /\d+ ms melhor nesta medida/:
+                    - text: ""
+                    - img "melhor nesta medida"
+                - cell "Sem dado"
+                - cell /\d+ ms/
+            - row "Clique perdido Não Não Não":
+                - rowheader "Clique perdido"
+                - cell "Não"
+                - cell "Não"
+                - cell "Não"
+            - row "Slam click Não Não Não":
+                - rowheader "Slam click"
+                - cell "Não"
+                - cell "Não"
+                - cell "Não"
+            - row "Proteção contra slam click Sim Sim Não":
+                - rowheader "Proteção contra slam click"
+                - cell "Sim"
+                - cell "Sim"
+                - cell "Não"
+            - row /LOD mínimo \d+,\d+ mm \d+,\d+ mm melhor nesta medida Sem dado/:
+                - rowheader "LOD mínimo"
+                - cell /\d+,\d+ mm/
+                - cell /\d+,\d+ mm melhor nesta medida/:
+                    - text: ""
+                    - img "melhor nesta medida"
+                - cell "Sem dado"
+            - row /Resposta média do clique \(ideal, ao pressionar\) \d+,\d+ ms \d+,\d+ ms melhor nesta medida \d+,\d+ ms/:
+                - rowheader "Resposta média do clique (ideal, ao pressionar)"
+                - cell /\d+,\d+ ms/
+                - cell /\d+,\d+ ms melhor nesta medida/:
+                    - text: ""
+                    - img "melhor nesta medida"
+                - cell /\d+,\d+ ms/
+            - row /Desvio padrão do clique \(ideal, ao pressionar\) \d+,\d+ ms \d+,\d+ ms melhor nesta medida \d+,\d+ ms/:
+                - rowheader "Desvio padrão do clique (ideal, ao pressionar)"
+                - cell /\d+,\d+ ms/
+                - cell /\d+,\d+ ms melhor nesta medida/:
+                    - text: ""
+                    - img "melhor nesta medida"
+                - cell /\d+,\d+ ms/
+            - row /Resposta média do clique \(ideal, ao soltar\) \d+,\d+ ms melhor nesta medida \d+,\d+ ms \d+,\d+ ms/:
+                - rowheader "Resposta média do clique (ideal, ao soltar)"
+                - cell /\d+,\d+ ms melhor nesta medida/:
+                    - text: ""
+                    - img "melhor nesta medida"
+                - cell /\d+,\d+ ms/
+                - cell /\d+,\d+ ms/
+            - row /Desvio padrão do clique \(ideal, ao soltar\) \d+,\d+ ms \d+,\d+ ms melhor nesta medida \d+,\d+ ms/:
+                - rowheader "Desvio padrão do clique (ideal, ao soltar)"
+                - cell /\d+,\d+ ms/
+                - cell /\d+,\d+ ms melhor nesta medida/:
+                    - text: ""
+                    - img "melhor nesta medida"
+                - cell /\d+,\d+ ms/
+            - row /Resposta média do clique \(com fio, ao pressionar\) Sem dado \d+,\d+ ms melhor nesta medida \d+,\d+ ms/:
+                - rowheader "Resposta média do clique (com fio, ao pressionar)"
+                - cell "Sem dado"
+                - cell /\d+,\d+ ms melhor nesta medida/:
+                    - text: ""
+                    - img "melhor nesta medida"
+                - cell /\d+,\d+ ms/
+            - row /Desvio padrão do clique \(com fio, ao pressionar\) Sem dado \d+,\d+ ms melhor nesta medida \d+,\d+ ms/:
+                - rowheader "Desvio padrão do clique (com fio, ao pressionar)"
+                - cell "Sem dado"
+                - cell /\d+,\d+ ms melhor nesta medida/:
+                    - text: ""
+                    - img "melhor nesta medida"
+                - cell /\d+,\d+ ms/
+            - row /Resposta média do clique \(com fio, ao soltar\) Sem dado \d+,\d+ ms melhor nesta medida \d+,\d+ ms/:
+                - rowheader "Resposta média do clique (com fio, ao soltar)"
+                - cell "Sem dado"
+                - cell /\d+,\d+ ms melhor nesta medida/:
+                    - text: ""
+                    - img "melhor nesta medida"
+                - cell /\d+,\d+ ms/
+            - row /Desvio padrão do clique \(com fio, ao soltar\) Sem dado \d+,\d+ ms melhor nesta medida \d+,\d+ ms/:
+                - rowheader "Desvio padrão do clique (com fio, ao soltar)"
+                - cell "Sem dado"
+                - cell /\d+,\d+ ms melhor nesta medida/:
+                    - text: ""
+                    - img "melhor nesta medida"
+                - cell /\d+,\d+ ms/
+            - row /Resposta média do sensor \(com fio\) Sem dado \d+,\d+ ms melhor nesta medida \d+,\d+ ms/:
+                - rowheader "Resposta média do sensor (com fio)"
+                - cell "Sem dado"
+                - cell /\d+,\d+ ms melhor nesta medida/:
+                    - text: ""
+                    - img "melhor nesta medida"
+                - cell /\d+,\d+ ms/
+            - row /Desvio padrão do sensor \(com fio\) Sem dado \d+,\d+ ms melhor nesta medida \d+,\d+ ms/:
+                - rowheader "Desvio padrão do sensor (com fio)"
+                - cell "Sem dado"
+                - cell /\d+,\d+ ms melhor nesta medida/:
+                    - text: ""
+                    - img "melhor nesta medida"
+                - cell /\d+,\d+ ms/
+            - row /Resposta média do clique \(sem fio, ao pressionar\) \d+,\d+ ms \d+,\d+ ms melhor nesta medida \d+,\d+ ms/:
+                - rowheader "Resposta média do clique (sem fio, ao pressionar)"
+                - cell /\d+,\d+ ms/
+                - cell /\d+,\d+ ms melhor nesta medida/:
+                    - text: ""
+                    - img "melhor nesta medida"
+                - cell /\d+,\d+ ms/
+            - row /Desvio padrão do clique \(sem fio, ao pressionar\) \d+,\d+ ms \d+,\d+ ms melhor nesta medida \d+,\d+ ms/:
+                - rowheader "Desvio padrão do clique (sem fio, ao pressionar)"
+                - cell /\d+,\d+ ms/
+                - cell /\d+,\d+ ms melhor nesta medida/:
+                    - text: ""
+                    - img "melhor nesta medida"
+                - cell /\d+,\d+ ms/
+            - row /Resposta média do clique \(sem fio, ao soltar\) \d+,\d+ ms melhor nesta medida \d+,\d+ ms \d+,\d+ ms/:
+                - rowheader "Resposta média do clique (sem fio, ao soltar)"
+                - cell /\d+,\d+ ms melhor nesta medida/:
+                    - text: ""
+                    - img "melhor nesta medida"
+                - cell /\d+,\d+ ms/
+                - cell /\d+,\d+ ms/
+            - row /Desvio padrão do clique \(sem fio, ao soltar\) \d+,\d+ ms \d+,\d+ ms melhor nesta medida \d+,\d+ ms/:
+                - rowheader "Desvio padrão do clique (sem fio, ao soltar)"
+                - cell /\d+,\d+ ms/
+                - cell /\d+,\d+ ms melhor nesta medida/:
+                    - text: ""
+                    - img "melhor nesta medida"
+                - cell /\d+,\d+ ms/
+            - row /Resposta média do sensor \(sem fio\) \d+,\d+ ms melhor nesta medida \d+,\d+ ms \d+,\d+ ms/:
+                - rowheader "Resposta média do sensor (sem fio)"
+                - cell /\d+,\d+ ms melhor nesta medida/:
+                    - text: ""
+                    - img "melhor nesta medida"
+                - cell /\d+,\d+ ms/
+                - cell /\d+,\d+ ms/
+            - row /Desvio padrão do sensor \(sem fio\) \d+,\d+ ms \d+,\d+ ms melhor nesta medida \d+,\d+ ms/:
+                - rowheader "Desvio padrão do sensor (sem fio)"
+                - cell /\d+,\d+ ms/
+                - cell /\d+,\d+ ms melhor nesta medida/:
+                    - text: ""
+                    - img "melhor nesta medida"
+                - cell /\d+,\d+ ms/

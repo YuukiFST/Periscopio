@@ -11,7 +11,7 @@ import {
 } from "./cell-values";
 import type { TableColumn } from "./table-columns";
 
-function MissingValue() {
+export function MissingValue() {
   return (
     <>
       <span aria-hidden="true" className="text-fg-secondary">

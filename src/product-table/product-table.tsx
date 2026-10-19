@@ -11,6 +11,7 @@ import { useCallback, useEffect, useMemo, useRef, useState, type FocusEvent } fr
 import type { Product } from "@/data/schema";
 import { fieldLabel } from "@/i18n/labels";
 import { cn } from "@/lib/utils";
+import { CompareCheckbox } from "@/product-compare/compare-checkbox";
 import { compareSortValues, isCountEnum, sortValueOf } from "./cell-values";
 import { ProductCell, TableCellValue } from "./table-cells";
 import type { SortEntry, TableColumn } from "./table-columns";
@@ -58,6 +59,9 @@ type ProductTableProps = {
   /** Id of the heading that names the table. */
   labelledBy: string;
   onSortClick: (slug: string) => void;
+  /** The Produtos marked for the Comparação, at most 4. */
+  comparedIds: readonly string[];
+  onComparedToggle: (id: string) => void;
 };
 
 export function ProductTable({
@@ -67,6 +71,8 @@ export function ProductTable({
   resultKey,
   labelledBy,
   onSortClick,
+  comparedIds,
+  onComparedToggle,
 }: ProductTableProps) {
   const tableColumns = useMemo(
     () =>
@@ -145,15 +151,19 @@ export function ProductTable({
   return (
     <div
       ref={scrollRef}
-      className="relative min-h-72 flex-1 scroll-ps-(--product-column) scroll-pt-21 overflow-auto overscroll-contain rounded-lg border border-border [--product-column:9.5rem] min-[22rem]:[--product-column:11rem] sm:[--product-column:17rem]"
+      className="relative min-h-72 flex-1 scroll-ps-[calc(var(--select-column)+var(--product-column))] scroll-pt-21 overflow-auto overscroll-contain rounded-lg border border-border [--product-column:9.5rem] [--select-column:2.25rem] min-[22rem]:[--product-column:11rem] sm:[--product-column:17rem] sm:[--select-column:2.75rem]"
     >
       <table
         aria-labelledby={labelledBy}
         aria-rowcount={rows.length + 1}
         className="table-fixed border-separate border-spacing-0 text-body-sm"
-        style={{ width: `calc(var(--product-column) + ${fixedWidth}px)`, minWidth: "100%" }}
+        style={{
+          width: `calc(var(--select-column) + var(--product-column) + ${fixedWidth}px)`,
+          minWidth: "100%",
+        }}
       >
         <colgroup>
+          <col style={{ width: "var(--select-column)" }} />
           {columns.map((column) => (
             <col
               key={column.slug}
@@ -165,6 +175,12 @@ export function ProductTable({
         </colgroup>
         <thead>
           <tr aria-rowindex={1}>
+            <th
+              scope="col"
+              className="sticky start-0 top-0 z-30 border-b border-border bg-page p-0"
+            >
+              <span className="sr-only">Comparar</span>
+            </th>
             {columns.map((column) => {
               const sortIndex = sorting.findIndex(({ slug }) => slug === column.slug);
               const sortEntry = sorting[sortIndex];
@@ -183,7 +199,7 @@ export function ProductTable({
                   aria-sort={ariaSort}
                   className={cn(
                     "sticky top-0 z-20 border-b border-border bg-page p-0 align-bottom font-medium text-fg-secondary",
-                    column.kind === "product" && "start-0 z-30 border-e",
+                    column.kind === "product" && "start-(--select-column) z-30 border-e",
                   )}
                 >
                   {column.kind === "aliexpress" ? (
@@ -195,6 +211,7 @@ export function ProductTable({
                       className={cn(
                         "flex w-full touch-manipulation items-end gap-1 px-2 py-2.5 text-start text-balance hover:text-fg-primary focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-ring active:bg-component-hover sm:px-3",
                         isNumericColumn(column) && "justify-end text-end",
+                        column.kind === "product" && "ps-0 sm:ps-0",
                         sortEntry && "text-fg-primary",
                       )}
                     >
@@ -218,7 +235,7 @@ export function ProductTable({
             // Rows kept for focus can sit apart from the scroll window; a spacer fills each gap.
             const gap = virtualRow.start - (virtualRows[position - 1]?.end ?? 0);
             return [
-              <SpacerRow key={`gap-${row.id}`} height={gap} columnCount={columns.length} />,
+              <SpacerRow key={`gap-${row.id}`} height={gap} columnCount={columns.length + 1} />,
               <tr
                 key={row.id}
                 ref={virtualizer.measureElement}
@@ -227,12 +244,20 @@ export function ProductTable({
                 aria-rowindex={virtualRow.index + 2}
                 style={{ height: rowHeight }}
               >
+                <td className="sticky start-0 z-10 border-b border-border-subtle bg-page p-0">
+                  <CompareCheckbox
+                    productName={product.name}
+                    checked={comparedIds.includes(product.id)}
+                    comparedCount={comparedIds.length}
+                    onToggle={() => onComparedToggle(product.id)}
+                  />
+                </td>
                 {columns.map((column) =>
                   column.kind === "product" ? (
                     <th
                       key={column.slug}
                       scope="row"
-                      className="sticky start-0 z-10 border-e border-b border-border-subtle bg-page px-2 py-1.5 text-start font-normal sm:px-3"
+                      className="sticky start-(--select-column) z-10 border-e border-b border-border-subtle bg-page py-1.5 ps-0 pe-2 text-start font-normal sm:pe-3"
                     >
                       <ProductCell product={product} />
                     </th>
@@ -253,7 +278,7 @@ export function ProductTable({
           })}
           <SpacerRow
             height={virtualizer.getTotalSize() - (virtualRows.at(-1)?.end ?? 0)}
-            columnCount={columns.length}
+            columnCount={columns.length + 1}
           />
         </tbody>
       </table>

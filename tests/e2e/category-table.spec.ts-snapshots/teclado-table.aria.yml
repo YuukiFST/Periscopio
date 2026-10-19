@@ -1,6 +1,7 @@
 - table "Teclados":
     - rowgroup:
-        - row "Produto Nota geral Recomendação AliExpress Preço Resposta geral Desempenho real Polling rate efetivo Ponto de acionamento mínimo Zona morta inferior Erro de curso":
+        - row "Comparar Produto Nota geral Recomendação AliExpress Preço Resposta geral Desempenho real Polling rate efetivo Ponto de acionamento mínimo Zona morta inferior Erro de curso":
+            - columnheader "Comparar"
             - columnheader "Produto":
                 - button "Produto"
             - columnheader "Nota geral":
@@ -23,7 +24,9 @@
             - columnheader "Erro de curso":
                 - button "Erro de curso"
     - rowgroup:
-        - row /TENKO - ARC \d+ ARBITER STUDIO Impecável Recomendação fraca Sem dado ₩ \d+\.\d+ \d+,\d+ ms desvio padrão \d+,\d+ \d+\.\d+ Hz Sem dado \d+,\d+ mm \d+,\d+ mm \d+,\d+%/:
+        - row /Comparar TENKO - ARC \d+ TENKO - ARC \d+ ARBITER STUDIO Impecável Recomendação fraca Sem dado ₩ \d+\.\d+ \d+,\d+ ms desvio padrão \d+,\d+ \d+\.\d+ Hz Sem dado \d+,\d+ mm \d+,\d+ mm \d+,\d+%/:
+            - cell /Comparar TENKO - ARC \d+/:
+                - checkbox /Comparar TENKO - ARC \d+/
             - rowheader /TENKO - ARC \d+ ARBITER STUDIO/:
                 - paragraph:
                     - link /TENKO - ARC \d+/:
@@ -39,7 +42,9 @@
             - cell /\d+,\d+ mm/
             - cell /\d+,\d+ mm/
             - cell /\d+,\d+%/
-        - row /EDGE 60HE Pro ATK Tier 1 Não recomendado EDGE 60HE Pro no AliExpress ₩ \d+\.\d+ \d+,\d+ ms desvio padrão \d+,\d+ \d+\.\d+ Hz \d+\.\d+ Hz Sem dado Sem dado Sem dado/:
+        - row /Comparar EDGE 60HE Pro EDGE 60HE Pro ATK Tier 1 Não recomendado EDGE 60HE Pro no AliExpress ₩ \d+\.\d+ \d+,\d+ ms desvio padrão \d+,\d+ \d+\.\d+ Hz \d+\.\d+ Hz Sem dado Sem dado Sem dado/:
+            - cell "Comparar EDGE 60HE Pro":
+                - checkbox "Comparar EDGE 60HE Pro"
             - rowheader "EDGE 60HE Pro ATK":
                 - paragraph:
                     - link "EDGE 60HE Pro":
@@ -58,7 +63,9 @@
             - cell "Sem dado"
             - cell "Sem dado"
             - cell "Sem dado"
-        - row /Raven61 TEAMWOLF Tier 1 Não recomendado Raven61 no AliExpress ₩ \d+\.\d+ \d+,\d+ ms desvio padrão \d+,\d+ \d+\.\d+ Hz Sem dado Sem dado Sem dado Sem dado/:
+        - row /Comparar Raven61 Raven61 TEAMWOLF Tier 1 Não recomendado Raven61 no AliExpress ₩ \d+\.\d+ \d+,\d+ ms desvio padrão \d+,\d+ \d+\.\d+ Hz Sem dado Sem dado Sem dado Sem dado/:
+            - cell "Comparar Raven61":
+                - checkbox "Comparar Raven61"
             - rowheader "Raven61 TEAMWOLF":
                 - paragraph:
                     - link "Raven61":
@@ -77,7 +84,9 @@
             - cell "Sem dado"
             - cell "Sem dado"
             - cell "Sem dado"
-        - row /Archon M3 \d+ MAX Preflow Sem dado Aguardado Sem dado ₩ \d+\.\d+ Sem dado Sem dado Sem dado Sem dado Sem dado Sem dado/:
+        - row /Comparar Archon M3 \d+ MAX Archon M3 \d+ MAX Preflow Sem dado Aguardado Sem dado ₩ \d+\.\d+ Sem dado Sem dado Sem dado Sem dado Sem dado Sem dado/:
+            - cell /Comparar Archon M3 \d+ MAX/:
+                - checkbox /Comparar Archon M3 \d+ MAX/
             - rowheader /Archon M3 \d+ MAX Preflow/:
                 - paragraph:
                     - link /Archon M3 \d+ MAX/:

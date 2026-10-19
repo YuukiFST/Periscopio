@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as CategoriaIndexRouteImport } from './routes/$categoria/index'
 import { Route as CategoriaIdRouteImport } from './routes/$categoria/$id'
+import { Route as CompararCategoriaRouteImport } from './routes/comparar/$categoria'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -28,34 +29,48 @@ const CategoriaIdRoute = CategoriaIdRouteImport.update({
   path: '/$categoria/$id',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CompararCategoriaRoute = CompararCategoriaRouteImport.update({
+  id: '/comparar/$categoria',
+  path: '/comparar/$categoria',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/$categoria/$id': typeof CategoriaIdRoute
+  '/comparar/$categoria': typeof CompararCategoriaRoute
   '/$categoria/': typeof CategoriaIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/$categoria/$id': typeof CategoriaIdRoute
+  '/comparar/$categoria': typeof CompararCategoriaRoute
   '/$categoria': typeof CategoriaIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/$categoria/$id': typeof CategoriaIdRoute
+  '/comparar/$categoria': typeof CompararCategoriaRoute
   '/$categoria/': typeof CategoriaIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/$categoria/$id' | '/$categoria/'
+  fullPaths: '/' | '/$categoria/$id' | '/comparar/$categoria' | '/$categoria/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/$categoria/$id' | '/$categoria'
-  id: '__root__' | '/' | '/$categoria/$id' | '/$categoria/'
+  to: '/' | '/$categoria/$id' | '/comparar/$categoria' | '/$categoria'
+  id:
+    | '__root__'
+    | '/'
+    | '/$categoria/$id'
+    | '/comparar/$categoria'
+    | '/$categoria/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CategoriaIdRoute: typeof CategoriaIdRoute
+  CompararCategoriaRoute: typeof CompararCategoriaRoute
   CategoriaIndexRoute: typeof CategoriaIndexRoute
 }
 
@@ -82,12 +97,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CategoriaIdRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/comparar/$categoria': {
+      id: '/comparar/$categoria'
+      path: '/comparar/$categoria'
+      fullPath: '/comparar/$categoria'
+      preLoaderRoute: typeof CompararCategoriaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CategoriaIdRoute: CategoriaIdRoute,
+  CompararCategoriaRoute: CompararCategoriaRoute,
   CategoriaIndexRoute: CategoriaIndexRoute,
 }
 export const routeTree = rootRouteImport

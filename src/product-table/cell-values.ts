@@ -93,6 +93,19 @@ export function formatFieldValue(field: Field, value: FieldValue): string {
   }
 }
 
+/**
+ * A number field's value rounded the way `formatFieldValue` shows it, so two
+ * values that read the same on screen compare as equal.
+ */
+export function roundedAsShown(field: Extract<Field, { type: "number" }>, value: number): number {
+  const parts = numberFormatFor(field.decimals).formatToParts(value);
+  return Number(
+    parts
+      .map((part) => (part.type === "group" ? "" : part.type === "decimal" ? "." : part.value))
+      .join(""),
+  );
+}
+
 /** The Preço to show; EyeJoker stores 0 for a Produto it no longer prices, which reads as no Preço. */
 export function priceOf(product: Product): number | undefined {
   return product.priceKrw || undefined;

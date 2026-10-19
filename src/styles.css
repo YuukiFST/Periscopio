@@ -188,6 +188,9 @@
   --color-danger: var(--int-danger-solid);
   --color-danger-subtle: var(--int-danger-subtle);
   --color-danger-fg: var(--int-danger-fg);
+  /* The Destaque in a Comparação ("Layout no celular e forma do Destaque"). */
+  --color-highlight: var(--green-a3);
+  --color-highlight-fg: var(--green-11);
   --color-border-subtle: var(--int-border-subtle);
   --color-border-strong: var(--int-border-strong);
 
@@ -253,6 +256,8 @@
   }
   html {
     @apply font-sans;
+    /* Keeps a focused control clear of the detail screen's sticky Comparação bar. */
+    scroll-padding-bottom: 6rem;
     font-feature-settings: "ss03";
   }
   body {

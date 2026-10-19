@@ -1,6 +1,6 @@
-import { ExternalLink } from "lucide-react";
+import { Check, ExternalLink, Plus } from "lucide-react";
 import { useEffect, useRef, type ReactNode, type RefObject } from "react";
-import { buttonVariants } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import type { CategoryData, Product } from "@/data/schema";
 import { fieldLabel, manufacturerName, valueLabel } from "@/i18n/labels";
 import { FieldValueText, isFigureField } from "@/product-fields/field-value-text";
@@ -11,12 +11,25 @@ import {
 } from "@/product-fields/field-groups";
 import { formatPrice, priceOf } from "@/product-table/cell-values";
 import { cn } from "@/lib/utils";
+import { CompareBar, compareStatusId } from "@/product-compare/compare-bar";
+import { maxComparedProducts, toggleComparedId } from "@/product-compare/compare-selection";
 import { ProductPhoto } from "@/product-photo/product-photo";
 import { BackToTableLink } from "./back-to-table-link";
 
-type ProductDetailProps = { data: CategoryData; product: Product };
+type ProductDetailProps = {
+  data: CategoryData;
+  product: Product;
+  /** The Produtos marked for the Comparação, carried in the link from the table. */
+  comparedIds: readonly string[];
+  onComparedIdsChange: (ids: readonly string[]) => void;
+};
 
-export function ProductDetail({ data, product }: ProductDetailProps) {
+export function ProductDetail({
+  data,
+  product,
+  comparedIds,
+  onComparedIdsChange,
+}: ProductDetailProps) {
   const headingRef = useRef<HTMLHeadingElement>(null);
   useEffect(() => {
     document.title = `${product.name} · EyeJoker`;
@@ -28,7 +41,13 @@ export function ProductDetail({ data, product }: ProductDetailProps) {
   return (
     <article aria-labelledby="produto-titulo" className="flex w-full max-w-6xl flex-col gap-8 pb-4">
       <BackToTableLink category={data.category} />
-      <ProductHeader data={data} product={product} headingRef={headingRef} />
+      <ProductHeader
+        data={data}
+        product={product}
+        headingRef={headingRef}
+        comparedIds={comparedIds}
+        onComparedIdsChange={onComparedIdsChange}
+      />
       <div className="grid items-start gap-x-12 gap-y-8 lg:grid-cols-2">
         {groups.map((group) => (
           <FieldGroupSection key={group.id} group={group} product={product} />
@@ -39,6 +58,13 @@ export function ProductDetail({ data, product }: ProductDetailProps) {
           </p>
         )}
       </div>
+      <CompareBar
+        category={data.category}
+        comparedIds={comparedIds}
+        onClear={() => onComparedIdsChange([])}
+        focusAfterClearId="produto-titulo"
+        className="sticky bottom-3 border-transparent shadow-large"
+      />
     </article>
   );
 }
@@ -47,6 +73,8 @@ function ProductHeader({
   data,
   product,
   headingRef,
+  comparedIds,
+  onComparedIdsChange,
 }: ProductDetailProps & { headingRef: RefObject<HTMLHeadingElement | null> }) {
   const price = priceOf(product);
   const statusField = data.fields.find((field) => field.key === "status");
@@ -84,20 +112,60 @@ function ProductHeader({
           </HeaderFact>
           {status !== undefined && <HeaderFact label="Status de teste">{status}</HeaderFact>}
         </dl>
-        {product.aliUrl && (
-          <a
-            href={product.aliUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={cn(buttonVariants({ size: "lg" }), "self-start touch-manipulation")}
-          >
-            Ver no AliExpress
-            <span className="sr-only">(abre em nova aba)</span>
-            <ExternalLink aria-hidden="true" data-icon="inline-end" />
-          </a>
-        )}
+        <div className="flex flex-wrap gap-2">
+          {product.aliUrl && (
+            <a
+              href={product.aliUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={cn(buttonVariants({ size: "lg" }), "touch-manipulation")}
+            >
+              Ver no AliExpress
+              <span className="sr-only">(abre em nova aba)</span>
+              <ExternalLink aria-hidden="true" data-icon="inline-end" />
+            </a>
+          )}
+          <CompareToggleButton
+            isCompared={comparedIds.includes(product.id)}
+            isFull={comparedIds.length >= maxComparedProducts}
+            onToggle={() => onComparedIdsChange(toggleComparedId(comparedIds, product.id))}
+          />
+        </div>
       </div>
     </header>
+  );
+}
+
+function CompareToggleButton({
+  isCompared,
+  isFull,
+  onToggle,
+}: {
+  isCompared: boolean;
+  isFull: boolean;
+  onToggle: () => void;
+}) {
+  if (isCompared) {
+    return (
+      <Button variant="outline" size="lg" onClick={onToggle}>
+        <Check aria-hidden="true" data-icon="inline-start" />
+        Remover da comparação
+      </Button>
+    );
+  }
+  return (
+    <Button
+      variant="outline"
+      size="lg"
+      onClick={onToggle}
+      disabled={isFull}
+      focusableWhenDisabled
+      aria-describedby={isFull ? compareStatusId : undefined}
+      className="data-disabled:opacity-50"
+    >
+      <Plus aria-hidden="true" data-icon="inline-start" />
+      Adicionar à comparação
+    </Button>
   );
 }
 
