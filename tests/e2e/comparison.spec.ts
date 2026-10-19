@@ -214,6 +214,33 @@ test("regression: the browser's back after adding from the detail screen keeps b
   await expect(compareBar(page).getByRole("link", { name: "Comparar (2/4)" })).toBeVisible();
 });
 
+test("regression: the browser's back after a mark on a detail opened from the Comparação returns to the Comparação", async ({
+  page,
+}) => {
+  const bothIds = `${mouses.dragonflyA9Ultra.id},${mouses.huan.id}`;
+  await page.goto(`/comparar/mouse?p=${bothIds}`);
+  await page.getByRole("link", { name: mouses.huan.name, exact: true }).click();
+  await expect(page).toHaveURL(`/mouse/${mouses.huan.id}?cmp=${bothIds}`);
+  await page.getByRole("button", { name: "Remover da comparação" }).click();
+  await expect(page).toHaveURL(`/mouse/${mouses.huan.id}?cmp=${mouses.dragonflyA9Ultra.id}`);
+
+  await page.goBack();
+  await expect(page).toHaveURL(`/comparar/mouse?p=${bothIds}`);
+});
+
+test("regression: the browser's back after a mark on a detail opened by a link returns to the page before it", async ({
+  page,
+}) => {
+  await page.goto("/teclado");
+  await page.goto(`/mouse/${mouses.huan.id}?cmp=${mouses.dragonflyA9Ultra.id}`);
+  await page.getByRole("button", { name: "Adicionar à comparação" }).click();
+  const bothIds = `${mouses.dragonflyA9Ultra.id},${mouses.huan.id}`;
+  await expect(page).toHaveURL(`/mouse/${mouses.huan.id}?cmp=${bothIds}`);
+
+  await page.goBack();
+  await expect(page).toHaveURL("/teclado");
+});
+
 test.describe("with a weight that rounds to the one beside it", () => {
   // The data request is rewritten below; a service worker would answer it from its cache instead.
   test.use({ serviceWorkers: "block" });

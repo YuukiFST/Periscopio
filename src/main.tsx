@@ -21,6 +21,10 @@ declare module "@tanstack/react-router" {
   interface Register {
     router: typeof router;
   }
+  interface HistoryState {
+    /** The entry below this detail entry is the Categoria's table. */
+    fromCategoryTable?: boolean;
+  }
 }
 
 const appElement = document.getElementById("app");

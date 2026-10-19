@@ -1,4 +1,10 @@
-import { createFileRoute, notFound, rootRouteId, useRouter } from "@tanstack/react-router";
+import {
+  createFileRoute,
+  notFound,
+  rootRouteId,
+  useLocation,
+  useRouter,
+} from "@tanstack/react-router";
 import { z } from "zod";
 import { isCategorySlug } from "@/categories";
 import { loadCategoryData } from "@/data/load-data";
@@ -57,15 +63,23 @@ function ProductPage() {
   const params = Route.useParams();
   const navigate = Route.useNavigate();
   const router = useRouter();
+  const fromCategoryTable = useLocation({
+    select: (location) => location.state.fromCategoryTable === true,
+  });
   const comparedIds = comparedIdsFromParam(
     search.cmp,
     new Set(data.products.map((candidate) => candidate.id)),
   );
-  // The browser's back from here lands on the table with the old marks, and the marks live
-  // only in the link: this entry becomes the table with the new marks and the detail opens
-  // again above it, so back returns to the table as this screen left it.
+  // Opened from the table, the browser's back from here lands on the table with the old marks,
+  // and the marks live only in the link: this entry becomes the table with the new marks and
+  // the detail opens again above it, so back returns to the table as this screen left it.
+  // Opened from anywhere else (the Comparação, a link), back keeps leading there.
   function changeComparedIds(ids: readonly string[]) {
     const nextSearch = { ...search, cmp: productIdsParam(ids) };
+    if (!fromCategoryTable) {
+      void navigate({ search: nextSearch, replace: true });
+      return;
+    }
     void navigate({
       to: "/$categoria",
       params: { categoria: params.categoria },
@@ -74,7 +88,12 @@ function ProductPage() {
     });
     // The browser history batches writes in a microtask; unflushed, the two become one push.
     router.history.flush();
-    void navigate({ to: "/$categoria/$id", params, search: nextSearch });
+    void navigate({
+      to: "/$categoria/$id",
+      params,
+      search: nextSearch,
+      state: { fromCategoryTable: true },
+    });
   }
   return (
     <ProductDetail

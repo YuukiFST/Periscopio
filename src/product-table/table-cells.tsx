@@ -35,6 +35,7 @@ export function ProductCell({ product }: { product: Product }) {
             to="/$categoria/$id"
             params={(current) => ({ ...current, id: product.id })}
             search={true}
+            state={{ fromCategoryTable: true }}
             className="underline-offset-4 after:absolute after:inset-0 hover:underline focus-visible:outline-none focus-visible:after:outline-2 focus-visible:after:-outline-offset-2 focus-visible:after:outline-ring"
           >
             {product.name}
