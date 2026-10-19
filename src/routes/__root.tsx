@@ -15,7 +15,7 @@ function AppShell({ children }: { children: ReactNode }) {
   return (
     <div className="flex h-dvh flex-col bg-page text-fg-primary">
       <header className="shrink-0 border-b border-border bg-page">
-        <div className="mx-auto flex min-h-14 max-w-screen-2xl flex-wrap items-center gap-x-4 gap-y-1 px-4 py-2 sm:gap-x-6">
+        <div className="flex min-h-14 flex-wrap items-center gap-x-4 gap-y-1 px-4 py-2 sm:gap-x-6">
           <Link to="/" className="font-serif text-heading-6 font-medium">
             EyeJoker
           </Link>
@@ -33,9 +33,7 @@ function AppShell({ children }: { children: ReactNode }) {
           </nav>
         </div>
       </header>
-      <main className="mx-auto flex min-h-0 w-full max-w-screen-2xl flex-1 flex-col px-4 py-4">
-        {children}
-      </main>
+      <main className="flex min-h-0 w-full flex-1 flex-col px-4 py-4">{children}</main>
     </div>
   );
 }

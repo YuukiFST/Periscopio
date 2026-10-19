@@ -20,9 +20,10 @@ export type SortEntry = { slug: string; desc: boolean };
 
 type CategoryTable = { columns: ColumnSpec[]; defaultSort: SortEntry[] };
 
-function leadingColumns(ratingKey: string): ColumnSpec[] {
+const productColumn: ColumnSpec = { kind: "product", slug: "produto" };
+
+function ratingAndShopColumns(ratingKey: string): ColumnSpec[] {
   return [
-    { kind: "product", slug: "produto" },
     { kind: "field", slug: "nota", fieldKey: ratingKey },
     { kind: "field", slug: "recomendacao", fieldKey: "eyejokerRating" },
     { kind: "aliexpress", slug: "aliexpress" },
@@ -30,15 +31,15 @@ function leadingColumns(ratingKey: string): ColumnSpec[] {
   ];
 }
 
-/** The columns EyeJoker lists per Categoria, in its order (research file, 2026-10-16). */
+/**
+ * The columns EyeJoker lists per Categoria, in its order (research file, 2026-10-16),
+ * except the mouses' two response times: they matter most, so they follow the Produto
+ * instead of closing a row too wide for a laptop.
+ */
 const categoryTables: Record<CategorySlug, CategoryTable> = {
   mouse: {
     columns: [
-      ...leadingColumns("overallRatingMouse"),
-      { kind: "field", slug: "sensor", fieldKey: "sensor" },
-      { kind: "field", slug: "mcu", fieldKey: "mouseMcu" },
-      { kind: "field", slug: "formato", fieldKey: "housingMouse" },
-      { kind: "field", slug: "peso", fieldKey: "weight" },
+      productColumn,
       {
         kind: "field",
         slug: "resposta-sensor",
@@ -51,12 +52,18 @@ const categoryTables: Record<CategorySlug, CategoryTable> = {
         fieldKey: "optimalResponseSpeed",
         deviationKey: "optimalStddev",
       },
+      ...ratingAndShopColumns("overallRatingMouse"),
+      { kind: "field", slug: "sensor", fieldKey: "sensor" },
+      { kind: "field", slug: "mcu", fieldKey: "mouseMcu" },
+      { kind: "field", slug: "formato", fieldKey: "housingMouse" },
+      { kind: "field", slug: "peso", fieldKey: "weight" },
     ],
     defaultSort: [{ slug: "nota", desc: true }],
   },
   teclado: {
     columns: [
-      ...leadingColumns("overallRatingKeyboard"),
+      productColumn,
+      ...ratingAndShopColumns("overallRatingKeyboard"),
       {
         kind: "field",
         slug: "resposta",
@@ -73,7 +80,8 @@ const categoryTables: Record<CategorySlug, CategoryTable> = {
   },
   monitor: {
     columns: [
-      ...leadingColumns("overallRatingMonitor"),
+      productColumn,
+      ...ratingAndShopColumns("overallRatingMonitor"),
       { kind: "field", slug: "tamanho", fieldKey: "sizeInch" },
       { kind: "field", slug: "taxa", fieldKey: "refreshRate" },
       { kind: "field", slug: "resolucao", fieldKey: "resolution" },

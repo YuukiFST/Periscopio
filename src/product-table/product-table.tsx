@@ -37,12 +37,12 @@ function headerLabel(column: TableColumn): string {
 
 /** Width in px of every column but the Product one, which follows the viewport. */
 function columnWidth(column: TableColumn): number {
-  if (column.kind === "aliexpress" || column.kind === "price") return 120;
+  if (column.kind === "aliexpress") return 96;
+  if (column.kind === "price") return 104;
   if (column.kind !== "field") return 0;
   if (column.slug === "nota") return 112;
-  if (column.slug === "mcu") return 200;
-  if (column.field.type === "number") return column.deviation ? 168 : 128;
-  return 160;
+  if (column.field.type === "number") return column.deviation ? 148 : 104;
+  return 148;
 }
 
 export function isNumericColumn(column: TableColumn): boolean {
@@ -151,7 +151,7 @@ export function ProductTable({
   return (
     <div
       ref={scrollRef}
-      className="relative min-h-72 flex-1 scroll-ps-[calc(var(--select-column)+var(--product-column))] scroll-pt-21 overflow-auto overscroll-contain rounded-lg border border-border [--product-column:9.5rem] [--select-column:2.25rem] min-[22rem]:[--product-column:11rem] sm:[--product-column:17rem] sm:[--select-column:2.75rem]"
+      className="relative min-h-72 flex-1 scroll-ps-[calc(var(--select-column)+var(--product-column))] scroll-pt-21 overflow-auto overscroll-contain rounded-lg border border-border [--product-column:9.5rem] [--select-column:2.25rem] min-[22rem]:[--product-column:11rem] sm:[--product-column:14rem] sm:[--select-column:2.75rem]"
     >
       <table
         aria-labelledby={labelledBy}

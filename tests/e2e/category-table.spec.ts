@@ -46,6 +46,8 @@ const categoryTables = [
     count: 6,
     rowHeader: "Dragonfly A9 Ultra ATK",
     cells: [
+      "0,70 ms desvio padrão 0,29",
+      "0,49 ms desvio padrão 0,08",
       "Tier 0",
       "Recomendado",
       "Dragonfly A9 Ultra no AliExpress",
@@ -54,8 +56,6 @@ const categoryTables = [
       "Nordic nRF52840",
       "Simétrico",
       "54 g",
-      "0,70 ms desvio padrão 0,29",
-      "0,49 ms desvio padrão 0,08",
     ],
   },
   {
@@ -290,11 +290,21 @@ test("a link with invalid values opens the default view without an error", async
   expect(pageErrors).toEqual([]);
 });
 
+test("regression: a laptop shows the mouses' Resposta média do sensor and Resposta do clique without scrolling sideways", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 1366, height: 768 });
+  await page.goto("/mouse");
+  for (const name of ["Resposta média do sensor", "Resposta do clique"]) {
+    await expect(page.getByRole("columnheader", { name })).toBeInViewport({ ratio: 1 });
+  }
+});
+
 test("on a phone the table scrolls sideways with the Product column fixed", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/mouse");
   const firstProduct = page.getByRole("rowheader").first();
-  const lastHeader = page.getByRole("columnheader", { name: "Resposta do clique" });
+  const lastHeader = page.getByRole("columnheader", { name: "Peso" });
   await expect(lastHeader).not.toBeInViewport();
 
   await page
