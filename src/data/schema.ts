@@ -58,6 +58,12 @@ export const fieldValueSchema = z.union([
 ]);
 export type FieldValue = z.infer<typeof fieldValueSchema>;
 
+/** The Link AliExpress: `https` on aliexpress.com or a subdomain, such as s.click.aliexpress.com. */
+export const aliUrlSchema = z.url({
+  protocol: /^https$/,
+  hostname: /^(?:[a-z0-9-]+\.)*aliexpress\.com$/,
+});
+
 export const productSchema = z.strictObject({
   id: z.guid(),
   name: z.string().min(1),
@@ -65,7 +71,7 @@ export const productSchema = z.strictObject({
   priceKrw: z.int().nonnegative().multipleOf(100).nullable(),
   status: z.string().min(1).nullable(),
   saleStatus: z.string().min(1).nullable(),
-  aliUrl: z.url().nullable(),
+  aliUrl: aliUrlSchema.nullable(),
   image: z
     .string()
     .regex(/^\/images\/[0-9a-f-]{36}\.avif$/)

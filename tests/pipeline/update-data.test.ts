@@ -229,3 +229,43 @@ test("a new ENUM value without pt passes and is listed in the summary", async ()
   const product = mouse.products.find((candidate) => candidate.id === productId);
   expect(product?.values.housingMouse).toEqual(["양손"]);
 });
+
+test("regression: an empty or foreign Link AliExpress becomes null and is listed, instead of refusing the Atualização", async () => {
+  const emptyLinkId = "003586ba-0cbf-4932-843c-24e5f56e47c2";
+  const foreignLinkId = "0390fea6-efb9-45ea-a1a3-71b170224e58";
+  const twoLinksId = "1f2e9ba6-5ac5-4f0d-b986-7cb4203b5d6c";
+  const routes = await loadRecordedRoutes();
+  editRecordedSnapshot(routes, "mouse", (snapshot) => {
+    for (const row of snapshot.data.rows) {
+      const aliLink = row.affiliateLinks?.find((link) => link.platform === "ALI");
+      if (!aliLink) continue;
+      if (row.id === emptyLinkId) aliLink.affiliateUrl = "";
+      if (row.id === foreignLinkId)
+        aliLink.affiliateUrl = "https://aliexpress.com.example.net/e/_x";
+      // A second, inactive ALI link listed first loses to the active, approved, primary one.
+      if (row.id === twoLinksId) {
+        row.affiliateLinks?.unshift({
+          ...aliLink,
+          affiliateUrl: "https://s.click.aliexpress.com/e/_inactive",
+          status: "INACTIVE",
+          isPrimary: false,
+        });
+      }
+    }
+  });
+  const outDir = await makeTempDir();
+  const run = await runUpdateCli(routes, outDir, null);
+
+  expect(run.stderr).toBe("");
+  expect(run.exitCode).toBe(0);
+  expect(run.stdout).toContain(
+    `### Produtos com Link AliExpress inválido\n\n- \`${emptyLinkId}\`\n- \`${foreignLinkId}\`\n`,
+  );
+  const mouse = categoryDataSchema.parse(
+    JSON.parse(await readFile(join(outDir, "data/mouse.json"), "utf8")),
+  );
+  const aliUrls = new Map(mouse.products.map((product) => [product.id, product.aliUrl]));
+  expect(aliUrls.get(emptyLinkId)).toBeNull();
+  expect(aliUrls.get(foreignLinkId)).toBeNull();
+  expect(aliUrls.get(twoLinksId)).toBe("https://s.click.aliexpress.com/e/_oo1XMw2");
+});

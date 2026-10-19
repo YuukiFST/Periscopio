@@ -8,6 +8,7 @@ export type UpdateReport = {
   imagesDeleted: number;
   imageFailures: ImageFailure[];
   unusableImageProductIds: string[];
+  invalidAliUrlProductIds: string[];
   ignoredFieldKeys: string[];
   untranslatedKeys: string[];
 };
@@ -40,6 +41,10 @@ export function renderSummary(report: UpdateReport): string {
   if (report.unusableImageProductIds.length > 0) {
     lines.push("", "### Produtos com endereço de foto inesperado", "");
     lines.push(...bulletList(report.unusableImageProductIds, ""));
+  }
+  if (report.invalidAliUrlProductIds.length > 0) {
+    lines.push("", "### Produtos com Link AliExpress inválido", "");
+    lines.push(...bulletList(report.invalidAliUrlProductIds, ""));
   }
   if (report.ignoredFieldKeys.length > 0) {
     lines.push("", "### Campos do EyeJoker ignorados", "");

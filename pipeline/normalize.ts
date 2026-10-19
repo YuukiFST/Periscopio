@@ -1,6 +1,7 @@
 import { z } from "zod";
 import type { CategorySlug } from "../src/categories.ts";
 import {
+  aliUrlSchema,
   fieldGroups,
   type CategoryData,
   type Field,
@@ -69,6 +70,8 @@ export type NormalizedCategory = {
   imageUrlCount: number;
   /** Products whose photo URL is not a `<uuid>.avif` file. */
   unusableImageProductIds: string[];
+  /** Products whose ALI link is not `https` on aliexpress.com, published with `aliUrl: null`. */
+  invalidAliUrlProductIds: string[];
 };
 
 type FieldSource = { group: FieldGroup; definition: EyejokerField };
@@ -204,9 +207,19 @@ function imagePathFrom(url: string): string | null | undefined {
   return match.success ? `/images${match.data}` : undefined;
 }
 
-function aliUrlFrom(row: EyejokerRow): string | null {
-  const aliLink = row.affiliateLinks?.find((link) => link.platform === "ALI");
-  return aliLink?.affiliateUrl ?? null;
+type EyejokerAffiliateLink = NonNullable<EyejokerRow["affiliateLinks"]>[number];
+
+function isPreferredAffiliateLink(link: EyejokerAffiliateLink): boolean {
+  return link.status === "ACTIVE" && link.approvalStatus === "APPROVED" && link.isPrimary === true;
+}
+
+/** The Link AliExpress; `undefined` when the ALI link's URL is not `https` on aliexpress.com. */
+function aliUrlFrom(row: EyejokerRow): string | null | undefined {
+  const aliLinks = row.affiliateLinks?.filter((link) => link.platform === "ALI") ?? [];
+  const aliLink = aliLinks.find(isPreferredAffiliateLink) ?? aliLinks[0];
+  if (!aliLink) return null;
+  const result = aliUrlSchema.safeParse(aliLink.affiliateUrl);
+  return result.success ? result.data : undefined;
 }
 
 function optionalText(text: string | undefined): string | null {
@@ -232,6 +245,7 @@ export function normalizeCategory(
 
   let imageUrlCount = 0;
   const unusableImageProductIds: string[] = [];
+  const invalidAliUrlProductIds: string[] = [];
   const products: Product[] = [];
   for (const row of snapshot.rows) {
     const name = optionalText(row.values[productNameKey]);
@@ -246,6 +260,8 @@ export function normalizeCategory(
     const image = imagePathFrom(row.values[productImageKey] ?? "");
     if (image !== null) imageUrlCount++;
     if (image === undefined) unusableImageProductIds.push(row.id);
+    const aliUrl = aliUrlFrom(row);
+    if (aliUrl === undefined) invalidAliUrlProductIds.push(row.id);
     products.push({
       id: row.id,
       name,
@@ -253,7 +269,7 @@ export function normalizeCategory(
       priceKrw: row.priceKrw === undefined ? null : Math.round(row.priceKrw / 100) * 100,
       status: optionalText(row.values[statusKey]),
       saleStatus: optionalText(row.values[saleStatusKey]),
-      aliUrl: aliUrlFrom(row),
+      aliUrl: aliUrl ?? null,
       image: image ?? null,
       values: buildValues(slug, row, valueFields),
     });
@@ -265,5 +281,6 @@ export function normalizeCategory(
     ignoredFieldKeys,
     imageUrlCount,
     unusableImageProductIds,
+    invalidAliUrlProductIds,
   };
 }

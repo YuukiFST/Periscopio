@@ -36,7 +36,17 @@ const eyejokerRowSchema = z.object({
   id: z.guid(),
   priceKrw: z.number().nonnegative().optional(),
   values: z.record(z.string(), z.string()),
-  affiliateLinks: z.array(z.object({ platform: z.string(), affiliateUrl: z.string() })).optional(),
+  affiliateLinks: z
+    .array(
+      z.object({
+        platform: z.string(),
+        affiliateUrl: z.string(),
+        status: z.string().optional(),
+        approvalStatus: z.string().optional(),
+        isPrimary: z.boolean().optional(),
+      }),
+    )
+    .optional(),
 });
 export type EyejokerRow = z.infer<typeof eyejokerRowSchema>;
 

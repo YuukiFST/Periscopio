@@ -52,7 +52,15 @@ const recordedSnapshotSchema = z.looseObject({
       spec: z.array(recordedFieldSchema),
       bench: z.array(recordedFieldSchema),
     }),
-    rows: z.array(z.looseObject({ id: z.string(), values: z.record(z.string(), z.string()) })),
+    rows: z.array(
+      z.looseObject({
+        id: z.string(),
+        values: z.record(z.string(), z.string()),
+        affiliateLinks: z
+          .array(z.looseObject({ platform: z.string(), affiliateUrl: z.string() }))
+          .optional(),
+      }),
+    ),
   }),
 });
 const recordedCompaniesSchema = z.looseObject({ data: z.array(z.looseObject({ id: z.string() })) });

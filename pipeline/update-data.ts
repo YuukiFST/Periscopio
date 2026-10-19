@@ -159,6 +159,9 @@ async function runUpdate(config: UpdateConfig): Promise<void> {
     imagesDeleted: deletedImages.length,
     imageFailures: images.failed,
     unusableImageProductIds: normalized.flatMap((category) => category.unusableImageProductIds),
+    invalidAliUrlProductIds: normalized
+      .flatMap((category) => category.invalidAliUrlProductIds)
+      .toSorted(),
     ignoredFieldKeys: [
       ...new Set(normalized.flatMap((category) => category.ignoredFieldKeys)),
     ].toSorted(),
