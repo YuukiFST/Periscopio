@@ -1,16 +1,6 @@
 import type { Product } from "../data/schema.ts";
 import { numberValue, type FilterChoice, type FilterDefinition } from "./filter-engine.ts";
 import { enumValueChoices, numberChoice } from "./common-filters.ts";
-import { sensorClassOf, type SensorClass } from "./sensor-class.ts";
-
-const sensorClassChoices: readonly { sensorClass: SensorClass; id: string; label: string }[] = [
-  { sensorClass: "focus-pro-50k", id: "focus-pro-50k", label: "Focus Pro 50K" },
-  { sensorClass: "flagship", id: "topo", label: "Topo de linha atual" },
-  { sensorClass: "high-end", id: "alto", label: "Alto desempenho" },
-  { sensorClass: "mid-range", id: "intermediario", label: "Intermediário ou topo antigo" },
-  { sensorClass: "entry", id: "basico", label: "Básico ou antigo" },
-  { sensorClass: "legacy", id: "simples", label: "Simples ou especial" },
-];
 
 /** Volume of the bounding box in mm³, EyeJoker's measure of a mouse's size. */
 function volumeOf(product: Product): number | undefined {
@@ -38,7 +28,10 @@ function volumeChoice(
 
 /**
  * EyeJoker's mouse Filtros (`_a` in its bundle), in its order, with Sensor and
- * Resposta do clique after Peso; the last three are advanced, as on EyeJoker.
+ * Resposta do clique after Peso; the last two are advanced, as on EyeJoker.
+ * Left out on purpose: the sensor class (the Sensor Filtro picks the sensors
+ * themselves), the weight bands (Peso takes typed grams instead) and
+ * "Depende do modelo" in Carcaça furada.
  */
 export const mouseFilters: readonly FilterDefinition[] = [
   {
@@ -46,16 +39,6 @@ export const mouseFilters: readonly FilterDefinition[] = [
     param: "formato",
     label: "Formato",
     buckets: enumValueChoices("housingMouse", { 대칭: "simetrico", 비대칭: "assimetrico" }),
-  },
-  {
-    kind: "buckets",
-    param: "classe",
-    label: "Classe do sensor",
-    buckets: sensorClassChoices.map(({ sensorClass, id, label }) => ({
-      id,
-      label,
-      matches: (product) => sensorClassOf(product) === sensorClass,
-    })),
   },
   {
     kind: "buckets",
@@ -77,18 +60,7 @@ export const mouseFilters: readonly FilterDefinition[] = [
       유무선: "com-e-sem-fio",
     }),
   },
-  {
-    kind: "buckets",
-    param: "peso",
-    label: "Peso",
-    buckets: [
-      numberChoice("ate50", "Até 50 g", "weight", (grams) => grams <= 50),
-      numberChoice("50-60", "50 a 60 g", "weight", (grams) => grams > 50 && grams <= 60),
-      numberChoice("60-80", "60 a 80 g", "weight", (grams) => grams > 60 && grams <= 80),
-      numberChoice("80-100", "80 a 100 g", "weight", (grams) => grams > 80 && grams <= 100),
-      numberChoice("acima100", "Mais de 100 g", "weight", (grams) => grams > 100),
-    ],
-  },
+  { kind: "range", param: "peso", label: "Peso", fieldKey: "weight", unit: "g" },
   { kind: "options", param: "sensor", label: "Sensor", fieldKey: "sensor" },
   {
     kind: "range",
@@ -118,15 +90,6 @@ export const mouseFilters: readonly FilterDefinition[] = [
       yes: "sim",
       no: "nao",
       yesBottom: "so-embaixo",
-      yesModel: "depende-do-modelo",
     }),
-  },
-  {
-    kind: "range",
-    param: "gramas",
-    label: "Faixa de peso",
-    advanced: true,
-    fieldKey: "weight",
-    unit: "g",
   },
 ];

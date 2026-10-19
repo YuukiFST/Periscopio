@@ -45,20 +45,6 @@
         - text: Simétrico
         - checkbox "Assimétrico"
         - text: Assimétrico
-    - group "Classe do sensor":
-        - text: ""
-        - checkbox /Focus Pro [\d,.]+[bkmBKM]+/
-        - text: /Focus Pro [\d,.]+[bkmBKM]+/
-        - checkbox "Topo de linha atual"
-        - text: Topo de linha atual
-        - checkbox "Alto desempenho"
-        - text: Alto desempenho
-        - checkbox "Intermediário ou topo antigo"
-        - text: Intermediário ou topo antigo
-        - checkbox "Básico ou antigo"
-        - text: Básico ou antigo
-        - checkbox "Simples ou especial"
-        - text: Simples ou especial
     - group "Tamanho":
         - text: ""
         - checkbox "Pequeno"
@@ -75,18 +61,11 @@
         - text: Sem fio
         - checkbox "Com e sem fio"
         - text: Com e sem fio
-    - group "Peso":
-        - text: ""
-        - checkbox /Até \d+ g/
-        - text: /Até \d+ g/
-        - checkbox /\d+ a \d+ g/
-        - text: /\d+ a \d+ g/
-        - checkbox /\d+ a \d+ g/
-        - text: /\d+ a \d+ g/
-        - checkbox /\d+ a \d+ g/
-        - text: /\d+ a \d+ g/
-        - checkbox /Mais de \d+ g/
-        - text: /Mais de \d+ g/
+    - group "Peso (g)":
+        - text: Peso (g) Mínimo
+        - textbox "Mínimo"
+        - text: Máximo
+        - textbox "Máximo"
     - group "Sensor":
         - text: ""
         - checkbox "PAW3395"
@@ -121,10 +100,3 @@
         - text: Não
         - checkbox "Só embaixo"
         - text: Só embaixo
-        - checkbox "Depende do modelo"
-        - text: Depende do modelo
-    - group "Faixa de peso (g)":
-        - text: Faixa de peso (g) Mínimo
-        - textbox "Mínimo"
-        - text: Máximo
-        - textbox "Máximo"

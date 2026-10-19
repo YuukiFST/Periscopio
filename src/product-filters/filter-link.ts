@@ -4,8 +4,8 @@ import { filterParams, type FilterParam } from "./filter-params.ts";
 
 /**
  * Filtros in the link as flat params: a list Filtro as its choice ids joined
- * by commas (`peso=ate50,50-60`), a range as `min-max` with an open side left
- * empty (`gramas=-60`). Whatever does not parse is dropped without an error.
+ * by commas (`formato=simetrico,assimetrico`), a range as `min-max` with an open
+ * side left empty (`peso=-60`). Whatever does not parse is dropped without an error.
  */
 
 export type FilterSearch = Partial<Record<FilterParam, string>>;

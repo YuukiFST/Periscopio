@@ -49,27 +49,19 @@ const categoryCases = [
     hasAdvancedFilters: true,
     exactChoices: {
       Preço: accessoryPriceBands,
-      "Classe do sensor": [
-        "Focus Pro 50K",
-        "Topo de linha atual",
-        "Alto desempenho",
-        "Intermediário ou topo antigo",
-        "Básico ou antigo",
-        "Simples ou especial",
-      ],
-      Peso: ["Até 50 g", "50 a 60 g", "60 a 80 g", "80 a 100 g", "Mais de 100 g"],
       "Velocidade máxima de rastreio": [
         "Até 300 IPS",
         "301 a 499 IPS",
         "500 a 749 IPS",
         "750 IPS ou mais",
       ],
+      "Carcaça furada": ["Sim", "Não", "Só embaixo"],
     },
-    first: { filter: "Classe do sensor", choices: ["Topo de linha atual"] },
+    first: { filter: "Velocidade máxima de rastreio", choices: ["750 IPS ou mais"] },
     afterFirst: ["Dragonfly A9 Ultra", "Huan", "Cloud XS"],
-    second: { filter: "Peso", choices: ["Até 50 g"] },
+    second: { filter: "Carcaça furada", choices: ["Só embaixo"] },
     afterSecond: ["Huan", "Cloud XS"],
-    url: "/mouse?classe=topo&peso=ate50",
+    url: "/mouse?ips=750-ou-mais&furada=so-embaixo",
   },
   {
     slug: "teclado",
@@ -164,14 +156,12 @@ test("choices within one Filtro add up, and a Produto without the value leaves w
   page,
 }) => {
   await page.goto("/mouse");
-  await choice(page, "Peso", "Até 50 g").check();
-  await choice(page, "Peso", "Mais de 100 g").check();
-  await expect(page).toHaveURL("/mouse?peso=ate50,acima100");
-  await expect(page.getByText("3 de 6 produtos")).toBeVisible();
-  await expect.poll(() => productNames(page)).toEqual(["Huan", "H200A", "Cloud XS"]);
-
-  // VK M5 Max THOR lists no sensor, so even every sensor class together leaves it out.
-  await page.goto("/mouse?classe=focus-pro-50k,topo,alto,intermediario,basico,simples");
+  await filterPanel(page).getByRole("button", { name: "Filtros avançados" }).click();
+  await choice(page, "Carcaça furada", "Não").check();
+  await choice(page, "Carcaça furada", "Só embaixo").check();
+  // VK M5 Max THOR does not say whether its shell has holes, so even both choices leave it out.
+  await expect(page).toHaveURL("/mouse?furada=nao,so-embaixo");
+  await expect(page.getByText("5 de 6 produtos")).toBeVisible();
   await expect
     .poll(() => productNames(page))
     .toEqual(allMouses.filter((name) => name !== "VK M5 Max THOR"));
@@ -184,12 +174,11 @@ test("the weight range keeps Produtos between the typed grams, and Limpar clears
   const clearButton = filterPanel(page).getByRole("button", { name: "Limpar" });
   await expect(clearButton).toBeDisabled();
 
-  await filterPanel(page).getByRole("button", { name: "Filtros avançados" }).click();
-  const weightRange = filterPanel(page).getByRole("group", { name: "Faixa de peso (g)" });
+  const weightRange = filterPanel(page).getByRole("group", { name: "Peso (g)" });
   await weightRange.getByRole("textbox", { name: "Mínimo" }).fill("55");
   await weightRange.getByRole("textbox", { name: "Máximo" }).fill("60");
   await choice(page, "Formato", "Simétrico").check();
-  await expect(page).toHaveURL("/mouse?gramas=55-60&formato=simetrico");
+  await expect(page).toHaveURL("/mouse?peso=55-60&formato=simetrico");
   await expect.poll(() => productNames(page)).toEqual(["Dragonfly 3 PRO"]);
 
   await clearButton.click();
@@ -206,14 +195,13 @@ test("regression: a weight typed key by key keeps the text the link has not caug
   page,
 }) => {
   await page.goto("/mouse");
-  await filterPanel(page).getByRole("button", { name: "Filtros avançados" }).click();
-  const weightRange = filterPanel(page).getByRole("group", { name: "Faixa de peso (g)" });
+  const weightRange = filterPanel(page).getByRole("group", { name: "Peso (g)" });
   const minimum = weightRange.getByRole("textbox", { name: "Mínimo" });
 
   await minimum.pressSequentially("54,5");
-  await expect(page).toHaveURL("/mouse?gramas=54.5-");
+  await expect(page).toHaveURL("/mouse?peso=54.5-");
   await minimum.press("Backspace");
-  await expect(page).toHaveURL("/mouse?gramas=54-");
+  await expect(page).toHaveURL("/mouse?peso=54-");
   await expect(minimum).toHaveValue("54,");
   await minimum.pressSequentially("6a");
   await expect(page).toHaveURL("/mouse");
@@ -231,10 +219,10 @@ test("regression: a weight typed key by key keeps the text the link has not caug
 test("a copied link opens the same Filtros in a new tab", async ({ page, context }) => {
   await context.grantPermissions(["clipboard-read", "clipboard-write"]);
   await page.goto("/mouse");
-  await choice(page, "Classe do sensor", "Topo de linha atual").check();
   await filterPanel(page).getByRole("button", { name: "Filtros avançados" }).click();
+  await choice(page, "Carcaça furada", "Só embaixo").check();
   await filterPanel(page)
-    .getByRole("group", { name: "Faixa de peso (g)" })
+    .getByRole("group", { name: "Peso (g)" })
     .getByRole("textbox", { name: "Máximo" })
     .fill("50");
   const expectedNames = ["Huan", "Cloud XS"];
@@ -244,15 +232,15 @@ test("a copied link opens the same Filtros in a new tab", async ({ page, context
   await expect(page.getByRole("button", { name: "Link copiado" })).toBeVisible();
   const copiedLink = await page.evaluate(() => navigator.clipboard.readText());
   expect(Object.fromEntries(new URL(copiedLink).searchParams)).toEqual({
-    classe: "topo",
-    gramas: "-50",
+    furada: "so-embaixo",
+    peso: "-50",
   });
 
   const newTab = await context.newPage();
   await newTab.goto(copiedLink);
   await expect.poll(() => productNames(newTab)).toEqual(expectedNames);
-  await expect(choice(newTab, "Classe do sensor", "Topo de linha atual")).toBeChecked();
-  const weightRange = filterPanel(newTab).getByRole("group", { name: "Faixa de peso (g)" });
+  await expect(choice(newTab, "Carcaça furada", "Só embaixo")).toBeChecked();
+  const weightRange = filterPanel(newTab).getByRole("group", { name: "Peso (g)" });
   await expect(weightRange.getByRole("textbox", { name: "Mínimo" })).toHaveValue("");
   await expect(weightRange.getByRole("textbox", { name: "Máximo" })).toHaveValue("50");
   await filterPanel(newTab).getByRole("button", { name: "Filtros avançados" }).click();
@@ -313,12 +301,16 @@ test("a link with invalid Filtro values keeps the valid ones and opens without a
   const pageErrors: string[] = [];
   page.on("pageerror", (error) => pageErrors.push(error.message));
 
-  await page.goto("/mouse?peso=ate50,pesado&gramas=leve&layout=60&classe=");
-  await expect.poll(() => productNames(page)).toEqual(["Huan", "Cloud XS"]);
-  await expect(choice(page, "Peso", "Até 50 g")).toBeChecked();
+  await page.goto("/mouse?formato=assimetrico,quadrado&peso=leve&layout=60&furada=");
+  await expect.poll(() => productNames(page)).toEqual(["H200A", "VK M5 Max THOR"]);
+  await expect(choice(page, "Formato", "Assimétrico")).toBeChecked();
 
-  await choice(page, "Peso", "Mais de 100 g").check();
-  await expect(page).toHaveURL("/mouse?peso=ate50,acima100");
+  await filterPanel(page)
+    .getByRole("group", { name: "Peso (g)" })
+    .getByRole("textbox", { name: "Máximo" })
+    .fill("60");
+  await expect(page).toHaveURL("/mouse?formato=assimetrico&peso=-60");
+  await expect.poll(() => productNames(page)).toEqual(["VK M5 Max THOR"]);
   expect(pageErrors).toEqual([]);
 });
 
@@ -332,12 +324,12 @@ test("on a phone the Filtros open in a drawer with Limpar and the count that clo
   await page.getByRole("button", { name: "Filtros", exact: true }).click();
   const drawer = page.getByRole("dialog", { name: "Filtros" });
   await drawer
-    .getByRole("group", { name: "Peso", exact: true })
-    .getByRole("checkbox", { name: "Até 50 g" })
-    .check();
+    .getByRole("group", { name: "Peso (g)" })
+    .getByRole("textbox", { name: "Máximo" })
+    .fill("50");
   await drawer.getByRole("button", { name: "Ver 2 produtos" }).click();
   await expect(drawer).toBeHidden();
-  await expect(page).toHaveURL("/mouse?peso=ate50");
+  await expect(page).toHaveURL("/mouse?peso=-50");
   await expect.poll(() => productNames(page)).toEqual(["Huan", "Cloud XS"]);
 
   await page.getByRole("button", { name: "Filtros (1)" }).click();
