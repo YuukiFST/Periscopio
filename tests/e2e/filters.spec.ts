@@ -1,4 +1,5 @@
 import { expect, test, type Page } from "@playwright/test";
+import { categoryDataSchema } from "../../src/data/schema.ts";
 
 /**
  * Filtros on the production build with the data the pipeline generates from
@@ -345,4 +346,34 @@ test("on a phone the Filtros open in a drawer with Limpar and the count that clo
   await expect(drawer).toBeHidden();
   await expect(page).toHaveURL("/mouse");
   await expect.poll(() => productNames(page)).toEqual(allMouses);
+});
+
+test.describe("with more sensors in use than fit without a search box", () => {
+  // The data request is rewritten below; a service worker would answer it from its cache instead.
+  test.use({ serviceWorkers: "block" });
+
+  test("regression: the page itself never scrolls, only the Filtros panel and the table", async ({
+    page,
+  }) => {
+    await page.route("**/data/mouse.json", async (route) => {
+      const response = await route.fetch();
+      const data = categoryDataSchema.parse(await response.json());
+      const sensorField = data.fields.find((field) => field.key === "sensor");
+      const [model] = data.products;
+      if (sensorField?.type !== "enum" || !model) throw new Error("the excerpt lost its mouses");
+      // A copy of the first mouse per sensor, past the 12 choices a list shows without search.
+      const copies = sensorField.options.slice(0, 13).map((option, index) => ({
+        ...model,
+        id: `${model.id.slice(0, -2)}${String(index).padStart(2, "0")}`,
+        values: { ...model.values, sensor: option.value },
+      }));
+      await route.fulfill({ response, json: { ...data, products: [...data.products, ...copies] } });
+    });
+    await page.setViewportSize({ width: 1366, height: 768 });
+    await page.goto("/mouse");
+    await expect(
+      filterPanel(page).getByRole("searchbox", { name: "Buscar sensor" }),
+    ).toBeAttached();
+    expect(await page.evaluate(() => document.documentElement.scrollHeight)).toBe(768);
+  });
 });

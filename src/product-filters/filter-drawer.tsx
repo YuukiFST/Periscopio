@@ -64,7 +64,7 @@ export function FilterDrawer({ activeCount, resultCount, onClear, children }: Fi
         <p role="status" className="sr-only">
           {resultCountText(resultCount)}
         </p>
-        <div className="scroll-fade-y min-h-0 flex-1 overflow-y-auto overscroll-contain px-4 py-4">
+        <div className="scroll-fade-y relative min-h-0 flex-1 overflow-y-auto overscroll-contain px-4 py-4">
           {children}
         </div>
         <DrawerFooter className="border-t border-border-subtle p-4">
