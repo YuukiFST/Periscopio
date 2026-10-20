@@ -1,16 +1,18 @@
-import { useLocation, useMatch, useNavigate, useRouter, useSearch } from "@tanstack/react-router";
+import { useMatch, useNavigate, useSearch } from "@tanstack/react-router";
 import { X } from "lucide-react";
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Drawer, DrawerContent } from "@/components/ui/drawer";
 import type { CategoryData } from "@/data/schema";
-import { comparedIdsFromParam, productIdsParam } from "@/product-compare/compare-selection";
+import { comparedIdsFromParam } from "@/product-compare/compare-selection";
 import { ProductDetail } from "./product-detail";
 import { ProductNotFound } from "./product-not-found";
+import { useChangeComparedIds } from "./use-change-compared-ids";
 
 /**
  * The open Produto's details in a panel on the right, over the table. It is not
  * modal: the table stays usable, and another Produto clicked there takes the panel.
+ * Keyed by Categoria: a new one starts closed, not sliding out a Produto it lacks.
  */
 export function ProductSidebar({ data }: { data: CategoryData }) {
   const openId = useMatch({ from: "/$categoria/$id", shouldThrow: false })?.params.id;
@@ -20,10 +22,8 @@ export function ProductSidebar({ data }: { data: CategoryData }) {
 
   const search = useSearch({ strict: false });
   const navigate = useNavigate();
-  const router = useRouter();
-  const fromCategoryTable = useLocation({
-    select: (location) => location.state.fromCategoryTable === true,
-  });
+  const changeComparedIds = useChangeComparedIds(data.category);
+  const popupRef = useRef<HTMLDivElement>(null);
   const productIds = useMemo(
     () => new Set(data.products.map((product) => product.id)),
     [data.products],
@@ -32,7 +32,7 @@ export function ProductSidebar({ data }: { data: CategoryData }) {
   const product = data.products.find((candidate) => candidate.id === shownId);
 
   function close() {
-    // Replaces the entry: the table comes back as the panel left it, and back undoes the visit.
+    // Replaces the entry: the table comes back with the search the panel left it.
     void navigate({
       to: "/$categoria",
       params: { categoria: data.category },
@@ -41,37 +41,22 @@ export function ProductSidebar({ data }: { data: CategoryData }) {
     });
   }
 
-  // Opened from the table, the browser's back from here lands on the table with the old marks,
-  // and the marks live only in the link: this entry becomes the table with the new marks and
-  // the panel opens again above it, so back returns to the table as the panel left it.
-  // Opened from anywhere else (the Comparação, a link), back keeps leading there.
-  function changeComparedIds(ids: readonly string[]) {
-    if (shownId === undefined) return;
-    const nextSearch = { ...search, cmp: productIdsParam(ids) };
-    if (!fromCategoryTable) {
-      void navigate({ to: ".", search: nextSearch, replace: true });
-      return;
-    }
-    void navigate({
-      to: "/$categoria",
-      params: { categoria: data.category },
-      search: nextSearch,
-      replace: true,
-    });
-    // The browser history batches writes in a microtask; unflushed, the two become one push.
-    router.history.flush();
-    void navigate({
-      to: "/$categoria/$id",
-      params: { categoria: data.category, id: shownId },
-      search: nextSearch,
-      state: { fromCategoryTable: true },
-    });
-  }
-
   return (
     <Drawer
       open={openId !== undefined}
-      onOpenChange={(open) => {
+      onOpenChange={(open, eventDetails) => {
+        // Base UI hears Escape on the whole page; the table's search box and the Filtros drawer
+        // keep their own Escape while the panel is open.
+        const target = eventDetails.event.target;
+        if (
+          eventDetails.reason === "escape-key" &&
+          target instanceof Element &&
+          target !== document.body &&
+          !popupRef.current?.contains(target)
+        ) {
+          eventDetails.cancel();
+          return;
+        }
         if (!open) close();
       }}
       onOpenChangeComplete={(open) => {
@@ -85,9 +70,12 @@ export function ProductSidebar({ data }: { data: CategoryData }) {
       {/* The details move focus to their title themselves, on every Produto they show;
           closing hands it back to the Produto's row while the table still shows it. */}
       <DrawerContent
+        ref={popupRef}
         initialFocus={false}
         finalFocus={() =>
-          document.querySelector<HTMLElement>(`tr[data-row-id="${shownId}"] a[href]`) ?? true
+          (product &&
+            document.querySelector<HTMLElement>(`tr[data-row-id="${product.id}"] a[href]`)) ??
+          true
         }
         className="w-full text-body-sm sm:w-lg"
       >

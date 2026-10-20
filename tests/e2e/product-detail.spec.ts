@@ -156,3 +156,46 @@ test("regression: a detail photo that fails to load leaves the photo space, not 
   await expect(page.getByRole("dialog", { name: "Dragonfly A9 Ultra" })).toBeVisible();
   await expect(page.getByRole("article").locator("img")).toHaveCount(0);
 });
+
+test("regression: switching Categoria with the panel open closes it and names the page after the new Categoria", async ({
+  page,
+}) => {
+  await page.goto(`/mouse/${dragonflyA9UltraId}`);
+  await expect(page.getByRole("dialog", { name: "Dragonfly A9 Ultra" })).toBeVisible();
+
+  await page
+    .getByRole("navigation", { name: "Categorias" })
+    .getByRole("link", { name: "Teclados" })
+    .click();
+  await expect(page).toHaveURL("/teclado");
+  await expect(page.getByRole("dialog")).toHaveCount(0);
+  await expect(page.getByText("Produto não encontrado")).toHaveCount(0);
+  await expect(page).toHaveTitle("Teclados · Periscópio");
+});
+
+test("regression: closing the panel of a Produto id with a quote does not break the page", async ({
+  page,
+}) => {
+  const pageErrors: string[] = [];
+  page.on("pageerror", (error) => pageErrors.push(error.message));
+
+  await page.goto("/mouse/a%22b");
+  await expect(page.getByRole("dialog", { name: "Produto não encontrado" })).toBeVisible();
+  await page.getByRole("button", { name: "Fechar detalhes" }).click();
+  await expect(page).toHaveURL("/mouse");
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText("Mouses");
+  expect(pageErrors).toEqual([]);
+});
+
+test("regression: Escape in the table's search box clears the search and leaves the panel open", async ({
+  page,
+}) => {
+  await page.goto(`/mouse/${dragonflyA9UltraId}?q=dragon`);
+  const searchBox = page.getByRole("searchbox", { name: "Buscar por produto ou fabricante" });
+  await searchBox.focus();
+  await page.keyboard.press("Escape");
+
+  await expect(searchBox).toHaveValue("");
+  await expect(page).toHaveURL(`/mouse/${dragonflyA9UltraId}`);
+  await expect(page.getByRole("dialog", { name: "Dragonfly A9 Ultra" })).toBeVisible();
+});

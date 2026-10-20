@@ -17,7 +17,6 @@ import { CompareBar } from "@/product-compare/compare-bar";
 import {
   compareParamSchema,
   comparedIdsFromParam,
-  productIdsParam,
   toggleComparedId,
 } from "@/product-compare/compare-selection";
 import { categoryFiltersFor } from "@/product-filters/category-filters";
@@ -40,6 +39,7 @@ import {
   type TestStatusFilter,
 } from "@/product-table/product-filter";
 import { ProductSidebar } from "@/product-detail/product-sidebar";
+import { useChangeComparedIds } from "@/product-detail/use-change-compared-ids";
 import { ProductTable } from "@/product-table/product-table";
 import { defaultSortFor, tableColumnsFor } from "@/product-table/table-columns";
 import {
@@ -93,11 +93,11 @@ function CategoryPending() {
 
 function CategoryPage() {
   const data = Route.useLoaderData();
-  // A new Categoria starts with its own search box.
+  // A new Categoria starts with its own search box and a closed panel.
   return (
     <>
       <CategoryTable key={data.category} data={data} />
-      <ProductSidebar data={data} />
+      <ProductSidebar key={`painel-${data.category}`} data={data} />
     </>
   );
 }
@@ -134,13 +134,7 @@ function CategoryTable({ data }: { data: CategoryData }) {
     [data.products],
   );
   const comparedIds = useMemo(() => comparedIdsFromParam(cmp, productIds), [cmp, productIds]);
-  function changeComparedIds(ids: readonly string[]) {
-    void navigate({
-      unsafeRelative: "path",
-      search: (previous) => ({ ...previous, cmp: productIdsParam(ids) }),
-      replace: true,
-    });
-  }
+  const changeComparedIds = useChangeComparedIds(data.category);
 
   const filters = useMemo(() => categoryFiltersFor(data), [data]);
   const filterValues = useMemo(() => filterValuesFromSearch(filters, search), [filters, search]);
