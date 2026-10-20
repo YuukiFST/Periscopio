@@ -14,6 +14,7 @@ export const filterParams = [
   "ips",
   "furada",
   "sensor",
+  "resposta-sensor",
   "clique",
   "layout",
   "material",

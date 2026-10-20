@@ -27,8 +27,9 @@ function volumeChoice(
 }
 
 /**
- * EyeJoker's mouse Filtros (`_a` in its bundle), in its order, with Sensor and
- * Resposta do clique after Peso, all in one list: none is set apart as advanced.
+ * EyeJoker's mouse Filtros (`_a` in its bundle), in its order, with Sensor and the
+ * two response times (sensor, clique) after Peso, all in one list: none is set
+ * apart as advanced.
  * Left out on purpose: the sensor class (the Sensor Filtro picks the sensors
  * themselves), the weight and IPS bands (both take typed bounds instead) and
  * "Depende do modelo" in Carcaça furada.
@@ -62,6 +63,13 @@ export const mouseFilters: readonly FilterDefinition[] = [
   },
   { kind: "range", param: "peso", label: "Peso", fieldKey: "weight", unit: "g" },
   { kind: "options", param: "sensor", label: "Sensor", fieldKey: "sensor" },
+  {
+    kind: "range",
+    param: "resposta-sensor",
+    label: "Resposta do sensor",
+    fieldKey: "sensorAvg",
+    unit: "ms",
+  },
   {
     kind: "range",
     param: "clique",
