@@ -7,7 +7,16 @@ import {
 } from "@tanstack/react-table";
 import { defaultRangeExtractor, useVirtualizer, type Range } from "@tanstack/react-virtual";
 import { ArrowDown, ArrowUp, ChevronsUpDown } from "lucide-react";
-import { useCallback, useEffect, useMemo, useRef, useState, type FocusEvent } from "react";
+import {
+  memo,
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useMemo,
+  useRef,
+  useState,
+  type FocusEvent,
+} from "react";
 import type { Product } from "@/data/schema";
 import { fieldLabel } from "@/i18n/labels";
 import { cn } from "@/lib/utils";
@@ -33,7 +42,10 @@ function headerLabel(column: TableColumn): string {
   }
 }
 
-/** Width in px of every column but the Product one, which follows the viewport. */
+/**
+ * Width in px of every column but the Product one, which takes what is left:
+ * on a wide screen the spare width goes to the names, not between the columns.
+ */
 function columnWidth(column: TableColumn): number {
   if (column.kind === "price") return 104;
   if (column.kind !== "field") return 0;
@@ -125,6 +137,13 @@ export function ProductTable({
     if (!(next instanceof Node && event.currentTarget.contains(next))) setFocusedRowId(undefined);
   };
 
+  // Rows skip rendering while the table scrolls, so their toggle keeps its identity.
+  const toggleRef = useRef(onComparedToggle);
+  useLayoutEffect(() => {
+    toggleRef.current = onComparedToggle;
+  });
+  const handleComparedToggle = useCallback((id: string) => toggleRef.current(id), []);
+
   const scrollRef = useRef<HTMLDivElement>(null);
   // TanStack Virtual returns a mutable instance by design; this app does not run the React Compiler.
   // oxlint-disable-next-line react/incompatible-library
@@ -164,6 +183,8 @@ export function ProductTable({
           <colgroup>
             <col style={{ width: "var(--select-column)" }} />
             {columns.map((column) => (
+              // The Product column has no width: a fixed table gives it the rest, at least
+              // `--product-column`, since the table is that much wider than the others.
               <col
                 key={column.slug}
                 style={{
@@ -231,45 +252,16 @@ export function ProductTable({
               const gap = virtualRow.start - (virtualRows[position - 1]?.end ?? 0);
               return [
                 <SpacerRow key={`gap-${row.id}`} height={gap} columnCount={columns.length + 1} />,
-                <tr
+                <ProductRow
                   key={row.id}
-                  ref={virtualizer.measureElement}
-                  data-index={virtualRow.index}
-                  data-row-id={row.id}
-                  aria-rowindex={virtualRow.index + 2}
-                  style={{ height: rowHeight }}
-                >
-                  <td className="sticky start-0 z-10 border-b border-border-subtle bg-page p-0">
-                    <CompareCheckbox
-                      productName={product.name}
-                      checked={comparedIds.includes(product.id)}
-                      comparedCount={comparedIds.length}
-                      onToggle={() => onComparedToggle(product.id)}
-                    />
-                  </td>
-                  {columns.map((column) =>
-                    column.kind === "product" ? (
-                      <th
-                        key={column.slug}
-                        scope="row"
-                        aria-labelledby={productCellLabelIds(product)}
-                        className="sticky start-(--select-column) z-10 border-e border-b border-border-subtle bg-page py-1.5 ps-0 pe-2 text-start font-normal sm:pe-3"
-                      >
-                        <ProductCell product={product} />
-                      </th>
-                    ) : (
-                      <td
-                        key={column.slug}
-                        className={cn(
-                          "border-b border-border-subtle px-2 py-1.5 tabular-nums sm:px-3",
-                          isNumericColumn(column) && "text-end",
-                        )}
-                      >
-                        <TableCellValue column={column} product={product} />
-                      </td>
-                    ),
-                  )}
-                </tr>,
+                  product={product}
+                  index={virtualRow.index}
+                  columns={columns}
+                  checked={comparedIds.includes(product.id)}
+                  comparedCount={comparedIds.length}
+                  onComparedToggle={handleComparedToggle}
+                  measureRef={virtualizer.measureElement}
+                />,
               ];
             })}
             <SpacerRow
@@ -282,6 +274,72 @@ export function ProductTable({
     </div>
   );
 }
+
+type ProductRowProps = {
+  product: Product;
+  /** Position in the sorted rows, for the virtualizer and `aria-rowindex`. */
+  index: number;
+  columns: TableColumn[];
+  checked: boolean;
+  comparedCount: number;
+  onComparedToggle: (id: string) => void;
+  measureRef: (row: HTMLTableRowElement | null) => void;
+};
+
+/**
+ * One Produto row, memoized: a scroll re-renders the table on every frame,
+ * and only the rows entering the window need to render.
+ */
+const ProductRow = memo(function ProductRow({
+  product,
+  index,
+  columns,
+  checked,
+  comparedCount,
+  onComparedToggle,
+  measureRef,
+}: ProductRowProps) {
+  return (
+    <tr
+      ref={measureRef}
+      data-index={index}
+      data-row-id={product.id}
+      aria-rowindex={index + 2}
+      style={{ height: rowHeight }}
+    >
+      <td className="sticky start-0 z-10 border-b border-border-subtle bg-page p-0">
+        <CompareCheckbox
+          productName={product.name}
+          checked={checked}
+          comparedCount={comparedCount}
+          onToggle={() => onComparedToggle(product.id)}
+        />
+      </td>
+      {columns.map((column) =>
+        column.kind === "product" ? (
+          <th
+            key={column.slug}
+            scope="row"
+            aria-labelledby={productCellLabelIds(product)}
+            className="sticky start-(--select-column) z-10 border-e border-b border-border-subtle bg-page py-1.5 ps-0 pe-2 text-start font-normal sm:pe-3"
+          >
+            <ProductCell product={product} />
+          </th>
+        ) : (
+          <td
+            key={column.slug}
+            className={cn(
+              "border-b border-border-subtle px-2 py-1.5 tabular-nums sm:px-3",
+              isNumericColumn(column) && "text-end",
+            )}
+          >
+            <TableCellValue column={column} product={product} />
+          </td>
+        ),
+      )}
+    </tr>
+  );
+});
 
 function SpacerRow({ height, columnCount }: { height: number; columnCount: number }) {
   if (height <= 0) return null;
