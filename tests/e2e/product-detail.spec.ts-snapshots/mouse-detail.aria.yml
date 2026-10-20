@@ -1,8 +1,6 @@
 - article "Dragonfly A9 Ultra":
-    - link "Voltar para Mouses":
-        - /url: /mouse?ordem=-peso&status=testados&q=dragon&outro=1
     - img "Foto de Dragonfly A9 Ultra"
-    - heading "Dragonfly A9 Ultra" [level=1]
+    - heading "Dragonfly A9 Ultra" [level=2]
     - paragraph: ATK
     - term: Preço
     - definition: /₩ \d+\.\d+/
@@ -12,7 +10,7 @@
         - /url: https://s.click.aliexpress.com/e/_oFLhAg6
     - button "Adicionar à comparação"
     - region "Especificações":
-        - heading "Especificações" [level=2]
+        - heading "Especificações" [level=3]
         - term: Nota geral
         - definition: A+
         - term: Recomendação
@@ -68,7 +66,7 @@
         - term: Data de publicação
         - definition: /\d+ de jul\. de \d+/
     - region "Medições":
-        - heading "Medições" [level=2]
+        - heading "Medições" [level=3]
         - term: Resposta média do sensor
         - definition: /\d+,\d+ ms/
         - term: Desvio padrão do sensor

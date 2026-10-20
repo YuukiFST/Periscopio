@@ -41,7 +41,7 @@ export function ProductCell({ product }: { product: Product }) {
     <div className="group/cell flex items-center gap-2 sm:gap-3">
       {/* The table's search params ride along, so the detail screen can lead back to this view. */}
       <Link
-        from="/$categoria/"
+        from="/$categoria"
         to="/$categoria/$id"
         params={(current) => ({ ...current, id: product.id })}
         search={true}

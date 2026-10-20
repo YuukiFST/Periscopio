@@ -1,6 +1,7 @@
 import { Check, ExternalLink, Plus } from "lucide-react";
 import { useEffect, useRef, type ReactNode, type RefObject } from "react";
 import { Button, buttonVariants } from "@/components/ui/button";
+import { DrawerTitle } from "@/components/ui/drawer";
 import type { CategoryData, Product } from "@/data/schema";
 import { fieldLabel, manufacturerName, valueLabel } from "@/i18n/labels";
 import { FieldValueText, isFigureField } from "@/product-fields/field-value-text";
@@ -14,7 +15,6 @@ import { cn } from "@/lib/utils";
 import { CompareBar, compareStatusId } from "@/product-compare/compare-bar";
 import { maxComparedProducts, toggleComparedId } from "@/product-compare/compare-selection";
 import { ProductPhoto } from "@/product-photo/product-photo";
-import { BackToTableLink } from "./back-to-table-link";
 
 type ProductDetailProps = {
   data: CategoryData;
@@ -22,6 +22,8 @@ type ProductDetailProps = {
   /** The Produtos marked for the Comparação, carried in the link from the table. */
   comparedIds: readonly string[];
   onComparedIdsChange: (ids: readonly string[]) => void;
+  /** Off while the panel slides out: the table's own bar is back by then. */
+  showCompareBar: boolean;
 };
 
 export function ProductDetail({
@@ -29,6 +31,7 @@ export function ProductDetail({
   product,
   comparedIds,
   onComparedIdsChange,
+  showCompareBar,
 }: ProductDetailProps) {
   const headingRef = useRef<HTMLHeadingElement>(null);
   useEffect(() => {
@@ -39,8 +42,7 @@ export function ProductDetail({
   const groups = productFieldGroups(data, [product]);
   const hasMeasurements = groups.some((group) => group.id === "medicoes");
   return (
-    <article aria-labelledby="produto-titulo" className="flex w-full max-w-6xl flex-col gap-8 pb-4">
-      <BackToTableLink category={data.category} />
+    <article aria-labelledby="produto-titulo" className="flex w-full flex-col gap-8">
       <ProductHeader
         data={data}
         product={product}
@@ -48,7 +50,7 @@ export function ProductDetail({
         comparedIds={comparedIds}
         onComparedIdsChange={onComparedIdsChange}
       />
-      <div className="grid items-start gap-x-12 gap-y-8 lg:grid-cols-2">
+      <div className="flex flex-col gap-8">
         {groups.map((group) => (
           <FieldGroupSection key={group.id} group={group} product={product} />
         ))}
@@ -58,13 +60,15 @@ export function ProductDetail({
           </p>
         )}
       </div>
-      <CompareBar
-        category={data.category}
-        comparedIds={comparedIds}
-        onClear={() => onComparedIdsChange([])}
-        focusAfterClearId="produto-titulo"
-        className="sticky bottom-3 border-transparent shadow-large"
-      />
+      {showCompareBar && (
+        <CompareBar
+          category={data.category}
+          comparedIds={comparedIds}
+          onClear={() => onComparedIdsChange([])}
+          focusAfterClearId="produto-titulo"
+          className="sticky bottom-0 border-transparent shadow-large"
+        />
+      )}
     </article>
   );
 }
@@ -75,7 +79,9 @@ function ProductHeader({
   headingRef,
   comparedIds,
   onComparedIdsChange,
-}: ProductDetailProps & { headingRef: RefObject<HTMLHeadingElement | null> }) {
+}: Omit<ProductDetailProps, "showCompareBar"> & {
+  headingRef: RefObject<HTMLHeadingElement | null>;
+}) {
   const price = priceOf(product);
   const statusField = data.fields.find((field) => field.key === "status");
   const status =
@@ -90,14 +96,14 @@ function ProductHeader({
       />
       <div className="flex min-w-0 flex-col gap-4">
         <div>
-          <h1
+          <DrawerTitle
             ref={headingRef}
             id="produto-titulo"
             tabIndex={-1}
             className="font-serif text-heading-4 text-balance wrap-break-word outline-none"
           >
             {product.name}
-          </h1>
+          </DrawerTitle>
           <p className="text-body-base text-fg-secondary wrap-break-word">
             {manufacturerName(product.manufacturer)}
           </p>
@@ -181,9 +187,9 @@ function FieldGroupSection({ group, product }: { group: ProductFieldGroup; produ
   const headingId = `grupo-${group.id}`;
   return (
     <section aria-labelledby={headingId} className="flex min-w-0 flex-col gap-2">
-      <h2 id={headingId} className="font-serif text-heading-6 font-medium">
+      <h3 id={headingId} className="font-serif text-heading-6 font-medium">
         {group.title}
-      </h2>
+      </h3>
       <dl className="divide-y divide-border-subtle">
         {group.fields.map((field) => {
           const value = productFieldValue(product, field);

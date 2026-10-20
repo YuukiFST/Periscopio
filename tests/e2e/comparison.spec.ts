@@ -185,7 +185,7 @@ test("the detail screen adds its Produto to the Comparação, and the table keep
   await expect(page.getByRole("button", { name: "Remover da comparação" })).toBeVisible();
   await expect(compareBar(page).getByRole("link", { name: "Comparar (2/4)" })).toBeVisible();
 
-  await page.getByRole("link", { name: "Voltar para Mouses" }).click();
+  await page.getByRole("button", { name: "Fechar detalhes" }).click();
   await expect(page).toHaveURL(`/mouse?ordem=-peso&cmp=${bothIds}`);
   await expect(compareCheckbox(page, mouses.huan.name)).toBeChecked();
   await compareBar(page).getByRole("link", { name: "Comparar (2/4)" }).click();
@@ -212,6 +212,23 @@ test("regression: the browser's back after adding from the detail screen keeps b
   await expect(compareCheckbox(page, mouses.dragonflyA9Ultra.name)).toBeChecked();
   await expect(compareCheckbox(page, mouses.huan.name)).toBeChecked();
   await expect(compareBar(page).getByRole("link", { name: "Comparar (2/4)" })).toBeVisible();
+});
+
+test("regression: the browser's back after a mark from the table's checkbox with the panel open keeps both marks", async ({
+  page,
+}) => {
+  await page.goto("/mouse");
+  await compareCheckbox(page, mouses.dragonflyA9Ultra.name).check();
+  await page.getByRole("link", { name: `Detalhes de ${mouses.huan.name}` }).click();
+  await expect(page.getByRole("dialog", { name: mouses.huan.name })).toBeVisible();
+  await compareCheckbox(page, mouses.huan.name).check();
+  const bothIds = `${mouses.dragonflyA9Ultra.id},${mouses.huan.id}`;
+  await expect(page).toHaveURL(`/mouse/${mouses.huan.id}?cmp=${bothIds}`);
+
+  await page.goBack();
+  await expect(page).toHaveURL(`/mouse?cmp=${bothIds}`);
+  await expect(compareCheckbox(page, mouses.dragonflyA9Ultra.name)).toBeChecked();
+  await expect(compareCheckbox(page, mouses.huan.name)).toBeChecked();
 });
 
 test("regression: the browser's back after a mark on a detail opened from the Comparação returns to the Comparação", async ({
