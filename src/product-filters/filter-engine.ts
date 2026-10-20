@@ -1,5 +1,6 @@
 import type { CategoryData, Field, Product } from "../data/schema.ts";
 import { valueLabel } from "../i18n/labels.ts";
+import { roundedAsShown } from "../product-table/cell-values.ts";
 import type { FilterParam } from "./filter-params.ts";
 
 /**
@@ -121,17 +122,14 @@ export function resolveFilters(
         const { param, label, unit } = definition;
         if ("readValue" in definition)
           return [{ kind: "range", param, label, unit, readValue: definition.readValue }];
-        const { fieldKey } = definition;
-        if (fieldsByKey.get(fieldKey)?.type !== "number") return [];
-        return [
-          {
-            kind: "range",
-            param,
-            label,
-            unit,
-            readValue: (product) => numberValue(product, fieldKey),
-          },
-        ];
+        const field = fieldsByKey.get(definition.fieldKey);
+        if (field?.type !== "number") return [];
+        // The bounds are typed from what the table shows, so the value is read rounded the same way.
+        const readValue = (product: Product) => {
+          const value = numberValue(product, field.key);
+          return value === undefined ? undefined : roundedAsShown(field, value);
+        };
+        return [{ kind: "range", param, label, unit, readValue }];
       }
     }
   });

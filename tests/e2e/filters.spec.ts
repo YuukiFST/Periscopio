@@ -300,6 +300,16 @@ test("a maximum Resposta do sensor narrows the mouses, like the Resposta do cliq
   await expect.poll(() => productNames(page)).toEqual(["Dragonfly A9 Ultra", "Huan"]);
 });
 
+test("regression: a range bound typed from a shown value keeps the Produto that shows it", async ({
+  page,
+}) => {
+  // Dragonfly 3 PRO answers in 6.3714 ms, shown as 6,37: a Máximo of 6,37 keeps it.
+  await page.goto("/mouse?resposta-sensor=-6.37");
+  await expect
+    .poll(() => productNames(page))
+    .toEqual(["Dragonfly A9 Ultra", "Huan", "Dragonfly 3 PRO", "H200A"]);
+});
+
 test("a link with invalid Filtro values keeps the valid ones and opens without an error", async ({
   page,
 }) => {
