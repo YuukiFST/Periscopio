@@ -15,7 +15,10 @@ test("a Produto opened from the table shows its header and fields grouped in pt,
   // `outro` stands for any param the table reads: the detail screen keeps them all, not a list.
   const tableSearch = "?ordem=-peso&status=testados&q=dragon&outro=1";
   await page.goto(`/mouse${tableSearch}`);
-  await page.getByRole("link", { name: "Detalhes de Dragonfly A9 Ultra" }).click();
+  // On the photo: the name in the middle of the cell is the AliExpress link.
+  await page
+    .getByRole("link", { name: "Detalhes de Dragonfly A9 Ultra" })
+    .click({ position: { x: 16, y: 16 } });
 
   await expect(page).toHaveURL(`/mouse/${dragonflyA9UltraId}${tableSearch}`);
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("Dragonfly A9 Ultra");
