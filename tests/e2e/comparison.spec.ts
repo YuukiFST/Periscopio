@@ -185,7 +185,7 @@ test("the detail screen adds its Produto to the Comparação, and the table keep
   await expect(page.getByRole("button", { name: "Remover da comparação" })).toBeVisible();
   await expect(compareBar(page).getByRole("link", { name: "Comparar (2/4)" })).toBeVisible();
 
-  await page.getByRole("link", { name: "Voltar para Mouses" }).click();
+  await page.getByRole("button", { name: "Fechar detalhes" }).click();
   await expect(page).toHaveURL(`/mouse?ordem=-peso&cmp=${bothIds}`);
   await expect(compareCheckbox(page, mouses.huan.name)).toBeChecked();
   await compareBar(page).getByRole("link", { name: "Comparar (2/4)" }).click();

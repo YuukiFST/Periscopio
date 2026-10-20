@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { categoryLabels, type CategorySlug } from "@/categories";
-import { BackToTableLink } from "./back-to-table-link";
+import { DrawerTitle } from "@/components/ui/drawer";
 
 export function ProductNotFound({ category }: { category: CategorySlug }) {
   const headingRef = useRef<HTMLHeadingElement>(null);
@@ -10,14 +10,17 @@ export function ProductNotFound({ category }: { category: CategorySlug }) {
   }, []);
   return (
     <div className="flex flex-col gap-3">
-      <h1 ref={headingRef} tabIndex={-1} className="font-serif text-heading-5 outline-none">
+      <DrawerTitle
+        ref={headingRef}
+        tabIndex={-1}
+        className="font-serif text-heading-5 outline-none"
+      >
         Produto não encontrado
-      </h1>
+      </DrawerTitle>
       <p className="max-w-prose text-fg-secondary">
         Este link não corresponde a nenhum produto em {categoryLabels[category]}. O produto pode ter
         saído do EyeJoker numa atualização, ou o link ficou incompleto.
       </p>
-      <BackToTableLink category={category} />
     </div>
   );
 }

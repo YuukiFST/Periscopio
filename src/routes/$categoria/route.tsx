@@ -1,4 +1,10 @@
-import { createFileRoute, getRouteApi, notFound, useNavigate } from "@tanstack/react-router";
+import {
+  createFileRoute,
+  getRouteApi,
+  notFound,
+  useMatch,
+  useNavigate,
+} from "@tanstack/react-router";
 import { useDeferredValue, useEffect, useMemo, useState } from "react";
 import { z } from "zod";
 import { categoryLabels, isCategorySlug } from "@/categories";
@@ -33,6 +39,7 @@ import {
   testStatusFilters,
   type TestStatusFilter,
 } from "@/product-table/product-filter";
+import { ProductSidebar } from "@/product-detail/product-sidebar";
 import { ProductTable } from "@/product-table/product-table";
 import { defaultSortFor, tableColumnsFor } from "@/product-table/table-columns";
 import {
@@ -55,7 +62,11 @@ const categorySearchSchema = z.object({
   cmp: compareParamSchema,
 });
 
-export const Route = createFileRoute("/$categoria/")({
+/**
+ * The Categoria table, the layout under `/$categoria/$id` too: a Produto's
+ * details open in a side panel over it, so the table stays as it was.
+ */
+export const Route = createFileRoute("/$categoria")({
   // Filtro params stay raw text here: only the Categoria's Filtros know which values are valid.
   validateSearch: (search: Record<string, unknown>) => ({
     ...categorySearchSchema.parse(search),
@@ -83,7 +94,12 @@ function CategoryPending() {
 function CategoryPage() {
   const data = Route.useLoaderData();
   // A new Categoria starts with its own search box.
-  return <CategoryTable key={data.category} data={data} />;
+  return (
+    <>
+      <CategoryTable key={data.category} data={data} />
+      <ProductSidebar data={data} />
+    </>
+  );
 }
 
 const statusAdjective: Record<TestStatusFilter, string> = {
@@ -109,6 +125,8 @@ function CategoryTable({ data }: { data: CategoryData }) {
   const meta = rootRoute.useLoaderData();
   const search = Route.useSearch();
   const { ordem, status, q, cmp } = search;
+  // Every call resolves from the current URL (`unsafeRelative: "path"`), not from this route,
+  // so a change of Filtro, ordem or busca keeps a Produto's panel open.
   const navigate = useNavigate({ from: Route.fullPath });
 
   const productIds = useMemo(
@@ -118,6 +136,7 @@ function CategoryTable({ data }: { data: CategoryData }) {
   const comparedIds = useMemo(() => comparedIdsFromParam(cmp, productIds), [cmp, productIds]);
   function changeComparedIds(ids: readonly string[]) {
     void navigate({
+      unsafeRelative: "path",
       search: (previous) => ({ ...previous, cmp: productIdsParam(ids) }),
       replace: true,
     });
@@ -129,6 +148,7 @@ function CategoryTable({ data }: { data: CategoryData }) {
   const filterSearch = filterSearchOf(filters, filterValues);
   function changeFilterValues(values: FilterValues) {
     void navigate({
+      unsafeRelative: "path",
       search: (previous) => ({ ...previous, ...filterSearchOf(filters, values) }),
       replace: true,
     });
@@ -167,13 +187,18 @@ function CategoryTable({ data }: { data: CategoryData }) {
 
   function changeSearchText(text: string) {
     setSearchText(text);
-    void navigate({ search: (previous) => ({ ...previous, q: text || undefined }), replace: true });
+    void navigate({
+      unsafeRelative: "path",
+      search: (previous) => ({ ...previous, q: text || undefined }),
+      replace: true,
+    });
   }
 
   function showAllProducts() {
     setSearchText("");
     setClearCount((count) => count + 1);
     void navigate({
+      unsafeRelative: "path",
       search: (previous) => ({
         ...previous,
         ...filterSearchOf(filters, noFilterValues),
@@ -187,9 +212,11 @@ function CategoryTable({ data }: { data: CategoryData }) {
   }
 
   const categoryLabel = categoryLabels[data.category];
+  // The open panel names the page after its Produto; closing it gives the title back.
+  const isDetailOpen = useMatch({ from: "/$categoria/$id", shouldThrow: false }) !== undefined;
   useEffect(() => {
-    document.title = `${categoryLabel} · Periscópio`;
-  }, [categoryLabel]);
+    if (!isDetailOpen) document.title = `${categoryLabel} · Periscópio`;
+  }, [categoryLabel, isDetailOpen]);
   const [openedAt] = useState(() => Date.now());
   const updateAge = updateAgeOf(meta, openedAt);
   return (
@@ -237,6 +264,7 @@ function CategoryTable({ data }: { data: CategoryData }) {
             testStatus={status}
             onTestStatusChange={(nextStatus) =>
               void navigate({
+                unsafeRelative: "path",
                 search: (previous) => ({ ...previous, status: nextStatus }),
                 replace: true,
               })
@@ -278,6 +306,7 @@ function CategoryTable({ data }: { data: CategoryData }) {
               onComparedToggle={(id) => changeComparedIds(toggleComparedId(comparedIds, id))}
               onSortClick={(slug) =>
                 void navigate({
+                  unsafeRelative: "path",
                   search: (previous) => ({
                     ...previous,
                     ordem: sortParamAfterHeaderClick(sorting, slug, defaultSort),
@@ -287,12 +316,15 @@ function CategoryTable({ data }: { data: CategoryData }) {
               }
             />
           )}
-          <CompareBar
-            category={data.category}
-            comparedIds={comparedIds}
-            onClear={() => changeComparedIds([])}
-            focusAfterClearId={searchInputId}
-          />
+          {/* The side panel carries its own bar, over this one. */}
+          {!isDetailOpen && (
+            <CompareBar
+              category={data.category}
+              comparedIds={comparedIds}
+              onClear={() => changeComparedIds([])}
+              focusAfterClearId={searchInputId}
+            />
+          )}
         </div>
       </div>
     </div>
