@@ -297,6 +297,19 @@ test("regression: a laptop shows the mouses' Resposta média do sensor and Respo
   }
 });
 
+test("regression: on a wide screen the spare width goes to the Produto, so Peso stays next to Formato", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 1920, height: 1080 });
+  await page.goto("/mouse");
+  const formato = await page.getByRole("columnheader", { name: "Formato" }).boundingBox();
+  const peso = await page.getByRole("columnheader", { name: "Peso" }).boundingBox();
+  const produto = await page.getByRole("columnheader", { name: "Produto" }).boundingBox();
+  expect(formato?.width).toBeLessThanOrEqual(148);
+  expect(peso?.width).toBeLessThanOrEqual(80);
+  expect(produto?.width).toBeGreaterThan(224);
+});
+
 test("on a phone the table scrolls sideways with the Product column fixed", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/mouse");

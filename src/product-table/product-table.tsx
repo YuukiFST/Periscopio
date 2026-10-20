@@ -50,6 +50,7 @@ function columnWidth(column: TableColumn): number {
   if (column.kind === "price") return 104;
   if (column.kind !== "field") return 0;
   if (column.slug === "nota") return 112;
+  if (column.slug === "peso") return 80;
   if (column.field.type === "number") return column.deviation ? 148 : 104;
   return 148;
 }
@@ -187,9 +188,7 @@ export function ProductTable({
               // `--product-column`, since the table is that much wider than the others.
               <col
                 key={column.slug}
-                style={{
-                  width: column.kind === "product" ? "var(--product-column)" : columnWidth(column),
-                }}
+                style={column.kind === "product" ? undefined : { width: columnWidth(column) }}
               />
             ))}
           </colgroup>
