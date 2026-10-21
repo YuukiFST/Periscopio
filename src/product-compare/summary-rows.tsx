@@ -5,7 +5,7 @@ import { MarkIcon, markCellClass } from "./comparison-mark";
 import type { CellMark } from "./highlight-rules";
 import type { Connection } from "./mouse-connection";
 import { GroupHeaderRow, RowLabel, valueCellClass } from "./comparison-rows";
-import { rankedCount, type ResponseSummary, type SummaryStanding } from "./response-summary";
+import type { ResponseSummary, SummaryStanding } from "./response-summary";
 
 const nameList = new Intl.ListFormat("pt-BR", { type: "conjunction" });
 
@@ -15,7 +15,7 @@ export function summaryVerdict(summary: ResponseSummary): string {
   const onConnection = connection === undefined ? "" : ` ${connection}`;
   const ranked = rows.filter(({ standing }) => standing.kind === "ranked");
   if (ranked.length === 0) return `Nenhum destes mouses tem as medições do resumo${onConnection}.`;
-  if (rankedCount(summary) === 1) {
+  if (ranked.length === 1) {
     return `Só ${ranked[0]?.product.name} tem as medições do resumo${onConnection}.`;
   }
   const leaders = nameList.format(

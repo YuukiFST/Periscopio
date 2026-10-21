@@ -65,7 +65,13 @@ function comparisonGroups(
     const perConnection =
       connection === undefined
         ? group.fields.filter(isPerConnection)
-        : group.fields.filter((field) => fieldConnection(field.key) === connection);
+        : // Motion Sync times name no connection, and on a mouse with only this one they count for it.
+          group.fields.filter((field) => {
+            const measuredOn = fieldConnection(field.key);
+            return (
+              isPerConnection(field) && (measuredOn === connection || measuredOn === undefined)
+            );
+          });
     const splits: ComparisonGroup[] = [
       { ...group, fields: group.fields.filter((field) => !isPerConnection(field)) },
       {
@@ -105,6 +111,8 @@ export function ComparisonTable({
     "--product-column":
       "calc((100cqw - var(--label-column) - var(--peek)) / min(var(--visible-columns), var(--compared-count)))",
   };
+  // The 11rem scroll padding clears the tallest sticky header measured (photo, wrapped name, link),
+  // so a control scrolled into view at the top never lands under it.
   // The border sits on a wrapper, so the scroll fade dissolves the columns and not the frame;
   // the fade waits for a touch screen, where it would not hide a scrollbar at the end.
   return (

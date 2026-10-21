@@ -191,11 +191,13 @@ export function rankedCount(summary: ResponseSummary): number {
   return summary.rows.filter(({ standing }) => standing.kind === "ranked").length;
 }
 
+const connectionChoices: readonly (Connection | undefined)[] = [undefined, "com fio", "sem fio"];
+
 /**
  * The Resumo de desempenho of compared mouses on `connection` (any when
  * undefined): their fastest response times and a score that ranks them at a
- * glance. Undefined for other Categorias, and when fewer than two of the
- * mouses can be ranked on any connection.
+ * glance. Undefined for other Categorias, and when no connection ranks any of
+ * the mouses, so the connection choice shows wherever it can rank one.
  */
 export function responseSummary(
   data: CategoryData,
@@ -204,7 +206,8 @@ export function responseSummary(
 ): ResponseSummary | undefined {
   if (data.category !== "mouse") return undefined;
   const numberFields = data.fields.filter((field) => field.type === "number");
-  const anyConnection = summaryFor(numberFields, products, undefined);
-  if (rankedCount(anyConnection) < 2) return undefined;
-  return connection === undefined ? anyConnection : summaryFor(numberFields, products, connection);
+  const canRank = connectionChoices.some(
+    (choice) => rankedCount(summaryFor(numberFields, products, choice)) > 0,
+  );
+  return canRank ? summaryFor(numberFields, products, connection) : undefined;
 }

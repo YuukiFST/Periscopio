@@ -213,6 +213,14 @@ test("choosing Com fio ranks the mouses on their wired times alone, opens their 
   await expect(page.getByText("Melhor desempenho: Dragonfly A9 Ultra.")).toBeVisible();
 });
 
+test("one measured mouse still gets the Resumo de desempenho, which says it is the only one", async ({
+  page,
+}) => {
+  await page.goto(`/comparar/mouse?p=${mouses.dragonflyA9Ultra.id},${mouses.vkM5MaxThor.id}`);
+  await expect(page.getByText("Só Dragonfly A9 Ultra tem as medições do resumo.")).toBeVisible();
+  await expect(page.getByRole("radio", { name: "Com fio" })).toBeVisible();
+});
+
 test("a monitor Comparação has no Resumo de desempenho nor connection choice", async ({ page }) => {
   await page.goto(`/comparar/monitor?p=${ultraGearId},${pg259qnId}`);
   await expect(page.getByRole("table", { name: "Comparação de monitores" })).toBeVisible();
@@ -449,6 +457,22 @@ test.describe("with edited data", () => {
     await expect(summaryRows(page).getByRole("row", { name: /^Pontuação/ })).toMatchAriaSnapshot(`
       - row "Pontuação 100 = o mais rápido em tudo 1º 100 melhor nesta linha Falta medição com fio 2º 35"
     `);
+  });
+
+  test("regression: a connection in the link leaves the Medições whole when no connection can rank these mouses", async ({
+    page,
+  }) => {
+    // A Medição per connection, but no response time to rank on.
+    await editProducts(page, "mouse", (product) =>
+      withValues(product, mouses.vkM5MaxThor.id, { detachAvgWired: 5, detachAvgWireless: 6 }),
+    );
+    await page.goto(
+      `/comparar/mouse?p=${mouses.vkM5MaxThor.id},${mouses.cloudXs.id}&conexao=com-fio`,
+    );
+    await expect(page.getByRole("rowgroup", { name: "Medições por conexão" })).toHaveCount(1);
+    await expect(page.getByRole("rowgroup", { name: "Medições com fio" })).toHaveCount(0);
+    await expect(page.getByRole("radio")).toHaveCount(0);
+    await expect(summaryRows(page)).toHaveCount(0);
   });
 
   test("Sem fio tells a wired-only mouse and one missing a wireless Medição apart", async ({

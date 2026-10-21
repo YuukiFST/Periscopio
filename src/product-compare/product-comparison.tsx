@@ -87,8 +87,10 @@ export function ProductComparison({
   const { products } = compared;
   const comparedIdsParam = productIdsParam(products.map((product) => product.id));
   const categoryName = categoryLabels[data.category].toLowerCase();
-  const connection = connectionPreference && connectionOfPreference[connectionPreference];
-  const summary = responseSummary(data, products, connection);
+  const chosenConnection = connectionPreference && connectionOfPreference[connectionPreference];
+  const summary = responseSummary(data, products, chosenConnection);
+  // The choice shows with the Resumo; without it, a connection in the link must not hide Medições.
+  const connection = summary && chosenConnection;
 
   const headingRef = useRef<HTMLHeadingElement>(null);
   useEffect(() => {
