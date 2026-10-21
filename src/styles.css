@@ -191,6 +191,9 @@
   /* The Destaque in a Comparação ("Layout no celular e forma do Destaque"). */
   --color-highlight: var(--green-a3);
   --color-highlight-fg: var(--green-11);
+  /* The Empate: every compared Produto shows the same value. */
+  --color-tie: var(--blue-a3);
+  --color-tie-fg: var(--blue-11);
   --color-border-subtle: var(--int-border-subtle);
   --color-border-strong: var(--int-border-strong);
 

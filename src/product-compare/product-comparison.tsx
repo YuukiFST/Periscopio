@@ -6,6 +6,8 @@ import type { CategoryData, Product } from "@/data/schema";
 import { BackToTableLink } from "@/product-detail/back-to-table-link";
 import { ComparisonTable } from "./comparison-table";
 import { maxComparedProducts, minComparedProducts, productIdsParam } from "./compare-selection";
+import { responseSummary } from "./response-summary";
+import { ResponseSummaryTable } from "./response-summary-table";
 
 type ComparedProducts = {
   products: Product[];
@@ -68,6 +70,7 @@ export function ProductComparison({
   const { products } = compared;
   const comparedIdsParam = productIdsParam(products.map((product) => product.id));
   const categoryName = categoryLabels[data.category].toLowerCase();
+  const summary = responseSummary(data, products);
 
   const headingRef = useRef<HTMLHeadingElement>(null);
   useEffect(() => {
@@ -113,12 +116,15 @@ export function ProductComparison({
       {products.length < minComparedProducts ? (
         <NotEnoughProducts count={products.length} />
       ) : (
-        <ComparisonTable
-          data={data}
-          products={products}
-          labelledBy={headingId}
-          onRemove={removeProduct}
-        />
+        <>
+          {summary && <ResponseSummaryTable summary={summary} />}
+          <ComparisonTable
+            data={data}
+            products={products}
+            labelledBy={headingId}
+            onRemove={removeProduct}
+          />
+        </>
       )}
     </article>
   );

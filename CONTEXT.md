@@ -56,6 +56,14 @@ _Avoid_: comparativo, versus, compare
 A marca visual, dentro de uma Comparação, do Produto que se sai melhor em uma Medição ou Especificação.
 _Avoid_: vencedor, winner, highlight
 
+**Empate**:
+A marca visual, dentro de uma Comparação, de uma Medição ou Especificação em que todos os Produtos com o dado mostram o mesmo valor.
+_Avoid_: igual, tie
+
+**Resumo de desempenho**:
+O quadro, no topo da Comparação de mouses, com a resposta mais rápida de clique e sensor de cada Produto, em qualquer conexão, e uma pontuação de 0 a 100 que os ordena.
+_Avoid_: ranking, score, nota de desempenho
+
 **Link AliExpress**:
 O único link de compra mostrado em um Produto, quando o EyeJoker tem um.
 _Avoid_: link de afiliado, link de compra

@@ -17,6 +17,7 @@ const mouses = {
 const ultraGearId = "168e2700-995b-4632-86e9-08613515a315";
 const pg259qnId = "7aa60f74-aa55-44f0-9858-9d672a19fba5";
 const highlightLabel = "melhor nesta medida";
+const tieLabel = "empate nesta medida";
 
 function compareCheckbox(page: Page, productName: string) {
   return page.getByRole("checkbox", { name: `Comparar ${productName}`, exact: true });
@@ -35,20 +36,30 @@ async function comparedProductNames(page: Page): Promise<string[]> {
   return labels.map((label) => label.replace(/^Remover /, "").replace(/ da comparação$/, ""));
 }
 
-/** The names, in column order, of the Produtos whose cell in the row of `fieldLabel` has the Destaque. */
-async function highlightedProducts(page: Page, fieldLabel: string): Promise<string[]> {
+/** The names, in column order, of the Produtos whose cell in the row of `fieldLabel` carries `markLabel`. */
+async function markedProducts(
+  page: Page,
+  fieldLabel: string,
+  markLabel: string,
+): Promise<string[]> {
   const names = await comparedProductNames(page);
   const cells = page
+    .getByRole("table", { name: /^Comparação de / })
     .getByRole("row")
     .filter({ has: page.getByRole("rowheader", { name: fieldLabel, exact: true }) })
     .getByRole("cell");
   await expect(cells).toHaveCount(names.length);
-  const highlighted: string[] = [];
+  const marked: string[] = [];
   for (const [position, name] of names.entries()) {
-    const marks = await cells.nth(position).getByRole("img", { name: highlightLabel }).count();
-    if (marks > 0) highlighted.push(name);
+    const marks = await cells.nth(position).getByRole("img", { name: markLabel }).count();
+    if (marks > 0) marked.push(name);
   }
-  return highlighted;
+  return marked;
+}
+
+/** The Produtos with the Destaque in the row of `fieldLabel`. */
+function highlightedProducts(page: Page, fieldLabel: string): Promise<string[]> {
+  return markedProducts(page, fieldLabel, highlightLabel);
 }
 
 test("three mouses marked on the table open side by side, with the Destaque where better is clear and no Preço", async ({
@@ -81,14 +92,23 @@ test("three mouses marked on the table open side by side, with the Destaque wher
     ["Debounce", ["Dragonfly A9 Ultra"]],
     // Grades in EyeJoker's order: A+ beats C and Sem nota.
     ["Nota geral", ["Dragonfly A9 Ultra"]],
-    // All three at 8000 Hz: nobody is better.
+    // All three at 8000 Hz: nobody is better, so the row shows the Empate instead.
     ["Polling rate máximo", []],
+    // 600 mAh beats 500 and 300 mAh.
+    ["Bateria", ["H200A"]],
     // A size has no better direction.
     ["Altura", []],
   ];
   for (const [fieldLabel, products] of expectedHighlights) {
     expect(await highlightedProducts(page, fieldLabel), fieldLabel).toEqual(products);
   }
+  expect(await markedProducts(page, "Polling rate máximo", tieLabel)).toEqual([
+    "Dragonfly A9 Ultra",
+    "Huan",
+    "H200A",
+  ]);
+  // A clear winner is a Destaque, never an Empate.
+  expect(await markedProducts(page, "Peso", tieLabel)).toEqual([]);
   await expect(page.getByRole("rowheader", { name: "Preço" })).toHaveCount(0);
   await expect(
     page.getByText(
@@ -103,6 +123,50 @@ test("three mouses marked on the table open side by side, with the Destaque wher
     name: "mouse-comparison.aria.yml",
   });
   expect(await highlightedProducts(friendPage, "Peso")).toEqual(["Huan"]);
+});
+
+test("the Resumo de desempenho ranks the mouses by their fastest click and sensor, whatever the connection", async ({
+  page,
+}) => {
+  await page.goto(
+    `/comparar/mouse?p=${mouses.dragonflyA9Ultra.id},${mouses.huan.id},${mouses.h200a.id}`,
+  );
+  // H200A's sensor is fastest on its cable, 1,87 ms against 3,74 ms without it.
+  await expect(page.getByRole("region", { name: "Resumo de desempenho" })).toMatchAriaSnapshot(`
+    - region "Resumo de desempenho":
+      - heading "Resumo de desempenho" [level=2]
+      - paragraph: "Melhor desempenho: Dragonfly A9 Ultra."
+      - paragraph
+      - table "Resumo de desempenho":
+        - rowgroup:
+          - row "Mouse Pontuação Clique Sensor"
+        - rowgroup:
+          - row "1º Dragonfly A9 Ultra 100 melhor nesta medida 0,49 ms melhor nesta medida 0,70 ms melhor nesta medida"
+          - row "2º Huan 54 5,34 ms 0,71 ms"
+          - row "3º H200A 21 8,91 ms 1,87 ms com fio"
+  `);
+});
+
+test("a mouse's Medições por conexão start folded and unfold on request", async ({ page }) => {
+  await page.goto(`/comparar/mouse?p=${mouses.dragonflyA9Ultra.id},${mouses.h200a.id}`);
+  const perConnectionRow = page.getByRole("rowheader", {
+    name: "Resposta média do sensor (com fio)",
+    exact: true,
+  });
+  const unfold = page.getByRole("button", { name: /^Mostrar \(\d+\)$/ });
+  await expect(unfold).toHaveAttribute("aria-expanded", "false");
+  await expect(perConnectionRow).toHaveCount(0);
+  // The overall Medições stay in view.
+  await expect(
+    page.getByRole("rowheader", { name: "Resposta do clique", exact: true }),
+  ).toBeVisible();
+
+  await unfold.click();
+  await expect(page.getByRole("button", { name: "Ocultar" })).toHaveAttribute(
+    "aria-expanded",
+    "true",
+  );
+  await expect(perConnectionRow).toBeVisible();
 });
 
 test("a fifth mark is refused, with the reason in the bar", async ({ page }) => {

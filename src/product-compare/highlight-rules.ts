@@ -48,6 +48,7 @@ const directionRules: readonly (readonly [pattern: string, direction: HighlightD
   ["pwmFrequencyMeasured", "higher"],
   ["buildQualityScore", "higher"],
   ["as", "higher"],
+  ["battery", "higher"],
   // Times, delays and their standard deviations: lower is better.
   ["sensorAvg*", "lower"],
   ["sensorDeviation*", "lower"],
@@ -114,6 +115,20 @@ export function highlightDirection(fieldKey: string): HighlightDirection {
   return compiledRules.find(([pattern]) => pattern.test(fieldKey))?.[1] ?? "none";
 }
 
+/**
+ * An ENUM value that is an amount: a bare count such as the polling rate
+ * `8000`, or a number its label gives a unit, such as the battery's `500`
+ * labelled `500mAh`. A value such as the battery's `AA` is not an amount.
+ */
+function enumAmount(field: Extract<Field, { type: "enum" }>, value: string): number | undefined {
+  if (!/^\d+$/.test(value)) return undefined;
+  if (isCountEnum(field)) return Number(value);
+  const label = field.options.find((option) => option.value === value)?.label?.en;
+  return label !== undefined && new RegExp(`^${value} ?[a-zA-Z]+$`).test(label)
+    ? Number(value)
+    : undefined;
+}
+
 /** A value as a number to compare, undefined when it cannot compete. */
 function comparableNumber(field: Field, value: FieldValue): number | undefined {
   switch (field.type) {
@@ -124,7 +139,7 @@ function comparableNumber(field: Field, value: FieldValue): number | undefined {
     case "enum":
       if (typeof value !== "string") return undefined;
       if (isRatingField(field.key)) return ratingRank(field.key, value);
-      return isCountEnum(field) && /^\d+$/.test(value) ? Number(value) : undefined;
+      return enumAmount(field, value);
     case "text":
     case "date":
       return undefined;
@@ -132,25 +147,49 @@ function comparableNumber(field: Field, value: FieldValue): number | undefined {
 }
 
 /**
- * The positions in `values` (one per compared Produto) that get the Destaque:
- * every one tied at the best value, compared as the screen rounds it. A
- * missing value does not compete, and there is no Destaque unless at least two
- * values compete and they are not all equal. The Preço is not a field, so it
- * never reaches here.
+ * How a Comparação marks one field's row: `best` for the positions tied at the
+ * best value (the Destaque), `tie` for every competing position when all of
+ * them show the same value (the Empate), and `none` otherwise.
  */
-export function highlightedPositions(
+export type ComparisonMarks =
+  | { kind: "none" }
+  | { kind: "best" | "tie"; positions: ReadonlySet<number> };
+
+const noMarks: ComparisonMarks = { kind: "none" };
+
+/**
+ * The marks of numbers that compete, by position. There is no mark unless at
+ * least two numbers compete.
+ */
+export function marksOfNumbers(
+  direction: Exclude<HighlightDirection, "none">,
+  competing: readonly { position: number; number: number }[],
+): ComparisonMarks {
+  if (competing.length < 2) return noMarks;
+  const numbers = competing.map(({ number }) => number);
+  const best = direction === "lower" ? Math.min(...numbers) : Math.max(...numbers);
+  const worst = direction === "lower" ? Math.max(...numbers) : Math.min(...numbers);
+  const positionsAt = (target: number) =>
+    new Set(competing.flatMap(({ position, number }) => (number === target ? [position] : [])));
+  return best === worst
+    ? { kind: "tie", positions: positionsAt(best) }
+    : { kind: "best", positions: positionsAt(best) };
+}
+
+/**
+ * The marks of `values` (one per compared Produto), compared as the screen
+ * rounds them. A missing value does not compete, and a field with no better
+ * direction gets no mark. The Preço is not a field, so it never reaches here.
+ */
+export function comparisonMarks(
   field: Field,
   values: readonly (FieldValue | undefined)[],
-): ReadonlySet<number> {
+): ComparisonMarks {
   const direction = highlightDirection(field.key);
-  if (direction === "none") return new Set();
+  if (direction === "none") return noMarks;
   const competing = values.flatMap((value, position) => {
     const number = value === undefined ? undefined : comparableNumber(field, value);
     return number === undefined ? [] : [{ position, number }];
   });
-  const numbers = competing.map(({ number }) => number);
-  const best = direction === "lower" ? Math.min(...numbers) : Math.max(...numbers);
-  const worst = direction === "lower" ? Math.max(...numbers) : Math.min(...numbers);
-  if (competing.length < 2 || best === worst) return new Set();
-  return new Set(competing.flatMap(({ position, number }) => (number === best ? [position] : [])));
+  return marksOfNumbers(direction, competing);
 }

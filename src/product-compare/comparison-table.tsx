@@ -1,20 +1,22 @@
 import { Link } from "@tanstack/react-router";
-import { Check, ExternalLink, X } from "lucide-react";
-import type { CSSProperties } from "react";
+import { ChevronDown, ExternalLink, X } from "lucide-react";
+import { useState, type CSSProperties } from "react";
 import type { CategorySlug } from "@/categories";
 import { Button } from "@/components/ui/button";
 import type { CategoryData, Field, Product } from "@/data/schema";
 import { fieldLabel, manufacturerName } from "@/i18n/labels";
 import { cn } from "@/lib/utils";
-import { productFieldGroups, productFieldValue } from "@/product-fields/field-groups";
+import {
+  productFieldGroups,
+  productFieldValue,
+  type ProductFieldGroup,
+} from "@/product-fields/field-groups";
 import { FieldValueText } from "@/product-fields/field-value-text";
 import { ProductPhoto } from "@/product-photo/product-photo";
 import { MissingValue } from "@/product-table/table-cells";
 import { productIdsParam } from "./compare-selection";
-import { highlightedPositions } from "./highlight-rules";
-
-/** The Destaque's accessible label: the cell is never told apart by its color alone. */
-export const highlightLabel = "melhor nesta medida";
+import { ComparisonMark } from "./comparison-mark";
+import { comparisonMarks } from "./highlight-rules";
 
 type ComparisonTableProps = {
   data: CategoryData;
@@ -25,13 +27,53 @@ type ComparisonTableProps = {
   onRemove: (id: string) => void;
 };
 
+type ComparisonGroup = Omit<ProductFieldGroup, "id"> & {
+  id: ProductFieldGroup["id"] | "medicoes-por-conexao";
+  foldable: boolean;
+};
+
+/**
+ * Mouse Medições taken on one connection (com fio, sem fio, Bluetooth) or
+ * Motion Sync setting. The Resumo de desempenho already reads the fastest of
+ * them, so they start folded under their own group.
+ */
+const perConnectionFieldPattern = /Wired|Wireless|Bluetooth|MotionSync/;
+
+function isPerConnection(field: Field): boolean {
+  return perConnectionFieldPattern.test(field.key);
+}
+
+function comparisonGroups(data: CategoryData, products: readonly Product[]): ComparisonGroup[] {
+  const groups = productFieldGroups(data, products).map((group) => ({
+    ...group,
+    foldable: false,
+  }));
+  if (data.category !== "mouse") return groups;
+  return groups.flatMap((group): ComparisonGroup[] => {
+    if (group.id !== "medicoes") return [group];
+    const overall = group.fields.filter((field) => !isPerConnection(field));
+    const perConnection = group.fields.filter(isPerConnection);
+    const splits: ComparisonGroup[] = [
+      { ...group, fields: overall },
+      {
+        id: "medicoes-por-conexao",
+        title: "Medições por conexão",
+        fields: perConnection,
+        foldable: true,
+      },
+    ];
+    return splits.filter((split) => split.fields.length > 0);
+  });
+}
+
 /**
  * One column per Produto and one row per field, in Especificações and
  * Medições. The labels stay fixed at the start; Produto columns scroll
  * sideways, two at a time on a phone, up to four on a wide screen.
  */
 export function ComparisonTable({ data, products, labelledBy, onRemove }: ComparisonTableProps) {
-  const groups = productFieldGroups(data, products);
+  const groups = comparisonGroups(data, products);
+  const [isUnfolded, setIsUnfolded] = useState(false);
   const comparedIdsParam = productIdsParam(products.map((product) => product.id));
   const columnCount = products.length;
   const layout: CSSProperties & Record<`--${string}`, string | number> = {
@@ -83,23 +125,48 @@ export function ComparisonTable({ data, products, labelledBy, onRemove }: Compar
           </thead>
           {groups.map((group) => {
             const groupHeadingId = `comparacao-${group.id}`;
+            const groupBodyId = `${groupHeadingId}-linhas`;
+            const showsFields = !group.foldable || isUnfolded;
             return (
               <tbody key={group.id} aria-labelledby={groupHeadingId}>
                 <tr>
                   <th
-                    id={groupHeadingId}
                     scope="rowgroup"
                     colSpan={columnCount + 1}
                     className="border-b border-border-subtle bg-component p-0 text-start"
                   >
-                    <span className="sticky start-0 inline-block px-2 py-1.5 font-serif text-body-base font-medium sm:px-3">
-                      {group.title}
+                    <span className="sticky start-0 inline-flex items-center gap-2 px-2 py-1.5 sm:px-3">
+                      <span id={groupHeadingId} className="font-serif text-body-base font-medium">
+                        {group.title}
+                      </span>
+                      {group.foldable && (
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          aria-expanded={isUnfolded}
+                          aria-controls={isUnfolded ? groupBodyId : undefined}
+                          onClick={() => setIsUnfolded(!isUnfolded)}
+                          className="font-sans text-fg-secondary"
+                        >
+                          {isUnfolded ? "Ocultar" : `Mostrar (${group.fields.length})`}
+                          <ChevronDown
+                            aria-hidden="true"
+                            className={cn("transition-transform", isUnfolded && "rotate-180")}
+                          />
+                        </Button>
+                      )}
                     </span>
                   </th>
                 </tr>
-                {group.fields.map((field) => (
-                  <FieldRow key={field.key} field={field} products={products} />
-                ))}
+                {showsFields &&
+                  group.fields.map((field, index) => (
+                    <FieldRow
+                      key={field.key}
+                      id={index === 0 && group.foldable ? groupBodyId : undefined}
+                      field={field}
+                      products={products}
+                    />
+                  ))}
               </tbody>
             );
           })}
@@ -171,11 +238,19 @@ function ProductColumnHeader({
   );
 }
 
-function FieldRow({ field, products }: { field: Field; products: readonly Product[] }) {
+function FieldRow({
+  id,
+  field,
+  products,
+}: {
+  id?: string;
+  field: Field;
+  products: readonly Product[];
+}) {
   const values = products.map((product) => productFieldValue(product, field));
-  const highlighted = highlightedPositions(field, values);
+  const marks = comparisonMarks(field, values);
   return (
-    <tr>
+    <tr id={id}>
       <th
         scope="row"
         className="sticky start-0 z-10 border-e border-b border-border-subtle bg-page px-2 py-2 text-start align-top font-normal text-pretty text-fg-secondary sm:px-3"
@@ -183,13 +258,15 @@ function FieldRow({ field, products }: { field: Field; products: readonly Produc
         {fieldLabel(field)}
       </th>
       {values.map((value, position) => {
-        const isHighlighted = highlighted.has(position);
+        const mark =
+          marks.kind !== "none" && marks.positions.has(position) ? marks.kind : undefined;
         return (
           <td
             key={products[position]?.id ?? position}
             className={cn(
               "border-b border-border-subtle px-2 py-2 align-top tabular-nums hyphens-auto sm:px-3",
-              isHighlighted && "bg-highlight font-medium text-highlight-fg",
+              mark === "best" && "bg-highlight font-medium text-highlight-fg",
+              mark === "tie" && "bg-tie font-medium text-tie-fg",
             )}
           >
             {value === undefined ? (
@@ -198,14 +275,7 @@ function FieldRow({ field, products }: { field: Field; products: readonly Produc
               <>
                 <FieldValueText field={field} value={value} />
                 {/* Inline after the value, so a long word wraps whole and the mark follows it. */}
-                {isHighlighted && (
-                  <Check
-                    role="img"
-                    aria-label={highlightLabel}
-                    strokeWidth={2.5}
-                    className="ms-1.5 inline-block size-3.5 align-[-0.125em]"
-                  />
-                )}
+                {mark && <ComparisonMark kind={mark} />}
               </>
             )}
           </td>
