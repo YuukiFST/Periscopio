@@ -1,6 +1,6 @@
 import type { Product } from "../data/schema.ts";
 import { enumValues, type FilterDefinition } from "./filter-engine.ts";
-import { booleanChoice, enumChoice, enumValueChoices, numberChoice } from "./common-filters.ts";
+import { booleanChoice, enumChoice, enumValueChoices } from "./common-filters.ts";
 
 const namedLayouts = ["tkl", "75%", "65%", "60%", "full", "96%"];
 
@@ -15,7 +15,10 @@ function housingIs(materials: readonly string[]): (product: Product) => boolean 
   };
 }
 
-/** EyeJoker's keyboard Filtros (`na` in its bundle), in its order. */
+/**
+ * EyeJoker's keyboard Filtros (`na` in its bundle), in its order; Desempenho
+ * real takes typed bounds instead of EyeJoker's bands.
+ */
 export const keyboardFilters: readonly FilterDefinition[] = [
   {
     kind: "buckets",
@@ -99,24 +102,10 @@ export const keyboardFilters: readonly FilterDefinition[] = [
     ],
   },
   {
-    kind: "buckets",
+    kind: "range",
     param: "desempenho",
     label: "Desempenho real",
-    buckets: [
-      numberChoice("4000-ou-mais", "4.000 Hz ou mais", "realPerformance", (hz) => hz >= 4000),
-      numberChoice(
-        "2000-3999",
-        "2.000 a 3.999 Hz",
-        "realPerformance",
-        (hz) => hz >= 2000 && hz < 4000,
-      ),
-      numberChoice(
-        "1000-1999",
-        "1.000 a 1.999 Hz",
-        "realPerformance",
-        (hz) => hz >= 1000 && hz < 2000,
-      ),
-      numberChoice("abaixo1000", "Menos de 1.000 Hz", "realPerformance", (hz) => hz < 1000),
-    ],
+    fieldKey: "realPerformance",
+    unit: "Hz",
   },
 ];

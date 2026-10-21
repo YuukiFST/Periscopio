@@ -24,6 +24,7 @@ export const filterParams = [
   "desempenho",
   "resolucao",
   "taxa",
+  "resposta",
   "painel",
   "hdr",
   "iluminacao",

@@ -92,13 +92,8 @@
         - text: Sem atraso
         - checkbox "Com atraso"
         - text: Com atraso
-    - group "Desempenho real":
-        - text: ""
-        - checkbox /\d+\.\d+ Hz ou mais/
-        - text: /\d+\.\d+ Hz ou mais/
-        - checkbox /\d+\.\d+ a \d+\.\d+ Hz/
-        - text: /\d+\.\d+ a \d+\.\d+ Hz/
-        - checkbox /\d+\.\d+ a \d+\.\d+ Hz/
-        - text: /\d+\.\d+ a \d+\.\d+ Hz/
-        - checkbox /Menos de \d+\.\d+ Hz/
-        - text: /Menos de \d+\.\d+ Hz/
+    - group "Desempenho real (Hz)":
+        - text: Desempenho real (Hz) Mínimo
+        - textbox "Mínimo"
+        - text: Máximo
+        - textbox "Máximo"

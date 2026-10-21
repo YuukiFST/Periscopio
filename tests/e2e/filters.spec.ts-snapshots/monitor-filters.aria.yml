@@ -34,24 +34,11 @@
         - textbox "Mínimo"
         - text: Máximo
         - textbox "Máximo"
-    - group "Tamanho da tela":
-        - text: ""
-        - checkbox /Até \d+"/
-        - text: /Até \d+"/
-        - checkbox /\d+ a \d+"/
-        - text: /\d+ a \d+"/
-        - checkbox /\d+"/
-        - text: /\d+"/
-        - checkbox /\d+"/
-        - text: /\d+"/
-        - checkbox /\d+"/
-        - text: /\d+"/
-        - checkbox /\d+"/
-        - text: /\d+"/
-        - checkbox /\d+"/
-        - text: /\d+"/
-        - checkbox /\d+" ou mais/
-        - text: /\d+" ou mais/
+    - group "Tamanho da tela (pol.)":
+        - text: Tamanho da tela (pol.) Mínimo
+        - textbox "Mínimo"
+        - text: Máximo
+        - textbox "Máximo"
     - group "Resolução":
         - text: ""
         - checkbox /FHD \(\d+×\d+\)/
@@ -62,18 +49,16 @@
         - text: /UHD \(\d+×\d+\)/
         - checkbox "Ultrawide"
         - text: Ultrawide
-    - group "Taxa de atualização":
-        - text: ""
-        - checkbox /\d+ a \d+ Hz/
-        - text: /\d+ a \d+ Hz/
-        - checkbox /\d+ a \d+ Hz/
-        - text: /\d+ a \d+ Hz/
-        - checkbox /\d+ a \d+ Hz/
-        - text: /\d+ a \d+ Hz/
-        - checkbox /\d+ a \d+ Hz/
-        - text: /\d+ a \d+ Hz/
-        - checkbox /\d+ Hz ou mais/
-        - text: /\d+ Hz ou mais/
+    - group "Taxa de atualização (Hz)":
+        - text: Taxa de atualização (Hz) Mínimo
+        - textbox "Mínimo"
+        - text: Máximo
+        - textbox "Máximo"
+    - group "Resposta geral (ms)":
+        - text: Resposta geral (ms) Mínimo
+        - textbox "Mínimo"
+        - text: Máximo
+        - textbox "Máximo"
     - group "Painel":
         - text: ""
         - checkbox "TN"

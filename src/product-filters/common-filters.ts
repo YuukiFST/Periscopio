@@ -4,7 +4,6 @@ import { priceOf } from "../product-table/cell-values.ts";
 import {
   booleanValue,
   enumValues,
-  numberValue,
   type BucketsDefinition,
   type FilterChoice,
   type FilterDefinition,
@@ -37,23 +36,6 @@ export function enumValueChoices(
   return Object.entries(idsByValue).map(([value, id]) =>
     enumChoice(id, ptValueLabel(fieldKey, value), fieldKey, [value]),
   );
-}
-
-/** A choice for a band of a number field, its bounds written as EyeJoker's predicate. */
-export function numberChoice(
-  id: string,
-  label: string,
-  fieldKey: string,
-  inBand: (value: number) => boolean,
-): FilterChoice {
-  return {
-    id,
-    label,
-    matches: (product) => {
-      const value = numberValue(product, fieldKey);
-      return value !== undefined && inBand(value);
-    },
-  };
 }
 
 export function booleanChoice(
