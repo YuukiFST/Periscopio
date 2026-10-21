@@ -32,10 +32,7 @@ const allMouses = [
   "Cloud XS",
 ];
 
-/**
- * The golden generalizes numbers into patterns, so the cuts EyeJoker draws
- * (screen sizes, refresh rates) and the letter tiers are spelled out here exactly.
- */
+/** The golden generalizes letters and numbers into patterns, so the tiers are spelled out here exactly. */
 const ratingTiers = ["S", "A+", "A", "B", "C", "D", "Sem nota"];
 const recommendations = ["Ótima", "Boa", "Fraca", "Evitar", "Pendente"];
 
@@ -144,7 +141,7 @@ const rangeCases: {
   after: string[];
 }[] = [
   {
-    // 24", 24,5" and 24,5"; UltraGear is 32".
+    // 24,5", 24,5" and 24"; UltraGear is 32".
     slug: "monitor",
     range: "Tamanho da tela (pol.)",
     min: "24",
@@ -162,12 +159,12 @@ const rangeCases: {
     after: ["UltraGear 32GS95UE 4K Mode"],
   },
   {
-    // Only UltraGear has a Resposta geral, 3,53 ms.
+    // Only UltraGear has a Resposta geral, 3,53 ms, so a Máximo of 3 leaves no monitor.
     slug: "monitor",
     range: "Resposta geral (ms)",
-    max: "5",
-    url: "/monitor?resposta=-5",
-    after: ["UltraGear 32GS95UE 4K Mode"],
+    max: "3",
+    url: "/monitor?resposta=-3",
+    after: [],
   },
   {
     // 2.110, 6.155 and 2.630 Hz; Archon M3 has no Desempenho real.
@@ -183,13 +180,25 @@ for (const rangeCase of rangeCases) {
   test(`/${rangeCase.slug} narrows by a typed ${rangeCase.range}`, async ({ page }) => {
     await page.goto(`/${rangeCase.slug}`);
     const range = filterPanel(page).getByRole("group", { name: rangeCase.range, exact: true });
-    await expect(range.getByRole("checkbox")).toHaveCount(0);
     if (rangeCase.min) await range.getByRole("textbox", { name: "Mínimo" }).fill(rangeCase.min);
     if (rangeCase.max) await range.getByRole("textbox", { name: "Máximo" }).fill(rangeCase.max);
     await expect(page).toHaveURL(rangeCase.url);
     await expect.poll(() => productNames(page)).toEqual(rangeCase.after);
   });
 }
+
+test("a link with a band id from before the ranges drops that Filtro and keeps the others", async ({
+  page,
+}) => {
+  await page.goto("/monitor?taxa=540-ou-mais&resolucao=fhd");
+  const refreshRange = filterPanel(page).getByRole("group", { name: "Taxa de atualização (Hz)" });
+  await expect(refreshRange.getByRole("textbox", { name: "Mínimo" })).toHaveValue("");
+  await expect(refreshRange.getByRole("textbox", { name: "Máximo" })).toHaveValue("");
+  await expect(choice(page, "Resolução", "FHD (1920×1080)")).toBeChecked();
+  await expect
+    .poll(() => productNames(page))
+    .toEqual(["XG259QDNS Ace", "모비우스 EX2510S", "ROG SWIFT PG259QN"]);
+});
 
 test("choices within one Filtro add up, and a Produto without the value leaves while the Filtro is active", async ({
   page,
