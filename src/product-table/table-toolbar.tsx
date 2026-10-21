@@ -1,9 +1,10 @@
 import { Search } from "lucide-react";
 import type { ReactNode } from "react";
 import { Input } from "@/components/ui/input";
+import { SegmentedControl, type SegmentedOption } from "@/components/ui/segmented-control";
 import type { TestStatusFilter } from "./product-filter";
 
-const testStatusOptions: { value: TestStatusFilter | undefined; label: string }[] = [
+const testStatusOptions: SegmentedOption<TestStatusFilter | undefined>[] = [
   { value: undefined, label: "Todos" },
   { value: "testados", label: "Testados" },
   { value: "nao-testados", label: "Não testados" },
@@ -65,23 +66,13 @@ export function TableToolbar({
           className="h-9 ps-8"
         />
       </div>
-      <fieldset className="flex rounded-lg bg-component p-0.5">
-        <legend className="sr-only">Status de teste</legend>
-        {testStatusOptions.map((option) => (
-          <label key={option.label} className="relative">
-            <input
-              type="radio"
-              name="status-de-teste"
-              className="peer absolute inset-0 z-10 cursor-pointer appearance-none rounded-md opacity-0"
-              checked={testStatus === option.value}
-              onChange={() => onTestStatusChange(option.value)}
-            />
-            <span className="flex h-8 cursor-pointer items-center rounded-md border border-transparent px-3 font-medium whitespace-nowrap text-fg-secondary peer-checked:bg-page peer-checked:text-fg-primary peer-checked:shadow-default peer-focus-visible:outline-2 peer-focus-visible:outline-offset-1 peer-focus-visible:outline-ring peer-active:bg-component-hover hover:text-fg-primary peer-checked:peer-active:bg-page dark:peer-checked:bg-component-active forced-colors:peer-checked:border-[Highlight]">
-              {option.label}
-            </span>
-          </label>
-        ))}
-      </fieldset>
+      <SegmentedControl
+        legend="Status de teste"
+        name="status-de-teste"
+        options={testStatusOptions}
+        value={testStatus}
+        onValueChange={onTestStatusChange}
+      />
       {children}
       <p aria-live="polite" className="text-fg-secondary tabular-nums">
         {countText}

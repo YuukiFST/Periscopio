@@ -14,13 +14,25 @@ function isOverallRating(field: Field): boolean {
 const headerFieldKeys = new Set(["status"]);
 
 /**
+ * True when `value` is EyeJoker's mark for a time it could not measure: -1
+ * (`pcbAvgWired: -1`), or 0 on anything but a debounce, which a switch with
+ * none really measures at 0 ms.
+ */
+export function isPlaceholderTime(field: Field, value: FieldValue): boolean {
+  if (field.type !== "number" || field.unit !== "ms" || typeof value !== "number") return false;
+  return value < 0 || (value === 0 && !/debounce/i.test(field.key));
+}
+
+/**
  * A Produto's value for a field. The pipeline keeps the Status de teste and
- * the situação de venda beside `values`; every other field lives in it.
+ * the situação de venda beside `values`; every other field lives in it. A
+ * placeholder time is no value.
  */
 export function productFieldValue(product: Product, field: Field): FieldValue | undefined {
   if (field.key === "status") return product.status ?? undefined;
   if (field.key === "saleStatus") return product.saleStatus ?? undefined;
-  return product.values[field.key];
+  const value = product.values[field.key];
+  return value === undefined || isPlaceholderTime(field, value) ? undefined : value;
 }
 
 /**
