@@ -1,5 +1,5 @@
 import { expect, test, type Page } from "@playwright/test";
-import { categoryDataSchema } from "../../src/data/schema.ts";
+import { categoryDataSchema, type Product } from "../../src/data/schema.ts";
 
 /**
  * Runs against the production build served with the data the pipeline
@@ -16,8 +16,12 @@ const mouses = {
 };
 const ultraGearId = "168e2700-995b-4632-86e9-08613515a315";
 const pg259qnId = "7aa60f74-aa55-44f0-9858-9d672a19fba5";
-const highlightLabel = "melhor nesta medida";
-const tieLabel = "empate nesta medida";
+const keyboards = {
+  edge60HePro: { id: "021979aa-b222-47d3-b5ec-8b59d671aff4", name: "EDGE 60HE Pro" },
+  raven61: { id: "479c4333-c25b-4e79-89a5-74d93565c4b5", name: "Raven61" },
+};
+const highlightLabel = "melhor nesta linha";
+const tieLabel = "empate nesta linha";
 
 function compareCheckbox(page: Page, productName: string) {
   return page.getByRole("checkbox", { name: `Comparar ${productName}`, exact: true });
@@ -36,15 +40,21 @@ async function comparedProductNames(page: Page): Promise<string[]> {
   return labels.map((label) => label.replace(/^Remover /, "").replace(/ da comparação$/, ""));
 }
 
-/** The names, in column order, of the Produtos whose cell in the row of `fieldLabel` carries `markLabel`. */
+/**
+ * The names, in column order, of the Produtos whose cell in the field row of
+ * `fieldLabel` carries `markLabel`; the Resumo de desempenho is left out.
+ */
 async function markedProducts(
   page: Page,
   fieldLabel: string,
   markLabel: string,
 ): Promise<string[]> {
+  const table = page.getByRole("table", { name: /^Comparação de / });
+  await expect(table).toBeVisible();
   const names = await comparedProductNames(page);
-  const cells = page
-    .getByRole("table", { name: /^Comparação de / })
+  const cells = table
+    .getByRole("rowgroup")
+    .filter({ hasNot: page.getByRole("rowheader", { name: /^Pontuação/ }) })
     .getByRole("row")
     .filter({ has: page.getByRole("rowheader", { name: fieldLabel, exact: true }) })
     .getByRole("cell");
@@ -55,6 +65,30 @@ async function markedProducts(
     if (marks > 0) marked.push(name);
   }
   return marked;
+}
+
+/**
+ * Serves the category's data with `edit` applied to each Produto. The test
+ * using it blocks service workers, which would answer from their cache.
+ */
+async function editProducts(
+  page: Page,
+  category: "mouse" | "teclado",
+  edit: (product: Product) => Product,
+) {
+  await page.route(`**/data/${category}.json`, async (route) => {
+    const response = await route.fetch();
+    const data = categoryDataSchema.parse(await response.json());
+    await route.fulfill({ response, json: { ...data, products: data.products.map(edit) } });
+  });
+}
+
+function withValues(product: Product, id: string, values: Product["values"]): Product {
+  return product.id === id ? { ...product, values: { ...product.values, ...values } } : product;
+}
+
+function summaryRows(page: Page) {
+  return page.getByRole("rowgroup", { name: "Resumo de desempenho" });
 }
 
 /** The Produtos with the Destaque in the row of `fieldLabel`. */
@@ -86,7 +120,7 @@ test("three mouses marked on the table open side by side, with the Destaque wher
     // Lower is better, on the shown 48 g against 54 g and 102 g.
     ["Peso", ["Huan"]],
     ["Resposta do clique", ["Dragonfly A9 Ultra"]],
-    // A tie at the best value highlights both.
+    // A tie at the best value highlights both, as a Destaque.
     ["Velocidade máxima de rastreio", ["Dragonfly A9 Ultra", "Huan"]],
     // Huan has no Debounce and stays out; 19 ms beats 22 ms.
     ["Debounce", ["Dragonfly A9 Ultra"]],
@@ -107,12 +141,13 @@ test("three mouses marked on the table open side by side, with the Destaque wher
     "Huan",
     "H200A",
   ]);
-  // A clear winner is a Destaque, never an Empate.
+  // A clear winner is a Destaque, never an Empate, nor is a tie at the best that others miss.
   expect(await markedProducts(page, "Peso", tieLabel)).toEqual([]);
+  expect(await markedProducts(page, "Velocidade máxima de rastreio", tieLabel)).toEqual([]);
   await expect(page.getByRole("rowheader", { name: "Preço" })).toHaveCount(0);
   await expect(
     page.getByText(
-      "O Preço fica de fora da comparação porque preços mudam, e o EyeJoker não registra o preço da sua região.",
+      "O preço fica de fora da comparação porque preços mudam, e o EyeJoker não registra o preço da sua região.",
     ),
   ).toBeVisible();
 
@@ -125,26 +160,64 @@ test("three mouses marked on the table open side by side, with the Destaque wher
   expect(await highlightedProducts(friendPage, "Peso")).toEqual(["Huan"]);
 });
 
-test("the Resumo de desempenho ranks the mouses by their fastest click and sensor, whatever the connection", async ({
+test("the Resumo de desempenho opens the table and ranks the mouses by their fastest click and sensor, whatever the connection", async ({
   page,
 }) => {
   await page.goto(
     `/comparar/mouse?p=${mouses.dragonflyA9Ultra.id},${mouses.huan.id},${mouses.h200a.id}`,
   );
+  await expect(page.getByRole("radio", { name: "Qualquer conexão" })).toBeChecked();
+  await expect(page.getByText("Melhor desempenho: Dragonfly A9 Ultra.")).toBeVisible();
   // H200A's sensor is fastest on its cable, 1,87 ms against 3,74 ms without it.
-  await expect(page.getByRole("region", { name: "Resumo de desempenho" })).toMatchAriaSnapshot(`
-    - region "Resumo de desempenho":
-      - heading "Resumo de desempenho" [level=2]
-      - paragraph: "Melhor desempenho: Dragonfly A9 Ultra."
-      - paragraph
-      - table "Resumo de desempenho":
-        - rowgroup:
-          - row "Mouse Pontuação Clique Sensor"
-        - rowgroup:
-          - row "1º Dragonfly A9 Ultra 100 melhor nesta medida 0,49 ms melhor nesta medida 0,70 ms melhor nesta medida"
-          - row "2º Huan 54 5,34 ms 0,71 ms"
-          - row "3º H200A 21 8,91 ms 1,87 ms com fio"
+  await expect(summaryRows(page)).toMatchAriaSnapshot(`
+    - rowgroup "Resumo de desempenho":
+      - row "Resumo de desempenho"
+      - row "Pontuação 100 = o mais rápido em tudo 1º 100 melhor nesta linha 2º 54 3º 21"
+      - row "Resposta do clique 0,49 ms melhor nesta linha 5,34 ms 8,91 ms"
+      - row "Resposta do sensor 0,70 ms melhor nesta linha 0,71 ms 1,87 ms com fio"
   `);
+});
+
+test("choosing Com fio ranks the mouses on their wired times alone, opens their wired Medições, and stays in the link", async ({
+  page,
+}) => {
+  const comparedIds = [mouses.dragonflyA9Ultra, mouses.huan, mouses.h200a, mouses.dragonfly3Pro]
+    .map((mouse) => mouse.id)
+    .join(",");
+  await page.goto(`/comparar/mouse?p=${comparedIds}`);
+  await page.getByRole("radio", { name: "Com fio" }).check();
+  await expect(page).toHaveURL(`/comparar/mouse?p=${comparedIds}&conexao=com-fio`);
+  await expect(page.getByText("Melhor desempenho com fio: Huan.")).toBeVisible();
+  // Dragonfly A9 Ultra has no wired Medição, so it is out of the ranking, not last.
+  await expect(summaryRows(page)).toMatchAriaSnapshot(`
+    - rowgroup "Resumo de desempenho":
+      - row "Resumo de desempenho"
+      - row "Pontuação 100 = o mais rápido em tudo Sem medição com fio 1º 100 melhor nesta linha 3º 25 2º 35"
+      - row "Resposta do clique (ao pressionar) Sem dado 0,30 ms melhor nesta linha 2,38 ms 19,44 ms"
+      - row "Resposta do sensor Sem dado 0,71 ms melhor nesta linha 1,87 ms 1,04 ms"
+  `);
+  // The wired Medições show open, without the wireless ones or a fold button.
+  await expect(page.getByRole("rowgroup", { name: "Medições com fio" })).toBeVisible();
+  await expect(
+    page.getByRole("rowheader", { name: "Resposta média do sensor (com fio)", exact: true }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("rowheader", { name: "Resposta média do sensor (sem fio)", exact: true }),
+  ).toHaveCount(0);
+  await expect(page.getByRole("button", { name: /^Mostrar/ })).toHaveCount(0);
+
+  await page.reload();
+  await expect(page.getByRole("radio", { name: "Com fio" })).toBeChecked();
+  await page.getByRole("radio", { name: "Qualquer conexão" }).check();
+  await expect(page).toHaveURL(`/comparar/mouse?p=${comparedIds}`);
+  await expect(page.getByText("Melhor desempenho: Dragonfly A9 Ultra.")).toBeVisible();
+});
+
+test("a monitor Comparação has no Resumo de desempenho nor connection choice", async ({ page }) => {
+  await page.goto(`/comparar/monitor?p=${ultraGearId},${pg259qnId}`);
+  await expect(page.getByRole("table", { name: "Comparação de monitores" })).toBeVisible();
+  await expect(summaryRows(page)).toHaveCount(0);
+  await expect(page.getByRole("radio")).toHaveCount(0);
 });
 
 test("a mouse's Medições por conexão start folded and unfold on request", async ({ page }) => {
@@ -155,10 +228,13 @@ test("a mouse's Medições por conexão start folded and unfold on request", asy
   });
   const unfold = page.getByRole("button", { name: /^Mostrar \(\d+\)$/ });
   await expect(unfold).toHaveAttribute("aria-expanded", "false");
+  await expect(unfold).toHaveAccessibleDescription("Medições por conexão");
   await expect(perConnectionRow).toHaveCount(0);
   // The overall Medições stay in view.
   await expect(
-    page.getByRole("rowheader", { name: "Resposta do clique", exact: true }),
+    page
+      .getByRole("rowgroup", { name: "Medições", exact: true })
+      .getByRole("rowheader", { name: "Resposta do clique", exact: true }),
   ).toBeVisible();
 
   await unfold.click();
@@ -345,10 +421,72 @@ test.describe("with a weight that rounds to the one beside it", () => {
     // Dragonfly A9 Ultra weighs 54.4 g, shown as 54 g.
     await expect(page.getByRole("row", { name: /^Peso/ })).toMatchAriaSnapshot(`
       - rowheader "Peso"
-      - cell "54 g melhor nesta medida"
-      - cell "54 g melhor nesta medida"
+      - cell "54 g melhor nesta linha"
+      - cell "54 g melhor nesta linha"
       - cell "102 g"
     `);
     expect(await highlightedProducts(page, "Peso")).toEqual(["Dragonfly A9 Ultra", "Huan"]);
+  });
+});
+
+test.describe("with edited data", () => {
+  test.use({ serviceWorkers: "block" });
+
+  test("regression: a time EyeJoker could not measure (-1) shows as missing, not as -1,00 ms, and leaves the mouse unranked", async ({
+    page,
+  }) => {
+    await editProducts(page, "mouse", (product) =>
+      withValues(product, mouses.h200a.id, { pcbAvgWired: -1 }),
+    );
+    await page.goto(
+      `/comparar/mouse?p=${mouses.huan.id},${mouses.h200a.id},${mouses.dragonfly3Pro.id}&conexao=com-fio`,
+    );
+    await expect(
+      page.getByRole("row", { name: /^Resposta média do clique \(com fio, ao pressionar\)/ }),
+    ).toMatchAriaSnapshot(`
+      - row "Resposta média do clique (com fio, ao pressionar) 0,30 ms melhor nesta linha Sem dado 19,44 ms"
+    `);
+    await expect(summaryRows(page).getByRole("row", { name: /^Pontuação/ })).toMatchAriaSnapshot(`
+      - row "Pontuação 100 = o mais rápido em tudo 1º 100 melhor nesta linha Falta medição com fio 2º 35"
+    `);
+  });
+
+  test("Sem fio tells a wired-only mouse and one missing a wireless Medição apart", async ({
+    page,
+  }) => {
+    await editProducts(page, "mouse", (product) =>
+      withValues(product, mouses.huan.id, { mouseConnection: "유선" }),
+    );
+    await page.goto(
+      `/comparar/mouse?p=${mouses.dragonflyA9Ultra.id},${mouses.huan.id},${mouses.h200a.id},${mouses.dragonfly3Pro.id}&conexao=sem-fio`,
+    );
+    await expect(page.getByRole("radio", { name: "Sem fio" })).toBeChecked();
+    await expect(summaryRows(page).getByRole("row", { name: /^Pontuação/ })).toMatchAriaSnapshot(`
+      - row "Pontuação 100 = o mais rápido em tudo 1º 100 melhor nesta linha Só com fio 2º 15 3º 7"
+    `);
+  });
+
+  test("a battery of AA or X has no mAh to compare and gets no Destaque", async ({ page }) => {
+    await editProducts(page, "mouse", (product) =>
+      withValues(product, mouses.dragonflyA9Ultra.id, { battery: "AA" }),
+    );
+    await page.goto(
+      `/comparar/mouse?p=${mouses.dragonflyA9Ultra.id},${mouses.huan.id},${mouses.h200a.id}`,
+    );
+    expect(await highlightedProducts(page, "Bateria")).toEqual(["H200A"]);
+  });
+
+  test("a keyboard debounce of 0 ms is a measurement and takes the Destaque", async ({ page }) => {
+    await editProducts(page, "teclado", (product) =>
+      withValues(
+        withValues(product, keyboards.edge60HePro.id, { debounceTime: 0 }),
+        keyboards.raven61.id,
+        { debounceTime: 5 },
+      ),
+    );
+    await page.goto(`/comparar/teclado?p=${keyboards.edge60HePro.id},${keyboards.raven61.id}`);
+    expect(await highlightedProducts(page, "Tempo de debounce")).toEqual([
+      keyboards.edge60HePro.name,
+    ]);
   });
 });

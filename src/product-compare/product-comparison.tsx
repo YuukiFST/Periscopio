@@ -1,13 +1,15 @@
-import { Info, TriangleAlert } from "lucide-react";
+import { TriangleAlert } from "lucide-react";
 import { useEffect, useRef } from "react";
 import { categoryLabels } from "@/categories";
 import { CopyLinkButton } from "@/components/copy-link-button";
+import { SegmentedControl, type SegmentedOption } from "@/components/ui/segmented-control";
 import type { CategoryData, Product } from "@/data/schema";
 import { BackToTableLink } from "@/product-detail/back-to-table-link";
 import { ComparisonTable } from "./comparison-table";
 import { maxComparedProducts, minComparedProducts, productIdsParam } from "./compare-selection";
+import { connectionOfPreference, type ConnectionPreference } from "./mouse-connection";
 import { responseSummary } from "./response-summary";
-import { ResponseSummaryTable } from "./response-summary-table";
+import { summaryVerdict } from "./summary-rows";
 
 type ComparedProducts = {
   products: Product[];
@@ -44,7 +46,11 @@ function leftOutText({ unknownCount, overLimitCount }: ComparedProducts): string
       `${unknownCount} produtos do link não existem nos dados atuais do EyeJoker e ficaram de fora.`,
     );
   }
-  if (overLimitCount > 0) {
+  if (overLimitCount === 1) {
+    texts.push(
+      `A comparação mostra até ${maxComparedProducts} produtos; o outro do link ficou de fora.`,
+    );
+  } else if (overLimitCount > 1) {
     texts.push(
       `A comparação mostra até ${maxComparedProducts} produtos; os outros ${overLimitCount} do link ficaram de fora.`,
     );
@@ -57,7 +63,16 @@ type ProductComparisonProps = {
   /** The raw `p` param: Produto ids separated by commas. */
   productParam: string | undefined;
   onProductParamChange: (productParam: string | undefined) => void;
+  /** The `conexao` param: the connection a mouse Comparação ranks on. */
+  connectionPreference: ConnectionPreference | undefined;
+  onConnectionPreferenceChange: (preference: ConnectionPreference | undefined) => void;
 };
+
+const connectionOptions: SegmentedOption<ConnectionPreference | undefined>[] = [
+  { value: undefined, label: "Qualquer conexão" },
+  { value: "com-fio", label: "Com fio" },
+  { value: "sem-fio", label: "Sem fio" },
+];
 
 const headingId = "comparacao-titulo";
 
@@ -65,12 +80,15 @@ export function ProductComparison({
   data,
   productParam,
   onProductParamChange,
+  connectionPreference,
+  onConnectionPreferenceChange,
 }: ProductComparisonProps) {
   const compared = comparedProductsOf(data, productParam);
   const { products } = compared;
   const comparedIdsParam = productIdsParam(products.map((product) => product.id));
   const categoryName = categoryLabels[data.category].toLowerCase();
-  const summary = responseSummary(data, products);
+  const connection = connectionPreference && connectionOfPreference[connectionPreference];
+  const summary = responseSummary(data, products, connection);
 
   const headingRef = useRef<HTMLHeadingElement>(null);
   useEffect(() => {
@@ -87,7 +105,12 @@ export function ProductComparison({
   }
 
   return (
-    <article aria-labelledby={headingId} className="flex min-h-0 flex-1 flex-col gap-4">
+    // The table scrolls inside; the article scrolls only when a short screen cannot fit the table's minimum.
+    // Its 6px padding, cancelled by the margin, keeps focus outlines at its edges from being clipped.
+    <article
+      aria-labelledby={headingId}
+      className="-m-1.5 flex min-h-0 flex-1 flex-col gap-4 overflow-y-auto p-1.5"
+    >
       <BackToTableLink category={data.category} search={{ cmp: comparedIdsParam }} />
       <div className="flex items-start justify-between gap-4">
         <h1
@@ -109,19 +132,30 @@ export function ProductComparison({
           {text}
         </p>
       ))}
-      <p className="flex max-w-prose items-start gap-2 text-pretty text-fg-secondary">
-        <Info aria-hidden="true" className="mt-0.5 size-4 shrink-0" />O Preço fica de fora da
-        comparação porque preços mudam, e o EyeJoker não registra o preço da sua região.
-      </p>
       {products.length < minComparedProducts ? (
         <NotEnoughProducts count={products.length} />
       ) : (
         <>
-          {summary && <ResponseSummaryTable summary={summary} />}
+          {summary && (
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+              <SegmentedControl
+                legend="Conexão que você usa"
+                name="conexao"
+                options={connectionOptions}
+                value={connectionPreference}
+                onValueChange={onConnectionPreferenceChange}
+              />
+              <p aria-live="polite" className="font-medium text-pretty">
+                {summaryVerdict(summary)}
+              </p>
+            </div>
+          )}
           <ComparisonTable
             data={data}
             products={products}
             labelledBy={headingId}
+            summary={summary}
+            connection={connection}
             onRemove={removeProduct}
           />
         </>
@@ -139,7 +173,7 @@ function NotEnoughProducts({ count }: { count: number }) {
           : "Só 1 produto na comparação. Ela precisa de pelo menos 2."}
       </p>
       <p className="text-pretty text-fg-secondary">
-        Marque de {minComparedProducts} a {maxComparedProducts} produtos na tabela e toque em
+        Marque de {minComparedProducts} a {maxComparedProducts} produtos na tabela e selecione
         “Comparar”.
       </p>
     </div>

@@ -190,10 +190,11 @@
   --color-danger-fg: var(--int-danger-fg);
   /* The Destaque in a Comparação ("Layout no celular e forma do Destaque"). */
   --color-highlight: var(--green-a3);
-  --color-highlight-fg: var(--green-11);
-  /* The Empate: every compared Produto shows the same value. */
+  --color-highlight-fg: var(--green-12);
+  /* The Empate: every compared Produto shows the same value. Step 12 text, since
+     step 11 on the a3 tint measures 4.2:1 in light mode, under AA's 4.5:1. */
   --color-tie: var(--blue-a3);
-  --color-tie-fg: var(--blue-11);
+  --color-tie-fg: var(--blue-12);
   --color-border-subtle: var(--int-border-subtle);
   --color-border-strong: var(--int-border-strong);
 
@@ -262,6 +263,12 @@
     /* Keeps a focused control clear of the detail screen's sticky Comparação bar. */
     scroll-padding-bottom: 6rem;
     font-feature-settings: "ss03";
+  }
+  /* No bounce or pull-to-refresh on the page, so an inner scroll can hand its swipe to the
+     one around it without reloading the app. */
+  html,
+  body {
+    overscroll-behavior: none;
   }
   body {
     @apply bg-background text-body-sm text-foreground antialiased;

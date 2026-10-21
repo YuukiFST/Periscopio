@@ -15,8 +15,12 @@ import { FieldValueText } from "@/product-fields/field-value-text";
 import { ProductPhoto } from "@/product-photo/product-photo";
 import { MissingValue } from "@/product-table/table-cells";
 import { productIdsParam } from "./compare-selection";
-import { ComparisonMark } from "./comparison-mark";
+import { MarkIcon, markCellClass } from "./comparison-mark";
+import { GroupHeaderRow, RowLabel, valueCellClass } from "./comparison-rows";
 import { comparisonMarks } from "./highlight-rules";
+import { fieldConnection, isPerConnectionField, type Connection } from "./mouse-connection";
+import type { ResponseSummary } from "./response-summary";
+import { SummaryRowGroup } from "./summary-rows";
 
 type ComparisonTableProps = {
   data: CategoryData;
@@ -24,6 +28,10 @@ type ComparisonTableProps = {
   products: readonly Product[];
   /** Id of the heading that names the table. */
   labelledBy: string;
+  /** The mouse Resumo de desempenho, shown as the first rows. */
+  summary: ResponseSummary | undefined;
+  /** The connection chosen for mouses; undefined when any counts. */
+  connection: Connection | undefined;
   onRemove: (id: string) => void;
 };
 
@@ -32,18 +40,21 @@ type ComparisonGroup = Omit<ProductFieldGroup, "id"> & {
   foldable: boolean;
 };
 
-/**
- * Mouse Medições taken on one connection (com fio, sem fio, Bluetooth) or
- * Motion Sync setting. The Resumo de desempenho already reads the fastest of
- * them, so they start folded under their own group.
- */
-const perConnectionFieldPattern = /Wired|Wireless|Bluetooth|MotionSync/;
-
 function isPerConnection(field: Field): boolean {
-  return perConnectionFieldPattern.test(field.key);
+  return isPerConnectionField(field.key);
 }
 
-function comparisonGroups(data: CategoryData, products: readonly Product[]): ComparisonGroup[] {
+/**
+ * Especificações and Medições; for mouses, the Medições taken on one
+ * connection or Motion Sync setting leave the Medições. With any connection,
+ * they start folded under their own group, since each repeats a headline
+ * Medição. With one chosen, its own show open and the others leave.
+ */
+function comparisonGroups(
+  data: CategoryData,
+  products: readonly Product[],
+  connection: Connection | undefined,
+): ComparisonGroup[] {
   const groups = productFieldGroups(data, products).map((group) => ({
     ...group,
     foldable: false,
@@ -51,15 +62,17 @@ function comparisonGroups(data: CategoryData, products: readonly Product[]): Com
   if (data.category !== "mouse") return groups;
   return groups.flatMap((group): ComparisonGroup[] => {
     if (group.id !== "medicoes") return [group];
-    const overall = group.fields.filter((field) => !isPerConnection(field));
-    const perConnection = group.fields.filter(isPerConnection);
+    const perConnection =
+      connection === undefined
+        ? group.fields.filter(isPerConnection)
+        : group.fields.filter((field) => fieldConnection(field.key) === connection);
     const splits: ComparisonGroup[] = [
-      { ...group, fields: overall },
+      { ...group, fields: group.fields.filter((field) => !isPerConnection(field)) },
       {
         id: "medicoes-por-conexao",
-        title: "Medições por conexão",
+        title: connection === undefined ? "Medições por conexão" : `Medições ${connection}`,
         fields: perConnection,
-        foldable: true,
+        foldable: connection === undefined,
       },
     ];
     return splits.filter((split) => split.fields.length > 0);
@@ -68,11 +81,20 @@ function comparisonGroups(data: CategoryData, products: readonly Product[]): Com
 
 /**
  * One column per Produto and one row per field, in Especificações and
- * Medições. The labels stay fixed at the start; Produto columns scroll
- * sideways, two at a time on a phone, up to four on a wide screen.
+ * Medições, after the Resumo de desempenho for mouses. The labels stay fixed
+ * at the start; Produto columns scroll sideways, two at a time on a phone, up
+ * to four on a wide screen. The table is the page's one scroll area, so
+ * nothing above it may grow tall.
  */
-export function ComparisonTable({ data, products, labelledBy, onRemove }: ComparisonTableProps) {
-  const groups = comparisonGroups(data, products);
+export function ComparisonTable({
+  data,
+  products,
+  labelledBy,
+  summary,
+  connection,
+  onRemove,
+}: ComparisonTableProps) {
+  const groups = comparisonGroups(data, products, connection);
   const [isUnfolded, setIsUnfolded] = useState(false);
   const comparedIdsParam = productIdsParam(products.map((product) => product.id));
   const columnCount = products.length;
@@ -93,7 +115,7 @@ export function ComparisonTable({ data, products, labelledBy, onRemove }: Compar
     >
       <div
         style={layout}
-        className="relative @container min-h-0 flex-1 scroll-ps-(--label-column) overflow-auto overscroll-contain pointer-coarse:scroll-fade-e"
+        className="relative @container min-h-0 flex-1 scroll-ps-(--label-column) scroll-pt-44 overflow-auto pointer-coarse:scroll-fade-e"
       >
         <table
           aria-labelledby={labelledBy}
@@ -111,7 +133,10 @@ export function ComparisonTable({ data, products, labelledBy, onRemove }: Compar
           </colgroup>
           <thead>
             <tr>
-              <td className="sticky start-0 top-0 z-30 border-e border-b border-border bg-page" />
+              <td className="sticky start-0 top-0 z-30 border-e border-b border-border bg-page p-2 align-bottom text-caption-lg text-pretty text-fg-secondary sm:p-3">
+                O preço fica de fora da comparação porque preços mudam, e o EyeJoker não registra o
+                preço da sua região.
+              </td>
               {products.map((product) => (
                 <ProductColumnHeader
                   key={product.id}
@@ -123,52 +148,51 @@ export function ComparisonTable({ data, products, labelledBy, onRemove }: Compar
               ))}
             </tr>
           </thead>
+          {summary && <SummaryRowGroup summary={summary} />}
           {groups.map((group) => {
-            const groupHeadingId = `comparacao-${group.id}`;
-            const groupBodyId = `${groupHeadingId}-linhas`;
-            const showsFields = !group.foldable || isUnfolded;
-            return (
-              <tbody key={group.id} aria-labelledby={groupHeadingId}>
-                <tr>
-                  <th
-                    scope="rowgroup"
-                    colSpan={columnCount + 1}
-                    className="border-b border-border-subtle bg-component p-0 text-start"
+            const headingId = `comparacao-${group.id}`;
+            const rows = group.fields.map((field) => (
+              <FieldRow key={field.key} field={field} products={products} />
+            ));
+            if (!group.foldable) {
+              return (
+                <tbody key={group.id} aria-labelledby={headingId}>
+                  <GroupHeaderRow
+                    headingId={headingId}
+                    title={group.title}
+                    columnCount={columnCount}
+                  />
+                  {rows}
+                </tbody>
+              );
+            }
+            // The folded rows are a tbody of their own, so the button's aria-controls names them all.
+            const rowsId = `${headingId}-linhas`;
+            return [
+              <tbody key={group.id} aria-labelledby={headingId}>
+                <GroupHeaderRow headingId={headingId} title={group.title} columnCount={columnCount}>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    aria-expanded={isUnfolded}
+                    aria-controls={rowsId}
+                    aria-describedby={headingId}
+                    onClick={() => setIsUnfolded(!isUnfolded)}
+                    className="font-sans text-fg-secondary"
                   >
-                    <span className="sticky start-0 inline-flex items-center gap-2 px-2 py-1.5 sm:px-3">
-                      <span id={groupHeadingId} className="font-serif text-body-base font-medium">
-                        {group.title}
-                      </span>
-                      {group.foldable && (
-                        <Button
-                          variant="ghost"
-                          size="sm"
-                          aria-expanded={isUnfolded}
-                          aria-controls={isUnfolded ? groupBodyId : undefined}
-                          onClick={() => setIsUnfolded(!isUnfolded)}
-                          className="font-sans text-fg-secondary"
-                        >
-                          {isUnfolded ? "Ocultar" : `Mostrar (${group.fields.length})`}
-                          <ChevronDown
-                            aria-hidden="true"
-                            className={cn("transition-transform", isUnfolded && "rotate-180")}
-                          />
-                        </Button>
-                      )}
-                    </span>
-                  </th>
-                </tr>
-                {showsFields &&
-                  group.fields.map((field, index) => (
-                    <FieldRow
-                      key={field.key}
-                      id={index === 0 && group.foldable ? groupBodyId : undefined}
-                      field={field}
-                      products={products}
+                    {isUnfolded ? "Ocultar" : `Mostrar (${group.fields.length})`}
+                    <ChevronDown
+                      aria-hidden="true"
+                      data-icon="inline-end"
+                      className={cn("motion-safe:transition-transform", isUnfolded && "rotate-180")}
                     />
-                  ))}
-              </tbody>
-            );
+                  </Button>
+                </GroupHeaderRow>
+              </tbody>,
+              <tbody key={rowsId} id={rowsId} aria-labelledby={headingId} hidden={!isUnfolded}>
+                {rows}
+              </tbody>,
+            ];
           })}
         </table>
       </div>
@@ -195,19 +219,22 @@ function ProductColumnHeader({
       className="sticky top-0 z-20 border-b border-border bg-page px-2 py-2 text-start align-top font-normal sm:px-3 sm:py-3"
     >
       <div className="flex flex-col items-start gap-2">
-        <ProductPhoto key={product.image} src={product.image} alt="" size="compare" />
+        {/* Below 21rem of table the photo and the remove button no longer fit side by side; the name stays. */}
+        <div className="@max-[21rem]:hidden">
+          <ProductPhoto key={product.image} src={product.image} alt="" size="compare" />
+        </div>
         <div className="min-w-0">
-          <p className="leading-[1.125rem] font-medium wrap-break-word text-fg-primary">
+          <p className="leading-[1.125rem] font-medium wrap-anywhere text-fg-primary">
             <Link
               to="/$categoria/$id"
               params={{ categoria: category, id: product.id }}
               search={{ cmp: comparedIdsParam }}
-              className="underline-offset-4 hover:underline"
+              className="underline-offset-4 hover:underline active:underline"
             >
               {product.name}
             </Link>
           </p>
-          <p className="text-caption-lg wrap-break-word text-fg-secondary">
+          <p className="text-caption-lg wrap-anywhere text-fg-secondary">
             {manufacturerName(product.manufacturer)}
           </p>
         </div>
@@ -217,7 +244,7 @@ function ProductColumnHeader({
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`${product.name} no AliExpress (abre em nova aba)`}
-            className="-my-1 inline-flex min-h-8 touch-manipulation items-center gap-1 font-medium text-brand-fg underline-offset-4 hover:underline"
+            className="-my-1 inline-flex min-h-8 max-w-full touch-manipulation flex-wrap items-center gap-1 font-medium wrap-anywhere text-brand-fg underline-offset-4 hover:underline active:underline"
           >
             AliExpress
             <ExternalLink aria-hidden="true" className="size-3.5 shrink-0" />
@@ -230,7 +257,7 @@ function ProductColumnHeader({
         size="icon-lg"
         onClick={onRemove}
         aria-label={`Remover ${product.name} da comparação`}
-        className="absolute end-0.5 top-3.5 text-fg-secondary hover:text-fg-primary sm:end-1 sm:top-6.5"
+        className="absolute end-0.5 top-3.5 text-fg-secondary hover:text-fg-primary @max-[21rem]:static @max-[21rem]:mt-1 @max-[21rem]:-ms-2.5 sm:end-1 sm:top-6.5"
       >
         <X aria-hidden="true" />
       </Button>
@@ -238,49 +265,28 @@ function ProductColumnHeader({
   );
 }
 
-function FieldRow({
-  id,
-  field,
-  products,
-}: {
-  id?: string;
-  field: Field;
-  products: readonly Product[];
-}) {
+function FieldRow({ field, products }: { field: Field; products: readonly Product[] }) {
   const values = products.map((product) => productFieldValue(product, field));
   const marks = comparisonMarks(field, values);
   return (
-    <tr id={id}>
-      <th
-        scope="row"
-        className="sticky start-0 z-10 border-e border-b border-border-subtle bg-page px-2 py-2 text-start align-top font-normal text-pretty text-fg-secondary sm:px-3"
-      >
-        {fieldLabel(field)}
-      </th>
-      {values.map((value, position) => {
-        const mark =
-          marks.kind !== "none" && marks.positions.has(position) ? marks.kind : undefined;
-        return (
-          <td
-            key={products[position]?.id ?? position}
-            className={cn(
-              "border-b border-border-subtle px-2 py-2 align-top tabular-nums hyphens-auto sm:px-3",
-              mark === "best" && "bg-highlight font-medium text-highlight-fg",
-              mark === "tie" && "bg-tie font-medium text-tie-fg",
-            )}
-          >
-            {value === undefined ? (
-              <MissingValue />
-            ) : (
-              <>
-                <FieldValueText field={field} value={value} />
-                {/* Inline after the value, so a long word wraps whole and the mark follows it. */}
-                {mark && <ComparisonMark kind={mark} />}
-              </>
-            )}
-          </td>
-        );
-      })}
+    <tr>
+      <RowLabel>{fieldLabel(field)}</RowLabel>
+      {values.map((value, position) => (
+        <td
+          key={products[position]?.id ?? position}
+          className={cn(valueCellClass, markCellClass(marks[position]))}
+        >
+          {value === undefined ? (
+            <MissingValue />
+          ) : (
+            <>
+              <FieldValueText field={field} value={value} className="whitespace-normal" />
+              {/* Inline after the value, so a long word wraps whole and the mark follows it. */}
+              <MarkIcon mark={marks[position]} />
+            </>
+          )}
+        </td>
+      ))}
     </tr>
   );
 }

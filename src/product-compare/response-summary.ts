@@ -1,150 +1,210 @@
 import type { CategoryData, Field, Product } from "../data/schema.ts";
+import { productFieldValue } from "../product-fields/field-groups.ts";
 import { roundedAsShown } from "../product-table/cell-values.ts";
-import { marksOfNumbers, type ComparisonMarks } from "./highlight-rules.ts";
+import { marksOfNumbers, type CellMark } from "./highlight-rules.ts";
+import { fieldConnection, mouseConnections, type Connection } from "./mouse-connection.ts";
 
 type NumberField = Extract<Field, { type: "number" }>;
 
-/** A response time of the Resumo de desempenho, read from the fields that measure it. */
-export type ResponseMeasure = { id: string; label: string; fieldKeys: readonly string[] };
+export type ResponseMeasureId = "clique" | "sensor";
+export type ResponseMeasure = { id: ResponseMeasureId; label: string };
 
 /**
- * The mouse response times, lower is better. The Resposta do clique is
- * already EyeJoker's best setting; the board times (`pcbAvg*`) measure another
- * stage of the click, so they stay out. The Resposta do sensor is measured per
- * connection and with Motion Sync on or off, so its fastest one counts.
+ * The board's time to send a click on each connection. EyeJoker's headline
+ * Resposta do clique (`optimalResponseSpeed`) also counts the switch and is
+ * measured once, on its best setting, so it cannot follow a chosen connection.
  */
-const mouseResponseMeasures: readonly ResponseMeasure[] = [
-  { id: "clique", label: "Clique", fieldKeys: ["optimalResponseSpeed"] },
-  {
-    id: "sensor",
-    label: "Sensor",
-    fieldKeys: [
-      "sensorAvg",
-      "sensorAvgWired",
-      "sensorAvgWireless",
-      "sensorAvgMotionSyncOn",
-      "sensorAvgMotionSyncOff",
-      "sensorAvgWiredMotionSyncOn",
-      "sensorAvgWiredMotionSyncOff",
-      "sensorAvgWirelessMotionSyncOn",
-      "sensorAvgWirelessMotionSyncOff",
-    ],
-  },
-];
+const clickBoardKeys: Record<Connection, string> = {
+  "com fio": "pcbAvgWired",
+  "sem fio": "pcbAvgWireless",
+};
+const sensorKeyPattern = /^sensorAvg/;
 
-/** A Produto's fastest time in one measure, with the connection it was measured on when the field says. */
+function measuresFor(connection: Connection | undefined): ResponseMeasure[] {
+  return [
+    {
+      id: "clique",
+      label: connection === undefined ? "Resposta do clique" : "Resposta do clique (ao pressionar)",
+    },
+    { id: "sensor", label: "Resposta do sensor" },
+  ];
+}
+
+/** True when the mouse has `connection` and no other, so its unnamed Medições were taken on it. */
+function hasOnly(product: Product, connection: Connection): boolean {
+  const connections = mouseConnections(product);
+  return connections?.length === 1 && connections[0] === connection;
+}
+
+/**
+ * The fields that measure `id` for `product`. With no connection chosen, the
+ * clique is the headline time and the sensor any of its times; with one, only
+ * the times taken on it.
+ */
+function candidateFields(
+  id: ResponseMeasureId,
+  fields: readonly NumberField[],
+  product: Product,
+  connection: Connection | undefined,
+): NumberField[] {
+  if (id === "clique") {
+    if (connection === undefined) return fields.filter(({ key }) => key === "optimalResponseSpeed");
+    const onlyThis = hasOnly(product, connection);
+    return fields.filter(
+      ({ key }) => key === clickBoardKeys[connection] || (onlyThis && key === "pcbAvgOptimal"),
+    );
+  }
+  const sensorFields = fields.filter(({ key }) => sensorKeyPattern.test(key));
+  if (connection === undefined) return sensorFields;
+  const onlyThis = hasOnly(product, connection);
+  return sensorFields.filter(({ key }) => {
+    const measuredOn = fieldConnection(key);
+    return measuredOn === connection || (onlyThis && measuredOn === undefined);
+  });
+}
+
+/** A Produto's fastest time in one measure, as the screen rounds it. */
 export type MeasuredResponse = {
   field: NumberField;
   value: number;
-  connection: "com fio" | "sem fio" | undefined;
+  /** Named when the field was measured on one connection. */
+  connection: Connection | undefined;
 };
 
-export type ResponseSummaryRow = {
-  product: Product;
-  /** One per measure, in the order of `ResponseSummary.measures`. */
-  responses: readonly (MeasuredResponse | undefined)[];
-  /** 0 to 100; undefined when the Produto has none of the measures. */
-  score: number | undefined;
-};
-
-export type ResponseSummary = {
-  measures: readonly ResponseMeasure[];
-  /** One per compared Produto, in column order. */
-  rows: readonly ResponseSummaryRow[];
-  /** One per measure; positions are column positions. */
-  measureMarks: readonly ComparisonMarks[];
-  scoreMarks: ComparisonMarks;
-};
-
-function connectionOf(fieldKey: string): MeasuredResponse["connection"] {
-  if (fieldKey.includes("Wireless")) return "sem fio";
-  if (fieldKey.includes("Wired")) return "com fio";
-  return undefined;
-}
-
+/** The fastest of `fields` for `product`; a placeholder time never competes. */
 function fastestResponse(
   product: Product,
   fields: readonly NumberField[],
 ): MeasuredResponse | undefined {
   let fastest: MeasuredResponse | undefined;
   for (const field of fields) {
-    const value = product.values[field.key];
-    if (typeof value !== "number" || (fastest && fastest.value <= value)) continue;
-    fastest = { field, value, connection: connectionOf(field.key) };
+    const raw = productFieldValue(product, field);
+    if (typeof raw !== "number") continue;
+    const value = roundedAsShown(field, raw);
+    if (fastest && fastest.value <= value) continue;
+    const measuredOn = fieldConnection(field.key);
+    fastest = { field, value, connection: measuredOn === "bluetooth" ? undefined : measuredOn };
   }
   return fastest;
 }
 
 /**
- * Each Produto's score: for every measure it has, how close it gets to the
- * fastest compared Produto (the fastest time over its own, so the fastest
- * scores 1), averaged and scaled to 100. A measure it lacks is left out of
- * its average, not counted as 0.
+ * Where a mouse stands in the Resumo: ranked, or why not. A mouse is ranked
+ * only with every measure some compared mouse has, so one measure alone never
+ * outranks a mouse measured on both.
  */
-function scoreOf(
-  responses: readonly (MeasuredResponse | undefined)[],
-  fastestByMeasure: readonly (number | undefined)[],
-): number | undefined {
-  const ratios = responses.flatMap((response, index) => {
-    const fastest = fastestByMeasure[index];
-    if (response === undefined || fastest === undefined) return [];
-    return [response.value <= 0 ? 1 : fastest / response.value];
-  });
-  if (ratios.length === 0) return undefined;
+export type SummaryStanding =
+  | { kind: "ranked"; score: number; place: number }
+  | { kind: "incomplete" }
+  | { kind: "unmeasured" }
+  | { kind: "lacks-connection" };
+
+export type ResponseSummaryRow = {
+  product: Product;
+  /** One per measure, in the order of `ResponseSummary.measures`. */
+  responses: readonly (MeasuredResponse | undefined)[];
+  standing: SummaryStanding;
+};
+
+export type ResponseSummary = {
+  connection: Connection | undefined;
+  measures: readonly ResponseMeasure[];
+  /** One per compared Produto, in column order. */
+  rows: readonly ResponseSummaryRow[];
+  /** One mark per column, per measure. */
+  measureMarks: readonly (readonly CellMark[])[];
+  /** One mark per column, on the ranked mouses' scores. */
+  scoreMarks: readonly CellMark[];
+};
+
+/**
+ * A complete mouse's score: per measure, the fastest compared time over its
+ * own (so the fastest scores 1), averaged and scaled to 100.
+ */
+function scoreOf(responses: readonly MeasuredResponse[], fastestByMeasure: readonly number[]) {
+  const ratios = responses.map(
+    (response, index) => (fastestByMeasure[index] ?? 0) / response.value,
+  );
   return Math.round((100 * ratios.reduce((sum, ratio) => sum + ratio, 0)) / ratios.length);
 }
 
+function summaryFor(
+  numberFields: readonly NumberField[],
+  products: readonly Product[],
+  connection: Connection | undefined,
+): ResponseSummary {
+  const measures = measuresFor(connection);
+  const lacks = products.map(
+    (product) =>
+      connection !== undefined && mouseConnections(product)?.includes(connection) === false,
+  );
+  const responsesByProduct = products.map((product, position) =>
+    measures.map(({ id }) =>
+      lacks[position]
+        ? undefined
+        : fastestResponse(product, candidateFields(id, numberFields, product, connection)),
+    ),
+  );
+  const valuesByMeasure = measures.map((_, index) =>
+    responsesByProduct.map((responses) => responses[index]?.value),
+  );
+  // A measure no compared mouse has does not count against any of them.
+  const measuredIndexes = valuesByMeasure.flatMap((values, index) =>
+    values.some((value) => value !== undefined) ? [index] : [],
+  );
+  const fastestByMeasure = measuredIndexes.map((index) =>
+    Math.min(...(valuesByMeasure[index] ?? []).filter((value) => value !== undefined)),
+  );
+  const scores = responsesByProduct.map((responses) => {
+    const measured = measuredIndexes.map((index) => responses[index]);
+    if (measured.length === 0 || measured.some((response) => response === undefined)) {
+      return undefined;
+    }
+    return scoreOf(
+      measured.filter((response) => response !== undefined),
+      fastestByMeasure,
+    );
+  });
+  const standings = scores.map((score, position): SummaryStanding => {
+    if (lacks[position]) return { kind: "lacks-connection" };
+    if (score !== undefined) {
+      const place = 1 + scores.filter((other) => other !== undefined && other > score).length;
+      return { kind: "ranked", score, place };
+    }
+    const hasAny = responsesByProduct[position]?.some((response) => response !== undefined);
+    return { kind: hasAny ? "incomplete" : "unmeasured" };
+  });
+  return {
+    connection,
+    measures,
+    rows: products.map((product, position) => ({
+      product,
+      responses: responsesByProduct[position] ?? [],
+      standing: standings[position] ?? { kind: "unmeasured" },
+    })),
+    measureMarks: valuesByMeasure.map((values) => marksOfNumbers("lower", values)),
+    scoreMarks: marksOfNumbers("higher", scores),
+  };
+}
+
+export function rankedCount(summary: ResponseSummary): number {
+  return summary.rows.filter(({ standing }) => standing.kind === "ranked").length;
+}
+
 /**
- * The Resumo de desempenho of compared mouses: their fastest response times,
- * whatever the connection, and a score that ranks them at a glance. Undefined
- * for other Categorias and when fewer than two Produtos have a measure.
+ * The Resumo de desempenho of compared mouses on `connection` (any when
+ * undefined): their fastest response times and a score that ranks them at a
+ * glance. Undefined for other Categorias, and when fewer than two of the
+ * mouses can be ranked on any connection.
  */
 export function responseSummary(
   data: CategoryData,
   products: readonly Product[],
+  connection: Connection | undefined,
 ): ResponseSummary | undefined {
   if (data.category !== "mouse") return undefined;
-  const fieldsByKey = new Map(data.fields.map((field) => [field.key, field]));
-  const measures = mouseResponseMeasures.flatMap((measure) => {
-    const fields = measure.fieldKeys.flatMap((key) => {
-      const field = fieldsByKey.get(key);
-      return field?.type === "number" ? [field] : [];
-    });
-    return fields.length > 0 ? [{ measure, fields }] : [];
-  });
-  const responsesByProduct = products.map((product) =>
-    measures.map(({ fields }) => fastestResponse(product, fields)),
-  );
-  const fastestByMeasure = measures.map((_, index) => {
-    const values = responsesByProduct.flatMap((responses) => {
-      const response = responses[index];
-      return response ? [response.value] : [];
-    });
-    return values.length > 0 ? Math.min(...values) : undefined;
-  });
-  const rows = products.map((product, position) => {
-    const responses = responsesByProduct[position] ?? [];
-    return { product, responses, score: scoreOf(responses, fastestByMeasure) };
-  });
-  const scored = rows.flatMap(({ score }, position) =>
-    score === undefined ? [] : [{ position, number: score }],
-  );
-  if (scored.length < 2) return undefined;
-  const measureMarks = measures.map((_, index) =>
-    marksOfNumbers(
-      "lower",
-      rows.flatMap(({ responses }, position) => {
-        const response = responses[index];
-        return response
-          ? [{ position, number: roundedAsShown(response.field, response.value) }]
-          : [];
-      }),
-    ),
-  );
-  return {
-    measures: measures.map(({ measure }) => measure),
-    rows,
-    measureMarks,
-    scoreMarks: marksOfNumbers("higher", scored),
-  };
+  const numberFields = data.fields.filter((field) => field.type === "number");
+  const anyConnection = summaryFor(numberFields, products, undefined);
+  if (rankedCount(anyConnection) < 2) return undefined;
+  return connection === undefined ? anyConnection : summaryFor(numberFields, products, connection);
 }

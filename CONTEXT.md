@@ -57,11 +57,13 @@ A marca visual, dentro de uma Comparação, do Produto que se sai melhor em uma 
 _Avoid_: vencedor, winner, highlight
 
 **Empate**:
-A marca visual, dentro de uma Comparação, de uma Medição ou Especificação em que todos os Produtos com o dado mostram o mesmo valor.
+A marca visual, dentro de uma Comparação, de uma Medição ou Especificação com um lado melhor em que todos os Produtos com o dado mostram o mesmo valor.
+Um empate só no melhor valor, com outro Produto atrás, é Destaque dos empatados.
 _Avoid_: igual, tie
 
 **Resumo de desempenho**:
-O quadro, no topo da Comparação de mouses, com a resposta mais rápida de clique e sensor de cada Produto, em qualquer conexão, e uma pontuação de 0 a 100 que os ordena.
+As primeiras linhas da Comparação de mouses: a resposta mais rápida de clique e sensor de cada Produto e uma pontuação de 0 a 100 que os ordena.
+Conta qualquer conexão, ou só a escolhida (com fio ou sem fio); só entra na ordem o Produto com todas as medições que algum Produto comparado tem.
 _Avoid_: ranking, score, nota de desempenho
 
 **Link AliExpress**:
