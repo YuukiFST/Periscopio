@@ -70,12 +70,6 @@ const categoryCases: {
     slug: "teclado",
     exactChoices: {
       Layout: ["TKL", "75%", "65%", "60%", "Completo", "96%", "Outro"],
-      "Desempenho real": [
-        "4.000 Hz ou mais",
-        "2.000 a 3.999 Hz",
-        "1.000 a 1.999 Hz",
-        "Menos de 1.000 Hz",
-      ],
     },
     first: { filter: "Layout", choices: ["60%"] },
     afterFirst: ["TENKO - ARC 60", "EDGE 60HE Pro", "Raven61"],
@@ -86,15 +80,7 @@ const categoryCases: {
   {
     slug: "monitor",
     exactChoices: {
-      "Tamanho da tela": ['Até 23"', '24 a 25"', '27"', '32"', '34"', '39"', '45"', '49" ou mais'],
       Resolução: ["FHD (1920×1080)", "QHD (2560×1440)", "UHD (3840×2160)", "Ultrawide"],
-      "Taxa de atualização": [
-        "60 a 143 Hz",
-        "144 a 239 Hz",
-        "240 a 359 Hz",
-        "360 a 539 Hz",
-        "540 Hz ou mais",
-      ],
       "Certificação HDR": [
         "True Black 400",
         "True Black 500",
@@ -102,12 +88,12 @@ const categoryCases: {
         "DisplayHDR comum",
       ],
     },
-    first: { filter: "Tamanho da tela", choices: ['24 a 25"'] },
+    first: { filter: "Resolução", choices: ["FHD (1920×1080)"] },
     afterFirst: ["XG259QDNS Ace", "모비우스 EX2510S", "ROG SWIFT PG259QN"],
     // 모비우스 costs ₩ 280.000 but is discontinued, so no Preço holds it; XG259QDNS has none.
     second: { range: "Preço (mil ₩)", max: "900" },
     afterSecond: ["ROG SWIFT PG259QN"],
-    url: "/monitor?tamanho=24-25&preco=-900",
+    url: "/monitor?resolucao=fhd&preco=-900",
   },
 ];
 
@@ -146,6 +132,62 @@ for (const category of categoryCases) {
     }
     await expect(page).toHaveURL(category.url);
     await expect.poll(() => productNames(page)).toEqual(category.afterSecond);
+  });
+}
+
+const rangeCases: {
+  slug: string;
+  range: string;
+  min?: string;
+  max?: string;
+  url: string;
+  after: string[];
+}[] = [
+  {
+    // 24", 24,5" and 24,5"; UltraGear is 32".
+    slug: "monitor",
+    range: "Tamanho da tela (pol.)",
+    min: "24",
+    max: "25",
+    url: "/monitor?tamanho=24-25",
+    after: ["XG259QDNS Ace", "모비우스 EX2510S", "ROG SWIFT PG259QN"],
+  },
+  {
+    // 360, 165, 240 and 360 Hz.
+    slug: "monitor",
+    range: "Taxa de atualização (Hz)",
+    min: "200",
+    max: "300",
+    url: "/monitor?taxa=200-300",
+    after: ["UltraGear 32GS95UE 4K Mode"],
+  },
+  {
+    // Only UltraGear has a Resposta geral, 3,53 ms.
+    slug: "monitor",
+    range: "Resposta geral (ms)",
+    max: "5",
+    url: "/monitor?resposta=-5",
+    after: ["UltraGear 32GS95UE 4K Mode"],
+  },
+  {
+    // 2.110, 6.155 and 2.630 Hz; Archon M3 has no Desempenho real.
+    slug: "teclado",
+    range: "Desempenho real (Hz)",
+    min: "2500",
+    url: "/teclado?desempenho=2500-",
+    after: ["TENKO - ARC 60", "Raven61"],
+  },
+];
+
+for (const rangeCase of rangeCases) {
+  test(`/${rangeCase.slug} narrows by a typed ${rangeCase.range}`, async ({ page }) => {
+    await page.goto(`/${rangeCase.slug}`);
+    const range = filterPanel(page).getByRole("group", { name: rangeCase.range, exact: true });
+    await expect(range.getByRole("checkbox")).toHaveCount(0);
+    if (rangeCase.min) await range.getByRole("textbox", { name: "Mínimo" }).fill(rangeCase.min);
+    if (rangeCase.max) await range.getByRole("textbox", { name: "Máximo" }).fill(rangeCase.max);
+    await expect(page).toHaveURL(rangeCase.url);
+    await expect.poll(() => productNames(page)).toEqual(rangeCase.after);
   });
 }
 
