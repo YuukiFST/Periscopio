@@ -17,8 +17,8 @@ function formatDate(value: string): string {
   return Number.isNaN(date.getTime()) ? value : dateFormat.format(date);
 }
 
-/** Units written right after the number, without a space: `27"`, `95%`, `1000:1`. */
-const unitsWithoutSpace = new Set(['"', "%", ":1"]);
+/** Units written right after the number, without a space: `27″`, `95%`, `1000:1`. */
+const unitsWithoutSpace = new Set(["″", "%", ":1"]);
 
 const numberFormats = new Map<number | null, Intl.NumberFormat>();
 function numberFormatFor(decimals: number | null): Intl.NumberFormat {

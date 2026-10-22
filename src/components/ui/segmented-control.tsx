@@ -29,7 +29,7 @@ export function SegmentedControl<Value>({
             onChange={() => onValueChange(option.value)}
           />
           {/* The input covers the label, so hover reaches it as peer-hover. */}
-          <span className="flex h-8 cursor-pointer items-center rounded-md border border-transparent px-2.5 font-medium whitespace-nowrap text-fg-secondary select-none peer-checked:border-fg-secondary peer-checked:bg-page peer-checked:text-fg-primary peer-checked:shadow-default peer-hover:text-fg-primary peer-focus-visible:outline-2 peer-focus-visible:outline-offset-1 peer-focus-visible:outline-ring peer-active:bg-component-hover peer-checked:peer-active:bg-page sm:px-3 dark:peer-checked:bg-component-active forced-colors:peer-checked:border-[Highlight]">
+          <span className="flex h-8 cursor-pointer items-center rounded-md border border-transparent px-2.5 font-medium whitespace-nowrap text-fg-secondary transition-[color,background-color,border-color] duration-150 ease-out-quint select-none pointer-coarse:h-10 peer-checked:border-border-selected peer-checked:bg-page peer-checked:text-fg-primary peer-hover:text-fg-primary peer-focus-visible:outline-2 peer-focus-visible:outline-offset-1 peer-focus-visible:outline-ring peer-active:bg-component-hover peer-checked:peer-active:bg-page sm:px-3 dark:peer-checked:bg-component-active forced-colors:peer-checked:border-[Highlight]">
             {option.label}
           </span>
         </label>

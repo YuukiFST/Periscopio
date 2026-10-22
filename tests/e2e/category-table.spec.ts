@@ -83,7 +83,7 @@ const categoryTables = [
       "A+",
       "Evitar",
       "Sem dado",
-      '32"',
+      "32″",
       "240 Hz",
       "UHD (3840×2160)",
       "DisplayHDR True Black 400",
@@ -287,12 +287,12 @@ test("a link with invalid values opens the default view without an error", async
   expect(pageErrors).toEqual([]);
 });
 
-test("regression: a laptop shows the mouses' Resposta média do sensor and Resposta do clique without scrolling sideways", async ({
+test("regression: a laptop shows the mouses' Resposta do sensor and Resposta do clique without scrolling sideways", async ({
   page,
 }) => {
   await page.setViewportSize({ width: 1366, height: 768 });
   await page.goto("/mouse");
-  for (const name of ["Resposta média do sensor", "Resposta do clique"]) {
+  for (const name of ["Resposta do sensor", "Resposta do clique"]) {
     await expect(page.getByRole("columnheader", { name })).toBeInViewport({ ratio: 1 });
   }
 });

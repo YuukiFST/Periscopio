@@ -26,7 +26,8 @@ function measuresFor(connection: Connection | undefined): ResponseMeasure[] {
       id: "clique",
       label: connection === undefined ? "Resposta do clique" : "Resposta do clique (ao pressionar)",
     },
-    { id: "sensor", label: "Resposta do sensor" },
+    // The fastest of the sensor times, so it never shares a name with the Medição "Resposta do sensor".
+    { id: "sensor", label: "Resposta mais rápida do sensor" },
   ];
 }
 

@@ -16,10 +16,12 @@ const sidePanelQuery = "(min-width: 64rem)";
 const countFormat = new Intl.NumberFormat("pt-BR");
 
 function showProductsText(count: number): string {
+  if (count === 0) return "Fechar filtros";
   return count === 1 ? "Ver 1 produto" : `Ver ${countFormat.format(count)} produtos`;
 }
 
 function resultCountText(count: number): string {
+  if (count === 0) return "Nenhum produto";
   return count === 1 ? "1 produto" : `${countFormat.format(count)} produtos`;
 }
 
@@ -42,11 +44,13 @@ export function FilterDrawer({ activeCount, resultCount, onClear, children }: Fi
 
   return (
     <Drawer open={open} onOpenChange={setOpen} showSwipeHandle>
-      <DrawerTrigger render={<Button variant="outline" size="lg" className="lg:hidden" />}>
+      <DrawerTrigger
+        render={<Button variant="outline" size="lg" className="tabular-nums lg:hidden" />}
+      >
         <SlidersHorizontal aria-hidden="true" data-icon="inline-start" />
         {activeCount === 0 ? "Filtros" : `Filtros (${activeCount})`}
       </DrawerTrigger>
-      <DrawerContent className="text-body-sm">
+      <DrawerContent className="border-transparent text-body-sm shadow-large">
         <DrawerHeader className="flex-row items-center justify-between gap-4 border-b border-border-subtle px-4 pt-2 pb-3 group-data-[swipe-axis=y]/drawer-popup:text-start">
           <DrawerTitle className="text-heading-6">Filtros</DrawerTitle>
           <Button
@@ -68,7 +72,12 @@ export function FilterDrawer({ activeCount, resultCount, onClear, children }: Fi
           {children}
         </div>
         <DrawerFooter className="border-t border-border-subtle p-4">
-          <Button size="lg" className="h-10" onClick={() => setOpen(false)}>
+          {/* A full-width press shrinks less, so it reads as a press and not an effect. */}
+          <Button
+            size="lg"
+            className="h-10 tabular-nums motion-safe:not-data-disabled:active:not-aria-[haspopup]:scale-[0.985]"
+            onClick={() => setOpen(false)}
+          >
             {showProductsText(resultCount)}
           </Button>
         </DrawerFooter>

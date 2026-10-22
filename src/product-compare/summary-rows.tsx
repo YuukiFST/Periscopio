@@ -14,16 +14,29 @@ export function summaryVerdict(summary: ResponseSummary): string {
   const { rows, scoreMarks, connection } = summary;
   const onConnection = connection === undefined ? "" : ` ${connection}`;
   const ranked = rows.filter(({ standing }) => standing.kind === "ranked");
-  if (ranked.length === 0) return `Nenhum destes mouses tem as medições do resumo${onConnection}.`;
+  if (ranked.length === 0) {
+    // The Resumo shows only when some connection ranks a mouse, so another one always does.
+    return `Nenhum destes mouses tem as medições do resumo${onConnection}. Escolha outra conexão.`;
+  }
   if (ranked.length === 1) {
     return `Só ${ranked[0]?.product.name} tem as medições do resumo${onConnection}.`;
   }
   const leaders = nameList.format(
     rows.flatMap(({ product }, position) => (scoreMarks[position] ? [product.name] : [])),
   );
-  return scoreMarks.includes("tie")
-    ? `Empate no desempenho${onConnection}: ${leaders}.`
-    : `Melhor desempenho${onConnection}: ${leaders}.`;
+  if (scoreMarks.includes("tie")) return `Empate no desempenho${onConnection}: ${leaders}.`;
+  // The columns follow the link, not the ranking, so the line names the margin over the 2º too.
+  const scored = ranked.flatMap(({ product, standing }) =>
+    standing.kind === "ranked" ? [{ name: product.name, ...standing }] : [],
+  );
+  const best = scored.find(({ place }) => place === 1);
+  const secondPlace = Math.min(...scored.map(({ place }) => place).filter((place) => place > 1));
+  const runnersUp = scored.filter(({ place }) => place === secondPlace);
+  const follow = runnersUp.length === 1 ? "vem" : "vêm";
+  return (
+    `Melhor desempenho${onConnection}: ${leaders}, com pontuação ${best?.score}. ` +
+    `Depois ${follow} ${nameList.format(runnersUp.map(({ name }) => name))}, com ${runnersUp[0]?.score}.`
+  );
 }
 
 /**
@@ -103,7 +116,7 @@ function standingText(kind: Exclude<SummaryStanding["kind"], "ranked">, connecti
   const onConnection = connection === undefined ? "" : ` ${connection}`;
   switch (kind) {
     case "incomplete":
-      return `Falta medição${onConnection}`;
+      return `Falta uma medição${onConnection}`;
     case "unmeasured":
       return `Sem medição${onConnection}`;
     case "lacks-connection":
@@ -129,8 +142,9 @@ function ScoreValue({
     );
   }
   return (
-    <span className="inline-flex flex-wrap items-center gap-x-2 gap-y-1">
-      <span className="font-mono text-code-xs">{standing.place}º</span>
+    // Stacked the same way in every column on a phone, so the scores share one line.
+    <span className="inline-flex flex-col items-start gap-y-0.5 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-2 sm:gap-y-1">
+      <span className="font-medium tabular-nums">{standing.place}º</span>
       <span
         aria-hidden="true"
         className="hidden h-1.5 w-12 shrink-0 overflow-hidden rounded-full bg-component sm:block"

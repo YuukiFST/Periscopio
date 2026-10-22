@@ -38,7 +38,7 @@ export function ProductCell({ product }: { product: Product }) {
   const manufacturer = manufacturerName(product.manufacturer);
   const name = <span id={`produto-${product.id}`}>{product.name}</span>;
   return (
-    <div className="group/cell flex items-center gap-2 sm:gap-3">
+    <div className="group/cell flex items-start gap-2 sm:gap-3">
       {/* The table's search params ride along, so the detail screen can lead back to this view. */}
       <Link
         from="/$categoria"
@@ -47,23 +47,25 @@ export function ProductCell({ product }: { product: Product }) {
         search={true}
         state={{ fromCategoryTable: true }}
         aria-label={`Detalhes de ${product.name}`}
-        className="absolute inset-0 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-ring"
+        className="absolute inset-0 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-ring active:bg-component-hover"
       />
       <ProductPhoto key={product.image} src={product.image} alt="" size="row" loading="lazy" />
       <div className="min-w-0">
-        <p className="leading-[1.125rem] font-medium wrap-break-word text-fg-primary">
+        <p className="leading-[1.4] font-medium wrap-break-word text-fg-primary">
           {product.aliUrl ? (
             <a
               href={product.aliUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="relative rounded-xs text-brand-fg underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+              className="relative rounded-xs text-brand-fg underline-offset-4 hover:underline active:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
             >
               {name}
-              <span className="sr-only"> no AliExpress</span>
+              <span className="sr-only"> no AliExpress (abre em nova aba)</span>
             </a>
           ) : (
-            <span className="underline-offset-4 group-has-[a:hover]/cell:underline">{name}</span>
+            <span className="underline-offset-4 [@media(hover:hover)]:group-has-[a:hover]/cell:underline">
+              {name}
+            </span>
           )}
         </p>
         <p

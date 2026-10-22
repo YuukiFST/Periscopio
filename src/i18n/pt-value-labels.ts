@@ -90,6 +90,34 @@ export const valueLabelsPt: Readonly<Record<string, ValueLabels>> = {
     마그네틱: "Magnético",
   },
   sensorLodMode: { single: "Valor fixo", options: "Valores selecionáveis", range: "Faixa" },
+  // EyeJoker writes these in English with decimal points; the most common ones read as pt here.
+  sensorLodOptions: {
+    "1.0, 2.0 mm": "1,0 mm e 2,0 mm",
+    "0.7, 1.0, 2.0 mm": "0,7 mm, 1,0 mm e 2,0 mm",
+    "0.7~1.7 mm (11 steps)": "0,7 a 1,7 mm (11 níveis)",
+    "0.7~1.7 mm (0.1 mm step, 11 levels)": "0,7 a 1,7 mm (11 níveis, de 0,1 em 0,1 mm)",
+    "0.7 / 1.0 / 2.0mm": "0,7 mm, 1,0 mm e 2,0 mm",
+    "0.7~1.7 mm (0.1 mm step)": "0,7 a 1,7 mm (de 0,1 em 0,1 mm)",
+    "low, high": "Baixo e alto",
+    "0.7, 0.9, 1.2, 1.4, 1.6 mm": "0,7 mm, 0,9 mm, 1,2 mm, 1,4 mm e 1,6 mm",
+    "0.7~1.7 mm": "0,7 a 1,7 mm",
+  },
+  // EyeJoker names the side switches by raw ids; the others read as words through labels.ts.
+  sideSwitch: {
+    noneOrUnknownSideSwitch: "Nenhum ou desconhecido",
+    twoPinMicroSwitch: "Micro switch de 2 pinos",
+    unknownMakerThreePinSwitch: "Switch de 3 pinos (marca desconhecida)",
+    unknownMaybeHuanle: "Desconhecido (talvez Huanle)",
+    // Part numbers and one-word brands, which a split at each capital would garble.
+    omronD2fcF7n10m: "Omron D2FC-F-7N (10M)",
+    omronD2fcF7n20m: "Omron D2FC-F-7N (20M)",
+    kailhGm20: "Kailh GM 2.0",
+    huano: "Huano",
+    kailh: "Kailh",
+  },
+  encoder: { kailhDustproofRed11mm: "Kailh Dustproof Red 11 mm" },
+  // EyeJoker's "X" on a mouse with no battery, almost always a wired one.
+  battery: { X: "Sem bateria" },
 
   connectionType: connectionPt,
   keyboardLayout: {
@@ -138,6 +166,7 @@ export const valueLabelsPt: Readonly<Record<string, ValueLabels>> = {
     pbtDoubleShot: "PBT double-shot",
     pbtDyeSub: "PBT dye-sub",
   },
+  solution: { "자체 솔루션": "Própria", etc: "Outra" },
   stabilizer: {
     cherryPcbMount: "Cherry, preso na placa",
     cherryPlateMount: "Cherry, preso na plate",
@@ -174,7 +203,7 @@ export const valueLabelsPt: Readonly<Record<string, ValueLabels>> = {
   multiViewSupport: { pbp: "PbP", pip: "PiP", quadPbp: "PbP em 4", noneConfirmed: noneConfirmedPt },
   localDimmingType: {
     globalDimming: "Escurecimento global",
-    edgeLocalDimming: "Local dimming nas bordas",
+    edgeLocalDimming: "Escurecimento local nas bordas",
     fald: "FALD",
     miniLed: "Mini LED",
   },

@@ -25,7 +25,7 @@ function AppShell({ children }: { children: ReactNode }) {
                 key={slug}
                 to="/$categoria"
                 params={{ categoria: slug }}
-                className="rounded-md px-2.5 py-1 text-body-sm font-medium text-fg-secondary underline-offset-4 hover:bg-component-hover hover:text-fg-primary active:bg-component-active data-[status=active]:bg-component-active data-[status=active]:text-fg-primary forced-colors:data-[status=active]:underline"
+                className="relative rounded-md px-2.5 py-1 text-body-sm font-medium pointer-coarse:after:absolute pointer-coarse:after:inset-x-0 pointer-coarse:after:-inset-y-1 text-fg-secondary underline-offset-4 hover:bg-component-hover hover:text-fg-primary active:bg-component-active data-[status=active]:bg-component-active data-[status=active]:text-fg-primary forced-colors:data-[status=active]:underline"
               >
                 {categoryLabels[slug]}
               </Link>
@@ -49,8 +49,11 @@ function RootLayout() {
 function PageNotFound() {
   return (
     <div className="space-y-3">
-      <h1 className="font-serif text-heading-5">Página não encontrada</h1>
-      <Link to="/" className="text-body-sm text-brand-fg underline-offset-4 hover:underline">
+      <h1 className="font-serif text-heading-5 text-balance">Página não encontrada</h1>
+      <Link
+        to="/"
+        className="text-body-sm text-brand-fg underline-offset-4 hover:underline active:underline"
+      >
         Voltar para o início
       </Link>
     </div>
@@ -62,7 +65,7 @@ function DataLoadError() {
   return (
     <AppShell>
       <div className="space-y-3">
-        <h1 className="font-serif text-heading-5">Não deu para carregar os dados</h1>
+        <h1 className="font-serif text-heading-5 text-balance">Não deu para carregar os dados</h1>
         <p className="text-fg-secondary">
           Verifique a conexão e tente de novo. Se o erro continuar, avise quem cuida do app.
         </p>

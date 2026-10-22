@@ -38,7 +38,7 @@ test("a Produto opened from the table shows its header and fields grouped in pt 
     - definition: 54 g
   `);
   await expect(page.getByRole("region", { name: "Medições" })).toMatchAriaSnapshot(`
-    - term: Resposta média do sensor
+    - term: Resposta do sensor
     - definition: 0,70 ms
     - term: Resposta do clique
     - definition: 0,49 ms

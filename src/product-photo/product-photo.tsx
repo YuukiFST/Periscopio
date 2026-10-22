@@ -45,7 +45,7 @@ export function ProductPhoto({ src, alt, size, loading = "eager" }: ProductPhoto
       onError={() => setFailed(true)}
       className={cn(
         frame,
-        "shrink-0 bg-white object-contain outline-1 -outline-offset-1 outline-border",
+        "shrink-0 bg-white object-contain outline-1 -outline-offset-1 outline-black/10 dark:outline-white/10",
       )}
     />
   );

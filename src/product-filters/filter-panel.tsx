@@ -1,5 +1,7 @@
-import { Search } from "lucide-react";
-import { useId, useState } from "react";
+import { Combobox } from "@base-ui/react/combobox";
+import { Select } from "@base-ui/react/select";
+import { Check, ChevronDown, Search, X } from "lucide-react";
+import { type ReactNode, useId, useState } from "react";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import { normalizeForSearch } from "@/product-table/product-filter";
@@ -21,15 +23,8 @@ type FilterPanelProps = {
   clearCount: number;
 };
 
-function withChoice(
-  values: FilterValues,
-  param: FilterParam,
-  id: string,
-  marked: boolean,
-): FilterValues {
-  const current = values.choices[param] ?? [];
-  const next = marked ? [...current, id] : current.filter((markedId) => markedId !== id);
-  return { ...values, choices: { ...values.choices, [param]: next } };
+function withChoices(values: FilterValues, param: FilterParam, ids: string[]): FilterValues {
+  return { ...values, choices: { ...values.choices, [param]: ids } };
 }
 
 function withRange(values: FilterValues, param: FilterParam, range: NumberRange): FilterValues {
@@ -53,9 +48,7 @@ export function FilterPanel({ filters, values, onValuesChange, clearCount }: Fil
             key={`${filter.param}-${clearCount}`}
             filter={filter}
             marked={values.choices[filter.param] ?? []}
-            onMarkedChange={(id, marked) =>
-              onValuesChange(withChoice(values, filter.param, id, marked))
-            }
+            onMarkedChange={(ids) => onValuesChange(withChoices(values, filter.param, ids))}
           />
         ),
       )}
@@ -65,6 +58,14 @@ export function FilterPanel({ filters, values, onValuesChange, clearCount }: Fil
 
 function FilterLegend({ children }: { children: string }) {
   return <legend className="mb-2 font-medium text-fg-primary">{children}</legend>;
+}
+
+function FilterLabel({ id, children }: { id: string; children: string }) {
+  return (
+    <div id={id} className="mb-2 font-medium text-fg-primary">
+      {children}
+    </div>
+  );
 }
 
 /** A list Filtro past this many choices gets a search box (spec: "com busca acima de 12 itens"). */
@@ -86,94 +87,166 @@ function choiceMatchesQuery(label: string, query: string): boolean {
 type ChoiceFilterFieldsProps = {
   filter: ChoiceFilter;
   marked: readonly string[];
-  onMarkedChange: (id: string, marked: boolean) => void;
+  onMarkedChange: (ids: string[]) => void;
 };
 
-function ChoiceFilterFields({ filter, marked, onMarkedChange }: ChoiceFilterFieldsProps) {
-  const [query, setQuery] = useState("");
-  const [toggledIds, setToggledIds] = useState<readonly string[]>([]);
-  const isSearchable = filter.choices.length > searchableChoiceCount;
-  const trimmedQuery = query.trim();
-  const matching = filter.choices.filter((choice) => choiceMatchesQuery(choice.label, query));
-  // A marked choice stays in the list while searching, so the search never hides what is on;
-  // one toggled during this search stays too, so unmarking it never drops the focus.
-  const shown = filter.choices.filter(
-    (choice) =>
-      marked.includes(choice.id) || toggledIds.includes(choice.id) || matching.includes(choice),
+const choiceFieldClassName =
+  "flex min-h-9 w-full min-w-0 cursor-pointer items-center gap-2 rounded-lg border border-input bg-transparent px-2.5 text-start text-base text-fg-primary transition-colors hover:border-border-strong focus-visible:border-ring focus-visible:outline-2 focus-visible:-outline-offset-1 focus-visible:outline-ring pointer-coarse:min-h-10 pointer-fine:text-body-sm dark:bg-component";
+
+const choicePopupClassName =
+  "flex max-h-[min(var(--available-height),16rem)] w-(--anchor-width) min-w-40 origin-(--transform-origin) flex-col rounded-lg border border-border bg-popover text-body-sm text-popover-foreground shadow-lg outline-none transition-[opacity,scale] duration-150 ease-out-quint data-ending-style:scale-95 data-ending-style:opacity-0 data-starting-style:scale-95 data-starting-style:opacity-0";
+
+// The scroll lives on the list inside the popup: scroll-fade-y runs a scroll-driven animation
+// that never finishes, and Base UI keeps a closing popup mounted until its animations finish.
+const choiceListClassName =
+  "min-h-0 scroll-fade-y overflow-y-auto overscroll-contain p-1 outline-none [scrollbar-width:thin]";
+
+const choiceItemClassName =
+  "flex min-h-8 cursor-pointer items-center gap-2 rounded-md px-2 text-fg-secondary outline-none select-none data-highlighted:bg-component-hover data-highlighted:text-fg-primary data-selected:text-fg-primary pointer-coarse:min-h-10";
+
+function ChoiceCheck({ children }: { children: ReactNode }) {
+  return (
+    <span className="grid size-4 shrink-0 place-items-center rounded-sm border border-border-strong">
+      {children}
+    </span>
   );
-  function changeQuery(text: string) {
-    setQuery(text);
-    setToggledIds([]);
-  }
+}
+
+/** "Todas" when nothing is marked, else the marked labels in list order. */
+function markedSummary(filter: ChoiceFilter, marked: readonly string[]): string {
+  const labels = filter.choices
+    .filter((choice) => marked.includes(choice.id))
+    .map((choice) => choice.label);
+  return labels.length === 0 ? "Todas" : labels.join(", ");
+}
+
+function ChoiceFilterFields(props: ChoiceFilterFieldsProps) {
+  return props.filter.choices.length > searchableChoiceCount ? (
+    <SearchableChoiceField {...props} />
+  ) : (
+    <SelectChoiceField {...props} />
+  );
+}
+
+/** A short list: one field that opens the choices, each one checked or not. */
+function SelectChoiceField({ filter, marked, onMarkedChange }: ChoiceFilterFieldsProps) {
+  const labelId = useId();
+  return (
+    <div className="min-w-0">
+      <FilterLabel id={labelId}>{filter.label}</FilterLabel>
+      <Select.Root multiple value={[...marked]} onValueChange={onMarkedChange}>
+        <Select.Trigger aria-labelledby={labelId} className={choiceFieldClassName}>
+          <span
+            className={cn("min-w-0 flex-1 truncate", marked.length === 0 && "text-fg-tertiary")}
+          >
+            {markedSummary(filter, marked)}
+          </span>
+          <Select.Icon>
+            <ChevronDown aria-hidden="true" strokeWidth={1.5} className="size-4 text-fg-tertiary" />
+          </Select.Icon>
+        </Select.Trigger>
+        <Select.Portal>
+          <Select.Positioner alignItemWithTrigger={false} sideOffset={4} className="z-50">
+            <Select.Popup className={choicePopupClassName}>
+              <Select.List aria-labelledby={labelId} className={choiceListClassName}>
+                {filter.choices.map((choice) => (
+                  <Select.Item key={choice.id} value={choice.id} className={choiceItemClassName}>
+                    <ChoiceCheck>
+                      <Select.ItemIndicator>
+                        <Check aria-hidden="true" strokeWidth={2} className="size-3" />
+                      </Select.ItemIndicator>
+                    </ChoiceCheck>
+                    <Select.ItemText>{choice.label}</Select.ItemText>
+                  </Select.Item>
+                ))}
+              </Select.List>
+            </Select.Popup>
+          </Select.Positioner>
+        </Select.Portal>
+      </Select.Root>
+    </div>
+  );
+}
+
+/** A long list (spec: "com busca acima de 12 itens"): typing narrows a scrollable list. */
+function SearchableChoiceField({ filter, marked, onMarkedChange }: ChoiceFilterFieldsProps) {
+  const labelId = useId();
+  const labels = new Map(filter.choices.map((choice) => [choice.id, choice.label]));
+  const labelOf = (id: string) => labels.get(id) ?? id;
   const searchLabel = `Buscar ${filter.label.toLocaleLowerCase("pt-BR")}`;
 
   return (
-    <fieldset className="min-w-0">
-      <FilterLegend>{filter.label}</FilterLegend>
-      {isSearchable && (
-        <div className="relative mb-2">
+    <div className="min-w-0">
+      <FilterLabel id={labelId}>{filter.label}</FilterLabel>
+      <Combobox.Root
+        multiple
+        items={filter.choices.map((choice) => choice.id)}
+        value={[...marked]}
+        onValueChange={onMarkedChange}
+        itemToStringLabel={labelOf}
+        filter={(id: string, query) => choiceMatchesQuery(labelOf(id), query)}
+      >
+        <div className="relative">
           <Search
             aria-hidden="true"
+            strokeWidth={1.5}
             className="pointer-events-none absolute start-2.5 top-1/2 size-4 -translate-y-1/2 text-fg-tertiary"
           />
-          <Input
-            type="search"
-            name={`${filter.param}-busca`}
-            autoComplete="off"
+          <Combobox.Input
+            aria-label={searchLabel}
+            placeholder={searchLabel}
             autoCapitalize="none"
             autoCorrect="off"
             spellCheck={false}
             enterKeyHint="search"
-            aria-label={searchLabel}
-            placeholder={searchLabel}
-            value={query}
-            onChange={(event) => changeQuery(event.target.value)}
-            onKeyDown={(event) => {
-              // Escape clears a typed search before it closes the drawer around it.
-              if (event.key !== "Escape" || query === "") return;
-              event.stopPropagation();
-              changeQuery("");
-            }}
-            className="h-9 ps-8"
+            className={cn(choiceFieldClassName, "cursor-text ps-8 placeholder:text-fg-tertiary")}
           />
         </div>
-      )}
-      <div
-        // In the drawer a drag on this list scrolls it, instead of pulling the drawer closed.
-        data-base-ui-swipe-ignore={isSearchable ? "y" : undefined}
-        className={cn(
-          "flex flex-wrap gap-1.5",
-          isSearchable && "scroll-fade-y -m-1 max-h-52 overflow-y-auto p-1 [scrollbar-width:thin]",
+        {marked.length > 0 && (
+          <Combobox.Chips className="mt-2 flex flex-wrap gap-1.5">
+            {marked.map((id) => (
+              <Combobox.Chip
+                key={id}
+                className="flex items-center gap-1 rounded-md border border-primary bg-primary py-0.5 ps-2 pe-0.5 text-caption-lg text-primary-foreground"
+              >
+                {labelOf(id)}
+                <Combobox.ChipRemove
+                  aria-label={`Remover ${labelOf(id)}`}
+                  className="grid size-5 cursor-pointer place-items-center rounded-sm hover:bg-primary-foreground/15"
+                >
+                  <X aria-hidden="true" strokeWidth={2} className="size-3" />
+                </Combobox.ChipRemove>
+              </Combobox.Chip>
+            ))}
+          </Combobox.Chips>
         )}
-      >
-        {shown.map((choice) => (
-          <label key={choice.id} className="relative">
-            <input
-              type="checkbox"
-              className="peer absolute inset-0 cursor-pointer appearance-none rounded-md opacity-0"
-              checked={marked.includes(choice.id)}
-              onChange={(event) => {
-                setToggledIds((ids) => (ids.includes(choice.id) ? ids : [...ids, choice.id]));
-                onMarkedChange(choice.id, event.target.checked);
-              }}
-            />
-            <span className="flex min-h-8 cursor-pointer items-center rounded-md border border-border px-2.5 py-1 text-fg-secondary transition-[color,background-color,border-color] duration-150 ease-out-quint peer-checked:border-primary peer-checked:bg-primary peer-checked:text-primary-foreground peer-focus-visible:outline-2 peer-focus-visible:outline-offset-1 peer-focus-visible:outline-ring peer-hover:border-border-strong peer-hover:text-fg-primary peer-checked:peer-hover:border-primary peer-checked:peer-hover:text-primary-foreground peer-active:bg-component-hover peer-checked:peer-active:bg-primary/80 forced-colors:peer-checked:border-[Highlight] forced-colors:peer-checked:outline-1 forced-colors:peer-checked:outline-[Highlight]">
-              {choice.label}
-            </span>
-          </label>
-        ))}
-      </div>
-      {isSearchable && (
-        <p
-          role="status"
-          className="mt-1.5 text-caption-lg wrap-anywhere text-fg-secondary empty:sr-only"
-        >
-          {trimmedQuery !== "" && matching.length === 0
-            ? `Nenhuma opção para “${trimmedQuery}”.`
-            : ""}
-        </p>
-      )}
-    </fieldset>
+        <Combobox.Portal>
+          <Combobox.Positioner sideOffset={4} className="z-50">
+            <Combobox.Popup
+              // In the drawer a drag on this list scrolls it, instead of pulling the drawer closed.
+              data-base-ui-swipe-ignore="y"
+              className={choicePopupClassName}
+            >
+              <Combobox.Empty className="px-3 py-2 text-fg-secondary empty:hidden">
+                Nenhuma opção encontrada.
+              </Combobox.Empty>
+              <Combobox.List className={cn(choiceListClassName, "empty:hidden")}>
+                {(id: string) => (
+                  <Combobox.Item key={id} value={id} className={choiceItemClassName}>
+                    <ChoiceCheck>
+                      <Combobox.ItemIndicator>
+                        <Check aria-hidden="true" strokeWidth={2} className="size-3" />
+                      </Combobox.ItemIndicator>
+                    </ChoiceCheck>
+                    {labelOf(id)}
+                  </Combobox.Item>
+                )}
+              </Combobox.List>
+            </Combobox.Popup>
+          </Combobox.Positioner>
+        </Combobox.Portal>
+      </Combobox.Root>
+    </div>
   );
 }
 

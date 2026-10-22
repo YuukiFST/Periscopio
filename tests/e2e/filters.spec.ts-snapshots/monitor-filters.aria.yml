@@ -1,34 +1,10 @@
 - complementary "Filtros":
     - heading "Filtros" [level=2]
     - button "Limpar" [disabled]
-    - group "Nota geral":
-        - text: ""
-        - checkbox "S"
-        - text: S
-        - checkbox "A+"
-        - text: A+
-        - checkbox "A"
-        - text: A
-        - checkbox "B"
-        - text: B
-        - checkbox "C"
-        - text: C
-        - checkbox "D"
-        - text: D
-        - checkbox "Sem nota"
-        - text: Sem nota
-    - group "Recomendação":
-        - text: ""
-        - checkbox "Ótima"
-        - text: Ótima
-        - checkbox "Boa"
-        - text: Boa
-        - checkbox "Fraca"
-        - text: Fraca
-        - checkbox "Evitar"
-        - text: Evitar
-        - checkbox "Pendente"
-        - text: Pendente
+    - text: Nota geral
+    - combobox "Nota geral": Todas
+    - text: Recomendação
+    - combobox "Recomendação": Todas
     - group "Preço (mil ₩)":
         - text: Preço (mil ₩) Mínimo
         - textbox "Mínimo"
@@ -39,16 +15,8 @@
         - textbox "Mínimo"
         - text: Máximo
         - textbox "Máximo"
-    - group "Resolução":
-        - text: ""
-        - checkbox /FHD \(\d+×\d+\)/
-        - text: /FHD \(\d+×\d+\)/
-        - checkbox /QHD \(\d+×\d+\)/
-        - text: /QHD \(\d+×\d+\)/
-        - checkbox /UHD \(\d+×\d+\)/
-        - text: /UHD \(\d+×\d+\)/
-        - checkbox "Ultrawide"
-        - text: Ultrawide
+    - text: Resolução
+    - combobox "Resolução": Todas
     - group "Taxa de atualização (Hz)":
         - text: Taxa de atualização (Hz) Mínimo
         - textbox "Mínimo"
@@ -59,27 +27,9 @@
         - textbox "Mínimo"
         - text: Máximo
         - textbox "Máximo"
-    - group "Painel":
-        - text: ""
-        - checkbox "TN"
-        - text: TN
-        - checkbox "VA"
-        - text: VA
-        - checkbox "IPS"
-        - text: IPS
-        - checkbox "OLED"
-        - text: OLED
-    - group "Certificação HDR":
-        - text: ""
-        - checkbox /True Black \d+/
-        - text: /True Black \d+/
-        - checkbox /True Black \d+/
-        - text: /True Black \d+/
-        - checkbox /True Black \d+ ou mais/
-        - text: /True Black \d+ ou mais/
-        - checkbox "DisplayHDR comum"
-        - text: DisplayHDR comum
-    - group "Escurecimento da retroiluminação":
-        - text: ""
-        - checkbox "Mini LED"
-        - text: Mini LED
+    - text: Painel
+    - combobox "Painel": Todas
+    - text: Certificação HDR
+    - combobox "Certificação HDR": Todas
+    - text: Escurecimento da retroiluminação
+    - combobox "Escurecimento da retroiluminação": Todas

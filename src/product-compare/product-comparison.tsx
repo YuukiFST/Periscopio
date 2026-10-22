@@ -109,9 +109,18 @@ export function ProductComparison({
   return (
     // The table scrolls inside; the article scrolls only when a short screen cannot fit the table's minimum.
     // Its 6px padding, cancelled by the margin, keeps focus outlines at its edges from being clipped.
+    // Two Produtos on a wide screen keep readable columns instead of stretching across it, and the
+    // title row ends where the table does.
     <article
       aria-labelledby={headingId}
-      className="-m-1.5 flex min-h-0 flex-1 flex-col gap-4 overflow-y-auto p-1.5"
+      style={
+        products.length >= minComparedProducts
+          ? {
+              maxWidth: `calc(var(--label-column) + ${products.length} * 24rem + 2px + 0.75rem)`,
+            }
+          : undefined
+      }
+      className="-m-1.5 flex min-h-0 flex-1 flex-col gap-4 overflow-y-auto p-1.5 [--label-column:7.25rem] [--peek-size:1rem] [--visible-columns:2] min-[22rem]:[--peek-size:1.5rem] min-[22rem]:[--label-column:7.5rem] sm:[--label-column:11rem] md:[--visible-columns:3] lg:[--label-column:14rem] lg:[--visible-columns:4]"
     >
       <BackToTableLink category={data.category} search={{ cmp: comparedIdsParam }} />
       <div className="flex items-start justify-between gap-4">
@@ -128,9 +137,13 @@ export function ProductComparison({
       {leftOutText(compared).map((text) => (
         <p
           key={text}
-          className="flex max-w-prose items-start gap-2 rounded-lg bg-warning-subtle px-3 py-2 text-pretty text-warning-fg"
+          className="flex max-w-prose items-start gap-2 rounded-lg bg-warning-subtle px-3 py-2 text-pretty text-fg-primary"
         >
-          <TriangleAlert aria-hidden="true" className="mt-0.5 size-4 shrink-0" />
+          <TriangleAlert
+            aria-hidden="true"
+            strokeWidth={1.5}
+            className="mt-0.5 size-4 shrink-0 text-warning-fg"
+          />
           {text}
         </p>
       ))}

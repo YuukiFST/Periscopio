@@ -12,7 +12,7 @@
         - text: Com fio
         - radio "Sem fio"
         - text: Sem fio
-    - paragraph: "Melhor desempenho: Dragonfly A9 Ultra."
+    - paragraph: "Melhor desempenho: Dragonfly A9 Ultra, com pontuação 100. Depois vem Huan, com 54."
     - table "Comparação de mouses":
         - rowgroup:
             - row "O preço fica de fora da comparação porque preços mudam, e o EyeJoker não registra o preço da sua região. Dragonfly A9 Ultra Huan H200A":
@@ -55,8 +55,8 @@
                     - img "melhor nesta linha"
                 - cell /\d+,\d+ ms/
                 - cell /\d+,\d+ ms/
-            - row /Resposta do sensor \d+,\d+ ms melhor nesta linha \d+,\d+ ms \d+,\d+ ms com fio/:
-                - rowheader "Resposta do sensor"
+            - row /Resposta mais rápida do sensor \d+,\d+ ms melhor nesta linha \d+,\d+ ms \d+,\d+ ms com fio/:
+                - rowheader "Resposta mais rápida do sensor"
                 - cell /\d+,\d+ ms melhor nesta linha/:
                     - text: ""
                     - img "melhor nesta linha"
@@ -137,11 +137,11 @@
                 - cell "Nordic nRF52840"
                 - cell "Nordic nRF54H20"
                 - cell "CompX Tech CX52850"
-            - row "Bateria 500mAh 300mAh 600mAh melhor nesta linha":
+            - row "Bateria 500 mAh 300 mAh 600 mAh melhor nesta linha":
                 - rowheader "Bateria"
-                - cell "500mAh"
-                - cell "300mAh"
-                - cell "600mAh melhor nesta linha":
+                - cell "500 mAh"
+                - cell "300 mAh"
+                - cell "600 mAh melhor nesta linha":
                     - text: ""
                     - img "melhor nesta linha"
             - row /Sensor PAW3950 Ultra \([\d,.]+[bkmBKM]+\) PAW3950 HS PAW3395/:
@@ -154,21 +154,21 @@
                 - cell "Omron Optical / ATK Custom Tuned Optical"
                 - cell "Omron Optical"
                 - cell "Huano Blue Shell White Dot"
-            - row "Switch lateral huano omronMicroSwitch unknownMakerThreePinSwitch":
+            - row "Switch lateral Huano Omron Micro Switch Switch de 3 pinos (marca desconhecida)":
                 - rowheader "Switch lateral"
-                - cell "huano"
-                - cell "omronMicroSwitch"
-                - cell "unknownMakerThreePinSwitch"
+                - cell "Huano"
+                - cell "Omron Micro Switch"
+                - cell "Switch de 3 pinos (marca desconhecida)"
             - row "Switch da roda Tact switch de 2 pinos Tact switch de 2 pinos Switch de 3 pinos (marca desconhecida)":
                 - rowheader "Switch da roda"
                 - cell "Tact switch de 2 pinos"
                 - cell "Tact switch de 2 pinos"
                 - cell "Switch de 3 pinos (marca desconhecida)"
-            - row /Encoder TTC Gold TTC Dustproof Silver [\d,.]+[bkmBKM]+ F-Switch [\d,.]+[bkmBKM]+/:
+            - row /Encoder TTC Gold TTC Dustproof Silver [\d,.]+ mm F-Switch [\d,.]+ mm/:
                 - rowheader "Encoder"
                 - cell "TTC Gold"
-                - cell /TTC Dustproof Silver [\d,.]+[bkmBKM]+/
-                - cell /F-Switch [\d,.]+[bkmBKM]+/
+                - cell /TTC Dustproof Silver [\d,.]+ mm/
+                - cell /F-Switch [\d,.]+ mm/
             - row /Velocidade máxima de rastreio \d+ IPS melhor nesta linha \d+ IPS melhor nesta linha \d+ IPS/:
                 - rowheader "Velocidade máxima de rastreio"
                 - cell /\d+ IPS melhor nesta linha/:
@@ -211,11 +211,11 @@
                 - cell "Faixa"
                 - cell "Sem dado"
                 - cell "Valores selecionáveis"
-            - row /Valores de LOD do sensor 0\.7~1\.7 mm \(0\.1 mm step, \d+ levels\) Sem dado 1\.0, 2\.0 mm/:
+            - row /Valores de LOD do sensor 0,7 a 1,7 mm \(\d+ níveis, de 0,1 em 0,1 mm\) Sem dado 1,0 mm e 2,0 mm/:
                 - rowheader "Valores de LOD do sensor"
-                - cell /0\.7~1\.7 mm \(0\.1 mm step, \d+ levels\)/
+                - cell /0,7 a 1,7 mm \(\d+ níveis, de 0,1 em 0,1 mm\)/
                 - cell "Sem dado"
-                - cell "1.0, 2.0 mm"
+                - cell "1,0 mm e 2,0 mm"
             - row "Situação de venda À venda À venda À venda":
                 - rowheader "Situação de venda"
                 - cell "À venda"
@@ -234,8 +234,8 @@
         - rowgroup "Medições":
             - row "Medições":
                 - rowheader "Medições"
-            - row /Resposta média do sensor \d+,\d+ ms melhor nesta linha \d+,\d+ ms \d+,\d+ ms/:
-                - rowheader "Resposta média do sensor"
+            - row /Resposta do sensor \d+,\d+ ms melhor nesta linha \d+,\d+ ms \d+,\d+ ms/:
+                - rowheader "Resposta do sensor"
                 - cell /\d+,\d+ ms melhor nesta linha/:
                     - text: ""
                     - img "melhor nesta linha"

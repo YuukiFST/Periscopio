@@ -17,10 +17,10 @@
 @import "@radix-ui/colors/green-dark.css";
 @import "@radix-ui/colors/green-alpha.css";
 @import "@radix-ui/colors/green-dark-alpha.css";
-@import "@radix-ui/colors/orange.css";
-@import "@radix-ui/colors/orange-dark.css";
-@import "@radix-ui/colors/orange-alpha.css";
-@import "@radix-ui/colors/orange-dark-alpha.css";
+@import "@radix-ui/colors/amber.css";
+@import "@radix-ui/colors/amber-dark.css";
+@import "@radix-ui/colors/amber-alpha.css";
+@import "@radix-ui/colors/amber-dark-alpha.css";
 @import "@radix-ui/colors/tomato.css";
 @import "@radix-ui/colors/tomato-dark.css";
 @import "@radix-ui/colors/tomato-alpha.css";
@@ -60,9 +60,9 @@
   --int-positive-solid: var(--green-9);
   --int-positive-subtle: var(--green-a3);
   --int-positive-fg: var(--green-a11);
-  --int-warning-solid: var(--orange-9);
-  --int-warning-subtle: var(--orange-a3);
-  --int-warning-fg: var(--orange-a11);
+  --int-warning-solid: var(--amber-9);
+  --int-warning-subtle: var(--amber-a3);
+  --int-warning-fg: var(--amber-a11);
   --int-danger-solid: var(--tomato-9);
   --int-danger-subtle: var(--tomato-a2);
   --int-danger-fg: var(--tomato-a11);
@@ -71,6 +71,8 @@
   --int-border-default: var(--gray-a6);
   --int-border-subtle: var(--gray-a4);
   --int-border-strong: var(--gray-a8);
+  /* A selected control's edge, its one cue against a track of nearly the same fill. */
+  --int-border-selected: var(--gray-a11);
   --int-border-focus: var(--blue-10);
 
   --shadow-inner-1: #0000;
@@ -191,12 +193,9 @@
   /* The Destaque in a Comparação ("Layout no celular e forma do Destaque"). */
   --color-highlight: var(--green-a3);
   --color-highlight-fg: var(--green-12);
-  /* The Empate: every compared Produto shows the same value. Step 12 text, since
-     step 11 on the a3 tint measures 4.2:1 in light mode, under AA's 4.5:1. */
-  --color-tie: var(--blue-a3);
-  --color-tie-fg: var(--blue-12);
   --color-border-subtle: var(--int-border-subtle);
   --color-border-strong: var(--int-border-strong);
+  --color-border-selected: var(--int-border-selected);
 
   --radius-xs: 2px;
   --radius-sm: 4px;
@@ -213,45 +212,90 @@
   --shadow-large: var(--s-large);
   --shadow-extra-large: var(--s-extra-large);
 
-  --text-heading-1: 56px;
-  --text-heading-1--line-height: 3.5rem;
+  /* Line heights are unitless, so a wrapped line keeps its proportion at any text size. */
+  --text-heading-1: 3.5rem;
+  --text-heading-1--line-height: 1.1;
   --text-heading-1--letter-spacing: -0.01em;
-  --text-heading-2: 44px;
-  --text-heading-2--line-height: 3.5rem;
+  --text-heading-2: 2.75rem;
+  --text-heading-2--line-height: 1.2;
   --text-heading-2--letter-spacing: -0.01em;
-  --text-heading-3: 36px;
-  --text-heading-3--line-height: 2.75rem;
+  --text-heading-3: 2.25rem;
+  --text-heading-3--line-height: 1.2;
   --text-heading-3--letter-spacing: -0.01em;
-  --text-heading-4: 28px;
-  --text-heading-4--line-height: 2.25rem;
+  --text-heading-4: 1.75rem;
+  --text-heading-4--line-height: 1.25;
   --text-heading-4--letter-spacing: -0.01em;
-  --text-heading-5: 24px;
-  --text-heading-5--line-height: 2rem;
+  --text-heading-5: 1.5rem;
+  --text-heading-5--line-height: 1.3;
   --text-heading-5--letter-spacing: -0.01em;
-  --text-heading-6: 20px;
-  --text-heading-6--line-height: 1.5rem;
+  --text-heading-6: 1.25rem;
+  --text-heading-6--line-height: 1.2;
   --text-heading-6--letter-spacing: -0.01em;
-  --text-body-lg: 18px;
-  --text-body-lg--line-height: 1.5rem;
-  --text-body-base: 15px;
-  --text-body-base--line-height: 1.5rem;
-  --text-body-sm: 13px;
-  --text-body-sm--line-height: 1.25rem;
-  --text-caption-lg: 12px;
-  --text-caption-lg--line-height: 1rem;
-  --text-caption-base: 11px;
-  --text-caption-base--line-height: 1rem;
-  --text-caption-sm: 10px;
-  --text-caption-sm--line-height: 1rem;
-  --text-code-sm: 13px;
-  --text-code-sm--line-height: 1.25rem;
-  --text-code-xs: 12px;
-  --text-code-xs--line-height: 1rem;
+  --text-body-lg: 1.125rem;
+  --text-body-lg--line-height: 1.5;
+  --text-body-base: 0.9375rem;
+  --text-body-base--line-height: 1.6;
+  --text-body-sm: 0.8125rem;
+  --text-body-sm--line-height: calc(1.25 / 0.8125);
+  --text-caption-lg: 0.75rem;
+  --text-caption-lg--line-height: 1.4;
+  --text-caption-base: 0.6875rem;
+  --text-caption-base--line-height: 1.4;
+  --text-caption-sm: 0.625rem;
+  --text-caption-sm--line-height: 1.4;
+  --text-code-sm: 0.8125rem;
+  --text-code-sm--line-height: calc(1.25 / 0.8125);
+  --text-code-xs: 0.75rem;
+  --text-code-xs--line-height: 1.4;
 
   --ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
   --ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
   --ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
   --ease-in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1);
+  /* Sheets: the drawer and its backdrop move on one curve. */
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+/*
+ * shadcn's `scroll-fade-e` and `scroll-fade-b` each set the one `mask-image`, so stacked they
+ * keep only the last. A table that scrolls both ways fades its end and bottom edges together;
+ * the start and top stay sharp under the sticky labels and header.
+ */
+@utility scroll-fade-be {
+  --_scroll-fade-size-e: var(
+    --scroll-fade-e-size,
+    var(--scroll-fade-size, min(12%, calc(var(--spacing) * 10)))
+  );
+  --_scroll-fade-size-b: var(
+    --scroll-fade-b-size,
+    var(--scroll-fade-size, min(12%, calc(var(--spacing) * 10)))
+  );
+  -webkit-mask-image:
+    linear-gradient(to right, #000 calc(100% - var(--scroll-fade-e, 0px)), transparent),
+    linear-gradient(to bottom, #000 calc(100% - var(--scroll-fade-b, 0px)), transparent);
+  mask-image:
+    linear-gradient(to right, #000 calc(100% - var(--scroll-fade-e, 0px)), transparent),
+    linear-gradient(to bottom, #000 calc(100% - var(--scroll-fade-b, 0px)), transparent);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+
+  @supports (animation-timeline: scroll()) {
+    animation:
+      scroll-fade-reveal-e 1ms ease-in-out,
+      scroll-fade-reveal-b 1ms ease-in-out;
+    animation-timeline: scroll(self inline), scroll(self y);
+    animation-range:
+      calc(100% - var(--scroll-fade-reveal, calc(var(--spacing) * 24))) 100%,
+      calc(100% - var(--scroll-fade-reveal, calc(var(--spacing) * 24))) 100%;
+    animation-fill-mode: both;
+  }
+
+  @supports not (animation-timeline: scroll()) {
+    --scroll-fade-e: var(--_scroll-fade-size-e);
+    --scroll-fade-b: var(--_scroll-fade-size-b);
+  }
 }
 
 @layer base {
@@ -259,7 +303,7 @@
     @apply border-border outline-ring;
   }
   html {
-    @apply font-sans;
+    @apply bg-background font-sans;
     /* Keeps a focused control clear of the detail screen's sticky Comparação bar. */
     scroll-padding-bottom: 6rem;
     font-feature-settings: "ss03";
@@ -272,5 +316,12 @@
   }
   body {
     @apply bg-background text-body-sm text-foreground antialiased;
+  }
+  /* A quick second tap on a control acts on it instead of zooming the page. */
+  a,
+  button,
+  label,
+  [role="button"] {
+    touch-action: manipulation;
   }
 }

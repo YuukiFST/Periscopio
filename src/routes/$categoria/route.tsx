@@ -5,7 +5,7 @@ import {
   useMatch,
   useNavigate,
 } from "@tanstack/react-router";
-import { useDeferredValue, useEffect, useMemo, useState } from "react";
+import { useDeferredValue, useEffect, useMemo, useRef, useState } from "react";
 import { z } from "zod";
 import { categoryLabels, isCategorySlug } from "@/categories";
 import { Button } from "@/components/ui/button";
@@ -211,13 +211,26 @@ function CategoryTable({ data }: { data: CategoryData }) {
   useEffect(() => {
     if (!isDetailOpen) document.title = `${categoryLabel} · Periscópio`;
   }, [categoryLabel, isDetailOpen]);
+  const headingRef = useRef<HTMLHeadingElement>(null);
+  // Read once: the table is keyed by Categoria, and closing the panel later must not move focus.
+  const [openedWithDetail] = useState(isDetailOpen);
+  useEffect(() => {
+    // A new view in a single-page app: the keyboard starts from its title, unless the
+    // Produto's panel opened with it and takes focus itself.
+    if (!openedWithDetail) headingRef.current?.focus();
+  }, [openedWithDetail]);
   const [openedAt] = useState(() => Date.now());
   const updateAge = updateAgeOf(meta, openedAt);
   return (
     <div className="flex min-h-0 flex-1 flex-col gap-4">
       <div className="flex items-start justify-between gap-4">
         <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
-          <h1 id={headingId} className="font-serif text-heading-5">
+          <h1
+            ref={headingRef}
+            id={headingId}
+            tabIndex={-1}
+            className="font-serif text-heading-5 outline-none"
+          >
             {categoryLabel}
           </h1>
           {!updateAge.isStale && <UpdatedAtLabel age={updateAge} />}
@@ -231,7 +244,7 @@ function CategoryTable({ data }: { data: CategoryData }) {
           className="scroll-fade-b relative -ms-2 hidden w-64 shrink-0 scroll-pt-12 flex-col gap-3 overflow-y-auto overscroll-contain ps-2 pe-2 pb-4 lg:flex xl:w-72"
         >
           <div className="sticky top-0 z-20 flex min-h-9 items-center justify-between gap-2 bg-page">
-            <h2 id={filtersHeadingId} className="text-body-base font-medium">
+            <h2 id={filtersHeadingId} className="font-serif text-heading-6 font-medium">
               Filtros
             </h2>
             <Button
@@ -310,9 +323,11 @@ function CategoryTable({ data }: { data: CategoryData }) {
               }
             />
           )}
-          {/* The side panel carries its own bar, over this one. */}
+          {/* The side panel carries its own bar, over this one. On a short screen the table's
+              floor pushes the bar below the fold, so it pins to the bottom edge. */}
           {!isDetailOpen && (
             <CompareBar
+              className="sticky bottom-2 z-40 border-transparent shadow-large"
               category={data.category}
               comparedIds={comparedIds}
               onClear={() => changeComparedIds([])}

@@ -19,7 +19,8 @@ export function ProductNotFound({ category }: { category: CategorySlug }) {
       </DrawerTitle>
       <p className="max-w-prose text-fg-secondary">
         Este link não corresponde a nenhum produto em {categoryLabels[category]}. O produto pode ter
-        saído do EyeJoker numa atualização, ou o link ficou incompleto.
+        saído do EyeJoker numa atualização, ou o link ficou incompleto. Feche este painel e procure
+        o produto na tabela de {categoryLabels[category]}.
       </p>
     </div>
   );

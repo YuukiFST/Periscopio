@@ -24,7 +24,7 @@ export function CompareCheckbox({
   return (
     <label
       className={cn(
-        "grid h-full min-h-11 w-full touch-manipulation place-items-center",
+        "grid h-full min-h-11 w-full place-items-center",
         isBlocked ? "cursor-not-allowed" : "cursor-pointer",
       )}
     >

@@ -1,76 +1,33 @@
 - complementary "Filtros":
     - heading "Filtros" [level=2]
     - button "Limpar" [disabled]
-    - group "Nota geral":
-        - text: ""
-        - checkbox "S"
-        - text: S
-        - checkbox "A+"
-        - text: A+
-        - checkbox "A"
-        - text: A
-        - checkbox "B"
-        - text: B
-        - checkbox "C"
-        - text: C
-        - checkbox "D"
-        - text: D
-        - checkbox "Sem nota"
-        - text: Sem nota
-    - group "Recomendação":
-        - text: ""
-        - checkbox "Ótima"
-        - text: Ótima
-        - checkbox "Boa"
-        - text: Boa
-        - checkbox "Fraca"
-        - text: Fraca
-        - checkbox "Evitar"
-        - text: Evitar
-        - checkbox "Pendente"
-        - text: Pendente
+    - text: Nota geral
+    - combobox "Nota geral": Todas
+    - text: Recomendação
+    - combobox "Recomendação": Todas
     - group "Preço (mil ₩)":
         - text: Preço (mil ₩) Mínimo
         - textbox "Mínimo"
         - text: Máximo
         - textbox "Máximo"
-    - group "Formato":
-        - text: ""
-        - checkbox "Simétrico"
-        - text: Simétrico
-        - checkbox "Assimétrico"
-        - text: Assimétrico
-    - group "Tamanho":
-        - text: ""
-        - checkbox "Pequeno"
-        - text: Pequeno
-        - checkbox "Médio"
-        - text: Médio
-        - checkbox "Grande"
-        - text: Grande
-    - group "Conexão":
-        - text: ""
-        - checkbox "Com fio"
-        - text: Com fio
-        - checkbox "Sem fio"
-        - text: Sem fio
-        - checkbox "Com e sem fio"
-        - text: Com e sem fio
+    - text: Formato
+    - combobox "Formato": Todas
+    - text: Tamanho
+    - combobox "Tamanho": Todas
+    - text: Conexão
+    - combobox "Conexão": Todas
     - group "Peso (g)":
         - text: Peso (g) Mínimo
         - textbox "Mínimo"
         - text: Máximo
         - textbox "Máximo"
-    - group "Sensor":
-        - text: ""
-        - checkbox "PAW3395"
-        - text: PAW3395
-        - checkbox "PAW3950"
-        - text: PAW3950
-        - checkbox "PAW3950 HS"
-        - text: PAW3950 HS
-        - checkbox /PAW3950 Ultra \([\d,.]+[bkmBKM]+\)/
-        - text: /PAW3950 Ultra \([\d,.]+[bkmBKM]+\)/
+    - text: Sensor
+    - combobox "Sensor": Todas
+    - group "Resposta do sensor (ms)":
+        - text: Resposta do sensor (ms) Mínimo
+        - textbox "Mínimo"
+        - text: Máximo
+        - textbox "Máximo"
     - group "Resposta do clique (ms)":
         - text: Resposta do clique (ms) Mínimo
         - textbox "Mínimo"
@@ -81,11 +38,5 @@
         - textbox "Mínimo"
         - text: Máximo
         - textbox "Máximo"
-    - group "Carcaça furada":
-        - text: ""
-        - checkbox "Sim"
-        - text: Sim
-        - checkbox "Não"
-        - text: Não
-        - checkbox "Só embaixo"
-        - text: Só embaixo
+    - text: Carcaça furada
+    - combobox "Carcaça furada": Todas

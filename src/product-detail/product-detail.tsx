@@ -88,19 +88,14 @@ function ProductHeader({
     product.status && statusField ? valueLabel(statusField, product.status) : undefined;
   return (
     <header className="flex flex-col gap-4 sm:flex-row sm:items-start sm:gap-6">
-      <ProductPhoto
-        key={product.image}
-        src={product.image}
-        alt={`Foto de ${product.name}`}
-        size="detail"
-      />
+      <ProductPhoto key={product.image} src={product.image} alt="" size="detail" />
       <div className="flex min-w-0 flex-col gap-4">
         <div>
           <DrawerTitle
             ref={headingRef}
             id="produto-titulo"
             tabIndex={-1}
-            className="font-serif text-heading-4 text-balance wrap-break-word outline-none"
+            className="font-serif text-heading-5 text-balance wrap-break-word outline-none"
           >
             {product.name}
           </DrawerTitle>
@@ -124,7 +119,7 @@ function ProductHeader({
               href={product.aliUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className={cn(buttonVariants({ size: "lg" }), "touch-manipulation")}
+              className={buttonVariants({ size: "lg" })}
             >
               Ver no AliExpress
               <span className="sr-only">(abre em nova aba)</span>

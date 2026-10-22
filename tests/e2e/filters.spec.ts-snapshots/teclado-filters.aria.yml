@@ -1,97 +1,27 @@
 - complementary "Filtros":
     - heading "Filtros" [level=2]
     - button "Limpar" [disabled]
-    - group "Nota geral":
-        - text: ""
-        - checkbox "S"
-        - text: S
-        - checkbox "A+"
-        - text: A+
-        - checkbox "A"
-        - text: A
-        - checkbox "B"
-        - text: B
-        - checkbox "C"
-        - text: C
-        - checkbox "D"
-        - text: D
-        - checkbox "Sem nota"
-        - text: Sem nota
-    - group "Recomendação":
-        - text: ""
-        - checkbox "Ótima"
-        - text: Ótima
-        - checkbox "Boa"
-        - text: Boa
-        - checkbox "Fraca"
-        - text: Fraca
-        - checkbox "Evitar"
-        - text: Evitar
-        - checkbox "Pendente"
-        - text: Pendente
+    - text: Nota geral
+    - combobox "Nota geral": Todas
+    - text: Recomendação
+    - combobox "Recomendação": Todas
     - group "Preço (mil ₩)":
         - text: Preço (mil ₩) Mínimo
         - textbox "Mínimo"
         - text: Máximo
         - textbox "Máximo"
-    - group "Layout":
-        - text: ""
-        - checkbox "TKL"
-        - text: TKL
-        - checkbox /\d+%/
-        - text: /\d+%/
-        - checkbox /\d+%/
-        - text: /\d+%/
-        - checkbox /\d+%/
-        - text: /\d+%/
-        - checkbox "Completo"
-        - text: Completo
-        - checkbox /\d+%/
-        - text: /\d+%/
-        - checkbox "Outro"
-        - text: Outro
-    - group "Conexão":
-        - text: ""
-        - checkbox "Com fio"
-        - text: Com fio
-        - checkbox "Sem fio"
-        - text: Sem fio
-        - checkbox "Com e sem fio"
-        - text: Com e sem fio
-    - group "Material da carcaça":
-        - text: ""
-        - checkbox "Alumínio"
-        - text: Alumínio
-        - checkbox "Plástico"
-        - text: Plástico
-        - checkbox "Alumínio e plástico"
-        - text: Alumínio e plástico
-        - checkbox "Outro"
-        - text: Outro
-    - group "Tipo de switch":
-        - text: ""
-        - checkbox "Magnético"
-        - text: Magnético
-        - checkbox "Mecânico"
-        - text: Mecânico
-        - checkbox "Capacitivo"
-        - text: Capacitivo
-        - checkbox "Óptico"
-        - text: Óptico
-        - checkbox "Membrana"
-        - text: Membrana
-    - group "Rapid trigger":
-        - text: ""
-        - checkbox "Sim"
-        - text: Sim
-        - checkbox "Não"
-        - text: Não
-    - group "Atraso com várias teclas":
-        - text: ""
-        - checkbox "Sem atraso"
-        - text: Sem atraso
-        - checkbox "Com atraso"
-        - text: Com atraso
+    - text: Layout
+    - combobox "Layout": Todas
+    - text: Conexão
+    - combobox "Conexão": Todas
+    - text: Material da carcaça
+    - combobox "Material da carcaça": Todas
+    - text: Tipo de switch
+    - combobox "Tipo de switch": Todas
+    - text: Rapid trigger
+    - combobox "Rapid trigger": Todas
+    - text: Atraso com várias teclas
+    - combobox "Atraso com várias teclas": Todas
     - group "Desempenho real (Hz)":
         - text: Desempenho real (Hz) Mínimo
         - textbox "Mínimo"

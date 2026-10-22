@@ -41,7 +41,7 @@ export const fieldLabelsPt: Readonly<Record<string, string>> = {
   sensorLodOptions: "Valores de LOD do sensor",
 
   // Mouse Medições
-  sensorAvg: "Resposta média do sensor",
+  sensorAvg: "Resposta do sensor",
   sensorDeviationOpt: "Desvio padrão do sensor",
   optimalResponseSpeed: "Resposta do clique",
   optimalStddev: "Desvio padrão do clique",
@@ -215,7 +215,7 @@ export const fieldLabelsPt: Readonly<Record<string, string>> = {
   multiViewSupport: "PiP/PbP",
   hdrFormatSupport: "Formatos HDR",
   localDimmingType: "Escurecimento da retroiluminação",
-  localDimmingZones: "Zonas de local dimming",
+  localDimmingZones: "Zonas de escurecimento local",
   standType: "Suporte",
   standAdjustments: "Ajustes do suporte",
   heightAdjustMm: "Ajuste de altura",
@@ -259,4 +259,6 @@ export const unitLabelsPt: Readonly<Record<string, string>> = {
   개: "",
   존: "zonas",
   "DPI 단위": "DPI",
+  // Inches take the double prime, not the straight quote typed for it.
+  '"': "″",
 };

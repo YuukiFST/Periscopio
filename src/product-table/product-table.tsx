@@ -170,7 +170,7 @@ export function ProductTable({
     <div className="flex min-h-72 flex-1 flex-col overflow-hidden rounded-lg border border-border">
       <div
         ref={scrollRef}
-        className="relative min-h-0 flex-1 scroll-ps-[calc(var(--select-column)+var(--product-column))] scroll-pt-21 overflow-auto overscroll-contain pointer-coarse:scroll-fade-e [--product-column:9.5rem] [--select-column:2.25rem] min-[22rem]:[--product-column:11rem] sm:[--product-column:14rem] sm:[--select-column:2.75rem]"
+        className="relative min-h-0 flex-1 scroll-ps-[calc(var(--select-column)+var(--product-column))] scroll-pt-21 overflow-auto pointer-coarse:scroll-fade-e [--product-column:9.5rem] [--select-column:2.25rem] min-[22rem]:[--product-column:11rem] sm:[--product-column:14rem] sm:[--select-column:2.75rem]"
       >
         <table
           aria-labelledby={labelledBy}
@@ -225,7 +225,7 @@ export function ProductTable({
                       type="button"
                       onClick={() => onSortClick(column.slug)}
                       className={cn(
-                        "flex w-full touch-manipulation items-end gap-1 px-2 py-2.5 text-start text-balance hover:text-fg-primary focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-ring active:bg-component-hover sm:px-3",
+                        "flex w-full items-end gap-1 px-2 py-2.5 text-start text-balance hover:text-fg-primary focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-ring active:bg-component-hover sm:px-3",
                         isNumericColumn(column) && "justify-end text-end",
                         column.kind === "product" && "ps-0 sm:ps-0",
                         sortEntry && "text-fg-primary",

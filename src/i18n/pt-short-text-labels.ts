@@ -4,6 +4,12 @@
  * the trimmed raw values, as the pipeline writes them.
  */
 export const shortTextLabelsPt: Readonly<Record<string, Readonly<Record<string, string>>>> = {
+  panelMaker: {
+    이노룩스: "Innolux",
+    "삼성 디스플레이": "Samsung Display",
+    삼성정품: "Samsung",
+    LG정품나노: "LG Nano",
+  },
   wheelSwitch: {
     "2핀 옐로닷 택트 스위치": "Tact switch de 2 pinos, ponto amarelo",
     "2핀 저소음": "2 pinos, silencioso",

@@ -25,7 +25,11 @@ export function UpdatedAtLabel({ age }: { age: UpdateAge }) {
 export function StaleDataAlert({ age }: { age: UpdateAge }) {
   return (
     <div className="flex items-start gap-2 rounded-lg bg-warning-subtle px-3 py-2 text-body-sm text-fg-primary">
-      <TriangleAlert aria-hidden="true" className="mt-0.5 size-4 shrink-0 text-warning-fg" />
+      <TriangleAlert
+        aria-hidden="true"
+        strokeWidth={1.5}
+        className="mt-0.5 size-4 shrink-0 text-warning-fg"
+      />
       <p className="max-w-prose">
         <strong className="font-medium">Dados desatualizados:</strong> a última atualização foi em{" "}
         {age.date}, há {age.ageDays} dias. Os preços e as medições podem ter mudado no EyeJoker.

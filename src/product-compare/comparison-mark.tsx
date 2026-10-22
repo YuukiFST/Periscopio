@@ -7,10 +7,13 @@ const markLabels = {
   tie: "empate nesta linha",
 } as const;
 
-/** The marked cell's colors: green for the Destaque, blue for the Empate. */
+/**
+ * The marked cell's look: green for the Destaque. An Empate has no better side to color, so it
+ * keeps the page's colors and shows its equals sign.
+ */
 export function markCellClass(mark: CellMark): string | undefined {
   if (mark === "best") return "bg-highlight font-medium text-highlight-fg";
-  if (mark === "tie") return "bg-tie font-medium text-tie-fg";
+  if (mark === "tie") return "font-medium";
   return undefined;
 }
 
@@ -22,7 +25,7 @@ export function MarkIcon({ mark }: { mark: CellMark }) {
     <Icon
       role="img"
       aria-label={markLabels[mark]}
-      strokeWidth={2.5}
+      strokeWidth={2}
       className="ms-1.5 inline-block size-3.5 align-[-0.125em]"
     />
   );

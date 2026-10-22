@@ -4,6 +4,7 @@ import "@fontsource-variable/jetbrains-mono";
 import "./styles.css";
 
 import { createRouter, RouterProvider } from "@tanstack/react-router";
+import { LucideProvider } from "lucide-react";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { registerSW } from "virtual:pwa-register";
@@ -32,7 +33,11 @@ if (!appElement) throw new Error("index.html is missing the #app element");
 
 createRoot(appElement).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    {/* Icons keep the stroke of the medium-weight text beside them at every size; lucide's own
+        stroke thins as an icon shrinks. Icons by regular text set 1.5 themselves. */}
+    <LucideProvider strokeWidth={2} nonScalingStroke>
+      <RouterProvider router={router} />
+    </LucideProvider>
   </StrictMode>,
 );
 

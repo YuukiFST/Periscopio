@@ -24,7 +24,7 @@ type CompareBarProps = {
   /** The marked Produtos, at most 4, all of `category`. */
   comparedIds: readonly string[];
   onClear: () => void;
-  /** Where focus goes after "Limpar", since the bar and its button go away. */
+  /** Where focus goes after "Desmarcar todos", since the bar and its button go away. */
   focusAfterClearId: string;
   /** Applies while the bar shows. */
   className?: string;
@@ -71,20 +71,26 @@ export function CompareBar({
       {count > 0 && (
         <div className="flex items-center gap-2">
           <Button variant="ghost" size="lg" onClick={clear}>
-            Limpar
+            Desmarcar todos
           </Button>
           {count >= minComparedProducts ? (
             <Link
               to="/comparar/$categoria"
               params={{ categoria: category }}
               search={{ p: productIdsParam(comparedIds) }}
-              className={cn(buttonVariants({ size: "lg" }), "touch-manipulation")}
+              className={cn(buttonVariants({ size: "lg" }), "tabular-nums")}
             >
               {label}
               <ArrowRight aria-hidden="true" data-icon="inline-end" />
             </Link>
           ) : (
-            <Button size="lg" disabled focusableWhenDisabled aria-describedby={compareStatusId}>
+            <Button
+              size="lg"
+              disabled
+              focusableWhenDisabled
+              aria-describedby={compareStatusId}
+              className="tabular-nums"
+            >
               {label}
               <ArrowRight aria-hidden="true" data-icon="inline-end" />
             </Button>

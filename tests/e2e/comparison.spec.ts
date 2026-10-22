@@ -167,14 +167,18 @@ test("the Resumo de desempenho opens the table and ranks the mouses by their fas
     `/comparar/mouse?p=${mouses.dragonflyA9Ultra.id},${mouses.huan.id},${mouses.h200a.id}`,
   );
   await expect(page.getByRole("radio", { name: "Qualquer conexão" })).toBeChecked();
-  await expect(page.getByText("Melhor desempenho: Dragonfly A9 Ultra.")).toBeVisible();
+  await expect(
+    page.getByText(
+      "Melhor desempenho: Dragonfly A9 Ultra, com pontuação 100. Depois vem Huan, com 54.",
+    ),
+  ).toBeVisible();
   // H200A's sensor is fastest on its cable, 1,87 ms against 3,74 ms without it.
   await expect(summaryRows(page)).toMatchAriaSnapshot(`
     - rowgroup "Resumo de desempenho":
       - row "Resumo de desempenho"
       - row "Pontuação 100 = o mais rápido em tudo 1º 100 melhor nesta linha 2º 54 3º 21"
       - row "Resposta do clique 0,49 ms melhor nesta linha 5,34 ms 8,91 ms"
-      - row "Resposta do sensor 0,70 ms melhor nesta linha 0,71 ms 1,87 ms com fio"
+      - row "Resposta mais rápida do sensor 0,70 ms melhor nesta linha 0,71 ms 1,87 ms com fio"
   `);
 });
 
@@ -187,14 +191,18 @@ test("choosing Com fio ranks the mouses on their wired times alone, opens their 
   await page.goto(`/comparar/mouse?p=${comparedIds}`);
   await page.getByRole("radio", { name: "Com fio" }).check();
   await expect(page).toHaveURL(`/comparar/mouse?p=${comparedIds}&conexao=com-fio`);
-  await expect(page.getByText("Melhor desempenho com fio: Huan.")).toBeVisible();
+  await expect(
+    page.getByText(
+      "Melhor desempenho com fio: Huan, com pontuação 100. Depois vem Dragonfly 3 PRO, com 35.",
+    ),
+  ).toBeVisible();
   // Dragonfly A9 Ultra has no wired Medição, so it is out of the ranking, not last.
   await expect(summaryRows(page)).toMatchAriaSnapshot(`
     - rowgroup "Resumo de desempenho":
       - row "Resumo de desempenho"
       - row "Pontuação 100 = o mais rápido em tudo Sem medição com fio 1º 100 melhor nesta linha 3º 25 2º 35"
       - row "Resposta do clique (ao pressionar) Sem dado 0,30 ms melhor nesta linha 2,38 ms 19,44 ms"
-      - row "Resposta do sensor Sem dado 0,71 ms melhor nesta linha 1,87 ms 1,04 ms"
+      - row "Resposta mais rápida do sensor Sem dado 0,71 ms melhor nesta linha 1,87 ms 1,04 ms"
   `);
   // The wired Medições show open, without the wireless ones or a fold button.
   await expect(page.getByRole("rowgroup", { name: "Medições com fio" })).toBeVisible();
@@ -210,7 +218,11 @@ test("choosing Com fio ranks the mouses on their wired times alone, opens their 
   await expect(page.getByRole("radio", { name: "Com fio" })).toBeChecked();
   await page.getByRole("radio", { name: "Qualquer conexão" }).check();
   await expect(page).toHaveURL(`/comparar/mouse?p=${comparedIds}`);
-  await expect(page.getByText("Melhor desempenho: Dragonfly A9 Ultra.")).toBeVisible();
+  await expect(
+    page.getByText(
+      "Melhor desempenho: Dragonfly A9 Ultra, com pontuação 100. Depois vem Huan, com 54.",
+    ),
+  ).toBeVisible();
 });
 
 test("one measured mouse still gets the Resumo de desempenho, which says it is the only one", async ({
@@ -280,7 +292,7 @@ test("a fifth mark is refused, with the reason in the bar", async ({ page }) => 
 test("a monitor's screen size gets no Destaque, while its refresh rate does", async ({ page }) => {
   await page.goto(`/comparar/monitor?p=${ultraGearId},${pg259qnId}`);
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("Comparação de monitores");
-  await expect(page.getByRole("row", { name: /^Tamanho da tela/ })).toContainText('32"');
+  await expect(page.getByRole("row", { name: /^Tamanho da tela/ })).toContainText("32″");
   expect(await highlightedProducts(page, "Tamanho da tela")).toEqual([]);
   expect(await highlightedProducts(page, "Taxa de atualização")).toEqual(["ROG SWIFT PG259QN"]);
 });
@@ -455,7 +467,7 @@ test.describe("with edited data", () => {
       - row "Resposta média do clique (com fio, ao pressionar) 0,30 ms melhor nesta linha Sem dado 19,44 ms"
     `);
     await expect(summaryRows(page).getByRole("row", { name: /^Pontuação/ })).toMatchAriaSnapshot(`
-      - row "Pontuação 100 = o mais rápido em tudo 1º 100 melhor nesta linha Falta medição com fio 2º 35"
+      - row "Pontuação 100 = o mais rápido em tudo 1º 100 melhor nesta linha Falta uma medição com fio 2º 35"
     `);
   });
 

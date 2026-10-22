@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { ChevronDown, ExternalLink, X } from "lucide-react";
-import { useState, type CSSProperties } from "react";
+import { useLayoutEffect, useRef, useState, type CSSProperties } from "react";
 import type { CategorySlug } from "@/categories";
 import { Button } from "@/components/ui/button";
 import type { CategoryData, Field, Product } from "@/data/schema";
@@ -101,29 +101,51 @@ export function ComparisonTable({
   onRemove,
 }: ComparisonTableProps) {
   const groups = comparisonGroups(data, products, connection);
+  const hasMeasurements =
+    summary !== undefined || groups.some((group) => group.id !== "especificacoes");
   const [isUnfolded, setIsUnfolded] = useState(false);
+  const scrollerRef = useRef<HTMLDivElement>(null);
+  const headerRef = useRef<HTMLTableSectionElement>(null);
+  // Long Produto names from the EyeJoker set the sticky header's height, so the scroll padding
+  // follows it: a control scrolled into view at the top never lands under the header. A header
+  // taller than half the box stops sticking, so the rows keep room to be read.
+  useLayoutEffect(() => {
+    const scroller = scrollerRef.current;
+    const header = headerRef.current;
+    if (!scroller || !header) return;
+    const observer = new ResizeObserver(() => {
+      scroller.style.setProperty("--header-height", `${header.offsetHeight}px`);
+      scroller.dataset.headerTall = String(header.offsetHeight > scroller.clientHeight / 2);
+    });
+    observer.observe(header);
+    observer.observe(scroller);
+    return () => observer.disconnect();
+  }, []);
   const comparedIdsParam = productIdsParam(products.map((product) => product.id));
   const columnCount = products.length;
   const layout: CSSProperties & Record<`--${string}`, string | number> = {
     "--compared-count": columnCount,
     // With more Produtos than fit, the next column peeks in by 1.5rem as the cue to scroll.
-    "--peek": "calc(clamp(0, var(--compared-count) - var(--visible-columns), 1) * 1.5rem)",
+    "--peek":
+      "calc(clamp(0, var(--compared-count) - var(--visible-columns), 1) * var(--peek-size))",
     "--product-column":
       "calc((100cqw - var(--label-column) - var(--peek)) / min(var(--visible-columns), var(--compared-count)))",
   };
-  // The 11rem scroll padding clears the tallest sticky header measured (photo, wrapped name, link),
-  // so a control scrolled into view at the top never lands under it.
   // The border sits on a wrapper, so the scroll fade dissolves the columns and not the frame;
-  // the fade waits for a touch screen, where it would not hide a scrollbar at the end.
+  // the fade waits for a touch screen, where it would not hide a scrollbar. It softens the
+  // peeking column's cut edge, which alone reads as clipped text.
   return (
     <div
-      // Two Produtos on a wide screen keep readable columns instead of stretching across it.
-      style={{ maxWidth: `calc(var(--label-column) + ${columnCount} * 24rem + 2px)` }}
-      className="flex min-h-72 flex-1 flex-col overflow-hidden rounded-lg border border-border [--label-column:7.5rem] [--visible-columns:2] sm:[--label-column:11rem] md:[--visible-columns:3] lg:[--label-column:14rem] lg:[--visible-columns:4]"
+      // A short table sizes to its rows; a long one shrinks to the space left and scrolls.
+      className={cn(
+        "flex flex-initial flex-col overflow-hidden rounded-lg border border-border",
+        hasMeasurements && "min-h-72",
+      )}
     >
       <div
+        ref={scrollerRef}
         style={layout}
-        className="relative @container min-h-0 flex-1 scroll-ps-(--label-column) scroll-pt-44 overflow-auto pointer-coarse:scroll-fade-e"
+        className="group/scroller relative @container min-h-0 flex-1 snap-x snap-mandatory scroll-ps-(--label-column) scroll-pt-(--header-height) overflow-auto pointer-coarse:scroll-fade-be data-[header-tall=true]:scroll-pt-0"
       >
         <table
           aria-labelledby={labelledBy}
@@ -139,9 +161,14 @@ export function ComparisonTable({
               <col key={product.id} style={{ width: "var(--product-column)" }} />
             ))}
           </colgroup>
-          <thead>
+          {/* A stuck header control is already on screen: its negative margin cancels the scroll
+              padding, so focusing it never scrolls the rows away. */}
+          <thead
+            ref={headerRef}
+            className="[&_*]:scroll-mt-[calc(var(--header-height)*-1)] group-data-[header-tall=true]/scroller:[&_*]:scroll-mt-0"
+          >
             <tr>
-              <td className="sticky start-0 top-0 z-30 border-e border-b border-border bg-page p-2 align-bottom text-caption-lg text-pretty text-fg-secondary sm:p-3">
+              <td className="sticky start-0 top-0 z-30 border-e border-b border-border bg-page p-2 align-bottom text-caption-lg text-pretty text-fg-secondary sm:p-3 group-data-[header-tall=true]/scroller:top-auto">
                 O preço fica de fora da comparação porque preços mudam, e o EyeJoker não registra o
                 preço da sua região.
               </td>
@@ -186,13 +213,16 @@ export function ComparisonTable({
                     aria-controls={rowsId}
                     aria-describedby={headingId}
                     onClick={() => setIsUnfolded(!isUnfolded)}
-                    className="font-sans text-fg-secondary"
+                    className="font-sans text-fg-secondary pointer-coarse:h-10"
                   >
                     {isUnfolded ? "Ocultar" : `Mostrar (${group.fields.length})`}
                     <ChevronDown
                       aria-hidden="true"
                       data-icon="inline-end"
-                      className={cn("motion-safe:transition-transform", isUnfolded && "rotate-180")}
+                      className={cn(
+                        "motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-in-out-cubic",
+                        isUnfolded && "rotate-180",
+                      )}
                     />
                   </Button>
                 </GroupHeaderRow>
@@ -202,6 +232,20 @@ export function ComparisonTable({
               </tbody>,
             ];
           })}
+          {!hasMeasurements && (
+            <tbody>
+              <tr>
+                <td
+                  colSpan={columnCount + 1}
+                  className="px-2 py-3 text-pretty text-fg-secondary sm:px-3"
+                >
+                  <span className="sticky start-2 block max-w-[calc(100cqw-1rem)] sm:start-3 sm:max-w-[calc(100cqw-1.5rem)]">
+                    O EyeJoker ainda não publicou medições destes produtos.
+                  </span>
+                </td>
+              </tr>
+            </tbody>
+          )}
         </table>
       </div>
     </div>
@@ -224,7 +268,9 @@ function ProductColumnHeader({
       scope="col"
       // Named by the Produto alone: screen readers repeat this name on every cell of the column.
       aria-label={product.name}
-      className="sticky top-0 z-20 border-b border-border bg-page px-2 py-2 text-start align-top font-normal sm:px-3 sm:py-3"
+      // A peeking column scrolls in whole when Tab reaches its links, its start on a snap point.
+      onFocus={(event) => event.currentTarget.scrollIntoView({ block: "nearest", inline: "start" })}
+      className="sticky top-0 z-20 snap-start border-b border-border bg-page px-1.5 py-2 text-start align-top font-normal min-[22rem]:px-2 sm:px-3 sm:py-3 group-data-[header-tall=true]/scroller:top-auto"
     >
       <div className="flex flex-col items-start gap-2">
         {/* Below 21rem of table the photo and the remove button no longer fit side by side; the name stays. */}
@@ -232,7 +278,7 @@ function ProductColumnHeader({
           <ProductPhoto key={product.image} src={product.image} alt="" size="compare" />
         </div>
         <div className="min-w-0">
-          <p className="leading-[1.125rem] font-medium wrap-anywhere text-fg-primary">
+          <p className="leading-[1.4] font-medium wrap-anywhere text-fg-primary">
             <Link
               to="/$categoria/$id"
               params={{ categoria: category, id: product.id }}
@@ -252,20 +298,20 @@ function ProductColumnHeader({
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`${product.name} no AliExpress (abre em nova aba)`}
-            className="-my-1 inline-flex min-h-8 max-w-full touch-manipulation flex-wrap items-center gap-1 font-medium wrap-anywhere text-brand-fg underline-offset-4 hover:underline active:underline"
+            className="-my-1 inline-flex min-h-8 max-w-full pointer-coarse:min-h-10 flex-wrap items-center gap-1 font-medium wrap-anywhere text-brand-fg underline-offset-4 hover:underline active:underline"
           >
-            AliExpress
+            Ali{"\u00AD"}Express
             <ExternalLink aria-hidden="true" className="size-3.5 shrink-0" />
           </a>
         )}
       </div>
-      {/* Last in the tab order, after the Produto's own links; shown in the corner by the photo. */}
+      {/* Last in the tab order, after the Produto's own links; shown right by its own photo. */}
       <Button
         variant="ghost"
         size="icon-lg"
         onClick={onRemove}
         aria-label={`Remover ${product.name} da comparação`}
-        className="absolute end-0.5 top-3.5 text-fg-secondary hover:text-fg-primary @max-[21rem]:static @max-[21rem]:mt-1 @max-[21rem]:-ms-2.5 sm:end-1 sm:top-6.5"
+        className="absolute start-15 top-3.5 text-fg-secondary hover:text-fg-primary @max-[21rem]:static @max-[21rem]:mt-1 @max-[21rem]:-ms-2.5 sm:start-20 sm:top-6.5"
       >
         <X aria-hidden="true" />
       </Button>
