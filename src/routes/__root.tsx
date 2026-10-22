@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import { categoryLabels, categorySlugs } from "@/categories";
 import { Button } from "@/components/ui/button";
 import { loadMeta } from "@/data/load-data";
+import { GlobalSearch } from "@/global-search/global-search";
 
 export const Route = createRootRoute({
   loader: loadMeta,
@@ -31,6 +32,9 @@ function AppShell({ children }: { children: ReactNode }) {
               </Link>
             ))}
           </nav>
+          <div className="ms-auto flex items-center gap-2">
+            <GlobalSearch />
+          </div>
         </div>
       </header>
       <main className="flex min-h-0 w-full flex-1 flex-col px-4 py-4">{children}</main>

@@ -120,3 +120,18 @@ test("the data and the service worker are never cached for long, so a deploy rea
     expect(response.headers()["cache-control"], path).toBe("public, max-age=0, must-revalidate");
   }
 });
+
+test("offline, the search still finds Produtos of every Categoria", async ({ context, page }) => {
+  await page.goto("/mouse");
+  await waitForServiceWorker(page);
+
+  await context.setOffline(true);
+  await page.reload();
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText("Mouses");
+  await page.keyboard.press("Control+k");
+  await page
+    .getByRole("combobox", { name: "Buscar produto ou fabricante em todas as categorias" })
+    .fill("asus");
+  const monitorGroup = page.getByRole("group", { name: "Monitores" });
+  await expect(monitorGroup.getByRole("option")).toHaveCount(2);
+});

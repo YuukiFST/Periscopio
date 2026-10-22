@@ -8,3 +8,4 @@
             - /url: /teclado
         - link "Monitores":
             - /url: /monitor
+    - button "Buscar"
