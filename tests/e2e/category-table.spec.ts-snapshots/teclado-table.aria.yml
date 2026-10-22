@@ -28,7 +28,7 @@
                 - checkbox /Comparar TENKO - ARC \d+/
             - rowheader /TENKO - ARC \d+ ARBITER STUDIO/:
                 - link /Detalhes de TENKO - ARC \d+/:
-                    - /url: /teclado/04ef23e4-e4bd-4212-be44-daabe2640afd
+                    - /url: /teclado/04ef23e4-e4bd-4212-be44-daabe2640afd?status=todos
                 - paragraph: /TENKO - ARC \d+/
                 - paragraph: ARBITER STUDIO
             - cell "S"
@@ -45,7 +45,7 @@
                 - checkbox "Comparar EDGE 60HE Pro"
             - rowheader "EDGE 60HE Pro ATK":
                 - link "Detalhes de EDGE 60HE Pro":
-                    - /url: /teclado/021979aa-b222-47d3-b5ec-8b59d671aff4
+                    - /url: /teclado/021979aa-b222-47d3-b5ec-8b59d671aff4?status=todos
                 - paragraph:
                     - link "EDGE 60HE Pro no AliExpress (abre em nova aba)":
                         - /url: https://s.click.aliexpress.com/e/_opItnUw
@@ -64,7 +64,7 @@
                 - checkbox "Comparar Raven61"
             - rowheader "Raven61 TEAMWOLF":
                 - link "Detalhes de Raven61":
-                    - /url: /teclado/479c4333-c25b-4e79-89a5-74d93565c4b5
+                    - /url: /teclado/479c4333-c25b-4e79-89a5-74d93565c4b5?status=todos
                 - paragraph:
                     - link "Raven61 no AliExpress (abre em nova aba)":
                         - /url: https://s.click.aliexpress.com/e/_oBw6LC9
@@ -83,7 +83,7 @@
                 - checkbox /Comparar Archon M3 \d+ MAX/
             - rowheader /Archon M3 \d+ MAX Preflow/:
                 - link /Detalhes de Archon M3 \d+ MAX/:
-                    - /url: /teclado/49c95966-e910-4628-86d1-b7915439e9af
+                    - /url: /teclado/49c95966-e910-4628-86d1-b7915439e9af?status=todos
                 - paragraph: /Archon M3 \d+ MAX/
                 - paragraph: Preflow
             - cell "Sem dado"

@@ -34,7 +34,7 @@
                 - checkbox /Comparar UltraGear 32GS95UE [\d,.]+[bkmBKM]+ Mode/
             - rowheader /UltraGear 32GS95UE [\d,.]+[bkmBKM]+ Mode LGE/:
                 - link /Detalhes de UltraGear 32GS95UE [\d,.]+[bkmBKM]+ Mode/:
-                    - /url: /monitor/168e2700-995b-4632-86e9-08613515a315
+                    - /url: /monitor/168e2700-995b-4632-86e9-08613515a315?status=todos
                 - paragraph: /UltraGear 32GS95UE [\d,.]+[bkmBKM]+ Mode/
                 - paragraph: LGE
             - cell "A+"
@@ -54,7 +54,7 @@
                 - checkbox "Comparar XG259QDNS Ace"
             - rowheader "XG259QDNS Ace ASUS":
                 - link "Detalhes de XG259QDNS Ace":
-                    - /url: /monitor/0138f613-dedd-4d4c-86a6-74798a5baf14
+                    - /url: /monitor/0138f613-dedd-4d4c-86a6-74798a5baf14?status=todos
                 - paragraph: XG259QDNS Ace
                 - paragraph: ASUS
             - cell "Sem dado"
@@ -74,7 +74,7 @@
                 - checkbox "Comparar 모비우스 EX2510S"
             - rowheader "모비우스 EX2510S BenQ":
                 - link "Detalhes de 모비우스 EX2510S":
-                    - /url: /monitor/0780a9f3-3c88-41ac-97e9-1c45f31c9a38
+                    - /url: /monitor/0780a9f3-3c88-41ac-97e9-1c45f31c9a38?status=todos
                 - paragraph: 모비우스 EX2510S
                 - paragraph: BenQ
             - cell "Sem dado"
@@ -94,7 +94,7 @@
                 - checkbox "Comparar ROG SWIFT PG259QN"
             - rowheader "ROG SWIFT PG259QN ASUS":
                 - link "Detalhes de ROG SWIFT PG259QN":
-                    - /url: /monitor/7aa60f74-aa55-44f0-9858-9d672a19fba5
+                    - /url: /monitor/7aa60f74-aa55-44f0-9858-9d672a19fba5?status=todos
                 - paragraph:
                     - link "ROG SWIFT PG259QN no AliExpress (abre em nova aba)":
                         - /url: https://s.click.aliexpress.com/e/_oEZbgCi

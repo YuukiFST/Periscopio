@@ -28,7 +28,7 @@
                 - checkbox "Comparar Dragonfly A9 Ultra"
             - rowheader "Dragonfly A9 Ultra ATK":
                 - link "Detalhes de Dragonfly A9 Ultra":
-                    - /url: /mouse/003586ba-0cbf-4932-843c-24e5f56e47c2
+                    - /url: /mouse/003586ba-0cbf-4932-843c-24e5f56e47c2?status=todos
                 - paragraph:
                     - link "Dragonfly A9 Ultra no AliExpress (abre em nova aba)":
                         - /url: https://s.click.aliexpress.com/e/_oFLhAg6
@@ -47,7 +47,7 @@
                 - checkbox "Comparar Huan"
             - rowheader "Huan WLMouse":
                 - link "Detalhes de Huan":
-                    - /url: /mouse/201270eb-b392-4e41-96a9-1b609a77e795
+                    - /url: /mouse/201270eb-b392-4e41-96a9-1b609a77e795?status=todos
                 - paragraph: Huan
                 - paragraph: WLMouse
             - cell /\d+,\d+ ms desvio padrão \d+,\d+/
@@ -64,7 +64,7 @@
                 - checkbox "Comparar Dragonfly 3 PRO"
             - rowheader "Dragonfly 3 PRO VGN":
                 - link "Detalhes de Dragonfly 3 PRO":
-                    - /url: /mouse/0390fea6-efb9-45ea-a1a3-71b170224e58
+                    - /url: /mouse/0390fea6-efb9-45ea-a1a3-71b170224e58?status=todos
                 - paragraph:
                     - link "Dragonfly 3 PRO no AliExpress (abre em nova aba)":
                         - /url: https://s.click.aliexpress.com/e/_c4UrtAu7
@@ -83,7 +83,7 @@
                 - checkbox "Comparar H200A"
             - rowheader "H200A ABKO":
                 - link "Detalhes de H200A":
-                    - /url: /mouse/2cf40f05-fa65-4a5c-936a-c67de7025af3
+                    - /url: /mouse/2cf40f05-fa65-4a5c-936a-c67de7025af3?status=todos
                 - paragraph: H200A
                 - paragraph: ABKO
             - cell /\d+,\d+ ms desvio padrão \d+,\d+/
@@ -100,7 +100,7 @@
                 - checkbox "Comparar VK M5 Max THOR"
             - rowheader "VK M5 Max THOR VALKYRIE":
                 - link "Detalhes de VK M5 Max THOR":
-                    - /url: /mouse/0fbec015-8d94-469d-993e-1d9d5138fb9b
+                    - /url: /mouse/0fbec015-8d94-469d-993e-1d9d5138fb9b?status=todos
                 - paragraph: VK M5 Max THOR
                 - paragraph: VALKYRIE
             - cell "Sem dado"
@@ -117,7 +117,7 @@
                 - checkbox "Comparar Cloud XS"
             - rowheader "Cloud XS WAIZOWL":
                 - link "Detalhes de Cloud XS":
-                    - /url: /mouse/1f2e9ba6-5ac5-4f0d-b986-7cb4203b5d6c
+                    - /url: /mouse/1f2e9ba6-5ac5-4f0d-b986-7cb4203b5d6c?status=todos
                 - paragraph:
                     - link "Cloud XS no AliExpress (abre em nova aba)":
                         - /url: https://s.click.aliexpress.com/e/_oo1XMw2

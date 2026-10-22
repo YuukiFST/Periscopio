@@ -266,10 +266,10 @@ test("a mouse's Medições por conexão start folded and unfold on request", asy
 });
 
 test("a fifth mark is refused, with the reason in the bar", async ({ page }) => {
-  await page.goto("/mouse");
+  await page.goto("/mouse?status=todos");
   const marked = [mouses.dragonflyA9Ultra, mouses.huan, mouses.h200a, mouses.dragonfly3Pro];
   for (const mouse of marked) await compareCheckbox(page, mouse.name).check();
-  const fourIds = `/mouse?cmp=${marked.map((mouse) => mouse.id).join(",")}`;
+  const fourIds = `/mouse?status=todos&cmp=${marked.map((mouse) => mouse.id).join(",")}`;
   await expect(page).toHaveURL(fourIds);
 
   const fifth = compareCheckbox(page, mouses.cloudXs.name);

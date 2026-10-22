@@ -4,10 +4,10 @@ import { Input } from "@/components/ui/input";
 import { SegmentedControl, type SegmentedOption } from "@/components/ui/segmented-control";
 import type { TestStatusFilter } from "./product-filter";
 
-const testStatusOptions: SegmentedOption<TestStatusFilter | undefined>[] = [
-  { value: undefined, label: "Todos" },
+const testStatusOptions: SegmentedOption<TestStatusFilter>[] = [
   { value: "testados", label: "Testados" },
   { value: "nao-testados", label: "Não testados" },
+  { value: "todos", label: "Todos" },
 ];
 
 const countFormat = new Intl.NumberFormat("pt-BR");
@@ -29,8 +29,8 @@ export const searchTextMaxLength = 100;
 type TableToolbarProps = {
   searchText: string;
   onSearchTextChange: (text: string) => void;
-  testStatus: TestStatusFilter | undefined;
-  onTestStatusChange: (testStatus: TestStatusFilter | undefined) => void;
+  testStatus: TestStatusFilter;
+  onTestStatusChange: (testStatus: TestStatusFilter) => void;
   countText: string;
   /** Controls placed after the Status de teste, such as the Filtros button on a phone. */
   children?: ReactNode;

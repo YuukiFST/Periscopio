@@ -36,7 +36,7 @@ test("after one visit, the app opens offline with the data and the date of the l
   request,
 }) => {
   const meta = await fetchMeta(request);
-  await page.goto("/mouse");
+  await page.goto("/mouse?status=todos");
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("Mouses");
   await waitForServiceWorker(page);
 
@@ -52,14 +52,16 @@ test("after one visit, the app opens offline with the data and the date of the l
     .getByRole("link", { name: "Monitores" })
     .click();
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("Monitores");
-  await expect(page.getByRole("rowheader")).toHaveCount(4);
+  // The link opens on Testados: one of the four monitors.
+  await expect(page.getByText("1 de 4 produtos")).toBeVisible();
+  await expect(page.getByRole("rowheader")).toHaveCount(1);
 });
 
 test("offline, a photo seen before still shows and one never seen leaves its space reserved", async ({
   context,
   page,
 }) => {
-  await page.goto("/mouse");
+  await page.goto("/mouse?status=todos");
   await waitForServiceWorker(page);
   // The first load ran before the service worker took over; this visit sees the photos through it.
   await page.reload();
@@ -82,7 +84,9 @@ test("offline, a photo seen before still shows and one never seen leaves its spa
     .getByRole("navigation", { name: "Categorias" })
     .getByRole("link", { name: "Teclados" })
     .click();
-  await expect(page.getByRole("rowheader")).toHaveCount(4);
+  // The link opens on Testados: three of the four teclados.
+  await expect(page.getByText("3 de 4 produtos")).toBeVisible();
+  await expect(page.getByRole("rowheader")).toHaveCount(3);
   await expect(page.getByRole("main").locator("img")).toHaveCount(0);
 });
 

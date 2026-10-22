@@ -80,7 +80,7 @@ const categoryCases: {
     // Dragonfly 3 PRO and H200A track up to 650 IPS, the other three up to 750.
     second: { range: "Velocidade máxima de rastreio (IPS)", min: "700" },
     afterSecond: ["Dragonfly A9 Ultra", "Huan", "Cloud XS"],
-    url: "/mouse?formato=simetrico&ips=700-",
+    url: "/mouse?status=todos&formato=simetrico&ips=700-",
   },
   {
     slug: "teclado",
@@ -91,7 +91,7 @@ const categoryCases: {
     afterFirst: ["TENKO - ARC 60", "EDGE 60HE Pro", "Raven61"],
     second: { filter: "Atraso com várias teclas", choices: ["Sem atraso"] },
     afterSecond: ["TENKO - ARC 60", "EDGE 60HE Pro"],
-    url: "/teclado?layout=60&atraso=sem-atraso",
+    url: "/teclado?status=todos&layout=60&atraso=sem-atraso",
   },
   {
     slug: "monitor",
@@ -109,7 +109,7 @@ const categoryCases: {
     // 모비우스 costs ₩ 280.000 but is discontinued, so no Preço holds it; XG259QDNS has none.
     second: { range: "Preço (mil ₩)", max: "900" },
     afterSecond: ["ROG SWIFT PG259QN"],
-    url: "/monitor?resolucao=fhd&preco=-900",
+    url: "/monitor?status=todos&resolucao=fhd&preco=-900",
   },
 ];
 
@@ -117,7 +117,7 @@ for (const category of categoryCases) {
   test(`/${category.slug} shows EyeJoker's Filtros in pt, and two Filtros together narrow the list`, async ({
     page,
   }) => {
-    await page.goto(`/${category.slug}`);
+    await page.goto(`/${category.slug}?status=todos`);
     // Every Filtro is listed one under the other: none hides behind a disclosure.
     await expect(filterPanel(page).getByRole("button", { name: /avançados/ })).toHaveCount(0);
     await expect(filterPanel(page)).toMatchAriaSnapshot({
@@ -159,7 +159,7 @@ const rangeCases: {
     range: "Tamanho da tela (pol.)",
     min: "24",
     max: "25",
-    url: "/monitor?tamanho=24-25",
+    url: "/monitor?status=todos&tamanho=24-25",
     after: ["XG259QDNS Ace", "모비우스 EX2510S", "ROG SWIFT PG259QN"],
   },
   {
@@ -168,7 +168,7 @@ const rangeCases: {
     range: "Taxa de atualização (Hz)",
     min: "200",
     max: "300",
-    url: "/monitor?taxa=200-300",
+    url: "/monitor?status=todos&taxa=200-300",
     after: ["UltraGear 32GS95UE 4K Mode"],
   },
   {
@@ -176,7 +176,7 @@ const rangeCases: {
     slug: "monitor",
     range: "Resposta geral (ms)",
     max: "3",
-    url: "/monitor?resposta=-3",
+    url: "/monitor?status=todos&resposta=-3",
     after: [],
   },
   {
@@ -184,14 +184,14 @@ const rangeCases: {
     slug: "teclado",
     range: "Desempenho real (Hz)",
     min: "2500",
-    url: "/teclado?desempenho=2500-",
+    url: "/teclado?status=todos&desempenho=2500-",
     after: ["TENKO - ARC 60", "Raven61"],
   },
 ];
 
 for (const rangeCase of rangeCases) {
   test(`/${rangeCase.slug} narrows by a typed ${rangeCase.range}`, async ({ page }) => {
-    await page.goto(`/${rangeCase.slug}`);
+    await page.goto(`/${rangeCase.slug}?status=todos`);
     const range = filterPanel(page).getByRole("group", { name: rangeCase.range, exact: true });
     if (rangeCase.min) await range.getByRole("textbox", { name: "Mínimo" }).fill(rangeCase.min);
     if (rangeCase.max) await range.getByRole("textbox", { name: "Máximo" }).fill(rangeCase.max);
@@ -203,7 +203,7 @@ for (const rangeCase of rangeCases) {
 test("a link with a band id from before the ranges drops that Filtro and keeps the others", async ({
   page,
 }) => {
-  await page.goto("/monitor?taxa=540-ou-mais&resolucao=fhd");
+  await page.goto("/monitor?status=todos&taxa=540-ou-mais&resolucao=fhd");
   const refreshRange = filterPanel(page).getByRole("group", { name: "Taxa de atualização (Hz)" });
   await expect(refreshRange.getByRole("textbox", { name: "Mínimo" })).toHaveValue("");
   await expect(refreshRange.getByRole("textbox", { name: "Máximo" })).toHaveValue("");
@@ -216,11 +216,11 @@ test("a link with a band id from before the ranges drops that Filtro and keeps t
 test("choices within one Filtro add up, and a Produto without the value leaves while the Filtro is active", async ({
   page,
 }) => {
-  await page.goto("/mouse");
+  await page.goto("/mouse?status=todos");
   await markChoice(page, "Carcaça furada", "Não");
   await markChoice(page, "Carcaça furada", "Só embaixo");
   // VK M5 Max THOR does not say whether its shell has holes, so even both choices leave it out.
-  await expect(page).toHaveURL("/mouse?furada=nao,so-embaixo");
+  await expect(page).toHaveURL("/mouse?status=todos&furada=nao,so-embaixo");
   await expect(page.getByText("5 de 6 produtos")).toBeVisible();
   await expect
     .poll(() => productNames(page))
@@ -230,7 +230,7 @@ test("choices within one Filtro add up, and a Produto without the value leaves w
 test("the weight range keeps Produtos between the typed grams, and Limpar clears every Filtro", async ({
   page,
 }) => {
-  await page.goto("/mouse");
+  await page.goto("/mouse?status=todos");
   const clearButton = filterPanel(page).getByRole("button", { name: "Limpar" });
   await expect(clearButton).toBeDisabled();
 
@@ -238,11 +238,11 @@ test("the weight range keeps Produtos between the typed grams, and Limpar clears
   await weightRange.getByRole("textbox", { name: "Mínimo" }).fill("55");
   await weightRange.getByRole("textbox", { name: "Máximo" }).fill("60");
   await markChoice(page, "Formato", "Simétrico");
-  await expect(page).toHaveURL("/mouse?peso=55-60&formato=simetrico");
+  await expect(page).toHaveURL("/mouse?status=todos&peso=55-60&formato=simetrico");
   await expect.poll(() => productNames(page)).toEqual(["Dragonfly 3 PRO"]);
 
   await clearButton.click();
-  await expect(page).toHaveURL("/mouse");
+  await expect(page).toHaveURL("/mouse?status=todos");
   await expect.poll(() => productNames(page)).toEqual(allMouses);
   await expect(choiceField(page, "Formato")).toHaveText("Todas");
   await expect(weightRange.getByRole("textbox", { name: "Mínimo" })).toHaveValue("");
@@ -254,17 +254,17 @@ test("the weight range keeps Produtos between the typed grams, and Limpar clears
 test("regression: a weight typed key by key keeps the text the link has not caught up with", async ({
   page,
 }) => {
-  await page.goto("/mouse");
+  await page.goto("/mouse?status=todos");
   const weightRange = filterPanel(page).getByRole("group", { name: "Peso (g)" });
   const minimum = weightRange.getByRole("textbox", { name: "Mínimo" });
 
   await minimum.pressSequentially("54,5");
-  await expect(page).toHaveURL("/mouse?peso=54.5-");
+  await expect(page).toHaveURL("/mouse?status=todos&peso=54.5-");
   await minimum.press("Backspace");
-  await expect(page).toHaveURL("/mouse?peso=54-");
+  await expect(page).toHaveURL("/mouse?status=todos&peso=54-");
   await expect(minimum).toHaveValue("54,");
   await minimum.pressSequentially("6a");
-  await expect(page).toHaveURL("/mouse");
+  await expect(page).toHaveURL("/mouse?status=todos");
   await expect(minimum).toHaveValue("54,6a");
   await expect(minimum).toHaveAccessibleDescription(
     "Use um número com até 3 casas decimais, como 54,5.",
@@ -278,7 +278,7 @@ test("regression: a weight typed key by key keeps the text the link has not caug
 
 test("a copied link opens the same Filtros in a new tab", async ({ page, context }) => {
   await context.grantPermissions(["clipboard-read", "clipboard-write"]);
-  await page.goto("/mouse");
+  await page.goto("/mouse?status=todos");
   await markChoice(page, "Carcaça furada", "Só embaixo");
   await filterPanel(page)
     .getByRole("group", { name: "Peso (g)" })
@@ -291,6 +291,7 @@ test("a copied link opens the same Filtros in a new tab", async ({ page, context
   await expect(page.getByRole("button", { name: "Link copiado" })).toBeVisible();
   const copiedLink = await page.evaluate(() => navigator.clipboard.readText());
   expect(Object.fromEntries(new URL(copiedLink).searchParams)).toEqual({
+    status: "todos",
     furada: "so-embaixo",
     peso: "-50",
   });
@@ -308,7 +309,7 @@ test("marked sensors and a maximum Resposta do clique narrow the mouses and reop
   page,
   context,
 }) => {
-  await page.goto("/mouse");
+  await page.goto("/mouse?status=todos");
   // The sensors the excerpt's mouses have, by EyeJoker's label; four choices need no search box.
   const sensorNames = ["PAW3395", "PAW3950", "PAW3950 HS", "PAW3950 Ultra (42K)"];
   await expectChoiceNames(page, "Sensor", sensorNames);
@@ -316,13 +317,13 @@ test("marked sensors and a maximum Resposta do clique narrow the mouses and reop
 
   await markChoice(page, "Sensor", "PAW3950");
   await markChoice(page, "Sensor", "PAW3395");
-  await expect(page).toHaveURL("/mouse?sensor=paw3395,paw3950");
+  await expect(page).toHaveURL("/mouse?status=todos&sensor=paw3395,paw3950");
   await expect.poll(() => productNames(page)).toEqual(["Dragonfly 3 PRO", "H200A", "Cloud XS"]);
 
   // Dragonfly 3 PRO answers in 20.5 ms; Cloud XS has no Resposta do clique, so it leaves too.
   const clickRange = filterPanel(page).getByRole("group", { name: "Resposta do clique (ms)" });
   await clickRange.getByRole("textbox", { name: "Máximo" }).fill("9");
-  await expect(page).toHaveURL("/mouse?sensor=paw3395,paw3950&clique=-9");
+  await expect(page).toHaveURL("/mouse?status=todos&sensor=paw3395,paw3950&clique=-9");
   await expect.poll(() => productNames(page)).toEqual(["H200A"]);
 
   const newTab = await context.newPage();
@@ -336,7 +337,7 @@ test("marked sensors and a maximum Resposta do clique narrow the mouses and reop
   await expect(newTabClickRange.getByRole("textbox", { name: "Máximo" })).toHaveValue("9");
 
   // Only mouses have them: on teclado the same params show no Filtro and narrow nothing.
-  await newTab.goto("/teclado?sensor=paw3395,paw3950&clique=-9");
+  await newTab.goto("/teclado?status=todos&sensor=paw3395,paw3950&clique=-9");
   await expect(newTab.getByText("4 produtos", { exact: true })).toBeVisible();
   await expect(filterPanel(newTab).getByRole("combobox", { name: "Sensor" })).toHaveCount(0);
   await expect(filterPanel(newTab).getByRole("group", { name: /Resposta do clique/ })).toHaveCount(
@@ -347,14 +348,14 @@ test("marked sensors and a maximum Resposta do clique narrow the mouses and reop
 test("a maximum Resposta do sensor narrows the mouses, like the Resposta do clique", async ({
   page,
 }) => {
-  await page.goto("/mouse");
+  await page.goto("/mouse?status=todos");
   // Dragonfly A9 Ultra answers in 0.70 ms and Huan in 0.71 ms; Dragonfly 3 PRO and H200A take
   // several, and VK M5 Max THOR and Cloud XS have no Resposta do sensor, so they leave too.
   await filterPanel(page)
     .getByRole("group", { name: "Resposta do sensor (ms)" })
     .getByRole("textbox", { name: "Máximo" })
     .fill("1");
-  await expect(page).toHaveURL("/mouse?resposta-sensor=-1");
+  await expect(page).toHaveURL("/mouse?status=todos&resposta-sensor=-1");
   await expect.poll(() => productNames(page)).toEqual(["Dragonfly A9 Ultra", "Huan"]);
 });
 
@@ -362,7 +363,7 @@ test("regression: a range bound typed from a shown value keeps the Produto that 
   page,
 }) => {
   // Dragonfly 3 PRO answers in 6.3714 ms, shown as 6,37: a Máximo of 6,37 keeps it.
-  await page.goto("/mouse?resposta-sensor=-6.37");
+  await page.goto("/mouse?status=todos&resposta-sensor=-6.37");
   await expect
     .poll(() => productNames(page))
     .toEqual(["Dragonfly A9 Ultra", "Huan", "Dragonfly 3 PRO", "H200A"]);
@@ -374,7 +375,7 @@ test("a link with invalid Filtro values keeps the valid ones and opens without a
   const pageErrors: string[] = [];
   page.on("pageerror", (error) => pageErrors.push(error.message));
 
-  await page.goto("/mouse?formato=assimetrico,quadrado&peso=leve&layout=60&furada=");
+  await page.goto("/mouse?status=todos&formato=assimetrico,quadrado&peso=leve&layout=60&furada=");
   await expect.poll(() => productNames(page)).toEqual(["H200A", "VK M5 Max THOR"]);
   await expect(choiceField(page, "Formato")).toHaveText("Assimétrico");
 
@@ -382,7 +383,7 @@ test("a link with invalid Filtro values keeps the valid ones and opens without a
     .getByRole("group", { name: "Peso (g)" })
     .getByRole("textbox", { name: "Máximo" })
     .fill("60");
-  await expect(page).toHaveURL("/mouse?formato=assimetrico&peso=-60");
+  await expect(page).toHaveURL("/mouse?status=todos&formato=assimetrico&peso=-60");
   await expect.poll(() => productNames(page)).toEqual(["VK M5 Max THOR"]);
   expect(pageErrors).toEqual([]);
 });
@@ -391,7 +392,7 @@ test("on a phone the Filtros open in a drawer with Limpar and the count that clo
   page,
 }) => {
   await page.setViewportSize({ width: 390, height: 844 });
-  await page.goto("/mouse");
+  await page.goto("/mouse?status=todos");
   await expect(filterPanel(page)).toBeHidden();
 
   await page.getByRole("button", { name: "Filtros", exact: true }).click();
@@ -402,14 +403,14 @@ test("on a phone the Filtros open in a drawer with Limpar and the count that clo
     .fill("50");
   await drawer.getByRole("button", { name: "Ver 2 produtos" }).click();
   await expect(drawer).toBeHidden();
-  await expect(page).toHaveURL("/mouse?peso=-50");
+  await expect(page).toHaveURL("/mouse?status=todos&peso=-50");
   await expect.poll(() => productNames(page)).toEqual(["Huan", "Cloud XS"]);
 
   await page.getByRole("button", { name: "Filtros (1)" }).click();
   await drawer.getByRole("button", { name: "Limpar" }).click();
   await drawer.getByRole("button", { name: "Ver 6 produtos" }).click();
   await expect(drawer).toBeHidden();
-  await expect(page).toHaveURL("/mouse");
+  await expect(page).toHaveURL("/mouse?status=todos");
   await expect.poll(() => productNames(page)).toEqual(allMouses);
 });
 
@@ -438,13 +439,13 @@ test.describe("with more sensors in use than fit without a search box", () => {
     page,
   }) => {
     await page.setViewportSize({ width: 1366, height: 768 });
-    await page.goto("/mouse");
+    await page.goto("/mouse?status=todos");
     await expect(filterPanel(page).getByRole("combobox", { name: "Buscar sensor" })).toBeAttached();
     expect(await page.evaluate(() => document.documentElement.scrollHeight)).toBe(768);
   });
 
   test("the Sensor field opens a list on click and typing narrows it", async ({ page }) => {
-    await page.goto("/mouse");
+    await page.goto("/mouse?status=todos");
     const search = filterPanel(page).getByRole("combobox", { name: "Buscar sensor" });
     await search.click();
     const options = page.getByRole("listbox").getByRole("option");
@@ -453,13 +454,13 @@ test.describe("with more sensors in use than fit without a search box", () => {
     await search.fill("paw 3950");
     for (const name of await options.allInnerTexts()) expect(name).toMatch(/PAW3950/);
     await page.getByRole("option", { name: "PAW3950", exact: true }).click();
-    await expect(page).toHaveURL("/mouse?sensor=paw3950");
+    await expect(page).toHaveURL("/mouse?status=todos&sensor=paw3950");
 
     await search.fill("nenhum sensor assim");
     await expect(page.getByText("Nenhuma opção encontrada.")).toBeVisible();
     await page.keyboard.press("Escape");
 
     await filterPanel(page).getByRole("button", { name: "Remover PAW3950" }).click();
-    await expect(page).toHaveURL("/mouse");
+    await expect(page).toHaveURL("/mouse?status=todos");
   });
 });

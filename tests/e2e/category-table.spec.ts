@@ -24,6 +24,8 @@ const mouseDefaultOrder = [
   "VK M5 Max THOR",
   "Cloud XS",
 ];
+/** The table opens on Testados: the default order without the untested mouses. */
+const mouseTestedOrder = ["Dragonfly A9 Ultra", "Huan", "Dragonfly 3 PRO", "H200A"];
 
 async function productNames(page: Page): Promise<string[]> {
   const rowHeaders = await page.getByRole("rowheader").allInnerTexts();
@@ -100,7 +102,7 @@ for (const category of categoryTables) {
   test(`/${category.slug} lists every Product with EyeJoker's columns in pt, its default order and the name as the AliExpress link only where one exists`, async ({
     page,
   }) => {
-    await page.goto(`/${category.slug}`);
+    await page.goto(`/${category.slug}?status=todos`);
     await expect(page.getByRole("heading", { level: 1 })).toHaveText(category.heading);
     await expect(page.getByText(`${category.count} produtos`)).toBeVisible();
     await expect(page.getByRole("table")).toMatchAriaSnapshot({
@@ -123,7 +125,7 @@ for (const category of categoryTables) {
 test("a header click sorts ascending, then descending, then not at all, with empty values last", async ({
   page,
 }) => {
-  await page.goto("/mouse");
+  await page.goto("/mouse?status=todos");
   await expect(page.getByRole("columnheader", { name: "Nota geral" })).toHaveAttribute(
     "aria-sort",
     "descending",
@@ -132,7 +134,7 @@ test("a header click sorts ascending, then descending, then not at all, with emp
 
   const priceHeader = page.getByRole("columnheader", { name: "Preço" });
   await sortButton(page, "Preço").click();
-  await expect(page).toHaveURL("/mouse?ordem=preco");
+  await expect(page).toHaveURL("/mouse?status=todos&ordem=preco");
   await expect(priceHeader).toHaveAttribute("aria-sort", "ascending");
   await expect
     .poll(() => productNames(page))
@@ -146,7 +148,7 @@ test("a header click sorts ascending, then descending, then not at all, with emp
     ]);
 
   await sortButton(page, "Preço").click();
-  await expect(page).toHaveURL("/mouse?ordem=-preco");
+  await expect(page).toHaveURL("/mouse?status=todos&ordem=-preco");
   await expect(priceHeader).toHaveAttribute("aria-sort", "descending");
   await expect
     .poll(() => productNames(page))
@@ -160,7 +162,7 @@ test("a header click sorts ascending, then descending, then not at all, with emp
     ]);
 
   await sortButton(page, "Preço").click();
-  await expect(page).toHaveURL("/mouse?ordem=nenhuma");
+  await expect(page).toHaveURL("/mouse?status=todos&ordem=nenhuma");
   await expect(priceHeader).not.toHaveAttribute("aria-sort");
   await expect.poll(() => productNames(page)).toEqual(mouseDataOrder);
 });
@@ -168,7 +170,7 @@ test("a header click sorts ascending, then descending, then not at all, with emp
 test("regression: a Produto priced ₩ 0 shows no Preço and sorts with the empty ones, not as the cheapest", async ({
   page,
 }) => {
-  await page.goto("/monitor?ordem=preco");
+  await page.goto("/monitor?ordem=preco&status=todos");
   await expect
     .poll(() => productNames(page))
     .toEqual([
@@ -184,6 +186,8 @@ test("the search finds Products by name or manufacturer and the Status de teste 
   page,
 }) => {
   await page.goto("/mouse");
+  await expect(page.getByRole("radio", { name: "Testados", exact: true })).toBeChecked();
+  await expect.poll(() => productNames(page)).toEqual(mouseTestedOrder);
 
   await searchBox(page).fill("wlmouse");
   await expect(page).toHaveURL("/mouse?q=wlmouse");
@@ -194,11 +198,13 @@ test("the search finds Products by name or manufacturer and the Status de teste 
   await expect.poll(() => productNames(page)).toEqual(["Dragonfly A9 Ultra", "Dragonfly 3 PRO"]);
 
   await searchBox(page).fill("");
+  await page.getByRole("radio", { name: "Todos" }).check();
+  await expect(page).toHaveURL("/mouse?status=todos");
+  await expect.poll(() => productNames(page)).toEqual(mouseDefaultOrder);
+
   await page.getByRole("radio", { name: "Testados", exact: true }).check();
-  await expect(page).toHaveURL("/mouse?status=testados");
-  await expect
-    .poll(() => productNames(page))
-    .toEqual(["Dragonfly A9 Ultra", "Huan", "Dragonfly 3 PRO", "H200A"]);
+  await expect(page).toHaveURL("/mouse");
+  await expect.poll(() => productNames(page)).toEqual(mouseTestedOrder);
 
   await page.getByRole("radio", { name: "Não testados" }).check();
   await expect(page).toHaveURL("/mouse?status=nao-testados");
@@ -207,7 +213,8 @@ test("the search finds Products by name or manufacturer and the Status de teste 
   await searchBox(page).fill("huan");
   await expect(page.getByText("Nenhum produto não testado encontrado para “huan”.")).toBeVisible();
   await page.getByRole("button", { name: "Mostrar todos os produtos" }).click();
-  await expect(page).toHaveURL("/mouse");
+  await expect(page).toHaveURL("/mouse?status=todos");
+  await expect(page.getByRole("radio", { name: "Todos" })).toBeChecked();
   await expect(searchBox(page)).toHaveValue("");
   await expect(searchBox(page)).toBeFocused();
   await expect.poll(() => productNames(page)).toEqual(mouseDefaultOrder);
@@ -226,7 +233,7 @@ test("regression: the search box follows the link when the header's Categoria li
     .click();
   await expect(page).toHaveURL("/mouse");
   await expect(searchBox(page)).toHaveValue("");
-  await expect.poll(() => productNames(page)).toEqual(mouseDefaultOrder);
+  await expect.poll(() => productNames(page)).toEqual(mouseTestedOrder);
 
   // The link drops a `q` over 100 characters, so the box stops at 100 and the link keeps them.
   await searchBox(page).fill("a".repeat(101));
@@ -242,7 +249,7 @@ test("a copied link opens the same sort, search and Status de teste in a new tab
   await page.goto("/mouse");
   await sortButton(page, "Peso").click();
   await sortButton(page, "Peso").click();
-  await page.getByRole("radio", { name: "Testados", exact: true }).check();
+  await page.getByRole("radio", { name: "Todos" }).check();
   await searchBox(page).fill("dragon");
   const expectedNames = ["Dragonfly 3 PRO", "Dragonfly A9 Ultra"];
   await expect.poll(() => productNames(page)).toEqual(expectedNames);
@@ -252,7 +259,7 @@ test("a copied link opens the same sort, search and Status de teste in a new tab
   const copiedLink = await page.evaluate(() => navigator.clipboard.readText());
   expect(Object.fromEntries(new URL(copiedLink).searchParams)).toEqual({
     ordem: "-peso",
-    status: "testados",
+    status: "todos",
     q: "dragon",
   });
 
@@ -260,7 +267,7 @@ test("a copied link opens the same sort, search and Status de teste in a new tab
   await newTab.goto(copiedLink);
   await expect.poll(() => productNames(newTab)).toEqual(expectedNames);
   await expect(searchBox(newTab)).toHaveValue("dragon");
-  await expect(newTab.getByRole("radio", { name: "Testados", exact: true })).toBeChecked();
+  await expect(newTab.getByRole("radio", { name: "Todos" })).toBeChecked();
   await expect(newTab.getByRole("columnheader", { name: "Peso" })).toHaveAttribute(
     "aria-sort",
     "descending",
@@ -276,8 +283,8 @@ test("a link with invalid values opens the default view without an error", async
     `?ordem=%7B%22peso%22%3A1%7D&status=1&q=${"a".repeat(101)}`,
   ]) {
     await page.goto(`/mouse${search}`);
-    await expect.poll(() => productNames(page)).toEqual(mouseDefaultOrder);
-    await expect(page.getByRole("radio", { name: "Todos" })).toBeChecked();
+    await expect.poll(() => productNames(page)).toEqual(mouseTestedOrder);
+    await expect(page.getByRole("radio", { name: "Testados", exact: true })).toBeChecked();
     await expect(searchBox(page)).toHaveValue("");
     await expect(page.getByRole("columnheader", { name: "Nota geral" })).toHaveAttribute(
       "aria-sort",

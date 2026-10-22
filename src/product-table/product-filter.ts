@@ -1,7 +1,9 @@
 import type { Product } from "../data/schema.ts";
 
-export const testStatusFilters = ["testados", "nao-testados"] as const;
+export const testStatusFilters = ["testados", "nao-testados", "todos"] as const;
 export type TestStatusFilter = (typeof testStatusFilters)[number];
+/** The table opens on tested Produtos; a link without `status` means this one. */
+export const defaultTestStatus: TestStatusFilter = "testados";
 
 /** EyeJoker's `reviewed` is the published review; every other status still awaits a full test. */
 function isTested(product: Product): boolean {
@@ -21,11 +23,11 @@ export function normalizeForSearch(text: string): string {
  */
 export function filterProducts(
   products: Product[],
-  testStatus: TestStatusFilter | undefined,
+  testStatus: TestStatusFilter,
   searchText: string,
 ): Product[] {
   const words = normalizeForSearch(searchText).split(/\s+/).filter(Boolean);
-  if (testStatus === undefined && words.length === 0) return products;
+  if (testStatus === "todos" && words.length === 0) return products;
   return products.filter((product) => {
     if (testStatus === "testados" && !isTested(product)) return false;
     if (testStatus === "nao-testados" && isTested(product)) return false;
