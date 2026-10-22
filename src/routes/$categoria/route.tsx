@@ -261,6 +261,7 @@ function CategoryTable({ data }: { data: CategoryData }) {
             </Button>
           </div>
           <FilterPanel
+            category={data.category}
             filters={filters}
             values={filterValues}
             onValuesChange={changeFilterValues}
@@ -290,6 +291,7 @@ function CategoryTable({ data }: { data: CategoryData }) {
               onClear={clearFilters}
             >
               <FilterPanel
+                category={data.category}
                 filters={filters}
                 values={filterValues}
                 onValuesChange={changeFilterValues}
