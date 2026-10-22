@@ -414,6 +414,79 @@ test("on a phone the Filtros open in a drawer with Limpar and the count that clo
   await expect.poll(() => productNames(page)).toEqual(allMouses);
 });
 
+function activeFilterChips(page: Page) {
+  return page.getByRole("list", { name: "Filtros ativos" });
+}
+
+test("a chip per active Filtro reads its choices or bounds, and the busca and Status de teste are none", async ({
+  page,
+}) => {
+  await page.goto("/mouse?status=todos");
+  await expect(activeFilterChips(page)).toHaveCount(0);
+
+  await page.goto(
+    "/mouse?status=todos&q=dragon&nota=s,a-mais,a&peso=50-60&sensor=paw3395,paw3950&resposta-sensor=0.7-&clique=-9",
+  );
+  await expect(activeFilterChips(page).getByRole("listitem")).toHaveText([
+    "Nota geral: S +2",
+    "Peso: 50–60 g",
+    "Sensor: PAW3395, PAW3950",
+    "Resposta do sensor: a partir de 0,7 ms",
+    "Resposta do clique: até 9 ms",
+  ]);
+});
+
+test("removing a chip drops its Filtro from the link and the panel, and focus moves to the next chip", async ({
+  page,
+}) => {
+  await page.goto("/mouse?status=todos&formato=simetrico&peso=55-60&sensor=paw3395");
+  const historyLength = await page.evaluate(() => history.length);
+  const weightRange = filterPanel(page).getByRole("group", { name: "Peso (g)" });
+  await expect(weightRange.getByRole("textbox", { name: "Mínimo" })).toHaveValue("55");
+
+  await page.getByRole("button", { name: "Remover filtro Peso" }).click();
+  await expect(page).toHaveURL("/mouse?status=todos&formato=simetrico&sensor=paw3395");
+  await expect(weightRange.getByRole("textbox", { name: "Mínimo" })).toHaveValue("");
+  await expect(weightRange.getByRole("textbox", { name: "Máximo" })).toHaveValue("");
+  await expect(page.getByRole("button", { name: "Remover filtro Sensor" })).toBeFocused();
+
+  // The last chip in the row hands focus back to the one before it.
+  await page.keyboard.press("Enter");
+  await expect(page).toHaveURL("/mouse?status=todos&formato=simetrico");
+  await expect(choiceField(page, "Sensor")).toHaveText("Todas");
+  await expect(page.getByRole("button", { name: "Remover filtro Formato" })).toBeFocused();
+
+  await page.keyboard.press("Enter");
+  await expect(page).toHaveURL("/mouse?status=todos");
+  await expect(activeFilterChips(page)).toHaveCount(0);
+  await expect(
+    page.getByRole("searchbox", { name: "Buscar por produto ou fabricante" }),
+  ).toBeFocused();
+  await expect.poll(() => productNames(page)).toEqual(allMouses);
+  expect(await page.evaluate(() => history.length)).toBe(historyLength);
+});
+
+test("on a phone a Filtro applied in the drawer leaves the link by its chip", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/mouse?status=todos");
+  await page.getByRole("button", { name: "Filtros", exact: true }).click();
+  const drawer = page.getByRole("dialog", { name: "Filtros" });
+  await drawer
+    .getByRole("group", { name: "Peso (g)" })
+    .getByRole("textbox", { name: "Máximo" })
+    .fill("50");
+  await drawer.getByRole("button", { name: "Ver 2 produtos" }).click();
+  await expect(drawer).toBeHidden();
+  await expect(activeFilterChips(page).getByRole("listitem")).toHaveText(["Peso: até 50 g"]);
+  await expect(page.getByRole("button", { name: "Filtros (1)" })).toBeVisible();
+
+  await page.getByRole("button", { name: "Remover filtro Peso" }).click();
+  await expect(page).toHaveURL("/mouse?status=todos");
+  await expect(page.getByRole("button", { name: "Filtros", exact: true })).toBeVisible();
+  await expect(activeFilterChips(page)).toHaveCount(0);
+  await expect.poll(() => productNames(page)).toEqual(allMouses);
+});
+
 test.describe("with more sensors in use than fit without a search box", () => {
   // The data request is rewritten below; a service worker would answer it from its cache instead.
   test.use({ serviceWorkers: "block" });
