@@ -422,6 +422,7 @@ test("a chip per active Filtro reads its choices or bounds, and the busca and St
   page,
 }) => {
   await page.goto("/mouse?status=todos");
+  await expect.poll(() => productNames(page)).toEqual(allMouses);
   await expect(activeFilterChips(page)).toHaveCount(0);
 
   await page.goto(

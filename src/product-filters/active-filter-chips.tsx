@@ -1,6 +1,5 @@
 import { X } from "lucide-react";
 import { useRef } from "react";
-import { cn } from "@/lib/utils";
 import {
   isFilterActive,
   type CategoryFilter,
@@ -57,7 +56,6 @@ type ActiveFilterChipsProps = {
   onValuesChange: (values: FilterValues) => void;
   /** Takes focus when the last chip is removed. */
   focusAfterLastId: string;
-  className?: string;
 };
 
 /** One removable chip per active Filtro, so a phone shows what is applied without the drawer. */
@@ -66,7 +64,6 @@ export function ActiveFilterChips({
   values,
   onValuesChange,
   focusAfterLastId,
-  className,
 }: ActiveFilterChipsProps) {
   const removeButtons = useRef(new Map<FilterParam, HTMLButtonElement>());
   const active = filters.filter((filter) => isFilterActive(filter, values));
@@ -83,7 +80,8 @@ export function ActiveFilterChips({
   }
 
   return (
-    <ul aria-label="Filtros ativos" className={cn("flex flex-wrap gap-1.5", className)}>
+    // Tailwind drops the list markers, and Safari then drops the list role unless it is explicit.
+    <ul role="list" aria-label="Filtros ativos" className="flex flex-wrap gap-1.5">
       {active.map((filter, index) => (
         <li
           key={filter.param}
@@ -98,7 +96,7 @@ export function ActiveFilterChips({
             }}
             aria-label={`Remover filtro ${filter.label}`}
             onClick={() => removeFilter(index)}
-            className="grid size-6 shrink-0 cursor-pointer place-items-center rounded-sm text-fg-secondary hover:bg-component-hover hover:text-fg-primary focus-visible:outline-2 focus-visible:outline-ring pointer-coarse:size-8"
+            className="grid size-6 shrink-0 cursor-pointer place-items-center rounded-sm text-fg-secondary hover:bg-component-hover hover:text-fg-primary focus-visible:outline-2 focus-visible:outline-ring pointer-coarse:size-10"
           >
             <X aria-hidden="true" strokeWidth={2} className="size-3.5" />
           </button>
