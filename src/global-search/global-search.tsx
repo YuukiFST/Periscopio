@@ -1,8 +1,8 @@
 import { Autocomplete } from "@base-ui/react/autocomplete";
 import { Dialog } from "@base-ui/react/dialog";
-import { useNavigate } from "@tanstack/react-router";
-import { Search } from "lucide-react";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useMatch, useNavigate } from "@tanstack/react-router";
+import { Search, X } from "lucide-react";
+import { useEffect, useEffectEvent, useMemo, useRef, useState } from "react";
 import { categoryLabels, categorySlugs } from "@/categories";
 import { Button } from "@/components/ui/button";
 import { loadCategoryData } from "@/data/load-data";
@@ -59,6 +59,7 @@ function emptyText(load: CategoriesLoad, searchText: string): string {
  */
 export function GlobalSearch() {
   const navigate = useNavigate();
+  const tableCategory = useMatch({ from: "/$categoria", shouldThrow: false })?.params.categoria;
   const [isOpen, setIsOpen] = useState(false);
   const [searchText, setSearchText] = useState("");
   const returnFocusTo = useRef<HTMLElement | null>(null);
@@ -78,20 +79,31 @@ export function GlobalSearch() {
     ensureLoaded();
   }
 
-  useEffect(() => {
-    function onKeyDown(event: KeyboardEvent) {
-      if (!isSearchShortcut(event)) return;
-      event.preventDefault();
-      if (!isOpen) openSearch();
-    }
-    window.addEventListener("keydown", onKeyDown);
-    return () => window.removeEventListener("keydown", onKeyDown);
+  const onShortcut = useEffectEvent((event: KeyboardEvent) => {
+    if (!isSearchShortcut(event)) return;
+    event.preventDefault();
+    if (!isOpen) openSearch();
   });
+  useEffect(() => {
+    window.addEventListener("keydown", onShortcut);
+    return () => window.removeEventListener("keydown", onShortcut);
+  }, []);
 
   function openResult({ category, product }: SearchResult) {
     openedProduct.current = true;
     setIsOpen(false);
-    void navigate({ to: "/$categoria/$id", params: { categoria: category, id: product.id } });
+    const params = { categoria: category, id: product.id };
+    if (category !== tableCategory) {
+      void navigate({ to: "/$categoria/$id", params });
+      return;
+    }
+    // Over its own Categoria's table, the details keep the table's search params like a row link does.
+    void navigate({
+      to: "/$categoria/$id",
+      params,
+      search: true,
+      state: { fromCategoryTable: true },
+    });
   }
 
   return (
@@ -123,7 +135,10 @@ export function GlobalSearch() {
               items={groups}
               filter={null}
               value={searchText}
-              onValueChange={setSearchText}
+              // Picking a Produto would write its name in the box and redo the list as the dialog closes.
+              onValueChange={(text, details) => {
+                if (details.reason !== "item-press") setSearchText(text);
+              }}
               itemToStringValue={(result: SearchResult) => result.product.name}
               autoHighlight="always"
               keepHighlight
@@ -141,10 +156,15 @@ export function GlobalSearch() {
                   autoCorrect="off"
                   spellCheck={false}
                   enterKeyHint="go"
-                  className="h-12 w-full bg-transparent ps-10 pe-3 text-base outline-none placeholder:text-fg-tertiary pointer-fine:text-body-sm"
+                  className="h-12 w-full bg-transparent ps-10 pe-1 text-base outline-none placeholder:text-fg-tertiary pointer-fine:text-body-sm"
                 />
+                <Dialog.Close
+                  render={<Button variant="ghost" size="icon-lg" className="me-1.5" />}
+                  aria-label="Fechar busca"
+                >
+                  <X aria-hidden="true" />
+                </Dialog.Close>
               </div>
-              <Dialog.Close className="sr-only">Fechar busca</Dialog.Close>
               <div className="min-h-0 overflow-y-auto overscroll-contain">
                 <Autocomplete.Empty className="px-4 py-6 text-body-sm text-fg-secondary empty:hidden">
                   {emptyText(load, searchText)}

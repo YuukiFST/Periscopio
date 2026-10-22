@@ -6,7 +6,7 @@ export type TestStatusFilter = (typeof testStatusFilters)[number];
 export const defaultTestStatus: TestStatusFilter = "testados";
 
 /** EyeJoker's `reviewed` is the published review; every other status still awaits a full test. */
-function isTested(product: Product): boolean {
+export function isTested(product: Product): boolean {
   return product.status === "reviewed";
 }
 
