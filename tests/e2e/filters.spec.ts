@@ -615,11 +615,17 @@ test("saved Filtros keep a name per Categoria, apply from the drawer and can be 
   const saveButton = filterPanel(page).getByRole("button", { name: "Salvar filtros atuais" });
   await expect(saveButton).toBeDisabled();
 
-  await markChoice(page, "Carcaça furada", "Só embaixo");
-  await filterPanel(page)
+  // Clearing the Filtros ends a naming in progress, and the next Filtro does not bring it back.
+  await markChoice(page, "Formato", "Simétrico");
+  await saveButton.click();
+  await filterPanel(page).getByRole("button", { name: "Limpar" }).click();
+  const maximumWeight = filterPanel(page)
     .getByRole("group", { name: "Peso (g)" })
-    .getByRole("textbox", { name: "Máximo" })
-    .fill("50");
+    .getByRole("textbox", { name: "Máximo" });
+  await maximumWeight.fill("50");
+  await expect(filterPanel(page).getByRole("textbox", { name: "Nome" })).toHaveCount(0);
+  await expect(maximumWeight).toBeFocused();
+  await markChoice(page, "Carcaça furada", "Só embaixo");
   await saveButton.click();
   await filterPanel(page).getByRole("textbox", { name: "Nome" }).fill("  Leves furados  ");
   await filterPanel(page).getByRole("button", { name: "Salvar", exact: true }).click();
@@ -643,12 +649,51 @@ test("saved Filtros keep a name per Categoria, apply from the drawer and can be 
   await expect.poll(() => productNames(page)).toEqual(["Huan"]);
 
   await page.getByRole("button", { name: "Filtros (2)" }).click();
+  const drawerSaveButton = drawer.getByRole("button", { name: "Salvar filtros atuais" });
+  // Escape cancels the name and leaves the drawer open.
+  await drawerSaveButton.click();
+  await drawer.getByRole("textbox", { name: "Nome" }).press("Escape");
+  await expect(drawer).toBeVisible();
+  await expect(drawer.getByRole("textbox", { name: "Nome" })).toHaveCount(0);
+  await expect(drawerSaveButton).toBeFocused();
+
   await drawer.getByRole("button", { name: "Apagar Leves furados" }).click();
   await expect(drawer.getByRole("list", { name: "Filtros salvos" })).toHaveCount(0);
+  await expect(drawerSaveButton).toBeFocused();
+  // The side panel, mounted all along, drops it too without a reload.
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await expect(filterPanel(page).getByRole("button", { name: "Sem fio leve" })).toBeVisible();
+  await expect(filterPanel(page).getByRole("list", { name: "Filtros salvos" })).toHaveCount(0);
   await page.reload();
-  await page.getByRole("button", { name: "Filtros (2)" }).click();
-  await expect(drawer.getByRole("button", { name: "Sem fio leve" })).toBeVisible();
-  await expect(drawer.getByRole("list", { name: "Filtros salvos" })).toHaveCount(0);
+  await expect(filterPanel(page).getByRole("button", { name: "Sem fio leve" })).toBeVisible();
+  await expect(filterPanel(page).getByRole("list", { name: "Filtros salvos" })).toHaveCount(0);
+});
+
+test("a broken saved entry is skipped and the others stay, also after the next save", async ({
+  page,
+}) => {
+  await page.goto("/mouse?status=todos");
+  await page.evaluate(() =>
+    localStorage.setItem(
+      "periscopio:filtros-salvos:mouse",
+      JSON.stringify([
+        { name: "Leves", search: { peso: "-50" } },
+        { name: 42, search: { peso: "-60" } },
+        { name: "Só params de outro app", search: { cor: "azul" } },
+      ]),
+    ),
+  );
+  await page.reload();
+  const savedList = filterPanel(page).getByRole("list", { name: "Filtros salvos" });
+  await expect(savedList.getByRole("listitem")).toHaveCount(1);
+  await savedList.getByRole("button", { name: "Leves", exact: true }).click();
+  await expect(page).toHaveURL("/mouse?status=todos&peso=-50");
+
+  await markChoice(page, "Formato", "Simétrico");
+  await filterPanel(page).getByRole("button", { name: "Salvar filtros atuais" }).click();
+  await filterPanel(page).getByRole("textbox", { name: "Nome" }).fill("Leves simétricos");
+  await filterPanel(page).getByRole("button", { name: "Salvar", exact: true }).click();
+  await expect(savedList.getByRole("listitem")).toHaveCount(2);
 });
 
 test.describe("with mouse data that has no weight", () => {

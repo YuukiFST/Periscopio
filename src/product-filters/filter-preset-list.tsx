@@ -1,5 +1,5 @@
 import { X } from "lucide-react";
-import { useRef, useState, type FormEvent } from "react";
+import { useRef, useState, type FormEvent, type RefObject } from "react";
 import type { CategorySlug } from "@/categories";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -29,6 +29,8 @@ const presetButtonClassName =
 /** The Categoria's presets and the Filtros saved on this device, each applied in one click. */
 export function FilterPresetList({ category, filters, values, onApply }: FilterPresetListProps) {
   const { saved, save, remove } = useSavedFilters(category);
+  // The delete button leaves with its row, so the keyboard lands on the save button below.
+  const saveButtonRef = useRef<HTMLButtonElement>(null);
   const presets = filterPresets[category].filter((preset) =>
     isPresetAvailable(filters, preset.search),
   );
@@ -72,7 +74,10 @@ export function FilterPresetList({ category, filters, values, onApply }: FilterP
                 variant="ghost"
                 size="icon"
                 aria-label={`Apagar ${preset.name}`}
-                onClick={() => remove(preset.name)}
+                onClick={() => {
+                  remove(preset.name);
+                  saveButtonRef.current?.focus();
+                }}
                 className="text-fg-tertiary hover:text-fg-primary pointer-coarse:size-10"
               >
                 <X aria-hidden="true" strokeWidth={1.5} />
@@ -82,6 +87,7 @@ export function FilterPresetList({ category, filters, values, onApply }: FilterP
         </ul>
       )}
       <SaveFiltersForm
+        openButtonRef={saveButtonRef}
         canSave={Object.keys(currentSearch).length > 0}
         onSave={(name) => save({ name, search: currentSearch })}
       />
@@ -92,15 +98,21 @@ export function FilterPresetList({ category, filters, values, onApply }: FilterP
 const savedNameMaxLength = 60;
 
 function SaveFiltersForm({
+  openButtonRef,
   canSave,
   onSave,
 }: {
+  openButtonRef: RefObject<HTMLButtonElement | null>;
   canSave: boolean;
   onSave: (name: string) => void;
 }) {
   const [isNaming, setIsNaming] = useState(false);
   const [name, setName] = useState("");
-  const openButtonRef = useRef<HTMLButtonElement>(null);
+  // With no Filtro left to save the naming ends, so a later Filtro never reopens it.
+  if (isNaming && !canSave) {
+    setIsNaming(false);
+    setName("");
+  }
   const trimmedName = name.trim();
 
   function close() {
@@ -129,10 +141,15 @@ function SaveFiltersForm({
       >
         Salvar filtros atuais
       </Button>
-      {isNaming && canSave && (
+      {isNaming && (
         <form
           onSubmit={submit}
-          onKeyDown={(event) => event.key === "Escape" && close()}
+          onKeyDown={(event) => {
+            if (event.key !== "Escape") return;
+            // Escape cancels the name only; the drawer around it stays open.
+            event.stopPropagation();
+            close();
+          }}
           className="flex flex-col gap-2"
         >
           <label className="flex flex-col gap-1">

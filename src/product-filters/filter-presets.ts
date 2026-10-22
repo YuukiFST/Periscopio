@@ -44,7 +44,11 @@ function sameSearch(a: FilterSearch, b: FilterSearch): boolean {
   return filterParams.every((param) => a[param] === b[param]);
 }
 
-/** False when the Categoria's data lacks one of the preset's Filtros or choices. */
+/**
+ * False when one of the preset's Filtros is missing for this data. A list Filtro
+ * of named groups always lists them, so this hides a preset only by a range
+ * whose field the data lacks.
+ */
 export function isPresetAvailable(
   filters: readonly CategoryFilter[],
   search: FilterSearch,
@@ -61,18 +65,20 @@ export function isSearchApplied(
   return sameSearch(activeSearchOf(filters, values), search);
 }
 
-/** Filtros the user named and kept on this device, per Categoria. */
-const savedFiltersSchema = z.array(
-  z.object({
-    name: z.string().min(1),
-    search: z.record(z.string(), z.unknown()).transform(pickFilterSearch),
-  }),
-);
+/** One Filtro set the user named and kept on this device; one with no known param is dropped. */
+const savedFilterSchema = z.object({
+  name: z.string().min(1),
+  search: z
+    .record(z.string(), z.unknown())
+    .transform(pickFilterSearch)
+    .refine((search) => Object.keys(search).length > 0),
+});
 
 function savedFiltersKey(category: CategorySlug): string {
   return `periscopio:filtros-salvos:${category}`;
 }
 
+/** Each entry on its own, so one broken entry never hides (and a save never overwrites) the rest. */
 function parseSavedFilters(stored: string | null): FilterPreset[] {
   if (stored === null) return [];
   let json: unknown;
@@ -81,8 +87,20 @@ function parseSavedFilters(stored: string | null): FilterPreset[] {
   } catch {
     return [];
   }
-  const parsed = savedFiltersSchema.safeParse(json);
-  return parsed.success ? parsed.data : [];
+  if (!Array.isArray(json)) return [];
+  return json.flatMap((entry): FilterPreset[] => {
+    const parsed = savedFilterSchema.safeParse(entry);
+    return parsed.success ? [parsed.data] : [];
+  });
+}
+
+/** Null as well when the browser blocks site storage, so the Filtros still open without it. */
+function readSavedFilters(category: CategorySlug): string | null {
+  try {
+    return localStorage.getItem(savedFiltersKey(category));
+  } catch {
+    return null;
+  }
 }
 
 /** Every mounted list (side panel and drawer) rereads after a change, here or in another tab. */
@@ -104,9 +122,7 @@ function writeSavedFilters(category: CategorySlug, saved: readonly FilterPreset[
 
 /** The Categoria's saved Filtros, and how to add (replacing one with the same name) or delete one. */
 export function useSavedFilters(category: CategorySlug) {
-  const stored = useSyncExternalStore(subscribeToSavedFilters, () =>
-    localStorage.getItem(savedFiltersKey(category)),
-  );
+  const stored = useSyncExternalStore(subscribeToSavedFilters, () => readSavedFilters(category));
   const saved = useMemo(() => parseSavedFilters(stored), [stored]);
   return {
     saved,
