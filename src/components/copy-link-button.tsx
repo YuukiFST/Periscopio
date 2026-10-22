@@ -27,7 +27,7 @@ function canShareLink(): boolean {
 export function CopyLinkButton() {
   const [copyState, setCopyState] = useState<CopyState>("idle");
   const [sharesLink] = useState(canShareLink);
-  const popoverRef = useRef<HTMLDivElement>(null);
+  const rootRef = useRef<HTMLDivElement>(null);
   const linkInputRef = useRef<HTMLInputElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
   useEffect(() => {
@@ -43,12 +43,8 @@ export function CopyLinkButton() {
     const dismiss = () => setCopyState("idle");
     // On click, not pointerdown: a scroll swipe elsewhere keeps the link up.
     const dismissOutside = (event: MouseEvent) => {
-      const target = event.target;
       // The button counts as inside: a share that fails at once lands here while its click still bubbles.
-      const inside = [popoverRef, buttonRef].some(
-        (ref) => target instanceof Node && ref.current?.contains(target),
-      );
-      if (inside) return;
+      if (event.target instanceof Node && rootRef.current?.contains(event.target)) return;
       dismiss();
     };
     const dismissOnEscape = (event: KeyboardEvent) => {
@@ -86,7 +82,7 @@ export function CopyLinkButton() {
   const IdleIcon = sharesLink ? Share2 : Link2;
   const idleLabel = sharesLink ? "Compartilhar" : "Copiar link";
   return (
-    <div className="relative">
+    <div ref={rootRef} className="relative">
       <Button
         ref={buttonRef}
         variant="outline"
@@ -101,7 +97,6 @@ export function CopyLinkButton() {
         {copyState === "copied" ? "Link copiado" : idleLabel}
       </Button>
       <div
-        ref={popoverRef}
         // Tab past the link closes it, so it never covers the control that takes focus next.
         onBlur={(event) => {
           if (!event.currentTarget.contains(event.relatedTarget)) setCopyState("idle");
