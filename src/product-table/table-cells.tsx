@@ -11,6 +11,7 @@ import {
   isCountEnum,
   priceOf,
 } from "./cell-values";
+import { novidadeLabels, novidadeOf } from "./novidades";
 import type { TableColumn } from "./table-columns";
 
 const rootRoute = getRouteApi("__root__");
@@ -48,6 +49,18 @@ export function PriceInReais({ priceKrw }: { priceKrw: number }) {
  */
 export function productCellLabelIds(product: Product): string {
   return `produto-${product.id} fabricante-${product.id}`;
+}
+
+/** "Novo" or "Testado agora" next to the manufacturer, for a Produto in the last Atualização's window. */
+function NovidadeBadge({ product }: { product: Product }) {
+  const { updatedAt } = rootRoute.useLoaderData();
+  const novidade = novidadeOf(product, updatedAt);
+  if (novidade === undefined) return null;
+  return (
+    <span className="shrink-0 rounded-sm bg-brand-subtle px-1.5 text-caption-sm font-medium whitespace-nowrap text-brand-fg">
+      {novidadeLabels[novidade]}
+    </span>
+  );
 }
 
 /**
@@ -88,12 +101,15 @@ export function ProductCell({ product }: { product: Product }) {
             </span>
           )}
         </p>
-        <p
-          id={`fabricante-${product.id}`}
-          className="text-caption-lg wrap-break-word text-fg-secondary"
-        >
-          {manufacturer}
-        </p>
+        <div className="flex items-center gap-1.5">
+          <p
+            id={`fabricante-${product.id}`}
+            className="min-w-0 text-caption-lg wrap-break-word text-fg-secondary"
+          >
+            {manufacturer}
+          </p>
+          <NovidadeBadge product={product} />
+        </div>
       </div>
     </div>
   );
