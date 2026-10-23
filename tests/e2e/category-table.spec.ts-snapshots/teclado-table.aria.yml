@@ -23,7 +23,7 @@
             - columnheader "Erro de curso":
                 - button "Erro de curso"
     - rowgroup:
-        - row /Comparar TENKO - ARC \d+ TENKO - ARC \d+ ARBITER STUDIO S Fraca ₩ \d+\.\d+ \d+,\d+ ms desvio padrão \d+,\d+ \d+\.\d+ Hz Sem dado \d+,\d+ mm \d+,\d+ mm \d+,\d+%/:
+        - row /Comparar TENKO - ARC \d+ TENKO - ARC \d+ ARBITER STUDIO S Fraca ₩ \d+\.\d+ cerca de R\$ \d+ \(Cotação de \d+ de out\. de \d+\) \d+,\d+ ms desvio padrão \d+,\d+ \d+\.\d+ Hz Sem dado \d+,\d+ mm \d+,\d+ mm \d+,\d+%/:
             - cell /Comparar TENKO - ARC \d+/:
                 - checkbox /Comparar TENKO - ARC \d+/
             - rowheader /TENKO - ARC \d+ ARBITER STUDIO/:
@@ -33,14 +33,14 @@
                 - paragraph: ARBITER STUDIO
             - cell "S"
             - cell "Fraca"
-            - cell /₩ \d+\.\d+/
+            - cell /₩ \d+\.\d+ cerca de R\$ \d+ \(Cotação de \d+ de out\. de \d+\)/
             - cell /\d+,\d+ ms desvio padrão \d+,\d+/
             - cell /\d+\.\d+ Hz/
             - cell "Sem dado"
             - cell /\d+,\d+ mm/
             - cell /\d+,\d+ mm/
             - cell /\d+,\d+%/
-        - row /Comparar EDGE 60HE Pro EDGE 60HE Pro ATK A Evitar ₩ \d+\.\d+ \d+,\d+ ms desvio padrão \d+,\d+ \d+\.\d+ Hz \d+\.\d+ Hz Sem dado Sem dado Sem dado/:
+        - row /Comparar EDGE 60HE Pro EDGE 60HE Pro ATK A Evitar ₩ \d+\.\d+ cerca de R\$ \d+ \(Cotação de \d+ de out\. de \d+\) \d+,\d+ ms desvio padrão \d+,\d+ \d+\.\d+ Hz \d+\.\d+ Hz Sem dado Sem dado Sem dado/:
             - cell "Comparar EDGE 60HE Pro":
                 - checkbox "Comparar EDGE 60HE Pro"
             - rowheader "EDGE 60HE Pro ATK":
@@ -52,14 +52,14 @@
                 - paragraph: ATK
             - cell "A"
             - cell "Evitar"
-            - cell /₩ \d+\.\d+/
+            - cell /₩ \d+\.\d+ cerca de R\$ \d+ \(Cotação de \d+ de out\. de \d+\)/
             - cell /\d+,\d+ ms desvio padrão \d+,\d+/
             - cell /\d+\.\d+ Hz/
             - cell /\d+\.\d+ Hz/
             - cell "Sem dado"
             - cell "Sem dado"
             - cell "Sem dado"
-        - row /Comparar Raven61 Raven61 TEAMWOLF A Evitar ₩ \d+\.\d+ \d+,\d+ ms desvio padrão \d+,\d+ \d+\.\d+ Hz Sem dado Sem dado Sem dado Sem dado/:
+        - row /Comparar Raven61 Raven61 TEAMWOLF A Evitar ₩ \d+\.\d+ cerca de R\$ \d+ \(Cotação de \d+ de out\. de \d+\) \d+,\d+ ms desvio padrão \d+,\d+ \d+\.\d+ Hz Sem dado Sem dado Sem dado Sem dado/:
             - cell "Comparar Raven61":
                 - checkbox "Comparar Raven61"
             - rowheader "Raven61 TEAMWOLF":
@@ -71,14 +71,14 @@
                 - paragraph: TEAMWOLF
             - cell "A"
             - cell "Evitar"
-            - cell /₩ \d+\.\d+/
+            - cell /₩ \d+\.\d+ cerca de R\$ \d+ \(Cotação de \d+ de out\. de \d+\)/
             - cell /\d+,\d+ ms desvio padrão \d+,\d+/
             - cell /\d+\.\d+ Hz/
             - cell "Sem dado"
             - cell "Sem dado"
             - cell "Sem dado"
             - cell "Sem dado"
-        - row /Comparar Archon M3 \d+ MAX Archon M3 \d+ MAX Preflow Sem dado Pendente ₩ \d+\.\d+ Sem dado Sem dado Sem dado Sem dado Sem dado Sem dado/:
+        - row /Comparar Archon M3 \d+ MAX Archon M3 \d+ MAX Preflow Sem dado Pendente ₩ \d+\.\d+ cerca de R\$ \d+ \(Cotação de \d+ de out\. de \d+\) Sem dado Sem dado Sem dado Sem dado Sem dado Sem dado/:
             - cell /Comparar Archon M3 \d+ MAX/:
                 - checkbox /Comparar Archon M3 \d+ MAX/
             - rowheader /Archon M3 \d+ MAX Preflow/:
@@ -88,7 +88,7 @@
                 - paragraph: Preflow
             - cell "Sem dado"
             - cell "Pendente"
-            - cell /₩ \d+\.\d+/
+            - cell /₩ \d+\.\d+ cerca de R\$ \d+ \(Cotação de \d+ de out\. de \d+\)/
             - cell "Sem dado"
             - cell "Sem dado"
             - cell "Sem dado"

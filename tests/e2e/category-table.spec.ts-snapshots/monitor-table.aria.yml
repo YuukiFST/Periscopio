@@ -69,7 +69,7 @@
             - cell "Sem dado"
             - cell "Sem dado"
             - cell "Sem dado"
-        - row /Comparar 모비우스 EX2510S 모비우스 EX2510S BenQ Sem dado Sem dado ₩ \d+\.\d+ \d+,\d+″ \d+ Hz FHD \(\d+×\d+\) Sem dado Sem dado Sem dado Sem dado Sem dado Sem dado/:
+        - row /Comparar 모비우스 EX2510S 모비우스 EX2510S BenQ Sem dado Sem dado ₩ \d+\.\d+ cerca de R\$ \d+\.\d+ \(Cotação de \d+ de out\. de \d+\) \d+,\d+″ \d+ Hz FHD \(\d+×\d+\) Sem dado Sem dado Sem dado Sem dado Sem dado Sem dado/:
             - cell "Comparar 모비우스 EX2510S":
                 - checkbox "Comparar 모비우스 EX2510S"
             - rowheader "모비우스 EX2510S BenQ":
@@ -79,7 +79,7 @@
                 - paragraph: BenQ
             - cell "Sem dado"
             - cell "Sem dado"
-            - cell /₩ \d+\.\d+/
+            - cell /₩ \d+\.\d+ cerca de R\$ \d+\.\d+ \(Cotação de \d+ de out\. de \d+\)/
             - cell /\d+,\d+″/
             - cell /\d+ Hz/
             - cell /FHD \(\d+×\d+\)/
@@ -89,7 +89,7 @@
             - cell "Sem dado"
             - cell "Sem dado"
             - cell "Sem dado"
-        - row /Comparar ROG SWIFT PG259QN ROG SWIFT PG259QN ASUS Sem dado Sem dado ₩ \d+\.\d+ \d+″ \d+ Hz FHD \(\d+×\d+\) Sem dado Sem dado Sem dado Sem dado Sem dado Sem dado/:
+        - row /Comparar ROG SWIFT PG259QN ROG SWIFT PG259QN ASUS Sem dado Sem dado ₩ \d+\.\d+ cerca de R\$ \d+\.\d+ \(Cotação de \d+ de out\. de \d+\) \d+″ \d+ Hz FHD \(\d+×\d+\) Sem dado Sem dado Sem dado Sem dado Sem dado Sem dado/:
             - cell "Comparar ROG SWIFT PG259QN":
                 - checkbox "Comparar ROG SWIFT PG259QN"
             - rowheader "ROG SWIFT PG259QN ASUS":
@@ -101,7 +101,7 @@
                 - paragraph: ASUS
             - cell "Sem dado"
             - cell "Sem dado"
-            - cell /₩ \d+\.\d+/
+            - cell /₩ \d+\.\d+ cerca de R\$ \d+\.\d+ \(Cotação de \d+ de out\. de \d+\)/
             - cell /\d+″/
             - cell /\d+ Hz/
             - cell /FHD \(\d+×\d+\)/

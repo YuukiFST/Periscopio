@@ -11,6 +11,7 @@ import {
   type ProductFieldGroup,
 } from "@/product-fields/field-groups";
 import { formatPrice, priceOf } from "@/product-table/cell-values";
+import { PriceInReais } from "@/product-table/table-cells";
 import { cn } from "@/lib/utils";
 import { CompareBar, compareStatusId } from "@/product-compare/compare-bar";
 import { maxComparedProducts, toggleComparedId } from "@/product-compare/compare-selection";
@@ -108,7 +109,10 @@ function ProductHeader({
             {price === undefined ? (
               <span className="text-fg-secondary">Sem preço</span>
             ) : (
-              <span className="whitespace-nowrap tabular-nums">{formatPrice(price)}</span>
+              <span className="whitespace-nowrap tabular-nums">
+                {formatPrice(price)}
+                <PriceInReais priceKrw={price} />
+              </span>
             )}
           </HeaderFact>
           {status !== undefined && <HeaderFact label="Status de teste">{status}</HeaderFact>}

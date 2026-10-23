@@ -52,7 +52,7 @@ const categoryTables = [
       "0,49 ms desvio padrão 0,08",
       "A+",
       "Boa",
-      "₩ 98.900",
+      "₩ 98.900 cerca de R$ 377 (Cotação de 22 de out. de 2026)",
       "PAW3950 Ultra (42K)",
       "Nordic nRF52840",
       "Simétrico",
@@ -67,7 +67,7 @@ const categoryTables = [
     cells: [
       "S",
       "Fraca",
-      "₩ 195.000",
+      "₩ 195.000 cerca de R$ 743 (Cotação de 22 de out. de 2026)",
       "0,25 ms desvio padrão 0,05",
       "6.155 Hz",
       "Sem dado",

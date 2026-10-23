@@ -1,15 +1,19 @@
-import { Link } from "@tanstack/react-router";
+import { getRouteApi, Link } from "@tanstack/react-router";
 import type { Product } from "@/data/schema";
 import { manufacturerName } from "@/i18n/labels";
 import { ProductPhoto } from "@/product-photo/product-photo";
 import {
   formatDeviation,
   formatFieldValue,
+  formatKrwBrlDate,
   formatPrice,
+  formatPriceInReais,
   isCountEnum,
   priceOf,
 } from "./cell-values";
 import type { TableColumn } from "./table-columns";
+
+const rootRoute = getRouteApi("__root__");
 
 export function MissingValue() {
   return (
@@ -19,6 +23,22 @@ export function MissingValue() {
       </span>
       <span className="sr-only">Sem dado</span>
     </>
+  );
+}
+
+/**
+ * "≈ R$ 377" on its own line under the won, when the Atualização recorded a
+ * Cotação; screen readers also hear the Cotação date.
+ */
+export function PriceInReais({ priceKrw }: { priceKrw: number }) {
+  const { krwBrl } = rootRoute.useLoaderData();
+  if (!krwBrl) return null;
+  return (
+    <span className="block text-caption-lg font-normal text-fg-secondary">
+      <span aria-hidden="true">≈</span>
+      <span className="sr-only">cerca de</span> {formatPriceInReais(priceKrw, krwBrl)}
+      <span className="sr-only"> (Cotação de {formatKrwBrlDate(krwBrl)})</span>
+    </span>
   );
 }
 
@@ -88,7 +108,10 @@ export function TableCellValue({ column, product }: { column: TableColumn; produ
       return price === undefined ? (
         <MissingValue />
       ) : (
-        <span className="whitespace-nowrap">{formatPrice(price)}</span>
+        <span className="whitespace-nowrap">
+          {formatPrice(price)}
+          <PriceInReais priceKrw={price} />
+        </span>
       );
     }
     case "field": {

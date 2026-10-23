@@ -29,6 +29,10 @@ test("a Produto opened from the table shows its header and fields grouped in pt 
     "https://s.click.aliexpress.com/e/_oFLhAg6",
   );
   await expect(page.getByRole("article")).toMatchAriaSnapshot({ name: "mouse-detail.aria.yml" });
+  await expect(page.getByRole("article")).toMatchAriaSnapshot(`
+    - term: Preço
+    - definition: ₩ 98.900 cerca de R$ 377 (Cotação de 22 de out. de 2026)
+  `);
   await expect(page.getByRole("region", { name: "Especificações" })).toMatchAriaSnapshot(`
     - term: Nota geral
     - definition: A+
@@ -106,6 +110,30 @@ test("a Produto without Medições shows no Medições group, and says what is m
     - definition: Sugerido
   `);
   await expect(page.getByRole("link", { name: "Ver no AliExpress" })).toHaveCount(0);
+});
+
+test.describe("with a meta.json from before the Cotação", () => {
+  // The service worker would answer meta.json from its precache, out of the route's reach.
+  test.use({ serviceWorkers: "block" });
+
+  test("the app still loads and the Preço shows only the won, in the table and the detail", async ({
+    page,
+  }) => {
+    await page.route("**/data/meta.json", async (route) => {
+      const { krwBrl, ...metaBeforeCotacao } = await (await route.fetch()).json();
+      expect(krwBrl).toBeDefined();
+      await route.fulfill({ json: metaBeforeCotacao });
+    });
+    await page.goto(`/mouse/${dragonflyA9UltraId}?status=todos`);
+
+    await expect(page.getByRole("dialog", { name: "Dragonfly A9 Ultra" })).toBeVisible();
+    await expect(page.getByRole("article")).toMatchAriaSnapshot(`
+      - term: Preço
+      - definition: ₩ 98.900
+    `);
+    await expect(page.getByRole("cell", { name: "₩ 98.900", exact: true })).toBeVisible();
+    await expect(page.getByText("R$")).toHaveCount(0);
+  });
 });
 
 test("an unknown Produto shows Produto não encontrado over its table, and closing leaves the table", async ({

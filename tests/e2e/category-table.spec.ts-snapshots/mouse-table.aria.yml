@@ -23,7 +23,7 @@
             - columnheader "Peso":
                 - button "Peso"
     - rowgroup:
-        - row /Comparar Dragonfly A9 Ultra Dragonfly A9 Ultra ATK \d+,\d+ ms desvio padrão \d+,\d+ \d+,\d+ ms desvio padrão \d+,\d+ A\+ Boa ₩ \d+\.\d+ PAW3950 Ultra \([\d,.]+[bkmBKM]+\) Nordic nRF52840 Simétrico \d+ g/:
+        - row /Comparar Dragonfly A9 Ultra Dragonfly A9 Ultra ATK \d+,\d+ ms desvio padrão \d+,\d+ \d+,\d+ ms desvio padrão \d+,\d+ A\+ Boa ₩ \d+\.\d+ cerca de R\$ \d+ \(Cotação de \d+ de out\. de \d+\) PAW3950 Ultra \([\d,.]+[bkmBKM]+\) Nordic nRF52840 Simétrico \d+ g/:
             - cell "Comparar Dragonfly A9 Ultra":
                 - checkbox "Comparar Dragonfly A9 Ultra"
             - rowheader "Dragonfly A9 Ultra ATK":
@@ -37,12 +37,12 @@
             - cell /\d+,\d+ ms desvio padrão \d+,\d+/
             - cell "A+"
             - cell "Boa"
-            - cell /₩ \d+\.\d+/
+            - cell /₩ \d+\.\d+ cerca de R\$ \d+ \(Cotação de \d+ de out\. de \d+\)/
             - cell /PAW3950 Ultra \([\d,.]+[bkmBKM]+\)/
             - cell "Nordic nRF52840"
             - cell "Simétrico"
             - cell /\d+ g/
-        - row /Comparar Huan Huan WLMouse \d+,\d+ ms desvio padrão \d+,\d+ \d+,\d+ ms desvio padrão \d+,\d+ C Fraca ₩ \d+\.\d+ PAW3950 HS Nordic nRF54H20 Simétrico \d+ g/:
+        - row /Comparar Huan Huan WLMouse \d+,\d+ ms desvio padrão \d+,\d+ \d+,\d+ ms desvio padrão \d+,\d+ C Fraca ₩ \d+\.\d+ cerca de R\$ \d+ \(Cotação de \d+ de out\. de \d+\) PAW3950 HS Nordic nRF54H20 Simétrico \d+ g/:
             - cell "Comparar Huan":
                 - checkbox "Comparar Huan"
             - rowheader "Huan WLMouse":
@@ -54,12 +54,12 @@
             - cell /\d+,\d+ ms desvio padrão \d+,\d+/
             - cell "C"
             - cell "Fraca"
-            - cell /₩ \d+\.\d+/
+            - cell /₩ \d+\.\d+ cerca de R\$ \d+ \(Cotação de \d+ de out\. de \d+\)/
             - cell "PAW3950 HS"
             - cell "Nordic nRF54H20"
             - cell "Simétrico"
             - cell /\d+ g/
-        - row /Comparar Dragonfly 3 PRO Dragonfly 3 PRO VGN \d+,\d+ ms desvio padrão \d+,\d+ \d+,\d+ ms desvio padrão \d+,\d+ Sem nota Evitar ₩ \d+\.\d+ PAW3395 Sem dado Simétrico \d+ g/:
+        - row /Comparar Dragonfly 3 PRO Dragonfly 3 PRO VGN \d+,\d+ ms desvio padrão \d+,\d+ \d+,\d+ ms desvio padrão \d+,\d+ Sem nota Evitar ₩ \d+\.\d+ cerca de R\$ \d+ \(Cotação de \d+ de out\. de \d+\) PAW3395 Sem dado Simétrico \d+ g/:
             - cell "Comparar Dragonfly 3 PRO":
                 - checkbox "Comparar Dragonfly 3 PRO"
             - rowheader "Dragonfly 3 PRO VGN":
@@ -73,12 +73,12 @@
             - cell /\d+,\d+ ms desvio padrão \d+,\d+/
             - cell "Sem nota"
             - cell "Evitar"
-            - cell /₩ \d+\.\d+/
+            - cell /₩ \d+\.\d+ cerca de R\$ \d+ \(Cotação de \d+ de out\. de \d+\)/
             - cell "PAW3395"
             - cell "Sem dado"
             - cell "Simétrico"
             - cell /\d+ g/
-        - row /Comparar H200A H200A ABKO \d+,\d+ ms desvio padrão \d+,\d+ \d+,\d+ ms desvio padrão \d+,\d+ Sem nota Fraca ₩ \d+\.\d+ PAW3395 CompX Tech CX52850 Simétrico e Assimétrico \d+ g/:
+        - row /Comparar H200A H200A ABKO \d+,\d+ ms desvio padrão \d+,\d+ \d+,\d+ ms desvio padrão \d+,\d+ Sem nota Fraca ₩ \d+\.\d+ cerca de R\$ \d+ \(Cotação de \d+ de out\. de \d+\) PAW3395 CompX Tech CX52850 Simétrico e Assimétrico \d+ g/:
             - cell "Comparar H200A":
                 - checkbox "Comparar H200A"
             - rowheader "H200A ABKO":
@@ -90,7 +90,7 @@
             - cell /\d+,\d+ ms desvio padrão \d+,\d+/
             - cell "Sem nota"
             - cell "Fraca"
-            - cell /₩ \d+\.\d+/
+            - cell /₩ \d+\.\d+ cerca de R\$ \d+ \(Cotação de \d+ de out\. de \d+\)/
             - cell "PAW3395"
             - cell "CompX Tech CX52850"
             - cell "Simétrico e Assimétrico"
@@ -112,7 +112,7 @@
             - cell "Sem dado"
             - cell "Assimétrico"
             - cell /\d+ g/
-        - row /Comparar Cloud XS Cloud XS WAIZOWL Sem dado Sem dado Sem dado Pendente ₩ \d+\.\d+ PAW3950 Nordic nRF52840 Simétrico \d+ g/:
+        - row /Comparar Cloud XS Cloud XS WAIZOWL Sem dado Sem dado Sem dado Pendente ₩ \d+\.\d+ cerca de R\$ \d+ \(Cotação de \d+ de out\. de \d+\) PAW3950 Nordic nRF52840 Simétrico \d+ g/:
             - cell "Comparar Cloud XS":
                 - checkbox "Comparar Cloud XS"
             - rowheader "Cloud XS WAIZOWL":
@@ -126,7 +126,7 @@
             - cell "Sem dado"
             - cell "Sem dado"
             - cell "Pendente"
-            - cell /₩ \d+\.\d+/
+            - cell /₩ \d+\.\d+ cerca de R\$ \d+ \(Cotação de \d+ de out\. de \d+\)/
             - cell "PAW3950"
             - cell "Nordic nRF52840"
             - cell "Simétrico"

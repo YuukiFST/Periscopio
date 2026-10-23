@@ -1,10 +1,18 @@
 import { isRatingField, ratingRank } from "../data/rating-order.ts";
-import type { Field, FieldValue, Product } from "../data/schema.ts";
+import type { Field, FieldValue, KrwBrlRate, Product } from "../data/schema.ts";
 import { unitLabel, valueLabel } from "../i18n/labels.ts";
 import type { TableColumn } from "./table-columns.ts";
 
 const locale = "pt-BR";
 const priceFormat = new Intl.NumberFormat(locale, { style: "currency", currency: "KRW" });
+const reaisFormat = new Intl.NumberFormat(locale, {
+  style: "currency",
+  currency: "BRL",
+  minimumFractionDigits: 0,
+  maximumFractionDigits: 0,
+});
+/** A Cotação date is a calendar day, kept as UTC midnight by `new Date("2026-10-22")`. */
+const krwBrlDateFormat = new Intl.DateTimeFormat(locale, { dateStyle: "medium", timeZone: "UTC" });
 const listFormat = new Intl.ListFormat(locale, { type: "conjunction" });
 const textCollator = new Intl.Collator(locale, { numeric: true, sensitivity: "base" });
 /** EyeJoker is a Korean site: its dates read as the day in Korea, wherever the app is opened. */
@@ -113,6 +121,15 @@ export function priceOf(product: Product): number | undefined {
 
 export function formatPrice(priceKrw: number): string {
   return priceFormat.format(priceKrw);
+}
+
+/** The Preço converted by the Cotação, in whole reais. */
+export function formatPriceInReais(priceKrw: number, krwBrl: KrwBrlRate): string {
+  return reaisFormat.format(priceKrw * krwBrl.rate);
+}
+
+export function formatKrwBrlDate(krwBrl: KrwBrlRate): string {
+  return krwBrlDateFormat.format(new Date(krwBrl.date));
 }
 
 /** Bare number for a deviation shown beside its average, as in `σ 0,05`. */
