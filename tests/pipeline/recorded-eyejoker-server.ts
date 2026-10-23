@@ -100,6 +100,21 @@ export function editRecordedCompanies(
   editJsonRoute(routes, companyPath, recordedCompaniesSchema, edit);
 }
 
+/** Dragonfly 3 PRO, a mouse the Atualização before the recorded one did not list yet. */
+export const newMouseId = "0390fea6-efb9-45ea-a1a3-71b170224e58";
+/** H200A, a mouse that Atualização listed as not tested yet. */
+export const newlyTestedMouseId = "2cf40f05-fa65-4a5c-936a-c67de7025af3";
+
+/** Turns the recorded routes into the Atualização before them, so the recorded one has Novidades. */
+export function editToPreviousAtualizacao(routes: RecordedRoutes) {
+  editRecordedSnapshot(routes, "mouse", (snapshot) => {
+    snapshot.data.rows = snapshot.data.rows.filter((row) => row.id !== newMouseId);
+    for (const row of snapshot.data.rows) {
+      if (row.id === newlyTestedMouseId) row.values.status = "proposed";
+    }
+  });
+}
+
 export type RecordedEyejokerServer = {
   apiUrl: string;
   cdnUrl: string;
