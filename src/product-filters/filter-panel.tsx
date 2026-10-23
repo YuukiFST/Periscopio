@@ -2,6 +2,7 @@ import { Combobox } from "@base-ui/react/combobox";
 import { Select } from "@base-ui/react/select";
 import { Check, ChevronDown, Search, X } from "lucide-react";
 import { type ReactNode, useId, useState } from "react";
+import type { CategorySlug } from "@/categories";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import { normalizeForSearch } from "@/product-table/product-filter";
@@ -13,9 +14,11 @@ import {
   type RangeFilter,
 } from "./filter-engine";
 import { typedBoundPattern } from "./filter-link";
+import { FilterPresetList } from "./filter-preset-list";
 import type { FilterParam } from "./filter-params";
 
 type FilterPanelProps = {
+  category: CategorySlug;
   filters: readonly CategoryFilter[];
   values: FilterValues;
   onValuesChange: (values: FilterValues) => void;
@@ -31,21 +34,40 @@ function withRange(values: FilterValues, param: FilterParam, range: NumberRange)
   return { ...values, ranges: { ...values.ranges, [param]: range } };
 }
 
-/** Every Filtro of the Categoria, one under the other. */
-export function FilterPanel({ filters, values, onValuesChange, clearCount }: FilterPanelProps) {
+/** The presets and saved Filtros, then every Filtro of the Categoria, one under the other. */
+export function FilterPanel({
+  category,
+  filters,
+  values,
+  onValuesChange,
+  clearCount,
+}: FilterPanelProps) {
+  // Like "Limpar", a preset also drops range text that never reached the link.
+  const [presetCount, setPresetCount] = useState(0);
+  function applyPreset(presetValues: FilterValues) {
+    setPresetCount((count) => count + 1);
+    onValuesChange(presetValues);
+  }
+
   return (
     <div className="flex flex-col gap-5">
+      <FilterPresetList
+        category={category}
+        filters={filters}
+        values={values}
+        onApply={applyPreset}
+      />
       {filters.map((filter) =>
         filter.kind === "range" ? (
           <RangeFilterFields
-            key={`${filter.param}-${clearCount}`}
+            key={`${filter.param}-${clearCount}-${presetCount}`}
             filter={filter}
             range={values.ranges[filter.param]}
             onRangeChange={(range) => onValuesChange(withRange(values, filter.param, range))}
           />
         ) : (
           <ChoiceFilterFields
-            key={`${filter.param}-${clearCount}`}
+            key={`${filter.param}-${clearCount}-${presetCount}`}
             filter={filter}
             marked={values.choices[filter.param] ?? []}
             onMarkedChange={(ids) => onValuesChange(withChoices(values, filter.param, ids))}

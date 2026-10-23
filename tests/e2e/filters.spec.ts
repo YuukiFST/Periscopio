@@ -538,3 +538,177 @@ test.describe("with more sensors in use than fit without a search box", () => {
     await expect(page).toHaveURL("/mouse?status=todos");
   });
 });
+
+const presetCases: { slug: string; preset: string; url: string; after: string[] }[] = [
+  {
+    // Every excerpt mouse is wireless with a cable; H200A weighs 102 g.
+    slug: "mouse",
+    preset: "Sem fio leve",
+    url: "/mouse?status=todos&conexao=sem-fio,com-e-sem-fio&peso=-60",
+    after: ["Cloud XS", "Dragonfly 3 PRO", "Dragonfly A9 Ultra", "Huan", "VK M5 Max THOR"],
+  },
+  {
+    slug: "teclado",
+    preset: "Magnético",
+    url: "/teclado?status=todos&switch=magnetico",
+    after: ["Archon M3 600 MAX", "EDGE 60HE Pro", "Raven61", "TENKO - ARC 60"],
+  },
+  {
+    // 360, 165, 240 and 360 Hz.
+    slug: "monitor",
+    preset: "240 Hz ou mais",
+    url: "/monitor?status=todos&taxa=240-",
+    after: ["ROG SWIFT PG259QN", "UltraGear 32GS95UE 4K Mode", "XG259QDNS Ace"],
+  },
+  {
+    // QD-OLED and WOLED; the other two are IPS.
+    slug: "monitor",
+    preset: "OLED",
+    url: "/monitor?status=todos&painel=oled",
+    after: ["UltraGear 32GS95UE 4K Mode", "XG259QDNS Ace"],
+  },
+];
+
+for (const presetCase of presetCases) {
+  test(`/${presetCase.slug} preset ${presetCase.preset} marks its Filtros`, async ({ page }) => {
+    await page.goto(`/${presetCase.slug}?status=todos`);
+    const preset = filterPanel(page).getByRole("button", { name: presetCase.preset, exact: true });
+    await expect(preset).toHaveAttribute("aria-pressed", "false");
+    await preset.click();
+    await expect(page).toHaveURL(presetCase.url);
+    await expect(preset).toHaveAttribute("aria-pressed", "true");
+    await expect.poll(async () => (await productNames(page)).toSorted()).toEqual(presetCase.after);
+  });
+}
+
+test("a preset replaces the Filtros only, shows pressed while the link matches it, and unpresses", async ({
+  page,
+}) => {
+  await page.goto("/mouse?status=todos&q=dragonfly&formato=assimetrico&peso=50-");
+  const preset = filterPanel(page).getByRole("button", { name: "Sem fio leve" });
+  await preset.click();
+  await expect(page).toHaveURL(
+    "/mouse?status=todos&q=dragonfly&peso=-60&conexao=sem-fio,com-e-sem-fio",
+  );
+  await expect.poll(() => productNames(page)).toEqual(["Dragonfly A9 Ultra", "Dragonfly 3 PRO"]);
+  await expect(choiceField(page, "Formato")).toHaveText("Todas");
+  const weightRange = filterPanel(page).getByRole("group", { name: "Peso (g)" });
+  await expect(weightRange.getByRole("textbox", { name: "Mínimo" })).toHaveValue("");
+  await expect(weightRange.getByRole("textbox", { name: "Máximo" })).toHaveValue("60");
+  await expect(preset).toHaveAttribute("aria-pressed", "true");
+
+  // One more Filtro and the link is no longer exactly the preset.
+  await markChoice(page, "Formato", "Simétrico");
+  await expect(preset).toHaveAttribute("aria-pressed", "false");
+  await preset.click();
+  await expect(preset).toHaveAttribute("aria-pressed", "true");
+
+  await preset.click();
+  await expect(page).toHaveURL("/mouse?status=todos&q=dragonfly");
+  await expect(preset).toHaveAttribute("aria-pressed", "false");
+});
+
+test("saved Filtros keep a name per Categoria, apply from the drawer and can be deleted", async ({
+  page,
+}) => {
+  await page.goto("/mouse?status=todos");
+  const saveButton = filterPanel(page).getByRole("button", { name: "Salvar filtros atuais" });
+  await expect(saveButton).toBeDisabled();
+
+  // Clearing the Filtros ends a naming in progress, and the next Filtro does not bring it back.
+  await markChoice(page, "Formato", "Simétrico");
+  await saveButton.click();
+  await filterPanel(page).getByRole("button", { name: "Limpar" }).click();
+  const maximumWeight = filterPanel(page)
+    .getByRole("group", { name: "Peso (g)" })
+    .getByRole("textbox", { name: "Máximo" });
+  await maximumWeight.fill("50");
+  await expect(filterPanel(page).getByRole("textbox", { name: "Nome" })).toHaveCount(0);
+  await expect(maximumWeight).toBeFocused();
+  await markChoice(page, "Carcaça furada", "Só embaixo");
+  await saveButton.click();
+  await filterPanel(page).getByRole("textbox", { name: "Nome" }).fill("  Leves furados  ");
+  await filterPanel(page).getByRole("button", { name: "Salvar", exact: true }).click();
+  const savedList = filterPanel(page).getByRole("list", { name: "Filtros salvos" });
+  await expect(
+    savedList.getByRole("button", { name: "Leves furados", exact: true }),
+  ).toHaveAttribute("aria-pressed", "true");
+  await expect(saveButton).toBeFocused();
+
+  // Saved on this device for mouses only, so a teclado lists none.
+  await page.goto("/teclado?status=todos");
+  await expect(filterPanel(page).getByRole("list", { name: "Filtros salvos" })).toHaveCount(0);
+
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/mouse?q=huan");
+  await page.getByRole("button", { name: "Filtros", exact: true }).click();
+  const drawer = page.getByRole("dialog", { name: "Filtros" });
+  await drawer.getByRole("button", { name: "Leves furados", exact: true }).click();
+  await expect(page).toHaveURL("/mouse?q=huan&peso=-50&furada=so-embaixo");
+  await drawer.getByRole("button", { name: "Ver 1 produto" }).click();
+  await expect.poll(() => productNames(page)).toEqual(["Huan"]);
+
+  await page.getByRole("button", { name: "Filtros (2)" }).click();
+  const drawerSaveButton = drawer.getByRole("button", { name: "Salvar filtros atuais" });
+  // Escape cancels the name and leaves the drawer open.
+  await drawerSaveButton.click();
+  await drawer.getByRole("textbox", { name: "Nome" }).press("Escape");
+  await expect(drawer).toBeVisible();
+  await expect(drawer.getByRole("textbox", { name: "Nome" })).toHaveCount(0);
+  await expect(drawerSaveButton).toBeFocused();
+
+  await drawer.getByRole("button", { name: "Apagar Leves furados" }).click();
+  await expect(drawer.getByRole("list", { name: "Filtros salvos" })).toHaveCount(0);
+  await expect(drawerSaveButton).toBeFocused();
+  // The side panel, mounted all along, drops it too without a reload.
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await expect(filterPanel(page).getByRole("button", { name: "Sem fio leve" })).toBeVisible();
+  await expect(filterPanel(page).getByRole("list", { name: "Filtros salvos" })).toHaveCount(0);
+  await page.reload();
+  await expect(filterPanel(page).getByRole("button", { name: "Sem fio leve" })).toBeVisible();
+  await expect(filterPanel(page).getByRole("list", { name: "Filtros salvos" })).toHaveCount(0);
+});
+
+test("a broken saved entry is skipped and the others stay, also after the next save", async ({
+  page,
+}) => {
+  await page.goto("/mouse?status=todos");
+  await page.evaluate(() =>
+    localStorage.setItem(
+      "periscopio:filtros-salvos:mouse",
+      JSON.stringify([
+        { name: "Leves", search: { peso: "-50" } },
+        { name: 42, search: { peso: "-60" } },
+        { name: "Só params de outro app", search: { cor: "azul" } },
+      ]),
+    ),
+  );
+  await page.reload();
+  const savedList = filterPanel(page).getByRole("list", { name: "Filtros salvos" });
+  await expect(savedList.getByRole("listitem")).toHaveCount(1);
+  await savedList.getByRole("button", { name: "Leves", exact: true }).click();
+  await expect(page).toHaveURL("/mouse?status=todos&peso=-50");
+
+  await markChoice(page, "Formato", "Simétrico");
+  await filterPanel(page).getByRole("button", { name: "Salvar filtros atuais" }).click();
+  await filterPanel(page).getByRole("textbox", { name: "Nome" }).fill("Leves simétricos");
+  await filterPanel(page).getByRole("button", { name: "Salvar", exact: true }).click();
+  await expect(savedList.getByRole("listitem")).toHaveCount(2);
+});
+
+test.describe("with mouse data that has no weight", () => {
+  // The data request is rewritten below; a service worker would answer it from its cache instead.
+  test.use({ serviceWorkers: "block" });
+
+  test("the preset that needs the Peso Filtro is hidden", async ({ page }) => {
+    await page.route("**/data/mouse.json", async (route) => {
+      const response = await route.fetch();
+      const data = categoryDataSchema.parse(await response.json());
+      const fields = data.fields.filter((field) => field.key !== "weight");
+      await route.fulfill({ response, json: { ...data, fields } });
+    });
+    await page.goto("/mouse?status=todos");
+    await expect(filterPanel(page).getByRole("group", { name: "Peso (g)" })).toHaveCount(0);
+    await expect(filterPanel(page).getByRole("button", { name: "Sem fio leve" })).toHaveCount(0);
+  });
+});
