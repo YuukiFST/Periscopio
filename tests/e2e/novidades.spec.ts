@@ -3,8 +3,8 @@ import { expect, test, type Page } from "@playwright/test";
 /**
  * Runs against the production build whose data comes from two Atualizações
  * of the recorded EyeJoker excerpt (`serve-fixture-build.ts`): the second one
- * adds Dragonfly 3 PRO and marks H200A as tested, so those two mouses are the
- * Novidades; teclados and monitores have none.
+ * adds Dragonfly 3 PRO and VK M5 Max THOR (not tested) and marks H200A as
+ * tested, so those three mouses are the Novidades; teclados and monitores have none.
  */
 
 async function productNames(page: Page): Promise<string[]> {
@@ -20,18 +20,18 @@ function novidadesToggle(page: Page) {
   return page.getByRole("button", { name: "Novidades", exact: true });
 }
 
-test("the table marks the Produto new in the last Atualização and the one tested in it", async ({
+test("the table marks the Produtos new in the last Atualização and the one tested in it", async ({
   page,
 }) => {
   await page.goto("/mouse?status=todos");
   await expect(page.getByRole("rowheader")).toHaveCount(6);
 
-  await expect(
-    productRow(page, "Dragonfly 3 PRO").getByText("Novo", { exact: true }),
-  ).toBeVisible();
+  for (const name of ["Dragonfly 3 PRO", "VK M5 Max THOR"]) {
+    await expect(productRow(page, name).getByText("Novo", { exact: true })).toBeVisible();
+  }
   await expect(productRow(page, "H200A").getByText("Testado agora", { exact: true })).toBeVisible();
   const table = page.getByRole("table");
-  await expect(table.getByText("Novo", { exact: true })).toHaveCount(1);
+  await expect(table.getByText("Novo", { exact: true })).toHaveCount(2);
   await expect(table.getByText("Testado agora", { exact: true })).toHaveCount(1);
 });
 

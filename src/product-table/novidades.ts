@@ -2,7 +2,7 @@ import type { Product } from "../data/schema.ts";
 
 const dayMs = 24 * 60 * 60 * 1000;
 /** A Produto stays a Novidade for the 14 days before the Atualização. */
-const novidadeWindowMs = 14 * dayMs;
+const novidadeWindowDays = 14;
 
 export type Novidade = "novo" | "testado-agora";
 
@@ -11,17 +11,24 @@ export const novidadeLabels: Record<Novidade, string> = {
   "testado-agora": "Testado agora",
 };
 
-function isWithinWindow(date: string | null | undefined, updatedAt: string): boolean {
+/**
+ * Whole UTC days, so the weekly Atualização from 14 days back stays inside the
+ * window however late either run started.
+ */
+function isWithinWindow(date: string | null | undefined, updatedAt: string): date is string {
   if (!date) return false;
-  const ageMs = Date.parse(updatedAt) - Date.parse(date);
-  return ageMs >= 0 && ageMs <= novidadeWindowMs;
+  const ageDays = Math.floor(Date.parse(updatedAt) / dayMs) - Math.floor(Date.parse(date) / dayMs);
+  return ageDays >= 0 && ageDays <= novidadeWindowDays;
 }
 
-/** A Produto both new and tested in the window is only "novo". */
+/** The latest of the two in the window; a Produto new and tested in one Atualização is "novo". */
 export function novidadeOf(product: Product, updatedAt: string): Novidade | undefined {
-  if (isWithinWindow(product.firstSeenAt, updatedAt)) return "novo";
-  if (isWithinWindow(product.testedAt, updatedAt)) return "testado-agora";
-  return undefined;
+  const { firstSeenAt, testedAt } = product;
+  const isNew = isWithinWindow(firstSeenAt, updatedAt);
+  if (isWithinWindow(testedAt, updatedAt)) {
+    if (!isNew || Date.parse(testedAt) > Date.parse(firstSeenAt)) return "testado-agora";
+  }
+  return isNew ? "novo" : undefined;
 }
 
 export function filterNovidades(products: Product[], updatedAt: string): Product[] {
@@ -30,21 +37,22 @@ export function filterNovidades(products: Product[], updatedAt: string): Product
 
 export type NovidadeCounts = { novos: number; testados: number };
 
-/** The Novidades dated after `lastSeenAt`, the Atualização the last visit showed. */
+/**
+ * The Novidades dated after `lastSeenAt`, the Atualização the last visit showed:
+ * a Produto first seen since then is new, else one tested since then is tested.
+ */
 export function countNovidadesSince(
   products: Product[],
   updatedAt: string,
   lastSeenAt: string,
 ): NovidadeCounts {
   const lastSeenMs = Date.parse(lastSeenAt);
+  const isSinceLastVisit = (date: string | null | undefined) =>
+    isWithinWindow(date, updatedAt) && Date.parse(date) > lastSeenMs;
   const counts: NovidadeCounts = { novos: 0, testados: 0 };
   for (const product of products) {
-    const novidade = novidadeOf(product, updatedAt);
-    if (novidade === undefined) continue;
-    const date = novidade === "novo" ? product.firstSeenAt : product.testedAt;
-    if (!date || Date.parse(date) <= lastSeenMs) continue;
-    if (novidade === "novo") counts.novos++;
-    else counts.testados++;
+    if (isSinceLastVisit(product.firstSeenAt)) counts.novos++;
+    else if (isSinceLastVisit(product.testedAt)) counts.testados++;
   }
   return counts;
 }

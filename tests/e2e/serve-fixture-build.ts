@@ -17,6 +17,7 @@ import {
   editRecordedSnapshot,
   editToPreviousAtualizacao,
   loadRecordedRoutes,
+  newUntestedMouseId,
   startRecordedEyejokerServer,
   type RecordedRoutes,
 } from "../pipeline/recorded-eyejoker-server.ts";
@@ -82,7 +83,7 @@ async function writeNextAtualizacao(): Promise<void> {
     huanPro.values.productName = "Huan Pro";
     snapshot.data.rows.push(huanPro);
     for (const row of snapshot.data.rows) {
-      if (row.id === "0fbec015-8d94-469d-993e-1d9d5138fb9b") row.values.status = "reviewed";
+      if (row.id === newUntestedMouseId) row.values.status = "reviewed";
     }
   });
   await runFixtureUpdate(nextRoutes, nextPublicDir);

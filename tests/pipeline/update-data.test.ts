@@ -12,6 +12,7 @@ import {
   loadRecordedRoutes,
   newlyTestedMouseId,
   newMouseId,
+  newUntestedMouseId,
   snapshotPath,
   startRecordedEyejokerServer,
   type RecordedRoutes,
@@ -283,10 +284,13 @@ test("an Atualização dates the Produtos new or newly tested in it and carries 
     firstSeenAt: null,
     testedAt: second.updatedAt,
   });
-  const unchanged = [...second.dates].filter(
-    ([id]) => id !== newMouseId && id !== newlyTestedMouseId,
-  );
-  expect(unchanged).toHaveLength(4);
+  expect(second.dates.get(newUntestedMouseId)).toEqual({
+    firstSeenAt: second.updatedAt,
+    testedAt: null,
+  });
+  const novidadeIds = new Set([newMouseId, newlyTestedMouseId, newUntestedMouseId]);
+  const unchanged = [...second.dates].filter(([id]) => !novidadeIds.has(id));
+  expect(unchanged).toHaveLength(3);
   for (const [, dates] of unchanged) expect(dates).toEqual({ firstSeenAt: null, testedAt: null });
 
   expect((await runUpdateCli(await loadRecordedRoutes(), outDir, null)).exitCode).toBe(0);
