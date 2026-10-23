@@ -5073,7 +5073,9 @@
         "switch": "omroinOptricalAtkCustomTurndOptical",
         "weight": 54.4,
         "wheelSwitch": "2핀 택트"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "0390fea6-efb9-45ea-a1a3-71b170224e58",
@@ -5147,7 +5149,9 @@
         "switch": "huanoTransparentGreenShellWhiteDot",
         "weight": 58,
         "wheelSwitch": "2핀 택트"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "0fbec015-8d94-469d-993e-1d9d5138fb9b",
@@ -5178,7 +5182,9 @@
         "sensorLodOptions": "0.7~1.7 mm",
         "switch": "spdt",
         "weight": 56
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "1f2e9ba6-5ac5-4f0d-b986-7cb4203b5d6c",
@@ -5217,7 +5223,9 @@
         "sensorLodOptions": "0.7, 1.0, 2.0 mm",
         "switch": "raeshaOpticalUnspecified",
         "weight": 45
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "201270eb-b392-4e41-96a9-1b609a77e795",
@@ -5285,7 +5293,9 @@
         "switch": "omronOptical",
         "weight": 48,
         "wheelSwitch": "2핀 택트"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "2cf40f05-fa65-4a5c-936a-c67de7025af3",
@@ -5353,7 +5363,9 @@
         "switch": "switch99847bff93",
         "weight": 102,
         "wheelSwitch": "브랜드 미상 3핀 스위치"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     }
   ]
 }

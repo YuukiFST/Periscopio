@@ -2134,7 +2134,9 @@
         "toggleKey": true,
         "webDriver": true,
         "windowsLock": false
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "04ef23e4-e4bd-4212-be44-daabe2640afd",
@@ -2205,7 +2207,9 @@
         "toggleKey": true,
         "webDriver": true,
         "windowsLock": true
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "479c4333-c25b-4e79-89a5-74d93565c4b5",
@@ -2258,7 +2262,9 @@
         "toggleKey": false,
         "webDriver": false,
         "windowsLock": false
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "49c95966-e910-4628-86d1-b7915439e9af",
@@ -2315,7 +2321,9 @@
         "toggleKey": true,
         "webDriver": true,
         "windowsLock": true
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     }
   ]
 }
