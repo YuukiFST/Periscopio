@@ -4,10 +4,13 @@ import { z } from "zod";
 import type { CategorySlug } from "../src/categories.ts";
 import {
   categoryDataSchema,
+  isTested,
   krwBrlRateSchema,
   metaSchema,
+  productSchema,
   type CategoryData,
   type Meta,
+  type Product,
 } from "../src/data/schema.ts";
 import {
   eyejokerCategories,
@@ -38,11 +41,20 @@ const maximumUnusableImageShare = 0.1;
 /** A Categoria may take the photo away from at most 10% of the published Produtos it keeps. */
 const maximumLostImageShare = 0.1;
 
-/** Only what the photo check reads, so an older published file still parses. */
-const publishedImagesSchema = z.object({
-  products: z.array(z.object({ id: z.string(), image: z.string().nullable() })),
+/** Only what the photo check and the Novidade dates read, so an older published file still parses. */
+const publishedProductsSchema = z.object({
+  products: z.array(
+    z.object({
+      id: z.string(),
+      image: z.string().nullable(),
+      status: z.string().nullable(),
+      firstSeenAt: productSchema.shape.firstSeenAt,
+      testedAt: productSchema.shape.testedAt,
+    }),
+  ),
 });
-type PublishedImages = z.infer<typeof publishedImagesSchema>;
+type PublishedProducts = z.infer<typeof publishedProductsSchema>;
+type PublishedProduct = PublishedProducts["products"][number];
 
 /** Only what the row check and the kept Cotação read, so a meta.json with newer keys still parses. */
 const publishedMetaSchema = z.object({
@@ -109,7 +121,7 @@ function refuseUnusableImages(normalized: NormalizedCategory[]): void {
   }
 }
 
-function refuseLostImages(data: CategoryData, published: PublishedImages | null): void {
+function refuseLostImages(data: CategoryData, published: PublishedProducts | null): void {
   if (!published) return;
   const imageById = new Map(data.products.map((product) => [product.id, product.image]));
   const kept = published.products.filter(
@@ -143,6 +155,43 @@ function withoutMissingImages(data: CategoryData, available: ReadonlySet<string>
   return { ...data, products };
 }
 
+type NovidadeDates = Pick<Product, "firstSeenAt" | "testedAt">;
+
+/**
+ * Carries the dates forward from the published Produto. A Produto the published
+ * file lacks is new in this Atualização. One published before the dates existed,
+ * or every Produto when nothing was published, gets null, so nothing reads as new.
+ */
+function novidadeDatesOf(
+  product: Product,
+  published: ReadonlyMap<string, PublishedProduct> | null,
+  updatedAt: string,
+): NovidadeDates {
+  if (!published) return { firstSeenAt: null, testedAt: null };
+  const previous = published.get(product.id);
+  if (!previous) return { firstSeenAt: updatedAt, testedAt: isTested(product) ? updatedAt : null };
+  if (previous.firstSeenAt === undefined) return { firstSeenAt: null, testedAt: null };
+  const becameTested = isTested(product) && !isTested(previous);
+  return {
+    firstSeenAt: previous.firstSeenAt,
+    testedAt: previous.testedAt ?? (becameTested ? updatedAt : null),
+  };
+}
+
+function withNovidadeDates(
+  data: CategoryData,
+  published: PublishedProducts | null,
+  updatedAt: string,
+): CategoryData {
+  const publishedById =
+    published && new Map(published.products.map((product) => [product.id, product]));
+  const products = data.products.map((product) => ({
+    ...product,
+    ...novidadeDatesOf(product, publishedById, updatedAt),
+  }));
+  return { ...data, products };
+}
+
 async function writeJsonFile(path: string, value: unknown): Promise<void> {
   const partial = `${path}.partial`;
   await writeFile(partial, `${JSON.stringify(value, null, 2)}\n`);
@@ -169,9 +218,12 @@ async function runUpdate(config: UpdateConfig): Promise<void> {
   const validated = normalized.map(({ data }) => validateOutput(data));
   const publishedMeta = await readPublishedFile(metaPath, publishedMetaSchema);
   refuseRowDrop(validated, publishedMeta);
+  const publishedProducts = new Map<CategorySlug, PublishedProducts | null>();
   for (const data of validated) {
     const publishedPath = join(dataDir, `${data.category}.json`);
-    refuseLostImages(data, await readPublishedFile(publishedPath, publishedImagesSchema));
+    const published = await readPublishedFile(publishedPath, publishedProductsSchema);
+    refuseLostImages(data, published);
+    publishedProducts.set(data.category, published);
   }
 
   await mkdir(dataDir, { recursive: true });
@@ -184,12 +236,19 @@ async function runUpdate(config: UpdateConfig): Promise<void> {
   const krwBrlFetch = await fetchKrwBrlRate(config.frankfurterUrl);
   const krwBrl = krwBrlFetch.ok ? krwBrlFetch.rate : publishedMeta?.krwBrl;
   const images = await downloadNewImages(config.cdnUrl, imagesDir, wantedImages);
-  const published = validated.map((data) => withoutMissingImages(data, images.available));
+  const updatedAt = new Date().toISOString();
+  const published = validated.map((data) =>
+    withNovidadeDates(
+      withoutMissingImages(data, images.available),
+      publishedProducts.get(data.category) ?? null,
+      updatedAt,
+    ),
+  );
 
   for (const data of published) await writeJsonFile(join(dataDir, `${data.category}.json`), data);
   const counts = { mouse: 0, teclado: 0, monitor: 0 };
   for (const data of published) counts[data.category] = data.products.length;
-  const meta: Meta = { updatedAt: new Date().toISOString(), counts, ...(krwBrl && { krwBrl }) };
+  const meta: Meta = { updatedAt, counts, ...(krwBrl && { krwBrl }) };
   await writeJsonFile(metaPath, meta);
   const deletedImages = await deleteOrphanImages(imagesDir, images.available);
 

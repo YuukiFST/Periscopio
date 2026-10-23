@@ -7,8 +7,12 @@ import { categoryDataSchema, metaSchema } from "../../src/data/schema.ts";
 import {
   editRecordedCompanies,
   editRecordedSnapshot,
+  editToPreviousAtualizacao,
   krwBrlRatePath,
   loadRecordedRoutes,
+  newlyTestedMouseId,
+  newMouseId,
+  newUntestedMouseId,
   snapshotPath,
   startRecordedEyejokerServer,
   type RecordedRoutes,
@@ -247,6 +251,75 @@ test("a failed Cotação fetch keeps the published Cotação, notes it in the su
   expect(failed.exitCode).toBe(0);
   expect(failed.stdout).toContain("Mantida a publicada: 0.00381 em 2026-10-22.");
   expect((await readMeta()).krwBrl).toEqual(fetched);
+});
+
+async function readNovidadeDates(outDir: string) {
+  const meta = metaSchema.parse(JSON.parse(await readFile(join(outDir, "data/meta.json"), "utf8")));
+  const mouse = categoryDataSchema.parse(
+    JSON.parse(await readFile(join(outDir, "data/mouse.json"), "utf8")),
+  );
+  const dates = new Map(
+    mouse.products.map(({ id, firstSeenAt, testedAt }) => [id, { firstSeenAt, testedAt }]),
+  );
+  return { updatedAt: meta.updatedAt, dates };
+}
+
+test("an Atualização dates the Produtos new or newly tested in it and carries the dates forward", async () => {
+  const outDir = await makeTempDir();
+  const previousRoutes = await loadRecordedRoutes();
+  editToPreviousAtualizacao(previousRoutes);
+  expect((await runUpdateCli(previousRoutes, outDir, null)).exitCode).toBe(0);
+  const first = await readNovidadeDates(outDir);
+  // Nothing was published before, so the first Atualização marks nothing as new.
+  for (const dates of first.dates.values())
+    expect(dates).toEqual({ firstSeenAt: null, testedAt: null });
+
+  expect((await runUpdateCli(await loadRecordedRoutes(), outDir, null)).exitCode).toBe(0);
+  const second = await readNovidadeDates(outDir);
+  expect(second.dates.get(newMouseId)).toEqual({
+    firstSeenAt: second.updatedAt,
+    testedAt: second.updatedAt,
+  });
+  expect(second.dates.get(newlyTestedMouseId)).toEqual({
+    firstSeenAt: null,
+    testedAt: second.updatedAt,
+  });
+  expect(second.dates.get(newUntestedMouseId)).toEqual({
+    firstSeenAt: second.updatedAt,
+    testedAt: null,
+  });
+  const novidadeIds = new Set([newMouseId, newlyTestedMouseId, newUntestedMouseId]);
+  const unchanged = [...second.dates].filter(([id]) => !novidadeIds.has(id));
+  expect(unchanged).toHaveLength(3);
+  for (const [, dates] of unchanged) expect(dates).toEqual({ firstSeenAt: null, testedAt: null });
+
+  expect((await runUpdateCli(await loadRecordedRoutes(), outDir, null)).exitCode).toBe(0);
+  const third = await readNovidadeDates(outDir);
+  expect(third.updatedAt).not.toBe(second.updatedAt);
+  expect(third.dates).toEqual(second.dates);
+});
+
+/** A JSON replacer that writes the Produtos as published before the Novidade dates. */
+function withoutNovidadeDates(key: string, value: unknown): unknown {
+  return key === "firstSeenAt" || key === "testedAt" ? undefined : value;
+}
+
+test("the first Atualização over data published before the Novidade dates marks nothing as new", async () => {
+  const outDir = await makeTempDir();
+  const previousRoutes = await loadRecordedRoutes();
+  editToPreviousAtualizacao(previousRoutes);
+  expect((await runUpdateCli(previousRoutes, outDir, null)).exitCode).toBe(0);
+  const mousePath = join(outDir, "data/mouse.json");
+  const mouse = categoryDataSchema.parse(JSON.parse(await readFile(mousePath, "utf8")));
+  await writeFile(mousePath, JSON.stringify(mouse, withoutNovidadeDates));
+
+  // EyeJoker now lists the new mouse back and the other one as tested.
+  const run = await runUpdateCli(await loadRecordedRoutes(), outDir, null);
+  expect(run.exitCode).toBe(0);
+  const { dates } = await readNovidadeDates(outDir);
+  expect(dates.get(newlyTestedMouseId)).toEqual({ firstSeenAt: null, testedAt: null });
+  // A Produto missing from the published file is still new.
+  expect(dates.get(newMouseId)?.firstSeenAt).not.toBeNull();
 });
 
 test("a new ENUM value without pt passes and is listed in the summary", async () => {

@@ -73,3 +73,7 @@ _Avoid_: ranking, score, nota de desempenho
 **Link AliExpress**:
 O único link de compra mostrado em um Produto, quando o EyeJoker tem um.
 _Avoid_: link de afiliado, link de compra
+
+**Novidade**:
+Um Produto publicado pela primeira vez (Novo) ou que passou a ser testado (Testado agora) em uma Atualização dos 14 dias antes da mais recente.
+_Avoid_: novo produto, lançamento, changelog

@@ -77,8 +77,20 @@ export const productSchema = z.strictObject({
     .regex(/^\/images\/[0-9a-f-]{36}\.avif$/)
     .nullable(),
   values: z.record(fieldKeySchema, fieldValueSchema),
+  /**
+   * The Atualização that first published the Produto, and the one where its
+   * Status de teste became tested. Null when it predates both fields; absent
+   * from data written before them.
+   */
+  firstSeenAt: z.iso.datetime().nullable().optional(),
+  testedAt: z.iso.datetime().nullable().optional(),
 });
 export type Product = z.infer<typeof productSchema>;
+
+/** EyeJoker's `reviewed` is the published review; every other status still awaits a full test. */
+export function isTested(product: Pick<Product, "status">): boolean {
+  return product.status === "reviewed";
+}
 
 function valueMatchesField(value: FieldValue, field: Field): boolean {
   switch (field.type) {

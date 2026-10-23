@@ -11,7 +11,13 @@ import { categoryLabels, isCategorySlug } from "@/categories";
 import { Button } from "@/components/ui/button";
 import { CopyLinkButton } from "@/components/copy-link-button";
 import { CategorySkeleton } from "@/components/loading-skeletons";
-import { StaleDataAlert, UpdatedAtLabel, updateAgeOf } from "@/components/update-notice";
+import {
+  NovidadesNotice,
+  StaleDataAlert,
+  UpdatedAtLabel,
+  updateAgeOf,
+  useLastSeenUpdate,
+} from "@/components/update-notice";
 import { loadCategoryData } from "@/data/load-data";
 import type { CategoryData } from "@/data/schema";
 import { CompareBar } from "@/product-compare/compare-bar";
@@ -43,6 +49,7 @@ import {
 } from "@/product-table/product-filter";
 import { ProductSidebar } from "@/product-detail/product-sidebar";
 import { useChangeComparedIds } from "@/product-detail/use-change-compared-ids";
+import { countNovidadesSince, filterNovidades, novidadeOf } from "@/product-table/novidades";
 import { ProductTable } from "@/product-table/product-table";
 import { defaultSortFor, tableColumnsFor } from "@/product-table/table-columns";
 import {
@@ -51,6 +58,7 @@ import {
   sortParamPattern,
 } from "@/product-table/table-sorting";
 import {
+  novidadesToggleId,
   resultCountText,
   searchInputId,
   searchTextMaxLength,
@@ -63,6 +71,7 @@ const categorySearchSchema = z.object({
   status: z.enum(testStatusFilters).optional().catch(undefined),
   q: z.string().max(searchTextMaxLength).optional().catch(undefined),
   cmp: compareParamSchema,
+  novidades: z.literal("1").optional().catch(undefined),
 });
 
 /**
@@ -123,7 +132,7 @@ const filtersHeadingId = "filtros-titulo";
 function CategoryTable({ data }: { data: CategoryData }) {
   const meta = rootRoute.useLoaderData();
   const search = Route.useSearch();
-  const { ordem, q, cmp } = search;
+  const { ordem, q, cmp, novidades } = search;
   const status = search.status ?? defaultTestStatus;
   // Every call resolves from the current URL (`unsafeRelative: "path"`), not from this route,
   // so a change of Filtro, ordem or busca keeps a Produto's panel open.
@@ -169,15 +178,51 @@ function CategoryTable({ data }: { data: CategoryData }) {
     if ((q ?? "") !== searchText) setSearchText(q ?? "");
   }
   const deferredSearchText = useDeferredValue(searchText);
-  const products = useMemo(
-    () =>
-      filterProducts(
-        applyFilters(data.products, filters, filterValues),
-        status,
-        deferredSearchText,
-      ),
-    [data.products, filters, filterValues, status, deferredSearchText],
+  const products = useMemo(() => {
+    const filtered = filterProducts(
+      applyFilters(data.products, filters, filterValues),
+      status,
+      deferredSearchText,
+    );
+    return novidades ? filterNovidades(filtered, meta.updatedAt) : filtered;
+  }, [data.products, filters, filterValues, status, deferredSearchText, novidades, meta.updatedAt]);
+  const hasNovidades = useMemo(
+    () => data.products.some((product) => novidadeOf(product, meta.updatedAt) !== undefined),
+    [data.products, meta.updatedAt],
   );
+  const [lastSeenUpdate, markUpdateSeen] = useLastSeenUpdate(data.category, meta.updatedAt);
+  const novidadeCounts = useMemo(
+    () =>
+      lastSeenUpdate === null
+        ? undefined
+        : countNovidadesSince(data.products, meta.updatedAt, lastSeenUpdate),
+    [data.products, meta.updatedAt, lastSeenUpdate],
+  );
+
+  function changeNovidades(pressed: boolean) {
+    void navigate({
+      unsafeRelative: "path",
+      search: (previous) => ({ ...previous, novidades: pressed ? "1" : undefined }),
+      replace: true,
+    });
+  }
+
+  function showNovidades() {
+    markUpdateSeen();
+    // The notice counts untested Produtos too, so every Status de teste shows.
+    void navigate({
+      unsafeRelative: "path",
+      search: (previous) => ({ ...previous, novidades: "1", status: "todos" }),
+      replace: true,
+    });
+    // The notice goes away; focus moves to the toggle it just turned on.
+    document.getElementById(novidadesToggleId)?.focus();
+  }
+
+  function dismissNovidadesNotice() {
+    markUpdateSeen();
+    document.getElementById(searchInputId)?.focus();
+  }
 
   function changeSearchText(text: string) {
     setSearchText(text);
@@ -198,6 +243,7 @@ function CategoryTable({ data }: { data: CategoryData }) {
         ...filterSearchOf(filters, noFilterValues),
         q: undefined,
         status: "todos",
+        novidades: undefined,
       }),
       replace: true,
     });
@@ -238,6 +284,13 @@ function CategoryTable({ data }: { data: CategoryData }) {
         <CopyLinkButton />
       </div>
       {updateAge.isStale && <StaleDataAlert age={updateAge} />}
+      {novidadeCounts !== undefined && novidadeCounts.novos + novidadeCounts.testados > 0 && (
+        <NovidadesNotice
+          counts={novidadeCounts}
+          onShow={showNovidades}
+          onDismiss={dismissNovidadesNotice}
+        />
+      )}
       <div className="flex min-h-0 flex-1 gap-6">
         <aside
           aria-labelledby={filtersHeadingId}
@@ -280,6 +333,11 @@ function CategoryTable({ data }: { data: CategoryData }) {
                 replace: true,
               })
             }
+            novidades={
+              hasNovidades || novidades
+                ? { pressed: novidades === "1", onPressedChange: changeNovidades }
+                : undefined
+            }
             countText={resultCountText(products.length, data.products.length)}
           >
             <FilterDrawer
@@ -305,7 +363,11 @@ function CategoryTable({ data }: { data: CategoryData }) {
           {products.length === 0 ? (
             <div className="flex flex-col items-start gap-3 rounded-lg border border-border px-4 py-6">
               <p className="font-medium wrap-anywhere">
-                {emptyResultText(deferredSearchText.trim(), status, filterCount > 0)}
+                {emptyResultText(
+                  deferredSearchText.trim(),
+                  status,
+                  filterCount > 0 || novidades === "1",
+                )}
               </p>
               <Button variant="outline" size="lg" onClick={showAllProducts}>
                 Mostrar todos os produtos
@@ -316,9 +378,13 @@ function CategoryTable({ data }: { data: CategoryData }) {
               columns={columns}
               products={products}
               sorting={sorting}
-              resultKey={[ordem, status, deferredSearchText, ...Object.values(filterSearch)].join(
-                "|",
-              )}
+              resultKey={[
+                ordem,
+                status,
+                deferredSearchText,
+                novidades,
+                ...Object.values(filterSearch),
+              ].join("|")}
               labelledBy={headingId}
               comparedIds={comparedIds}
               onComparedToggle={(id) => changeComparedIds(toggleComparedId(comparedIds, id))}
