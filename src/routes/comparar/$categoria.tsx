@@ -1,8 +1,14 @@
 import { createFileRoute, notFound, rootRouteId } from "@tanstack/react-router";
 import { z } from "zod";
 import { isCategorySlug } from "@/categories";
+import { ComparisonSkeleton } from "@/components/loading-skeletons";
 import { loadCategoryData } from "@/data/load-data";
-import { compareParamSchema } from "@/product-compare/compare-selection";
+import {
+  compareParamSchema,
+  maxComparedProducts,
+  minComparedProducts,
+  productIdsFromParam,
+} from "@/product-compare/compare-selection";
 import { connectionPreferenceSchema } from "@/product-compare/mouse-connection";
 import { ProductComparison } from "@/product-compare/product-comparison";
 
@@ -27,11 +33,10 @@ export const Route = createFileRoute("/comparar/$categoria")({
 });
 
 function ComparisonPending() {
-  return (
-    <p role="status" className="text-fg-secondary">
-      Carregando comparação…
-    </p>
-  );
+  const { p } = Route.useSearch();
+  const linkedCount = productIdsFromParam(p).length;
+  const columnCount = Math.min(Math.max(linkedCount, minComparedProducts), maxComparedProducts);
+  return <ComparisonSkeleton status="Carregando comparação…" columnCount={columnCount} />;
 }
 
 function ComparisonPage() {
