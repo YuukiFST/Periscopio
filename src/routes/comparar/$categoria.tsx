@@ -1,8 +1,9 @@
 import { createFileRoute, notFound, rootRouteId } from "@tanstack/react-router";
 import { z } from "zod";
 import { isCategorySlug } from "@/categories";
+import { ComparisonSkeleton } from "@/components/loading-skeletons";
 import { loadCategoryData } from "@/data/load-data";
-import { compareParamSchema } from "@/product-compare/compare-selection";
+import { compareParamSchema, productIdsFromParam } from "@/product-compare/compare-selection";
 import { connectionPreferenceSchema } from "@/product-compare/mouse-connection";
 import { ProductComparison } from "@/product-compare/product-comparison";
 
@@ -27,10 +28,14 @@ export const Route = createFileRoute("/comparar/$categoria")({
 });
 
 function ComparisonPending() {
+  const { p } = Route.useSearch();
+  const { categoria } = Route.useParams();
   return (
-    <p role="status" className="text-fg-secondary">
-      Carregando comparação…
-    </p>
+    <ComparisonSkeleton
+      status="Carregando comparação…"
+      linkedCount={productIdsFromParam(p).length}
+      withConnectionRow={categoria === "mouse"}
+    />
   );
 }
 

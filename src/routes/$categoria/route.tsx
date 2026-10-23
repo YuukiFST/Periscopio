@@ -10,6 +10,7 @@ import { z } from "zod";
 import { categoryLabels, isCategorySlug } from "@/categories";
 import { Button } from "@/components/ui/button";
 import { CopyLinkButton } from "@/components/copy-link-button";
+import { CategorySkeleton } from "@/components/loading-skeletons";
 import {
   NovidadesNotice,
   StaleDataAlert,
@@ -95,11 +96,7 @@ export const Route = createFileRoute("/$categoria")({
 const rootRoute = getRouteApi("__root__");
 
 function CategoryPending() {
-  return (
-    <p role="status" className="text-fg-secondary">
-      Carregando produtos…
-    </p>
-  );
+  return <CategorySkeleton status="Carregando produtos…" />;
 }
 
 function CategoryPage() {
