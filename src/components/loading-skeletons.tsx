@@ -1,13 +1,17 @@
 import { cn } from "@/lib/utils";
+import { maxComparedProducts, minComparedProducts } from "@/product-compare/compare-selection";
 
 /** Rows enough to fill a tall screen; the frame clips the rest. */
 const skeletonRowCount = 32;
 const skeletonValueColumns = [0, 1, 2, 3, 4, 5];
 
-/** One placeholder shape; it pulses only when the system allows motion. */
+/** One placeholder shape; the skeleton around it pulses as a whole. */
 function Bone({ className }: { className?: string }) {
-  return <div className={cn("rounded-md bg-component motion-safe:animate-pulse", className)} />;
+  return <div className={cn("rounded-md bg-component", className)} />;
 }
+
+/** Pulses once for every shape inside, and only when the system allows motion. */
+const skeletonShapesClass = "flex min-h-0 flex-1 flex-col gap-4 motion-safe:animate-pulse";
 
 /**
  * The page's title row: the heading and the Copiar link button, at their
@@ -24,7 +28,7 @@ function TitleRowSkeleton({
   return (
     <div className="flex items-start justify-between gap-4">
       <div className="flex min-w-0 flex-wrap items-center gap-x-4 gap-y-1">
-        <div className="flex h-[calc(var(--text-heading-5)*1.3)] items-center">
+        <div className="flex h-[calc(var(--text-heading-5)*var(--text-heading-5--line-height))] items-center">
           <Bone className={cn("h-6 max-w-full", headingWidth)} />
         </div>
         {withUpdatedAt && <Bone className="my-0.5 h-4 w-52" />}
@@ -41,11 +45,11 @@ function TitleRowSkeleton({
  */
 export function CategorySkeleton({ status }: { status: string }) {
   return (
-    <div aria-busy="true" className="flex min-h-0 flex-1 flex-col gap-4">
+    <div className="flex min-h-0 flex-1 flex-col">
       <p role="status" className="sr-only">
         {status}
       </p>
-      <div aria-hidden="true" className="contents">
+      <div aria-hidden="true" className={skeletonShapesClass}>
         <TitleRowSkeleton headingWidth="w-28" withUpdatedAt />
         <div className="flex min-h-0 flex-1 gap-6">
           <div className="-ms-2 hidden w-64 shrink-0 flex-col gap-3 ps-2 pe-2 lg:flex xl:w-72">
@@ -80,7 +84,7 @@ export function CategorySkeleton({ status }: { status: string }) {
                   <div className="flex w-9 shrink-0 justify-center sm:w-11">
                     <Bone className="size-4 rounded-sm" />
                   </div>
-                  <div className="flex w-38 shrink-0 items-center gap-2 pe-2 min-[22rem]:w-44 sm:w-56 sm:gap-3 sm:pe-3">
+                  <div className="flex h-full w-38 shrink-0 items-center gap-2 border-e border-border-subtle pe-2 min-[22rem]:w-44 sm:w-56 sm:gap-3 sm:pe-3">
                     <Bone className="size-8 shrink-0 sm:size-10" />
                     <div className="flex min-w-0 flex-1 flex-col gap-1.5">
                       <Bone className="h-3.5 w-4/5" />
@@ -112,31 +116,40 @@ function comparisonColumnClass(index: number): string {
 
 /**
  * The Comparação while its Produtos load: title row and one column per Produto
- * in the link, as many as the table shows side by side on the screen.
+ * in the link, 2 to 4, as many as the table shows side by side on the screen.
  */
 export function ComparisonSkeleton({
   status,
-  columnCount,
+  linkedCount,
+  withConnectionRow,
 }: {
   status: string;
-  /** The Produtos in the link, 2 to 4. */
-  columnCount: number;
+  /** The Produto ids in the link. */
+  linkedCount: number;
+  /** A mouse Comparação puts the Conexão choice and its verdict above the table. */
+  withConnectionRow: boolean;
 }) {
+  const columnCount = Math.min(Math.max(linkedCount, minComparedProducts), maxComparedProducts);
   const columns = Array.from({ length: columnCount }, (_, index) => index);
   return (
     <div
-      aria-busy="true"
       style={{ maxWidth: `calc(var(--label-column) + ${columnCount} * 24rem + 2px)` }}
-      className="flex min-h-0 flex-1 flex-col gap-4 [--label-column:7.25rem] min-[22rem]:[--label-column:7.5rem] sm:[--label-column:11rem] lg:[--label-column:14rem]"
+      className="flex min-h-0 flex-1 flex-col [--label-column:7.25rem] min-[22rem]:[--label-column:7.5rem] sm:[--label-column:11rem] lg:[--label-column:14rem]"
     >
       <p role="status" className="sr-only">
         {status}
       </p>
-      <div aria-hidden="true" className="contents">
+      <div aria-hidden="true" className={skeletonShapesClass}>
         <div className="flex min-h-8 items-center pointer-coarse:min-h-11">
           <Bone className="h-4 w-36" />
         </div>
         <TitleRowSkeleton headingWidth="w-56" />
+        {withConnectionRow && (
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+            <Bone className="h-9 w-72 rounded-lg pointer-coarse:h-11" />
+            <Bone className="h-4 w-96 max-w-full" />
+          </div>
+        )}
         <div className="flex min-h-72 flex-col overflow-hidden rounded-lg border border-border">
           <div className="flex shrink-0 border-b border-border">
             <div className="flex w-(--label-column) shrink-0 flex-col justify-end gap-1.5 border-e border-border p-2 sm:p-3">

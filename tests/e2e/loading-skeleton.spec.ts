@@ -38,14 +38,14 @@ test.describe("while the data loads", () => {
       const release = await holdMouseData(page);
       await page.goto(path);
 
-      const skeleton = page.locator('[aria-busy="true"]');
+      // The shapes are hidden from screen readers; they are all the main area holds while loading.
+      const skeleton = page.getByRole("main").locator('[aria-hidden="true"]');
       await expect(page.getByRole("status")).toHaveText(status);
       await expect(skeleton).toBeVisible();
       await expect(page.getByRole("table")).toHaveCount(0);
 
       await release();
       await expect(loaded(page)).toBeVisible();
-      await expect(skeleton).toHaveCount(0);
       await expect(page.getByText(status)).toHaveCount(0);
     });
   }
@@ -62,7 +62,10 @@ test.describe("while the data loads", () => {
       await page.goto("/mouse");
       await expect(page.getByRole("status")).toHaveText("Carregando produtos…");
 
-      const runningAnimations = await page.evaluate(() => document.getAnimations().length);
+      const runningAnimations = await page
+        .getByRole("main")
+        .locator('[aria-hidden="true"]')
+        .evaluate((skeleton) => skeleton.getAnimations({ subtree: true }).length);
       expect(runningAnimations > 0).toBe(pulses);
       await release();
     });

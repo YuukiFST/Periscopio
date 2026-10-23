@@ -3,12 +3,7 @@ import { z } from "zod";
 import { isCategorySlug } from "@/categories";
 import { ComparisonSkeleton } from "@/components/loading-skeletons";
 import { loadCategoryData } from "@/data/load-data";
-import {
-  compareParamSchema,
-  maxComparedProducts,
-  minComparedProducts,
-  productIdsFromParam,
-} from "@/product-compare/compare-selection";
+import { compareParamSchema, productIdsFromParam } from "@/product-compare/compare-selection";
 import { connectionPreferenceSchema } from "@/product-compare/mouse-connection";
 import { ProductComparison } from "@/product-compare/product-comparison";
 
@@ -34,9 +29,14 @@ export const Route = createFileRoute("/comparar/$categoria")({
 
 function ComparisonPending() {
   const { p } = Route.useSearch();
-  const linkedCount = productIdsFromParam(p).length;
-  const columnCount = Math.min(Math.max(linkedCount, minComparedProducts), maxComparedProducts);
-  return <ComparisonSkeleton status="Carregando comparação…" columnCount={columnCount} />;
+  const { categoria } = Route.useParams();
+  return (
+    <ComparisonSkeleton
+      status="Carregando comparação…"
+      linkedCount={productIdsFromParam(p).length}
+      withConnectionRow={categoria === "mouse"}
+    />
+  );
 }
 
 function ComparisonPage() {
