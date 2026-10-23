@@ -170,6 +170,14 @@ test("the Novidades notice closes and gives focus back to the search", async ({
   const notice = reopened.getByText("1 produto novo e 1 testado desde sua última visita");
   await expect(notice).toBeVisible({ timeout: 15_000 });
 
+  // The notice waits to be closed while the visit goes to another Categoria and back.
+  const categories = reopened.getByRole("navigation", { name: "Categorias" });
+  await categories.getByRole("link", { name: "Teclados" }).click();
+  await expect(reopened.getByRole("heading", { level: 1 })).toHaveText("Teclados");
+  await categories.getByRole("link", { name: "Mouses" }).click();
+  await expect(reopened.getByRole("heading", { level: 1 })).toHaveText("Mouses");
+  await expect(notice).toBeVisible();
+
   await reopened.getByRole("button", { name: "Fechar aviso" }).click();
   await expect(notice).toHaveCount(0);
   await expect(

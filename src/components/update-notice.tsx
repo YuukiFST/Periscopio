@@ -60,11 +60,28 @@ function readLastSeenUpdate(category: CategorySlug): string | null {
 }
 
 /**
- * The `updatedAt` of the Atualização the last visit to this Categoria showed,
- * read once; the visit then records the current one, never an older one.
+ * What the last visit saw, read once per page load: the visit records the current
+ * Atualização right away, and a remount of the table must still compare with the old one.
  */
-export function useLastSeenUpdate(category: CategorySlug, updatedAt: string): string | null {
-  const [lastSeen] = useState(() => readLastSeenUpdate(category));
+const lastSeenAtLoad = new Map<CategorySlug, string | null>();
+
+/**
+ * The `updatedAt` of the Atualização the last visit to this Categoria showed,
+ * and how to mark the current one seen in this visit too, which ends the notice.
+ * The visit records the current one in storage, never an older one.
+ */
+export function useLastSeenUpdate(
+  category: CategorySlug,
+  updatedAt: string,
+): [lastSeen: string | null, markSeen: () => void] {
+  const [lastSeen, setLastSeen] = useState(() => {
+    if (!lastSeenAtLoad.has(category)) lastSeenAtLoad.set(category, readLastSeenUpdate(category));
+    return lastSeenAtLoad.get(category) ?? null;
+  });
+  function markSeen() {
+    lastSeenAtLoad.set(category, updatedAt);
+    setLastSeen(updatedAt);
+  }
   useEffect(() => {
     const stored = readLastSeenUpdate(category);
     if (stored !== null && Date.parse(stored) >= Date.parse(updatedAt)) return;
@@ -74,7 +91,7 @@ export function useLastSeenUpdate(category: CategorySlug, updatedAt: string): st
       // Without site storage every visit reads as the first, so no notice shows.
     }
   }, [category, updatedAt]);
-  return lastSeen;
+  return [lastSeen, markSeen];
 }
 
 const countFormat = new Intl.NumberFormat("pt-BR");

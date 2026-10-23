@@ -193,7 +193,7 @@ function CategoryTable({ data }: { data: CategoryData }) {
     () => data.products.some((product) => novidadeOf(product, meta.updatedAt) !== undefined),
     [data.products, meta.updatedAt],
   );
-  const lastSeenUpdate = useLastSeenUpdate(data.category, meta.updatedAt);
+  const [lastSeenUpdate, markUpdateSeen] = useLastSeenUpdate(data.category, meta.updatedAt);
   const novidadeCounts = useMemo(
     () =>
       lastSeenUpdate === null
@@ -201,7 +201,6 @@ function CategoryTable({ data }: { data: CategoryData }) {
         : countNovidadesSince(data.products, meta.updatedAt, lastSeenUpdate),
     [data.products, meta.updatedAt, lastSeenUpdate],
   );
-  const [isNoticeDismissed, setNoticeDismissed] = useState(false);
 
   function changeNovidades(pressed: boolean) {
     void navigate({
@@ -212,7 +211,7 @@ function CategoryTable({ data }: { data: CategoryData }) {
   }
 
   function showNovidades() {
-    setNoticeDismissed(true);
+    markUpdateSeen();
     // The notice counts untested Produtos too, so every Status de teste shows.
     void navigate({
       unsafeRelative: "path",
@@ -224,7 +223,7 @@ function CategoryTable({ data }: { data: CategoryData }) {
   }
 
   function dismissNovidadesNotice() {
-    setNoticeDismissed(true);
+    markUpdateSeen();
     document.getElementById(searchInputId)?.focus();
   }
 
@@ -288,15 +287,13 @@ function CategoryTable({ data }: { data: CategoryData }) {
         <CopyLinkButton />
       </div>
       {updateAge.isStale && <StaleDataAlert age={updateAge} />}
-      {!isNoticeDismissed &&
-        novidadeCounts !== undefined &&
-        novidadeCounts.novos + novidadeCounts.testados > 0 && (
-          <NovidadesNotice
-            counts={novidadeCounts}
-            onShow={showNovidades}
-            onDismiss={dismissNovidadesNotice}
-          />
-        )}
+      {novidadeCounts !== undefined && novidadeCounts.novos + novidadeCounts.testados > 0 && (
+        <NovidadesNotice
+          counts={novidadeCounts}
+          onShow={showNovidades}
+          onDismiss={dismissNovidadesNotice}
+        />
+      )}
       <div className="flex min-h-0 flex-1 gap-6">
         <aside
           aria-labelledby={filtersHeadingId}
