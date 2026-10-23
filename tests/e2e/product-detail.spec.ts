@@ -110,6 +110,37 @@ test("a Produto without Medições shows no Medições group, and says what is m
     - definition: Sugerido
   `);
   await expect(page.getByRole("link", { name: "Ver no AliExpress" })).toHaveCount(0);
+  // Without a Preço it has no distance to any Produto, so there is nothing to compare it with.
+  await expect(page.getByRole("link", { name: "Comparar com parecidos" })).toHaveCount(0);
+});
+
+test("Comparar com parecidos opens a Comparação of the Produto and the 3 nearest tested ones, nearest first", async ({
+  page,
+}) => {
+  const nearestToDragonflyA9Ultra = [
+    { id: "201270eb-b392-4e41-96a9-1b609a77e795", name: "Huan" },
+    { id: "0390fea6-efb9-45ea-a1a3-71b170224e58", name: "Dragonfly 3 PRO" },
+    { id: "2cf40f05-fa65-4a5c-936a-c67de7025af3", name: "H200A" },
+  ];
+  await page.goto(`/mouse/${dragonflyA9UltraId}`);
+  await page.getByRole("link", { name: "Comparar com parecidos" }).click();
+
+  const ids = [dragonflyA9UltraId, ...nearestToDragonflyA9Ultra.map((product) => product.id)];
+  await expect(page).toHaveURL(`/comparar/mouse?p=${ids.join(",")}`);
+  const removeButtons = page
+    .getByRole("columnheader")
+    .getByRole("button", { name: /^Remover .+ da comparação$/ });
+  await expect
+    .poll(() =>
+      removeButtons.evaluateAll((buttons) =>
+        buttons.map((button) => button.getAttribute("aria-label")),
+      ),
+    )
+    .toEqual(
+      ["Dragonfly A9 Ultra", ...nearestToDragonflyA9Ultra.map((product) => product.name)].map(
+        (name) => `Remover ${name} da comparação`,
+      ),
+    );
 });
 
 test.describe("with a meta.json from before the Cotação", () => {
