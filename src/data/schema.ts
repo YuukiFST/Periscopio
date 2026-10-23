@@ -118,6 +118,14 @@ export const categoryDataSchema = z
   });
 export type CategoryData = z.infer<typeof categoryDataSchema>;
 
+/** The Cotação: how many reais one won bought on `date`, as `source` published it. */
+export const krwBrlRateSchema = z.strictObject({
+  rate: z.number().positive(),
+  date: z.iso.date(),
+  source: z.string().min(1),
+});
+export type KrwBrlRate = z.infer<typeof krwBrlRateSchema>;
+
 export const metaSchema = z.strictObject({
   updatedAt: z.iso.datetime(),
   counts: z.strictObject({
@@ -125,5 +133,7 @@ export const metaSchema = z.strictObject({
     teclado: z.int().nonnegative(),
     monitor: z.int().nonnegative(),
   }),
+  /** Absent from a `meta.json` written before the Cotação, and until a fetch succeeds. */
+  krwBrl: krwBrlRateSchema.optional(),
 });
 export type Meta = z.infer<typeof metaSchema>;

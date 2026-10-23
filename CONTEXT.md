@@ -42,6 +42,10 @@ _Avoid_: valor, custo
 A cópia semanal dos dados do EyeJoker para o app.
 _Avoid_: sync, scrape, importação
 
+**Cotação**:
+Quantos reais valia um won no dia de referência, segundo o Banco Central Europeu (via Frankfurter), registrada a cada Atualização para mostrar o Preço aproximado em reais.
+_Avoid_: câmbio, taxa, conversão
+
 ### Uso
 
 **Filtro**:

@@ -8,6 +8,8 @@
 
 Fotos baixadas: 10. Fotos apagadas: 1. Fotos com falha: 1.
 
+Cotação KRW→BRL: 0.00381 em 2026-10-22, de Frankfurter (Banco Central Europeu).
+
 ### Chaves sem tradução pt
 
 Nenhuma chave sem tradução pt.

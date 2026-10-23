@@ -2,6 +2,7 @@ import { readFile, readdir } from "node:fs/promises";
 import { createServer, type Server } from "node:http";
 import { join } from "node:path";
 import { z } from "zod";
+import { frankfurterKrwBrlPath } from "../../pipeline/exchange-rate.ts";
 
 const fixturesDir = join(import.meta.dirname, "fixtures");
 
@@ -13,6 +14,8 @@ export type RecordedRoutes = Map<string, RecordedResponse>;
 export const snapshotPath = (category: "mouse" | "keyboard" | "monitor") =>
   `/api/benchmark/${category}/snapshot`;
 export const companyPath = "/api/company";
+/** The Cotação, under `/frankfurter` on the same server. */
+export const krwBrlRatePath = `/frankfurter${frankfurterKrwBrlPath}`;
 
 function jsonResponse(text: string): RecordedResponse {
   return { status: 200, contentType: "application/json", body: text };
@@ -30,6 +33,10 @@ export async function loadRecordedRoutes(): Promise<RecordedRoutes> {
   routes.set(
     companyPath,
     jsonResponse(await readFile(join(fixturesDir, "api/company.json"), "utf8")),
+  );
+  routes.set(
+    krwBrlRatePath,
+    jsonResponse(await readFile(join(fixturesDir, "frankfurter/krw-brl.json"), "utf8")),
   );
   for (const fileName of await readdir(join(fixturesDir, "cdn"))) {
     const bytes = new Uint8Array(await readFile(join(fixturesDir, "cdn", fileName)));
@@ -96,11 +103,12 @@ export function editRecordedCompanies(
 export type RecordedEyejokerServer = {
   apiUrl: string;
   cdnUrl: string;
+  frankfurterUrl: string;
   requestedPaths: string[];
   close: () => Promise<void>;
 };
 
-/** Serves the recorded EyeJoker excerpt on a free local port; unknown paths answer 404. */
+/** Serves the recorded EyeJoker excerpt and Cotação on a free local port; unknown paths answer 404. */
 export async function startRecordedEyejokerServer(
   routes: RecordedRoutes,
 ): Promise<RecordedEyejokerServer> {
@@ -124,6 +132,7 @@ export async function startRecordedEyejokerServer(
   return {
     apiUrl: origin,
     cdnUrl: `${origin}/cdn`,
+    frankfurterUrl: `${origin}/frankfurter`,
     requestedPaths,
     close: () =>
       new Promise((resolve, reject) =>

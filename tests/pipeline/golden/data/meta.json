@@ -4,5 +4,10 @@
     "mouse": 6,
     "teclado": 4,
     "monitor": 4
+  },
+  "krwBrl": {
+    "rate": 0.00381,
+    "date": "2026-10-22",
+    "source": "Frankfurter (Banco Central Europeu)"
   }
 }
