@@ -4,6 +4,7 @@ import { z } from "zod";
 import type { CategorySlug } from "../src/categories.ts";
 import {
   categoryDataSchema,
+  krwBrlRateSchema,
   metaSchema,
   type CategoryData,
   type Meta,
@@ -43,6 +44,13 @@ const publishedImagesSchema = z.object({
 });
 type PublishedImages = z.infer<typeof publishedImagesSchema>;
 
+/** Only what the row check and the kept Cotação read, so a meta.json with newer keys still parses. */
+const publishedMetaSchema = z.object({
+  counts: metaSchema.shape.counts,
+  krwBrl: krwBrlRateSchema.optional().catch(undefined),
+});
+type PublishedMeta = z.infer<typeof publishedMetaSchema>;
+
 type UpdateConfig = {
   apiUrl: string;
   cdnUrl: string;
@@ -80,7 +88,7 @@ async function readPublishedFile<T>(path: string, schema: z.ZodType<T>): Promise
   throw new UpdateRefusedError(`${path} é inválido:\n${z.prettifyError(result.error)}`);
 }
 
-function refuseRowDrop(normalized: CategoryData[], published: Meta | null): void {
+function refuseRowDrop(normalized: CategoryData[], published: PublishedMeta | null): void {
   if (!published) return;
   for (const { category, products } of normalized) {
     const previous = published.counts[category];
@@ -159,7 +167,7 @@ async function runUpdate(config: UpdateConfig): Promise<void> {
   );
   refuseUnusableImages(normalized);
   const validated = normalized.map(({ data }) => validateOutput(data));
-  const publishedMeta = await readPublishedFile(metaPath, metaSchema);
+  const publishedMeta = await readPublishedFile(metaPath, publishedMetaSchema);
   refuseRowDrop(validated, publishedMeta);
   for (const data of validated) {
     const publishedPath = join(dataDir, `${data.category}.json`);

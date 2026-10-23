@@ -2,6 +2,7 @@ import { readFile, readdir } from "node:fs/promises";
 import { createServer, type Server } from "node:http";
 import { join } from "node:path";
 import { z } from "zod";
+import { frankfurterKrwBrlPath } from "../../pipeline/exchange-rate.ts";
 
 const fixturesDir = join(import.meta.dirname, "fixtures");
 
@@ -14,7 +15,7 @@ export const snapshotPath = (category: "mouse" | "keyboard" | "monitor") =>
   `/api/benchmark/${category}/snapshot`;
 export const companyPath = "/api/company";
 /** The Cotação, under `/frankfurter` on the same server. */
-export const krwBrlRatePath = "/frankfurter/v2/providers/ECB/rate/KRW/BRL";
+export const krwBrlRatePath = `/frankfurter${frankfurterKrwBrlPath}`;
 
 function jsonResponse(text: string): RecordedResponse {
   return { status: 200, contentType: "application/json", body: text };

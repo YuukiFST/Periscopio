@@ -7,9 +7,10 @@
 import { mkdir, rm, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import { z } from "zod";
+import { frankfurterKrwBrlPath } from "../../pipeline/exchange-rate.ts";
 
 const apiUrl = "https://eyejokerdb.com";
-const krwBrlRateUrl = "https://api.frankfurter.dev/v2/providers/ECB/rate/KRW/BRL";
+const krwBrlRateUrl = `https://api.frankfurter.dev${frankfurterKrwBrlPath}`;
 const fixturesDir = join(import.meta.dirname, "fixtures");
 
 /** Each id covers a shape the normalization handles. */
