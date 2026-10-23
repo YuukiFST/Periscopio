@@ -19,6 +19,7 @@ import {
   comparedIdsFromParam,
   toggleComparedId,
 } from "@/product-compare/compare-selection";
+import { ActiveFilterChips } from "@/product-filters/active-filter-chips";
 import { categoryFiltersFor } from "@/product-filters/category-filters";
 import { FilterDrawer } from "@/product-filters/filter-drawer";
 import {
@@ -296,6 +297,12 @@ function CategoryTable({ data }: { data: CategoryData }) {
               />
             </FilterDrawer>
           </TableToolbar>
+          <ActiveFilterChips
+            filters={filters}
+            values={filterValues}
+            onValuesChange={changeFilterValues}
+            focusAfterLastId={searchInputId}
+          />
           {products.length === 0 ? (
             <div className="flex flex-col items-start gap-3 rounded-lg border border-border px-4 py-6">
               <p className="font-medium wrap-anywhere">
