@@ -1,6 +1,7 @@
 import type { CategorySlug } from "../categories.ts";
 import { ratingRank } from "../data/rating-order.ts";
 import { isTested, type CategoryData, type Product } from "../data/schema.ts";
+import { priceOf } from "../product-table/cell-values.ts";
 
 /** How much each normalized difference counts in the distance between two Produtos. */
 export const similarPriceWeight = 1;
@@ -24,14 +25,15 @@ const specFieldKeys: Record<CategorySlug, string> = {
 type Point = { product: Product; price: number; rating: number; spec: number };
 
 function pointOf(data: CategoryData, product: Product): Point | undefined {
-  const price = product.priceKrw;
+  const price = priceOf(product);
   const ratingValue = product.values[ratingFieldKeys[data.category]];
+  // UNRATED ranks lowest in the sort order, but reads "Sem nota": no Nota geral to measure.
   const rating =
-    typeof ratingValue === "string"
+    typeof ratingValue === "string" && ratingValue !== "UNRATED"
       ? ratingRank(ratingFieldKeys[data.category], ratingValue)
       : undefined;
   const spec = product.values[specFieldKeys[data.category]];
-  if (price === null || rating === undefined || typeof spec !== "number") return undefined;
+  if (price === undefined || rating === undefined || typeof spec !== "number") return undefined;
   return { product, price, rating, spec };
 }
 
@@ -46,8 +48,8 @@ function normalizedGap(a: number, b: number, range: number): number {
 
 /**
  * Up to `count` tested Produtos of `data` nearest to `product` over Preço,
- * Nota geral and the Categoria's one spec, each scaled by its spread among the
- * candidates. Produtos missing any of the three are left out, and so is
+ * Nota geral and the Categoria's one spec, each scaled by its spread among
+ * `product` and the candidates. Produtos missing any of the three are left out, and so is
  * everything when `product` misses one. Ties go to the higher Nota geral.
  */
 export function similarProducts(data: CategoryData, product: Product, count: number): Product[] {
