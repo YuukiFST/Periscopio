@@ -101,10 +101,10 @@ export function ProductCell({ product }: { product: Product }) {
             </span>
           )}
         </p>
-        <div className="flex items-center gap-1.5">
+        <div className="flex flex-wrap items-center gap-x-1.5">
           <p
             id={`fabricante-${product.id}`}
-            className="min-w-0 text-caption-lg wrap-break-word text-fg-secondary"
+            className="text-caption-lg wrap-break-word text-fg-secondary"
           >
             {manufacturer}
           </p>
