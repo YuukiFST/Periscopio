@@ -1,15 +1,20 @@
-import { Link } from "@tanstack/react-router";
+import { getRouteApi, Link } from "@tanstack/react-router";
 import type { Product } from "@/data/schema";
 import { manufacturerName } from "@/i18n/labels";
 import { ProductPhoto } from "@/product-photo/product-photo";
 import {
   formatDeviation,
   formatFieldValue,
+  formatKrwBrlDate,
   formatPrice,
+  formatPriceInReais,
   isCountEnum,
   priceOf,
 } from "./cell-values";
+import { novidadeLabels, novidadeOf } from "./novidades";
 import type { TableColumn } from "./table-columns";
+
+const rootRoute = getRouteApi("__root__");
 
 export function MissingValue() {
   return (
@@ -23,11 +28,39 @@ export function MissingValue() {
 }
 
 /**
+ * "≈ R$ 377" on its own line under the won, when the Atualização recorded a
+ * Cotação; screen readers also hear the Cotação date.
+ */
+export function PriceInReais({ priceKrw }: { priceKrw: number }) {
+  const { krwBrl } = rootRoute.useLoaderData();
+  if (!krwBrl) return null;
+  return (
+    <span className="block text-caption-lg font-normal text-fg-secondary">
+      <span aria-hidden="true">≈</span>
+      <span className="sr-only">cerca de</span> {formatPriceInReais(priceKrw, krwBrl)}
+      <span className="sr-only"> (Cotação de {formatKrwBrlDate(krwBrl)})</span>
+    </span>
+  );
+}
+
+/**
  * The ids that name the row: the Produto and its manufacturer, so neither link
  * in the cell ("Detalhes de …", "… no AliExpress") repeats on every cell read.
  */
 export function productCellLabelIds(product: Product): string {
   return `produto-${product.id} fabricante-${product.id}`;
+}
+
+/** "Novo" or "Testado agora" next to the manufacturer, for a Produto in the last Atualização's window. */
+function NovidadeBadge({ product }: { product: Product }) {
+  const { updatedAt } = rootRoute.useLoaderData();
+  const novidade = novidadeOf(product, updatedAt);
+  if (novidade === undefined) return null;
+  return (
+    <span className="shrink-0 rounded-sm bg-brand-subtle px-1.5 text-caption-sm font-medium whitespace-nowrap text-brand-fg">
+      {novidadeLabels[novidade]}
+    </span>
+  );
 }
 
 /**
@@ -68,12 +101,15 @@ export function ProductCell({ product }: { product: Product }) {
             </span>
           )}
         </p>
-        <p
-          id={`fabricante-${product.id}`}
-          className="text-caption-lg wrap-break-word text-fg-secondary"
-        >
-          {manufacturer}
-        </p>
+        <div className="flex flex-wrap items-center gap-x-1.5">
+          <p
+            id={`fabricante-${product.id}`}
+            className="text-caption-lg wrap-break-word text-fg-secondary"
+          >
+            {manufacturer}
+          </p>
+          <NovidadeBadge product={product} />
+        </div>
       </div>
     </div>
   );
@@ -88,7 +124,10 @@ export function TableCellValue({ column, product }: { column: TableColumn; produ
       return price === undefined ? (
         <MissingValue />
       ) : (
-        <span className="whitespace-nowrap">{formatPrice(price)}</span>
+        <span className="whitespace-nowrap">
+          {formatPrice(price)}
+          <PriceInReais priceKrw={price} />
+        </span>
       );
     }
     case "field": {

@@ -1,6 +1,10 @@
 - complementary "Filtros":
     - heading "Filtros" [level=2]
     - button "Limpar" [disabled]
+    - group "Atalhos":
+        - button /\d+ Hz ou mais/
+        - button "OLED"
+    - button "Salvar filtros atuais" [disabled]
     - text: Nota geral
     - combobox "Nota geral": Todas
     - text: Recomendação

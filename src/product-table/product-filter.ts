@@ -1,14 +1,9 @@
-import type { Product } from "../data/schema.ts";
+import { isTested, type Product } from "../data/schema.ts";
 
 export const testStatusFilters = ["testados", "nao-testados", "todos"] as const;
 export type TestStatusFilter = (typeof testStatusFilters)[number];
 /** The table opens on tested Produtos; a link without `status` means this one. */
 export const defaultTestStatus: TestStatusFilter = "testados";
-
-/** EyeJoker's `reviewed` is the published review; every other status still awaits a full test. */
-export function isTested(product: Product): boolean {
-  return product.status === "reviewed";
-}
 
 export function normalizeForSearch(text: string): string {
   return text

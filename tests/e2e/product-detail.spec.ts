@@ -29,6 +29,10 @@ test("a Produto opened from the table shows its header and fields grouped in pt 
     "https://s.click.aliexpress.com/e/_oFLhAg6",
   );
   await expect(page.getByRole("article")).toMatchAriaSnapshot({ name: "mouse-detail.aria.yml" });
+  await expect(page.getByRole("article")).toMatchAriaSnapshot(`
+    - term: Preço
+    - definition: ₩ 98.900 cerca de R$ 377 (Cotação de 22 de out. de 2026)
+  `);
   await expect(page.getByRole("region", { name: "Especificações" })).toMatchAriaSnapshot(`
     - term: Nota geral
     - definition: A+
@@ -106,6 +110,68 @@ test("a Produto without Medições shows no Medições group, and says what is m
     - definition: Sugerido
   `);
   await expect(page.getByRole("link", { name: "Ver no AliExpress" })).toHaveCount(0);
+});
+
+test("Comparar com parecidos opens a Comparação of the Produto and the nearest tested ones, nearest first", async ({
+  page,
+}) => {
+  const edge60HeProId = "021979aa-b222-47d3-b5ec-8b59d671aff4";
+  const nearestToEdge60HePro = [
+    { id: "04ef23e4-e4bd-4212-be44-daabe2640afd", name: "TENKO - ARC 60" },
+    { id: "479c4333-c25b-4e79-89a5-74d93565c4b5", name: "Raven61" },
+  ];
+  await page.goto(`/teclado/${edge60HeProId}`);
+  await page.getByRole("link", { name: "Comparar com parecidos" }).click();
+
+  const ids = [edge60HeProId, ...nearestToEdge60HePro.map((product) => product.id)];
+  await expect(page).toHaveURL(`/comparar/teclado?p=${ids.join(",")}`);
+  const removeButtons = page
+    .getByRole("columnheader")
+    .getByRole("button", { name: /^Remover .+ da comparação$/ });
+  await expect
+    .poll(() =>
+      removeButtons.evaluateAll((buttons) =>
+        buttons.map((button) => button.getAttribute("aria-label")),
+      ),
+    )
+    .toEqual(
+      ["EDGE 60HE Pro", ...nearestToEdge60HePro.map((product) => product.name)].map(
+        (name) => `Remover ${name} da comparação`,
+      ),
+    );
+});
+
+test("Comparar com parecidos is hidden for a tested Produto with Sem nota, which has no Nota geral to measure", async ({
+  page,
+}) => {
+  const dragonfly3ProId = "0390fea6-efb9-45ea-a1a3-71b170224e58";
+  await page.goto(`/mouse/${dragonfly3ProId}`);
+  await expect(page.getByRole("dialog", { name: "Dragonfly 3 PRO" })).toBeVisible();
+  await expect(page.getByRole("link", { name: "Comparar com parecidos" })).toHaveCount(0);
+});
+
+test.describe("with a meta.json from before the Cotação", () => {
+  // The service worker would answer meta.json from its precache, out of the route's reach.
+  test.use({ serviceWorkers: "block" });
+
+  test("the app still loads and the Preço shows only the won, in the table and the detail", async ({
+    page,
+  }) => {
+    await page.route("**/data/meta.json", async (route) => {
+      const { krwBrl, ...metaBeforeCotacao } = await (await route.fetch()).json();
+      expect(krwBrl).toBeDefined();
+      await route.fulfill({ json: metaBeforeCotacao });
+    });
+    await page.goto(`/mouse/${dragonflyA9UltraId}?status=todos`);
+
+    await expect(page.getByRole("dialog", { name: "Dragonfly A9 Ultra" })).toBeVisible();
+    await expect(page.getByRole("article")).toMatchAriaSnapshot(`
+      - term: Preço
+      - definition: ₩ 98.900
+    `);
+    await expect(page.getByRole("cell", { name: "₩ 98.900", exact: true })).toBeVisible();
+    await expect(page.getByText("R$")).toHaveCount(0);
+  });
 });
 
 test("an unknown Produto shows Produto não encontrado over its table, and closing leaves the table", async ({

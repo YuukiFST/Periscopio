@@ -1,6 +1,9 @@
 - complementary "Filtros":
     - heading "Filtros" [level=2]
     - button "Limpar" [disabled]
+    - group "Atalhos":
+        - button "Sem fio leve"
+    - button "Salvar filtros atuais" [disabled]
     - text: Nota geral
     - combobox "Nota geral": Todas
     - text: Recomendação

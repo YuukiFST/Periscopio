@@ -1,4 +1,4 @@
-import { Check, Link2 } from "lucide-react";
+import { Check, Link2, Share2 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -13,10 +13,21 @@ const copyStatusText: Record<CopyState, string> = {
   failed: "Não deu para copiar. Copie o link selecionado abaixo.",
 };
 
-/** Copies the page address, which carries the whole view in its search params. */
+/** A phone gets its share sheet, which sends the link straight to the group. */
+function canShareLink(): boolean {
+  return (
+    window.matchMedia("(pointer: coarse)").matches &&
+    typeof navigator.share === "function" &&
+    typeof navigator.canShare === "function" &&
+    navigator.canShare({ url: window.location.href })
+  );
+}
+
+/** Shares or copies the page address, which carries the whole view in its search params. */
 export function CopyLinkButton() {
   const [copyState, setCopyState] = useState<CopyState>("idle");
-  const popoverRef = useRef<HTMLDivElement>(null);
+  const [sharesLink] = useState(canShareLink);
+  const rootRef = useRef<HTMLDivElement>(null);
   const linkInputRef = useRef<HTMLInputElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
   useEffect(() => {
@@ -32,7 +43,8 @@ export function CopyLinkButton() {
     const dismiss = () => setCopyState("idle");
     // On click, not pointerdown: a scroll swipe elsewhere keeps the link up.
     const dismissOutside = (event: MouseEvent) => {
-      if (event.target instanceof Node && popoverRef.current?.contains(event.target)) return;
+      // The button counts as inside: a share that fails at once lands here while its click still bubbles.
+      if (event.target instanceof Node && rootRef.current?.contains(event.target)) return;
       dismiss();
     };
     const dismissOnEscape = (event: KeyboardEvent) => {
@@ -57,18 +69,34 @@ export function CopyLinkButton() {
     }
   }
 
+  async function shareLink() {
+    try {
+      await navigator.share({ title: document.title, url: window.location.href });
+    } catch (error) {
+      // Closing the share sheet is the user's choice, not a failure to report.
+      if (error instanceof DOMException && error.name === "AbortError") return;
+      await copyLink();
+    }
+  }
+
+  const IdleIcon = sharesLink ? Share2 : Link2;
+  const idleLabel = sharesLink ? "Compartilhar" : "Copiar link";
   return (
-    <div className="relative">
-      <Button ref={buttonRef} variant="outline" size="lg" onClick={copyLink}>
+    <div ref={rootRef} className="relative">
+      <Button
+        ref={buttonRef}
+        variant="outline"
+        size="lg"
+        onClick={sharesLink ? shareLink : copyLink}
+      >
         {copyState === "copied" ? (
           <Check aria-hidden="true" data-icon="inline-start" />
         ) : (
-          <Link2 aria-hidden="true" data-icon="inline-start" />
+          <IdleIcon aria-hidden="true" data-icon="inline-start" />
         )}
-        {copyState === "copied" ? "Link copiado" : "Copiar link"}
+        {copyState === "copied" ? "Link copiado" : idleLabel}
       </Button>
       <div
-        ref={popoverRef}
         // Tab past the link closes it, so it never covers the control that takes focus next.
         onBlur={(event) => {
           if (!event.currentTarget.contains(event.relatedTarget)) setCopyState("idle");

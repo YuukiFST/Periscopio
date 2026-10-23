@@ -2,6 +2,7 @@ import { readFile, readdir } from "node:fs/promises";
 import { createServer, type Server } from "node:http";
 import { join } from "node:path";
 import { z } from "zod";
+import { frankfurterKrwBrlPath } from "../../pipeline/exchange-rate.ts";
 
 const fixturesDir = join(import.meta.dirname, "fixtures");
 
@@ -13,6 +14,8 @@ export type RecordedRoutes = Map<string, RecordedResponse>;
 export const snapshotPath = (category: "mouse" | "keyboard" | "monitor") =>
   `/api/benchmark/${category}/snapshot`;
 export const companyPath = "/api/company";
+/** The Cotação, under `/frankfurter` on the same server. */
+export const krwBrlRatePath = `/frankfurter${frankfurterKrwBrlPath}`;
 
 function jsonResponse(text: string): RecordedResponse {
   return { status: 200, contentType: "application/json", body: text };
@@ -30,6 +33,10 @@ export async function loadRecordedRoutes(): Promise<RecordedRoutes> {
   routes.set(
     companyPath,
     jsonResponse(await readFile(join(fixturesDir, "api/company.json"), "utf8")),
+  );
+  routes.set(
+    krwBrlRatePath,
+    jsonResponse(await readFile(join(fixturesDir, "frankfurter/krw-brl.json"), "utf8")),
   );
   for (const fileName of await readdir(join(fixturesDir, "cdn"))) {
     const bytes = new Uint8Array(await readFile(join(fixturesDir, "cdn", fileName)));
@@ -93,14 +100,34 @@ export function editRecordedCompanies(
   editJsonRoute(routes, companyPath, recordedCompaniesSchema, edit);
 }
 
+/** Dragonfly 3 PRO, a mouse the Atualização before the recorded one did not list yet. */
+export const newMouseId = "0390fea6-efb9-45ea-a1a3-71b170224e58";
+/** VK M5 Max THOR, another mouse it did not list yet, still not tested in the recorded one. */
+export const newUntestedMouseId = "0fbec015-8d94-469d-993e-1d9d5138fb9b";
+/** H200A, a mouse that Atualização listed as not tested yet. */
+export const newlyTestedMouseId = "2cf40f05-fa65-4a5c-936a-c67de7025af3";
+
+/** Turns the recorded routes into the Atualização before them, so the recorded one has Novidades. */
+export function editToPreviousAtualizacao(routes: RecordedRoutes) {
+  editRecordedSnapshot(routes, "mouse", (snapshot) => {
+    snapshot.data.rows = snapshot.data.rows.filter(
+      (row) => row.id !== newMouseId && row.id !== newUntestedMouseId,
+    );
+    for (const row of snapshot.data.rows) {
+      if (row.id === newlyTestedMouseId) row.values.status = "proposed";
+    }
+  });
+}
+
 export type RecordedEyejokerServer = {
   apiUrl: string;
   cdnUrl: string;
+  frankfurterUrl: string;
   requestedPaths: string[];
   close: () => Promise<void>;
 };
 
-/** Serves the recorded EyeJoker excerpt on a free local port; unknown paths answer 404. */
+/** Serves the recorded EyeJoker excerpt and Cotação on a free local port; unknown paths answer 404. */
 export async function startRecordedEyejokerServer(
   routes: RecordedRoutes,
 ): Promise<RecordedEyejokerServer> {
@@ -124,6 +151,7 @@ export async function startRecordedEyejokerServer(
   return {
     apiUrl: origin,
     cdnUrl: `${origin}/cdn`,
+    frankfurterUrl: `${origin}/frankfurter`,
     requestedPaths,
     close: () =>
       new Promise((resolve, reject) =>

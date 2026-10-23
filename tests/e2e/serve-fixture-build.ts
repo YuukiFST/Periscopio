@@ -4,9 +4,9 @@
  * `vite preview`. Assertions stay deterministic because the data is the same
  * few Products on every run; `pnpm build` keeps using `public/`.
  *
- * It also builds the next Atualização (the same data, `meta.json` a week
- * later) and serves both builds at the release origin (`release-server.ts`),
- * where the update test switches from one deploy to the next.
+ * It also builds the next Atualização (one more mouse and one more tested,
+ * `meta.json` a week later) and serves both builds at the release origin
+ * (`release-server.ts`), where the update tests switch from one deploy to the next.
  */
 import { execFile, spawn } from "node:child_process";
 import { cp, mkdir, readdir, readFile, rm, writeFile } from "node:fs/promises";
@@ -14,8 +14,12 @@ import { join } from "node:path";
 import { promisify } from "node:util";
 import { metaSchema } from "../../src/data/schema.ts";
 import {
+  editRecordedSnapshot,
+  editToPreviousAtualizacao,
   loadRecordedRoutes,
+  newUntestedMouseId,
   startRecordedEyejokerServer,
+  type RecordedRoutes,
 } from "../pipeline/recorded-eyejoker-server.ts";
 import { nextBuildPort, previewPort, releasePort } from "./e2e-ports.ts";
 import { startReleaseServer } from "./release-server.ts";
@@ -40,13 +44,14 @@ async function copyStaticPublicFiles(): Promise<void> {
   }
 }
 
-async function generateFixtureData(): Promise<void> {
-  const server = await startRecordedEyejokerServer(await loadRecordedRoutes());
+async function runFixtureUpdate(routes: RecordedRoutes, appPublicDir: string): Promise<void> {
+  const server = await startRecordedEyejokerServer(routes);
   const env: NodeJS.ProcessEnv = {
     ...process.env,
     EYEJOKER_API_URL: server.apiUrl,
     EYEJOKER_CDN_URL: server.cdnUrl,
-    EYEJOKER_OUT_DIR: publicDir,
+    FRANKFURTER_API_URL: server.frankfurterUrl,
+    EYEJOKER_OUT_DIR: appPublicDir,
   };
   delete env.GITHUB_STEP_SUMMARY;
   try {
@@ -56,9 +61,32 @@ async function generateFixtureData(): Promise<void> {
   }
 }
 
-/** The next weekly Atualização: the same Products, dated a week later. */
+/** The Atualização before the recorded one, then the recorded one, so the data has Novidades. */
+async function generateFixtureData(): Promise<void> {
+  const previousRoutes = await loadRecordedRoutes();
+  editToPreviousAtualizacao(previousRoutes);
+  await runFixtureUpdate(previousRoutes, publicDir);
+  await runFixtureUpdate(await loadRecordedRoutes(), publicDir);
+}
+
+/** The next weekly Atualização: a new mouse and VK M5 Max THOR tested, dated a week later. */
 async function writeNextAtualizacao(): Promise<void> {
   await cp(publicDir, nextPublicDir, { recursive: true });
+  const nextRoutes = await loadRecordedRoutes();
+  editRecordedSnapshot(nextRoutes, "mouse", (snapshot) => {
+    const huan = snapshot.data.rows.find(
+      (row) => row.id === "201270eb-b392-4e41-96a9-1b609a77e795",
+    );
+    if (!huan) throw new Error("the recorded excerpt lost Huan");
+    const huanPro = structuredClone(huan);
+    huanPro.id = "201270eb-b392-4e41-96a9-1b609a77e796";
+    huanPro.values.productName = "Huan Pro";
+    snapshot.data.rows.push(huanPro);
+    for (const row of snapshot.data.rows) {
+      if (row.id === newUntestedMouseId) row.values.status = "reviewed";
+    }
+  });
+  await runFixtureUpdate(nextRoutes, nextPublicDir);
   const metaPath = join(nextPublicDir, "data/meta.json");
   const meta = metaSchema.parse(JSON.parse(await readFile(metaPath, "utf8")));
   const updatedAt = new Date(Date.parse(meta.updatedAt) + weekMs).toISOString();

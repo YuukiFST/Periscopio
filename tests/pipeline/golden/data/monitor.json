@@ -1722,7 +1722,9 @@
         "refreshRate": 360,
         "resolution": "FHD",
         "sizeInch": 24.5
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "0780a9f3-3c88-41ac-97e9-1c45f31c9a38",
@@ -1755,7 +1757,9 @@
         "screenCoating": "matteAntiGlare",
         "sizeInch": 24.5,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "168e2700-995b-4632-86e9-08613515a315",
@@ -1812,7 +1816,9 @@
         ],
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "7aa60f74-aa55-44f0-9858-9d672a19fba5",
@@ -1852,7 +1858,9 @@
         ],
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     }
   ]
 }

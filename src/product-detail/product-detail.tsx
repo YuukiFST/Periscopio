@@ -1,4 +1,5 @@
-import { Check, ExternalLink, Plus } from "lucide-react";
+import { Link } from "@tanstack/react-router";
+import { Check, ExternalLink, GitCompareArrows, Plus } from "lucide-react";
 import { useEffect, useRef, type ReactNode, type RefObject } from "react";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { DrawerTitle } from "@/components/ui/drawer";
@@ -11,9 +12,15 @@ import {
   type ProductFieldGroup,
 } from "@/product-fields/field-groups";
 import { formatPrice, priceOf } from "@/product-table/cell-values";
+import { PriceInReais } from "@/product-table/table-cells";
 import { cn } from "@/lib/utils";
 import { CompareBar, compareStatusId } from "@/product-compare/compare-bar";
-import { maxComparedProducts, toggleComparedId } from "@/product-compare/compare-selection";
+import {
+  maxComparedProducts,
+  productIdsParam,
+  toggleComparedId,
+} from "@/product-compare/compare-selection";
+import { similarProducts } from "@/product-compare/similar-products";
 import { ProductPhoto } from "@/product-photo/product-photo";
 
 type ProductDetailProps = {
@@ -108,7 +115,10 @@ function ProductHeader({
             {price === undefined ? (
               <span className="text-fg-secondary">Sem preço</span>
             ) : (
-              <span className="whitespace-nowrap tabular-nums">{formatPrice(price)}</span>
+              <span className="whitespace-nowrap tabular-nums">
+                {formatPrice(price)}
+                <PriceInReais priceKrw={price} />
+              </span>
             )}
           </HeaderFact>
           {status !== undefined && <HeaderFact label="Status de teste">{status}</HeaderFact>}
@@ -131,6 +141,7 @@ function ProductHeader({
             isFull={comparedIds.length >= maxComparedProducts}
             onToggle={() => onComparedIdsChange(toggleComparedId(comparedIds, product.id))}
           />
+          <CompareSimilarLink data={data} product={product} />
         </div>
       </div>
     </header>
@@ -166,6 +177,24 @@ function CompareToggleButton({
       <Plus aria-hidden="true" data-icon="inline-start" />
       Adicionar à comparação
     </Button>
+  );
+}
+
+/** "Comparar com parecidos": a Comparação of `product` and the nearest Produtos, hidden without any. */
+function CompareSimilarLink({ data, product }: { data: CategoryData; product: Product }) {
+  const similar = similarProducts(data, product, maxComparedProducts - 1);
+  if (similar.length === 0) return null;
+  const ids = [product.id, ...similar.map((candidate) => candidate.id)];
+  return (
+    <Link
+      to="/comparar/$categoria"
+      params={{ categoria: data.category }}
+      search={{ p: productIdsParam(ids) }}
+      className={buttonVariants({ variant: "outline", size: "lg" })}
+    >
+      <GitCompareArrows aria-hidden="true" data-icon="inline-start" />
+      Comparar com parecidos
+    </Link>
   );
 }
 

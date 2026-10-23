@@ -42,6 +42,10 @@ _Avoid_: valor, custo
 A cópia semanal dos dados do EyeJoker para o app.
 _Avoid_: sync, scrape, importação
 
+**Cotação**:
+Quantos reais valia um won no dia de referência, segundo o Banco Central Europeu (via Frankfurter), registrada a cada Atualização para mostrar o Preço aproximado em reais.
+_Avoid_: câmbio, taxa, conversão
+
 ### Uso
 
 **Filtro**:
@@ -69,3 +73,7 @@ _Avoid_: ranking, score, nota de desempenho
 **Link AliExpress**:
 O único link de compra mostrado em um Produto, quando o EyeJoker tem um.
 _Avoid_: link de afiliado, link de compra
+
+**Novidade**:
+Um Produto publicado pela primeira vez (Novo) ou que passou a ser testado (Testado agora) em uma Atualização dos 14 dias antes da mais recente.
+_Avoid_: novo produto, lançamento, changelog

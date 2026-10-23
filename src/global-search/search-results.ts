@@ -1,7 +1,7 @@
 import type { CategorySlug } from "../categories.ts";
-import type { CategoryData, Product } from "../data/schema.ts";
+import { isTested, type CategoryData, type Product } from "../data/schema.ts";
 import { manufacturerName } from "../i18n/labels.ts";
-import { filterProducts, isTested, normalizeForSearch } from "../product-table/product-filter.ts";
+import { filterProducts, normalizeForSearch } from "../product-table/product-filter.ts";
 
 /** Few enough per Categoria that all three groups fit on a phone screen. */
 export const resultsPerCategory = 5;
