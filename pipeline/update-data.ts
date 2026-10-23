@@ -15,6 +15,7 @@ import {
   type EyejokerCategory,
   type EyejokerSnapshot,
 } from "./eyejoker-api.ts";
+import { fetchKrwBrlRate } from "./exchange-rate.ts";
 import { deleteOrphanImages, downloadNewImages } from "./images.ts";
 import { normalizeCategory, type NormalizedCategory } from "./normalize.ts";
 import { publishSummary, renderSummary } from "./summary.ts";
@@ -45,6 +46,7 @@ type PublishedImages = z.infer<typeof publishedImagesSchema>;
 type UpdateConfig = {
   apiUrl: string;
   cdnUrl: string;
+  frankfurterUrl: string;
   outDir: string;
   stepSummaryPath: string | undefined;
 };
@@ -53,6 +55,7 @@ function readConfig(env: NodeJS.ProcessEnv): UpdateConfig {
   return {
     apiUrl: env.EYEJOKER_API_URL || "https://eyejokerdb.com",
     cdnUrl: env.EYEJOKER_CDN_URL || "https://cdn.eyejokerdb.com",
+    frankfurterUrl: env.FRANKFURTER_API_URL || "https://api.frankfurter.dev",
     outDir: resolve(env.EYEJOKER_OUT_DIR || join(import.meta.dirname, "../public")),
     stepSummaryPath: env.GITHUB_STEP_SUMMARY || undefined,
   };
@@ -156,7 +159,8 @@ async function runUpdate(config: UpdateConfig): Promise<void> {
   );
   refuseUnusableImages(normalized);
   const validated = normalized.map(({ data }) => validateOutput(data));
-  refuseRowDrop(validated, await readPublishedFile(metaPath, metaSchema));
+  const publishedMeta = await readPublishedFile(metaPath, metaSchema);
+  refuseRowDrop(validated, publishedMeta);
   for (const data of validated) {
     const publishedPath = join(dataDir, `${data.category}.json`);
     refuseLostImages(data, await readPublishedFile(publishedPath, publishedImagesSchema));
@@ -169,13 +173,15 @@ async function runUpdate(config: UpdateConfig): Promise<void> {
       products.flatMap((product) => (product.image ? [imageFileName(product.image)] : [])),
     ),
   );
+  const krwBrlFetch = await fetchKrwBrlRate(config.frankfurterUrl);
+  const krwBrl = krwBrlFetch.ok ? krwBrlFetch.rate : publishedMeta?.krwBrl;
   const images = await downloadNewImages(config.cdnUrl, imagesDir, wantedImages);
   const published = validated.map((data) => withoutMissingImages(data, images.available));
 
   for (const data of published) await writeJsonFile(join(dataDir, `${data.category}.json`), data);
   const counts = { mouse: 0, teclado: 0, monitor: 0 };
   for (const data of published) counts[data.category] = data.products.length;
-  const meta: Meta = { updatedAt: new Date().toISOString(), counts };
+  const meta: Meta = { updatedAt: new Date().toISOString(), counts, ...(krwBrl && { krwBrl }) };
   await writeJsonFile(metaPath, meta);
   const deletedImages = await deleteOrphanImages(imagesDir, images.available);
 
@@ -192,6 +198,8 @@ async function runUpdate(config: UpdateConfig): Promise<void> {
       ...new Set(normalized.flatMap((category) => category.ignoredFieldKeys)),
     ].toSorted(),
     untranslatedKeys: [...new Set(published.flatMap(findUntranslatedKeys))].toSorted(),
+    krwBrlFetch,
+    krwBrl,
   });
   await publishSummary(summary, config.stepSummaryPath);
 }

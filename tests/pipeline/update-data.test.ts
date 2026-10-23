@@ -7,6 +7,7 @@ import { categoryDataSchema, metaSchema } from "../../src/data/schema.ts";
 import {
   editRecordedCompanies,
   editRecordedSnapshot,
+  krwBrlRatePath,
   loadRecordedRoutes,
   snapshotPath,
   startRecordedEyejokerServer,
@@ -43,6 +44,7 @@ async function runUpdateCli(
     ...process.env,
     EYEJOKER_API_URL: server.apiUrl,
     EYEJOKER_CDN_URL: server.cdnUrl,
+    FRANKFURTER_API_URL: server.frankfurterUrl,
     EYEJOKER_OUT_DIR: outDir,
   };
   if (stepSummaryPath) env.GITHUB_STEP_SUMMARY = stepSummaryPath;
@@ -217,6 +219,35 @@ test.each(refusals)(
     }
   },
 );
+
+test("a failed Cotação fetch keeps the published Cotação, notes it in the summary and never refuses the Atualização", async () => {
+  const outDir = await makeTempDir();
+  const readMeta = async () =>
+    metaSchema.parse(JSON.parse(await readFile(join(outDir, "data/meta.json"), "utf8")));
+  const withoutRate = await loadRecordedRoutes();
+  withoutRate.delete(krwBrlRatePath);
+
+  const first = await runUpdateCli(withoutRate, outDir, null);
+  expect(first.exitCode).toBe(0);
+  expect(first.stdout).toMatch(
+    /Cotação KRW→BRL não atualizada: GET \S+\/frankfurter\/v2\/providers\/ECB\/rate\/KRW\/BRL falhou \(HTTP 404\)\. Nenhuma publicada: o app mostra só o won\./,
+  );
+  expect((await readMeta()).krwBrl).toBeUndefined();
+
+  expect((await runUpdateCli(await loadRecordedRoutes(), outDir, null)).exitCode).toBe(0);
+  const fetched = (await readMeta()).krwBrl;
+  expect(fetched).toEqual({
+    rate: 0.00381,
+    date: "2026-10-22",
+    source: "Frankfurter (Banco Central Europeu)",
+  });
+
+  const failed = await runUpdateCli(withoutRate, outDir, null);
+  expect(failed.stderr).toBe("");
+  expect(failed.exitCode).toBe(0);
+  expect(failed.stdout).toContain("Mantida a publicada: 0.00381 em 2026-10-22.");
+  expect((await readMeta()).krwBrl).toEqual(fetched);
+});
 
 test("a new ENUM value without pt passes and is listed in the summary", async () => {
   const routes = await loadRecordedRoutes();

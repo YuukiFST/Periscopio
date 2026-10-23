@@ -46,6 +46,7 @@ async function generateFixtureData(): Promise<void> {
     ...process.env,
     EYEJOKER_API_URL: server.apiUrl,
     EYEJOKER_CDN_URL: server.cdnUrl,
+    FRANKFURTER_API_URL: server.frankfurterUrl,
     EYEJOKER_OUT_DIR: publicDir,
   };
   delete env.GITHUB_STEP_SUMMARY;

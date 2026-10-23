@@ -1,7 +1,7 @@
 /**
  * Records the EyeJoker excerpt the pipeline tests serve: the real responses of
  * `/api/benchmark/<category>/snapshot` with only the Products below, the
- * companies they reference, and their photos. Run it with
+ * companies they reference, their photos, and the Cotação from Frankfurter. Run it with
  * `node tests/pipeline/record-eyejoker-excerpt.ts`, then regenerate the goldens.
  */
 import { mkdir, rm, writeFile } from "node:fs/promises";
@@ -9,6 +9,7 @@ import { join } from "node:path";
 import { z } from "zod";
 
 const apiUrl = "https://eyejokerdb.com";
+const krwBrlRateUrl = "https://api.frankfurter.dev/v2/providers/ECB/rate/KRW/BRL";
 const fixturesDir = join(import.meta.dirname, "fixtures");
 
 /** Each id covers a shape the normalization handles. */
@@ -91,3 +92,8 @@ for (const photoUrl of photoUrls) {
   const fileName = new URL(photoUrl).pathname.slice(1);
   await writeFile(join(fixturesDir, "cdn", fileName), new Uint8Array(await response.arrayBuffer()));
 }
+
+await writeJson(
+  join(fixturesDir, "frankfurter/krw-brl.json"),
+  await getJson(krwBrlRateUrl, z.looseObject({})),
+);
