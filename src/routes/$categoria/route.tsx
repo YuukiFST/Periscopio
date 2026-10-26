@@ -312,13 +312,16 @@ function CategoryTable({ data }: { data: CategoryData }) {
         <CopyLinkButton />
       </div>
       {updateAge.isStale && <StaleDataAlert age={updateAge} />}
-      {novidadeCounts !== undefined && novidadeCounts.novos + novidadeCounts.testados > 0 && (
-        <NovidadesNotice
-          counts={novidadeCounts}
-          onShow={showNovidades}
-          onDismiss={dismissNovidadesNotice}
-        />
-      )}
+      {/* With the Novidades already shown, as from the home page's link, it has nothing to offer. */}
+      {novidades !== "1" &&
+        novidadeCounts !== undefined &&
+        novidadeCounts.novos + novidadeCounts.testados > 0 && (
+          <NovidadesNotice
+            counts={novidadeCounts}
+            onShow={showNovidades}
+            onDismiss={dismissNovidadesNotice}
+          />
+        )}
       <div className="flex min-h-0 flex-1 gap-6">
         <aside
           aria-labelledby={filtersHeadingId}
