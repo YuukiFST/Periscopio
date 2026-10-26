@@ -1,33 +1,11 @@
 import { Popover } from "@base-ui/react/popover";
-import { Link, useMatch } from "@tanstack/react-router";
+import { useMatch } from "@tanstack/react-router";
 import { History } from "lucide-react";
 import { useRef, useState } from "react";
-import { categoryLabels, type CategorySlug } from "@/categories";
 import { Button } from "@/components/ui/button";
-import type { CategoryData, Product } from "@/data/schema";
 import { useAllCategories } from "@/data/use-all-categories";
-import { formatPrice, priceOf } from "@/product-table/cell-values";
-import { ProductPhoto } from "@/product-photo/product-photo";
-import { clearRecentProducts, useRecentProducts, type RecentProduct } from "./recent-products";
-
-type RecentProductItem = { category: CategorySlug; product: Product };
-
-/** The recorded Produtos the current data still has, in the recorded order. */
-function recentProductItems(
-  recent: readonly RecentProduct[],
-  categories: readonly CategoryData[],
-): RecentProductItem[] {
-  const productsByCategory = new Map(
-    categories.map(({ category, products }) => [
-      category,
-      new Map(products.map((product) => [product.id, product])),
-    ]),
-  );
-  return recent.flatMap(({ category, id }): RecentProductItem[] => {
-    const product = productsByCategory.get(category)?.get(id);
-    return product ? [{ category, product }] : [];
-  });
-}
+import { RecentProductLink } from "./recent-product-link";
+import { clearRecentProducts, recentProductItems, useRecentProducts } from "./recent-products";
 
 /**
  * The header's "Recentes" button, shown once a Produto has been opened, and
@@ -89,42 +67,18 @@ export function RecentProductsButton() {
               )}
               {items.length > 0 && (
                 <ul className="p-1">
-                  {items.map(({ category, product }) => {
-                    const price = priceOf(product);
-                    return (
-                      <li key={`${category}/${product.id}`}>
-                        <Link
-                          to="/$categoria/$id"
-                          params={{ categoria: category, id: product.id }}
-                          // Over its own Categoria's table, the details keep the table's search params like a row link does.
-                          search={category === tableCategory ? true : undefined}
-                          state={
-                            category === tableCategory ? { fromCategoryTable: true } : undefined
-                          }
-                          onClick={() => {
-                            openedProduct.current = true;
-                            setIsOpen(false);
-                          }}
-                          className="flex items-center gap-3 rounded-lg px-3 py-2 text-body-sm hover:bg-component-hover focus-visible:bg-component-hover focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-ring active:bg-component-active"
-                        >
-                          <ProductPhoto
-                            key={product.image}
-                            src={product.image}
-                            alt=""
-                            size="row"
-                            loading="lazy"
-                          />
-                          <span className="flex min-w-0 flex-1 flex-col">
-                            <span className="truncate font-medium">{product.name}</span>
-                            <span className="text-fg-secondary">{categoryLabels[category]}</span>
-                          </span>
-                          <span className="shrink-0 whitespace-nowrap tabular-nums text-fg-secondary">
-                            {price === undefined ? "Sem preço" : formatPrice(price)}
-                          </span>
-                        </Link>
-                      </li>
-                    );
-                  })}
+                  {items.map((item) => (
+                    <li key={`${item.category}/${item.product.id}`}>
+                      <RecentProductLink
+                        item={item}
+                        keepsTableSearch={item.category === tableCategory}
+                        onClick={() => {
+                          openedProduct.current = true;
+                          setIsOpen(false);
+                        }}
+                      />
+                    </li>
+                  ))}
                 </ul>
               )}
             </div>
