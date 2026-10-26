@@ -14,16 +14,19 @@ function Bone({ className }: { className?: string }) {
 const skeletonShapesClass = "flex min-h-0 flex-1 flex-col gap-4 motion-safe:animate-pulse";
 
 /**
- * The page's title row: the heading and the Copiar link button, at their
- * final heights so the view below them does not move when the data arrives.
+ * The page's title row: the heading and its buttons, at their final heights
+ * so the view below them does not move when the data arrives.
  */
 function TitleRowSkeleton({
   headingWidth,
   withUpdatedAt = false,
+  buttonWidths = ["w-28"],
 }: {
   headingWidth: string;
   /** The Categoria shows when the last Atualização ran, beside its title or under it. */
   withUpdatedAt?: boolean;
+  /** One width per button, in order; the Copiar link button alone by default. */
+  buttonWidths?: readonly string[];
 }) {
   return (
     <div className="flex items-start justify-between gap-4">
@@ -33,7 +36,11 @@ function TitleRowSkeleton({
         </div>
         {withUpdatedAt && <Bone className="my-0.5 h-4 w-52" />}
       </div>
-      <Bone className="h-9 w-28 shrink-0 rounded-lg pointer-coarse:h-10" />
+      <div className="flex flex-wrap justify-end gap-2">
+        {buttonWidths.map((width, index) => (
+          <Bone key={index} className={cn("h-9 shrink-0 rounded-lg pointer-coarse:h-10", width)} />
+        ))}
+      </div>
     </div>
   );
 }
@@ -143,7 +150,14 @@ export function ComparisonSkeleton({
         <div className="flex min-h-8 items-center pointer-coarse:min-h-11">
           <Bone className="h-4 w-36" />
         </div>
-        <TitleRowSkeleton headingWidth="w-56" />
+        <TitleRowSkeleton
+          headingWidth="w-56"
+          // Adicionar produto below 4 Produtos, Copiar link from 2.
+          buttonWidths={[
+            ...(linkedCount < maxComparedProducts ? ["w-40"] : []),
+            ...(linkedCount >= minComparedProducts ? ["w-28"] : []),
+          ]}
+        />
         {withConnectionRow && (
           <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
             <Bone className="h-9 w-72 rounded-lg pointer-coarse:h-11" />
@@ -162,6 +176,7 @@ export function ComparisonSkeleton({
                 <Bone className="size-12 rounded-lg sm:size-16" />
                 <Bone className="mt-2 h-4 w-3/4" />
                 <Bone className="mt-1.5 h-3 w-1/3" />
+                <Bone className="mt-2 h-7 w-20 rounded-lg pointer-coarse:h-10" />
               </div>
             ))}
           </div>
