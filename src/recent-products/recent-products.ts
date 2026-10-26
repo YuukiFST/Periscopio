@@ -7,7 +7,7 @@ export const recentProductsPerCategory = 10;
 
 const recentProductsKey = "periscopio:vistos-recentemente";
 
-const recentProductSchema = z.strictObject({
+const recentProductSchema = z.object({
   id: z.guid(),
   category: z.enum(categorySlugs),
   viewedAt: z.iso.datetime(),
