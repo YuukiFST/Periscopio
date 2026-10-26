@@ -53,6 +53,8 @@ export function ProductPicker({
   }
 
   function pick(product: Product) {
+    // The list stays clickable while the dialog fades out, and the pick has already reshuffled it.
+    if (picked.current) return;
     picked.current = true;
     setIsOpen(false);
     onPick(product);

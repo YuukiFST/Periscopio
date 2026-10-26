@@ -275,7 +275,11 @@ function ProductColumnHeader({
       // Named by the Produto alone: screen readers repeat this name on every cell of the column.
       aria-label={product.name}
       // A peeking column scrolls in whole when Tab reaches its links, its start on a snap point.
-      onFocus={(event) => event.currentTarget.scrollIntoView({ block: "nearest", inline: "start" })}
+      // Focus inside the Trocar dialog bubbles here through React's tree, though the dialog is elsewhere.
+      onFocus={(event) => {
+        if (!(event.target instanceof Node) || !event.currentTarget.contains(event.target)) return;
+        event.currentTarget.scrollIntoView({ block: "nearest", inline: "start" });
+      }}
       className="sticky top-0 z-20 snap-start border-b border-border bg-page px-1.5 py-2 text-start align-top font-normal min-[22rem]:px-2 sm:px-3 sm:py-3 group-data-[header-tall=true]/scroller:top-auto"
     >
       <div className="flex flex-col items-start gap-2">

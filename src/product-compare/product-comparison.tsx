@@ -238,8 +238,8 @@ function NotEnoughProducts({ count }: { count: number }) {
           : "Só 1 produto na comparação. Ela precisa de pelo menos 2."}
       </p>
       <p className="text-pretty text-fg-secondary">
-        Marque de {minComparedProducts} a {maxComparedProducts} produtos na tabela e selecione
-        “Comparar”.
+        Use “Adicionar produto” ou marque de {minComparedProducts} a {maxComparedProducts} produtos
+        na tabela e selecione “Comparar”.
       </p>
     </div>
   );
