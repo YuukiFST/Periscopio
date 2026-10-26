@@ -12,7 +12,7 @@ import { execFile, spawn } from "node:child_process";
 import { cp, mkdir, readdir, readFile, rm, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import { promisify } from "node:util";
-import { metaSchema } from "../../src/data/schema.ts";
+import { metaSchema, type PriceHistory } from "../../src/data/schema.ts";
 import {
   editRecordedSnapshot,
   editToPreviousAtualizacao,
@@ -61,8 +61,35 @@ async function runFixtureUpdate(routes: RecordedRoutes, appPublicDir: string): P
   }
 }
 
+/** The day (UTC) `weeks` weeks before today, as the Histórico de preço writes it. */
+function weeksAgo(weeks: number): string {
+  return new Date(Date.now() - weeks * weekMs).toISOString().slice(0, "YYYY-MM-DD".length);
+}
+
+/**
+ * The Histórico de preço three earlier Atualizações left, so the fixture
+ * run appends today's Preço: Huan (₩ 239.000) ends on its lowest, 12% under
+ * the week before; Cloud XS (₩ 162.000) ends 8% up.
+ */
+async function writeEarlierPriceHistory(): Promise<void> {
+  const history: PriceHistory = {
+    category: "mouse",
+    products: {
+      "201270eb-b392-4e41-96a9-1b609a77e795": [
+        { date: weeksAgo(3), priceKrw: 280_000 },
+        { date: weeksAgo(2), priceKrw: 290_000 },
+        { date: weeksAgo(1), priceKrw: 272_000 },
+      ],
+      "1f2e9ba6-5ac5-4f0d-b986-7cb4203b5d6c": [{ date: weeksAgo(1), priceKrw: 150_000 }],
+    },
+  };
+  await mkdir(join(publicDir, "data/precos"), { recursive: true });
+  await writeFile(join(publicDir, "data/precos/mouse.json"), JSON.stringify(history));
+}
+
 /** The Atualização before the recorded one, then the recorded one, so the data has Novidades. */
 async function generateFixtureData(): Promise<void> {
+  await writeEarlierPriceHistory();
   const previousRoutes = await loadRecordedRoutes();
   editToPreviousAtualizacao(previousRoutes);
   await runFixtureUpdate(previousRoutes, publicDir);
