@@ -49,6 +49,7 @@ import {
 } from "@/product-table/product-filter";
 import { ProductSidebar } from "@/product-detail/product-sidebar";
 import { useChangeComparedIds } from "@/product-detail/use-change-compared-ids";
+import { ChartLink } from "@/product-chart/chart-link";
 import { countNovidadesSince, filterNovidades, novidadeOf } from "@/product-table/novidades";
 import { ProductTable } from "@/product-table/product-table";
 import { ColumnsMenu } from "@/product-table/columns-menu";
@@ -391,6 +392,7 @@ function CategoryTable({ data }: { data: CategoryData }) {
               onChosenKeysChange={changeColumnKeys}
               onReset={() => changeColumnKeys(columnChoices.defaultKeys)}
             />
+            <ChartLink category={data.category} />
           </TableToolbar>
           <ActiveFilterChips
             filters={filters}
