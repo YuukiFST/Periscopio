@@ -13,7 +13,7 @@ const testStatusOptions: SegmentedOption<TestStatusFilter>[] = [
 
 const countFormat = new Intl.NumberFormat("pt-BR");
 
-function productCount(count: number): string {
+export function productCount(count: number): string {
   return count === 1 ? "1 produto" : `${countFormat.format(count)} produtos`;
 }
 

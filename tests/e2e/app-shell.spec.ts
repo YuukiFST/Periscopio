@@ -56,6 +56,23 @@ test("a Categoria card opens its table, and its Novidades link opens the table w
   await expect(page.getByRole("rowheader")).toHaveCount(3);
 });
 
+test("after the Novidades link, the table skips the notice that offers them, until the toggle goes off", async ({
+  page,
+}) => {
+  await page.goto("/");
+  // A visit before the fixture's Atualizações, so every Novidade is new since then.
+  await page.evaluate(() =>
+    localStorage.setItem("periscopio:ultima-atualizacao-vista:mouse", "2000-01-01T00:00:00.000Z"),
+  );
+  await page.reload();
+  await mouseNovidadesLink(page).click();
+  await expect(page.getByRole("rowheader")).toHaveCount(3);
+  await expect(page.getByRole("button", { name: "Ver novidades" })).toHaveCount(0);
+
+  await page.getByRole("button", { name: "Novidades", exact: true }).click();
+  await expect(page.getByRole("button", { name: "Ver novidades" })).toBeVisible();
+});
+
 test("the home page lists the Produtos seen last, and opens one", async ({ page }) => {
   await page.goto("/");
   await expect(mouseNovidadesLink(page)).toBeVisible();
@@ -70,6 +87,27 @@ test("the home page lists the Produtos seen last, and opens one", async ({ page 
   await recentSection.getByRole("link", { name: /^Huan/ }).click();
   await expect(page).toHaveURL(`/mouse/${huanId}`);
   await expect(page.getByRole("dialog", { name: "Huan" })).toBeVisible();
+});
+
+test("when the Produtos fail to load, the home page says so in Vistos recentemente and tries again", async ({
+  page,
+}) => {
+  await page.goto(`/mouse/${huanId}`);
+  await expect(page.getByRole("dialog", { name: "Huan" })).toBeVisible();
+  let failsTecladoData = true;
+  await page.route("**/data/teclado.json", (route) =>
+    failsTecladoData ? route.abort() : route.continue(),
+  );
+  await page.getByRole("banner").getByRole("link", { name: "Periscópio" }).click();
+  const recentSection = page.getByRole("region", { name: "Vistos recentemente" });
+  await expect(recentSection).toContainText("Não deu para carregar os produtos.");
+  await expect(mouseNovidadesLink(page)).toHaveCount(0);
+
+  failsTecladoData = false;
+  await recentSection.getByRole("button", { name: "Tentar de novo" }).click();
+  await expect(page.getByRole("heading", { level: 1 })).toBeFocused();
+  await expect(recentSection.getByRole("link")).toHaveText([/^Huan\s*Mouses/]);
+  await expect(mouseNovidadesLink(page)).toBeVisible();
 });
 
 test("on a phone the Categoria cards stack in one column, and the installed app opens on the home page", async ({

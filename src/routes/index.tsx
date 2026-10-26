@@ -2,16 +2,16 @@ import { createFileRoute, getRouteApi, Link } from "@tanstack/react-router";
 import { Sparkles } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { categoryLabels, categorySlugs, type CategorySlug } from "@/categories";
+import { Button } from "@/components/ui/button";
 import { StaleDataAlert, UpdatedAtLabel, updateAgeOf } from "@/components/update-notice";
-import { useAllCategories } from "@/data/use-all-categories";
-import { ProductPhoto } from "@/product-photo/product-photo";
-import { formatPrice, priceOf } from "@/product-table/cell-values";
+import { useAllCategories, type CategoriesLoad } from "@/data/use-all-categories";
 import { filterNovidades } from "@/product-table/novidades";
-import { resultCountText } from "@/product-table/table-toolbar";
+import { productCount } from "@/product-table/table-toolbar";
+import { RecentProductLink } from "@/recent-products/recent-product-link";
 import {
   recentProductItems,
   useRecentProducts,
-  type RecentProductItem,
+  type RecentProduct,
 } from "@/recent-products/recent-products";
 
 /** The home page: one card per Categoria, its Novidades and the Produtos seen last. */
@@ -32,16 +32,9 @@ function novidadeCountText(count: number): string {
 
 function HomePage() {
   const meta = rootRoute.useLoaderData();
-  const recent = useRecentProducts();
   // The Produtos feed only the Novidades and the recent list; the cards show without them.
   const [load, ensureLoaded] = useAllCategories();
-  // `ensureLoaded` changes on every render; the page asks for the Produtos once.
-  const loadStarted = useRef(false);
-  useEffect(() => {
-    if (loadStarted.current) return;
-    loadStarted.current = true;
-    ensureLoaded();
-  }, [ensureLoaded]);
+  useEffect(() => ensureLoaded(), [ensureLoaded]);
 
   const headingRef = useRef<HTMLHeadingElement>(null);
   useEffect(() => {
@@ -61,10 +54,6 @@ function HomePage() {
           ]),
         )
       : undefined;
-  const recentItems =
-    load.status === "loaded"
-      ? recentProductItems(recent, load.categories).slice(0, homeRecentProductCount)
-      : [];
 
   return (
     <div className="-mx-4 -my-4 flex min-h-0 flex-1 flex-col overflow-y-auto px-4 py-4">
@@ -87,13 +76,13 @@ function HomePage() {
               <CategoryCard
                 key={slug}
                 category={slug}
-                productCount={meta.counts[slug]}
+                count={meta.counts[slug]}
                 novidadeCount={novidadeCounts?.get(slug)}
               />
             ))}
           </ul>
         </section>
-        {recentItems.length > 0 && <RecentProductsSection items={recentItems} />}
+        <RecentProductsSection load={load} onRetry={ensureLoaded} />
       </div>
     </div>
   );
@@ -101,16 +90,17 @@ function HomePage() {
 
 function CategoryCard({
   category,
-  productCount,
+  count,
   novidadeCount,
 }: {
   category: CategorySlug;
-  productCount: number;
+  /** From `meta.counts`, so it shows before the Produtos load. */
+  count: number;
   /** Undefined until the Categoria's Produtos load. */
   novidadeCount: number | undefined;
 }) {
   return (
-    <li className="relative flex flex-col gap-1 rounded-lg border border-border p-4 has-[a:hover]:bg-component-hover">
+    <li className="relative flex flex-col gap-1 rounded-lg border border-border p-4 has-[h3_a:hover]:bg-component-hover">
       <h3 className="font-serif text-heading-6 font-medium">
         {/* The whole card opens the Categoria; the Novidades link sits above it. */}
         <Link
@@ -121,11 +111,8 @@ function CategoryCard({
           {categoryLabels[category]}
         </Link>
       </h3>
-      {/* The Novidades join the count's line once the Produtos load, so the card keeps its height. */}
       <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-body-sm">
-        <p className="text-fg-secondary tabular-nums">
-          {resultCountText(productCount, productCount)}
-        </p>
+        <p className="text-fg-secondary tabular-nums">{productCount(count)}</p>
         {novidadeCount !== undefined && novidadeCount > 0 && (
           <Link
             to="/$categoria"
@@ -143,41 +130,61 @@ function CategoryCard({
   );
 }
 
-function RecentProductsSection({ items }: { items: RecentProductItem[] }) {
+/** Shown once a Produto has been opened, like the header's Recentes button. */
+function RecentProductsSection({ load, onRetry }: { load: CategoriesLoad; onRetry: () => void }) {
+  const recent = useRecentProducts();
+  if (recent.length === 0) return null;
   return (
     <section aria-labelledby="recentes-titulo" className="flex flex-col gap-3">
       <h2 id="recentes-titulo" className="font-serif text-heading-6 font-medium">
         Vistos recentemente
       </h2>
-      <ul className="-mx-3 grid grid-cols-1 gap-1 sm:grid-cols-2">
-        {items.map(({ category, product }) => {
-          const price = priceOf(product);
-          return (
-            <li key={`${category}/${product.id}`}>
-              <Link
-                to="/$categoria/$id"
-                params={{ categoria: category, id: product.id }}
-                className="flex items-center gap-3 rounded-lg px-3 py-2 text-body-sm hover:bg-component-hover focus-visible:bg-component-hover focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-ring active:bg-component-active"
-              >
-                <ProductPhoto
-                  key={product.image}
-                  src={product.image}
-                  alt=""
-                  size="row"
-                  loading="lazy"
-                />
-                <span className="flex min-w-0 flex-1 flex-col">
-                  <span className="truncate font-medium">{product.name}</span>
-                  <span className="text-fg-secondary">{categoryLabels[category]}</span>
-                </span>
-                <span className="shrink-0 whitespace-nowrap tabular-nums text-fg-secondary">
-                  {price === undefined ? "Sem preço" : formatPrice(price)}
-                </span>
-              </Link>
-            </li>
-          );
-        })}
-      </ul>
+      {load.status === "loading" && (
+        <p className="text-body-sm text-fg-secondary">Carregando produtos…</p>
+      )}
+      {load.status === "failed" && (
+        <div className="flex flex-col items-start gap-3">
+          <p className="text-body-sm text-fg-secondary">
+            Não deu para carregar os produtos. Verifique a conexão e tente de novo.
+          </p>
+          <Button
+            variant="outline"
+            size="lg"
+            onClick={() => {
+              // The button goes while the Produtos load; focus moves on to the page's title.
+              document.querySelector<HTMLElement>("main h1")?.focus();
+              onRetry();
+            }}
+          >
+            Tentar de novo
+          </Button>
+        </div>
+      )}
+      {load.status === "loaded" && <RecentProductList recent={recent} load={load} />}
     </section>
+  );
+}
+
+function RecentProductList({
+  recent,
+  load,
+}: {
+  recent: readonly RecentProduct[];
+  load: Extract<CategoriesLoad, { status: "loaded" }>;
+}) {
+  const items = recentProductItems(recent, load.categories).slice(0, homeRecentProductCount);
+  if (items.length === 0) {
+    return (
+      <p className="text-body-sm text-fg-secondary">Os produtos vistos não estão mais nos dados.</p>
+    );
+  }
+  return (
+    <ul className="-mx-3 grid grid-cols-1 gap-1 sm:grid-cols-2">
+      {items.map((item) => (
+        <li key={`${item.category}/${item.product.id}`}>
+          <RecentProductLink item={item} />
+        </li>
+      ))}
+    </ul>
   );
 }
