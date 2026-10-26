@@ -1,6 +1,7 @@
 import { isRatingField, ratingRank } from "../data/rating-order.ts";
 import type { Field, FieldValue, KrwBrlRate, Product } from "../data/schema.ts";
 import { unitLabel, valueLabel } from "../i18n/labels.ts";
+import { productFieldValue } from "../product-fields/field-groups.ts";
 import type { TableColumn } from "./table-columns.ts";
 
 const locale = "pt-BR";
@@ -148,7 +149,7 @@ export function sortValueOf(column: TableColumn, product: Product): SortValue {
     case "price":
       return priceOf(product);
     case "field": {
-      const value = product.values[column.field.key];
+      const value = productFieldValue(product, column.field);
       if (value === undefined) return undefined;
       if (typeof value === "number") return value;
       if (typeof value === "string" && isCountEnum(column.field) && countPattern.test(value)) {

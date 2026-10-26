@@ -1,5 +1,8 @@
 import type { CategorySlug } from "../categories.ts";
+import { isRatingField } from "../data/rating-order.ts";
 import type { CategoryData, Field } from "../data/schema.ts";
+import { fieldLabel } from "../i18n/labels.ts";
+import { productFieldGroups, type ProductFieldGroupId } from "../product-fields/field-groups.ts";
 
 /**
  * A column of the Categoria table. `slug` is its name in the link
@@ -19,7 +22,10 @@ export type SortEntry = { slug: string; desc: boolean };
 
 type CategoryTable = { columns: ColumnSpec[]; defaultSort: SortEntry[] };
 
-const productColumn: ColumnSpec = { kind: "product", slug: "produto" };
+const productColumn: Extract<ColumnSpec, { kind: "product" }> = {
+  kind: "product",
+  slug: "produto",
+};
 
 function ratingAndPriceColumns(ratingKey: string): ColumnSpec[] {
   return [
@@ -98,8 +104,25 @@ const categoryTables: Record<CategorySlug, CategoryTable> = {
   },
 };
 
+/** How `col=` names the Preço column; a field column goes by its field key (`col=weight`). */
+const priceColumnKey = "preco";
+/** `col=produto` asks for the Produto column alone, which shows with any choice. */
+const productOnlyParam = "produto";
+
+/** The key `col=` names a column by. */
+function columnKeyOf(column: TableColumn): string {
+  switch (column.kind) {
+    case "product":
+      return productOnlyParam;
+    case "price":
+      return priceColumnKey;
+    case "field":
+      return column.field.key;
+  }
+}
+
 /** The Categoria's columns, minus any field this version of the data lacks. */
-export function tableColumnsFor(data: CategoryData): TableColumn[] {
+function defaultTableColumns(data: CategoryData): TableColumn[] {
   const fieldsByKey = new Map(data.fields.map((field) => [field.key, field]));
   return categoryTables[data.category].columns.flatMap((spec): TableColumn[] => {
     if (spec.kind !== "field") return [spec];
@@ -110,6 +133,81 @@ export function tableColumnsFor(data: CategoryData): TableColumn[] {
   });
 }
 
-export function defaultSortFor(category: CategorySlug): SortEntry[] {
-  return categoryTables[category].defaultSort;
+/** The keys of the columns the table shows when nothing else is chosen, the Produto aside. */
+export function defaultColumnKeysFor(data: CategoryData): string[] {
+  return defaultTableColumns(data)
+    .filter((column) => column.kind !== "product")
+    .map(columnKeyOf);
+}
+
+/**
+ * The Produto column, then one per key in the given order. A default column
+ * keeps its slug and its standard deviation; an added field column sorts by
+ * its field key (`ordem=-batteryLife`). A key with no column is dropped.
+ */
+export function tableColumnsFor(data: CategoryData, columnKeys: readonly string[]): TableColumn[] {
+  const defaults = new Map(
+    defaultTableColumns(data).map((column) => [columnKeyOf(column), column]),
+  );
+  const fieldsByKey = new Map(data.fields.map((field) => [field.key, field]));
+  const chosen = [...new Set(columnKeys)].flatMap((key): TableColumn[] => {
+    const column = defaults.get(key);
+    if (column) return column.kind === "product" ? [] : [column];
+    const field = fieldsByKey.get(key);
+    return field ? [{ kind: "field", slug: key, field, deviation: undefined }] : [];
+  });
+  return [productColumn, ...chosen];
+}
+
+/** A column the "Colunas" menu offers. */
+export type ColumnChoice = { key: string; label: string };
+export type ColumnChoiceGroup = { id: ProductFieldGroupId; title: string; choices: ColumnChoice[] };
+
+/**
+ * The columns the "Colunas" menu offers, grouped like the detail of a Produto:
+ * every field some Produto of the Categoria has, with the Preço after the grades.
+ */
+export function columnChoiceGroupsFor(data: CategoryData): ColumnChoiceGroup[] {
+  return productFieldGroups(data, data.products).map((group) => {
+    const choices = group.fields.map((field) => ({ key: field.key, label: fieldLabel(field) }));
+    if (group.id === "especificacoes") {
+      const gradeCount = group.fields.filter((field) => isRatingField(field.key)).length;
+      choices.splice(gradeCount, 0, { key: priceColumnKey, label: "Preço" });
+    }
+    return { id: group.id, title: group.title, choices };
+  });
+}
+
+/**
+ * The column keys a `col=` text asks for, in its order: unknown and repeated
+ * keys are dropped. Undefined when it names no column, so the table falls
+ * back to the stored choice or the default.
+ */
+export function columnKeysFromParam(
+  columnsParam: string | undefined,
+  availableKeys: ReadonlySet<string>,
+): string[] | undefined {
+  if (columnsParam === undefined) return undefined;
+  const parts = columnsParam.split(",");
+  const keys = [...new Set(parts.filter((key) => availableKeys.has(key)))];
+  if (keys.length === 0 && !parts.includes(productOnlyParam)) return undefined;
+  return keys;
+}
+
+/** `col` for a choice of columns; undefined for the default one, so the link stays short. */
+export function columnsParamOf(
+  columnKeys: readonly string[],
+  defaultKeys: readonly string[],
+): string | undefined {
+  if (columnKeys.join(",") === defaultKeys.join(",")) return undefined;
+  return columnKeys.length === 0 ? productOnlyParam : columnKeys.join(",");
+}
+
+/** The Categoria's default sort, by those of its columns the table shows. */
+export function defaultSortFor(
+  category: CategorySlug,
+  columns: readonly TableColumn[],
+): SortEntry[] {
+  const slugs = new Set(columns.map(({ slug }) => slug));
+  return categoryTables[category].defaultSort.filter(({ slug }) => slugs.has(slug));
 }

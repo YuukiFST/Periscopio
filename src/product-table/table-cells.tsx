@@ -1,6 +1,7 @@
 import { getRouteApi, Link } from "@tanstack/react-router";
 import type { Product } from "@/data/schema";
 import { manufacturerName } from "@/i18n/labels";
+import { productFieldValue } from "@/product-fields/field-groups";
 import { ProductPhoto } from "@/product-photo/product-photo";
 import {
   formatDeviation,
@@ -131,7 +132,7 @@ export function TableCellValue({ column, product }: { column: TableColumn; produ
       );
     }
     case "field": {
-      const value = product.values[column.field.key];
+      const value = productFieldValue(product, column.field);
       if (value === undefined) return <MissingValue />;
       const text = formatFieldValue(column.field, value);
       if (column.field.type !== "number" && !isCountEnum(column.field)) {

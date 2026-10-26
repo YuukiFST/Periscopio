@@ -3,8 +3,8 @@ import type { SortEntry } from "./table-columns.ts";
 /** `ordem=nenhuma` keeps EyeJoker's own order; no `ordem` means the default sort. */
 export const unsortedParam = "nenhuma";
 
-/** Shape of `ordem`: column slugs, comma-separated, `-` for descending. */
-export const sortParamPattern = /^-?[a-z][a-z0-9-]*(?:,-?[a-z][a-z0-9-]*)*$/;
+/** Shape of `ordem`: column slugs or field keys, comma-separated, `-` for descending. */
+export const sortParamPattern = /^-?[a-zA-Z][a-zA-Z0-9-]*(?:,-?[a-zA-Z][a-zA-Z0-9-]*)*$/;
 
 function parseSortEntry(part: string): SortEntry {
   return part.startsWith("-") ? { slug: part.slice(1), desc: true } : { slug: part, desc: false };
