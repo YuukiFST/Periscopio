@@ -87,5 +87,5 @@ A visão dos Produtos de uma Categoria, filtrados como na tabela, como pontos so
 _Avoid_: scatter, dispersão, plot
 
 **Melhor relação**:
-Um Produto do Gráfico que nenhum outro supera nos dois eixos ao mesmo tempo, pelo lado melhor de cada coluna.
+Um Produto do Gráfico sem outro ao menos tão bom nos dois eixos e melhor em um, pelo lado melhor de cada coluna.
 _Avoid_: fronteira de Pareto, custo-benefício, trade-off

@@ -63,7 +63,7 @@ function useWidth() {
 }
 
 /** The name a dot's link reads: "H200A: Preço (₩) ₩ 59.000, Nota geral A, melhor relação". */
-export function pointLabel(point: ChartPoint, xAxis: ChartAxis, yAxis: ChartAxis, isBest: boolean) {
+function pointLabel(point: ChartPoint, xAxis: ChartAxis, yAxis: ChartAxis, isBest: boolean) {
   const values = `${xAxis.label} ${axisValueText(xAxis, point.product)}, ${yAxis.label} ${axisValueText(yAxis, point.product)}`;
   return `${point.product.name}: ${values}${isBest ? ", melhor relação" : ""}`;
 }
@@ -93,7 +93,9 @@ export function ScatterPlot({
   labelledBy,
 }: ScatterPlotProps) {
   const [containerRef, width] = useWidth();
-  const [activeId, setActiveId] = useState<string>();
+  const [hoveredId, setHoveredId] = useState<string>();
+  const [focusedId, setFocusedId] = useState<string>();
+  const activeId = hoveredId ?? focusedId;
   const height = Math.round(Math.min(520, Math.max(280, width * 0.6)));
   const plotRight = width - margin.right;
   const plotBottom = height - margin.bottom;
@@ -176,10 +178,10 @@ export function ScatterPlot({
                 aria-label={pointLabel(point, xAxis, yAxis, isBest)}
                 data-best={isBest || undefined}
                 className="group outline-none"
-                onMouseEnter={() => setActiveId(point.product.id)}
-                onMouseLeave={() => setActiveId(undefined)}
-                onFocus={() => setActiveId(point.product.id)}
-                onBlur={() => setActiveId(undefined)}
+                onMouseEnter={() => setHoveredId(point.product.id)}
+                onMouseLeave={() => setHoveredId(undefined)}
+                onFocus={() => setFocusedId(point.product.id)}
+                onBlur={() => setFocusedId(undefined)}
               >
                 <g transform={`translate(${xOf(point.x)},${yOf(point.y)})`}>
                   <circle r={12} className="fill-transparent" />

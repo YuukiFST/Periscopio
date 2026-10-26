@@ -20,7 +20,7 @@ import {
   type ChartAxis,
   type ChartAxisGroup,
 } from "./chart-axes";
-import { bestTradeOffsOf, chartPointsOf } from "./chart-points";
+import { bestTradeOffsOf, chartPointsOf, type ChartPoint } from "./chart-points";
 import { ScatterPlot } from "./scatter-plot";
 import type { TableSearch } from "@/product-table/table-search";
 
@@ -81,12 +81,11 @@ export function ProductChart({ data, search, onAxisChange }: ProductChartProps) 
     search.novidades,
     meta.updatedAt,
   ]);
-  const points = useMemo(
-    () => (xAxis && yAxis ? chartPointsOf(products, xAxis, yAxis) : []),
-    [products, xAxis, yAxis],
+  const points = useMemo(() => chartPointsOf(products, xAxis, yAxis), [products, xAxis, yAxis]);
+  const bestTradeOffs = useMemo(
+    () => bestTradeOffsOf(points, xAxis.direction, yAxis.direction),
+    [points, xAxis, yAxis],
   );
-  const bestTradeOffs =
-    xAxis && yAxis ? bestTradeOffsOf(points, xAxis.direction, yAxis.direction) : undefined;
 
   const categoryName = categoryLabels[data.category].toLowerCase();
   const headingRef = useRef<HTMLHeadingElement>(null);
@@ -100,9 +99,10 @@ export function ProductChart({ data, search, onAxisChange }: ProductChartProps) 
   const plotTitleId = useId();
   const leftOut = products.length - points.length;
   return (
+    // The plot's height follows its width, so a scrollbar coming and going must not change the width.
     <article
       aria-labelledby={headingId}
-      className="-m-1.5 flex min-h-0 flex-1 flex-col gap-4 overflow-y-auto p-1.5"
+      className="-m-1.5 flex min-h-0 flex-1 flex-col gap-4 overflow-y-auto p-1.5 [scrollbar-gutter:stable]"
     >
       <BackToTableLink category={data.category} search={tableSearch} />
       <div className="flex items-start justify-between gap-4">
@@ -116,28 +116,26 @@ export function ProductChart({ data, search, onAxisChange }: ProductChartProps) 
         </h1>
         <CopyLinkButton />
       </div>
-      {xAxis && yAxis && (
-        <div className="flex flex-wrap items-end gap-x-4 gap-y-3">
-          <AxisSelect
-            label="Eixo horizontal"
-            groups={axisGroups}
-            value={xAxis.slug}
-            onValueChange={(slug) => onAxisChange("x", slug)}
-          />
-          <AxisSelect
-            label="Eixo vertical"
-            groups={axisGroups}
-            value={yAxis.slug}
-            onValueChange={(slug) => onAxisChange("y", slug)}
-          />
-          <p aria-live="polite" className="text-fg-secondary tabular-nums">
-            {narrowingText(search, activeFilterCount(filters, filterValues))}:{" "}
-            {productCount(points.length)} no gráfico
-            {leftOut > 0 && `, ${leftOut} sem dado em um dos eixos`}
-          </p>
-        </div>
-      )}
-      {xAxis && yAxis && points.length > 0 ? (
+      <div className="flex flex-wrap items-end gap-x-4 gap-y-3">
+        <AxisSelect
+          label="Eixo horizontal"
+          groups={axisGroups}
+          value={xAxis.slug}
+          onValueChange={(slug) => onAxisChange("x", slug)}
+        />
+        <AxisSelect
+          label="Eixo vertical"
+          groups={axisGroups}
+          value={yAxis.slug}
+          onValueChange={(slug) => onAxisChange("y", slug)}
+        />
+        <p aria-live="polite" className="text-fg-secondary tabular-nums">
+          {narrowingText(search, activeFilterCount(filters, filterValues))}:{" "}
+          {productCount(points.length)} no gráfico
+          {leftOut > 0 && `, ${leftOut} sem dado em um dos eixos`}
+        </p>
+      </div>
+      {points.length > 0 ? (
         <figure className="flex flex-col gap-3">
           <h2 id={plotTitleId} className="sr-only">
             {yAxis.label} por {xAxis.label}
@@ -152,11 +150,7 @@ export function ProductChart({ data, search, onAxisChange }: ProductChartProps) 
             labelledBy={plotTitleId}
           />
           <figcaption className="max-w-prose text-pretty text-fg-secondary">
-            <BestTradeOffsLegend
-              xAxis={xAxis}
-              yAxis={yAxis}
-              hasLine={bestTradeOffs !== undefined}
-            />
+            <BestTradeOffsLegend xAxis={xAxis} yAxis={yAxis} />
           </figcaption>
           <ChartDataTable
             points={points}
@@ -169,8 +163,8 @@ export function ProductChart({ data, search, onAxisChange }: ProductChartProps) 
         <div className="rounded-lg border border-border px-4 py-6">
           <p className="font-medium text-pretty">
             {products.length === 0
-              ? "Nenhum produto com esses filtros."
-              : `Nenhum produto tem ${xAxis?.label ?? "valor"} e ${yAxis?.label ?? "valor"}.`}
+              ? "Nenhum produto com essa busca, esses filtros e esse Status de teste."
+              : `Nenhum produto tem ${xAxis.label} e ${yAxis.label}.`}
           </p>
         </div>
       )}
@@ -212,17 +206,9 @@ function AxisSelect({ label, groups, value, onValueChange }: AxisSelectProps) {
   );
 }
 
-function BestTradeOffsLegend({
-  xAxis,
-  yAxis,
-  hasLine,
-}: {
-  xAxis: ChartAxis;
-  yAxis: ChartAxis;
-  hasLine: boolean;
-}) {
+function BestTradeOffsLegend({ xAxis, yAxis }: { xAxis: ChartAxis; yAxis: ChartAxis }) {
   const noDirection = [xAxis, yAxis].find((axis) => axis.direction === "none");
-  if (!hasLine && noDirection) {
+  if (noDirection) {
     return <>Sem melhores relações: {noDirection.label} não tem um lado melhor.</>;
   }
   return (
@@ -230,15 +216,15 @@ function BestTradeOffsLegend({
       <svg aria-hidden="true" width="12" height="12" className="me-1.5 inline-block align-baseline">
         <circle cx="6" cy="6" r="5" className="fill-brand" />
       </svg>
-      Melhores relações: nenhum outro produto é melhor nos dois eixos ao mesmo tempo ({xAxis.label}:{" "}
-      {betterTexts[xAxis.direction]}; {yAxis.label}: {betterTexts[yAxis.direction]}).
+      Melhores relações: nenhum outro produto é ao menos tão bom nos dois eixos e melhor em um (
+      {xAxis.label}: {betterTexts[xAxis.direction]}; {yAxis.label}: {betterTexts[yAxis.direction]}).
     </>
   );
 }
 
 type ChartDataTableProps = {
-  points: ReturnType<typeof chartPointsOf>;
-  bestTradeOffs: ReturnType<typeof bestTradeOffsOf>;
+  points: readonly ChartPoint[];
+  bestTradeOffs: readonly ChartPoint[] | undefined;
   xAxis: ChartAxis;
   yAxis: ChartAxis;
 };

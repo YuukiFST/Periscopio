@@ -72,17 +72,20 @@ export function chartAxisGroupsFor(data: CategoryData): ChartAxisGroup[] {
   });
 }
 
-/** The axis a link's slug names, else the default one, else the first there is. */
+/** Every Produto has a Preço column, so the Gráfico always has an axis to fall back on. */
+const priceAxis = axisOf({ kind: "price", slug: "preco" });
+
+/** The axis a link's slug names, else the default one, else the Preço. */
 export function chartAxisOf(
   groups: readonly ChartAxisGroup[],
   slug: string | undefined,
   defaultSlug: string,
-): ChartAxis | undefined {
+): ChartAxis {
   const axes = groups.flatMap((group) => group.axes);
   return (
     axes.find((axis) => axis.slug === slug) ??
     axes.find((axis) => axis.slug === defaultSlug) ??
-    axes[0]
+    priceAxis
   );
 }
 
