@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { ChevronDown, ExternalLink, X } from "lucide-react";
-import { useLayoutEffect, useRef, useState, type CSSProperties } from "react";
+import { useLayoutEffect, useRef, useState, type CSSProperties, type ReactNode } from "react";
 import type { CategorySlug } from "@/categories";
 import { Button } from "@/components/ui/button";
 import type { CategoryData, Field, Product } from "@/data/schema";
@@ -33,6 +33,8 @@ type ComparisonTableProps = {
   /** The connection chosen for mouses; undefined when any counts. */
   connection: Connection | undefined;
   onRemove: (id: string) => void;
+  /** The control that swaps a Produto for another, shown in its column. */
+  renderSwapControl: (product: Product) => ReactNode;
 };
 
 type ComparisonGroup = Omit<ProductFieldGroup, "id"> & {
@@ -99,6 +101,7 @@ export function ComparisonTable({
   summary,
   connection,
   onRemove,
+  renderSwapControl,
 }: ComparisonTableProps) {
   const groups = comparisonGroups(data, products, connection);
   const hasMeasurements =
@@ -179,6 +182,7 @@ export function ComparisonTable({
                   product={product}
                   comparedIdsParam={comparedIdsParam}
                   onRemove={() => onRemove(product.id)}
+                  swapControl={renderSwapControl(product)}
                 />
               ))}
             </tr>
@@ -257,11 +261,13 @@ function ProductColumnHeader({
   product,
   comparedIdsParam,
   onRemove,
+  swapControl,
 }: {
   category: CategorySlug;
   product: Product;
   comparedIdsParam: string | undefined;
   onRemove: () => void;
+  swapControl: ReactNode;
 }) {
   return (
     <th
@@ -269,7 +275,11 @@ function ProductColumnHeader({
       // Named by the Produto alone: screen readers repeat this name on every cell of the column.
       aria-label={product.name}
       // A peeking column scrolls in whole when Tab reaches its links, its start on a snap point.
-      onFocus={(event) => event.currentTarget.scrollIntoView({ block: "nearest", inline: "start" })}
+      // Focus inside the Trocar dialog bubbles here through React's tree, though the dialog is elsewhere.
+      onFocus={(event) => {
+        if (!(event.target instanceof Node) || !event.currentTarget.contains(event.target)) return;
+        event.currentTarget.scrollIntoView({ block: "nearest", inline: "start" });
+      }}
       className="sticky top-0 z-20 snap-start border-b border-border bg-page px-1.5 py-2 text-start align-top font-normal min-[22rem]:px-2 sm:px-3 sm:py-3 group-data-[header-tall=true]/scroller:top-auto"
     >
       <div className="flex flex-col items-start gap-2">
@@ -304,6 +314,7 @@ function ProductColumnHeader({
             <ExternalLink aria-hidden="true" className="size-3.5 shrink-0" />
           </a>
         )}
+        {swapControl}
       </div>
       {/* Last in the tab order, after the Produto's own links; shown right by its own photo. */}
       <Button

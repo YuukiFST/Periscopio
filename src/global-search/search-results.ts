@@ -25,24 +25,32 @@ function resultRank(product: Product, query: string): number {
 }
 
 /**
- * The Produtos of every Categoria that match the search like the table's
- * search does, whatever their Status de teste, best matches first; a
- * Categoria with none is left out.
+ * The `products` that match the search like the table's search does,
+ * whatever their Status de teste, best matches first; none for an empty search.
+ */
+export function rankedProductMatches(products: readonly Product[], searchText: string): Product[] {
+  const query = normalizedWords(searchText);
+  if (query === "") return [];
+  return filterProducts([...products], "todos", searchText)
+    .map((product) => ({ product, rank: resultRank(product, query) }))
+    .toSorted((left, right) => left.rank - right.rank)
+    .map(({ product }) => product);
+}
+
+/**
+ * The best matches of every Categoria, as `rankedProductMatches` finds them;
+ * a Categoria with none is left out.
  */
 export function searchAllCategories(
   categories: CategoryData[],
   searchText: string,
 ): SearchResultGroup[] {
-  const query = normalizedWords(searchText);
-  if (query === "") return [];
   return categories
     .map(({ category, products }) => ({
       category,
-      items: filterProducts(products, "todos", searchText)
-        .map((product) => ({ product, rank: resultRank(product, query) }))
-        .toSorted((left, right) => left.rank - right.rank)
+      items: rankedProductMatches(products, searchText)
         .slice(0, resultsPerCategory)
-        .map(({ product }) => ({ category, product })),
+        .map((product) => ({ category, product })),
     }))
     .filter((group) => group.items.length > 0);
 }
