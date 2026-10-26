@@ -51,7 +51,15 @@ import { ProductSidebar } from "@/product-detail/product-sidebar";
 import { useChangeComparedIds } from "@/product-detail/use-change-compared-ids";
 import { countNovidadesSince, filterNovidades, novidadeOf } from "@/product-table/novidades";
 import { ProductTable } from "@/product-table/product-table";
-import { defaultSortFor, tableColumnsFor } from "@/product-table/table-columns";
+import { ColumnsMenu } from "@/product-table/columns-menu";
+import { useStoredColumns } from "@/product-table/stored-columns";
+import {
+  columnKeysFromParam,
+  columnsParamOf,
+  defaultSortFor,
+  tableColumnChoicesFor,
+  tableColumnsFor,
+} from "@/product-table/table-columns";
 import {
   sortParamAfterHeaderClick,
   sortingFromParam,
@@ -72,6 +80,8 @@ const categorySearchSchema = z.object({
   q: z.string().max(searchTextMaxLength).optional().catch(undefined),
   cmp: compareParamSchema,
   novidades: z.literal("1").optional().catch(undefined),
+  // Unknown keys are dropped later, one by one, against the Categoria's fields.
+  col: z.string().optional().catch(undefined),
 });
 
 /**
@@ -132,7 +142,7 @@ const filtersHeadingId = "filtros-titulo";
 function CategoryTable({ data }: { data: CategoryData }) {
   const meta = rootRoute.useLoaderData();
   const search = Route.useSearch();
-  const { ordem, q, cmp, novidades } = search;
+  const { ordem, q, cmp, novidades, col } = search;
   const status = search.status ?? defaultTestStatus;
   // Every call resolves from the current URL (`unsafeRelative: "path"`), not from this route,
   // so a change of Filtro, ordem or busca keeps a Produto's panel open.
@@ -162,8 +172,26 @@ function CategoryTable({ data }: { data: CategoryData }) {
     changeFilterValues(noFilterValues);
   }
 
-  const columns = useMemo(() => tableColumnsFor(data), [data]);
-  const defaultSort = defaultSortFor(data.category);
+  const columnChoices = useMemo(() => tableColumnChoicesFor(data), [data]);
+  const [storedColumns, storeColumns] = useStoredColumns(data.category);
+  const columnKeys = useMemo(
+    () =>
+      columnKeysFromParam(col, columnChoices.availableKeys) ??
+      columnKeysFromParam(storedColumns, columnChoices.availableKeys) ??
+      columnChoices.defaultKeys,
+    [columnChoices, col, storedColumns],
+  );
+  const columns = useMemo(() => tableColumnsFor(data, columnKeys), [data, columnKeys]);
+  function changeColumnKeys(keys: string[]) {
+    const columnsParam = columnsParamOf(keys, columnChoices.defaultKeys);
+    void navigate({
+      unsafeRelative: "path",
+      search: (previous) => ({ ...previous, col: columnsParam }),
+      replace: true,
+    });
+    storeColumns(columnsParam);
+  }
+  const defaultSort = useMemo(() => defaultSortFor(data.category, columns), [data, columns]);
   const sorting = useMemo(() => {
     const sortable = new Set(columns.map((column) => column.slug));
     return sortingFromParam(ordem, sortable, defaultSort);
@@ -353,6 +381,13 @@ function CategoryTable({ data }: { data: CategoryData }) {
                 clearCount={clearCount}
               />
             </FilterDrawer>
+            <ColumnsMenu
+              groups={columnChoices.groups}
+              chosenKeys={columnKeys}
+              isDefault={columnsParamOf(columnKeys, columnChoices.defaultKeys) === undefined}
+              onChosenKeysChange={changeColumnKeys}
+              onReset={() => changeColumnKeys(columnChoices.defaultKeys)}
+            />
           </TableToolbar>
           <ActiveFilterChips
             filters={filters}

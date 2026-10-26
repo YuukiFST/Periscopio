@@ -1,0 +1,132 @@
+- dialog "Colunas":
+    - heading "Colunas" [level=2]
+    - searchbox "Buscar coluna"
+    - group "Especificações":
+        - text: ""
+        - checkbox "Nota geral" [checked]
+        - text: Nota geral
+        - checkbox "Recomendação" [checked]
+        - text: Recomendação
+        - checkbox "Preço" [checked]
+        - text: Preço
+        - checkbox "Formato" [checked]
+        - text: Formato
+        - checkbox "Polling rate máximo"
+        - text: Polling rate máximo
+        - checkbox "Conexão"
+        - text: Conexão
+        - checkbox "Material"
+        - text: Material
+        - checkbox "Comprimento"
+        - text: Comprimento
+        - checkbox "Peso" [checked]
+        - text: Peso
+        - checkbox "Largura máxima"
+        - text: Largura máxima
+        - checkbox "Altura"
+        - text: Altura
+        - checkbox "Carcaça furada"
+        - text: Carcaça furada
+        - checkbox "MCU" [checked]
+        - text: MCU
+        - checkbox "Bateria"
+        - text: Bateria
+        - checkbox "Sensor" [checked]
+        - text: Sensor
+        - checkbox "Switch"
+        - text: Switch
+        - checkbox "Switch lateral"
+        - text: Switch lateral
+        - checkbox "Switch da roda"
+        - text: Switch da roda
+        - checkbox "Encoder"
+        - text: Encoder
+        - checkbox "Velocidade máxima de rastreio"
+        - text: Velocidade máxima de rastreio
+        - checkbox "Aceleração máxima"
+        - text: Aceleração máxima
+        - checkbox "DPI máximo"
+        - text: DPI máximo
+        - checkbox "Passo de DPI"
+        - text: Passo de DPI
+        - checkbox "Conector"
+        - text: Conector
+        - checkbox "Modo de LOD do sensor"
+        - text: Modo de LOD do sensor
+        - checkbox "Valores de LOD do sensor"
+        - text: Valores de LOD do sensor
+        - checkbox "Situação de venda"
+        - text: Situação de venda
+        - checkbox "Versão do firmware"
+        - text: Versão do firmware
+        - checkbox "Data de publicação"
+        - text: Data de publicação
+    - group "Medições":
+        - text: ""
+        - checkbox "Resposta do sensor" [checked]
+        - text: Resposta do sensor
+        - checkbox "Desvio padrão do sensor"
+        - text: Desvio padrão do sensor
+        - checkbox "Resposta do clique" [checked]
+        - text: Resposta do clique
+        - checkbox "Desvio padrão do clique"
+        - text: Desvio padrão do clique
+        - checkbox "Debounce"
+        - text: Debounce
+        - checkbox "Clique perdido"
+        - text: Clique perdido
+        - checkbox "Slam click"
+        - text: Slam click
+        - checkbox "Proteção contra slam click"
+        - text: Proteção contra slam click
+        - checkbox "LOD mínimo"
+        - text: LOD mínimo
+        - checkbox "Resposta média do clique (ideal, ao pressionar)"
+        - text: Resposta média do clique (ideal, ao pressionar)
+        - checkbox "Desvio padrão do clique (ideal, ao pressionar)"
+        - text: Desvio padrão do clique (ideal, ao pressionar)
+        - checkbox "Resposta média do clique (ideal, ao soltar)"
+        - text: Resposta média do clique (ideal, ao soltar)
+        - checkbox "Desvio padrão do clique (ideal, ao soltar)"
+        - text: Desvio padrão do clique (ideal, ao soltar)
+        - checkbox "Resposta média do clique (com fio, ao pressionar)"
+        - text: Resposta média do clique (com fio, ao pressionar)
+        - checkbox "Desvio padrão do clique (com fio, ao pressionar)"
+        - text: Desvio padrão do clique (com fio, ao pressionar)
+        - checkbox "Resposta média do clique (com fio, ao soltar)"
+        - text: Resposta média do clique (com fio, ao soltar)
+        - checkbox "Desvio padrão do clique (com fio, ao soltar)"
+        - text: Desvio padrão do clique (com fio, ao soltar)
+        - checkbox "Resposta média do sensor (com fio)"
+        - text: Resposta média do sensor (com fio)
+        - checkbox "Desvio padrão do sensor (com fio)"
+        - text: Desvio padrão do sensor (com fio)
+        - checkbox "Resposta média do clique (sem fio, ao pressionar)"
+        - text: Resposta média do clique (sem fio, ao pressionar)
+        - checkbox "Desvio padrão do clique (sem fio, ao pressionar)"
+        - text: Desvio padrão do clique (sem fio, ao pressionar)
+        - checkbox "Resposta média do clique (sem fio, ao soltar)"
+        - text: Resposta média do clique (sem fio, ao soltar)
+        - checkbox "Desvio padrão do clique (sem fio, ao soltar)"
+        - text: Desvio padrão do clique (sem fio, ao soltar)
+        - checkbox "Resposta média do sensor (sem fio)"
+        - text: Resposta média do sensor (sem fio)
+        - checkbox "Desvio padrão do sensor (sem fio)"
+        - text: Desvio padrão do sensor (sem fio)
+        - checkbox "Resposta média do sensor (Motion Sync ligado)"
+        - text: Resposta média do sensor (Motion Sync ligado)
+        - checkbox "Desvio padrão do sensor (Motion Sync ligado)"
+        - text: Desvio padrão do sensor (Motion Sync ligado)
+        - checkbox "Resposta média do sensor (Motion Sync desligado)"
+        - text: Resposta média do sensor (Motion Sync desligado)
+        - checkbox "Desvio padrão do sensor (Motion Sync desligado)"
+        - text: Desvio padrão do sensor (Motion Sync desligado)
+        - checkbox "Resposta média do sensor (sem fio, Motion Sync ligado)"
+        - text: Resposta média do sensor (sem fio, Motion Sync ligado)
+        - checkbox "Desvio padrão do sensor (sem fio, Motion Sync ligado)"
+        - text: Desvio padrão do sensor (sem fio, Motion Sync ligado)
+        - checkbox "Resposta média do sensor (sem fio, Motion Sync desligado)"
+        - text: Resposta média do sensor (sem fio, Motion Sync desligado)
+        - checkbox "Desvio padrão do sensor (sem fio, Motion Sync desligado)"
+        - text: Desvio padrão do sensor (sem fio, Motion Sync desligado)
+    - button "Restaurar padrão" [disabled]

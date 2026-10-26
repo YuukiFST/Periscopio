@@ -38,16 +38,19 @@ export function productFieldValue(product: Product, field: Field): FieldValue | 
 /**
  * Especificações (EyeJoker's `common` and `spec` fields, grades first) and
  * Medições (its `bench` fields), each keeping only the fields at least one of
- * `products` has a value for; a group left without fields is dropped.
+ * `products` has a value for, or listed in `keptKeys`; a group left without
+ * fields is dropped.
  */
 export function productFieldGroups(
   data: CategoryData,
   products: readonly Product[],
+  keptKeys: ReadonlySet<string> = new Set(),
 ): ProductFieldGroup[] {
   const shown = data.fields.filter(
     (field) =>
       !headerFieldKeys.has(field.key) &&
-      products.some((product) => productFieldValue(product, field) !== undefined),
+      (keptKeys.has(field.key) ||
+        products.some((product) => productFieldValue(product, field) !== undefined)),
   );
   // Nota geral before Recomendação, the order of the table's leading columns.
   const grades = shown
