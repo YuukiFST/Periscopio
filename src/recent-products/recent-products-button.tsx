@@ -2,32 +2,12 @@ import { Popover } from "@base-ui/react/popover";
 import { Link, useMatch } from "@tanstack/react-router";
 import { History } from "lucide-react";
 import { useRef, useState } from "react";
-import { categoryLabels, type CategorySlug } from "@/categories";
+import { categoryLabels } from "@/categories";
 import { Button } from "@/components/ui/button";
-import type { CategoryData, Product } from "@/data/schema";
 import { useAllCategories } from "@/data/use-all-categories";
 import { formatPrice, priceOf } from "@/product-table/cell-values";
 import { ProductPhoto } from "@/product-photo/product-photo";
-import { clearRecentProducts, useRecentProducts, type RecentProduct } from "./recent-products";
-
-type RecentProductItem = { category: CategorySlug; product: Product };
-
-/** The recorded Produtos the current data still has, in the recorded order. */
-function recentProductItems(
-  recent: readonly RecentProduct[],
-  categories: readonly CategoryData[],
-): RecentProductItem[] {
-  const productsByCategory = new Map(
-    categories.map(({ category, products }) => [
-      category,
-      new Map(products.map((product) => [product.id, product])),
-    ]),
-  );
-  return recent.flatMap(({ category, id }): RecentProductItem[] => {
-    const product = productsByCategory.get(category)?.get(id);
-    return product ? [{ category, product }] : [];
-  });
-}
+import { clearRecentProducts, recentProductItems, useRecentProducts } from "./recent-products";
 
 /**
  * The header's "Recentes" button, shown once a Produto has been opened, and

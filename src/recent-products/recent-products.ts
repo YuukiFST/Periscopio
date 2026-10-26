@@ -1,6 +1,7 @@
 import { useMemo, useSyncExternalStore } from "react";
 import { z } from "zod";
 import { categorySlugs, type CategorySlug } from "../categories.ts";
+import type { CategoryData, Product } from "../data/schema.ts";
 
 /** Enough to find a Produto again without turning the list into a second table. */
 export const recentProductsPerCategory = 10;
@@ -86,4 +87,23 @@ export function clearRecentProducts(): void {
 export function useRecentProducts(): RecentProduct[] {
   const stored = useSyncExternalStore(subscribeToRecentProducts, readRecentProducts);
   return useMemo(() => parseRecentProducts(stored), [stored]);
+}
+
+export type RecentProductItem = { category: CategorySlug; product: Product };
+
+/** The recorded Produtos the current data still has, in the recorded order. */
+export function recentProductItems(
+  recent: readonly RecentProduct[],
+  categories: readonly CategoryData[],
+): RecentProductItem[] {
+  const productsByCategory = new Map(
+    categories.map(({ category, products }) => [
+      category,
+      new Map(products.map((product) => [product.id, product])),
+    ]),
+  );
+  return recent.flatMap(({ category, id }): RecentProductItem[] => {
+    const product = productsByCategory.get(category)?.get(id);
+    return product ? [{ category, product }] : [];
+  });
 }
