@@ -31,7 +31,7 @@ function isSearchShortcut(event: KeyboardEvent): boolean {
  * The three Categorias, loaded by `ensureLoaded` the first time the search
  * opens; after a failed load, the next call tries again.
  */
-function useAllCategories(): [CategoriesLoad, ensureLoaded: () => void] {
+export function useAllCategories(): [CategoriesLoad, ensureLoaded: () => void] {
   const [load, setLoad] = useState<CategoriesLoad>({ status: "loading" });
   function ensureLoaded() {
     if (load.status === "loaded") return;
