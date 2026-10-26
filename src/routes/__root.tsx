@@ -4,6 +4,7 @@ import { categoryLabels, categorySlugs } from "@/categories";
 import { Button } from "@/components/ui/button";
 import { loadMeta } from "@/data/load-data";
 import { GlobalSearch } from "@/global-search/global-search";
+import { RecentProductsButton } from "@/recent-products/recent-products-button";
 
 export const Route = createRootRoute({
   loader: loadMeta,
@@ -34,6 +35,7 @@ function AppShell({ children }: { children: ReactNode }) {
           </nav>
           <div className="ms-auto flex items-center gap-2">
             <GlobalSearch />
+            <RecentProductsButton />
           </div>
         </div>
       </header>
