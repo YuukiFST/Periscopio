@@ -73,6 +73,23 @@ test("the list holds the opened Produtos of every Categoria, newest first and on
   await expect(page.getByRole("dialog", { name: "EDGE 60HE Pro" })).toBeVisible();
 });
 
+test("a Produto of the Categoria on screen opens over its table, which keeps its search params", async ({
+  page,
+}) => {
+  await page.goto(`/mouse/${huanId}`);
+  await expect(page.getByRole("dialog", { name: "Huan" })).toBeVisible();
+  const tableSearch = "?status=todos&q=dragon";
+  await page.goto(`/mouse${tableSearch}`);
+  await recentButton(page).click();
+  await recentList(page).getByRole("link", { name: /^Huan/ }).click();
+
+  await expect(page).toHaveURL(`/mouse/${huanId}${tableSearch}`);
+  await expect(page.getByRole("dialog", { name: "Huan" })).toBeVisible();
+  await expect(
+    page.getByRole("searchbox", { name: "Buscar por produto ou fabricante" }),
+  ).toHaveValue("dragon");
+});
+
 test("the history keeps 10 Produtos per Categoria and the list skips the ones the data lacks", async ({
   page,
 }) => {
@@ -120,6 +137,7 @@ test("Limpar histórico empties the list and hides Recentes", async ({ page }) =
 
   await expect(recentList(page)).toHaveCount(0);
   await expect(recentButton(page)).toHaveCount(0);
+  await expect(page.getByRole("heading", { level: 1 })).toBeFocused();
   await page.goto("/teclado");
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("Teclados");
   await expect(recentButton(page)).toHaveCount(0);
