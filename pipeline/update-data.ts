@@ -7,9 +7,11 @@ import {
   isTested,
   krwBrlRateSchema,
   metaSchema,
+  priceHistorySchema,
   productSchema,
   type CategoryData,
   type Meta,
+  type PriceHistory,
   type Product,
 } from "../src/data/schema.ts";
 import {
@@ -22,6 +24,7 @@ import {
 import { fetchKrwBrlRate } from "./exchange-rate.ts";
 import { deleteOrphanImages, downloadNewImages } from "./images.ts";
 import { normalizeCategory, type NormalizedCategory } from "./normalize.ts";
+import { nextPriceHistory } from "./price-history.ts";
 import { publishSummary, renderSummary } from "./summary.ts";
 import { findUntranslatedKeys } from "./translation-gaps.ts";
 import { UpdateRefusedError } from "./update-refused-error.ts";
@@ -200,6 +203,7 @@ async function writeJsonFile(path: string, value: unknown): Promise<void> {
 
 async function runUpdate(config: UpdateConfig): Promise<void> {
   const dataDir = join(config.outDir, "data");
+  const priceHistoryDir = join(dataDir, "precos");
   const imagesDir = join(config.outDir, "images");
   const metaPath = join(dataDir, "meta.json");
 
@@ -219,14 +223,20 @@ async function runUpdate(config: UpdateConfig): Promise<void> {
   const publishedMeta = await readPublishedFile(metaPath, publishedMetaSchema);
   refuseRowDrop(validated, publishedMeta);
   const publishedProducts = new Map<CategorySlug, PublishedProducts | null>();
+  const publishedPriceHistories = new Map<CategorySlug, PriceHistory | null>();
   for (const data of validated) {
     const publishedPath = join(dataDir, `${data.category}.json`);
     const published = await readPublishedFile(publishedPath, publishedProductsSchema);
     refuseLostImages(data, published);
     publishedProducts.set(data.category, published);
+    const priceHistoryPath = join(priceHistoryDir, `${data.category}.json`);
+    publishedPriceHistories.set(
+      data.category,
+      await readPublishedFile(priceHistoryPath, priceHistorySchema),
+    );
   }
 
-  await mkdir(dataDir, { recursive: true });
+  await mkdir(priceHistoryDir, { recursive: true });
   await mkdir(imagesDir, { recursive: true });
   const wantedImages = new Set(
     validated.flatMap(({ products }) =>
@@ -246,6 +256,15 @@ async function runUpdate(config: UpdateConfig): Promise<void> {
   );
 
   for (const data of published) await writeJsonFile(join(dataDir, `${data.category}.json`), data);
+  const priceDate = updatedAt.slice(0, "YYYY-MM-DD".length);
+  for (const data of published) {
+    const priceHistory = nextPriceHistory(
+      publishedPriceHistories.get(data.category) ?? null,
+      data,
+      priceDate,
+    );
+    await writeJsonFile(join(priceHistoryDir, `${data.category}.json`), priceHistory);
+  }
   const counts = { mouse: 0, teclado: 0, monitor: 0 };
   for (const data of published) counts[data.category] = data.products.length;
   const meta: Meta = { updatedAt, counts, ...(krwBrl && { krwBrl }) };
