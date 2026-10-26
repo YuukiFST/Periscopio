@@ -68,7 +68,12 @@ export default defineConfig({
             urlPattern: ({ url, sameOrigin }) =>
               sameOrigin && url.pathname.startsWith("/data/precos/"),
             handler: "NetworkFirst",
-            options: { cacheName: "price-history", cacheableResponse: { statuses: [200] } },
+            options: {
+              cacheName: "price-history",
+              // A slow connection falls back to the copy seen before instead of waiting.
+              networkTimeoutSeconds: 3,
+              cacheableResponse: { statuses: [200] },
+            },
           },
         ],
       },
