@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as CategoriaRouteRouteImport } from './routes/$categoria/route'
 import { Route as CategoriaIdRouteImport } from './routes/$categoria/$id'
 import { Route as CompararCategoriaRouteImport } from './routes/comparar/$categoria'
+import { Route as GraficoCategoriaRouteImport } from './routes/grafico/$categoria'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -34,18 +35,25 @@ const CompararCategoriaRoute = CompararCategoriaRouteImport.update({
   path: '/comparar/$categoria',
   getParentRoute: () => rootRouteImport,
 } as any)
+const GraficoCategoriaRoute = GraficoCategoriaRouteImport.update({
+  id: '/grafico/$categoria',
+  path: '/grafico/$categoria',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/$categoria': typeof CategoriaRouteRouteWithChildren
   '/$categoria/$id': typeof CategoriaIdRoute
   '/comparar/$categoria': typeof CompararCategoriaRoute
+  '/grafico/$categoria': typeof GraficoCategoriaRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/$categoria': typeof CategoriaRouteRouteWithChildren
   '/$categoria/$id': typeof CategoriaIdRoute
   '/comparar/$categoria': typeof CompararCategoriaRoute
+  '/grafico/$categoria': typeof GraficoCategoriaRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -53,24 +61,37 @@ export interface FileRoutesById {
   '/$categoria': typeof CategoriaRouteRouteWithChildren
   '/$categoria/$id': typeof CategoriaIdRoute
   '/comparar/$categoria': typeof CompararCategoriaRoute
+  '/grafico/$categoria': typeof GraficoCategoriaRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/$categoria' | '/$categoria/$id' | '/comparar/$categoria'
+  fullPaths:
+    | '/'
+    | '/$categoria'
+    | '/$categoria/$id'
+    | '/comparar/$categoria'
+    | '/grafico/$categoria'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/$categoria' | '/$categoria/$id' | '/comparar/$categoria'
+  to:
+    | '/'
+    | '/$categoria'
+    | '/$categoria/$id'
+    | '/comparar/$categoria'
+    | '/grafico/$categoria'
   id:
     | '__root__'
     | '/'
     | '/$categoria'
     | '/$categoria/$id'
     | '/comparar/$categoria'
+    | '/grafico/$categoria'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CategoriaRouteRoute: typeof CategoriaRouteRouteWithChildren
   CompararCategoriaRoute: typeof CompararCategoriaRoute
+  GraficoCategoriaRoute: typeof GraficoCategoriaRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -103,6 +124,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CompararCategoriaRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/grafico/$categoria': {
+      id: '/grafico/$categoria'
+      path: '/grafico/$categoria'
+      fullPath: '/grafico/$categoria'
+      preLoaderRoute: typeof GraficoCategoriaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -122,6 +150,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CategoriaRouteRoute: CategoriaRouteRouteWithChildren,
   CompararCategoriaRoute: CompararCategoriaRoute,
+  GraficoCategoriaRoute: GraficoCategoriaRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
