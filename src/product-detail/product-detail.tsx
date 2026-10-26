@@ -22,6 +22,7 @@ import {
 } from "@/product-compare/compare-selection";
 import { similarProducts } from "@/product-compare/similar-products";
 import { ProductPhoto } from "@/product-photo/product-photo";
+import { PriceHistorySparkline } from "./price-history";
 
 type ProductDetailProps = {
   data: CategoryData;
@@ -115,10 +116,17 @@ function ProductHeader({
             {price === undefined ? (
               <span className="text-fg-secondary">Sem preço</span>
             ) : (
-              <span className="whitespace-nowrap tabular-nums">
-                {formatPrice(price)}
-                <PriceInReais priceKrw={price} />
-              </span>
+              <>
+                <span className="whitespace-nowrap tabular-nums">
+                  {formatPrice(price)}
+                  <PriceInReais priceKrw={price} />
+                </span>
+                <PriceHistorySparkline
+                  category={data.category}
+                  productId={product.id}
+                  priceKrw={price}
+                />
+              </>
             )}
           </HeaderFact>
           {status !== undefined && <HeaderFact label="Status de teste">{status}</HeaderFact>}

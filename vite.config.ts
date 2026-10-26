@@ -47,8 +47,9 @@ export default defineConfig({
         // The app shell plus the data, so the last Atualização opens offline;
         // the plugin adds the manifest and its icons itself.
         globPatterns: ["**/*.{js,css,html,json,woff2}"],
-        // Photos (~1500 files, ~90 MB) are cached only once seen, below.
-        globIgnores: ["images/**"],
+        // Photos (~1500 files, ~90 MB) are cached only once seen, below; so is the
+        // Histórico de preço, which only a detail reads.
+        globIgnores: ["images/**", "data/precos/**"],
         // mouse.json is ~1 MB and grows; the 2 MiB default would drop it silently.
         maximumFileSizeToCacheInBytes: 5 * 1024 * 1024,
         runtimeCaching: [
@@ -59,6 +60,18 @@ export default defineConfig({
             options: {
               cacheName: "photos",
               expiration: { maxEntries: 2000 },
+              cacheableResponse: { statuses: [200] },
+            },
+          },
+          {
+            // Fresh after an Atualização online; the last one seen offline.
+            urlPattern: ({ url, sameOrigin }) =>
+              sameOrigin && url.pathname.startsWith("/data/precos/"),
+            handler: "NetworkFirst",
+            options: {
+              cacheName: "price-history",
+              // A slow connection falls back to the copy seen before instead of waiting.
+              networkTimeoutSeconds: 3,
               cacheableResponse: { statuses: [200] },
             },
           },

@@ -62,6 +62,7 @@ const recordedSnapshotSchema = z.looseObject({
     rows: z.array(
       z.looseObject({
         id: z.string(),
+        priceKrw: z.number().optional(),
         values: z.record(z.string(), z.string()),
         affiliateLinks: z
           .array(z.looseObject({ platform: z.string(), affiliateUrl: z.string() }))

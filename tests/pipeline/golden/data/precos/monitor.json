@@ -1,0 +1,17 @@
+{
+  "category": "monitor",
+  "products": {
+    "0780a9f3-3c88-41ac-97e9-1c45f31c9a38": [
+      {
+        "date": "<date>",
+        "priceKrw": 280000
+      }
+    ],
+    "7aa60f74-aa55-44f0-9858-9d672a19fba5": [
+      {
+        "date": "<date>",
+        "priceKrw": 800000
+      }
+    ]
+  }
+}

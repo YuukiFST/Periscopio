@@ -1,0 +1,35 @@
+{
+  "category": "mouse",
+  "products": {
+    "003586ba-0cbf-4932-843c-24e5f56e47c2": [
+      {
+        "date": "<date>",
+        "priceKrw": 98900
+      }
+    ],
+    "0390fea6-efb9-45ea-a1a3-71b170224e58": [
+      {
+        "date": "<date>",
+        "priceKrw": 27800
+      }
+    ],
+    "1f2e9ba6-5ac5-4f0d-b986-7cb4203b5d6c": [
+      {
+        "date": "<date>",
+        "priceKrw": 162000
+      }
+    ],
+    "201270eb-b392-4e41-96a9-1b609a77e795": [
+      {
+        "date": "<date>",
+        "priceKrw": 239000
+      }
+    ],
+    "2cf40f05-fa65-4a5c-936a-c67de7025af3": [
+      {
+        "date": "<date>",
+        "priceKrw": 29900
+      }
+    ]
+  }
+}
