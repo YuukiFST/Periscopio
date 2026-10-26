@@ -27,6 +27,12 @@ const loadingViews = [
     status: "Carregando comparação…",
     loaded: (page: Page) => page.getByRole("columnheader", { name: "Dragonfly A9 Ultra" }),
   },
+  {
+    view: "Gráfico",
+    path: "/grafico/mouse",
+    status: "Carregando gráfico…",
+    loaded: (page: Page) => page.getByRole("link", { name: /^Huan: / }),
+  },
 ];
 
 test.describe("while the data loads", () => {

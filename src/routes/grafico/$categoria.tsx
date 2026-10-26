@@ -1,6 +1,7 @@
 import { createFileRoute, notFound, rootRouteId } from "@tanstack/react-router";
 import { z } from "zod";
 import { isCategorySlug } from "@/categories";
+import { ChartSkeleton } from "@/components/loading-skeletons";
 import { loadCategoryData } from "@/data/load-data";
 import { ProductChart } from "@/product-chart/product-chart";
 import { validateTableSearch } from "@/product-table/table-search";
@@ -27,8 +28,13 @@ export const Route = createFileRoute("/grafico/$categoria")({
     return { categorySlug: params.categoria };
   },
   loader: ({ context }) => loadCategoryData(context.categorySlug),
+  pendingComponent: ChartPending,
   component: ChartPage,
 });
+
+function ChartPending() {
+  return <ChartSkeleton status="Carregando gráfico…" />;
+}
 
 function ChartPage() {
   const data = Route.useLoaderData();
