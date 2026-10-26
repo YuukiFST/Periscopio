@@ -54,11 +54,10 @@ import { ProductTable } from "@/product-table/product-table";
 import { ColumnsMenu } from "@/product-table/columns-menu";
 import { useStoredColumns } from "@/product-table/stored-columns";
 import {
-  columnChoiceGroupsFor,
   columnKeysFromParam,
   columnsParamOf,
-  defaultColumnKeysFor,
   defaultSortFor,
+  tableColumnChoicesFor,
   tableColumnsFor,
 } from "@/product-table/table-columns";
 import {
@@ -173,22 +172,18 @@ function CategoryTable({ data }: { data: CategoryData }) {
     changeFilterValues(noFilterValues);
   }
 
-  const columnChoiceGroups = useMemo(() => columnChoiceGroupsFor(data), [data]);
-  const defaultColumnKeys = useMemo(() => defaultColumnKeysFor(data), [data]);
+  const columnChoices = useMemo(() => tableColumnChoicesFor(data), [data]);
   const [storedColumns, storeColumns] = useStoredColumns(data.category);
-  const columnKeys = useMemo(() => {
-    const available = new Set(
-      columnChoiceGroups.flatMap((group) => group.choices.map((choice) => choice.key)),
-    );
-    return (
-      columnKeysFromParam(col, available) ??
-      columnKeysFromParam(storedColumns, available) ??
-      defaultColumnKeys
-    );
-  }, [columnChoiceGroups, col, storedColumns, defaultColumnKeys]);
+  const columnKeys = useMemo(
+    () =>
+      columnKeysFromParam(col, columnChoices.availableKeys) ??
+      columnKeysFromParam(storedColumns, columnChoices.availableKeys) ??
+      columnChoices.defaultKeys,
+    [columnChoices, col, storedColumns],
+  );
   const columns = useMemo(() => tableColumnsFor(data, columnKeys), [data, columnKeys]);
   function changeColumnKeys(keys: string[]) {
-    const columnsParam = columnsParamOf(keys, defaultColumnKeys);
+    const columnsParam = columnsParamOf(keys, columnChoices.defaultKeys);
     void navigate({
       unsafeRelative: "path",
       search: (previous) => ({ ...previous, col: columnsParam }),
@@ -387,11 +382,11 @@ function CategoryTable({ data }: { data: CategoryData }) {
               />
             </FilterDrawer>
             <ColumnsMenu
-              groups={columnChoiceGroups}
+              groups={columnChoices.groups}
               chosenKeys={columnKeys}
-              isDefault={columnsParamOf(columnKeys, defaultColumnKeys) === undefined}
+              isDefault={columnsParamOf(columnKeys, columnChoices.defaultKeys) === undefined}
               onChosenKeysChange={changeColumnKeys}
-              onReset={() => changeColumnKeys(defaultColumnKeys)}
+              onReset={() => changeColumnKeys(columnChoices.defaultKeys)}
             />
           </TableToolbar>
           <ActiveFilterChips

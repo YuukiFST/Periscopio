@@ -160,3 +160,27 @@ test("a link drops the col keys it does not know and still opens, and the Produt
   await expect.poll(() => columnHeaders(page)).toEqual(["Comparar", "Produto"]);
   await expect(page.getByRole("rowheader")).toHaveCount(6);
 });
+
+test("a default column no Produto has a value for yet stays listed, survives another choice and can be removed", async ({
+  page,
+}) => {
+  // No monitor in the fixture has the Reflexão total (SCI) measured.
+  await page.goto("/monitor?status=todos");
+  await expect(page.getByRole("columnheader", { name: "Reflexão total (SCI)" })).toBeVisible();
+  const defaultHeaders = await columnHeaders(page);
+
+  await openColumnsMenu(page);
+  const reflectance = columnsMenu(page).getByRole("checkbox", { name: "Reflexão total (SCI)" });
+  await expect(reflectance).toBeChecked();
+  const panel = columnsMenu(page).getByRole("checkbox", { name: "Painel", exact: true });
+  await panel.check();
+  await expect.poll(() => columnHeaders(page)).toEqual([...defaultHeaders, "Painel"]);
+  await panel.uncheck();
+  await expect(page).toHaveURL("/monitor?status=todos");
+  await expect(columnsMenu(page).getByRole("button", { name: "Restaurar padrão" })).toBeDisabled();
+
+  await reflectance.uncheck();
+  await expect
+    .poll(() => columnHeaders(page))
+    .toEqual(defaultHeaders.filter((header) => header !== "Reflexão total (SCI)"));
+});
