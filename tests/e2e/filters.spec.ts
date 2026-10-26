@@ -705,9 +705,18 @@ test.describe("with mouse data that has no weight", () => {
       const response = await route.fetch();
       const data = categoryDataSchema.parse(await response.json());
       const fields = data.fields.filter((field) => field.key !== "weight");
-      await route.fulfill({ response, json: { ...data, fields } });
+      // A value with no field is invalid data, so the weights leave the Produtos too.
+      const products = data.products.map(
+        ({ values: { weight: _weight, ...values }, ...product }) => ({
+          ...product,
+          values,
+        }),
+      );
+      await route.fulfill({ response, json: { ...data, fields, products } });
     });
     await page.goto("/mouse?status=todos");
+    // The absences below hold before the data loads too; the panel's other Filtros prove it loaded.
+    await expect(choiceField(page, "Formato")).toBeVisible();
     await expect(filterPanel(page).getByRole("group", { name: "Peso (g)" })).toHaveCount(0);
     await expect(filterPanel(page).getByRole("button", { name: "Sem fio leve" })).toHaveCount(0);
   });
