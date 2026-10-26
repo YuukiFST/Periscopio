@@ -81,3 +81,11 @@ _Avoid_: link de afiliado, link de compra
 **Novidade**:
 Um Produto publicado pela primeira vez (Novo) ou que passou a ser testado (Testado agora) em uma Atualização dos 14 dias antes da mais recente.
 _Avoid_: novo produto, lançamento, changelog
+
+**Gráfico**:
+A visão dos Produtos de uma Categoria, filtrados como na tabela, como pontos sobre duas colunas numéricas escolhidas.
+_Avoid_: scatter, dispersão, plot
+
+**Melhor relação**:
+Um Produto do Gráfico que nenhum outro supera nos dois eixos ao mesmo tempo, pelo lado melhor de cada coluna.
+_Avoid_: fronteira de Pareto, custo-benefício, trade-off
