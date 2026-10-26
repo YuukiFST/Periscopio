@@ -446,4 +446,21 @@ test("an Atualização adds a Preço to the Histórico de preço only when it ch
   expect(products[goneId]).toBeUndefined();
   // VK M5 Max THOR has no Preço, so it has no Histórico de preço either.
   expect(products[newUntestedMouseId]).toBeUndefined();
+
+  // Another Atualização the same day replaces that day's entry instead of adding one.
+  const withDragonflyPrice = async (priceKrw: number) => {
+    const routes = await loadRecordedRoutes();
+    editRecordedSnapshot(routes, "mouse", (snapshot) => {
+      for (const row of snapshot.data.rows)
+        if (row.id === dragonflyA9UltraId) row.priceKrw = priceKrw;
+    });
+    expect((await runUpdateCli(routes, outDir, null)).exitCode).toBe(0);
+    return (await readPriceHistory(outDir)).products[dragonflyA9UltraId];
+  };
+  expect(await withDragonflyPrice(95_000)).toEqual([
+    { date: "2026-09-01", priceKrw: 109_000 },
+    { date: today, priceKrw: 95_000 },
+  ]);
+  // Back to the Preço before it: the day's entry goes, since nothing changed.
+  expect(await withDragonflyPrice(109_000)).toEqual([{ date: "2026-09-01", priceKrw: 109_000 }]);
 });

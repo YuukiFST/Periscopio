@@ -7,6 +7,7 @@ import {
   isTested,
   krwBrlRateSchema,
   metaSchema,
+  priceEntrySchema,
   priceHistorySchema,
   productSchema,
   type CategoryData,
@@ -24,7 +25,7 @@ import {
 import { fetchKrwBrlRate } from "./exchange-rate.ts";
 import { deleteOrphanImages, downloadNewImages } from "./images.ts";
 import { normalizeCategory, type NormalizedCategory } from "./normalize.ts";
-import { nextPriceHistory } from "./price-history.ts";
+import { nextPriceHistory, priceDateOf } from "./price-history.ts";
 import { publishSummary, renderSummary } from "./summary.ts";
 import { findUntranslatedKeys } from "./translation-gaps.ts";
 import { UpdateRefusedError } from "./update-refused-error.ts";
@@ -65,6 +66,16 @@ const publishedMetaSchema = z.object({
   krwBrl: krwBrlRateSchema.optional().catch(undefined),
 });
 type PublishedMeta = z.infer<typeof publishedMetaSchema>;
+
+/** Any number of entries and any extra keys, so a change to the cap or the entry shape still reads it. */
+const publishedPriceHistorySchema = z.object({
+  products: z.record(
+    z.string(),
+    z.array(
+      z.object({ date: priceEntrySchema.shape.date, priceKrw: priceEntrySchema.shape.priceKrw }),
+    ),
+  ),
+});
 
 type UpdateConfig = {
   apiUrl: string;
@@ -145,6 +156,15 @@ function validateOutput(data: CategoryData): CategoryData {
   );
 }
 
+function validatePriceHistory(history: PriceHistory): PriceHistory {
+  const result = priceHistorySchema.safeParse(history);
+  if (result.success) return result.data;
+  throw new UpdateRefusedError(
+    `${history.category}: o Histórico de preço não passou na validação:
+${z.prettifyError(result.error)}`,
+  );
+}
+
 function imageFileName(imagePath: string): string {
   return imagePath.slice("/images/".length);
 }
@@ -222,17 +242,21 @@ async function runUpdate(config: UpdateConfig): Promise<void> {
   const validated = normalized.map(({ data }) => validateOutput(data));
   const publishedMeta = await readPublishedFile(metaPath, publishedMetaSchema);
   refuseRowDrop(validated, publishedMeta);
+  const updatedAt = new Date().toISOString();
   const publishedProducts = new Map<CategorySlug, PublishedProducts | null>();
-  const publishedPriceHistories = new Map<CategorySlug, PriceHistory | null>();
+  const priceHistories: PriceHistory[] = [];
   for (const data of validated) {
     const publishedPath = join(dataDir, `${data.category}.json`);
     const published = await readPublishedFile(publishedPath, publishedProductsSchema);
     refuseLostImages(data, published);
     publishedProducts.set(data.category, published);
     const priceHistoryPath = join(priceHistoryDir, `${data.category}.json`);
-    publishedPriceHistories.set(
-      data.category,
-      await readPublishedFile(priceHistoryPath, priceHistorySchema),
+    const publishedPriceHistory = await readPublishedFile(
+      priceHistoryPath,
+      publishedPriceHistorySchema,
+    );
+    priceHistories.push(
+      validatePriceHistory(nextPriceHistory(publishedPriceHistory, data, priceDateOf(updatedAt))),
     );
   }
 
@@ -246,7 +270,6 @@ async function runUpdate(config: UpdateConfig): Promise<void> {
   const krwBrlFetch = await fetchKrwBrlRate(config.frankfurterUrl);
   const krwBrl = krwBrlFetch.ok ? krwBrlFetch.rate : publishedMeta?.krwBrl;
   const images = await downloadNewImages(config.cdnUrl, imagesDir, wantedImages);
-  const updatedAt = new Date().toISOString();
   const published = validated.map((data) =>
     withNovidadeDates(
       withoutMissingImages(data, images.available),
@@ -256,14 +279,8 @@ async function runUpdate(config: UpdateConfig): Promise<void> {
   );
 
   for (const data of published) await writeJsonFile(join(dataDir, `${data.category}.json`), data);
-  const priceDate = updatedAt.slice(0, "YYYY-MM-DD".length);
-  for (const data of published) {
-    const priceHistory = nextPriceHistory(
-      publishedPriceHistories.get(data.category) ?? null,
-      data,
-      priceDate,
-    );
-    await writeJsonFile(join(priceHistoryDir, `${data.category}.json`), priceHistory);
+  for (const history of priceHistories) {
+    await writeJsonFile(join(priceHistoryDir, `${history.category}.json`), history);
   }
   const counts = { mouse: 0, teclado: 0, monitor: 0 };
   for (const data of published) counts[data.category] = data.products.length;

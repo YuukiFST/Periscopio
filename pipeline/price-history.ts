@@ -12,6 +12,11 @@ export type PublishedPrices = {
   products: readonly Pick<Product, "id" | "priceKrw">[];
 };
 
+/** The day (UTC) of an Atualização's `updatedAt`, the `date` of the entries it adds. */
+export function priceDateOf(updatedAt: string): string {
+  return updatedAt.slice(0, "YYYY-MM-DD".length);
+}
+
 /**
  * Adds the Preço of the day, unless it equals the last one. A second
  * Atualização on the same day replaces that day's entry instead of adding one.
@@ -19,7 +24,7 @@ export type PublishedPrices = {
 function withPrice(entries: readonly PriceEntry[], priceKrw: number, date: string): PriceEntry[] {
   const earlier = entries.at(-1)?.date === date ? entries.slice(0, -1) : entries;
   if (earlier.at(-1)?.priceKrw === priceKrw) return [...earlier];
-  return [...earlier, { date, priceKrw }].slice(-maxPriceEntries);
+  return [...earlier, { date, priceKrw }];
 }
 
 /**
@@ -28,15 +33,15 @@ function withPrice(entries: readonly PriceEntry[], priceKrw: number, date: strin
  * keeps the entries it had.
  */
 export function nextPriceHistory(
-  previous: PriceHistory | null,
+  previous: { products: Record<string, readonly PriceEntry[]> } | null,
   published: PublishedPrices,
   date: string,
 ): PriceHistory {
   const products: PriceHistory["products"] = {};
   for (const { id, priceKrw } of published.products) {
     const entries = previous?.products[id] ?? [];
-    const next = priceKrw ? withPrice(entries, priceKrw, date) : entries;
-    if (next.length > 0) products[id] = next;
+    const next = priceKrw ? withPrice(entries, priceKrw, date) : [...entries];
+    if (next.length > 0) products[id] = next.slice(-maxPriceEntries);
   }
   return { category: published.category, products };
 }
