@@ -3,17 +3,11 @@ import { Dialog } from "@base-ui/react/dialog";
 import { useMatch, useNavigate } from "@tanstack/react-router";
 import { Search, X } from "lucide-react";
 import { useEffect, useEffectEvent, useMemo, useRef, useState } from "react";
-import { categoryLabels, categorySlugs } from "@/categories";
+import { categoryLabels } from "@/categories";
 import { Button } from "@/components/ui/button";
-import { loadCategoryData } from "@/data/load-data";
-import type { CategoryData } from "@/data/schema";
+import { useAllCategories, type CategoriesLoad } from "@/data/use-all-categories";
 import { manufacturerName } from "@/i18n/labels";
 import { searchAllCategories, type SearchResult, type SearchResultGroup } from "./search-results";
-
-type CategoriesLoad =
-  | { status: "loading" }
-  | { status: "failed" }
-  | { status: "loaded"; categories: CategoryData[] };
 
 const isApplePlatform =
   typeof navigator !== "undefined" && /Mac|iPhone|iPad/.test(navigator.userAgent);
@@ -25,23 +19,6 @@ function isSearchShortcut(event: KeyboardEvent): boolean {
     !event.shiftKey &&
     event.key.toLowerCase() === "k"
   );
-}
-
-/**
- * The three Categorias, loaded by `ensureLoaded` the first time the search
- * opens; after a failed load, the next call tries again.
- */
-export function useAllCategories(): [CategoriesLoad, ensureLoaded: () => void] {
-  const [load, setLoad] = useState<CategoriesLoad>({ status: "loading" });
-  function ensureLoaded() {
-    if (load.status === "loaded") return;
-    setLoad({ status: "loading" });
-    Promise.all(categorySlugs.map(loadCategoryData)).then(
-      (categories) => setLoad({ status: "loaded", categories }),
-      () => setLoad({ status: "failed" }),
-    );
-  }
-  return [load, ensureLoaded];
 }
 
 function emptyText(load: CategoriesLoad, searchText: string): string {

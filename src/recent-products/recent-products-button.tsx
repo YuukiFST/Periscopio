@@ -5,7 +5,7 @@ import { useRef, useState } from "react";
 import { categoryLabels, type CategorySlug } from "@/categories";
 import { Button } from "@/components/ui/button";
 import type { CategoryData, Product } from "@/data/schema";
-import { useAllCategories } from "@/global-search/global-search";
+import { useAllCategories } from "@/data/use-all-categories";
 import { formatPrice, priceOf } from "@/product-table/cell-values";
 import { ProductPhoto } from "@/product-photo/product-photo";
 import { clearRecentProducts, useRecentProducts, type RecentProduct } from "./recent-products";
@@ -134,8 +134,8 @@ export function RecentProductsButton() {
                 <Button
                   variant="ghost"
                   onClick={() => {
-                    // The button goes with the list; focus moves on to the Categoria's title, if any.
-                    document.getElementById("categoria-titulo")?.focus();
+                    // The button goes with the list; focus moves on to the page's title.
+                    document.querySelector<HTMLElement>("main h1")?.focus();
                     setIsOpen(false);
                     clearRecentProducts();
                   }}
