@@ -10,7 +10,7 @@ import { mkdir, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import { promisify } from "node:util";
 import { z } from "zod";
-import { nextPriceHistory } from "../pipeline/price-history.ts";
+import { nextPriceHistory, priceDateOf } from "../pipeline/price-history.ts";
 import { categorySlugs, type CategorySlug } from "../src/categories.ts";
 import { priceHistorySchema, productSchema, type PriceHistory } from "../src/data/schema.ts";
 
@@ -31,14 +31,15 @@ async function git(...args: string[]): Promise<string> {
 
 /** Oldest first: the commit and its committer date, as `<sha> <ISO date>` lines. */
 async function commitsChanging(path: string): Promise<{ sha: string; date: string }[]> {
-  const log = await git("log", "--reverse", "--format=%H %cI", ref, "--", path);
+  // The main line only: a merged branch's own data commits were never published.
+  const log = await git("log", "--first-parent", "--reverse", "--format=%H %cI", ref, "--", path);
   return log
     .trim()
     .split("\n")
     .filter((line) => line !== "")
     .map((line) => {
       const [sha = "", committedAt = ""] = line.split(" ");
-      return { sha, date: new Date(committedAt).toISOString().slice(0, "YYYY-MM-DD".length) };
+      return { sha, date: priceDateOf(new Date(committedAt).toISOString()) };
     });
 }
 
