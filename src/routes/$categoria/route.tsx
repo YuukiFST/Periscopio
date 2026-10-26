@@ -6,7 +6,6 @@ import {
   useNavigate,
 } from "@tanstack/react-router";
 import { useDeferredValue, useEffect, useMemo, useRef, useState } from "react";
-import { z } from "zod";
 import { categoryLabels, isCategorySlug } from "@/categories";
 import { Button } from "@/components/ui/button";
 import { CopyLinkButton } from "@/components/copy-link-button";
@@ -21,11 +20,7 @@ import {
 import { loadCategoryData } from "@/data/load-data";
 import type { CategoryData } from "@/data/schema";
 import { CompareBar } from "@/product-compare/compare-bar";
-import {
-  compareParamSchema,
-  comparedIdsFromParam,
-  toggleComparedId,
-} from "@/product-compare/compare-selection";
+import { comparedIdsFromParam, toggleComparedId } from "@/product-compare/compare-selection";
 import { ActiveFilterChips } from "@/product-filters/active-filter-chips";
 import { categoryFiltersFor } from "@/product-filters/category-filters";
 import { FilterDrawer } from "@/product-filters/filter-drawer";
@@ -35,20 +30,16 @@ import {
   noFilterValues,
   type FilterValues,
 } from "@/product-filters/filter-engine";
-import {
-  filterSearchOf,
-  filterValuesFromSearch,
-  pickFilterSearch,
-} from "@/product-filters/filter-link";
+import { filterSearchOf, filterValuesFromSearch } from "@/product-filters/filter-link";
 import { FilterPanel } from "@/product-filters/filter-panel";
 import {
   defaultTestStatus,
   filterProducts,
-  testStatusFilters,
   type TestStatusFilter,
 } from "@/product-table/product-filter";
 import { ProductSidebar } from "@/product-detail/product-sidebar";
 import { useChangeComparedIds } from "@/product-detail/use-change-compared-ids";
+import { ChartLink } from "@/product-chart/chart-link";
 import { countNovidadesSince, filterNovidades, novidadeOf } from "@/product-table/novidades";
 import { ProductTable } from "@/product-table/product-table";
 import { ColumnsMenu } from "@/product-table/columns-menu";
@@ -60,40 +51,21 @@ import {
   tableColumnChoicesFor,
   tableColumnsFor,
 } from "@/product-table/table-columns";
-import {
-  sortParamAfterHeaderClick,
-  sortingFromParam,
-  sortParamPattern,
-} from "@/product-table/table-sorting";
+import { sortParamAfterHeaderClick, sortingFromParam } from "@/product-table/table-sorting";
 import {
   novidadesToggleId,
   resultCountText,
   searchInputId,
-  searchTextMaxLength,
   TableToolbar,
 } from "@/product-table/table-toolbar";
-
-/** Every param falls back to "absent" on its own, so a broken link still opens. */
-const categorySearchSchema = z.object({
-  ordem: z.string().regex(sortParamPattern).optional().catch(undefined),
-  status: z.enum(testStatusFilters).optional().catch(undefined),
-  q: z.string().max(searchTextMaxLength).optional().catch(undefined),
-  cmp: compareParamSchema,
-  novidades: z.literal("1").optional().catch(undefined),
-  // Unknown keys are dropped later, one by one, against the Categoria's fields.
-  col: z.string().optional().catch(undefined),
-});
+import { validateTableSearch } from "@/product-table/table-search";
 
 /**
  * The Categoria table, the layout under `/$categoria/$id` too: a Produto's
  * details open in a side panel over it, so the table stays as it was.
  */
 export const Route = createFileRoute("/$categoria")({
-  // Filtro params stay raw text here: only the Categoria's Filtros know which values are valid.
-  validateSearch: (search: Record<string, unknown>) => ({
-    ...categorySearchSchema.parse(search),
-    ...pickFilterSearch(search),
-  }),
+  validateSearch: validateTableSearch,
   beforeLoad: ({ params }) => {
     if (!isCategorySlug(params.categoria)) throw notFound();
     return { categorySlug: params.categoria };
@@ -391,6 +363,7 @@ function CategoryTable({ data }: { data: CategoryData }) {
               onChosenKeysChange={changeColumnKeys}
               onReset={() => changeColumnKeys(columnChoices.defaultKeys)}
             />
+            <ChartLink category={data.category} />
           </TableToolbar>
           <ActiveFilterChips
             filters={filters}

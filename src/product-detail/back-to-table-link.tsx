@@ -1,11 +1,12 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowLeft } from "lucide-react";
 import { categoryLabels, type CategorySlug } from "@/categories";
+import type { TableSearch } from "@/product-table/table-search";
 
 type BackToTableLinkProps = {
   category: CategorySlug;
   /** The table's search; by default every search param of the current URL. */
-  search?: { cmp?: string };
+  search?: TableSearch;
 };
 
 /**

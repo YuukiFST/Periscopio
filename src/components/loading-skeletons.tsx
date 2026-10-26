@@ -200,3 +200,30 @@ export function ComparisonSkeleton({
     </div>
   );
 }
+
+/** The Gráfico while its Produtos load: the way back, title row, the two axis choices and the plot. */
+export function ChartSkeleton({ status }: { status: string }) {
+  return (
+    <div className="flex min-h-0 flex-1 flex-col">
+      <p role="status" className="sr-only">
+        {status}
+      </p>
+      <div aria-hidden="true" className={skeletonShapesClass}>
+        <div className="flex min-h-8 items-center pointer-coarse:min-h-11">
+          <Bone className="h-4 w-36" />
+        </div>
+        <TitleRowSkeleton headingWidth="w-48" />
+        <div className="flex flex-wrap items-end gap-x-4 gap-y-3">
+          {[0, 1].map((index) => (
+            <div key={index} className="flex flex-col gap-1">
+              <Bone className="h-4 w-28" />
+              <Bone className="h-9 w-48 rounded-lg pointer-coarse:h-10" />
+            </div>
+          ))}
+          <Bone className="h-4 w-72 max-w-full" />
+        </div>
+        <Bone className="h-72 w-full rounded-lg sm:h-96" />
+      </div>
+    </div>
+  );
+}
