@@ -1,13 +1,15 @@
-import { TriangleAlert } from "lucide-react";
+import { ArrowLeftRight, Plus, TriangleAlert } from "lucide-react";
 import { useEffect, useRef } from "react";
 import { categoryLabels } from "@/categories";
 import { CopyLinkButton } from "@/components/copy-link-button";
+import { Button } from "@/components/ui/button";
 import { SegmentedControl, type SegmentedOption } from "@/components/ui/segmented-control";
 import type { CategoryData, Product } from "@/data/schema";
 import { BackToTableLink } from "@/product-detail/back-to-table-link";
 import { ComparisonTable } from "./comparison-table";
 import { maxComparedProducts, minComparedProducts, productIdsParam } from "./compare-selection";
 import { connectionOfPreference, type ConnectionPreference } from "./mouse-connection";
+import { ProductPicker } from "./product-picker";
 import { responseSummary } from "./response-summary";
 import { summaryVerdict } from "./summary-rows";
 
@@ -106,6 +108,19 @@ export function ProductComparison({
     headingRef.current?.focus();
   }
 
+  const comparedIds = new Set(products.map((product) => product.id));
+  const candidates = data.products.filter((product) => !comparedIds.has(product.id));
+
+  function addProduct(added: Product) {
+    onProductParamChange(productIdsParam([...products.map((product) => product.id), added.id]));
+  }
+
+  function swapProduct(id: string, replacement: Product) {
+    onProductParamChange(
+      productIdsParam(products.map((product) => (product.id === id ? replacement.id : product.id))),
+    );
+  }
+
   return (
     // The table scrolls inside; the article scrolls only when a short screen cannot fit the table's minimum.
     // Its 6px padding, cancelled by the margin, keeps focus outlines at its edges from being clipped.
@@ -132,7 +147,23 @@ export function ProductComparison({
         >
           Comparação de {categoryName}
         </h1>
-        {products.length >= minComparedProducts && <CopyLinkButton />}
+        <div className="flex flex-wrap justify-end gap-2">
+          {products.length < maxComparedProducts && (
+            <ProductPicker
+              candidates={candidates}
+              title="Adicionar produto à comparação"
+              trigger={
+                <Button variant="outline" size="lg">
+                  <Plus aria-hidden="true" strokeWidth={1.5} />
+                  Adicionar produto
+                </Button>
+              }
+              focusAfterPick={headingRef}
+              onPick={addProduct}
+            />
+          )}
+          {products.length >= minComparedProducts && <CopyLinkButton />}
+        </div>
       </div>
       {leftOutText(compared).map((text) => (
         <p
@@ -172,6 +203,25 @@ export function ProductComparison({
             summary={summary}
             connection={connection}
             onRemove={removeProduct}
+            renderSwapControl={(product) => (
+              <ProductPicker
+                candidates={candidates}
+                title={`Trocar ${product.name} na comparação`}
+                trigger={
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    aria-label={`Trocar ${product.name}`}
+                    className="-ms-1.5 text-fg-secondary hover:text-fg-primary pointer-coarse:h-10"
+                  >
+                    <ArrowLeftRight aria-hidden="true" data-icon="inline-start" />
+                    Trocar
+                  </Button>
+                }
+                focusAfterPick={headingRef}
+                onPick={(replacement) => swapProduct(product.id, replacement)}
+              />
+            )}
           />
         </>
       )}

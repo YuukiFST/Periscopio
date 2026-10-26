@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { ChevronDown, ExternalLink, X } from "lucide-react";
-import { useLayoutEffect, useRef, useState, type CSSProperties } from "react";
+import { useLayoutEffect, useRef, useState, type CSSProperties, type ReactNode } from "react";
 import type { CategorySlug } from "@/categories";
 import { Button } from "@/components/ui/button";
 import type { CategoryData, Field, Product } from "@/data/schema";
@@ -33,6 +33,8 @@ type ComparisonTableProps = {
   /** The connection chosen for mouses; undefined when any counts. */
   connection: Connection | undefined;
   onRemove: (id: string) => void;
+  /** The control that swaps a Produto for another, shown in its column. */
+  renderSwapControl: (product: Product) => ReactNode;
 };
 
 type ComparisonGroup = Omit<ProductFieldGroup, "id"> & {
@@ -99,6 +101,7 @@ export function ComparisonTable({
   summary,
   connection,
   onRemove,
+  renderSwapControl,
 }: ComparisonTableProps) {
   const groups = comparisonGroups(data, products, connection);
   const hasMeasurements =
@@ -179,6 +182,7 @@ export function ComparisonTable({
                   product={product}
                   comparedIdsParam={comparedIdsParam}
                   onRemove={() => onRemove(product.id)}
+                  swapControl={renderSwapControl(product)}
                 />
               ))}
             </tr>
@@ -257,11 +261,13 @@ function ProductColumnHeader({
   product,
   comparedIdsParam,
   onRemove,
+  swapControl,
 }: {
   category: CategorySlug;
   product: Product;
   comparedIdsParam: string | undefined;
   onRemove: () => void;
+  swapControl: ReactNode;
 }) {
   return (
     <th
@@ -304,6 +310,7 @@ function ProductColumnHeader({
             <ExternalLink aria-hidden="true" className="size-3.5 shrink-0" />
           </a>
         )}
+        {swapControl}
       </div>
       {/* Last in the tab order, after the Produto's own links; shown right by its own photo. */}
       <Button

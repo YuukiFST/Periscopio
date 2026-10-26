@@ -329,6 +329,106 @@ test("an id the data no longer has is left out with a notice, and removing a Pro
   await expect(compareCheckbox(page, mouses.dragonflyA9Ultra.name)).toBeChecked();
 });
 
+function pickerDialog(page: Page, name: string) {
+  return page.getByRole("dialog", { name });
+}
+
+test("Adicionar produto searches the Categoria from the keyboard, appends the pick, and the table keeps the marks", async ({
+  page,
+}) => {
+  const twoIds = `${mouses.dragonflyA9Ultra.id},${mouses.huan.id}`;
+  await page.goto(`/comparar/mouse?p=${twoIds}`);
+  await expect.poll(() => comparedProductNames(page)).toHaveLength(2);
+  const addButton = page.getByRole("button", { name: "Adicionar produto" });
+  await addButton.focus();
+  await page.keyboard.press("Enter");
+  const picker = pickerDialog(page, "Adicionar produto à comparação");
+  const searchBox = picker.getByRole("combobox", { name: "Adicionar produto à comparação" });
+  await expect(searchBox).toBeFocused();
+
+  // Matched like the table's search: other case, and the already compared Dragonfly A9 Ultra is not offered.
+  await page.keyboard.type("DRAGONFLY");
+  await expect(picker.getByRole("option")).toHaveText([/^Dragonfly 3 PRO /]);
+  await expect(picker.getByRole("status")).toHaveText("1 produto encontrado.");
+  // The manufacturer's name finds its Produtos too, but WLMouse's only one, Huan, is compared already.
+  await searchBox.fill("abko");
+  await expect(picker.getByRole("option")).toHaveText([/^H200A /]);
+  await searchBox.fill("wlmouse");
+  await expect(picker.getByRole("status")).toHaveText("Nenhum produto encontrado.");
+  await searchBox.fill("dragonfly");
+  await page.keyboard.press("ArrowDown");
+  const option = picker.getByRole("option", { name: /^Dragonfly 3 PRO / });
+  await expect(searchBox).toHaveAttribute(
+    "aria-activedescendant",
+    (await option.getAttribute("id")) ?? "",
+  );
+  await page.keyboard.press("Enter");
+
+  const threeIds = `${twoIds},${mouses.dragonfly3Pro.id}`;
+  await expect(page).toHaveURL(`/comparar/mouse?p=${threeIds}`);
+  await expect(picker).toHaveCount(0);
+  await expect(page.getByRole("heading", { level: 1 })).toBeFocused();
+  await expect
+    .poll(() => comparedProductNames(page))
+    .toEqual([mouses.dragonflyA9Ultra.name, mouses.huan.name, mouses.dragonfly3Pro.name]);
+
+  await addButton.click();
+  await pickerDialog(page, "Adicionar produto à comparação").getByRole("combobox").fill("h200a");
+  await page.keyboard.press("Enter");
+  await expect.poll(() => comparedProductNames(page)).toHaveLength(4);
+  await expect(addButton).toHaveCount(0);
+
+  const fourIds = `${threeIds},${mouses.h200a.id}`;
+  await page.getByRole("link", { name: "Voltar para Mouses" }).click();
+  await expect(page).toHaveURL(`/mouse?cmp=${fourIds}`);
+  for (const mouse of [mouses.dragonflyA9Ultra, mouses.huan, mouses.dragonfly3Pro, mouses.h200a]) {
+    await expect(compareCheckbox(page, mouse.name)).toBeChecked();
+  }
+});
+
+test("Trocar replaces a Produto in its own column, offers none already compared, and Esc gives focus back", async ({
+  page,
+}) => {
+  await page.goto(
+    `/comparar/mouse?p=${mouses.dragonflyA9Ultra.id},${mouses.huan.id},${mouses.h200a.id}`,
+  );
+  await expect.poll(() => comparedProductNames(page)).toHaveLength(3);
+  const swapHuan = page.getByRole("button", { name: "Trocar Huan" });
+  await swapHuan.click();
+  const picker = pickerDialog(page, "Trocar Huan na comparação");
+  const searchBox = picker.getByRole("combobox", { name: "Trocar Huan na comparação" });
+  await expect(searchBox).toBeFocused();
+  await page.keyboard.press("Escape");
+  await expect(picker).toHaveCount(0);
+  await expect(swapHuan).toBeFocused();
+
+  await page.keyboard.press("Enter");
+  // Every fixture mouse has an "a"; only the three not compared are offered.
+  await searchBox.fill("a");
+  await expect(picker.getByRole("option")).toHaveText([
+    /^Dragonfly 3 PRO /,
+    /^VK M5 Max THOR /,
+    /^Cloud XS /,
+  ]);
+  await expect(picker.getByRole("status")).toHaveText("3 produtos encontrados.");
+  await picker.getByRole("option", { name: /^VK M5 Max THOR / }).click();
+
+  const swappedIds = `${mouses.dragonflyA9Ultra.id},${mouses.vkM5MaxThor.id},${mouses.h200a.id}`;
+  await expect(page).toHaveURL(`/comparar/mouse?p=${swappedIds}`);
+  await expect
+    .poll(() => comparedProductNames(page))
+    .toEqual([mouses.dragonflyA9Ultra.name, mouses.vkM5MaxThor.name, mouses.h200a.name]);
+  await expect(page.getByRole("heading", { level: 1 })).toBeFocused();
+
+  await page.getByRole("link", { name: "Voltar para Mouses" }).click();
+  await expect(page).toHaveURL(`/mouse?cmp=${swappedIds}`);
+  // VK M5 Max THOR stays marked in the link, though the table's default Status de teste hides its row.
+  await expect(compareBar(page).getByRole("link", { name: "Comparar (3/4)" })).toBeVisible();
+  await expect(compareCheckbox(page, mouses.dragonflyA9Ultra.name)).toBeChecked();
+  await expect(compareCheckbox(page, mouses.h200a.name)).toBeChecked();
+  await expect(compareCheckbox(page, mouses.huan.name)).not.toBeChecked();
+});
+
 test("the detail screen adds its Produto to the Comparação, and the table keeps the marks", async ({
   page,
 }) => {
