@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Drawer, DrawerContent } from "@/components/ui/drawer";
 import type { CategoryData } from "@/data/schema";
 import { comparedIdsFromParam } from "@/product-compare/compare-selection";
+import { recordRecentProduct } from "@/recent-products/recent-products";
 import { ProductDetail } from "./product-detail";
 import { ProductNotFound } from "./product-not-found";
 import { useChangeComparedIds } from "./use-change-compared-ids";
@@ -43,6 +44,9 @@ export function ProductSidebar({ data }: { data: CategoryData }) {
   );
   const comparedIds = comparedIdsFromParam(search.cmp, productIds);
   const product = data.products.find((candidate) => candidate.id === shownId);
+  useEffect(() => {
+    if (openId !== undefined && productIds.has(openId)) recordRecentProduct(data.category, openId);
+  }, [openId, productIds, data.category]);
   const [isBesideTable, setIsBesideTable] = useState(
     () => window.matchMedia(besideTableQuery).matches,
   );
