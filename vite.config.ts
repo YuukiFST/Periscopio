@@ -28,7 +28,7 @@ export default defineConfig({
         start_url: "/",
         scope: "/",
         display: "standalone",
-        // The manifest holds one color; index.html carries the dark one per color scheme.
+        // The manifest holds one color; index.html sets theme-color from the chosen or system theme.
         theme_color: pageColorLight,
         background_color: pageColorLight,
         icons: [
