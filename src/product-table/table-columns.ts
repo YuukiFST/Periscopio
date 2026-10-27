@@ -3,16 +3,24 @@ import { isRatingField } from "../data/rating-order.ts";
 import type { CategoryData, Field } from "../data/schema.ts";
 import { fieldLabel } from "../i18n/labels.ts";
 import { productFieldGroups, type ProductFieldGroupId } from "../product-fields/field-groups.ts";
+import { fieldRangeOf, type FieldRange } from "./field-range.ts";
 
 /**
  * A column of the Categoria table. `slug` is its name in the link
  * (`ordem=-peso`); field columns show one EyeJoker field, with the standard
- * deviation beside the average where EyeJoker shows one (`0,32 ms σ 0,05`).
+ * deviation beside the average where EyeJoker shows one (`0,32 ms σ 0,05`),
+ * and a bar behind the number where the field has a `range`.
  */
 export type TableColumn =
   | { kind: "product"; slug: "produto" }
   | { kind: "price"; slug: "preco" }
-  | { kind: "field"; slug: string; field: Field; deviation: Field | undefined };
+  | {
+      kind: "field";
+      slug: string;
+      field: Field;
+      deviation: Field | undefined;
+      range: FieldRange | undefined;
+    };
 
 /** Every column but the Produto one, which always comes first. */
 type ChosenColumn = Exclude<TableColumn, { kind: "product" }>;
@@ -120,7 +128,7 @@ function defaultTableColumns(data: CategoryData): ChosenColumn[] {
     const field = fieldsByKey.get(spec.fieldKey);
     if (!field) return [];
     const deviation = spec.deviationKey ? fieldsByKey.get(spec.deviationKey) : undefined;
-    return [{ kind: "field", slug: spec.slug, field, deviation }];
+    return [{ kind: "field", slug: spec.slug, field, deviation, range: fieldRangeOf(data, field) }];
   });
 }
 
@@ -140,7 +148,9 @@ export function tableColumnsFor(data: CategoryData, columnKeys: readonly string[
     if (column) return [column];
     const field = fieldsByKey.get(key);
     if (!field || defaultSlugs.has(key)) return [];
-    return [{ kind: "field", slug: key, field, deviation: undefined }];
+    return [
+      { kind: "field", slug: key, field, deviation: undefined, range: fieldRangeOf(data, field) },
+    ];
   });
   return [productColumn, ...chosen];
 }
