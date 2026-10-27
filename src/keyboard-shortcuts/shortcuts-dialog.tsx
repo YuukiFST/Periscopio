@@ -2,7 +2,12 @@ import { Dialog } from "@base-ui/react/dialog";
 import { X } from "lucide-react";
 import { Fragment, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { isApplePlatform, isSingleKeyShortcut, usePageShortcut } from "./page-shortcuts";
+import {
+  isApplePlatform,
+  isPageBehindModal,
+  isSingleKeyShortcut,
+  usePageShortcut,
+} from "./page-shortcuts";
 
 type ShortcutEntry = {
   /** Each item is one way to press it. */
@@ -25,7 +30,8 @@ const shortcutEntries: ShortcutEntry[] = [
 export function ShortcutsDialog() {
   const [isOpen, setIsOpen] = useState(false);
   usePageShortcut((event) => {
-    if (event.key !== "?" || !isSingleKeyShortcut(event)) return false;
+    // Over another modal its Escape would close both, and the table keys would not reach.
+    if (event.key !== "?" || !isSingleKeyShortcut(event) || isPageBehindModal()) return false;
     setIsOpen(true);
     return true;
   });

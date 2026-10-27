@@ -43,13 +43,22 @@ function isFieldTarget(target: EventTarget | null): boolean {
   return target instanceof HTMLTextAreaElement || target instanceof HTMLSelectElement;
 }
 
-/** A single-key shortcut fires only without Ctrl, Meta or Alt, and outside fields. */
+/**
+ * A single-key shortcut fires only without Ctrl, Meta or Alt, and outside fields.
+ * AltGr counts as no modifier: on Windows it reports Ctrl and Alt, and the
+ * ABNT2 keyboards without a `/?` key type both characters with it.
+ */
 export function isSingleKeyShortcut(event: KeyboardEvent): boolean {
-  if (event.ctrlKey || event.metaKey || event.altKey) return false;
+  const isAltGraph = event.getModifierState("AltGraph");
+  if (event.metaKey || ((event.ctrlKey || event.altKey) && !isAltGraph)) return false;
   return !isFieldTarget(event.target);
 }
 
-/** Whether a modal dialog hides the element from the keyboard and screen readers. */
-export function isBehindModal(element: Element): boolean {
-  return element.closest('[inert], [aria-hidden="true"]') !== null;
+/**
+ * Whether a modal dialog covers the page. Base UI sets no `aria-modal`; it hides
+ * the rest of the page, though not the parents of `aria-live` regions, such as
+ * `main`. The header holds none, so it goes hidden behind every modal.
+ */
+export function isPageBehindModal(): boolean {
+  return document.querySelector("header")?.closest('[aria-hidden="true"], [inert]') != null;
 }

@@ -19,7 +19,7 @@ import {
 } from "@/components/update-notice";
 import { loadCategoryData } from "@/data/load-data";
 import {
-  isBehindModal,
+  isPageBehindModal,
   isSingleKeyShortcut,
   usePageShortcut,
 } from "@/keyboard-shortcuts/page-shortcuts";
@@ -243,7 +243,7 @@ function CategoryTable({ data }: { data: CategoryData }) {
   usePageShortcut((event) => {
     if (event.key !== "/" || !isSingleKeyShortcut(event)) return false;
     const searchInput = document.getElementById(searchInputId);
-    if (!searchInput || isBehindModal(searchInput)) return false;
+    if (!searchInput || isPageBehindModal()) return false;
     searchInput.focus();
     return true;
   });
