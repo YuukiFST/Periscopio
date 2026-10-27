@@ -1,6 +1,7 @@
 import { getRouteApi, Link } from "@tanstack/react-router";
+import type { ReactNode } from "react";
 import type { TableDensity } from "@/appearance/appearance";
-import type { Product } from "@/data/schema";
+import type { Field, FieldValue, Product } from "@/data/schema";
 import { manufacturerName } from "@/i18n/labels";
 import { productFieldValue } from "@/product-fields/field-groups";
 import { ProductPhoto } from "@/product-photo/product-photo";
@@ -13,10 +14,12 @@ import {
   isCountEnum,
   priceOf,
 } from "./cell-values";
+import { rangePositionOf } from "./field-range";
 import { novidadeLabels, novidadeOf } from "./novidades";
 import type { TableColumn } from "./table-columns";
 
 const rootRoute = getRouteApi("__root__");
+const categoryRoute = getRouteApi("/$categoria");
 
 export function MissingValue() {
   return (
@@ -129,6 +132,45 @@ export function ProductCell({
   );
 }
 
+/**
+ * `children` over a faint bar as long as the value's place in the Categoria,
+ * from 0 (its worst value) to 1 (its best), on the Pontuação bar's fill.
+ * Without a place, `children` alone.
+ */
+export function RangeBar({
+  position,
+  children,
+}: {
+  position: number | undefined;
+  children: ReactNode;
+}) {
+  if (position === undefined) return children;
+  return (
+    <span className="relative block">
+      <span
+        aria-hidden="true"
+        className="absolute inset-y-0 start-0 rounded-xs bg-fg-tertiary/15 forced-colors:hidden"
+        style={{ width: `${position * 100}%` }}
+      />
+      <span className="relative">{children}</span>
+    </span>
+  );
+}
+
+/** Placed among all the Categoria's Produtos, so a Filtro leaves the bars still. */
+function TableRangeBar({
+  field,
+  value,
+  children,
+}: {
+  field: Field;
+  value: FieldValue;
+  children: ReactNode;
+}) {
+  const data = categoryRoute.useLoaderData();
+  return <RangeBar position={rangePositionOf(data, field, value)}>{children}</RangeBar>;
+}
+
 export function TableCellValue({ column, product }: { column: TableColumn; product: Product }) {
   switch (column.kind) {
     case "product":
@@ -155,16 +197,18 @@ export function TableCellValue({ column, product }: { column: TableColumn; produ
         ? formatDeviation(column.deviation, product.values[column.deviation.key])
         : undefined;
       return (
-        <span className="font-mono text-code-xs whitespace-nowrap">
-          {text}
-          {deviation !== undefined && (
-            <span className="text-fg-secondary">
-              {" "}
-              <span aria-hidden="true">σ</span>
-              <span className="sr-only">desvio padrão</span> {deviation}
-            </span>
-          )}
-        </span>
+        <TableRangeBar field={column.field} value={value}>
+          <span className="font-mono text-code-xs whitespace-nowrap">
+            {text}
+            {deviation !== undefined && (
+              <span className="text-fg-secondary">
+                {" "}
+                <span aria-hidden="true">σ</span>
+                <span className="sr-only">desvio padrão</span> {deviation}
+              </span>
+            )}
+          </span>
+        </TableRangeBar>
       );
     }
   }
