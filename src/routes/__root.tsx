@@ -1,5 +1,6 @@
 import { createRootRoute, Link, Outlet, useRouter } from "@tanstack/react-router";
 import type { ReactNode } from "react";
+import { AppearanceButton } from "@/appearance/appearance-button";
 import { categoryLabels, categorySlugs } from "@/categories";
 import { Button } from "@/components/ui/button";
 import { loadMeta } from "@/data/load-data";
@@ -36,6 +37,7 @@ function AppShell({ children }: { children: ReactNode }) {
           <div className="ms-auto flex items-center gap-2">
             <GlobalSearch />
             <RecentProductsButton />
+            <AppearanceButton />
           </div>
         </div>
       </header>

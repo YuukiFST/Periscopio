@@ -9,3 +9,4 @@
         - link "Monitores":
             - /url: /monitor
     - button "Buscar"
+    - button "Aparência"

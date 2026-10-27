@@ -1,0 +1,16 @@
+- dialog "Aparência":
+    - heading "Aparência" [level=2]
+    - group "Tema":
+        - text: ""
+        - radio "Claro"
+        - text: Claro
+        - radio "Escuro"
+        - text: Escuro
+        - radio "Sistema" [checked]
+        - text: Sistema
+    - group "Densidade da tabela":
+        - text: ""
+        - radio "Confortável" [checked]
+        - text: Confortável
+        - radio "Compacta"
+        - text: Compacta
