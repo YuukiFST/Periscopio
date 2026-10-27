@@ -110,10 +110,10 @@ export function ProductSidebar({ data }: { data: CategoryData }) {
           event.preventDefault();
           target.focus();
         }}
-        className="w-full border-transparent text-body-sm shadow-large duration-300 data-ending-style:duration-[calc(var(--drawer-swipe-strength)*300ms)] sm:w-lg"
+        className="w-full border-transparent text-body shadow-surface-5 duration-300 data-ending-style:duration-[calc(var(--drawer-swipe-strength)*300ms)] sm:w-lg"
       >
         <div className="flex shrink-0 justify-end px-2 pt-2">
-          <Button variant="ghost" size="icon-lg" aria-label="Fechar detalhes" onClick={close}>
+          <Button variant="ghost" size="icon" aria-label="Fechar detalhes" onClick={close}>
             <X aria-hidden="true" />
           </Button>
         </div>

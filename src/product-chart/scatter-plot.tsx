@@ -119,25 +119,25 @@ export function ScatterPlot({
           aria-labelledby={labelledBy}
           width={width}
           height={height}
-          className="block overflow-visible text-caption-lg"
+          className="block overflow-visible text-caption"
         >
           <g aria-hidden="true">
             {xTicks.map((tick) => (
               <g key={tick.value} transform={`translate(${xOf(tick.value)},0)`}>
-                <line y1={margin.top} y2={plotBottom} className="stroke-border-subtle" />
-                <text y={plotBottom + 16} textAnchor="middle" className="fill-fg-secondary">
+                <line y1={margin.top} y2={plotBottom} className="stroke-border/60" />
+                <text y={plotBottom + 16} textAnchor="middle" className="fill-muted-foreground">
                   {tick.text}
                 </text>
               </g>
             ))}
             {yTicks.map((tick) => (
               <g key={tick.value} transform={`translate(0,${yOf(tick.value)})`}>
-                <line x1={margin.left} x2={plotRight} className="stroke-border-subtle" />
+                <line x1={margin.left} x2={plotRight} className="stroke-border/60" />
                 <text
                   x={margin.left - 8}
                   dy="0.32em"
                   textAnchor="end"
-                  className="fill-fg-secondary"
+                  className="fill-muted-foreground"
                 >
                   {tick.text}
                 </text>
@@ -147,14 +147,14 @@ export function ScatterPlot({
               x={(margin.left + plotRight) / 2}
               y={height - 8}
               textAnchor="middle"
-              className="fill-fg-primary font-medium"
+              className="fill-foreground font-medium"
             >
               {xAxis.label}
             </text>
             <text
               transform={`translate(14,${(margin.top + plotBottom) / 2}) rotate(-90)`}
               textAnchor="middle"
-              className="fill-fg-primary font-medium"
+              className="fill-foreground font-medium"
             >
               {yAxis.label}
             </text>
@@ -163,7 +163,7 @@ export function ScatterPlot({
                 points={bestLine}
                 strokeWidth={1.5}
                 strokeDasharray="4 3"
-                className="fill-none stroke-brand"
+                className="fill-none stroke-blue-500"
               />
             )}
           </g>
@@ -189,8 +189,10 @@ export function ScatterPlot({
                     r={isBest ? 6 : 5}
                     strokeWidth={1.5}
                     className={cn(
-                      "stroke-page",
-                      isBest ? "fill-brand" : "fill-fg-tertiary group-hover:fill-fg-secondary",
+                      "stroke-background",
+                      isBest
+                        ? "fill-blue-500"
+                        : "fill-muted-foreground/70 group-hover:fill-muted-foreground",
                     )}
                   />
                   <circle
@@ -241,18 +243,18 @@ function PointTooltip({ point, xAxis, yAxis, left, top, width }: PointTooltipPro
       role="tooltip"
       style={{ left, top: top - 14 }}
       className={cn(
-        "pointer-events-none absolute z-10 w-max max-w-64 -translate-y-full rounded-lg bg-popover px-3 py-2 shadow-large",
+        "pointer-events-none absolute z-10 w-max max-w-64 -translate-y-full rounded-lg bg-popover px-3 py-2 shadow-surface-5",
         align,
       )}
     >
       <p className="font-medium text-pretty">{point.product.name}</p>
-      <dl className="grid grid-cols-[auto_auto] gap-x-3 text-fg-secondary">
+      <dl className="grid grid-cols-[auto_auto] gap-x-3 text-muted-foreground">
         <dt>{xAxis.label}</dt>
-        <dd className="text-end text-fg-primary tabular-nums">
+        <dd className="text-end text-foreground tabular-nums">
           {axisValueText(xAxis, point.product)}
         </dd>
         <dt>{yAxis.label}</dt>
-        <dd className="text-end text-fg-primary tabular-nums">
+        <dd className="text-end text-foreground tabular-nums">
           {axisValueText(yAxis, point.product)}
         </dd>
       </dl>

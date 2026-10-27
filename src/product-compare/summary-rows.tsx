@@ -57,7 +57,7 @@ export function SummaryRowGroup({ summary }: { summary: ResponseSummary }) {
       <tr>
         <RowLabel>
           Pontuação
-          <span className="block text-caption-lg">100 = o mais rápido em tudo</span>
+          <span className="block text-caption">100 = o mais rápido em tudo</span>
         </RowLabel>
         {rows.map((row, position) => (
           <td
@@ -92,7 +92,7 @@ export function SummaryRowGroup({ summary }: { summary: ResponseSummary }) {
                     <MarkIcon mark={mark} />
                     {/* With a connection chosen, every time is on it, so only "any" names it. */}
                     {summary.connection === undefined && response.connection && (
-                      <span className="block text-caption-lg font-normal text-fg-secondary">
+                      <span className="block text-caption font-normal text-muted-foreground">
                         {response.connection}
                       </span>
                     )}
@@ -136,7 +136,7 @@ function ScoreValue({
 }) {
   if (standing.kind !== "ranked") {
     return (
-      <span className="font-normal text-fg-secondary">
+      <span className="font-normal text-muted-foreground">
         {standingText(standing.kind, connection)}
       </span>
     );
@@ -147,14 +147,14 @@ function ScoreValue({
       <span className="font-medium tabular-nums">{standing.place}º</span>
       <span
         aria-hidden="true"
-        className="hidden h-1.5 w-12 shrink-0 overflow-hidden rounded-full bg-component sm:block"
+        className="hidden h-1.5 w-12 shrink-0 overflow-hidden rounded-full bg-muted sm:block"
       >
         <span
-          className="block h-full rounded-full bg-fg-tertiary"
+          className="block h-full rounded-full bg-muted-foreground/70"
           style={{ width: `${Math.max(standing.score, 4)}%` }}
         />
       </span>
-      <span className="font-mono text-code-xs">
+      <span className="font-mono text-caption">
         {standing.score}
         <MarkIcon mark={mark} />
       </span>

@@ -44,7 +44,7 @@ export function ColumnsMenu({
 
   return (
     <Popover.Root onOpenChange={(open) => open || setSearchText("")}>
-      <Popover.Trigger render={<Button variant="outline" size="lg" />}>
+      <Popover.Trigger render={<Button variant="tertiary" />}>
         <Columns3 aria-hidden="true" strokeWidth={1.5} />
         Colunas
       </Popover.Trigger>
@@ -56,14 +56,14 @@ export function ColumnsMenu({
           collisionPadding={8}
           className="z-50"
         >
-          <Popover.Popup className="flex max-h-[min(var(--available-height),32rem)] w-[min(calc(100vw-1rem),22rem)] flex-col overflow-hidden rounded-2xl bg-popover text-popover-foreground shadow-large transition-[opacity,scale] duration-150 ease-out-quint outline-none origin-(--transform-origin) data-ending-style:scale-[0.98] data-ending-style:opacity-0 data-starting-style:scale-[0.98] data-starting-style:opacity-0 motion-reduce:data-ending-style:scale-100 motion-reduce:data-starting-style:scale-100">
+          <Popover.Popup className="flex max-h-[min(var(--available-height),32rem)] w-[min(calc(100vw-1rem),22rem)] flex-col overflow-hidden rounded-2xl bg-popover text-popover-foreground shadow-surface-5 transition-[opacity,scale] duration-150 ease-out-quint outline-none origin-(--transform-origin) data-ending-style:scale-[0.98] data-ending-style:opacity-0 data-starting-style:scale-[0.98] data-starting-style:opacity-0 motion-reduce:data-ending-style:scale-100 motion-reduce:data-starting-style:scale-100">
             <div className="flex flex-col gap-3 border-b border-border p-3">
-              <Popover.Title className="px-1 text-body-sm font-medium">Colunas</Popover.Title>
+              <Popover.Title className="px-1 text-body font-medium">Colunas</Popover.Title>
               <div className="relative">
                 <Search
                   aria-hidden="true"
                   strokeWidth={1.5}
-                  className="pointer-events-none absolute start-2.5 top-1/2 size-4 -translate-y-1/2 text-fg-tertiary"
+                  className="pointer-events-none absolute start-2.5 top-1/2 size-4 -translate-y-1/2 text-muted-foreground/70"
                 />
                 <Input
                   type="search"
@@ -80,20 +80,20 @@ export function ColumnsMenu({
             </div>
             <div className="min-h-0 overflow-y-auto overscroll-contain p-3">
               {shownGroups.length === 0 && (
-                <p className="px-1 py-3 text-body-sm wrap-anywhere text-fg-secondary">
+                <p className="px-1 py-3 text-body wrap-anywhere text-muted-foreground">
                   Nenhuma coluna encontrada para “{searchText.trim()}”.
                 </p>
               )}
               <div className="flex flex-col gap-4">
                 {shownGroups.map((group) => (
                   <fieldset key={group.id} className="min-w-0">
-                    <legend className="mb-1 px-1 text-body-sm font-medium text-fg-secondary">
+                    <legend className="mb-1 px-1 text-body font-medium text-muted-foreground">
                       {group.title}
                     </legend>
                     {group.choices.map((choice) => (
                       <label
                         key={choice.key}
-                        className="flex min-h-9 cursor-pointer items-center gap-3 rounded-lg px-1 text-body-sm hover:bg-component-hover"
+                        className="flex min-h-9 cursor-pointer items-center gap-3 rounded-lg px-1 text-body hover:bg-hover"
                       >
                         <input
                           type="checkbox"

@@ -1,7 +1,7 @@
 import { expect, test, type Page } from "@playwright/test";
 
-const lightPage = "rgb(255, 255, 255)";
-const darkPage = "oklch(0.15 0 0)";
+const lightPage = "rgb(250, 250, 250)";
+const darkPage = "rgb(23, 23, 23)";
 
 async function openAppearance(page: Page) {
   await page.getByRole("banner").getByRole("button", { name: "Aparência" }).click();
@@ -15,7 +15,7 @@ async function expectTheme(page: Page, theme: "light" | "dark") {
   );
   await expect(page.locator('meta[name="theme-color"]')).toHaveAttribute(
     "content",
-    theme === "light" ? "#ffffff" : "#0b0b0b",
+    theme === "light" ? "#fafafa" : "#171717",
   );
 }
 
@@ -79,7 +79,7 @@ test("a stored Claro on a dark system paints light from the first frame", async 
   await page.reload();
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("Periscópio");
   const firstFrame = await page.evaluate(() => Reflect.get(window, "firstFrame"));
-  expect(firstFrame).toEqual({ themes: ["light"], themeColor: "#ffffff" });
+  expect(firstFrame).toEqual({ themes: ["light"], themeColor: "#fafafa" });
   await expectTheme(page, "light");
 });
 

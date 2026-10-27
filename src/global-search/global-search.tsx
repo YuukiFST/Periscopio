@@ -80,13 +80,14 @@ export function GlobalSearch() {
   return (
     <Dialog.Root open={isOpen} onOpenChange={(open) => (open ? openSearch() : setIsOpen(false))}>
       <Dialog.Trigger
-        render={<Button variant="outline" size="lg" aria-keyshortcuts="Control+K Meta+K" />}
+        render={
+          <Button variant="tertiary" leadingIcon={Search} aria-keyshortcuts="Control+K Meta+K" />
+        }
       >
-        <Search aria-hidden="true" strokeWidth={1.5} />
         Buscar
         <kbd
           aria-hidden="true"
-          className="ms-1 rounded-sm border border-border px-1 font-sans text-caption-lg text-fg-tertiary pointer-coarse:hidden"
+          className="ms-1 rounded-sm border border-border px-1 font-sans text-caption text-muted-foreground/70 pointer-coarse:hidden"
         >
           {isApplePlatform ? "⌘K" : "Ctrl K"}
         </kbd>
@@ -97,7 +98,7 @@ export function GlobalSearch() {
           <Dialog.Popup
             // Opening a Produto leaves focus to its details, which move it to their title.
             finalFocus={() => (openedProduct.current ? false : (returnFocusTo.current ?? true))}
-            className="flex max-h-full w-full max-w-lg flex-col overflow-hidden rounded-2xl bg-popover text-popover-foreground shadow-large transition-[opacity,scale] duration-150 ease-out-quint outline-none data-ending-style:scale-[0.98] data-ending-style:opacity-0 data-starting-style:scale-[0.98] data-starting-style:opacity-0 motion-reduce:data-ending-style:scale-100 motion-reduce:data-starting-style:scale-100"
+            className="flex max-h-full w-full max-w-lg flex-col overflow-hidden rounded-2xl bg-popover text-popover-foreground shadow-surface-5 transition-[opacity,scale] duration-150 ease-out-quint outline-none data-ending-style:scale-[0.98] data-ending-style:opacity-0 data-starting-style:scale-[0.98] data-starting-style:opacity-0 motion-reduce:data-ending-style:scale-100 motion-reduce:data-starting-style:scale-100"
           >
             <Dialog.Title className="sr-only">Buscar produtos</Dialog.Title>
             <Autocomplete.Root
@@ -118,7 +119,7 @@ export function GlobalSearch() {
                 <Search
                   aria-hidden="true"
                   strokeWidth={1.5}
-                  className="pointer-events-none absolute start-3.5 size-4 text-fg-tertiary"
+                  className="pointer-events-none absolute start-3.5 size-4 text-muted-foreground/70"
                 />
                 <Autocomplete.Input
                   aria-label="Buscar produto ou fabricante em todas as categorias"
@@ -127,23 +128,23 @@ export function GlobalSearch() {
                   autoCorrect="off"
                   spellCheck={false}
                   enterKeyHint="go"
-                  className="h-12 w-full bg-transparent ps-10 pe-1 text-base outline-none placeholder:text-fg-tertiary pointer-fine:text-body-sm"
+                  className="h-12 w-full bg-transparent ps-10 pe-1 text-base outline-none placeholder:text-muted-foreground/70 pointer-fine:text-body"
                 />
                 <Dialog.Close
-                  render={<Button variant="ghost" size="icon-lg" className="me-1.5" />}
+                  render={<Button variant="ghost" size="icon" className="me-1.5" />}
                   aria-label="Fechar busca"
                 >
                   <X aria-hidden="true" />
                 </Dialog.Close>
               </div>
               <div className="min-h-0 overflow-y-auto overscroll-contain">
-                <Autocomplete.Empty className="px-4 py-6 text-body-sm text-fg-secondary empty:hidden">
+                <Autocomplete.Empty className="px-4 py-6 text-body text-muted-foreground empty:hidden">
                   {emptyText(load, searchText)}
                 </Autocomplete.Empty>
                 <Autocomplete.List className="p-1 empty:hidden">
                   {(group: SearchResultGroup) => (
                     <Autocomplete.Group key={group.category} items={group.items} className="py-1">
-                      <Autocomplete.GroupLabel className="px-3 py-1.5 text-caption-lg font-medium text-fg-tertiary">
+                      <Autocomplete.GroupLabel className="px-3 py-1.5 text-caption font-medium text-muted-foreground/70">
                         {categoryLabels[group.category]}
                       </Autocomplete.GroupLabel>
                       <Autocomplete.Collection>
@@ -152,12 +153,12 @@ export function GlobalSearch() {
                             key={result.product.id}
                             value={result}
                             onClick={() => openResult(result)}
-                            className="flex cursor-default items-baseline gap-2 rounded-lg px-3 py-2 text-body-sm select-none data-highlighted:bg-component-hover"
+                            className="flex cursor-default items-baseline gap-2 rounded-lg px-3 py-2 text-body select-none data-highlighted:bg-hover"
                           >
                             <span className="min-w-0 truncate font-medium">
                               {result.product.name}
                             </span>{" "}
-                            <span className="shrink-0 text-fg-secondary">
+                            <span className="shrink-0 text-muted-foreground">
                               {manufacturerName(result.product.manufacturer)}
                             </span>
                           </Autocomplete.Item>

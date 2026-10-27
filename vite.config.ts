@@ -6,8 +6,8 @@ import { defineConfig } from "vite";
 import { VitePWA } from "vite-plugin-pwa";
 import { vercelHeadersInPreview } from "./vite/vercel-headers-in-preview.ts";
 
-/** Interfere light page color, `--int-page` in `src/styles.css`. */
-const pageColorLight = "#ffffff";
+/** Light page color, `--surface-1` in `src/styles.css`. */
+const pageColorLight = "#fafafa";
 
 export default defineConfig({
   // The E2E build swaps in data the pipeline generated from the recorded excerpt.

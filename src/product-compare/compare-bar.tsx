@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import type { CategorySlug } from "@/categories";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { maxComparedProducts, minComparedProducts, productIdsParam } from "./compare-selection";
 
@@ -56,7 +56,7 @@ export function CompareBar({
         count === 0
           ? "sr-only"
           : cn(
-              "flex shrink-0 flex-wrap items-center justify-end gap-x-4 gap-y-2 rounded-lg border border-border bg-container px-3 py-2",
+              "flex shrink-0 flex-wrap items-center justify-end gap-x-4 gap-y-2 rounded-lg border border-border bg-card px-3 py-2",
               className,
             )
       }
@@ -64,35 +64,38 @@ export function CompareBar({
       <p
         id={compareStatusId}
         aria-live="polite"
-        className="me-auto min-w-0 flex-1 basis-56 text-pretty text-fg-secondary"
+        className="me-auto min-w-0 flex-1 basis-56 text-pretty text-muted-foreground"
       >
         {compareStatusText(count)}
       </p>
       {count > 0 && (
         <div className="flex items-center gap-2">
-          <Button variant="ghost" size="lg" onClick={clear}>
+          <Button variant="ghost" onClick={clear}>
             Desmarcar todos
           </Button>
           {count >= minComparedProducts ? (
-            <Link
-              to="/comparar/$categoria"
-              params={{ categoria: category }}
-              search={{ p: productIdsParam(comparedIds) }}
-              className={cn(buttonVariants({ size: "lg" }), "tabular-nums")}
+            <Button
+              trailingIcon={ArrowRight}
+              className="tabular-nums"
+              render={
+                <Link
+                  to="/comparar/$categoria"
+                  params={{ categoria: category }}
+                  search={{ p: productIdsParam(comparedIds) }}
+                />
+              }
             >
               {label}
-              <ArrowRight aria-hidden="true" data-icon="inline-end" />
-            </Link>
+            </Button>
           ) : (
             <Button
-              size="lg"
+              trailingIcon={ArrowRight}
               disabled
               focusableWhenDisabled
               aria-describedby={compareStatusId}
               className="tabular-nums"
             >
               {label}
-              <ArrowRight aria-hidden="true" data-icon="inline-end" />
             </Button>
           )}
         </div>

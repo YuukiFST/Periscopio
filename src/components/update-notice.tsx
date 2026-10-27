@@ -24,16 +24,16 @@ export function updateAgeOf(meta: Meta, now: number): UpdateAge {
 }
 
 export function UpdatedAtLabel({ age }: { age: UpdateAge }) {
-  return <p className="text-caption-lg text-fg-secondary">Atualizado em {age.date}</p>;
+  return <p className="text-caption text-muted-foreground">Atualizado em {age.date}</p>;
 }
 
 export function StaleDataAlert({ age }: { age: UpdateAge }) {
   return (
-    <div className="flex items-start gap-2 rounded-lg bg-warning-subtle px-3 py-2 text-body-sm text-fg-primary">
+    <div className="flex items-start gap-2 rounded-lg bg-amber-500/10 px-3 py-2 text-body text-foreground">
       <TriangleAlert
         aria-hidden="true"
         strokeWidth={1.5}
-        className="mt-0.5 size-4 shrink-0 text-warning-fg"
+        className="mt-0.5 size-4 shrink-0 text-amber-700 dark:text-amber-400"
       />
       <p className="max-w-prose">
         <strong className="font-medium">Dados desatualizados:</strong> a última atualização foi em{" "}
@@ -120,10 +120,14 @@ export function NovidadesNotice({
   onDismiss: () => void;
 }) {
   return (
-    <div className="flex items-center gap-2 rounded-lg bg-brand-subtle py-1 ps-3 pe-1 text-body-sm text-fg-primary">
-      <Sparkles aria-hidden="true" strokeWidth={1.5} className="size-4 shrink-0 text-brand-fg" />
+    <div className="flex items-center gap-2 rounded-lg bg-blue-500/10 py-1 ps-3 pe-1 text-body text-foreground">
+      <Sparkles
+        aria-hidden="true"
+        strokeWidth={1.5}
+        className="size-4 shrink-0 text-blue-600 dark:text-blue-400"
+      />
       <p className="min-w-0 flex-1">{novidadesNoticeText(counts)}</p>
-      <Button variant="ghost" onClick={onShow} className="text-brand-fg">
+      <Button variant="ghost" onClick={onShow} className="text-blue-600 dark:text-blue-400">
         Ver novidades
       </Button>
       <Button variant="ghost" size="icon" aria-label="Fechar aviso" onClick={onDismiss}>

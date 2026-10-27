@@ -79,12 +79,12 @@ export function FilterPanel({
 }
 
 function FilterLegend({ children }: { children: string }) {
-  return <legend className="mb-2 font-medium text-fg-primary">{children}</legend>;
+  return <legend className="mb-2 font-medium text-foreground">{children}</legend>;
 }
 
 function FilterLabel({ id, children }: { id: string; children: string }) {
   return (
-    <div id={id} className="mb-2 font-medium text-fg-primary">
+    <div id={id} className="mb-2 font-medium text-foreground">
       {children}
     </div>
   );
@@ -113,10 +113,10 @@ type ChoiceFilterFieldsProps = {
 };
 
 const choiceFieldClassName =
-  "flex min-h-9 w-full min-w-0 cursor-pointer items-center gap-2 rounded-lg border border-input bg-transparent px-2.5 text-start text-base text-fg-primary transition-colors hover:border-border-strong focus-visible:border-ring focus-visible:outline-2 focus-visible:-outline-offset-1 focus-visible:outline-ring pointer-coarse:min-h-10 pointer-fine:text-body-sm dark:bg-component";
+  "flex min-h-9 w-full min-w-0 cursor-pointer items-center gap-2 rounded-lg border border-input bg-transparent px-2.5 text-start text-base text-foreground transition-colors hover:border-foreground/25 focus-visible:border-ring focus-visible:outline-2 focus-visible:-outline-offset-1 focus-visible:outline-ring pointer-coarse:min-h-10 pointer-fine:text-body dark:bg-muted";
 
 const choicePopupClassName =
-  "flex max-h-[min(var(--available-height),16rem)] w-(--anchor-width) min-w-40 origin-(--transform-origin) flex-col rounded-lg border border-border bg-popover text-body-sm text-popover-foreground shadow-lg outline-none transition-[opacity,scale] duration-150 ease-out-quint data-ending-style:scale-95 data-ending-style:opacity-0 data-starting-style:scale-95 data-starting-style:opacity-0";
+  "flex max-h-[min(var(--available-height),16rem)] w-(--anchor-width) min-w-40 origin-(--transform-origin) flex-col rounded-lg border border-border bg-popover text-body text-popover-foreground shadow-lg outline-none transition-[opacity,scale] duration-150 ease-out-quint data-ending-style:scale-95 data-ending-style:opacity-0 data-starting-style:scale-95 data-starting-style:opacity-0";
 
 // The scroll lives on the list inside the popup: scroll-fade-y runs a scroll-driven animation
 // that never finishes, and Base UI keeps a closing popup mounted until its animations finish.
@@ -124,11 +124,11 @@ const choiceListClassName =
   "min-h-0 scroll-fade-y overflow-y-auto overscroll-contain p-1 outline-none [scrollbar-width:thin]";
 
 const choiceItemClassName =
-  "flex min-h-8 cursor-pointer items-center gap-2 rounded-md px-2 text-fg-secondary outline-none select-none data-highlighted:bg-component-hover data-highlighted:text-fg-primary data-selected:text-fg-primary pointer-coarse:min-h-10";
+  "flex min-h-8 cursor-pointer items-center gap-2 rounded-md px-2 text-muted-foreground outline-none select-none data-highlighted:bg-hover data-highlighted:text-foreground data-selected:text-foreground pointer-coarse:min-h-10";
 
 function ChoiceCheck({ children }: { children: ReactNode }) {
   return (
-    <span className="grid size-4 shrink-0 place-items-center rounded-sm border border-border-strong">
+    <span className="grid size-4 shrink-0 place-items-center rounded-sm border border-foreground/25">
       {children}
     </span>
   );
@@ -159,12 +159,19 @@ function SelectChoiceField({ filter, marked, onMarkedChange }: ChoiceFilterField
       <Select.Root multiple value={[...marked]} onValueChange={onMarkedChange}>
         <Select.Trigger aria-labelledby={labelId} className={choiceFieldClassName}>
           <span
-            className={cn("min-w-0 flex-1 truncate", marked.length === 0 && "text-fg-tertiary")}
+            className={cn(
+              "min-w-0 flex-1 truncate",
+              marked.length === 0 && "text-muted-foreground/70",
+            )}
           >
             {markedSummary(filter, marked)}
           </span>
           <Select.Icon>
-            <ChevronDown aria-hidden="true" strokeWidth={1.5} className="size-4 text-fg-tertiary" />
+            <ChevronDown
+              aria-hidden="true"
+              strokeWidth={1.5}
+              className="size-4 text-muted-foreground/70"
+            />
           </Select.Icon>
         </Select.Trigger>
         <Select.Portal>
@@ -212,7 +219,7 @@ function SearchableChoiceField({ filter, marked, onMarkedChange }: ChoiceFilterF
           <Search
             aria-hidden="true"
             strokeWidth={1.5}
-            className="pointer-events-none absolute start-2.5 top-1/2 size-4 -translate-y-1/2 text-fg-tertiary"
+            className="pointer-events-none absolute start-2.5 top-1/2 size-4 -translate-y-1/2 text-muted-foreground/70"
           />
           <Combobox.Input
             aria-label={searchLabel}
@@ -221,7 +228,10 @@ function SearchableChoiceField({ filter, marked, onMarkedChange }: ChoiceFilterF
             autoCorrect="off"
             spellCheck={false}
             enterKeyHint="search"
-            className={cn(choiceFieldClassName, "cursor-text ps-8 placeholder:text-fg-tertiary")}
+            className={cn(
+              choiceFieldClassName,
+              "cursor-text ps-8 placeholder:text-muted-foreground/70",
+            )}
           />
         </div>
         {marked.length > 0 && (
@@ -229,7 +239,7 @@ function SearchableChoiceField({ filter, marked, onMarkedChange }: ChoiceFilterF
             {marked.map((id) => (
               <Combobox.Chip
                 key={id}
-                className="flex items-center gap-1 rounded-md border border-primary bg-primary py-0.5 ps-2 pe-0.5 text-caption-lg text-primary-foreground"
+                className="flex items-center gap-1 rounded-md border border-primary bg-primary py-0.5 ps-2 pe-0.5 text-caption text-primary-foreground"
               >
                 {labelOf(id)}
                 <Combobox.ChipRemove
@@ -249,7 +259,7 @@ function SearchableChoiceField({ filter, marked, onMarkedChange }: ChoiceFilterF
               data-base-ui-swipe-ignore="y"
               className={choicePopupClassName}
             >
-              <Combobox.Empty className="px-3 py-2 text-fg-secondary empty:hidden">
+              <Combobox.Empty className="px-3 py-2 text-muted-foreground empty:hidden">
                 Nenhuma opção encontrada.
               </Combobox.Empty>
               <Combobox.List className={cn(choiceListClassName, "empty:hidden")}>
@@ -341,7 +351,7 @@ function RangeFilterFields({ filter, range, onRangeChange }: RangeFilterFieldsPr
       <div className="grid grid-cols-2 gap-2">
         {(["min", "max"] as const).map((side) => (
           <label key={side} className="flex min-w-0 flex-col gap-1">
-            <span className="text-caption-lg text-fg-secondary">
+            <span className="text-caption text-muted-foreground">
               {side === "min" ? "Mínimo" : "Máximo"}
             </span>
             <Input
@@ -358,7 +368,7 @@ function RangeFilterFields({ filter, range, onRangeChange }: RangeFilterFieldsPr
         ))}
       </div>
       {problem && (
-        <p id={problemId} className="mt-1.5 text-caption-lg text-danger-fg">
+        <p id={problemId} className="mt-1.5 text-caption text-destructive">
           {problem}
         </p>
       )}

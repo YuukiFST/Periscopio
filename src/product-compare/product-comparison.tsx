@@ -143,7 +143,7 @@ export function ProductComparison({
           ref={headingRef}
           id={headingId}
           tabIndex={-1}
-          className="font-serif text-heading-5 text-balance outline-none"
+          className="text-display text-balance outline-none"
         >
           Comparação de {categoryName}
         </h1>
@@ -153,7 +153,7 @@ export function ProductComparison({
               candidates={candidates}
               title="Adicionar produto à comparação"
               trigger={
-                <Button variant="outline" size="lg">
+                <Button variant="tertiary">
                   <Plus aria-hidden="true" strokeWidth={1.5} />
                   Adicionar produto
                 </Button>
@@ -168,12 +168,12 @@ export function ProductComparison({
       {leftOutText(compared).map((text) => (
         <p
           key={text}
-          className="flex max-w-prose items-start gap-2 rounded-lg bg-warning-subtle px-3 py-2 text-pretty text-fg-primary"
+          className="flex max-w-prose items-start gap-2 rounded-lg bg-amber-500/10 px-3 py-2 text-pretty text-foreground"
         >
           <TriangleAlert
             aria-hidden="true"
             strokeWidth={1.5}
-            className="mt-0.5 size-4 shrink-0 text-warning-fg"
+            className="mt-0.5 size-4 shrink-0 text-amber-700 dark:text-amber-400"
           />
           {text}
         </p>
@@ -212,7 +212,7 @@ export function ProductComparison({
                     variant="ghost"
                     size="sm"
                     aria-label={`Trocar ${product.name}`}
-                    className="-ms-1.5 text-fg-secondary hover:text-fg-primary pointer-coarse:h-10"
+                    className="-ms-1.5 text-muted-foreground hover:text-foreground pointer-coarse:h-10"
                   >
                     <ArrowLeftRight aria-hidden="true" data-icon="inline-start" />
                     Trocar
@@ -237,7 +237,7 @@ function NotEnoughProducts({ count }: { count: number }) {
           ? "Nenhum produto para comparar."
           : "Só 1 produto na comparação. Ela precisa de pelo menos 2."}
       </p>
-      <p className="text-pretty text-fg-secondary">
+      <p className="text-pretty text-muted-foreground">
         Use “Adicionar produto” ou marque de {minComparedProducts} a {maxComparedProducts} produtos
         na tabela e selecione “Comparar”.
       </p>

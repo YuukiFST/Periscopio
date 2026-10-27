@@ -22,10 +22,6 @@ type FilterPresetListProps = {
   onApply: (values: FilterValues) => void;
 };
 
-// The outline variant sets its own dark background and hover text, so pressed repeats them.
-const presetButtonClassName =
-  "pointer-coarse:h-10 aria-pressed:border-primary aria-pressed:bg-primary aria-pressed:text-primary-foreground aria-pressed:hover:bg-primary/80 aria-pressed:hover:text-primary-foreground dark:aria-pressed:bg-primary dark:aria-pressed:hover:bg-primary/80";
-
 /** The Categoria's presets and the Filtros saved on this device, each applied in one click. */
 export function FilterPresetList({ category, filters, values, onApply }: FilterPresetListProps) {
   const { saved, save, remove } = useSavedFilters(category);
@@ -48,10 +44,10 @@ export function FilterPresetList({ category, filters, values, onApply }: FilterP
           {presets.map((preset) => (
             <Button
               key={preset.name}
-              variant="outline"
+              variant={isSearchApplied(filters, values, preset.search) ? "primary" : "tertiary"}
               aria-pressed={isSearchApplied(filters, values, preset.search)}
               onClick={() => toggle(preset)}
-              className={presetButtonClassName}
+              className="pointer-coarse:h-10"
             >
               {preset.name}
             </Button>
@@ -63,10 +59,10 @@ export function FilterPresetList({ category, filters, values, onApply }: FilterP
           {saved.map((preset) => (
             <li key={preset.name} className="flex min-w-0 items-center gap-1">
               <Button
-                variant="outline"
+                variant={isSearchApplied(filters, values, preset.search) ? "primary" : "tertiary"}
                 aria-pressed={isSearchApplied(filters, values, preset.search)}
                 onClick={() => toggle(preset)}
-                className={`min-w-0 flex-1 justify-start ${presetButtonClassName}`}
+                className="min-w-0 flex-1 justify-start pointer-coarse:h-10"
               >
                 <span className="truncate">{preset.name}</span>
               </Button>
@@ -78,7 +74,7 @@ export function FilterPresetList({ category, filters, values, onApply }: FilterP
                   remove(preset.name);
                   saveButtonRef.current?.focus();
                 }}
-                className="text-fg-tertiary hover:text-fg-primary pointer-coarse:size-10"
+                className="text-muted-foreground/70 hover:text-foreground pointer-coarse:size-10"
               >
                 <X aria-hidden="true" strokeWidth={1.5} />
               </Button>
@@ -153,7 +149,7 @@ function SaveFiltersForm({
           className="flex flex-col gap-2"
         >
           <label className="flex flex-col gap-1">
-            <span className="text-caption-lg text-fg-secondary">Nome</span>
+            <span className="text-caption text-muted-foreground">Nome</span>
             <Input
               autoFocus
               autoComplete="off"

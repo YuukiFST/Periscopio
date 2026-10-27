@@ -256,7 +256,7 @@ export function ProductTable({
         <table
           aria-labelledby={labelledBy}
           aria-rowcount={rows.length + 1}
-          className="table-fixed border-separate border-spacing-0 text-body-sm"
+          className="table-fixed border-separate border-spacing-0 text-body"
           style={{
             width: `calc(var(--select-column) + var(--product-column) + ${fixedWidth}px)`,
             minWidth: "100%",
@@ -277,7 +277,7 @@ export function ProductTable({
             <tr aria-rowindex={1}>
               <th
                 scope="col"
-                className="sticky start-0 top-0 z-30 border-b border-border bg-page p-0"
+                className="sticky start-0 top-0 z-30 border-b border-border bg-background p-0"
               >
                 <span className="sr-only">Comparar</span>
               </th>
@@ -298,7 +298,7 @@ export function ProductTable({
                     scope="col"
                     aria-sort={ariaSort}
                     className={cn(
-                      "sticky top-0 z-20 border-b border-border bg-page p-0 align-bottom font-medium text-fg-secondary",
+                      "sticky top-0 z-20 border-b border-border bg-background p-0 align-bottom font-medium text-muted-foreground",
                       column.kind === "product" && "start-(--select-column) z-30 border-e",
                     )}
                   >
@@ -306,16 +306,19 @@ export function ProductTable({
                       type="button"
                       onClick={() => onSortClick(column.slug)}
                       className={cn(
-                        "flex w-full items-end gap-1 px-2 py-2.5 text-start text-balance hover:text-fg-primary focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-ring active:bg-component-hover sm:px-3",
+                        "flex w-full items-end gap-1 px-2 py-2.5 text-start text-balance hover:text-foreground focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-ring active:bg-hover sm:px-3",
                         isNumericColumn(column) && "justify-end text-end",
                         column.kind === "product" && "ps-0 sm:ps-0",
-                        sortEntry && "text-fg-primary",
+                        sortEntry && "text-foreground",
                       )}
                     >
                       {label}
                       <SortIcon
                         aria-hidden="true"
-                        className={cn("mb-0.5 size-3.5 shrink-0", !sortEntry && "text-fg-tertiary")}
+                        className={cn(
+                          "mb-0.5 size-3.5 shrink-0",
+                          !sortEntry && "text-muted-foreground/70",
+                        )}
                       />
                     </button>
                   </th>
@@ -397,7 +400,7 @@ const ProductRow = memo(function ProductRow({
       aria-rowindex={index + 2}
       style={{ height: rowHeights[density] }}
     >
-      <td className="sticky start-0 z-10 border-b border-border-subtle bg-page p-0">
+      <td className="sticky start-0 z-10 border-b border-border/60 bg-background p-0">
         <CompareCheckbox
           productName={product.name}
           checked={checked}
@@ -412,7 +415,7 @@ const ProductRow = memo(function ProductRow({
             scope="row"
             aria-labelledby={productCellLabelIds(product)}
             className={cn(
-              "sticky start-(--select-column) z-10 border-e border-b border-border-subtle bg-page ps-0 pe-2 text-start font-normal sm:pe-3",
+              "sticky start-(--select-column) z-10 border-e border-b border-border/60 bg-background ps-0 pe-2 text-start font-normal sm:pe-3",
               cellPadding,
             )}
           >
@@ -426,7 +429,7 @@ const ProductRow = memo(function ProductRow({
           <td
             key={column.slug}
             className={cn(
-              "border-b border-border-subtle px-2 tabular-nums sm:px-3",
+              "border-b border-border/60 px-2 tabular-nums sm:px-3",
               cellPadding,
               isNumericColumn(column) && "text-end",
             )}

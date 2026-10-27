@@ -59,7 +59,7 @@ export function TableToolbar({
         <Search
           aria-hidden="true"
           strokeWidth={1.5}
-          className="pointer-events-none absolute start-2.5 top-1/2 size-4 -translate-y-1/2 text-fg-tertiary"
+          className="pointer-events-none absolute start-2.5 top-1/2 size-4 -translate-y-1/2 text-muted-foreground/70"
         />
         <Input
           id={searchInputId}
@@ -94,23 +94,22 @@ export function TableToolbar({
       {novidades && (
         <Button
           id={novidadesToggleId}
-          variant="outline"
-          size="lg"
+          variant="tertiary"
+          leadingIcon={Sparkles}
+          active={novidades.pressed}
           aria-pressed={novidades.pressed}
           onClick={() => novidades.onPressedChange(!novidades.pressed)}
-          className="aria-pressed:border-border-selected aria-pressed:bg-component-active forced-colors:aria-pressed:border-[Highlight]"
+          className="forced-colors:aria-pressed:outline forced-colors:aria-pressed:outline-[Highlight]"
         >
-          <Sparkles aria-hidden="true" strokeWidth={1.5} />
           Novidades
         </Button>
       )}
       <Button
         id={favoritesToggleId}
-        variant="outline"
-        size="lg"
+        variant="tertiary"
         aria-pressed={favorites.pressed}
         onClick={() => favorites.onPressedChange(!favorites.pressed)}
-        className="aria-pressed:border-border-selected aria-pressed:bg-component-active forced-colors:aria-pressed:border-[Highlight]"
+        className="aria-pressed:border-muted-foreground aria-pressed:bg-active forced-colors:aria-pressed:border-[Highlight]"
       >
         <Star
           aria-hidden="true"
@@ -120,7 +119,7 @@ export function TableToolbar({
         Só favoritos
       </Button>
       {children}
-      <p aria-live="polite" className="text-fg-secondary tabular-nums">
+      <p aria-live="polite" className="text-muted-foreground tabular-nums">
         {countText}
       </p>
     </div>

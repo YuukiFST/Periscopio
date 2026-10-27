@@ -2,148 +2,173 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
-/* Radix Colors 3.0.0, the palette the Interfere design system uses unchanged. */
-@import "@radix-ui/colors/gray.css";
-@import "@radix-ui/colors/gray-dark.css";
-@import "@radix-ui/colors/gray-alpha.css";
-@import "@radix-ui/colors/gray-dark-alpha.css";
-@import "@radix-ui/colors/black-alpha.css";
-@import "@radix-ui/colors/white-alpha.css";
-@import "@radix-ui/colors/blue.css";
-@import "@radix-ui/colors/blue-dark.css";
-@import "@radix-ui/colors/blue-alpha.css";
-@import "@radix-ui/colors/blue-dark-alpha.css";
-@import "@radix-ui/colors/green.css";
-@import "@radix-ui/colors/green-dark.css";
-@import "@radix-ui/colors/green-alpha.css";
-@import "@radix-ui/colors/green-dark-alpha.css";
-@import "@radix-ui/colors/amber.css";
-@import "@radix-ui/colors/amber-dark.css";
-@import "@radix-ui/colors/amber-alpha.css";
-@import "@radix-ui/colors/amber-dark-alpha.css";
-@import "@radix-ui/colors/tomato.css";
-@import "@radix-ui/colors/tomato-dark.css";
-@import "@radix-ui/colors/tomato-alpha.css";
-@import "@radix-ui/colors/tomato-dark-alpha.css";
-
 @custom-variant dark (&:is(.dark *));
 
 /*
- * Interfere semantic tokens (design.interfere.com globals CSS), prefixed `--int-`:
- * Interfere names body text `--color-primary-foreground`, which shadcn uses for text on a
- * primary button.
+ * Fluid Functionalism tokens (https://www.fluidfunctionalism.com/docs): the surface and shadow
+ * ladder, the interaction tints and the type scale, from its `surfaces`, `tokens` and
+ * `type-scale` registry items.
  */
 :root {
-  --int-page: #fff;
-  --int-shell: oklch(97.3% 0 0);
-  --int-container: #fff;
-  --int-modal: oklch(100% 0 0);
-  --int-card: var(--gray-a2);
-  --int-sunken: var(--black-a1);
-  --int-standout: var(--gray-12);
-  --int-component: var(--gray-a3);
-  --int-component-hover: var(--gray-a4);
-  --int-component-active: var(--gray-a5);
-
-  --int-fg-primary: var(--gray-a12);
-  --int-fg-secondary: var(--gray-a11);
-  --int-fg-tertiary: var(--gray-a9);
-  --int-fg-disabled: var(--gray-a8);
-
-  --int-inverted-solid: var(--black-a12);
-  --int-on-inverted-fg: #fff;
-  --int-brand-solid: var(--blue-9);
-  --int-brand-solid-hover: var(--blue-10);
-  --int-brand-solid-active: var(--blue-11);
-  --int-brand-subtle: var(--blue-a3);
-  --int-brand-fg: var(--blue-a11);
-  --int-positive-solid: var(--green-9);
-  --int-positive-subtle: var(--green-a3);
-  --int-positive-fg: var(--green-a11);
-  --int-warning-solid: var(--amber-9);
-  --int-warning-subtle: var(--amber-a3);
-  --int-warning-fg: var(--amber-a11);
-  --int-danger-solid: var(--tomato-9);
-  --int-danger-subtle: var(--tomato-a2);
-  --int-danger-fg: var(--tomato-a11);
-  --int-disabled: var(--gray-a3);
-
-  --int-border-default: var(--gray-a6);
-  --int-border-subtle: var(--gray-a4);
-  --int-border-strong: var(--gray-a8);
-  /* A selected control's edge, its one cue against a track of nearly the same fill. */
-  --int-border-selected: var(--gray-a11);
-  --int-border-focus: var(--blue-10);
-
-  --shadow-inner-1: #0000;
-  --shadow-drop-1: #0000000f;
-  --shadow-drop-2: #0000001a;
-  --shadow-drop-3: #0000000d;
-  --shadow-border-color: #00000012;
-  --shadow-xl-inner-1: #0000;
-  --shadow-xl-drop-1: #0000000f;
-  --shadow-xl-drop-2: #0000000d;
-  --shadow-xl-drop-3: #00000026;
-  --s-border: 0 0 0 1px var(--shadow-border-color);
-  --s-default:
-    0 0 0 0.5px var(--shadow-inner-1) inset, 0 0 0 0.5px var(--shadow-drop-1),
-    0 1px 1px -1px var(--shadow-drop-2), 0 1px 2px 0px var(--shadow-drop-3);
-  --s-large:
-    0 0 0 0.5px var(--gray-a3), 0 2px 3px -2px var(--gray-a3), 0 3px 12px -4px var(--black-a2),
-    0 4px 16px -8px var(--black-a1);
-  --s-extra-large:
-    0 0 0 0.5px var(--shadow-xl-inner-1) inset, 0 0 0 0.5px var(--shadow-xl-drop-1),
-    0 8px 40px 0px var(--shadow-xl-drop-2), 0 12px 32px -16px var(--shadow-xl-drop-3);
-
-  /* shadcn/ui theme variables, pointed at the Interfere tokens. */
+  --surface-1: #fafafa;
+  --surface-2: #fcfcfc;
+  --surface-3: #ffffff;
+  --surface-4: #ffffff;
+  --surface-5: #ffffff;
+  --surface-6: #ffffff;
+  --surface-7: #ffffff;
+  --surface-8: #ffffff;
+  --shadow-color: rgb(0 0 0 / 0.06);
+  --shadow-1: 0 0 0 1px var(--shadow-color);
+  --shadow-2: 0 0 0 1px var(--shadow-color), 0 1px 1px -0.5px var(--shadow-color);
+  --shadow-3:
+    0 0 0 1px var(--shadow-color), 0 1px 1px -0.5px var(--shadow-color),
+    0 3px 3px -1.5px var(--shadow-color);
+  --shadow-4:
+    0 0 0 1px var(--shadow-color), 0 1px 1px -0.5px var(--shadow-color),
+    0 3px 3px -1.5px var(--shadow-color), 0 6px 6px -3px var(--shadow-color);
+  --shadow-5:
+    0 0 0 1px var(--shadow-color), 0 1px 1px -0.5px var(--shadow-color),
+    0 3px 3px -1.5px var(--shadow-color), 0 6px 6px -3px var(--shadow-color),
+    0 12px 12px -6px var(--shadow-color);
+  --shadow-6:
+    0 0 0 1px var(--shadow-color), 0 1px 1px -0.5px var(--shadow-color),
+    0 3px 3px -1.5px var(--shadow-color), 0 6px 6px -3px var(--shadow-color),
+    0 12px 12px -6px var(--shadow-color), 0 24px 24px -12px var(--shadow-color);
+  --shadow-7:
+    0 0 0 1px var(--shadow-color), 0 1px 1px -0.5px var(--shadow-color),
+    0 3px 3px -1.5px var(--shadow-color), 0 6px 6px -3px var(--shadow-color),
+    0 12px 12px -6px var(--shadow-color), 0 24px 24px -12px var(--shadow-color),
+    0 48px 48px -24px var(--shadow-color);
+  --shadow-8:
+    0 0 0 1px var(--shadow-color), 0 1px 1px -0.5px var(--shadow-color),
+    0 3px 3px -1.5px var(--shadow-color), 0 6px 6px -3px var(--shadow-color),
+    0 12px 12px -6px var(--shadow-color), 0 24px 24px -12px var(--shadow-color),
+    0 48px 48px -24px var(--shadow-color), 0 96px 96px -48px var(--shadow-color);
+  --hover: rgb(0 0 0 / 0.04);
+  --active: rgb(0 0 0 / 0.07);
+  --selected: #d4d4d4;
+  --destructive-light: #fef2f2;
+  --overlay: 0 0 0;
+  --focus-ring: #6b97ff;
+  --tint: rgb(0 0 0 / 0.08);
+  --tint-hover: rgb(0 0 0 / 0.065);
+  --fs-display: 28px;
+  --lh-display: 34px;
+  --fs-display-compact: 24px;
+  --lh-display-compact: 30px;
+  --fs-title: 16px;
+  --lh-title: 22px;
+  --fs-title-compact: 15px;
+  --lh-title-compact: 20px;
+  --fs-subtitle: 14px;
+  --lh-subtitle: 20px;
+  --fs-subtitle-compact: 13px;
+  --lh-subtitle-compact: 18px;
+  --fs-body: 13px;
+  --lh-body: 20px;
+  --fs-body-compact: 12px;
+  --lh-body-compact: 18px;
+  --fs-caption: 12px;
+  --lh-caption: 16px;
+  --fs-caption-compact: 11px;
+  --lh-caption-compact: 14px;
+  --fs-micro: 11px;
+  --lh-micro: 14px;
+  --fs-micro-compact: 10px;
+  --lh-micro-compact: 12px;
+  /* shadcn/ui theme variables on the neutral palette; the page sits on surface 1. */
   --radius: 0.5rem;
-  --background: var(--int-page);
-  --foreground: var(--int-fg-primary);
-  --card: var(--int-container);
-  --card-foreground: var(--int-fg-primary);
-  --popover: var(--int-modal);
-  --popover-foreground: var(--int-fg-primary);
-  --primary: var(--int-inverted-solid);
-  --primary-foreground: var(--int-on-inverted-fg);
-  --secondary: var(--int-component);
-  --secondary-foreground: var(--int-fg-primary);
-  --muted: var(--int-component);
-  --muted-foreground: var(--int-fg-secondary);
-  --accent: var(--int-component-hover);
-  --accent-foreground: var(--int-fg-primary);
-  --destructive: var(--int-danger-solid);
-  --border: var(--int-border-default);
-  --input: var(--gray-a9);
-  --ring: var(--int-border-focus);
+  --background: var(--surface-1);
+  --foreground: oklch(14.5% 0 0);
+  --card: var(--surface-3);
+  --card-foreground: var(--foreground);
+  --popover: var(--surface-5);
+  --popover-foreground: var(--foreground);
+  --primary: oklch(20.5% 0 0);
+  --primary-foreground: oklch(98.5% 0 0);
+  --secondary: oklch(97% 0 0);
+  --secondary-foreground: var(--foreground);
+  --muted: oklch(96% 0 0);
+  --muted-foreground: oklch(55.6% 0 0);
+  --accent: var(--hover);
+  --accent-foreground: var(--foreground);
+  --destructive: oklch(57.7% 0.245 27.325);
+  --border: oklch(92.2% 0 0);
+  --input: oklch(92.2% 0 0);
+  --ring: var(--focus-ring);
+  --highlight-fg: var(--color-emerald-800);
 }
 
 .dark {
-  --int-page: oklch(15% 0 0);
-  --int-shell: #000;
-  --int-container: var(--gray-1);
-  --int-modal: oklch(25.2% 0 0);
-  --int-sunken: var(--black-a6);
-  --int-standout: var(--gray-3);
-  --int-inverted-solid: var(--white-a12);
-  --int-on-inverted-fg: #000;
-  --int-disabled: var(--gray-a2);
-
-  --shadow-inner-1: #ffffff12;
-  --shadow-drop-1: #0000;
-  --shadow-drop-2: #0000;
-  --shadow-drop-3: #0000;
-  --shadow-border-color: #ffffff12;
-  --shadow-xl-inner-1: #ffffff12;
-  --s-large:
-    0 0 0 1px var(--gray-a6), 0 2px 3px -2px var(--black-a3), 0 3px 8px -2px var(--black-a6),
-    0 4px 12px -4px var(--black-a7);
+  --surface-1: #171717;
+  --surface-2: #1e1e1e;
+  --surface-3: #252525;
+  --surface-4: #2c2c2c;
+  --surface-5: #333333;
+  --surface-6: #3a3a3a;
+  --surface-7: #414141;
+  --surface-8: #484848;
+  --dm-hi-base: rgba(255, 255, 255, 0.01);
+  --dm-hi-mid: rgba(255, 255, 255, 0.02);
+  --dm-hi-high: rgba(255, 255, 255, 0.04);
+  --dm-hi-peak: rgba(255, 255, 255, 0.06);
+  --dm-ring-base: rgba(255, 255, 255, 0.02);
+  --dm-ring-mid: rgba(255, 255, 255, 0.04);
+  --dm-ring-high: rgba(255, 255, 255, 0.06);
+  --dm-drop: rgba(0, 0, 0, 0.18);
+  --shadow-1: inset 0 0 0 1px var(--dm-ring-base);
+  --shadow-2:
+    inset 0 1px 0 0 var(--dm-hi-base), inset 0 0 0 1px var(--dm-ring-base),
+    0 1px 1px -0.5px var(--dm-drop);
+  --shadow-3:
+    inset 0 1px 0 0 var(--dm-hi-mid), inset 0 0 0 1px var(--dm-ring-base),
+    0 0 0 1px rgba(0, 0, 0, 0.12), 0 1px 1px -0.5px var(--dm-drop), 0 3px 3px -1.5px var(--dm-drop);
+  --shadow-4:
+    inset 0 1px 0 0 var(--dm-hi-mid), inset 0 0 0 1px var(--dm-ring-mid),
+    0 0 0 1px rgba(0, 0, 0, 0.14), 0 1px 1px -0.5px var(--dm-drop), 0 3px 3px -1.5px var(--dm-drop),
+    0 6px 6px -3px var(--dm-drop);
+  --shadow-5:
+    inset 0 1px 0 0 var(--dm-hi-high), inset 0 0 0 1px var(--dm-ring-mid),
+    0 0 0 1px rgba(0, 0, 0, 0.16), 0 1px 1px -0.5px var(--dm-drop), 0 3px 3px -1.5px var(--dm-drop),
+    0 6px 6px -3px var(--dm-drop), 0 12px 12px -6px var(--dm-drop);
+  --shadow-6:
+    inset 0 1px 0 0 var(--dm-hi-high), inset 0 0 0 1px var(--dm-ring-high),
+    0 0 0 1px rgba(0, 0, 0, 0.18), 0 1px 1px -0.5px var(--dm-drop), 0 3px 3px -1.5px var(--dm-drop),
+    0 6px 6px -3px var(--dm-drop), 0 12px 12px -6px var(--dm-drop), 0 24px 24px -12px var(--dm-drop);
+  --shadow-7:
+    inset 0 1px 0 0 var(--dm-hi-peak), inset 0 0 0 1px var(--dm-ring-high),
+    0 0 0 1px rgba(0, 0, 0, 0.2), 0 1px 1px -0.5px var(--dm-drop), 0 3px 3px -1.5px var(--dm-drop),
+    0 6px 6px -3px var(--dm-drop), 0 12px 12px -6px var(--dm-drop),
+    0 24px 24px -12px var(--dm-drop), 0 48px 48px -24px var(--dm-drop);
+  --shadow-8:
+    inset 0 1px 0 0 var(--dm-hi-peak), inset 0 0 0 1px var(--dm-ring-high),
+    0 0 0 1px rgba(0, 0, 0, 0.22), 0 1px 1px -0.5px var(--dm-drop), 0 3px 3px -1.5px var(--dm-drop),
+    0 6px 6px -3px var(--dm-drop), 0 12px 12px -6px var(--dm-drop),
+    0 24px 24px -12px var(--dm-drop), 0 48px 48px -24px var(--dm-drop),
+    0 96px 96px -48px var(--dm-drop);
+  --hover: rgb(255 255 255 / 0.06);
+  --active: rgb(255 255 255 / 0.1);
+  --selected: #525252;
+  --destructive-light: #450a0a;
+  --overlay: 255 255 255;
+  --tint: rgb(255 255 255 / 0.25);
+  --tint-hover: rgb(255 255 255 / 0.2);
+  --foreground: oklch(98.5% 0 0);
+  --primary: oklch(92.2% 0 0);
+  --primary-foreground: oklch(20.5% 0 0);
+  --secondary: oklch(26.9% 0 0);
+  --muted: oklch(26.9% 0 0);
+  --muted-foreground: oklch(70.8% 0 0);
+  --destructive: oklch(70.4% 0.191 22.216);
+  --border: oklch(100% 0 0 / 10%);
+  --input: oklch(100% 0 0 / 15%);
+  --highlight-fg: var(--color-emerald-200);
 }
 
 @theme inline {
   --font-sans: "Inter Variable", sans-serif;
-  --font-serif: "EB Garamond Variable", serif;
   --font-mono: "JetBrains Mono Variable", monospace;
-  --font-heading: var(--font-serif);
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -163,97 +188,64 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-
-  --color-page: var(--int-page);
-  --color-shell: var(--int-shell);
-  --color-container: var(--int-container);
-  --color-sunken: var(--int-sunken);
-  --color-standout: var(--int-standout);
-  --color-component: var(--int-component);
-  --color-component-hover: var(--int-component-hover);
-  --color-component-active: var(--int-component-active);
-  --color-fg-primary: var(--int-fg-primary);
-  --color-fg-secondary: var(--int-fg-secondary);
-  --color-fg-tertiary: var(--int-fg-tertiary);
-  --color-fg-disabled: var(--int-fg-disabled);
-  --color-brand: var(--int-brand-solid);
-  --color-brand-hover: var(--int-brand-solid-hover);
-  --color-brand-active: var(--int-brand-solid-active);
-  --color-brand-subtle: var(--int-brand-subtle);
-  --color-brand-fg: var(--int-brand-fg);
-  --color-positive: var(--int-positive-solid);
-  --color-positive-subtle: var(--int-positive-subtle);
-  --color-positive-fg: var(--int-positive-fg);
-  --color-warning: var(--int-warning-solid);
-  --color-warning-subtle: var(--int-warning-subtle);
-  --color-warning-fg: var(--int-warning-fg);
-  --color-danger: var(--int-danger-solid);
-  --color-danger-subtle: var(--int-danger-subtle);
-  --color-danger-fg: var(--int-danger-fg);
+  --color-tint: var(--tint);
+  --color-tint-hover: var(--tint-hover);
+  --color-focus-ring: var(--focus-ring);
   /* The Destaque in a Comparação ("Layout no celular e forma do Destaque"). */
-  --color-highlight: var(--green-a3);
-  --color-highlight-fg: var(--green-12);
-  --color-border-subtle: var(--int-border-subtle);
-  --color-border-strong: var(--int-border-strong);
-  --color-border-selected: var(--int-border-selected);
+  --color-highlight: color-mix(in oklab, var(--color-emerald-500) 14%, transparent);
+  --color-highlight-fg: var(--highlight-fg);
 
-  --radius-xs: 2px;
-  --radius-sm: 4px;
-  --radius-md: 6px;
-  --radius-lg: 8px;
-  --radius-xl: 10px;
-  --radius-2xl: 12px;
-  --radius-3xl: 16px;
-  --radius-4xl: 20px;
-  --radius-5xl: 24px;
-
-  --shadow-border: var(--s-border);
-  --shadow-default: var(--s-default);
-  --shadow-large: var(--s-large);
-  --shadow-extra-large: var(--s-extra-large);
-
-  /* Line heights are unitless, so a wrapped line keeps its proportion at any text size. */
-  --text-heading-1: 3.5rem;
-  --text-heading-1--line-height: 1.1;
-  --text-heading-1--letter-spacing: -0.01em;
-  --text-heading-2: 2.75rem;
-  --text-heading-2--line-height: 1.2;
-  --text-heading-2--letter-spacing: -0.01em;
-  --text-heading-3: 2.25rem;
-  --text-heading-3--line-height: 1.2;
-  --text-heading-3--letter-spacing: -0.01em;
-  --text-heading-4: 1.75rem;
-  --text-heading-4--line-height: 1.25;
-  --text-heading-4--letter-spacing: -0.01em;
-  --text-heading-5: 1.5rem;
-  --text-heading-5--line-height: 1.3;
-  --text-heading-5--letter-spacing: -0.01em;
-  --text-heading-6: 1.25rem;
-  --text-heading-6--line-height: 1.2;
-  --text-heading-6--letter-spacing: -0.01em;
-  --text-body-lg: 1.125rem;
-  --text-body-lg--line-height: 1.5;
-  --text-body-base: 0.9375rem;
-  --text-body-base--line-height: 1.6;
-  --text-body-sm: 0.8125rem;
-  --text-body-sm--line-height: calc(1.25 / 0.8125);
-  --text-caption-lg: 0.75rem;
-  --text-caption-lg--line-height: 1.4;
-  --text-caption-base: 0.6875rem;
-  --text-caption-base--line-height: 1.4;
-  --text-caption-sm: 0.625rem;
-  --text-caption-sm--line-height: 1.4;
-  --text-code-sm: 0.8125rem;
-  --text-code-sm--line-height: calc(1.25 / 0.8125);
-  --text-code-xs: 0.75rem;
-  --text-code-xs--line-height: 1.4;
-
-  --ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  --ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+  --color-surface-1: var(--surface-1);
+  --color-surface-2: var(--surface-2);
+  --color-surface-3: var(--surface-3);
+  --color-surface-4: var(--surface-4);
+  --color-surface-5: var(--surface-5);
+  --color-surface-6: var(--surface-6);
+  --color-surface-7: var(--surface-7);
+  --color-surface-8: var(--surface-8);
+  --shadow-surface-1: var(--shadow-1);
+  --shadow-surface-2: var(--shadow-2);
+  --shadow-surface-3: var(--shadow-3);
+  --shadow-surface-4: var(--shadow-4);
+  --shadow-surface-5: var(--shadow-5);
+  --shadow-surface-6: var(--shadow-6);
+  --shadow-surface-7: var(--shadow-7);
+  --shadow-surface-8: var(--shadow-8);
+  --color-hover: var(--hover);
+  --color-active: var(--active);
+  --color-selected: var(--selected);
+  --color-destructive-light: var(--destructive-light);
+  --text-display: var(--fs-display);
+  --text-display--line-height: var(--lh-display);
+  --text-title: var(--fs-title);
+  --text-title--line-height: var(--lh-title);
+  --text-subtitle: var(--fs-subtitle);
+  --text-subtitle--line-height: var(--lh-subtitle);
+  --text-body: var(--fs-body);
+  --text-body--line-height: var(--lh-body);
+  --text-caption: var(--fs-caption);
+  --text-caption--line-height: var(--lh-caption);
+  --text-micro: var(--fs-micro);
+  --text-micro--line-height: var(--lh-micro);
   --ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
   --ease-in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1);
   /* Sheets: the drawer and its backdrop move on one curve. */
   --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+@keyframes spinner-move {
+  to {
+    stroke-dashoffset: -100;
+  }
+}
+@keyframes spinner-dash {
+  0%,
+  100% {
+    stroke-dasharray: 15 85;
+  }
+  50% {
+    stroke-dasharray: 40 60;
+  }
 }
 
 /*
@@ -306,7 +298,6 @@
     @apply bg-background font-sans;
     /* Keeps a focused control clear of the detail screen's sticky Comparação bar. */
     scroll-padding-bottom: 6rem;
-    font-feature-settings: "ss03";
   }
   /* No bounce or pull-to-refresh on the page, so an inner scroll can hand its swipe to the
      one around it without reloading the app. */
@@ -315,7 +306,7 @@
     overscroll-behavior: none;
   }
   body {
-    @apply bg-background text-body-sm text-foreground antialiased;
+    @apply bg-background text-body text-foreground antialiased;
   }
   /* A quick second tap on a control acts on it instead of zooming the page. */
   a,
@@ -323,5 +314,443 @@
   label,
   [role="button"] {
     touch-action: manipulation;
+  }
+  :focus-visible {
+    outline: 1px solid var(--focus-ring, #6b97ff);
+    outline-offset: 2px;
+    border-radius: var(--shape-input-radius, 8px);
+  }
+  a:focus-visible {
+    border-radius: 2px;
+  }
+}
+html.transitioning *,
+html.transitioning *::before,
+html.transitioning *::after {
+  transition:
+    border-radius 180ms ease-in-out,
+    background-color 180ms ease-in-out,
+    color 180ms ease-in-out,
+    border-color 180ms ease-in-out,
+    fill 180ms ease-in-out,
+    stroke 180ms ease-in-out !important;
+}
+
+@layer components {
+  :where(.typeset) {
+    --typeset-display: var(--fs-display, 28px);
+    --typeset-display-leading: var(--lh-display, 34px);
+    --typeset-title: var(--fs-title, 16px);
+    --typeset-title-leading: var(--lh-title, 22px);
+    --typeset-subtitle: var(--fs-subtitle, 14px);
+    --typeset-subtitle-leading: var(--lh-subtitle, 20px);
+    --typeset-body: var(--fs-body, 13px);
+    --typeset-body-leading: var(--lh-body, 20px);
+    --typeset-caption: var(--fs-caption, 12px);
+    --typeset-caption-leading: var(--lh-caption, 16px);
+    --typeset-space-block: 12px;
+    --typeset-space-heading: 8px;
+    --typeset-space-section: 24px;
+    --typeset-space-subsection: 20px;
+    --typeset-space-rule: 24px;
+    --typeset-space-item: 4px;
+    --typeset-check: 16px;
+    --typeset-check-radius: 5px;
+    --typeset-check-gap: 8px;
+    --typeset-indent: 24px;
+    --typeset-sub-indent: 20px;
+    font-size: var(--typeset-body);
+    line-height: var(--typeset-body-leading);
+    color: var(--muted-foreground, color-mix(in oklab, currentColor 65%, transparent));
+    overflow-wrap: break-word;
+    white-space: normal;
+  }
+  :where(.typeset.typeset-compact) {
+    --typeset-display: var(--fs-display-compact, 24px);
+    --typeset-display-leading: var(--lh-display-compact, 30px);
+    --typeset-title: var(--fs-title-compact, 15px);
+    --typeset-title-leading: var(--lh-title-compact, 20px);
+    --typeset-subtitle: var(--fs-subtitle-compact, 13px);
+    --typeset-subtitle-leading: var(--lh-subtitle-compact, 18px);
+    --typeset-body: var(--fs-body-compact, 12px);
+    --typeset-body-leading: var(--lh-body-compact, 18px);
+    --typeset-caption: var(--fs-caption-compact, 11px);
+    --typeset-caption-leading: var(--lh-caption-compact, 14px);
+    --typeset-space-block: 8px;
+    --typeset-space-heading: 4px;
+    --typeset-space-section: 16px;
+    --typeset-space-subsection: 12px;
+    --typeset-space-rule: 16px;
+    --typeset-space-item: 4px;
+    --typeset-check: 14px;
+    --typeset-check-radius: 4px;
+    --typeset-check-gap: 4px;
+    --typeset-indent: 18px;
+    --typeset-sub-indent: 16px;
+  }
+  :where(
+    .typeset p,
+    .typeset ul,
+    .typeset ol,
+    .typeset pre,
+    .typeset blockquote,
+    .typeset figure,
+    .typeset table,
+    .typeset .typeset-scroll,
+    .typeset .tableWrapper,
+    .typeset img,
+    .typeset video,
+    .typeset h1,
+    .typeset h2,
+    .typeset h3,
+    .typeset h4,
+    .typeset h5,
+    .typeset h6,
+    .typeset li
+  ):not(:where(.typeset .not-typeset, .typeset .not-typeset *)) {
+    margin: 0;
+  }
+  :where(
+    .typeset p,
+    .typeset li,
+    .typeset h1,
+    .typeset h2,
+    .typeset h3,
+    .typeset h4,
+    .typeset h5,
+    .typeset h6
+  ):not(:where(.typeset .not-typeset, .typeset .not-typeset *)) {
+    text-wrap-style: auto;
+  }
+  :where(
+    .typeset
+      *
+      + :is(
+        p,
+        ul,
+        ol,
+        pre,
+        blockquote,
+        figure,
+        table,
+        .typeset-scroll,
+        .tableWrapper,
+        img,
+        video,
+        .not-typeset
+      )
+  ):not(:where(.typeset .not-typeset *)) {
+    margin-top: var(--typeset-space-block);
+  }
+  :where(.typeset * + :is(h1, h2)):not(:where(.typeset .not-typeset, .typeset .not-typeset *)) {
+    margin-top: var(--typeset-space-section);
+  }
+  :where(.typeset * + :is(h3, h4, h5, h6)):not(
+    :where(.typeset .not-typeset, .typeset .not-typeset *)
+  ) {
+    margin-top: var(--typeset-space-subsection);
+  }
+  :where(.typeset :is(h1, h2, h3, h4, h5, h6) + *):not(:where(.typeset .not-typeset *)) {
+    margin-top: var(--typeset-space-heading);
+  }
+  :where(.typeset hr):not(:where(.typeset .not-typeset, .typeset .not-typeset *)) {
+    border: 0;
+    border-top: 1px solid var(--border, color-mix(in oklab, currentColor 14%, transparent));
+    margin-top: var(--typeset-space-rule);
+  }
+  :where(.typeset hr + *):not(:where(.typeset .not-typeset *)) {
+    margin-top: var(--typeset-space-rule);
+  }
+  :where(.typeset h1, .typeset h2, .typeset h3, .typeset h4, .typeset h5, .typeset h6):not(
+    :where(.typeset .not-typeset, .typeset .not-typeset *)
+  ) {
+    color: var(--foreground, currentColor);
+    font-variation-settings:
+      "wght" 550,
+      "opsz" 18;
+  }
+  :where(.typeset h1):not(:where(.typeset .not-typeset, .typeset .not-typeset *)) {
+    font-size: var(--typeset-display);
+    line-height: var(--typeset-display-leading);
+    font-variation-settings:
+      "wght" 700,
+      "opsz" 25;
+  }
+  :where(.typeset h2):not(:where(.typeset .not-typeset, .typeset .not-typeset *)) {
+    font-size: var(--typeset-title);
+    line-height: var(--typeset-title-leading);
+  }
+  :where(.typeset h3, .typeset h4, .typeset h5, .typeset h6):not(
+    :where(.typeset .not-typeset, .typeset .not-typeset *)
+  ) {
+    font-size: var(--typeset-subtitle);
+    line-height: var(--typeset-subtitle-leading);
+  }
+  :where(.typeset strong, .typeset b):not(:where(.typeset .not-typeset, .typeset .not-typeset *)) {
+    font-variation-settings:
+      "wght" 550,
+      "opsz" 18;
+  }
+  :where(.typeset a):not(:where(.typeset .not-typeset, .typeset .not-typeset *)) {
+    color: var(--foreground, currentColor);
+    text-decoration-line: underline;
+    text-decoration-color: color-mix(in oklab, currentColor 35%, transparent);
+    text-underline-offset: 0.2em;
+    transition: text-decoration-color 80ms ease-out;
+  }
+  :where(.typeset a:hover):not(:where(.typeset .not-typeset, .typeset .not-typeset *)) {
+    text-decoration-color: currentColor;
+  }
+  :where(.typeset ul, .typeset ol):not(:where(.typeset .not-typeset, .typeset .not-typeset *)) {
+    padding-left: calc(var(--typeset-indent) - 4px);
+  }
+  :where(.typeset li ul, .typeset li ol):not(
+    :where(.typeset .not-typeset, .typeset .not-typeset *)
+  ) {
+    padding-left: calc(var(--typeset-sub-indent) - 4px);
+  }
+  :where(.typeset li):not(:where(.typeset .not-typeset, .typeset .not-typeset *)) {
+    padding-left: 4px;
+  }
+  :where(.typeset ul):not(:where(.typeset .not-typeset, .typeset .not-typeset *)) {
+    list-style-type: disc;
+  }
+  :where(.typeset ol):not(:where(.typeset .not-typeset, .typeset .not-typeset *)) {
+    list-style-type: decimal;
+  }
+  :where(.typeset ol ol):not(:where(.typeset .not-typeset, .typeset .not-typeset *)) {
+    list-style-type: lower-alpha;
+  }
+  :where(.typeset ol ol ol):not(:where(.typeset .not-typeset, .typeset .not-typeset *)) {
+    list-style-type: lower-roman;
+  }
+  :where(.typeset ol ol ol ol):not(:where(.typeset .not-typeset, .typeset .not-typeset *)) {
+    list-style-type: decimal;
+  }
+  :where(.typeset ol ol ol ol ol):not(:where(.typeset .not-typeset, .typeset .not-typeset *)) {
+    list-style-type: lower-alpha;
+  }
+  :where(.typeset ol ol ol ol ol ol):not(:where(.typeset .not-typeset, .typeset .not-typeset *)) {
+    list-style-type: lower-roman;
+  }
+  :where(.typeset ul ul):not(:where(.typeset .not-typeset, .typeset .not-typeset *)) {
+    list-style-type: circle;
+  }
+  :where(.typeset li):not(:where(.typeset .not-typeset, .typeset .not-typeset *))::marker {
+    color: var(--muted-foreground, color-mix(in oklab, currentColor 65%, transparent));
+  }
+  :where(
+    .typeset li + li,
+    .typeset li > ul,
+    .typeset li > ol,
+    .typeset li > p + p,
+    .typeset li > div > ul,
+    .typeset li > div > ol,
+    .typeset li > div > p + p
+  ):not(:where(.typeset .not-typeset, .typeset .not-typeset *)) {
+    margin-top: var(--typeset-space-item);
+  }
+  :where(.typeset .contains-task-list, .typeset ul[data-type="taskList"]):not(
+    :where(.typeset .not-typeset, .typeset .not-typeset *)
+  ) {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  :where(.typeset .contains-task-list > li, .typeset ul[data-type="taskList"] > li):not(
+    :where(.typeset .not-typeset, .typeset .not-typeset *)
+  ) {
+    padding-left: 0;
+  }
+  :where(.typeset .contains-task-list .contains-task-list):not(
+    :where(.typeset .not-typeset, .typeset .not-typeset *)
+  ) {
+    padding-left: var(--typeset-sub-indent);
+  }
+  :where(.typeset ul[data-type="taskList"] > li > div > ul[data-type="taskList"]):not(
+    :where(.typeset .not-typeset, .typeset .not-typeset *)
+  ) {
+    margin-left: calc(var(--typeset-sub-indent) - var(--typeset-indent));
+  }
+  :where(.typeset .task-list-item > :is(ul, ol):not(.contains-task-list)):not(
+    :where(.typeset .not-typeset, .typeset .not-typeset *)
+  ) {
+    padding-left: calc(var(--typeset-indent) + var(--typeset-sub-indent) - 4px);
+  }
+  :where(.typeset input[type="checkbox"]):not(
+    :where(.typeset .not-typeset, .typeset .not-typeset *)
+  ) {
+    appearance: none;
+    position: relative;
+    margin: 0;
+    width: var(--typeset-check);
+    height: var(--typeset-check);
+    border: 1.5px solid var(--border, color-mix(in oklab, currentColor 14%, transparent));
+    border-radius: var(--typeset-check-radius);
+    background: none;
+    cursor: pointer;
+    transition: border-color 80ms ease-out;
+  }
+  :where(.typeset input[type="checkbox"]:not(:disabled):hover):not(
+    :where(.typeset .not-typeset, .typeset .not-typeset *)
+  ) {
+    border-color: color-mix(in oklab, var(--foreground, currentColor) 40%, transparent);
+  }
+  :where(.typeset input[type="checkbox"]:checked):not(
+    :where(.typeset .not-typeset, .typeset .not-typeset *)
+  ) {
+    border-color: transparent;
+  }
+  :where(.typeset input[type="checkbox"]:checked:not(:disabled):hover):not(
+    :where(.typeset .not-typeset, .typeset .not-typeset *)
+  ) {
+    border-color: color-mix(in oklab, var(--foreground, currentColor) 40%, transparent);
+  }
+  :where(.typeset input[type="checkbox"]:disabled):not(
+    :where(.typeset .not-typeset, .typeset .not-typeset *)
+  ) {
+    cursor: default;
+  }
+  :where(.typeset input[type="checkbox"]:checked):not(
+      :where(.typeset .not-typeset, .typeset .not-typeset *)
+    )::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: var(--foreground, currentColor);
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12L10 16L18 8'/%3E%3C/svg%3E")
+      center / calc(var(--typeset-check) + 2px) no-repeat;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12L10 16L18 8'/%3E%3C/svg%3E")
+      center / calc(var(--typeset-check) + 2px) no-repeat;
+  }
+  :where(.typeset .task-list-item input[type="checkbox"]):not(
+    :where(.typeset .not-typeset, .typeset .not-typeset *)
+  ) {
+    vertical-align: -0.25em;
+    margin-right: calc(var(--typeset-check-gap) - 4px);
+  }
+  :where(.typeset ul[data-type="taskList"] > li):not(
+    :where(.typeset .not-typeset, .typeset .not-typeset *)
+  ) {
+    display: flex;
+    gap: var(--typeset-check-gap);
+    align-items: flex-start;
+  }
+  :where(.typeset ul[data-type="taskList"] > li > label):not(
+    :where(.typeset .not-typeset, .typeset .not-typeset *)
+  ) {
+    flex: none;
+    display: flex;
+    align-items: center;
+    height: var(--typeset-body-leading);
+    user-select: none;
+  }
+  :where(.typeset ul[data-type="taskList"] > li > div):not(
+    :where(.typeset .not-typeset, .typeset .not-typeset *)
+  ) {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+  :where(.typeset ul[data-type="taskList"] > li[data-checked="true"] > div > :not(ul, ol)):not(
+    :where(.typeset .not-typeset, .typeset .not-typeset *)
+  ) {
+    color: var(--muted-foreground, color-mix(in oklab, currentColor 65%, transparent));
+    text-decoration-line: line-through;
+  }
+  :where(.typeset blockquote):not(:where(.typeset .not-typeset, .typeset .not-typeset *)) {
+    padding-left: 1em;
+    border-left: 2px solid var(--border, color-mix(in oklab, currentColor 14%, transparent));
+    color: var(--muted-foreground, color-mix(in oklab, currentColor 65%, transparent));
+  }
+  :where(.typeset code):not(:where(.typeset .not-typeset, .typeset .not-typeset *)) {
+    color: var(--foreground, currentColor);
+    font-size: var(--typeset-caption);
+    font-family: var(--font-mono, ui-monospace, SFMono-Regular, Menlo, monospace);
+  }
+  :where(.typeset :not(pre) > code):not(:where(.typeset .not-typeset, .typeset .not-typeset *)) {
+    background-color: color-mix(in oklab, currentColor 7%, transparent);
+    border-radius: 4px;
+    padding: 0.1em 0.3em;
+  }
+  :where(.typeset pre):not(:where(.typeset .not-typeset, .typeset .not-typeset *)) {
+    font-size: var(--typeset-caption);
+    line-height: var(--typeset-caption-leading);
+    background-color: color-mix(in oklab, currentColor 7%, transparent);
+    border-radius: 8px;
+    padding: 0.75em 1em;
+    overflow-x: auto;
+  }
+  :where(.typeset pre code):not(:where(.typeset .not-typeset, .typeset .not-typeset *)) {
+    font-size: 1em;
+    background: none;
+    padding: 0;
+  }
+  :where(.typeset kbd):not(:where(.typeset .not-typeset, .typeset .not-typeset *)) {
+    font-family: inherit;
+    font-size: var(--typeset-caption);
+    padding: 0.1em 0.35em;
+    border-radius: 4px;
+    border: 1px solid var(--border, color-mix(in oklab, currentColor 14%, transparent));
+    box-shadow: 0 1px 0 var(--border, color-mix(in oklab, currentColor 14%, transparent));
+  }
+  :where(.typeset :is(h1, h2, h3, h4, h5, h6) :is(code, kbd)):not(
+    :where(.typeset .not-typeset, .typeset .not-typeset *)
+  ) {
+    font-size: round(nearest, 0.875em, 1px);
+  }
+  :where(.typeset table):not(:where(.typeset .not-typeset, .typeset .not-typeset *)) {
+    width: 100%;
+    border-collapse: collapse;
+    font-variant-numeric: tabular-nums;
+  }
+  :where(.typeset th, .typeset td):not(:where(.typeset .not-typeset, .typeset .not-typeset *)) {
+    text-align: left;
+    vertical-align: top;
+    padding: 0.5em 0.75em;
+    border-bottom: 1px solid var(--border, color-mix(in oklab, currentColor 14%, transparent));
+  }
+  :where(.typeset th:first-child, .typeset td:first-child):not(
+    :where(.typeset .not-typeset, .typeset .not-typeset *)
+  ) {
+    padding-left: 0;
+  }
+  :where(.typeset th):not(:where(.typeset .not-typeset, .typeset .not-typeset *)) {
+    color: var(--foreground, currentColor);
+    font-variation-settings:
+      "wght" 550,
+      "opsz" 18;
+  }
+  :where(.typeset .typeset-scroll, .typeset .tableWrapper):not(
+    :where(.typeset .not-typeset, .typeset .not-typeset *)
+  ) {
+    overflow-x: auto;
+  }
+  :where(.typeset .typeset-scroll > table, .typeset .tableWrapper > table):not(
+    :where(.typeset .not-typeset, .typeset .not-typeset *)
+  ) {
+    min-width: max-content;
+  }
+  :where(.typeset img, .typeset video):not(:where(.typeset .not-typeset, .typeset .not-typeset *)) {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  :where(.typeset figcaption):not(:where(.typeset .not-typeset, .typeset .not-typeset *)) {
+    margin-top: var(--typeset-space-heading);
+    font-size: var(--typeset-caption);
+    line-height: var(--typeset-caption-leading);
+    color: var(--muted-foreground, color-mix(in oklab, currentColor 65%, transparent));
+  }
+
+  @media (forced-colors: active) {
+    :where(.typeset input[type="checkbox"]):not(
+      :where(.typeset .not-typeset, .typeset .not-typeset *)
+    ) {
+      appearance: auto;
+    }
+    :where(.typeset input[type="checkbox"]:checked):not(
+        :where(.typeset .not-typeset, .typeset .not-typeset *)
+      )::before {
+      display: none;
+    }
   }
 }
