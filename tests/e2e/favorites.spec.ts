@@ -23,7 +23,8 @@ function storedFavorites(page: Page): Promise<unknown> {
   return page.evaluate((key) => JSON.parse(localStorage.getItem(key) ?? "null"), storageKey);
 }
 
-test("a row's star marks the Produto as a Favorito, and Só favoritos keeps only those, with the busca, across a reload", async ({
+test("a row's star marks the Produto as a Favorito, and Só favoritos keeps only those, with the busca, across an offline reload", async ({
+  context,
   page,
 }) => {
   await page.goto("/mouse");
@@ -46,6 +47,11 @@ test("a row's star marks the Produto as a Favorito, and Só favoritos keeps only
   await page.getByRole("searchbox", { name: "Buscar por produto ou fabricante" }).fill("huan");
   await expect.poll(() => productNames(page)).toEqual(["Huan"]);
 
+  // Once the service worker controls the page, the app and the Favoritos open without a network.
+  await expect
+    .poll(() => page.evaluate(() => navigator.serviceWorker.controller?.state ?? "none"))
+    .toBe("activated");
+  await context.setOffline(true);
   await page.reload();
   await expect(onlyFavoritesToggle(page)).toHaveAttribute("aria-pressed", "true");
   await expect.poll(() => productNames(page)).toEqual(["Huan"]);
