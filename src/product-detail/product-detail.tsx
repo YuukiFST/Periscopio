@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Check, ExternalLink, GitCompareArrows, Plus } from "lucide-react";
+import { Check, ExternalLink, GitCompareArrows, Plus, Star } from "lucide-react";
 import { useEffect, useRef, type ReactNode, type RefObject } from "react";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { DrawerTitle } from "@/components/ui/drawer";
@@ -12,6 +12,7 @@ import {
   type ProductFieldGroup,
 } from "@/product-fields/field-groups";
 import { formatPrice, priceOf } from "@/product-table/cell-values";
+import { useFavoriteIds } from "@/product-table/favorite-products";
 import { PriceInReais } from "@/product-table/table-cells";
 import { cn } from "@/lib/utils";
 import { CompareBar, compareStatusId } from "@/product-compare/compare-bar";
@@ -150,6 +151,7 @@ function ProductHeader({
             onToggle={() => onComparedIdsChange(toggleComparedId(comparedIds, product.id))}
           />
           <CompareSimilarLink data={data} product={product} />
+          <FavoriteToggleButton data={data} product={product} />
         </div>
       </div>
     </header>
@@ -184,6 +186,28 @@ function CompareToggleButton({
     >
       <Plus aria-hidden="true" data-icon="inline-start" />
       Adicionar à comparação
+    </Button>
+  );
+}
+
+/** The detail's star for the Favoritos, in step with the table's. */
+function FavoriteToggleButton({ data, product }: { data: CategoryData; product: Product }) {
+  const [favoriteIds, toggleFavorite] = useFavoriteIds(data.category);
+  const isFavorite = favoriteIds.has(product.id);
+  return (
+    <Button
+      variant="outline"
+      size="lg"
+      aria-pressed={isFavorite}
+      aria-label={isFavorite ? "Remover dos favoritos" : `Favoritar ${product.name}`}
+      onClick={() => toggleFavorite(product.id)}
+    >
+      <Star
+        aria-hidden="true"
+        data-icon="inline-start"
+        className={isFavorite ? "fill-current text-brand-fg" : undefined}
+      />
+      {isFavorite ? "Remover dos favoritos" : "Favoritar"}
     </Button>
   );
 }

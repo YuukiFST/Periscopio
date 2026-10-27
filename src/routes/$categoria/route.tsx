@@ -40,6 +40,7 @@ import { filterSearchOf, filterValuesFromSearch } from "@/product-filters/filter
 import { FilterPanel } from "@/product-filters/filter-panel";
 import {
   defaultTestStatus,
+  filterFavoriteProducts,
   filterProducts,
   type TestStatusFilter,
 } from "@/product-table/product-filter";
@@ -50,6 +51,7 @@ import { countNovidadesSince, filterNovidades, novidadeOf } from "@/product-tabl
 import { ProductTable } from "@/product-table/product-table";
 import { ColumnsMenu } from "@/product-table/columns-menu";
 import { useStoredColumns } from "@/product-table/stored-columns";
+import { useFavoriteIds } from "@/product-table/favorite-products";
 import {
   columnKeysFromParam,
   columnsParamOf,
@@ -108,8 +110,10 @@ function emptyResultText(
   searchText: string,
   status: TestStatusFilter,
   hasFilters: boolean,
+  onlyFavorites: boolean,
 ): string {
-  const kind = status === "todos" ? "Nenhum produto" : `Nenhum produto ${statusAdjective[status]}`;
+  const noun = onlyFavorites ? "Nenhum produto favorito" : "Nenhum produto";
+  const kind = status === "todos" ? noun : `${noun} ${statusAdjective[status]}`;
   if (searchText && hasFilters) return `${kind} encontrado para “${searchText}” com esses filtros.`;
   if (searchText) return `${kind} encontrado para “${searchText}”.`;
   return hasFilters ? `${kind} com esses filtros.` : `${kind} nesta categoria.`;
@@ -121,7 +125,7 @@ const filtersHeadingId = "filtros-titulo";
 function CategoryTable({ data }: { data: CategoryData }) {
   const meta = rootRoute.useLoaderData();
   const search = Route.useSearch();
-  const { ordem, q, cmp, novidades, col } = search;
+  const { ordem, q, cmp, novidades, favoritos, col } = search;
   const status = search.status ?? defaultTestStatus;
   // Every call resolves from the current URL (`unsafeRelative: "path"`), not from this route,
   // so a change of Filtro, ordem or busca keeps a Produto's panel open.
@@ -133,6 +137,7 @@ function CategoryTable({ data }: { data: CategoryData }) {
   );
   const comparedIds = useMemo(() => comparedIdsFromParam(cmp, productIds), [cmp, productIds]);
   const changeComparedIds = useChangeComparedIds(data.category);
+  const [favoriteIds, toggleFavorite] = useFavoriteIds(data.category);
 
   const filters = useMemo(() => categoryFiltersFor(data), [data]);
   const filterValues = useMemo(() => filterValuesFromSearch(filters, search), [filters, search]);
@@ -191,8 +196,19 @@ function CategoryTable({ data }: { data: CategoryData }) {
       status,
       deferredSearchText,
     );
-    return novidades ? filterNovidades(filtered, meta.updatedAt) : filtered;
-  }, [data.products, filters, filterValues, status, deferredSearchText, novidades, meta.updatedAt]);
+    const shown = novidades ? filterNovidades(filtered, meta.updatedAt) : filtered;
+    return favoritos ? filterFavoriteProducts(shown, favoriteIds) : shown;
+  }, [
+    data.products,
+    filters,
+    filterValues,
+    status,
+    deferredSearchText,
+    novidades,
+    meta.updatedAt,
+    favoritos,
+    favoriteIds,
+  ]);
   const hasNovidades = useMemo(
     () => data.products.some((product) => novidadeOf(product, meta.updatedAt) !== undefined),
     [data.products, meta.updatedAt],
@@ -214,12 +230,25 @@ function CategoryTable({ data }: { data: CategoryData }) {
     });
   }
 
+  function changeFavoritos(pressed: boolean) {
+    void navigate({
+      unsafeRelative: "path",
+      search: (previous) => ({ ...previous, favoritos: pressed ? "1" : undefined }),
+      replace: true,
+    });
+  }
+
   function showNovidades() {
     markUpdateSeen();
     // The notice counts untested Produtos too, so every Status de teste shows.
     void navigate({
       unsafeRelative: "path",
-      search: (previous) => ({ ...previous, novidades: "1", status: "todos" }),
+      search: (previous) => ({
+        ...previous,
+        novidades: "1",
+        status: "todos",
+        favoritos: undefined,
+      }),
       replace: true,
     });
     // The notice goes away; focus moves to the toggle it just turned on.
@@ -259,6 +288,7 @@ function CategoryTable({ data }: { data: CategoryData }) {
         q: undefined,
         status: "todos",
         novidades: undefined,
+        favoritos: undefined,
       }),
       replace: true,
     });
@@ -356,6 +386,7 @@ function CategoryTable({ data }: { data: CategoryData }) {
                 ? { pressed: novidades === "1", onPressedChange: changeNovidades }
                 : undefined
             }
+            favorites={{ pressed: favoritos === "1", onPressedChange: changeFavoritos }}
             countText={resultCountText(products.length, data.products.length)}
           >
             <FilterDrawer
@@ -393,6 +424,7 @@ function CategoryTable({ data }: { data: CategoryData }) {
                   deferredSearchText.trim(),
                   status,
                   filterCount > 0 || novidades === "1",
+                  favoritos === "1",
                 )}
               </p>
               <Button variant="outline" size="lg" onClick={showAllProducts}>
@@ -409,11 +441,15 @@ function CategoryTable({ data }: { data: CategoryData }) {
                 status,
                 deferredSearchText,
                 novidades,
+                favoritos,
                 ...Object.values(filterSearch),
               ].join("|")}
               labelledBy={headingId}
               comparedIds={comparedIds}
               onComparedToggle={(id) => changeComparedIds(toggleComparedId(comparedIds, id))}
+              favoriteIds={favoriteIds}
+              onFavoriteToggle={toggleFavorite}
+              favoritesOnly={favoritos === "1"}
               onSortClick={(slug) =>
                 void navigate({
                   unsafeRelative: "path",

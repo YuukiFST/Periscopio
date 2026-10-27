@@ -89,3 +89,7 @@ _Avoid_: scatter, dispersão, plot
 **Melhor relação**:
 Um Produto do Gráfico sem outro ao menos tão bom nos dois eixos e melhor em um, pelo lado melhor de cada coluna.
 _Avoid_: fronteira de Pareto, custo-benefício, trade-off
+
+**Favorito**:
+Um Produto que o usuário marcou com a estrela, guardado neste aparelho para a Categoria e mostrado sozinho pelo "Só favoritos" da tabela.
+_Avoid_: favorite, salvo, lista

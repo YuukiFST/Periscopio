@@ -26,6 +26,7 @@ import { cn } from "@/lib/utils";
 import { CompareCheckbox } from "@/product-compare/compare-checkbox";
 import { compareSortValues, isCountEnum, sortValueOf } from "./cell-values";
 import { ProductCell, productCellLabelIds, TableCellValue } from "./table-cells";
+import { favoritesToggleId } from "./table-toolbar";
 import type { SortEntry, TableColumn } from "./table-columns";
 
 /** The shortest row per density; rows with long names or values grow and are measured. */
@@ -77,6 +78,11 @@ type ProductTableProps = {
   /** The Produtos marked for the Comparação, at most 4. */
   comparedIds: readonly string[];
   onComparedToggle: (id: string) => void;
+  /** The Categoria's Favoritos on this device. */
+  favoriteIds: ReadonlySet<string>;
+  onFavoriteToggle: (id: string) => void;
+  /** "Só favoritos" is on, so an unstarred row leaves the table. */
+  favoritesOnly: boolean;
 };
 
 export function ProductTable({
@@ -88,6 +94,9 @@ export function ProductTable({
   onSortClick,
   comparedIds,
   onComparedToggle,
+  favoriteIds,
+  onFavoriteToggle,
+  favoritesOnly,
 }: ProductTableProps) {
   const tableColumns = useMemo(
     () =>
@@ -149,6 +158,25 @@ export function ProductTable({
     toggleRef.current = onComparedToggle;
   });
   const handleComparedToggle = useCallback((id: string) => toggleRef.current(id), []);
+  const favoriteToggleRef = useRef(onFavoriteToggle);
+  useLayoutEffect(() => {
+    favoriteToggleRef.current = (id) => {
+      // An unstarred row unmounts with its focused star: focus moves to the next row's star,
+      // else the previous one's, else to the toggle that hid the row.
+      if (favoritesOnly && favoriteIds.has(id)) {
+        const index = rows.findIndex((row) => row.id === id);
+        const neighborId = (rows[index + 1] ?? rows[index - 1])?.id;
+        const neighborStar = neighborId
+          ? scrollRef.current?.querySelector<HTMLElement>(
+              `tr[data-row-id="${neighborId}"] button[aria-pressed]`,
+            )
+          : undefined;
+        (neighborStar ?? document.getElementById(favoritesToggleId))?.focus();
+      }
+      onFavoriteToggle(id);
+    };
+  });
+  const handleFavoriteToggle = useCallback((id: string) => favoriteToggleRef.current(id), []);
 
   const [density] = useTableDensity();
   const rowHeight = rowHeights[density];
@@ -184,8 +212,13 @@ export function ProductTable({
       event.preventDefault();
       const nextIndex = Number(row.getAttribute("data-index")) + step;
       if (nextIndex < 0 || nextIndex >= rows.length) return;
-      // The same control of the next row: the Comparação mark, else the Produto's link.
-      const target = event.target instanceof HTMLInputElement ? "input" : "a[href]";
+      // The same control of the next row: the Comparação mark, the star, else the Produto's link.
+      const target =
+        event.target instanceof HTMLInputElement
+          ? "input"
+          : event.target instanceof HTMLButtonElement
+            ? "button[aria-pressed]"
+            : "a[href]";
       event.currentTarget
         .querySelector<HTMLElement>(`tr[data-index="${nextIndex}"] ${target}`)
         ?.focus();
@@ -198,8 +231,11 @@ export function ProductTable({
       row.querySelector<HTMLInputElement>('input[type="checkbox"]')?.click();
       return;
     }
-    // On a link, Enter follows it already.
-    if (event.key === "Enter" && !(event.target instanceof HTMLAnchorElement)) {
+    // On a link, Enter follows it already; on the star, it stars.
+    if (
+      event.key === "Enter" &&
+      !(event.target instanceof HTMLAnchorElement || event.target instanceof HTMLButtonElement)
+    ) {
       event.preventDefault();
       row.querySelector<HTMLAnchorElement>("a[href]")?.click();
     }
@@ -304,6 +340,8 @@ export function ProductTable({
                   checked={comparedIds.includes(product.id)}
                   comparedCount={comparedIds.length}
                   onComparedToggle={handleComparedToggle}
+                  isFavorite={favoriteIds.has(product.id)}
+                  onFavoriteToggle={handleFavoriteToggle}
                   measureRef={virtualizer.measureElement}
                   density={density}
                 />,
@@ -328,6 +366,8 @@ type ProductRowProps = {
   checked: boolean;
   comparedCount: number;
   onComparedToggle: (id: string) => void;
+  isFavorite: boolean;
+  onFavoriteToggle: (id: string) => void;
   measureRef: (row: HTMLTableRowElement | null) => void;
   density: TableDensity;
 };
@@ -343,6 +383,8 @@ const ProductRow = memo(function ProductRow({
   checked,
   comparedCount,
   onComparedToggle,
+  isFavorite,
+  onFavoriteToggle,
   measureRef,
   density,
 }: ProductRowProps) {
@@ -374,7 +416,11 @@ const ProductRow = memo(function ProductRow({
               cellPadding,
             )}
           >
-            <ProductCell product={product} density={density} />
+            <ProductCell
+              product={product}
+              density={density}
+              favorite={{ isFavorite, onToggle: () => onFavoriteToggle(product.id) }}
+            />
           </th>
         ) : (
           <td

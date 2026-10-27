@@ -88,7 +88,11 @@ test("the Compacta density shortens the table rows and photos, and survives a re
 }) => {
   await page.goto("/mouse");
   await expect(page.getByRole("rowheader").first()).toBeVisible();
-  const firstPhoto = page.getByRole("rowheader").first().locator("img, [aria-hidden=true]").first();
+  const firstPhoto = page
+    .getByRole("rowheader")
+    .first()
+    .locator("img, [aria-hidden=true]:not(button *)")
+    .first();
   expect(await shortestRowHeight(page)).toBe(60);
   await expect(firstPhoto).toHaveCSS("width", "40px");
 

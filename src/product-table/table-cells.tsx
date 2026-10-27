@@ -1,9 +1,11 @@
 import { getRouteApi, Link } from "@tanstack/react-router";
+import { Star } from "lucide-react";
 import type { ReactNode } from "react";
 import type { TableDensity } from "@/appearance/appearance";
 import type { Product } from "@/data/schema";
 import { manufacturerName } from "@/i18n/labels";
 import { productFieldValue } from "@/product-fields/field-groups";
+import { cn } from "@/lib/utils";
 import { ProductPhoto } from "@/product-photo/product-photo";
 import {
   formatDeviation,
@@ -68,20 +70,61 @@ function NovidadeBadge({ product }: { product: Product }) {
 }
 
 /**
+ * A row's star for the Favoritos, above the cell's link. Starred, it says
+ * "Remover dos favoritos" and points at the Produto's name for the rest.
+ */
+function FavoriteStar({
+  product,
+  isFavorite,
+  onToggle,
+}: {
+  product: Product;
+  isFavorite: boolean;
+  onToggle: () => void;
+}) {
+  return (
+    <button
+      type="button"
+      aria-pressed={isFavorite}
+      aria-label={isFavorite ? "Remover dos favoritos" : `Favoritar ${product.name}`}
+      aria-describedby={isFavorite ? `produto-${product.id}` : undefined}
+      onClick={onToggle}
+      className="relative z-10 -ms-1 grid size-6 shrink-0 place-items-center rounded-md text-fg-tertiary hover:text-fg-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring active:bg-component-hover aria-pressed:text-brand-fg sm:size-7"
+    >
+      <Star
+        aria-hidden="true"
+        strokeWidth={1.5}
+        className={cn("size-4", isFavorite && "fill-current")}
+      />
+    </button>
+  );
+}
+
+/**
  * The whole cell opens the detail screen; a Produto with the Link AliExpress
  * shows its name in blue as that link, above the cell's.
  */
 export function ProductCell({
   product,
   density = "confortavel",
+  favorite,
 }: {
   product: Product;
   density?: TableDensity;
+  /** The row's star; absent, the cell has none. */
+  favorite?: { isFavorite: boolean; onToggle: () => void };
 }) {
   const manufacturer = manufacturerName(product.manufacturer);
   const name = <span id={`produto-${product.id}`}>{product.name}</span>;
   return (
     <div className="group/cell flex items-start gap-2 sm:gap-3">
+      {favorite && (
+        <FavoriteStar
+          product={product}
+          isFavorite={favorite.isFavorite}
+          onToggle={favorite.onToggle}
+        />
+      )}
       {/* The table's search params ride along, so the detail screen can lead back to this view. */}
       <Link
         from="/$categoria"
