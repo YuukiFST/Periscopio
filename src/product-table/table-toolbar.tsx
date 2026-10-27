@@ -69,6 +69,14 @@ export function TableToolbar({
           maxLength={searchTextMaxLength}
           value={searchText}
           onChange={(event) => onSearchTextChange(event.target.value)}
+          // Chromium clears a search box on Escape by itself; Firefox keeps the text.
+          onKeyDown={(event) => {
+            // An Escape that cancels a pending accent or IME text keeps the search.
+            if (event.key !== "Escape" || event.nativeEvent.isComposing || searchText === "")
+              return;
+            event.preventDefault();
+            onSearchTextChange("");
+          }}
           className="h-9 ps-8"
         />
       </div>

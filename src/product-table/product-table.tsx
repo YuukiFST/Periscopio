@@ -16,10 +16,12 @@ import {
   useRef,
   useState,
   type FocusEvent,
+  type KeyboardEvent,
 } from "react";
 import { useTableDensity, type TableDensity } from "@/appearance/appearance";
 import type { Product } from "@/data/schema";
 import { fieldLabel } from "@/i18n/labels";
+import { isSingleKeyShortcut } from "@/keyboard-shortcuts/page-shortcuts";
 import { cn } from "@/lib/utils";
 import { CompareCheckbox } from "@/product-compare/compare-checkbox";
 import { compareSortValues, isCountEnum, sortValueOf } from "./cell-values";
@@ -28,6 +30,8 @@ import type { SortEntry, TableColumn } from "./table-columns";
 
 /** The shortest row per density; rows with long names or values grow and are measured. */
 const rowHeights: Record<TableDensity, number> = { confortavel: 60, compacta: 48 };
+
+const rowSteps: Record<string, number> = { j: 1, ArrowDown: 1, k: -1, ArrowUp: -1 };
 
 const features = tableFeatures({ rowSortingFeature, sortedRowModel: createSortedRowModel() });
 const columnHelper = createColumnHelper<typeof features, Product>();
@@ -167,6 +171,40 @@ export function ProductTable({
     virtualizer.measure();
   }, [virtualizer, density]);
 
+  // The rows before and after the focused one stay mounted, so the next row is there to focus,
+  // and focus scrolls it into view past the sticky header (`scroll-pt-21`).
+  const handleRowKeyDown = (event: KeyboardEvent<HTMLTableSectionElement>) => {
+    if (!isSingleKeyShortcut(event.nativeEvent) || !(event.target instanceof Element)) return;
+    const row = event.target.closest("tr[data-row-id]");
+    if (!row) return;
+    // With Caps Lock on, the letter keys still work.
+    const key = event.key.length === 1 ? event.key.toLowerCase() : event.key;
+    const step = rowSteps[key];
+    if (step !== undefined) {
+      event.preventDefault();
+      const nextIndex = Number(row.getAttribute("data-index")) + step;
+      if (nextIndex < 0 || nextIndex >= rows.length) return;
+      // The same control of the next row: the Comparação mark, else the Produto's link.
+      const target = event.target instanceof HTMLInputElement ? "input" : "a[href]";
+      event.currentTarget
+        .querySelector<HTMLElement>(`tr[data-index="${nextIndex}"] ${target}`)
+        ?.focus();
+      return;
+    }
+    if (key === "c") {
+      event.preventDefault();
+      // Held down, the mark flips once, as a click does.
+      if (event.repeat) return;
+      row.querySelector<HTMLInputElement>('input[type="checkbox"]')?.click();
+      return;
+    }
+    // On a link, Enter follows it already.
+    if (event.key === "Enter" && !(event.target instanceof HTMLAnchorElement)) {
+      event.preventDefault();
+      row.querySelector<HTMLAnchorElement>("a[href]")?.click();
+    }
+  };
+
   const virtualRows = virtualizer.getVirtualItems();
   const fixedWidth = columns.reduce((total, column) => total + columnWidth(column), 0);
   const primarySort = sorting[0];
@@ -249,7 +287,7 @@ export function ProductTable({
               })}
             </tr>
           </thead>
-          <tbody onFocus={handleRowFocus} onBlur={handleRowBlur}>
+          <tbody onFocus={handleRowFocus} onBlur={handleRowBlur} onKeyDown={handleRowKeyDown}>
             {virtualRows.flatMap((virtualRow, position) => {
               const row = rows[virtualRow.index];
               if (!row) return [];
