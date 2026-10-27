@@ -33,3 +33,11 @@ export function filterProducts(
     return words.every((word) => haystack.includes(word));
   });
 }
+
+/** The Produtos starred as Favoritos, for the "Só favoritos" toggle. */
+export function filterFavoriteProducts(
+  products: Product[],
+  favoriteIds: ReadonlySet<string>,
+): Product[] {
+  return products.filter((product) => favoriteIds.has(product.id));
+}

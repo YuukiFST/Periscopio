@@ -12,6 +12,7 @@ const categorySearchSchema = z.object({
   q: z.string().max(searchTextMaxLength).optional().catch(undefined),
   cmp: compareParamSchema,
   novidades: z.literal("1").optional().catch(undefined),
+  favoritos: z.literal("1").optional().catch(undefined),
   // Unknown keys are dropped later, one by one, against the Categoria's fields.
   col: z.string().optional().catch(undefined),
 });
