@@ -41,9 +41,9 @@ export function ShortcutsDialog() {
       <Dialog.Portal>
         <Dialog.Backdrop className="fixed inset-0 z-50 bg-black/10 transition-opacity dark:bg-black/50 duration-150 data-ending-style:opacity-0 data-starting-style:opacity-0" />
         <Dialog.Viewport className="fixed inset-0 z-50 flex items-start justify-center px-2 pt-[min(12dvh,6rem)] pb-2">
-          <Dialog.Popup className="flex max-h-full w-full max-w-md flex-col overflow-hidden rounded-2xl bg-popover text-popover-foreground shadow-large transition-[opacity,scale] duration-150 ease-out-quint outline-none data-ending-style:scale-[0.98] data-ending-style:opacity-0 data-starting-style:scale-[0.98] data-starting-style:opacity-0 motion-reduce:data-ending-style:scale-100 motion-reduce:data-starting-style:scale-100">
+          <Dialog.Popup className="flex max-h-full w-full max-w-md flex-col overflow-hidden rounded-2xl bg-popover text-popover-foreground shadow-surface-5 transition-[opacity,scale] duration-150 ease-out-quint outline-none data-ending-style:scale-[0.98] data-ending-style:opacity-0 data-starting-style:scale-[0.98] data-starting-style:opacity-0 motion-reduce:data-ending-style:scale-100 motion-reduce:data-starting-style:scale-100">
             <div className="flex items-center justify-between gap-2 border-b border-border ps-4">
-              <Dialog.Title className="font-serif text-heading-6 font-medium">
+              <Dialog.Title className="text-title font-medium">
                 Atalhos de teclado
               </Dialog.Title>
               <Dialog.Close
@@ -53,18 +53,18 @@ export function ShortcutsDialog() {
                 <X aria-hidden="true" />
               </Dialog.Close>
             </div>
-            <dl className="min-h-0 overflow-y-auto overscroll-contain px-4 py-2 text-body-sm">
+            <dl className="min-h-0 overflow-y-auto overscroll-contain px-4 py-2 text-body">
               {shortcutEntries.map((entry) => (
                 <div
                   key={entry.action}
-                  className="flex items-baseline justify-between gap-4 border-b border-border-subtle py-2 last:border-b-0"
+                  className="flex items-baseline justify-between gap-4 border-b border-border/60 py-2 last:border-b-0"
                 >
                   <dt>{entry.action}</dt>
-                  <dd className="flex shrink-0 items-baseline gap-1 text-fg-tertiary">
+                  <dd className="flex shrink-0 items-baseline gap-1 text-muted-foreground/70">
                     {entry.keys.map((key, index) => (
                       <Fragment key={key}>
                         {index > 0 && " ou "}
-                        <kbd className="rounded-sm border border-border px-1 font-sans text-caption-lg text-fg-secondary">
+                        <kbd className="rounded-sm border border-border px-1 font-sans text-caption text-muted-foreground">
                           {key}
                         </kbd>
                       </Fragment>

@@ -153,7 +153,7 @@ export function ComparisonTable({
       >
         <table
           aria-labelledby={labelledBy}
-          className="table-fixed border-separate border-spacing-0 text-body-sm"
+          className="table-fixed border-separate border-spacing-0 text-body"
           style={{
             width: `calc(var(--label-column) + ${columnCount} * var(--product-column))`,
             minWidth: "100%",
@@ -172,7 +172,7 @@ export function ComparisonTable({
             className="[&_*]:scroll-mt-[calc(var(--header-height)*-1)] group-data-[header-tall=true]/scroller:[&_*]:scroll-mt-0"
           >
             <tr>
-              <td className="sticky start-0 top-0 z-30 border-e border-b border-border bg-page p-2 align-bottom text-caption-lg text-pretty text-fg-secondary sm:p-3 group-data-[header-tall=true]/scroller:top-auto">
+              <td className="sticky start-0 top-0 z-30 border-e border-b border-border bg-background p-2 align-bottom text-caption text-pretty text-muted-foreground sm:p-3 group-data-[header-tall=true]/scroller:top-auto">
                 O preço fica de fora da comparação porque preços mudam, e o EyeJoker não registra o
                 preço da sua região.
               </td>
@@ -213,12 +213,12 @@ export function ComparisonTable({
                 <GroupHeaderRow headingId={headingId} title={group.title} columnCount={columnCount}>
                   <Button
                     variant="ghost"
-                    size="sm"
+                    size="compact"
                     aria-expanded={isUnfolded}
                     aria-controls={rowsId}
                     aria-describedby={headingId}
                     onClick={() => setIsUnfolded(!isUnfolded)}
-                    className="font-sans text-fg-secondary pointer-coarse:h-10"
+                    className="font-sans text-muted-foreground pointer-coarse:h-10"
                   >
                     {isUnfolded ? "Ocultar" : `Mostrar (${group.fields.length})`}
                     <ChevronDown
@@ -242,7 +242,7 @@ export function ComparisonTable({
               <tr>
                 <td
                   colSpan={columnCount + 1}
-                  className="px-2 py-3 text-pretty text-fg-secondary sm:px-3"
+                  className="px-2 py-3 text-pretty text-muted-foreground sm:px-3"
                 >
                   <span className="sticky start-2 block max-w-[calc(100cqw-1rem)] sm:start-3 sm:max-w-[calc(100cqw-1.5rem)]">
                     O EyeJoker ainda não publicou medições destes produtos.
@@ -281,7 +281,7 @@ function ProductColumnHeader({
         if (!(event.target instanceof Node) || !event.currentTarget.contains(event.target)) return;
         event.currentTarget.scrollIntoView({ block: "nearest", inline: "start" });
       }}
-      className="sticky top-0 z-20 snap-start border-b border-border bg-page px-1.5 py-2 text-start align-top font-normal min-[22rem]:px-2 sm:px-3 sm:py-3 group-data-[header-tall=true]/scroller:top-auto"
+      className="sticky top-0 z-20 snap-start border-b border-border bg-background px-1.5 py-2 text-start align-top font-normal min-[22rem]:px-2 sm:px-3 sm:py-3 group-data-[header-tall=true]/scroller:top-auto"
     >
       <div className="flex flex-col items-start gap-2">
         {/* Below 21rem of table the photo and the remove button no longer fit side by side; the name stays. */}
@@ -289,7 +289,7 @@ function ProductColumnHeader({
           <ProductPhoto key={product.image} src={product.image} alt="" size="compare" />
         </div>
         <div className="min-w-0">
-          <p className="leading-[1.4] font-medium wrap-anywhere text-fg-primary">
+          <p className="leading-[1.4] font-medium wrap-anywhere text-foreground">
             <Link
               to="/$categoria/$id"
               params={{ categoria: category, id: product.id }}
@@ -299,7 +299,7 @@ function ProductColumnHeader({
               {product.name}
             </Link>
           </p>
-          <p className="text-caption-lg wrap-anywhere text-fg-secondary">
+          <p className="text-caption wrap-anywhere text-muted-foreground">
             {manufacturerName(product.manufacturer)}
           </p>
         </div>
@@ -309,7 +309,7 @@ function ProductColumnHeader({
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`${product.name} no AliExpress (abre em nova aba)`}
-            className="-my-1 inline-flex min-h-8 max-w-full pointer-coarse:min-h-10 flex-wrap items-center gap-1 font-medium wrap-anywhere text-brand-fg underline-offset-4 hover:underline active:underline"
+            className="-my-1 inline-flex min-h-8 max-w-full pointer-coarse:min-h-10 flex-wrap items-center gap-1 font-medium wrap-anywhere text-blue-600 dark:text-blue-400 underline-offset-4 hover:underline active:underline"
           >
             Ali{"\u00AD"}Express
             <ExternalLink aria-hidden="true" className="size-3.5 shrink-0" />
@@ -320,10 +320,10 @@ function ProductColumnHeader({
       {/* Last in the tab order, after the Produto's own links; shown right by its own photo. */}
       <Button
         variant="ghost"
-        size="icon-lg"
+        size="icon"
         onClick={onRemove}
         aria-label={`Remover ${product.name} da comparação`}
-        className="absolute start-15 top-3.5 text-fg-secondary hover:text-fg-primary @max-[21rem]:static @max-[21rem]:mt-1 @max-[21rem]:-ms-2.5 sm:start-20 sm:top-6.5"
+        className="absolute start-15 top-3.5 text-muted-foreground hover:text-foreground @max-[21rem]:static @max-[21rem]:mt-1 @max-[21rem]:-ms-2.5 sm:start-20 sm:top-6.5"
       >
         <X aria-hidden="true" />
       </Button>

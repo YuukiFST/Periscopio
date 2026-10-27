@@ -85,15 +85,10 @@ export function CopyLinkButton() {
     <div ref={rootRef} className="relative">
       <Button
         ref={buttonRef}
-        variant="outline"
-        size="lg"
+        variant="tertiary"
+        leadingIcon={copyState === "copied" ? Check : IdleIcon}
         onClick={sharesLink ? shareLink : copyLink}
       >
-        {copyState === "copied" ? (
-          <Check aria-hidden="true" data-icon="inline-start" />
-        ) : (
-          <IdleIcon aria-hidden="true" data-icon="inline-start" />
-        )}
         {copyState === "copied" ? "Link copiado" : idleLabel}
       </Button>
       <div
@@ -102,11 +97,11 @@ export function CopyLinkButton() {
           if (!event.currentTarget.contains(event.relatedTarget)) setCopyState("idle");
         }}
         className={cn(
-          "absolute end-0 top-full z-40 mt-1 flex w-64 flex-col gap-2 rounded-2xl border border-transparent bg-popover p-1 shadow-large",
+          "absolute end-0 top-full z-40 mt-1 flex w-64 flex-col gap-2 rounded-2xl border border-transparent bg-popover p-1 shadow-surface-5",
           copyState !== "failed" && "sr-only",
         )}
       >
-        <p role="status" className="px-2 pt-1 text-caption-lg text-danger-fg">
+        <p role="status" className="px-2 pt-1 text-caption text-destructive">
           {copyStatusText[copyState]}
         </p>
         {copyState === "failed" && (

@@ -45,17 +45,21 @@ export function FilterDrawer({ activeCount, resultCount, onClear, children }: Fi
   return (
     <Drawer open={open} onOpenChange={setOpen} showSwipeHandle>
       <DrawerTrigger
-        render={<Button variant="outline" size="lg" className="tabular-nums lg:hidden" />}
+        render={
+          <Button
+            variant="tertiary"
+            leadingIcon={SlidersHorizontal}
+            className="tabular-nums lg:hidden"
+          />
+        }
       >
-        <SlidersHorizontal aria-hidden="true" data-icon="inline-start" />
         {activeCount === 0 ? "Filtros" : `Filtros (${activeCount})`}
       </DrawerTrigger>
-      <DrawerContent className="border-transparent text-body-sm shadow-large">
-        <DrawerHeader className="flex-row items-center justify-between gap-4 border-b border-border-subtle px-4 pt-2 pb-3 group-data-[swipe-axis=y]/drawer-popup:text-start">
-          <DrawerTitle className="text-heading-6">Filtros</DrawerTitle>
+      <DrawerContent className="border-transparent text-body shadow-surface-5">
+        <DrawerHeader className="flex-row items-center justify-between gap-4 border-b border-border/60 px-4 pt-2 pb-3 group-data-[swipe-axis=y]/drawer-popup:text-start">
+          <DrawerTitle className="text-title">Filtros</DrawerTitle>
           <Button
             variant="ghost"
-            size="lg"
             disabled={activeCount === 0}
             focusableWhenDisabled
             onClick={onClear}
@@ -71,13 +75,9 @@ export function FilterDrawer({ activeCount, resultCount, onClear, children }: Fi
         <div className="scroll-fade-y relative min-h-0 flex-1 overflow-y-auto overscroll-contain px-4 py-4">
           {children}
         </div>
-        <DrawerFooter className="border-t border-border-subtle p-4">
+        <DrawerFooter className="border-t border-border/60 p-4">
           {/* A full-width press shrinks less, so it reads as a press and not an effect. */}
-          <Button
-            size="lg"
-            className="h-10 tabular-nums motion-safe:not-data-disabled:active:not-aria-[haspopup]:scale-[0.985]"
-            onClick={() => setOpen(false)}
-          >
+          <Button className="h-10 tabular-nums" onClick={() => setOpen(false)}>
             {showProductsText(resultCount)}
           </Button>
         </DrawerFooter>

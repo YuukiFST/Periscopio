@@ -1,6 +1,10 @@
+import { motion } from "motion/react";
+import { spring } from "@/lib/springs";
+import { surfaceClasses } from "@/lib/surface-classes";
+
 export type SegmentedOption<Value> = { value: Value; label: string };
 
-/** One choice among a few, as radio buttons drawn side by side. */
+/** One choice among a few, as radio buttons drawn as Fluid Functionalism's segmented control. */
 export function SegmentedControl<Value>({
   legend,
   name,
@@ -10,30 +14,41 @@ export function SegmentedControl<Value>({
 }: {
   /** Read by screen readers only; the options say what they are. */
   legend: string;
-  /** The radio group's name, unique on the page. */
+  /** The radio group's name, unique on the page; it also keys the sliding pill. */
   name: string;
   options: readonly SegmentedOption<Value>[];
   value: Value;
   onValueChange: (value: Value) => void;
 }) {
   return (
-    <fieldset className="flex rounded-lg bg-component p-0.5">
+    <fieldset className="flex rounded-xl bg-muted p-1">
       <legend className="sr-only">{legend}</legend>
-      {options.map((option) => (
-        <label key={option.label} className="relative">
-          <input
-            type="radio"
-            name={name}
-            className="peer absolute inset-0 z-10 cursor-pointer appearance-none rounded-md opacity-0"
-            checked={value === option.value}
-            onChange={() => onValueChange(option.value)}
-          />
-          {/* The input covers the label, so hover reaches it as peer-hover. */}
-          <span className="flex h-8 cursor-pointer items-center rounded-md border border-transparent px-2.5 font-medium whitespace-nowrap text-fg-secondary transition-[color,background-color,border-color] duration-150 ease-out-quint select-none pointer-coarse:h-10 peer-checked:border-border-selected peer-checked:bg-page peer-checked:text-fg-primary peer-hover:text-fg-primary peer-focus-visible:outline-2 peer-focus-visible:outline-offset-1 peer-focus-visible:outline-ring peer-active:bg-component-hover peer-checked:peer-active:bg-page sm:px-3 dark:peer-checked:bg-component-active forced-colors:peer-checked:border-[Highlight]">
-            {option.label}
-          </span>
-        </label>
-      ))}
+      {options.map((option) => {
+        const isChecked = value === option.value;
+        return (
+          <label key={option.label} className="relative">
+            <input
+              type="radio"
+              name={name}
+              className="peer absolute inset-0 z-10 cursor-pointer appearance-none rounded-lg opacity-0"
+              checked={isChecked}
+              onChange={() => onValueChange(option.value)}
+            />
+            {isChecked && (
+              <motion.span
+                aria-hidden="true"
+                layoutId={`${name}-selected`}
+                transition={spring.moderate}
+                className={`absolute inset-0 rounded-lg ${surfaceClasses(4)} forced-colors:border forced-colors:border-[Highlight]`}
+              />
+            )}
+            {/* The input covers the label, so hover reaches it as peer-hover. */}
+            <span className="relative flex h-7 cursor-pointer items-center rounded-lg px-2.5 font-medium whitespace-nowrap text-muted-foreground transition-colors duration-80 select-none pointer-coarse:h-9 peer-checked:text-foreground peer-hover:text-foreground peer-focus-visible:outline-1 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-focus-ring sm:px-3">
+              {option.label}
+            </span>
+          </label>
+        );
+      })}
     </fieldset>
   );
 }

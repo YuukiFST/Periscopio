@@ -46,22 +46,22 @@ export function RecentProductsButton() {
           <Popover.Popup
             // Opening a Produto leaves focus to its details, which move it to their title.
             finalFocus={() => !openedProduct.current}
-            className="flex max-h-[min(var(--available-height),32rem)] w-[min(calc(100vw-1rem),24rem)] flex-col overflow-hidden rounded-2xl bg-popover text-popover-foreground shadow-large transition-[opacity,scale] duration-150 ease-out-quint outline-none origin-(--transform-origin) data-ending-style:scale-[0.98] data-ending-style:opacity-0 data-starting-style:scale-[0.98] data-starting-style:opacity-0 motion-reduce:data-ending-style:scale-100 motion-reduce:data-starting-style:scale-100"
+            className="flex max-h-[min(var(--available-height),32rem)] w-[min(calc(100vw-1rem),24rem)] flex-col overflow-hidden rounded-2xl bg-popover text-popover-foreground shadow-surface-5 transition-[opacity,scale] duration-150 ease-out-quint outline-none origin-(--transform-origin) data-ending-style:scale-[0.98] data-ending-style:opacity-0 data-starting-style:scale-[0.98] data-starting-style:opacity-0 motion-reduce:data-ending-style:scale-100 motion-reduce:data-starting-style:scale-100"
           >
-            <Popover.Title className="border-b border-border px-4 py-3 text-body-sm font-medium">
+            <Popover.Title className="border-b border-border px-4 py-3 text-body font-medium">
               Vistos recentemente
             </Popover.Title>
             <div className="min-h-0 overflow-y-auto overscroll-contain">
               {load.status === "failed" && (
-                <p className="px-4 py-6 text-body-sm text-fg-secondary">
+                <p className="px-4 py-6 text-body text-muted-foreground">
                   Não deu para carregar os produtos. Verifique a conexão e tente de novo.
                 </p>
               )}
               {load.status === "loading" && (
-                <p className="px-4 py-6 text-body-sm text-fg-secondary">Carregando produtos…</p>
+                <p className="px-4 py-6 text-body text-muted-foreground">Carregando produtos…</p>
               )}
               {load.status === "loaded" && items.length === 0 && (
-                <p className="px-4 py-6 text-body-sm text-fg-secondary">
+                <p className="px-4 py-6 text-body text-muted-foreground">
                   Os produtos vistos não estão mais nos dados.
                 </p>
               )}

@@ -29,7 +29,7 @@ export function ProductPhoto({ src, alt, size, loading = "eager" }: ProductPhoto
     return (
       <div
         aria-hidden="true"
-        className={cn(frame, "grid shrink-0 place-items-center bg-component text-fg-tertiary")}
+        className={cn(frame, "grid shrink-0 place-items-center bg-muted text-muted-foreground/70")}
       >
         <ImageOff className={icon} />
       </div>

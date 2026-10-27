@@ -8,7 +8,7 @@ const skeletonValueColumns = [0, 1, 2, 3, 4, 5];
 
 /** One placeholder shape; the skeleton around it pulses as a whole. */
 function Bone({ className }: { className?: string }) {
-  return <div className={cn("rounded-md bg-component", className)} />;
+  return <div className={cn("rounded-md bg-muted", className)} />;
 }
 
 /** Pulses once for every shape inside, and only when the system allows motion. */
@@ -32,7 +32,7 @@ function TitleRowSkeleton({
   return (
     <div className="flex items-start justify-between gap-4">
       <div className="flex min-w-0 flex-wrap items-center gap-x-4 gap-y-1">
-        <div className="flex h-[calc(var(--text-heading-5)*var(--text-heading-5--line-height))] items-center">
+        <div className="flex h-(--lh-display) items-center">
           <Bone className={cn("h-6 max-w-full", headingWidth)} />
         </div>
         {withUpdatedAt && <Bone className="my-0.5 h-4 w-52" />}
@@ -90,14 +90,14 @@ export function CategorySkeleton({ status }: { status: string }) {
                 <div
                   key={index}
                   className={cn(
-                    "flex shrink-0 items-center border-b border-border-subtle",
+                    "flex shrink-0 items-center border-b border-border/60",
                     isCompact ? "h-12" : "h-15",
                   )}
                 >
                   <div className="flex w-9 shrink-0 justify-center sm:w-11">
                     <Bone className="size-4 rounded-sm" />
                   </div>
-                  <div className="flex h-full w-38 shrink-0 items-center gap-2 border-e border-border-subtle pe-2 min-[22rem]:w-44 sm:w-56 sm:gap-3 sm:pe-3">
+                  <div className="flex h-full w-38 shrink-0 items-center gap-2 border-e border-border/60 pe-2 min-[22rem]:w-44 sm:w-56 sm:gap-3 sm:pe-3">
                     <Bone
                       className={cn(
                         "shrink-0",
@@ -191,12 +191,12 @@ export function ComparisonSkeleton({
               </div>
             ))}
           </div>
-          <div className="flex min-h-9 shrink-0 items-center border-b border-border-subtle bg-component px-2 sm:px-3">
-            <Bone className="h-4 w-36 bg-component-active" />
+          <div className="flex min-h-9 shrink-0 items-center border-b border-border/60 bg-muted px-2 sm:px-3">
+            <Bone className="h-4 w-36 bg-active" />
           </div>
           {Array.from({ length: skeletonRowCount }, (_, row) => (
-            <div key={row} className="flex h-9 shrink-0 items-center border-b border-border-subtle">
-              <div className="flex h-full w-(--label-column) shrink-0 items-center border-e border-border-subtle px-2 sm:px-3">
+            <div key={row} className="flex h-9 shrink-0 items-center border-b border-border/60">
+              <div className="flex h-full w-(--label-column) shrink-0 items-center border-e border-border/60 px-2 sm:px-3">
                 <Bone className="h-3.5 w-3/4" />
               </div>
               {columns.map((index) => (

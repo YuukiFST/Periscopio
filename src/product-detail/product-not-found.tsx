@@ -10,14 +10,10 @@ export function ProductNotFound({ category }: { category: CategorySlug }) {
   }, []);
   return (
     <div className="flex flex-col gap-3">
-      <DrawerTitle
-        ref={headingRef}
-        tabIndex={-1}
-        className="font-serif text-heading-5 outline-none"
-      >
+      <DrawerTitle ref={headingRef} tabIndex={-1} className="text-display outline-none">
         Produto não encontrado
       </DrawerTitle>
-      <p className="max-w-prose text-fg-secondary">
+      <p className="max-w-prose text-muted-foreground">
         Este link não corresponde a nenhum produto em {categoryLabels[category]}. O produto pode ter
         saído do EyeJoker numa atualização, ou o link ficou incompleto. Feche este painel e procure
         o produto na tabela de {categoryLabels[category]}.

@@ -23,14 +23,14 @@ export function RecentProductLink({
       search={keepsTableSearch ? true : undefined}
       state={keepsTableSearch ? { fromCategoryTable: true } : undefined}
       onClick={onClick}
-      className="flex items-center gap-3 rounded-lg px-3 py-2 text-body-sm hover:bg-component-hover focus-visible:bg-component-hover focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-ring active:bg-component-active"
+      className="flex items-center gap-3 rounded-lg px-3 py-2 text-body hover:bg-hover focus-visible:bg-hover focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-ring active:bg-active"
     >
       <ProductPhoto key={product.image} src={product.image} alt="" size="row" loading="lazy" />
       <span className="flex min-w-0 flex-1 flex-col">
         <span className="truncate font-medium">{product.name}</span>
-        <span className="text-fg-secondary">{categoryLabels[category]}</span>
+        <span className="text-muted-foreground">{categoryLabels[category]}</span>
       </span>
-      <span className="shrink-0 whitespace-nowrap tabular-nums text-fg-secondary">
+      <span className="shrink-0 whitespace-nowrap tabular-nums text-muted-foreground">
         {price === undefined ? "Sem preço" : formatPrice(price)}
       </span>
     </Link>

@@ -107,7 +107,7 @@ export function PriceHistorySparkline({
           width={sparklineWidth}
           height={sparklineHeight}
           viewBox={`0 0 ${sparklineWidth} ${sparklineHeight}`}
-          className="shrink-0 text-fg-secondary"
+          className="shrink-0 text-muted-foreground"
         >
           <path
             d={sparklinePath(points)}
@@ -116,9 +116,9 @@ export function PriceHistorySparkline({
             strokeWidth={1.5}
             strokeLinejoin="round"
           />
-          {end && <circle cx={end.x} cy={end.y} r={3} className="fill-fg-primary" />}
+          {end && <circle cx={end.x} cy={end.y} r={3} className="fill-foreground" />}
         </svg>
-        <div className="flex flex-col justify-between text-caption-sm whitespace-nowrap text-fg-secondary tabular-nums">
+        <div className="flex flex-col justify-between text-micro whitespace-nowrap text-muted-foreground tabular-nums">
           <span>máx. {formatPrice(Math.max(...prices))}</span>
           <span>mín. {formatPrice(Math.min(...prices))}</span>
         </div>
@@ -128,7 +128,7 @@ export function PriceHistorySparkline({
           {labels.map((label) => (
             <li
               key={label}
-              className="rounded-sm bg-positive-subtle px-1.5 text-caption-sm font-medium whitespace-nowrap text-positive-fg"
+              className="rounded-sm bg-emerald-500/10 px-1.5 text-micro font-medium whitespace-nowrap text-emerald-700 dark:text-emerald-400"
             >
               {label}
             </li>

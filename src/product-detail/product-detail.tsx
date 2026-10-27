@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Check, ExternalLink, GitCompareArrows, Plus, Star } from "lucide-react";
 import { useEffect, useRef, type ReactNode, type RefObject } from "react";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 import { DrawerTitle } from "@/components/ui/drawer";
 import type { CategoryData, Product } from "@/data/schema";
 import { fieldLabel, manufacturerName, valueLabel } from "@/i18n/labels";
@@ -64,7 +64,7 @@ export function ProductDetail({
           <FieldGroupSection key={group.id} group={group} product={product} />
         ))}
         {!hasMeasurements && (
-          <p className="max-w-prose text-fg-secondary">
+          <p className="max-w-prose text-muted-foreground">
             O EyeJoker ainda não publicou medições deste produto.
           </p>
         )}
@@ -75,7 +75,7 @@ export function ProductDetail({
           comparedIds={comparedIds}
           onClear={() => onComparedIdsChange([])}
           focusAfterClearId="produto-titulo"
-          className="sticky bottom-0 border-transparent shadow-large"
+          className="sticky bottom-0 border-transparent shadow-surface-5"
         />
       )}
     </article>
@@ -104,18 +104,18 @@ function ProductHeader({
             ref={headingRef}
             id="produto-titulo"
             tabIndex={-1}
-            className="font-serif text-heading-5 text-balance wrap-break-word outline-none"
+            className="text-display text-balance wrap-break-word outline-none"
           >
             {product.name}
           </DrawerTitle>
-          <p className="text-body-base text-fg-secondary wrap-break-word">
+          <p className="text-subtitle text-muted-foreground wrap-break-word">
             {manufacturerName(product.manufacturer)}
           </p>
         </div>
         <dl className="flex flex-wrap gap-x-8 gap-y-3">
           <HeaderFact label="Preço">
             {price === undefined ? (
-              <span className="text-fg-secondary">Sem preço</span>
+              <span className="text-muted-foreground">Sem preço</span>
             ) : (
               <>
                 <span className="whitespace-nowrap tabular-nums">
@@ -134,16 +134,13 @@ function ProductHeader({
         </dl>
         <div className="flex flex-wrap gap-2">
           {product.aliUrl && (
-            <a
-              href={product.aliUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={buttonVariants({ size: "lg" })}
+            <Button
+              trailingIcon={ExternalLink}
+              render={<a href={product.aliUrl} target="_blank" rel="noopener noreferrer" />}
             >
               Ver no AliExpress
               <span className="sr-only">(abre em nova aba)</span>
-              <ExternalLink aria-hidden="true" data-icon="inline-end" />
-            </a>
+            </Button>
           )}
           <CompareToggleButton
             isCompared={comparedIds.includes(product.id)}
@@ -169,22 +166,20 @@ function CompareToggleButton({
 }) {
   if (isCompared) {
     return (
-      <Button variant="outline" size="lg" onClick={onToggle}>
-        <Check aria-hidden="true" data-icon="inline-start" />
+      <Button variant="tertiary" leadingIcon={Check} onClick={onToggle}>
         Remover da comparação
       </Button>
     );
   }
   return (
     <Button
-      variant="outline"
-      size="lg"
+      variant="tertiary"
+      leadingIcon={Plus}
       onClick={onToggle}
       disabled={isFull}
       focusableWhenDisabled
       aria-describedby={isFull ? compareStatusId : undefined}
     >
-      <Plus aria-hidden="true" data-icon="inline-start" />
       Adicionar à comparação
     </Button>
   );
@@ -205,7 +200,7 @@ function FavoriteToggleButton({ data, product }: { data: CategoryData; product: 
       <Star
         aria-hidden="true"
         data-icon="inline-start"
-        className={isFavorite ? "fill-current text-brand-fg" : undefined}
+        className={isFavorite ? "fill-current text-blue-600 dark:text-blue-400" : undefined}
       />
       {isFavorite ? "Remover dos favoritos" : "Favoritar"}
     </Button>
@@ -218,22 +213,26 @@ function CompareSimilarLink({ data, product }: { data: CategoryData; product: Pr
   if (similar.length === 0) return null;
   const ids = [product.id, ...similar.map((candidate) => candidate.id)];
   return (
-    <Link
-      to="/comparar/$categoria"
-      params={{ categoria: data.category }}
-      search={{ p: productIdsParam(ids) }}
-      className={buttonVariants({ variant: "outline", size: "lg" })}
+    <Button
+      variant="tertiary"
+      leadingIcon={GitCompareArrows}
+      render={
+        <Link
+          to="/comparar/$categoria"
+          params={{ categoria: data.category }}
+          search={{ p: productIdsParam(ids) }}
+        />
+      }
     >
-      <GitCompareArrows aria-hidden="true" data-icon="inline-start" />
       Comparar com parecidos
-    </Link>
+    </Button>
   );
 }
 
 function HeaderFact({ label, children }: { label: string; children: ReactNode }) {
   return (
     <div className="flex flex-col gap-0.5">
-      <dt className="text-caption-lg text-fg-secondary">{label}</dt>
+      <dt className="text-caption text-muted-foreground">{label}</dt>
       <dd className="font-medium">{children}</dd>
     </div>
   );
@@ -243,16 +242,16 @@ function FieldGroupSection({ group, product }: { group: ProductFieldGroup; produ
   const headingId = `grupo-${group.id}`;
   return (
     <section aria-labelledby={headingId} className="flex min-w-0 flex-col gap-2">
-      <h3 id={headingId} className="font-serif text-heading-6 font-medium">
+      <h3 id={headingId} className="text-title font-medium">
         {group.title}
       </h3>
-      <dl className="divide-y divide-border-subtle">
+      <dl className="divide-y divide-border/60">
         {group.fields.map((field) => {
           const value = productFieldValue(product, field);
           if (value === undefined) return null;
           return (
             <div key={field.key} className="flex items-baseline justify-between gap-4 py-2">
-              <dt className="min-w-0 text-pretty text-fg-secondary">{fieldLabel(field)}</dt>
+              <dt className="min-w-0 text-pretty text-muted-foreground">{fieldLabel(field)}</dt>
               <dd
                 className={cn(
                   "min-w-0 text-end",

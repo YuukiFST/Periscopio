@@ -60,7 +60,7 @@ function HomePage() {
       <div className="mx-auto flex w-full max-w-5xl flex-col gap-8">
         <div className="flex flex-col gap-3">
           <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
-            <h1 ref={headingRef} tabIndex={-1} className="font-serif text-heading-5 outline-none">
+            <h1 ref={headingRef} tabIndex={-1} className="text-display outline-none">
               Periscópio
             </h1>
             {!updateAge.isStale && <UpdatedAtLabel age={updateAge} />}
@@ -68,7 +68,7 @@ function HomePage() {
           {updateAge.isStale && <StaleDataAlert age={updateAge} />}
         </div>
         <section aria-labelledby="categorias-titulo" className="flex flex-col gap-3">
-          <h2 id="categorias-titulo" className="font-serif text-heading-6 font-medium">
+          <h2 id="categorias-titulo" className="text-title font-medium">
             Categorias
           </h2>
           <ul className="grid grid-cols-1 gap-3 sm:grid-cols-3">
@@ -100,8 +100,8 @@ function CategoryCard({
   novidadeCount: number | undefined;
 }) {
   return (
-    <li className="relative flex flex-col gap-1 rounded-lg border border-border p-4 has-[h3_a:hover]:bg-component-hover">
-      <h3 className="font-serif text-heading-6 font-medium">
+    <li className="relative flex flex-col gap-1 rounded-lg border border-border p-4 has-[h3_a:hover]:bg-hover">
+      <h3 className="text-title font-medium">
         {/* The whole card opens the Categoria; the Novidades link sits above it. */}
         <Link
           to="/$categoria"
@@ -111,15 +111,15 @@ function CategoryCard({
           {categoryLabels[category]}
         </Link>
       </h3>
-      <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-body-sm">
-        <p className="text-fg-secondary tabular-nums">{productCount(count)}</p>
+      <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-body">
+        <p className="text-muted-foreground tabular-nums">{productCount(count)}</p>
         {novidadeCount !== undefined && novidadeCount > 0 && (
           <Link
             to="/$categoria"
             params={{ categoria: category }}
             // The Novidades include Produtos not tested yet, so every Status de teste shows.
             search={{ novidades: "1", status: "todos" }}
-            className="relative z-10 inline-flex items-center gap-1 font-medium text-brand-fg tabular-nums underline-offset-4 hover:underline active:underline"
+            className="relative z-10 inline-flex items-center gap-1 font-medium text-blue-600 dark:text-blue-400 tabular-nums underline-offset-4 hover:underline active:underline"
           >
             <Sparkles aria-hidden="true" strokeWidth={1.5} className="size-4 shrink-0" />
             {novidadeCountText(novidadeCount)}
@@ -136,15 +136,15 @@ function RecentProductsSection({ load, onRetry }: { load: CategoriesLoad; onRetr
   if (recent.length === 0) return null;
   return (
     <section aria-labelledby="recentes-titulo" className="flex flex-col gap-3">
-      <h2 id="recentes-titulo" className="font-serif text-heading-6 font-medium">
+      <h2 id="recentes-titulo" className="text-title font-medium">
         Vistos recentemente
       </h2>
       {load.status === "loading" && (
-        <p className="text-body-sm text-fg-secondary">Carregando produtos…</p>
+        <p className="text-body text-muted-foreground">Carregando produtos…</p>
       )}
       {load.status === "failed" && (
         <div className="flex flex-col items-start gap-3">
-          <p className="text-body-sm text-fg-secondary">
+          <p className="text-body text-muted-foreground">
             Não deu para carregar os produtos. Verifique a conexão e tente de novo.
           </p>
           <Button
@@ -175,7 +175,7 @@ function RecentProductList({
   const items = recentProductItems(recent, load.categories).slice(0, homeRecentProductCount);
   if (items.length === 0) {
     return (
-      <p className="text-body-sm text-fg-secondary">Os produtos vistos não estão mais nos dados.</p>
+      <p className="text-body text-muted-foreground">Os produtos vistos não estão mais nos dados.</p>
     );
   }
   return (

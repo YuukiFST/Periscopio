@@ -21,7 +21,7 @@ export function FieldValueText({
     <span
       className={cn(
         isFigureField(field)
-          ? "font-mono text-code-xs whitespace-nowrap tabular-nums"
+          ? "font-mono text-caption whitespace-nowrap tabular-nums"
           : "wrap-break-word",
         className,
       )}

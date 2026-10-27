@@ -68,7 +68,7 @@ export function ProductPicker({
         <Dialog.Viewport className="fixed inset-0 z-50 flex items-start justify-center px-2 pt-[min(12dvh,6rem)] pb-2">
           <Dialog.Popup
             finalFocus={() => (picked.current ? focusAfterPick.current : true)}
-            className="flex max-h-full w-full max-w-lg flex-col overflow-hidden rounded-2xl bg-popover text-popover-foreground shadow-large transition-[opacity,scale] duration-150 ease-out-quint outline-none data-ending-style:scale-[0.98] data-ending-style:opacity-0 data-starting-style:scale-[0.98] data-starting-style:opacity-0 motion-reduce:data-ending-style:scale-100 motion-reduce:data-starting-style:scale-100"
+            className="flex max-h-full w-full max-w-lg flex-col overflow-hidden rounded-2xl bg-popover text-popover-foreground shadow-surface-5 transition-[opacity,scale] duration-150 ease-out-quint outline-none data-ending-style:scale-[0.98] data-ending-style:opacity-0 data-starting-style:scale-[0.98] data-starting-style:opacity-0 motion-reduce:data-ending-style:scale-100 motion-reduce:data-starting-style:scale-100"
           >
             <Dialog.Title className="sr-only">{title}</Dialog.Title>
             <Autocomplete.Root
@@ -89,7 +89,7 @@ export function ProductPicker({
                 <Search
                   aria-hidden="true"
                   strokeWidth={1.5}
-                  className="pointer-events-none absolute start-3.5 size-4 text-fg-tertiary"
+                  className="pointer-events-none absolute start-3.5 size-4 text-muted-foreground/70"
                 />
                 <Autocomplete.Input
                   aria-label={title}
@@ -98,7 +98,7 @@ export function ProductPicker({
                   autoCorrect="off"
                   spellCheck={false}
                   enterKeyHint="go"
-                  className="h-12 w-full bg-transparent ps-10 pe-1 text-base outline-none placeholder:text-fg-tertiary pointer-fine:text-body-sm"
+                  className="h-12 w-full bg-transparent ps-10 pe-1 text-base outline-none placeholder:text-muted-foreground/70 pointer-fine:text-body"
                 />
                 <Dialog.Close
                   render={<Button variant="ghost" size="icon-lg" className="me-1.5" />}
@@ -109,7 +109,7 @@ export function ProductPicker({
               </div>
               <div className="min-h-0 overflow-y-auto overscroll-contain">
                 {/* Stays mounted so screen readers announce each new count. */}
-                <Autocomplete.Status className="px-4 pt-3 pb-1 text-caption-lg text-fg-secondary">
+                <Autocomplete.Status className="px-4 pt-3 pb-1 text-caption text-muted-foreground">
                   {statusText(searchText, matches.length)}
                 </Autocomplete.Status>
                 <Autocomplete.List className="p-1 empty:hidden">
@@ -118,10 +118,10 @@ export function ProductPicker({
                       key={product.id}
                       value={product}
                       onClick={() => pick(product)}
-                      className="flex cursor-default items-baseline gap-2 rounded-lg px-3 py-2 text-body-sm select-none data-highlighted:bg-component-hover"
+                      className="flex cursor-default items-baseline gap-2 rounded-lg px-3 py-2 text-body select-none data-highlighted:bg-hover"
                     >
                       <span className="min-w-0 truncate font-medium">{product.name}</span>{" "}
-                      <span className="shrink-0 text-fg-secondary">
+                      <span className="shrink-0 text-muted-foreground">
                         {manufacturerName(product.manufacturer)}
                       </span>
                     </Autocomplete.Item>

@@ -85,7 +85,7 @@ export function ActiveFilterChips({
       {active.map((filter, index) => (
         <li
           key={filter.param}
-          className="flex min-w-0 items-center gap-0.5 rounded-md border border-border bg-component py-0.5 ps-2 pe-0.5 text-caption-lg text-fg-primary tabular-nums"
+          className="flex min-w-0 items-center gap-0.5 rounded-md border border-border bg-muted py-0.5 ps-2 pe-0.5 text-caption text-foreground tabular-nums"
         >
           <span className="min-w-0 truncate">{chipText(filter, values)}</span>
           <button
@@ -96,7 +96,7 @@ export function ActiveFilterChips({
             }}
             aria-label={`Remover filtro ${filter.label}`}
             onClick={() => removeFilter(index)}
-            className="grid size-6 shrink-0 cursor-pointer place-items-center rounded-sm text-fg-secondary hover:bg-component-hover hover:text-fg-primary focus-visible:outline-2 focus-visible:outline-ring pointer-coarse:size-10"
+            className="grid size-6 shrink-0 cursor-pointer place-items-center rounded-sm text-muted-foreground hover:bg-hover hover:text-foreground focus-visible:outline-2 focus-visible:outline-ring pointer-coarse:size-10"
           >
             <X aria-hidden="true" strokeWidth={2} className="size-3.5" />
           </button>

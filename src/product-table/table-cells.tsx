@@ -25,7 +25,7 @@ const rootRoute = getRouteApi("__root__");
 export function MissingValue() {
   return (
     <>
-      <span aria-hidden="true" className="text-fg-secondary">
+      <span aria-hidden="true" className="text-muted-foreground">
         —
       </span>
       <span className="sr-only">Sem dado</span>
@@ -41,7 +41,7 @@ export function PriceInReais({ priceKrw }: { priceKrw: number }) {
   const { krwBrl } = rootRoute.useLoaderData();
   if (!krwBrl) return null;
   return (
-    <span className="block text-caption-lg font-normal text-fg-secondary">
+    <span className="block text-caption font-normal text-muted-foreground">
       <span aria-hidden="true">≈</span>
       <span className="sr-only">cerca de</span> {formatPriceInReais(priceKrw, krwBrl)}
       <span className="sr-only"> (Cotação de {formatKrwBrlDate(krwBrl)})</span>
@@ -63,7 +63,7 @@ function NovidadeBadge({ product }: { product: Product }) {
   const novidade = novidadeOf(product, updatedAt);
   if (novidade === undefined) return null;
   return (
-    <span className="shrink-0 rounded-sm bg-brand-subtle px-1.5 text-caption-sm font-medium whitespace-nowrap text-brand-fg">
+    <span className="shrink-0 rounded-sm bg-blue-500/10 px-1.5 text-micro font-medium whitespace-nowrap text-blue-600 dark:text-blue-400">
       {novidadeLabels[novidade]}
     </span>
   );
@@ -89,7 +89,7 @@ function FavoriteStar({
       aria-label={isFavorite ? "Remover dos favoritos" : `Favoritar ${product.name}`}
       aria-describedby={isFavorite ? `produto-${product.id}` : undefined}
       onClick={onToggle}
-      className="relative z-10 -ms-1 grid size-6 shrink-0 place-items-center rounded-md text-fg-tertiary hover:text-fg-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring active:bg-component-hover aria-pressed:text-brand-fg sm:size-7"
+      className="relative z-10 -ms-1 grid size-6 shrink-0 place-items-center rounded-md text-muted-foreground/70 hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring active:bg-hover aria-pressed:text-blue-600 aria-pressed:dark:text-blue-400 sm:size-7"
     >
       <Star
         aria-hidden="true"
@@ -133,7 +133,7 @@ export function ProductCell({
         search={true}
         state={{ fromCategoryTable: true }}
         aria-label={`Detalhes de ${product.name}`}
-        className="absolute inset-0 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-ring active:bg-component-hover"
+        className="absolute inset-0 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-ring active:bg-hover"
       />
       <ProductPhoto
         key={product.image}
@@ -143,13 +143,13 @@ export function ProductCell({
         loading="lazy"
       />
       <div className="min-w-0">
-        <p className="leading-[1.4] font-medium wrap-break-word text-fg-primary">
+        <p className="leading-[1.4] font-medium wrap-break-word text-foreground">
           {product.aliUrl ? (
             <a
               href={product.aliUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="relative rounded-xs text-brand-fg underline-offset-4 hover:underline active:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+              className="relative rounded-xs text-blue-600 dark:text-blue-400 underline-offset-4 hover:underline active:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
             >
               {name}
               <span className="sr-only"> no AliExpress (abre em nova aba)</span>
@@ -163,7 +163,7 @@ export function ProductCell({
         <div className="flex flex-wrap items-center gap-x-1.5">
           <p
             id={`fabricante-${product.id}`}
-            className="text-caption-lg wrap-break-word text-fg-secondary"
+            className="text-caption wrap-break-word text-muted-foreground"
           >
             {manufacturer}
           </p>
@@ -191,7 +191,7 @@ export function RangeBar({
     <span className="relative block">
       <span
         aria-hidden="true"
-        className="absolute inset-y-0 start-0 rounded-xs bg-fg-tertiary/15 forced-colors:hidden"
+        className="absolute inset-y-0 start-0 rounded-xs bg-muted-foreground/15 forced-colors:hidden"
         style={{ width: `${position * 100}%` }}
       />
       <span className="relative">{children}</span>
@@ -226,10 +226,10 @@ export function TableCellValue({ column, product }: { column: TableColumn; produ
         : undefined;
       return (
         <RangeBar position={rangePositionOf(column.range, column.field, value)}>
-          <span className="font-mono text-code-xs whitespace-nowrap">
+          <span className="font-mono text-caption whitespace-nowrap">
             {text}
             {deviation !== undefined && (
-              <span className="text-fg-secondary">
+              <span className="text-muted-foreground">
                 {" "}
                 <span aria-hidden="true">σ</span>
                 <span className="sr-only">desvio padrão</span> {deviation}

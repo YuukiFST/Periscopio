@@ -120,7 +120,7 @@ export function ProductChart({ data, search, onAxisChange }: ProductChartProps) 
           ref={headingRef}
           id={headingId}
           tabIndex={-1}
-          className="font-serif text-heading-5 text-balance outline-none"
+          className="text-display text-balance outline-none"
         >
           Gráfico de {categoryName}
         </h1>
@@ -139,7 +139,7 @@ export function ProductChart({ data, search, onAxisChange }: ProductChartProps) 
           value={yAxis.slug}
           onValueChange={(slug) => onAxisChange("y", slug)}
         />
-        <p aria-live="polite" className="text-fg-secondary tabular-nums">
+        <p aria-live="polite" className="text-muted-foreground tabular-nums">
           {narrowingText(search, activeFilterCount(filters, filterValues))}:{" "}
           {productCount(points.length)} no gráfico
           {leftOut > 0 && `, ${leftOut} sem dado em um dos eixos`}
@@ -159,7 +159,7 @@ export function ProductChart({ data, search, onAxisChange }: ProductChartProps) 
             tableSearch={tableSearch}
             labelledBy={plotTitleId}
           />
-          <figcaption className="max-w-prose text-pretty text-fg-secondary">
+          <figcaption className="max-w-prose text-pretty text-muted-foreground">
             <BestTradeOffsLegend xAxis={xAxis} yAxis={yAxis} />
           </figcaption>
           <ChartDataTable
@@ -200,7 +200,7 @@ function AxisSelect({ label, groups, value, onValueChange }: AxisSelectProps) {
         id={id}
         value={value}
         onChange={(event) => onValueChange(event.target.value)}
-        className="h-9 max-w-full min-w-48 rounded-lg border border-input bg-transparent px-2 text-base focus-visible:border-ring focus-visible:outline-2 focus-visible:-outline-offset-1 focus-visible:outline-ring pointer-coarse:h-10 pointer-fine:text-body-sm dark:bg-component"
+        className="h-9 max-w-full min-w-48 rounded-lg border border-input bg-transparent px-2 text-base focus-visible:border-ring focus-visible:outline-2 focus-visible:-outline-offset-1 focus-visible:outline-ring pointer-coarse:h-10 pointer-fine:text-body dark:bg-muted"
       >
         {groups.map((group) => (
           <optgroup key={group.title} label={group.title}>
@@ -224,7 +224,7 @@ function BestTradeOffsLegend({ xAxis, yAxis }: { xAxis: ChartAxis; yAxis: ChartA
   return (
     <>
       <svg aria-hidden="true" width="12" height="12" className="me-1.5 inline-block align-baseline">
-        <circle cx="6" cy="6" r="5" className="fill-brand" />
+        <circle cx="6" cy="6" r="5" className="fill-blue-500" />
       </svg>
       Melhores relações: nenhum outro produto é ao menos tão bom nos dois eixos e melhor em um (
       {xAxis.label}: {betterTexts[xAxis.direction]}; {yAxis.label}: {betterTexts[yAxis.direction]}).
