@@ -26,6 +26,7 @@ import { cn } from "@/lib/utils";
 import { CompareCheckbox } from "@/product-compare/compare-checkbox";
 import { compareSortValues, isCountEnum, sortValueOf } from "./cell-values";
 import { ProductCell, productCellLabelIds, TableCellValue } from "./table-cells";
+import { favoritesToggleId } from "./table-toolbar";
 import type { SortEntry, TableColumn } from "./table-columns";
 
 /** The shortest row per density; rows with long names or values grow and are measured. */
@@ -80,6 +81,8 @@ type ProductTableProps = {
   /** The Categoria's Favoritos on this device. */
   favoriteIds: ReadonlySet<string>;
   onFavoriteToggle: (id: string) => void;
+  /** "Só favoritos" is on, so an unstarred row leaves the table. */
+  favoritesOnly: boolean;
 };
 
 export function ProductTable({
@@ -93,6 +96,7 @@ export function ProductTable({
   onComparedToggle,
   favoriteIds,
   onFavoriteToggle,
+  favoritesOnly,
 }: ProductTableProps) {
   const tableColumns = useMemo(
     () =>
@@ -156,7 +160,21 @@ export function ProductTable({
   const handleComparedToggle = useCallback((id: string) => toggleRef.current(id), []);
   const favoriteToggleRef = useRef(onFavoriteToggle);
   useLayoutEffect(() => {
-    favoriteToggleRef.current = onFavoriteToggle;
+    favoriteToggleRef.current = (id) => {
+      // An unstarred row unmounts with its focused star: focus moves to the next row's star,
+      // else the previous one's, else to the toggle that hid the row.
+      if (favoritesOnly && favoriteIds.has(id)) {
+        const index = rows.findIndex((row) => row.id === id);
+        const neighborId = (rows[index + 1] ?? rows[index - 1])?.id;
+        const neighborStar = neighborId
+          ? scrollRef.current?.querySelector<HTMLElement>(
+              `tr[data-row-id="${neighborId}"] button[aria-pressed]`,
+            )
+          : undefined;
+        (neighborStar ?? document.getElementById(favoritesToggleId))?.focus();
+      }
+      onFavoriteToggle(id);
+    };
   });
   const handleFavoriteToggle = useCallback((id: string) => favoriteToggleRef.current(id), []);
 
@@ -194,8 +212,13 @@ export function ProductTable({
       event.preventDefault();
       const nextIndex = Number(row.getAttribute("data-index")) + step;
       if (nextIndex < 0 || nextIndex >= rows.length) return;
-      // The same control of the next row: the Comparação mark, else the Produto's link.
-      const target = event.target instanceof HTMLInputElement ? "input" : "a[href]";
+      // The same control of the next row: the Comparação mark, the star, else the Produto's link.
+      const target =
+        event.target instanceof HTMLInputElement
+          ? "input"
+          : event.target instanceof HTMLButtonElement
+            ? "button[aria-pressed]"
+            : "a[href]";
       event.currentTarget
         .querySelector<HTMLElement>(`tr[data-index="${nextIndex}"] ${target}`)
         ?.focus();

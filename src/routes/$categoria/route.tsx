@@ -449,6 +449,7 @@ function CategoryTable({ data }: { data: CategoryData }) {
               onComparedToggle={(id) => changeComparedIds(toggleComparedId(comparedIds, id))}
               favoriteIds={favoriteIds}
               onFavoriteToggle={toggleFavorite}
+              favoritesOnly={favoritos === "1"}
               onSortClick={(slug) =>
                 void navigate({
                   unsafeRelative: "path",

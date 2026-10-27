@@ -130,3 +130,46 @@ test("a stored id the data lacks is ignored and kept, and text that is not an id
     .poll(() => storedFavorites(page))
     .toEqual([missingProductId, dragonflyA9UltraId, expect.stringMatching(/^[0-9a-f-]{36}$/)]);
 });
+
+test("on a star, j steps to the next row's star, Enter stars without opening the detail, and an unstarred row hands focus on", async ({
+  page,
+}) => {
+  await page.goto("/mouse");
+  await expect(page.getByRole("rowheader")).toHaveCount(4);
+  const [first, second] = await productNames(page);
+  const firstStar = page.getByRole("button", { name: `Favoritar ${first}` });
+  await firstStar.focus();
+  await page.keyboard.press("Enter");
+  await expect(page).toHaveURL("/mouse");
+  await page.keyboard.press("j");
+  const secondStar = page.getByRole("button", { name: `Favoritar ${second}` });
+  await expect(secondStar).toBeFocused();
+  await page.keyboard.press("Enter");
+
+  await onlyFavoritesToggle(page).click();
+  await expect.poll(() => productNames(page)).toEqual([first, second]);
+  const starred = page.getByRole("button", { name: "Remover dos favoritos" });
+  await starred.first().focus();
+  await page.keyboard.press("Enter");
+  await expect.poll(() => productNames(page)).toEqual([second]);
+  await expect(starred).toBeFocused();
+
+  // With the last Favorito gone, the toggle that hid the rows takes focus.
+  await page.keyboard.press("Enter");
+  await expect(page.getByText("Nenhum produto favorito testado nesta categoria.")).toBeVisible();
+  await expect(onlyFavoritesToggle(page)).toBeFocused();
+});
+
+test("the Gráfico opened with Só favoritos plots only the Favoritos and says so", async ({
+  page,
+}) => {
+  await page.goto("/mouse");
+  await page.getByRole("button", { name: "Favoritar Huan" }).click();
+  await onlyFavoritesToggle(page).click();
+  await page.getByRole("link", { name: "Ver gráfico" }).click();
+  await expect(page).toHaveURL(/\/grafico\/mouse\?.*favoritos=1/);
+  const chartRows = page.getByRole("table", { name: "Dados do gráfico" }).getByRole("row");
+  await expect(chartRows).toHaveCount(2);
+  await expect(chartRows.nth(1)).toContainText("Huan");
+  await expect(page.getByText(/Testados · Favoritos/)).toBeVisible();
+});
