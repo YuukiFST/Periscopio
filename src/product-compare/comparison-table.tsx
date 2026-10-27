@@ -13,7 +13,7 @@ import {
 } from "@/product-fields/field-groups";
 import { FieldValueText } from "@/product-fields/field-value-text";
 import { ProductPhoto } from "@/product-photo/product-photo";
-import { rangePositionOf } from "@/product-table/field-range";
+import { fieldRangeOf, rangePositionOf } from "@/product-table/field-range";
 import { MissingValue, RangeBar } from "@/product-table/table-cells";
 import { productIdsParam } from "./compare-selection";
 import { MarkIcon, markCellClass } from "./comparison-mark";
@@ -342,6 +342,7 @@ function FieldRow({
 }) {
   const values = products.map((product) => productFieldValue(product, field));
   const marks = comparisonMarks(field, values);
+  const range = fieldRangeOf(data, field);
   return (
     <tr>
       <RowLabel>{fieldLabel(field)}</RowLabel>
@@ -353,7 +354,7 @@ function FieldRow({
           {value === undefined ? (
             <MissingValue />
           ) : (
-            <RangeBar position={rangePositionOf(data, field, value)}>
+            <RangeBar position={rangePositionOf(range, field, value)}>
               <FieldValueText field={field} value={value} className="whitespace-normal" />
               {/* Inline after the value, so a long word wraps whole and the mark follows it. */}
               <MarkIcon mark={marks[position]} />

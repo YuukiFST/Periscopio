@@ -17,12 +17,15 @@ const dragonfly3ProId = "0390fea6-efb9-45ea-a1a3-71b170224e58";
 
 /** The cell of `productName`'s row under the column `header` of the Categoria table. */
 async function tableCell(page: Page, productName: string, header: string): Promise<Locator> {
-  await expect(page.getByRole("columnheader", { name: header })).toBeVisible();
+  await expect(page.getByRole("columnheader", { name: header, exact: true })).toBeVisible();
   const headers = await page.getByRole("columnheader").allInnerTexts();
+  const column = headers.indexOf(header);
+  expect(column, `column ${header}`).toBeGreaterThan(1);
   const row = page
     .getByRole("row")
     .filter({ has: page.getByRole("rowheader", { name: productName }) });
-  return row.getByRole("cell").nth(headers.indexOf(header) - 1);
+  // The Comparar checkbox is a cell too, but the Produto column is the row's header.
+  return row.getByRole("cell").nth(column - 1);
 }
 
 function rangeBar(cell: Locator): Locator {

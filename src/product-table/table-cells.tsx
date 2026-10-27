@@ -1,7 +1,7 @@
 import { getRouteApi, Link } from "@tanstack/react-router";
 import type { ReactNode } from "react";
 import type { TableDensity } from "@/appearance/appearance";
-import type { Field, FieldValue, Product } from "@/data/schema";
+import type { Product } from "@/data/schema";
 import { manufacturerName } from "@/i18n/labels";
 import { productFieldValue } from "@/product-fields/field-groups";
 import { ProductPhoto } from "@/product-photo/product-photo";
@@ -19,7 +19,6 @@ import { novidadeLabels, novidadeOf } from "./novidades";
 import type { TableColumn } from "./table-columns";
 
 const rootRoute = getRouteApi("__root__");
-const categoryRoute = getRouteApi("/$categoria");
 
 export function MissingValue() {
   return (
@@ -157,20 +156,6 @@ export function RangeBar({
   );
 }
 
-/** Placed among all the Categoria's Produtos, so a Filtro leaves the bars still. */
-function TableRangeBar({
-  field,
-  value,
-  children,
-}: {
-  field: Field;
-  value: FieldValue;
-  children: ReactNode;
-}) {
-  const data = categoryRoute.useLoaderData();
-  return <RangeBar position={rangePositionOf(data, field, value)}>{children}</RangeBar>;
-}
-
 export function TableCellValue({ column, product }: { column: TableColumn; product: Product }) {
   switch (column.kind) {
     case "product":
@@ -197,7 +182,7 @@ export function TableCellValue({ column, product }: { column: TableColumn; produ
         ? formatDeviation(column.deviation, product.values[column.deviation.key])
         : undefined;
       return (
-        <TableRangeBar field={column.field} value={value}>
+        <RangeBar position={rangePositionOf(column.range, column.field, value)}>
           <span className="font-mono text-code-xs whitespace-nowrap">
             {text}
             {deviation !== undefined && (
@@ -208,7 +193,7 @@ export function TableCellValue({ column, product }: { column: TableColumn; produ
               </span>
             )}
           </span>
-        </TableRangeBar>
+        </RangeBar>
       );
     }
   }
