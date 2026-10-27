@@ -69,6 +69,12 @@ export function TableToolbar({
           maxLength={searchTextMaxLength}
           value={searchText}
           onChange={(event) => onSearchTextChange(event.target.value)}
+          // Chromium clears a search box on Escape by itself; Firefox keeps the text.
+          onKeyDown={(event) => {
+            if (event.key !== "Escape" || searchText === "") return;
+            event.preventDefault();
+            onSearchTextChange("");
+          }}
           className="h-9 ps-8"
         />
       </div>
