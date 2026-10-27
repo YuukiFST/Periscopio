@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 
 const photoSizes = {
   row: { frame: "size-8 rounded-md sm:size-10", icon: "size-4", pixels: 40 },
+  compactRow: { frame: "size-6 rounded-md sm:size-7", icon: "size-3.5", pixels: 28 },
   compare: { frame: "size-12 rounded-lg sm:size-16", icon: "size-5", pixels: 64 },
   detail: { frame: "size-24 rounded-xl sm:size-40", icon: "size-6", pixels: 160 },
 } as const;

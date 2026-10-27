@@ -17,6 +17,7 @@ import {
   useState,
   type FocusEvent,
 } from "react";
+import { useTableDensity, type TableDensity } from "@/appearance/appearance";
 import type { Product } from "@/data/schema";
 import { fieldLabel } from "@/i18n/labels";
 import { cn } from "@/lib/utils";
@@ -25,8 +26,8 @@ import { compareSortValues, isCountEnum, sortValueOf } from "./cell-values";
 import { ProductCell, productCellLabelIds, TableCellValue } from "./table-cells";
 import type { SortEntry, TableColumn } from "./table-columns";
 
-/** The shortest row; rows with long names or values grow and are measured. */
-const rowHeight = 60;
+/** The shortest row per density; rows with long names or values grow and are measured. */
+const rowHeights: Record<TableDensity, number> = { confortavel: 60, compacta: 48 };
 
 const features = tableFeatures({ rowSortingFeature, sortedRowModel: createSortedRowModel() });
 const columnHelper = createColumnHelper<typeof features, Product>();
@@ -145,6 +146,8 @@ export function ProductTable({
   });
   const handleComparedToggle = useCallback((id: string) => toggleRef.current(id), []);
 
+  const [density] = useTableDensity();
+  const rowHeight = rowHeights[density];
   const scrollRef = useRef<HTMLDivElement>(null);
   // TanStack Virtual returns a mutable instance by design; this app does not run the React Compiler.
   // oxlint-disable-next-line react/incompatible-library
@@ -159,6 +162,10 @@ export function ProductTable({
   useEffect(() => {
     scrollRef.current?.scrollTo({ top: 0 });
   }, [resultKey]);
+  // Rows measured at the other density would keep their old height until they scroll back in.
+  useEffect(() => {
+    virtualizer.measure();
+  }, [virtualizer, density]);
 
   const virtualRows = virtualizer.getVirtualItems();
   const fixedWidth = columns.reduce((total, column) => total + columnWidth(column), 0);
@@ -260,6 +267,7 @@ export function ProductTable({
                   comparedCount={comparedIds.length}
                   onComparedToggle={handleComparedToggle}
                   measureRef={virtualizer.measureElement}
+                  density={density}
                 />,
               ];
             })}
@@ -283,6 +291,7 @@ type ProductRowProps = {
   comparedCount: number;
   onComparedToggle: (id: string) => void;
   measureRef: (row: HTMLTableRowElement | null) => void;
+  density: TableDensity;
 };
 
 /**
@@ -297,14 +306,16 @@ const ProductRow = memo(function ProductRow({
   comparedCount,
   onComparedToggle,
   measureRef,
+  density,
 }: ProductRowProps) {
+  const cellPadding = density === "compacta" ? "py-1" : "py-1.5";
   return (
     <tr
       ref={measureRef}
       data-index={index}
       data-row-id={product.id}
       aria-rowindex={index + 2}
-      style={{ height: rowHeight }}
+      style={{ height: rowHeights[density] }}
     >
       <td className="sticky start-0 z-10 border-b border-border-subtle bg-page p-0">
         <CompareCheckbox
@@ -320,15 +331,19 @@ const ProductRow = memo(function ProductRow({
             key={column.slug}
             scope="row"
             aria-labelledby={productCellLabelIds(product)}
-            className="sticky start-(--select-column) z-10 border-e border-b border-border-subtle bg-page py-1.5 ps-0 pe-2 text-start font-normal sm:pe-3"
+            className={cn(
+              "sticky start-(--select-column) z-10 border-e border-b border-border-subtle bg-page ps-0 pe-2 text-start font-normal sm:pe-3",
+              cellPadding,
+            )}
           >
-            <ProductCell product={product} />
+            <ProductCell product={product} density={density} />
           </th>
         ) : (
           <td
             key={column.slug}
             className={cn(
-              "border-b border-border-subtle px-2 py-1.5 tabular-nums sm:px-3",
+              "border-b border-border-subtle px-2 tabular-nums sm:px-3",
+              cellPadding,
               isNumericColumn(column) && "text-end",
             )}
           >

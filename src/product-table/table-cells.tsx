@@ -1,4 +1,5 @@
 import { getRouteApi, Link } from "@tanstack/react-router";
+import type { TableDensity } from "@/appearance/appearance";
 import type { Product } from "@/data/schema";
 import { manufacturerName } from "@/i18n/labels";
 import { productFieldValue } from "@/product-fields/field-groups";
@@ -68,7 +69,13 @@ function NovidadeBadge({ product }: { product: Product }) {
  * The whole cell opens the detail screen; a Produto with the Link AliExpress
  * shows its name in blue as that link, above the cell's.
  */
-export function ProductCell({ product }: { product: Product }) {
+export function ProductCell({
+  product,
+  density = "confortavel",
+}: {
+  product: Product;
+  density?: TableDensity;
+}) {
   const manufacturer = manufacturerName(product.manufacturer);
   const name = <span id={`produto-${product.id}`}>{product.name}</span>;
   return (
@@ -83,7 +90,13 @@ export function ProductCell({ product }: { product: Product }) {
         aria-label={`Detalhes de ${product.name}`}
         className="absolute inset-0 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-ring active:bg-component-hover"
       />
-      <ProductPhoto key={product.image} src={product.image} alt="" size="row" loading="lazy" />
+      <ProductPhoto
+        key={product.image}
+        src={product.image}
+        alt=""
+        size={density === "compacta" ? "compactRow" : "row"}
+        loading="lazy"
+      />
       <div className="min-w-0">
         <p className="leading-[1.4] font-medium wrap-break-word text-fg-primary">
           {product.aliUrl ? (

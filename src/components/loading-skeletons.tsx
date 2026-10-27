@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { useTableDensity } from "@/appearance/appearance";
 import { maxComparedProducts, minComparedProducts } from "@/product-compare/compare-selection";
 
 /** Rows enough to fill a tall screen; the frame clips the rest. */
@@ -48,9 +49,11 @@ function TitleRowSkeleton({
 /**
  * The Categoria page while its Produtos load, shaped like `CategoryTable`:
  * title row, the Filtros panel at `lg`, the toolbar and rows of the table's
- * 60 px height. `status` is what screen readers hear.
+ * height for the chosen density. `status` is what screen readers hear.
  */
 export function CategorySkeleton({ status }: { status: string }) {
+  const [density] = useTableDensity();
+  const isCompact = density === "compacta";
   return (
     <div className="flex min-h-0 flex-1 flex-col">
       <p role="status" className="sr-only">
@@ -86,13 +89,21 @@ export function CategorySkeleton({ status }: { status: string }) {
               {Array.from({ length: skeletonRowCount }, (_, index) => (
                 <div
                   key={index}
-                  className="flex h-15 shrink-0 items-center border-b border-border-subtle"
+                  className={cn(
+                    "flex shrink-0 items-center border-b border-border-subtle",
+                    isCompact ? "h-12" : "h-15",
+                  )}
                 >
                   <div className="flex w-9 shrink-0 justify-center sm:w-11">
                     <Bone className="size-4 rounded-sm" />
                   </div>
                   <div className="flex h-full w-38 shrink-0 items-center gap-2 border-e border-border-subtle pe-2 min-[22rem]:w-44 sm:w-56 sm:gap-3 sm:pe-3">
-                    <Bone className="size-8 shrink-0 sm:size-10" />
+                    <Bone
+                      className={cn(
+                        "shrink-0",
+                        isCompact ? "size-6 sm:size-7" : "size-8 sm:size-10",
+                      )}
+                    />
                     <div className="flex min-w-0 flex-1 flex-col gap-1.5">
                       <Bone className="h-3.5 w-4/5" />
                       <Bone className="h-3 w-1/2" />

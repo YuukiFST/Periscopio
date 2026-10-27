@@ -8,18 +8,37 @@
     />
     <meta name="robots" content="noindex" />
     <meta name="color-scheme" content="light dark" />
-    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff" />
-    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0b0b0b" />
+    <meta name="theme-color" content="#ffffff" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <title>Periscópio</title>
     <script>
-      // Follows the system theme before the first paint, so dark mode never flashes light.
+      // Applies the theme chosen on this device (src/appearance/appearance.ts), or the system's,
+      // before the first paint, so the page never flashes the other theme.
       (() => {
         const query = window.matchMedia("(prefers-color-scheme: dark)");
-        const apply = () => document.documentElement.classList.toggle("dark", query.matches);
+        let unsaved = null;
+        const apply = () => {
+          let theme = unsaved;
+          try {
+            theme ??= localStorage.getItem("periscopio:tema");
+          } catch {}
+          const dark = theme === "escuro" || (theme !== "claro" && query.matches);
+          document.documentElement.classList.toggle("dark", dark);
+          document
+            .querySelector('meta[name="color-scheme"]')
+            .setAttribute("content", dark ? "dark" : "light");
+          document
+            .querySelector('meta[name="theme-color"]')
+            .setAttribute("content", dark ? "#0b0b0b" : "#ffffff");
+        };
         apply();
         query.addEventListener("change", apply);
+        window.addEventListener("storage", apply);
+        window.addEventListener("periscopio:tema", (event) => {
+          unsaved = event.detail;
+          apply();
+        });
       })();
     </script>
   </head>
