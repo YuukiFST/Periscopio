@@ -8,8 +8,13 @@ import { categoryFiltersFor } from "@/product-filters/category-filters";
 import { activeFilterCount, applyFilters } from "@/product-filters/filter-engine";
 import { filterValuesFromSearch } from "@/product-filters/filter-link";
 import type { HighlightDirection } from "@/product-compare/highlight-rules";
+import { useFavoriteIds } from "@/product-table/favorite-products";
 import { filterNovidades } from "@/product-table/novidades";
-import { defaultTestStatus, filterProducts } from "@/product-table/product-filter";
+import {
+  defaultTestStatus,
+  filterFavoriteProducts,
+  filterProducts,
+} from "@/product-table/product-filter";
 import { productCount } from "@/product-table/table-toolbar";
 import {
   axisValueText,
@@ -43,6 +48,7 @@ function narrowingText(search: ChartSearch, filterCount: number): string {
   if (search.q) parts.push(`busca “${search.q}”`);
   if (filterCount > 0) parts.push(filterCount === 1 ? "1 filtro" : `${filterCount} filtros`);
   if (search.novidades) parts.push("Novidades");
+  if (search.favoritos) parts.push("Favoritos");
   return parts.join(" · ");
 }
 
@@ -65,13 +71,15 @@ export function ProductChart({ data, search, onAxisChange }: ProductChartProps) 
 
   const filters = useMemo(() => categoryFiltersFor(data), [data]);
   const filterValues = useMemo(() => filterValuesFromSearch(filters, search), [filters, search]);
+  const [favoriteIds] = useFavoriteIds(data.category);
   const products = useMemo(() => {
     const filtered = filterProducts(
       applyFilters(data.products, filters, filterValues),
       search.status ?? defaultTestStatus,
       search.q ?? "",
     );
-    return search.novidades ? filterNovidades(filtered, meta.updatedAt) : filtered;
+    const shown = search.novidades ? filterNovidades(filtered, meta.updatedAt) : filtered;
+    return search.favoritos ? filterFavoriteProducts(shown, favoriteIds) : shown;
   }, [
     data.products,
     filters,
@@ -80,6 +88,8 @@ export function ProductChart({ data, search, onAxisChange }: ProductChartProps) 
     search.q,
     search.novidades,
     meta.updatedAt,
+    search.favoritos,
+    favoriteIds,
   ]);
   const points = useMemo(() => chartPointsOf(products, xAxis, yAxis), [products, xAxis, yAxis]);
   const bestTradeOffs = useMemo(
