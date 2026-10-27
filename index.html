@@ -17,10 +17,11 @@
       // before the first paint, so the page never flashes the other theme.
       (() => {
         const query = window.matchMedia("(prefers-color-scheme: dark)");
+        let unsaved = null;
         const apply = () => {
-          let theme = null;
+          let theme = unsaved;
           try {
-            theme = localStorage.getItem("periscopio:tema");
+            theme ??= localStorage.getItem("periscopio:tema");
           } catch {}
           const dark = theme === "escuro" || (theme !== "claro" && query.matches);
           document.documentElement.classList.toggle("dark", dark);
@@ -34,7 +35,10 @@
         apply();
         query.addEventListener("change", apply);
         window.addEventListener("storage", apply);
-        window.addEventListener("periscopio:tema", apply);
+        window.addEventListener("periscopio:tema", (event) => {
+          unsaved = event.detail;
+          apply();
+        });
       })();
     </script>
   </head>

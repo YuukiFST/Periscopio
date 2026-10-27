@@ -105,3 +105,26 @@ test("the Compacta density shortens the table rows and photos, and survives a re
   await (await openAppearance(page)).getByRole("radio", { name: "Confortável" }).check();
   await expect.poll(() => shortestRowHeight(page)).toBe(60);
 });
+
+test("with a full storage, both switches still apply for the visit", async ({ page }) => {
+  await page.addInitScript(() => {
+    Storage.prototype.setItem = Storage.prototype.removeItem = () => {
+      throw new DOMException("The quota has been exceeded.", "QuotaExceededError");
+    };
+  });
+  await page.emulateMedia({ colorScheme: "light" });
+  await page.goto("/mouse");
+  await expect(page.getByRole("rowheader").first()).toBeVisible();
+
+  const appearance = await openAppearance(page);
+  await appearance.getByRole("radio", { name: "Escuro" }).check();
+  await expectTheme(page, "dark");
+  await appearance.getByRole("radio", { name: "Compacta" }).check();
+  await expect.poll(() => shortestRowHeight(page)).toBe(48);
+  await expect(appearance.getByRole("radio", { name: "Escuro" })).toBeChecked();
+
+  await appearance.getByRole("radio", { name: "Sistema" }).check();
+  await expectTheme(page, "light");
+  await page.emulateMedia({ colorScheme: "dark" });
+  await expectTheme(page, "dark");
+});

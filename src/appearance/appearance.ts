@@ -9,13 +9,16 @@ export type TableDensity = (typeof tableDensities)[number];
 /** The `index.html` script reads this key before the first paint. */
 const themeKey = "periscopio:tema";
 const tableDensityKey = "periscopio:densidade-da-tabela";
-/** The `index.html` script applies the stored theme again on this event. */
+/**
+ * The `index.html` script applies the theme again on this event; its detail is
+ * the theme the storage could not keep, or null once the storage holds it.
+ */
 const themeChangeEvent = "periscopio:tema";
 
 /**
- * A choice kept on this device, its default when nothing valid is stored or
- * the browser blocks site storage, and every mounted reader rereads after a
- * change, here or in another tab.
+ * A choice kept on this device, its default when nothing valid is stored, and
+ * every mounted reader rereads after a change, here or in another tab.
+ * A blocked or full storage only loses the choice for the next visit.
  */
 function storedChoice<Value extends string>(
   key: string,
@@ -23,7 +26,9 @@ function storedChoice<Value extends string>(
   fallback: Value,
 ) {
   const listeners = new Set<() => void>();
+  let unsaved: Value | undefined;
   function read(): Value {
+    if (unsaved !== undefined) return unsaved;
     try {
       const stored = localStorage.getItem(key);
       return values.find((value) => value === stored) ?? fallback;
@@ -39,16 +44,16 @@ function storedChoice<Value extends string>(
       window.removeEventListener("storage", listener);
     };
   }
-  /** False when the browser blocks site storage, so the choice did not stick. */
+  /** False when the storage could not keep the choice, which then lasts until a reload. */
   function write(value: Value): boolean {
+    unsaved = value;
     try {
       if (value === fallback) localStorage.removeItem(key);
       else localStorage.setItem(key, value);
-    } catch {
-      return false;
-    }
+      unsaved = undefined;
+    } catch {}
     for (const listener of listeners) listener();
-    return true;
+    return unsaved === undefined;
   }
   return { read, subscribe, write };
 }
@@ -59,7 +64,8 @@ const storedTableDensity = storedChoice(tableDensityKey, tableDensities, "confor
 export function useTheme() {
   const theme = useSyncExternalStore(storedTheme.subscribe, storedTheme.read);
   function setTheme(next: Theme) {
-    if (storedTheme.write(next)) window.dispatchEvent(new Event(themeChangeEvent));
+    const saved = storedTheme.write(next);
+    window.dispatchEvent(new CustomEvent(themeChangeEvent, { detail: saved ? null : next }));
   }
   return [theme, setTheme] as const;
 }
