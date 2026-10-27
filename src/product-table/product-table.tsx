@@ -177,7 +177,9 @@ export function ProductTable({
     if (!isSingleKeyShortcut(event.nativeEvent) || !(event.target instanceof Element)) return;
     const row = event.target.closest("tr[data-row-id]");
     if (!row) return;
-    const step = rowSteps[event.key];
+    // With Caps Lock on, the letter keys still work.
+    const key = event.key.length === 1 ? event.key.toLowerCase() : event.key;
+    const step = rowSteps[key];
     if (step !== undefined) {
       event.preventDefault();
       const nextIndex = Number(row.getAttribute("data-index")) + step;
@@ -189,8 +191,10 @@ export function ProductTable({
         ?.focus();
       return;
     }
-    if (event.key === "c") {
+    if (key === "c") {
       event.preventDefault();
+      // Held down, the mark flips once, as a click does.
+      if (event.repeat) return;
       row.querySelector<HTMLInputElement>('input[type="checkbox"]')?.click();
       return;
     }

@@ -84,6 +84,15 @@ test("Esc in the table search clears the text and the link's search", async ({ p
   await expect(page).toHaveURL("/mouse");
   await expect(tableSearch(page)).toBeFocused();
 
+  // An Escape that cancels a pending accent leaves the search as it was.
+  await tableSearch(page).fill("razer");
+  await tableSearch(page).dispatchEvent("keydown", {
+    key: "Escape",
+    bubbles: true,
+    isComposing: true,
+  });
+  await expect(tableSearch(page)).toHaveValue("razer");
+
   // A dispatched key runs no browser default, like Firefox, which keeps the text on Escape.
   await tableSearch(page).fill("huan");
   await expect(page).toHaveURL("/mouse?q=huan");
@@ -108,6 +117,11 @@ test("j, k and the arrows walk the rows, keeping the focused row on screen", asy
   await page.keyboard.press("k");
   await expect(detailsLink(page, 1)).toBeFocused();
   await page.keyboard.press("ArrowUp");
+  await expect(detailsLink(page, 0)).toBeFocused();
+  // With Caps Lock on, the letters arrive in upper case.
+  await page.keyboard.press("Shift+J");
+  await expect(detailsLink(page, 1)).toBeFocused();
+  await page.keyboard.press("Shift+K");
   await expect(detailsLink(page, 0)).toBeFocused();
   // The first row has none above it.
   await page.keyboard.press("k");
@@ -162,6 +176,13 @@ test("c toggles the focused Produto's Comparação mark and keeps the 4-Produto 
   await expect(detailsLink(page, 0)).toBeFocused();
   await page.keyboard.press("c");
   await expect(compareCheckbox(page, 0)).not.toBeChecked();
+  // Held down, the key repeats, and the mark flips once.
+  await page.keyboard.down("c");
+  await page.keyboard.down("c");
+  await page.keyboard.up("c");
+  await expect(compareCheckbox(page, 0)).toBeChecked();
+  await page.keyboard.press("c");
+  await expect(compareCheckbox(page, 0)).not.toBeChecked();
 
   for (let position = 0; position < 4; position++) {
     await page.keyboard.press("c");
@@ -197,4 +218,35 @@ test("typing in the search, or a key with Ctrl, Meta or Alt, triggers no shortcu
   await expect(detailsLink(page, 0)).toBeFocused();
   await expect(compareCheckbox(page, 0)).not.toBeChecked();
   await expect(tableSearch(page)).not.toBeFocused();
+});
+
+test("over the Filtros drawer on a phone, ? and / leave it alone", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/mouse");
+  await page.getByRole("button", { name: "Filtros" }).click();
+  const filtersDrawer = page.getByRole("dialog", { name: "Filtros" });
+  await expect(filtersDrawer).toBeVisible();
+  await filtersDrawer.getByRole("heading", { name: "Filtros" }).click();
+
+  await page.keyboard.press("?");
+  await page.keyboard.press("/");
+  await expect(shortcutsDialog(page)).toHaveCount(0);
+  await expect(page.locator("#busca-produto")).not.toBeFocused();
+  await expect(filtersDrawer).toBeVisible();
+});
+
+test("/ and ? typed with AltGr, as on an ABNT2 keyboard without the /? key, still work", async ({
+  page,
+}) => {
+  await page.goto("/mouse");
+  await expect(page.getByRole("heading", { level: 1 })).toBeFocused();
+  // Windows reports AltGr as Ctrl and Alt together, with the AltGraph modifier on.
+  const altGraph = { bubbles: true, ctrlKey: true, altKey: true, modifierAltGraph: true };
+  await page.getByRole("heading", { level: 1 }).dispatchEvent("keydown", { key: "?", ...altGraph });
+  await expect(shortcutsDialog(page)).toBeVisible();
+  await page.keyboard.press("Escape");
+  await expect(shortcutsDialog(page)).toHaveCount(0);
+
+  await page.getByRole("heading", { level: 1 }).dispatchEvent("keydown", { key: "/", ...altGraph });
+  await expect(tableSearch(page)).toBeFocused();
 });
