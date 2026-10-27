@@ -243,7 +243,12 @@ function CategoryTable({ data }: { data: CategoryData }) {
     // The notice counts untested Produtos too, so every Status de teste shows.
     void navigate({
       unsafeRelative: "path",
-      search: (previous) => ({ ...previous, novidades: "1", status: "todos" }),
+      search: (previous) => ({
+        ...previous,
+        novidades: "1",
+        status: "todos",
+        favoritos: undefined,
+      }),
       replace: true,
     });
     // The notice goes away; focus moves to the toggle it just turned on.
