@@ -106,8 +106,7 @@ export function TableToolbar({
       )}
       <Button
         id={favoritesToggleId}
-        variant="outline"
-        size="lg"
+        variant="tertiary"
         aria-pressed={favorites.pressed}
         onClick={() => favorites.onPressedChange(!favorites.pressed)}
         className="aria-pressed:border-muted-foreground aria-pressed:bg-active forced-colors:aria-pressed:border-[Highlight]"

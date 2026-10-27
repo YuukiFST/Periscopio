@@ -31,7 +31,7 @@ export function RecentProductsButton() {
         ensureLoaded();
       }}
     >
-      <Popover.Trigger render={<Button variant="outline" size="lg" />}>
+      <Popover.Trigger render={<Button variant="tertiary" />}>
         <History aria-hidden="true" strokeWidth={1.5} />
         Recentes
       </Popover.Trigger>

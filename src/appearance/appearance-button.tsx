@@ -21,7 +21,7 @@ export function AppearanceButton() {
   const [tableDensity, setTableDensity] = useTableDensity();
   return (
     <Popover.Root>
-      <Popover.Trigger render={<Button variant="outline" size="icon-lg" aria-label="Aparência" />}>
+      <Popover.Trigger render={<Button variant="tertiary" size="icon-lg" aria-label="Aparência" />}>
         <SunMoon aria-hidden="true" strokeWidth={1.5} />
       </Popover.Trigger>
       <Popover.Portal>

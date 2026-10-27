@@ -44,7 +44,7 @@ export function ColumnsMenu({
 
   return (
     <Popover.Root onOpenChange={(open) => open || setSearchText("")}>
-      <Popover.Trigger render={<Button variant="outline" size="lg" />}>
+      <Popover.Trigger render={<Button variant="tertiary" />}>
         <Columns3 aria-hidden="true" strokeWidth={1.5} />
         Colunas
       </Popover.Trigger>

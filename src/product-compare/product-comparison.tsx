@@ -153,7 +153,7 @@ export function ProductComparison({
               candidates={candidates}
               title="Adicionar produto à comparação"
               trigger={
-                <Button variant="outline" size="lg">
+                <Button variant="tertiary">
                   <Plus aria-hidden="true" strokeWidth={1.5} />
                   Adicionar produto
                 </Button>

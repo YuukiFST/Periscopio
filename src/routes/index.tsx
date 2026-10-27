@@ -148,8 +148,7 @@ function RecentProductsSection({ load, onRetry }: { load: CategoriesLoad; onRetr
             Não deu para carregar os produtos. Verifique a conexão e tente de novo.
           </p>
           <Button
-            variant="outline"
-            size="lg"
+            variant="tertiary"
             onClick={() => {
               // The button goes while the Produtos load; focus moves on to the page's title.
               document.querySelector<HTMLElement>("main h1")?.focus();
@@ -175,7 +174,9 @@ function RecentProductList({
   const items = recentProductItems(recent, load.categories).slice(0, homeRecentProductCount);
   if (items.length === 0) {
     return (
-      <p className="text-body text-muted-foreground">Os produtos vistos não estão mais nos dados.</p>
+      <p className="text-body text-muted-foreground">
+        Os produtos vistos não estão mais nos dados.
+      </p>
     );
   }
   return (

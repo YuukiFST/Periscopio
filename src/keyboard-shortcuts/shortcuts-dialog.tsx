@@ -43,9 +43,7 @@ export function ShortcutsDialog() {
         <Dialog.Viewport className="fixed inset-0 z-50 flex items-start justify-center px-2 pt-[min(12dvh,6rem)] pb-2">
           <Dialog.Popup className="flex max-h-full w-full max-w-md flex-col overflow-hidden rounded-2xl bg-popover text-popover-foreground shadow-surface-5 transition-[opacity,scale] duration-150 ease-out-quint outline-none data-ending-style:scale-[0.98] data-ending-style:opacity-0 data-starting-style:scale-[0.98] data-starting-style:opacity-0 motion-reduce:data-ending-style:scale-100 motion-reduce:data-starting-style:scale-100">
             <div className="flex items-center justify-between gap-2 border-b border-border ps-4">
-              <Dialog.Title className="text-title font-medium">
-                Atalhos de teclado
-              </Dialog.Title>
+              <Dialog.Title className="text-title font-medium">Atalhos de teclado</Dialog.Title>
               <Dialog.Close
                 render={<Button variant="ghost" size="icon-lg" className="m-1.5" />}
                 aria-label="Fechar atalhos"

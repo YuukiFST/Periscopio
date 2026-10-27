@@ -191,8 +191,7 @@ function FavoriteToggleButton({ data, product }: { data: CategoryData; product: 
   const isFavorite = favoriteIds.has(product.id);
   return (
     <Button
-      variant="outline"
-      size="lg"
+      variant="tertiary"
       aria-pressed={isFavorite}
       aria-label={isFavorite ? "Remover dos favoritos" : `Favoritar ${product.name}`}
       onClick={() => toggleFavorite(product.id)}

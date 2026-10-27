@@ -190,7 +190,9 @@ export function ScatterPlot({
                     strokeWidth={1.5}
                     className={cn(
                       "stroke-background",
-                      isBest ? "fill-blue-500" : "fill-muted-foreground/70 group-hover:fill-muted-foreground",
+                      isBest
+                        ? "fill-blue-500"
+                        : "fill-muted-foreground/70 group-hover:fill-muted-foreground",
                     )}
                   />
                   <circle
