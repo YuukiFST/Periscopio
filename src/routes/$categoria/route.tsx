@@ -50,6 +50,7 @@ import { countNovidadesSince, filterNovidades, novidadeOf } from "@/product-tabl
 import { ProductTable } from "@/product-table/product-table";
 import { ColumnsMenu } from "@/product-table/columns-menu";
 import { useStoredColumns } from "@/product-table/stored-columns";
+import { useFavoriteIds } from "@/product-table/favorite-products";
 import {
   columnKeysFromParam,
   columnsParamOf,
@@ -133,6 +134,7 @@ function CategoryTable({ data }: { data: CategoryData }) {
   );
   const comparedIds = useMemo(() => comparedIdsFromParam(cmp, productIds), [cmp, productIds]);
   const changeComparedIds = useChangeComparedIds(data.category);
+  const [favoriteIds, toggleFavorite] = useFavoriteIds(data.category);
 
   const filters = useMemo(() => categoryFiltersFor(data), [data]);
   const filterValues = useMemo(() => filterValuesFromSearch(filters, search), [filters, search]);
@@ -414,6 +416,8 @@ function CategoryTable({ data }: { data: CategoryData }) {
               labelledBy={headingId}
               comparedIds={comparedIds}
               onComparedToggle={(id) => changeComparedIds(toggleComparedId(comparedIds, id))}
+              favoriteIds={favoriteIds}
+              onFavoriteToggle={toggleFavorite}
               onSortClick={(slug) =>
                 void navigate({
                   unsafeRelative: "path",

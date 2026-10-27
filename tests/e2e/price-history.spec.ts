@@ -78,7 +78,7 @@ test("the Histórico de preço loads only when a detail opens, and shows offline
   expect(priceHistoryRequests).toEqual([]);
   expect(await cachedPriceHistoryPaths(page)).toEqual([]);
 
-  await page.getByRole("link", { name: "Detalhes de Huan" }).click({ position: { x: 16, y: 16 } });
+  await page.getByRole("link", { name: "Detalhes de Huan" }).click({ position: { x: 56, y: 16 } });
   await expect(sparkline(page)).toBeVisible();
   expect(priceHistoryRequests.map((url) => new URL(url).pathname)).toContain(
     "/data/precos/mouse.json",

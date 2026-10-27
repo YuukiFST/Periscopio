@@ -77,6 +77,9 @@ type ProductTableProps = {
   /** The Produtos marked for the Comparação, at most 4. */
   comparedIds: readonly string[];
   onComparedToggle: (id: string) => void;
+  /** The Categoria's Favoritos on this device. */
+  favoriteIds: ReadonlySet<string>;
+  onFavoriteToggle: (id: string) => void;
 };
 
 export function ProductTable({
@@ -88,6 +91,8 @@ export function ProductTable({
   onSortClick,
   comparedIds,
   onComparedToggle,
+  favoriteIds,
+  onFavoriteToggle,
 }: ProductTableProps) {
   const tableColumns = useMemo(
     () =>
@@ -149,6 +154,11 @@ export function ProductTable({
     toggleRef.current = onComparedToggle;
   });
   const handleComparedToggle = useCallback((id: string) => toggleRef.current(id), []);
+  const favoriteToggleRef = useRef(onFavoriteToggle);
+  useLayoutEffect(() => {
+    favoriteToggleRef.current = onFavoriteToggle;
+  });
+  const handleFavoriteToggle = useCallback((id: string) => favoriteToggleRef.current(id), []);
 
   const [density] = useTableDensity();
   const rowHeight = rowHeights[density];
@@ -198,8 +208,11 @@ export function ProductTable({
       row.querySelector<HTMLInputElement>('input[type="checkbox"]')?.click();
       return;
     }
-    // On a link, Enter follows it already.
-    if (event.key === "Enter" && !(event.target instanceof HTMLAnchorElement)) {
+    // On a link, Enter follows it already; on the star, it stars.
+    if (
+      event.key === "Enter" &&
+      !(event.target instanceof HTMLAnchorElement || event.target instanceof HTMLButtonElement)
+    ) {
       event.preventDefault();
       row.querySelector<HTMLAnchorElement>("a[href]")?.click();
     }
@@ -304,6 +317,8 @@ export function ProductTable({
                   checked={comparedIds.includes(product.id)}
                   comparedCount={comparedIds.length}
                   onComparedToggle={handleComparedToggle}
+                  isFavorite={favoriteIds.has(product.id)}
+                  onFavoriteToggle={handleFavoriteToggle}
                   measureRef={virtualizer.measureElement}
                   density={density}
                 />,
@@ -328,6 +343,8 @@ type ProductRowProps = {
   checked: boolean;
   comparedCount: number;
   onComparedToggle: (id: string) => void;
+  isFavorite: boolean;
+  onFavoriteToggle: (id: string) => void;
   measureRef: (row: HTMLTableRowElement | null) => void;
   density: TableDensity;
 };
@@ -343,6 +360,8 @@ const ProductRow = memo(function ProductRow({
   checked,
   comparedCount,
   onComparedToggle,
+  isFavorite,
+  onFavoriteToggle,
   measureRef,
   density,
 }: ProductRowProps) {
@@ -374,7 +393,11 @@ const ProductRow = memo(function ProductRow({
               cellPadding,
             )}
           >
-            <ProductCell product={product} density={density} />
+            <ProductCell
+              product={product}
+              density={density}
+              favorite={{ isFavorite, onToggle: () => onFavoriteToggle(product.id) }}
+            />
           </th>
         ) : (
           <td

@@ -18,7 +18,7 @@ test("a Produto opened from the table shows its header and fields grouped in pt 
   // On the photo: the name in the middle of the cell is the AliExpress link.
   await page
     .getByRole("link", { name: "Detalhes de Dragonfly A9 Ultra" })
-    .click({ position: { x: 16, y: 16 } });
+    .click({ position: { x: 56, y: 16 } });
 
   await expect(page).toHaveURL(`/mouse/${dragonflyA9UltraId}${tableSearch}`);
   await expect(page.getByRole("dialog", { name: "Dragonfly A9 Ultra" })).toBeVisible();
@@ -74,7 +74,7 @@ test("the side panel leaves the table usable: another row takes the panel, a sor
 
   await page
     .getByRole("link", { name: "Detalhes de Dragonfly A9 Ultra" })
-    .click({ position: { x: 16, y: 16 } });
+    .click({ position: { x: 56, y: 16 } });
   await expect(page).toHaveURL(`/mouse/${dragonflyA9UltraId}?ordem=-peso`);
   await expect(page.getByRole("dialog", { name: "Dragonfly A9 Ultra" })).toBeVisible();
 
