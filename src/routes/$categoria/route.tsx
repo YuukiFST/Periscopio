@@ -18,6 +18,12 @@ import {
   useLastSeenUpdate,
 } from "@/components/update-notice";
 import { loadCategoryData } from "@/data/load-data";
+import {
+  isBehindModal,
+  isSingleKeyShortcut,
+  usePageShortcut,
+} from "@/keyboard-shortcuts/page-shortcuts";
+import { ShortcutsDialog } from "@/keyboard-shortcuts/shortcuts-dialog";
 import type { CategoryData } from "@/data/schema";
 import { CompareBar } from "@/product-compare/compare-bar";
 import { comparedIdsFromParam, toggleComparedId } from "@/product-compare/compare-selection";
@@ -88,6 +94,7 @@ function CategoryPage() {
     <>
       <CategoryTable key={data.category} data={data} />
       <ProductSidebar key={`painel-${data.category}`} data={data} />
+      <ShortcutsDialog />
     </>
   );
 }
@@ -232,6 +239,14 @@ function CategoryTable({ data }: { data: CategoryData }) {
       replace: true,
     });
   }
+
+  usePageShortcut((event) => {
+    if (event.key !== "/" || !isSingleKeyShortcut(event)) return false;
+    const searchInput = document.getElementById(searchInputId);
+    if (!searchInput || isBehindModal(searchInput)) return false;
+    searchInput.focus();
+    return true;
+  });
 
   function showAllProducts() {
     setSearchText("");
