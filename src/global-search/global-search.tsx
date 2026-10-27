@@ -2,15 +2,13 @@ import { Autocomplete } from "@base-ui/react/autocomplete";
 import { Dialog } from "@base-ui/react/dialog";
 import { useMatch, useNavigate } from "@tanstack/react-router";
 import { Search, X } from "lucide-react";
-import { useEffect, useEffectEvent, useMemo, useRef, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { categoryLabels } from "@/categories";
 import { Button } from "@/components/ui/button";
 import { useAllCategories, type CategoriesLoad } from "@/data/use-all-categories";
 import { manufacturerName } from "@/i18n/labels";
+import { isApplePlatform, usePageShortcut } from "@/keyboard-shortcuts/page-shortcuts";
 import { searchAllCategories, type SearchResult, type SearchResultGroup } from "./search-results";
-
-const isApplePlatform =
-  typeof navigator !== "undefined" && /Mac|iPhone|iPad/.test(navigator.userAgent);
 
 function isSearchShortcut(event: KeyboardEvent): boolean {
   return (
@@ -56,15 +54,11 @@ export function GlobalSearch() {
     ensureLoaded();
   }
 
-  const onShortcut = useEffectEvent((event: KeyboardEvent) => {
-    if (!isSearchShortcut(event)) return;
-    event.preventDefault();
+  usePageShortcut((event) => {
+    if (!isSearchShortcut(event)) return false;
     if (!isOpen) openSearch();
+    return true;
   });
-  useEffect(() => {
-    window.addEventListener("keydown", onShortcut);
-    return () => window.removeEventListener("keydown", onShortcut);
-  }, []);
 
   function openResult({ category, product }: SearchResult) {
     openedProduct.current = true;
