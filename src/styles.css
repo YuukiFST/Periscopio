@@ -50,33 +50,34 @@
   --selected: #d4d4d4;
   --destructive-light: #fef2f2;
   --overlay: 0 0 0;
-  --focus-ring: #6b97ff;
+  /* blue-600: 3:1 or more against every light surface; dark keeps the lighter blue. */
+  --focus-ring: var(--color-blue-600);
   --tint: rgb(0 0 0 / 0.08);
   --tint-hover: rgb(0 0 0 / 0.065);
-  --fs-display: 28px;
-  --lh-display: 34px;
-  --fs-display-compact: 24px;
-  --lh-display-compact: 30px;
-  --fs-title: 16px;
-  --lh-title: 22px;
-  --fs-title-compact: 15px;
-  --lh-title-compact: 20px;
-  --fs-subtitle: 14px;
-  --lh-subtitle: 20px;
-  --fs-subtitle-compact: 13px;
-  --lh-subtitle-compact: 18px;
-  --fs-body: 13px;
-  --lh-body: 20px;
-  --fs-body-compact: 12px;
-  --lh-body-compact: 18px;
-  --fs-caption: 12px;
-  --lh-caption: 16px;
-  --fs-caption-compact: 11px;
-  --lh-caption-compact: 14px;
-  --fs-micro: 11px;
-  --lh-micro: 14px;
-  --fs-micro-compact: 10px;
-  --lh-micro-compact: 12px;
+  --fs-display: 1.75rem;
+  --lh-display: 2.125rem;
+  --fs-display-compact: 1.5rem;
+  --lh-display-compact: 1.875rem;
+  --fs-title: 1rem;
+  --lh-title: 1.375rem;
+  --fs-title-compact: 0.9375rem;
+  --lh-title-compact: 1.25rem;
+  --fs-subtitle: 0.875rem;
+  --lh-subtitle: 1.25rem;
+  --fs-subtitle-compact: 0.8125rem;
+  --lh-subtitle-compact: 1.125rem;
+  --fs-body: 0.8125rem;
+  --lh-body: 1.25rem;
+  --fs-body-compact: 0.75rem;
+  --lh-body-compact: 1.125rem;
+  --fs-caption: 0.75rem;
+  --lh-caption: 1rem;
+  --fs-caption-compact: 0.6875rem;
+  --lh-caption-compact: 0.875rem;
+  --fs-micro: 0.6875rem;
+  --lh-micro: 0.875rem;
+  --fs-micro-compact: 0.625rem;
+  --lh-micro-compact: 0.75rem;
   /* shadcn/ui theme variables on the neutral palette; the page sits on surface 1. */
   --radius: 0.5rem;
   --background: var(--surface-1);
@@ -90,14 +91,18 @@
   --secondary: oklch(97% 0 0);
   --secondary-foreground: var(--foreground);
   --muted: oklch(96% 0 0);
-  --muted-foreground: oklch(55.6% 0 0);
+  --muted-foreground: oklch(50% 0 0);
   --accent: var(--hover);
   --accent-foreground: var(--foreground);
   --destructive: oklch(57.7% 0.245 27.325);
   --border: oklch(92.2% 0 0);
-  --input: oklch(92.2% 0 0);
+  /* A field's edge is its only cue when empty, so it holds 3:1 against the page. */
+  --input: oklch(64% 0 0);
   --ring: var(--focus-ring);
   --highlight-fg: var(--color-emerald-800);
+  --novidade: var(--color-blue-700);
+  --favorito: var(--color-blue-600);
+  --warning-fg: var(--color-amber-700);
 }
 
 .dark {
@@ -152,6 +157,7 @@
   --selected: #525252;
   --destructive-light: #450a0a;
   --overlay: 255 255 255;
+  --focus-ring: var(--color-blue-500);
   --tint: rgb(255 255 255 / 0.25);
   --tint-hover: rgb(255 255 255 / 0.2);
   --foreground: oklch(98.5% 0 0);
@@ -159,11 +165,15 @@
   --primary-foreground: oklch(20.5% 0 0);
   --secondary: oklch(26.9% 0 0);
   --muted: oklch(26.9% 0 0);
-  --muted-foreground: oklch(70.8% 0 0);
-  --destructive: oklch(70.4% 0.191 22.216);
+  --muted-foreground: oklch(75% 0 0);
+  /* red-300 keeps 12px error text at 4.5:1 on the popover surface too. */
+  --destructive: var(--color-red-300);
   --border: oklch(100% 0 0 / 10%);
-  --input: oklch(100% 0 0 / 15%);
+  --input: oklch(100% 0 0 / 44%);
   --highlight-fg: var(--color-emerald-200);
+  --novidade: var(--color-blue-400);
+  --favorito: var(--color-blue-400);
+  --warning-fg: var(--color-amber-400);
 }
 
 @theme inline {
@@ -194,6 +204,12 @@
   /* The Destaque in a Comparação ("Layout no celular e forma do Destaque"). */
   --color-highlight: color-mix(in oklab, var(--color-emerald-500) 14%, transparent);
   --color-highlight-fg: var(--highlight-fg);
+  /* A Novidade and the stale-data warning, each a text color and a faint fill. */
+  --color-novidade: var(--novidade);
+  --color-favorito: var(--favorito);
+  --color-novidade-subtle: color-mix(in oklab, var(--color-blue-500) 10%, transparent);
+  --color-warning-fg: var(--warning-fg);
+  --color-warning-subtle: color-mix(in oklab, var(--color-amber-500) 10%, transparent);
 
   --color-surface-1: var(--surface-1);
   --color-surface-2: var(--surface-2);
@@ -296,6 +312,8 @@
   }
   html {
     @apply bg-background font-sans;
+    /* Every control draws its own press; the browser's grey tap flash would double it. */
+    -webkit-tap-highlight-color: transparent;
     /* Keeps a focused control clear of the detail screen's sticky Comparação bar. */
     scroll-padding-bottom: 6rem;
   }
@@ -307,6 +325,10 @@
   }
   body {
     @apply bg-background text-body text-foreground antialiased;
+  }
+  /* No lone word on a paragraph's last line. */
+  p {
+    text-wrap: pretty;
   }
   /* A quick second tap on a control acts on it instead of zooming the page. */
   a,

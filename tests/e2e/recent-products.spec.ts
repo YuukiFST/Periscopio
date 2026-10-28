@@ -128,11 +128,19 @@ test("the history keeps 10 Produtos per Categoria and the list skips the ones th
   await expect(recentList(page).getByRole("link")).toHaveText([/^Huan/, /^EDGE 60HE Pro/]);
 });
 
-test("Limpar histórico empties the list and hides Recentes", async ({ page }) => {
+test("Limpar histórico asks first, then empties the list and hides Recentes", async ({ page }) => {
   await page.goto(`/teclado/${edge60HeProId}`);
   await expect(page.getByRole("dialog", { name: "EDGE 60HE Pro" })).toBeVisible();
   await closeDetails(page);
   await recentButton(page).click();
+  await recentList(page).getByRole("button", { name: "Limpar histórico" }).click();
+  // The first press only asks; Cancelar keeps the list.
+  await expect(recentList(page).getByRole("link")).toHaveCount(1);
+  await recentList(page).getByRole("button", { name: "Cancelar" }).click();
+  // Cancelar leaves with the question, so the keyboard goes back to the button that asked it.
+  await expect(recentList(page).getByRole("button", { name: "Limpar histórico" })).toBeFocused();
+  await recentList(page).getByRole("button", { name: "Limpar histórico" }).click();
+  // The answer repeats the action it confirms.
   await recentList(page).getByRole("button", { name: "Limpar histórico" }).click();
 
   await expect(recentList(page)).toHaveCount(0);

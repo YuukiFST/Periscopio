@@ -1,32 +1,42 @@
 - complementary "Filtros":
     - heading "Filtros" [level=2]
-    - button "Limpar" [disabled]
-    - group "Atalhos":
-        - button "Magnético"
-    - button "Salvar filtros atuais" [disabled]
-    - text: Nota geral
-    - combobox "Nota geral": Todas
-    - text: Recomendação
-    - combobox "Recomendação": Todas
-    - group "Preço (mil ₩)":
-        - text: Preço (mil ₩) Mínimo
-        - textbox "Mínimo"
-        - text: Máximo
-        - textbox "Máximo"
-    - text: Layout
-    - combobox "Layout": Todas
-    - text: Conexão
-    - combobox "Conexão": Todas
-    - text: Material da carcaça
-    - combobox "Material da carcaça": Todas
-    - text: Tipo de switch
-    - combobox "Tipo de switch": Todas
-    - text: Rapid trigger
-    - combobox "Rapid trigger": Todas
-    - text: Atraso com várias teclas
-    - combobox "Atraso com várias teclas": Todas
-    - group "Desempenho real (Hz)":
-        - text: Desempenho real (Hz) Mínimo
-        - textbox "Mínimo"
-        - text: Máximo
-        - textbox "Máximo"
+    - button "Limpar filtros" [disabled]
+    - region "Geral":
+        - heading "Geral" [level=3]
+        - text: Nota geral
+        - combobox "Nota geral": Qualquer
+        - text: Recomendação
+        - combobox "Recomendação": Qualquer
+        - group "Preço (mil ₩)":
+            - text: ""
+            - textbox "Mínimo"
+            - textbox "Máximo"
+    - region "Construção":
+        - heading "Construção" [level=3]
+        - text: Layout
+        - combobox "Layout": Qualquer
+        - text: Material da carcaça
+        - group "Material da carcaça":
+            - button "Alumínio"
+            - button "Plástico"
+            - button "Outro"
+        - text: Tipo de switch
+        - combobox "Tipo de switch": Qualquer
+        - text: Conexão
+        - group "Conexão":
+            - button "Com fio"
+            - button "Sem fio"
+    - region "Desempenho":
+        - heading "Desempenho" [level=3]
+        - text: Rapid trigger
+        - group "Rapid trigger":
+            - button "Sim"
+            - button "Não"
+        - text: Atraso com várias teclas
+        - group "Atraso com várias teclas":
+            - button "Sem atraso"
+            - button "Com atraso"
+        - group "Desempenho real (Hz)":
+            - text: ""
+            - textbox "Mínimo"
+            - textbox "Máximo"

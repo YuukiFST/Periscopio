@@ -89,25 +89,30 @@ test("the home page lists the Produtos seen last, and opens one", async ({ page 
   await expect(page.getByRole("dialog", { name: "Huan" })).toBeVisible();
 });
 
-test("when the Produtos fail to load, the home page says so in Vistos recentemente and tries again", async ({
-  page,
-}) => {
-  await page.goto(`/mouse/${huanId}`);
-  await expect(page.getByRole("dialog", { name: "Huan" })).toBeVisible();
-  let failsTecladoData = true;
-  await page.route("**/data/teclado.json", (route) =>
-    failsTecladoData ? route.abort() : route.continue(),
-  );
-  await page.getByRole("banner").getByRole("link", { name: "Periscópio" }).click();
-  const recentSection = page.getByRole("region", { name: "Vistos recentemente" });
-  await expect(recentSection).toContainText("Não deu para carregar os produtos.");
-  await expect(mouseNovidadesLink(page)).toHaveCount(0);
+test.describe("with the data requests failing on purpose", () => {
+  // The data request is aborted below; a service worker would answer it from its cache instead.
+  test.use({ serviceWorkers: "block" });
 
-  failsTecladoData = false;
-  await recentSection.getByRole("button", { name: "Tentar de novo" }).click();
-  await expect(page.getByRole("heading", { level: 1 })).toBeFocused();
-  await expect(recentSection.getByRole("link")).toHaveText([/^Huan\s*Mouses/]);
-  await expect(mouseNovidadesLink(page)).toBeVisible();
+  test("when the Produtos fail to load, the home page says so in Vistos recentemente and tries again", async ({
+    page,
+  }) => {
+    await page.goto(`/mouse/${huanId}`);
+    await expect(page.getByRole("dialog", { name: "Huan" })).toBeVisible();
+    let failsTecladoData = true;
+    await page.route("**/data/teclado.json", (route) =>
+      failsTecladoData ? route.abort() : route.continue(),
+    );
+    await page.getByRole("banner").getByRole("link", { name: "Periscópio" }).click();
+    const recentSection = page.getByRole("region", { name: "Vistos recentemente" });
+    await expect(recentSection).toContainText("Não deu para carregar os produtos.");
+    await expect(mouseNovidadesLink(page)).toHaveCount(0);
+
+    failsTecladoData = false;
+    await recentSection.getByRole("button", { name: "Tentar de novo" }).click();
+    await expect(page.getByRole("heading", { level: 1 })).toBeFocused();
+    await expect(recentSection.getByRole("link")).toHaveText([/^Huan\s*Mouses/]);
+    await expect(mouseNovidadesLink(page)).toBeVisible();
+  });
 });
 
 test("on a phone the Categoria cards stack in one column, and the installed app opens on the home page", async ({

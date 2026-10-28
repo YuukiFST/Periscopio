@@ -97,7 +97,7 @@ export function CopyLinkButton() {
           if (!event.currentTarget.contains(event.relatedTarget)) setCopyState("idle");
         }}
         className={cn(
-          "absolute end-0 top-full z-40 mt-1 flex w-64 flex-col gap-2 rounded-2xl border border-transparent bg-popover p-1 shadow-surface-5",
+          "absolute end-0 top-full z-40 mt-1 flex w-64 flex-col gap-2 rounded-xl border border-transparent bg-popover p-1 shadow-surface-5",
           copyState !== "failed" && "sr-only",
         )}
       >

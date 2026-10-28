@@ -81,24 +81,31 @@ export function GlobalSearch() {
     <Dialog.Root open={isOpen} onOpenChange={(open) => (open ? openSearch() : setIsOpen(false))}>
       <Dialog.Trigger
         render={
-          <Button variant="tertiary" leadingIcon={Search} aria-keyshortcuts="Control+K Meta+K" />
+          <Button
+            variant="tertiary"
+            leadingIcon={Search}
+            aria-keyshortcuts="Control+K Meta+K"
+            className="max-sm:aspect-square max-sm:gap-0 max-sm:px-0"
+          />
         }
       >
-        Buscar
+        {/* A phone keeps the icon only, so the header fits on the title's row. */}
+        <span className="max-sm:sr-only">Buscar</span>
         <kbd
           aria-hidden="true"
-          className="ms-1 rounded-sm border border-border px-1 font-sans text-caption text-muted-foreground/70 pointer-coarse:hidden"
+          className="ms-1 rounded-sm border border-border px-1 font-sans text-caption text-muted-foreground max-sm:hidden pointer-coarse:hidden"
         >
           {isApplePlatform ? "⌘K" : "Ctrl K"}
         </kbd>
       </Dialog.Trigger>
       <Dialog.Portal>
-        <Dialog.Backdrop className="fixed inset-0 z-50 bg-black/10 transition-opacity dark:bg-black/50 duration-150 data-ending-style:opacity-0 data-starting-style:opacity-0" />
+        {/* No open or close motion: Ctrl+K summons it, and a keyboard command answers at once. */}
+        <Dialog.Backdrop className="fixed inset-0 z-50 bg-black/10 dark:bg-black/50" />
         <Dialog.Viewport className="fixed inset-0 z-50 flex items-start justify-center px-2 pt-[min(12dvh,6rem)] pb-2">
           <Dialog.Popup
             // Opening a Produto leaves focus to its details, which move it to their title.
             finalFocus={() => (openedProduct.current ? false : (returnFocusTo.current ?? true))}
-            className="flex max-h-full w-full max-w-lg flex-col overflow-hidden rounded-2xl bg-popover text-popover-foreground shadow-surface-5 transition-[opacity,scale] duration-150 ease-out-quint outline-none data-ending-style:scale-[0.98] data-ending-style:opacity-0 data-starting-style:scale-[0.98] data-starting-style:opacity-0 motion-reduce:data-ending-style:scale-100 motion-reduce:data-starting-style:scale-100"
+            className="flex max-h-full w-full max-w-lg flex-col overflow-hidden rounded-2xl border border-transparent bg-popover text-popover-foreground shadow-surface-5 outline-none"
           >
             <Dialog.Title className="sr-only">Buscar produtos</Dialog.Title>
             <Autocomplete.Root
@@ -119,7 +126,7 @@ export function GlobalSearch() {
                 <Search
                   aria-hidden="true"
                   strokeWidth={1.5}
-                  className="pointer-events-none absolute start-3.5 size-4 text-muted-foreground/70"
+                  className="pointer-events-none absolute start-3.5 size-4 text-muted-foreground"
                 />
                 <Autocomplete.Input
                   aria-label="Buscar produto ou fabricante em todas as categorias"
@@ -128,7 +135,7 @@ export function GlobalSearch() {
                   autoCorrect="off"
                   spellCheck={false}
                   enterKeyHint="go"
-                  className="h-12 w-full bg-transparent ps-10 pe-1 text-base outline-none placeholder:text-muted-foreground/70 pointer-fine:text-body"
+                  className="h-12 w-full bg-transparent ps-10 pe-1 text-base outline-none placeholder:text-muted-foreground pointer-fine:text-body"
                 />
                 <Dialog.Close
                   render={<Button variant="ghost" size="icon" className="me-1.5" />}
@@ -144,7 +151,7 @@ export function GlobalSearch() {
                 <Autocomplete.List className="p-1 empty:hidden">
                   {(group: SearchResultGroup) => (
                     <Autocomplete.Group key={group.category} items={group.items} className="py-1">
-                      <Autocomplete.GroupLabel className="px-3 py-1.5 text-caption font-medium text-muted-foreground/70">
+                      <Autocomplete.GroupLabel className="px-3 py-1.5 text-caption font-medium text-muted-foreground">
                         {categoryLabels[group.category]}
                       </Autocomplete.GroupLabel>
                       <Autocomplete.Collection>
@@ -155,7 +162,8 @@ export function GlobalSearch() {
                             onClick={() => openResult(result)}
                             className="flex cursor-default items-baseline gap-2 rounded-lg px-3 py-2 text-body select-none data-highlighted:bg-hover"
                           >
-                            <span className="min-w-0 truncate font-medium">
+                            {/* Whole: two monitors differ only in the code at the end of the name. */}
+                            <span className="min-w-0 font-medium wrap-anywhere">
                               {result.product.name}
                             </span>{" "}
                             <span className="shrink-0 text-muted-foreground">

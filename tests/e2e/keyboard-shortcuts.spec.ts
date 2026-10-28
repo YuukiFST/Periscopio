@@ -226,7 +226,7 @@ test("over the Filtros drawer on a phone, ? and / leave it alone", async ({ page
   await page.getByRole("button", { name: "Filtros" }).click();
   const filtersDrawer = page.getByRole("dialog", { name: "Filtros" });
   await expect(filtersDrawer).toBeVisible();
-  await filtersDrawer.getByRole("heading", { name: "Filtros" }).click();
+  await filtersDrawer.getByRole("heading", { name: "Filtros", exact: true }).click();
 
   await page.keyboard.press("?");
   await page.keyboard.press("/");

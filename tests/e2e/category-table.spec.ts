@@ -333,20 +333,14 @@ test("on a phone the table scrolls sideways with the Product column fixed", asyn
   await expect(firstProduct).toContainText("Dragonfly A9 Ultra");
 });
 
-test("the Atualização date shows, and a warning appears once the data is more than 8 days old", async ({
+test("the Atualização date shows small, with no warning even once the data is 9 days old", async ({
   page,
   request,
 }) => {
   const meta = metaSchema.parse(await (await request.get("/data/meta.json")).json());
+  const nineDaysMs = 9 * 24 * 60 * 60 * 1000;
+  await page.clock.setFixedTime(Date.parse(meta.updatedAt) + nineDaysMs);
   await page.goto("/mouse");
   await expect(page.getByText(/^Atualizado em \d{1,2} de \p{L}+ de \d{4}$/u)).toBeVisible();
   await expect(page.getByText("Dados desatualizados")).toHaveCount(0);
-
-  const nineDaysMs = 9 * 24 * 60 * 60 * 1000;
-  await page.clock.setFixedTime(Date.parse(meta.updatedAt) + nineDaysMs);
-  await page.reload();
-  await expect(page.locator("p", { hasText: /^Dados desatualizados:/ })).toHaveText(
-    /^Dados desatualizados: a última atualização foi em .+, há 9 dias\. Os preços/,
-  );
-  await expect(page.getByText(/^Atualizado em/)).toHaveCount(0);
 });

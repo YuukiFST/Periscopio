@@ -153,8 +153,7 @@ export function ProductComparison({
               candidates={candidates}
               title="Adicionar produto à comparação"
               trigger={
-                <Button variant="tertiary">
-                  <Plus aria-hidden="true" strokeWidth={1.5} />
+                <Button variant="tertiary" leadingIcon={Plus}>
                   Adicionar produto
                 </Button>
               }
@@ -168,12 +167,12 @@ export function ProductComparison({
       {leftOutText(compared).map((text) => (
         <p
           key={text}
-          className="flex max-w-prose items-start gap-2 rounded-lg bg-amber-500/10 px-3 py-2 text-pretty text-foreground"
+          className="flex max-w-prose items-start gap-2 rounded-xl bg-warning-subtle px-3 py-2 text-pretty text-foreground"
         >
           <TriangleAlert
             aria-hidden="true"
             strokeWidth={1.5}
-            className="mt-0.5 size-4 shrink-0 text-amber-700 dark:text-amber-400"
+            className="mt-0.5 size-4 shrink-0 text-warning-fg"
           />
           {text}
         </p>

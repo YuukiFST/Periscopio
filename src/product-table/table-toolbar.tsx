@@ -3,6 +3,8 @@ import type { ReactNode } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { SegmentedControl, type SegmentedOption } from "@/components/ui/segmented-control";
+import type { IconComponentProps } from "@/lib/icon-context";
+import { cn } from "@/lib/utils";
 import type { TestStatusFilter } from "./product-filter";
 
 const testStatusOptions: SegmentedOption<TestStatusFilter>[] = [
@@ -23,6 +25,14 @@ export function resultCountText(shown: number, total: number): string {
   return `${countFormat.format(shown)} de ${productCount(total)}`;
 }
 
+/** The star of a pressed "Só favoritos", filled like a starred row. */
+export function FilledStar({ className, ...props }: IconComponentProps) {
+  return <Star {...props} className={cn(className, "fill-current")} />;
+}
+
+const pressedOutlineClassName =
+  "forced-colors:aria-pressed:outline forced-colors:aria-pressed:outline-[Highlight]";
+
 export const searchInputId = "busca-produto";
 export const novidadesToggleId = "novidades";
 export const favoritesToggleId = "so-favoritos";
@@ -39,8 +49,10 @@ type TableToolbarProps = {
   /** The "Só favoritos" toggle. */
   favorites: { pressed: boolean; onPressedChange: (pressed: boolean) => void };
   countText: string;
-  /** Controls placed after the Status de teste, such as the Filtros button on a phone. */
-  children?: ReactNode;
+  /** With the toggles that pick which Produtos show, where a phone shows the Filtros button. */
+  filterButton?: ReactNode;
+  /** After the count: how the Produtos show, such as Colunas and the Gráfico. */
+  viewActions?: ReactNode;
 };
 
 export function TableToolbar({
@@ -51,77 +63,82 @@ export function TableToolbar({
   novidades,
   favorites,
   countText,
-  children,
+  filterButton,
+  viewActions,
 }: TableToolbarProps) {
+  // Three groups, closer within than between: what to find, which Produtos, how many and how to see them.
+  // The search keeps its row to itself on a phone, so its hint shows whole.
   return (
-    <div className="flex flex-wrap items-center gap-x-4 gap-y-3">
-      <div className="relative w-full sm:w-72">
-        <Search
-          aria-hidden="true"
-          strokeWidth={1.5}
-          className="pointer-events-none absolute start-2.5 top-1/2 size-4 -translate-y-1/2 text-muted-foreground/70"
-        />
-        <Input
-          id={searchInputId}
-          type="search"
-          autoCapitalize="none"
-          autoCorrect="off"
-          spellCheck={false}
-          enterKeyHint="search"
-          aria-label="Buscar por produto ou fabricante"
-          placeholder="Produto ou fabricante"
-          maxLength={searchTextMaxLength}
-          value={searchText}
-          onChange={(event) => onSearchTextChange(event.target.value)}
-          // Chromium clears a search box on Escape by itself; Firefox keeps the text.
-          onKeyDown={(event) => {
-            // An Escape that cancels a pending accent or IME text keeps the search.
-            if (event.key !== "Escape" || event.nativeEvent.isComposing || searchText === "")
-              return;
-            event.preventDefault();
-            onSearchTextChange("");
-          }}
-          className="h-9 ps-8"
-        />
+    <div className="flex flex-wrap items-center gap-x-6 gap-y-4">
+      <div className="flex w-full min-w-0 items-center sm:w-auto">
+        <div className="relative min-w-0 flex-1 sm:w-72 sm:flex-none">
+          <Search
+            aria-hidden="true"
+            strokeWidth={1.5}
+            className="pointer-events-none absolute start-2.5 top-1/2 size-4 -translate-y-1/2 text-muted-foreground"
+          />
+          <Input
+            id={searchInputId}
+            type="search"
+            autoCapitalize="none"
+            autoCorrect="off"
+            spellCheck={false}
+            enterKeyHint="search"
+            aria-label="Buscar por produto ou fabricante"
+            placeholder="Produto ou fabricante"
+            maxLength={searchTextMaxLength}
+            value={searchText}
+            onChange={(event) => onSearchTextChange(event.target.value)}
+            // Chromium clears a search box on Escape by itself; Firefox keeps the text.
+            onKeyDown={(event) => {
+              // An Escape that cancels a pending accent or IME text keeps the search.
+              if (event.key !== "Escape" || event.nativeEvent.isComposing || searchText === "")
+                return;
+              event.preventDefault();
+              onSearchTextChange("");
+            }}
+            className="h-9 ps-8 text-ellipsis"
+          />
+        </div>
       </div>
-      <SegmentedControl
-        legend="Status de teste"
-        name="status-de-teste"
-        options={testStatusOptions}
-        value={testStatus}
-        onValueChange={onTestStatusChange}
-      />
-      {novidades && (
-        <Button
-          id={novidadesToggleId}
-          variant="tertiary"
-          leadingIcon={Sparkles}
-          active={novidades.pressed}
-          aria-pressed={novidades.pressed}
-          onClick={() => novidades.onPressedChange(!novidades.pressed)}
-          className="forced-colors:aria-pressed:outline forced-colors:aria-pressed:outline-[Highlight]"
-        >
-          Novidades
-        </Button>
-      )}
-      <Button
-        id={favoritesToggleId}
-        variant="tertiary"
-        aria-pressed={favorites.pressed}
-        onClick={() => favorites.onPressedChange(!favorites.pressed)}
-        className="aria-pressed:border-muted-foreground aria-pressed:bg-active forced-colors:aria-pressed:border-[Highlight]"
-      >
-        <Star
-          aria-hidden="true"
-          strokeWidth={1.5}
-          className={favorites.pressed ? "fill-current" : undefined}
+      <div className="flex flex-wrap items-center gap-2">
+        <SegmentedControl
+          legend="Status de teste"
+          name="status-de-teste"
+          options={testStatusOptions}
+          value={testStatus}
+          onValueChange={onTestStatusChange}
         />
-        Só favoritos
-      </Button>
-      {children}
-      <p aria-live="polite" className="text-muted-foreground tabular-nums">
-        {countText}
-      </p>
+        {novidades && (
+          <Button
+            id={novidadesToggleId}
+            variant={novidades.pressed ? "primary" : "tertiary"}
+            leadingIcon={Sparkles}
+            aria-pressed={novidades.pressed}
+            onClick={() => novidades.onPressedChange(!novidades.pressed)}
+            className={pressedOutlineClassName}
+          >
+            Novidades
+          </Button>
+        )}
+        <Button
+          id={favoritesToggleId}
+          variant={favorites.pressed ? "primary" : "tertiary"}
+          leadingIcon={favorites.pressed ? FilledStar : Star}
+          aria-pressed={favorites.pressed}
+          onClick={() => favorites.onPressedChange(!favorites.pressed)}
+          className={pressedOutlineClassName}
+        >
+          Só favoritos
+        </Button>
+        {filterButton}
+      </div>
+      <div className="flex flex-wrap items-center gap-2 lg:ms-auto">
+        <p aria-live="polite" className="me-2 text-muted-foreground tabular-nums">
+          {countText}
+        </p>
+        {viewActions}
+      </div>
     </div>
   );
 }

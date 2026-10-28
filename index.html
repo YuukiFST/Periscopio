@@ -24,7 +24,16 @@
             theme ??= localStorage.getItem("periscopio:tema");
           } catch {}
           const dark = theme === "escuro" || (theme !== "claro" && query.matches);
-          document.documentElement.classList.toggle("dark", dark);
+          const root = document.documentElement;
+          if (root.classList.contains("dark") !== dark) {
+            // Each color has its own fade; switching them all at once keeps the change from smearing.
+            const pause = document.createElement("style");
+            pause.textContent = "*,*::before,*::after{transition:none!important}";
+            document.head.append(pause);
+            root.classList.toggle("dark", dark);
+            void getComputedStyle(root).color;
+            requestAnimationFrame(() => requestAnimationFrame(() => pause.remove()));
+          }
           document
             .querySelector('meta[name="color-scheme"]')
             .setAttribute("content", dark ? "dark" : "light");
