@@ -27,7 +27,7 @@ import {
 } from "@/product-compare/compare-selection";
 import { similarProducts } from "@/product-compare/similar-products";
 import { ProductPhoto } from "@/product-photo/product-photo";
-import { PriceHistorySparkline } from "./price-history";
+import { PriceHistorySection } from "./price-history";
 
 type ProductDetailProps = {
   data: CategoryData;
@@ -60,6 +60,7 @@ export function ProductDetail({
     }))
     .filter((group) => group.fields.length > 0);
   const hasMeasurements = groups.some((group) => group.id === "medicoes");
+  const price = priceOf(product);
   return (
     <article aria-labelledby="produto-titulo" className="flex w-full flex-col gap-8">
       <ProductHeader
@@ -69,6 +70,9 @@ export function ProductDetail({
         comparedIds={comparedIds}
         onComparedIdsChange={onComparedIdsChange}
       />
+      {price !== undefined && (
+        <PriceHistorySection category={data.category} productId={product.id} priceKrw={price} />
+      )}
       <div className="flex flex-col gap-8">
         {groups.map((group) => (
           <FieldGroupSection key={group.id} data={data} group={group} product={product} />
@@ -136,17 +140,10 @@ function ProductHeader({
               {price === undefined ? (
                 <span className="text-muted-foreground">Sem preço</span>
               ) : (
-                <>
-                  <span className="whitespace-nowrap tabular-nums">
-                    {formatPrice(price)}
-                    <PriceInReais priceKrw={price} />
-                  </span>
-                  <PriceHistorySparkline
-                    category={data.category}
-                    productId={product.id}
-                    priceKrw={price}
-                  />
-                </>
+                <span className="whitespace-nowrap tabular-nums">
+                  {formatPrice(price)}
+                  <PriceInReais priceKrw={price} />
+                </span>
               )}
             </HeaderFact>
             {grades.map(({ field, value }) => (
