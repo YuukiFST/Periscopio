@@ -82,6 +82,11 @@ _Avoid_: link de afiliado, link de compra
 Um Produto publicado pela primeira vez (Novo) ou que passou a ser testado (Testado agora) em uma Atualização dos 14 dias antes da mais recente.
 _Avoid_: novo produto, lançamento, changelog
 
+**Fila de testes**:
+Os Produtos que a Fonte já comprou (Comprados), recebeu ou está testando (Recebidos e em teste) ou mostra antes só a membros (Em prévia), de todas as Categorias, separados pela etapa.
+Um Produto sugerido ou ainda não lançado não está na fila; um testado já saiu dela.
+_Avoid_: próximos testes, backlog, next
+
 **Gráfico**:
 A visão dos Produtos de uma Categoria, filtrados como na tabela, como pontos sobre duas colunas numéricas escolhidas.
 _Avoid_: scatter, dispersão, plot

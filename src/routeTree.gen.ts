@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as CategoriaRouteRouteImport } from './routes/$categoria/route'
+import { Route as FilaRouteImport } from './routes/fila'
 import { Route as CategoriaIdRouteImport } from './routes/$categoria/$id'
 import { Route as CompararCategoriaRouteImport } from './routes/comparar/$categoria'
 import { Route as GraficoCategoriaRouteImport } from './routes/grafico/$categoria'
@@ -23,6 +24,11 @@ const IndexRoute = IndexRouteImport.update({
 const CategoriaRouteRoute = CategoriaRouteRouteImport.update({
   id: '/$categoria',
   path: '/$categoria',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FilaRoute = FilaRouteImport.update({
+  id: '/fila',
+  path: '/fila',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CategoriaIdRoute = CategoriaIdRouteImport.update({
@@ -44,6 +50,7 @@ const GraficoCategoriaRoute = GraficoCategoriaRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/$categoria': typeof CategoriaRouteRouteWithChildren
+  '/fila': typeof FilaRoute
   '/$categoria/$id': typeof CategoriaIdRoute
   '/comparar/$categoria': typeof CompararCategoriaRoute
   '/grafico/$categoria': typeof GraficoCategoriaRoute
@@ -51,6 +58,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/$categoria': typeof CategoriaRouteRouteWithChildren
+  '/fila': typeof FilaRoute
   '/$categoria/$id': typeof CategoriaIdRoute
   '/comparar/$categoria': typeof CompararCategoriaRoute
   '/grafico/$categoria': typeof GraficoCategoriaRoute
@@ -59,6 +67,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/$categoria': typeof CategoriaRouteRouteWithChildren
+  '/fila': typeof FilaRoute
   '/$categoria/$id': typeof CategoriaIdRoute
   '/comparar/$categoria': typeof CompararCategoriaRoute
   '/grafico/$categoria': typeof GraficoCategoriaRoute
@@ -68,6 +77,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/$categoria'
+    | '/fila'
     | '/$categoria/$id'
     | '/comparar/$categoria'
     | '/grafico/$categoria'
@@ -75,6 +85,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/$categoria'
+    | '/fila'
     | '/$categoria/$id'
     | '/comparar/$categoria'
     | '/grafico/$categoria'
@@ -82,6 +93,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/$categoria'
+    | '/fila'
     | '/$categoria/$id'
     | '/comparar/$categoria'
     | '/grafico/$categoria'
@@ -90,6 +102,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CategoriaRouteRoute: typeof CategoriaRouteRouteWithChildren
+  FilaRoute: typeof FilaRoute
   CompararCategoriaRoute: typeof CompararCategoriaRoute
   GraficoCategoriaRoute: typeof GraficoCategoriaRoute
 }
@@ -108,6 +121,13 @@ declare module '@tanstack/react-router' {
       path: '/$categoria'
       fullPath: '/$categoria'
       preLoaderRoute: typeof CategoriaRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/fila': {
+      id: '/fila'
+      path: '/fila'
+      fullPath: '/fila'
+      preLoaderRoute: typeof FilaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/$categoria/$id': {
@@ -149,6 +169,7 @@ const CategoriaRouteRouteWithChildren = CategoriaRouteRoute._addFileChildren(
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CategoriaRouteRoute: CategoriaRouteRouteWithChildren,
+  FilaRoute: FilaRoute,
   CompararCategoriaRoute: CompararCategoriaRoute,
   GraficoCategoriaRoute: GraficoCategoriaRoute,
 }
