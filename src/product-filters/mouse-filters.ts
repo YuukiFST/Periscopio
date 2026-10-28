@@ -1,6 +1,6 @@
 import type { Product } from "../data/schema.ts";
 import { numberValue, type FilterChoice, type FilterDefinition } from "./filter-engine.ts";
-import { enumValueChoices } from "./common-filters.ts";
+import { connectionChoices, enumValueChoices } from "./common-filters.ts";
 
 /** Volume of the bounding box in mm³, EyeJoker's measure of a mouse's size. */
 function volumeOf(product: Product): number | undefined {
@@ -55,11 +55,7 @@ export const mouseFilters: readonly FilterDefinition[] = [
     kind: "buckets",
     param: "conexao",
     label: "Conexão",
-    buckets: enumValueChoices("mouseConnection", {
-      유선: "com-fio",
-      무선: "sem-fio",
-      유무선: "com-e-sem-fio",
-    }),
+    buckets: connectionChoices("mouseConnection"),
   },
   { kind: "range", param: "peso", label: "Peso", fieldKey: "weight", unit: "g" },
   { kind: "options", param: "sensor", label: "Sensor", fieldKey: "sensor" },
