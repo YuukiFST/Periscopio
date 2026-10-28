@@ -1,9 +1,12 @@
 {
-  "updatedAt": "2026-10-28T13:17:31.774Z",
+  "updatedAt": "2026-10-28T13:46:34.474Z",
   "counts": {
     "mouse": 657,
     "teclado": 606,
-    "monitor": 465
+    "monitor": 465,
+    "mousepad": 225,
+    "switch": 175,
+    "fone": 320
   },
   "krwBrl": {
     "rate": 0.0040275,
