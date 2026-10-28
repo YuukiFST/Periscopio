@@ -1,8 +1,13 @@
 {
-  "updatedAt": "2026-10-16T12:53:30.637Z",
+  "updatedAt": "2026-10-28T13:17:31.774Z",
   "counts": {
-    "mouse": 655,
-    "teclado": 605,
+    "mouse": 657,
+    "teclado": 606,
     "monitor": 465
+  },
+  "krwBrl": {
+    "rate": 0.0040275,
+    "date": "2026-10-27",
+    "source": "Frankfurter (Banco Central Europeu)"
   }
 }

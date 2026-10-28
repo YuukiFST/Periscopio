@@ -40,10 +40,17 @@
       "multiple": false,
       "options": [
         {
-          "value": "unreleased",
+          "value": "arrived",
           "label": {
-            "ko": "미출시",
-            "en": "Unreleased"
+            "ko": "제품 도착",
+            "en": "Arrived"
+          }
+        },
+        {
+          "value": "earlyAccess",
+          "label": {
+            "ko": "선 공개",
+            "en": "Early Access"
           }
         },
         {
@@ -61,10 +68,10 @@
           }
         },
         {
-          "value": "arrived",
+          "value": "reviewed",
           "label": {
-            "ko": "제품 도착",
-            "en": "Arrived"
+            "ko": "공개 완료",
+            "en": "Reviewed"
           }
         },
         {
@@ -75,17 +82,10 @@
           }
         },
         {
-          "value": "earlyAccess",
+          "value": "unreleased",
           "label": {
-            "ko": "선 공개",
-            "en": "Early Access"
-          }
-        },
-        {
-          "value": "reviewed",
-          "label": {
-            "ko": "공개 완료",
-            "en": "Reviewed"
+            "ko": "미출시",
+            "en": "Unreleased"
           }
         }
       ]
@@ -102,10 +102,10 @@
       "multiple": false,
       "options": [
         {
-          "value": "unreleased",
+          "value": "DISCONTINUED",
           "label": {
-            "ko": "미출시",
-            "en": "Unreleased"
+            "ko": "단종",
+            "en": "Discontinued"
           }
         },
         {
@@ -116,10 +116,10 @@
           }
         },
         {
-          "value": "DISCONTINUED",
+          "value": "unreleased",
           "label": {
-            "ko": "단종",
-            "en": "Discontinued"
+            "ko": "미출시",
+            "en": "Unreleased"
           }
         }
       ]
@@ -143,13 +143,6 @@
           }
         },
         {
-          "value": "RECOMMENDED",
-          "label": {
-            "ko": "추천",
-            "en": "Recommend"
-          }
-        },
-        {
           "value": "MILD_RECOMMENDATION",
           "label": {
             "ko": "추천까지는",
@@ -161,6 +154,13 @@
           "label": {
             "ko": "추천안함",
             "en": "Not Recommend"
+          }
+        },
+        {
+          "value": "RECOMMENDED",
+          "label": {
+            "ko": "추천",
+            "en": "Recommend"
           }
         },
         {
@@ -188,6 +188,15 @@
         "en": "FirmwareVersion"
       },
       "type": "text"
+    },
+    {
+      "key": "earlyAccessAt",
+      "group": "common",
+      "label": {
+        "ko": "선공개 일자",
+        "en": "Early Access At"
+      },
+      "type": "date"
     },
     {
       "key": "publicReleaseAt",
@@ -283,41 +292,6 @@
       "multiple": false,
       "options": [
         {
-          "value": "FHD",
-          "label": {
-            "ko": "FHD",
-            "en": "FHD (1920×1080)"
-          }
-        },
-        {
-          "value": "QHD",
-          "label": {
-            "ko": "QHD",
-            "en": "QHD (2560×1440)"
-          }
-        },
-        {
-          "value": "UHD",
-          "label": {
-            "ko": "UHD",
-            "en": "UHD (3840×2160)"
-          }
-        },
-        {
-          "value": "UWQHD",
-          "label": {
-            "ko": "UWQHD",
-            "en": "UWQHD (3440×1440)"
-          }
-        },
-        {
-          "value": "DQHD",
-          "label": {
-            "ko": "DQHD",
-            "en": "Dual QHD (5120×1440)"
-          }
-        },
-        {
           "value": "5K2K",
           "label": {
             "ko": "5K2K",
@@ -329,6 +303,34 @@
           "label": {
             "ko": "6K",
             "en": "6K"
+          }
+        },
+        {
+          "value": "DQHD",
+          "label": {
+            "ko": "DQHD",
+            "en": "Dual QHD (5120×1440)"
+          }
+        },
+        {
+          "value": "DUHD",
+          "label": {
+            "ko": "DUHD (7680×2160)",
+            "en": "Dual UHD (7680×2160)"
+          }
+        },
+        {
+          "value": "FHD",
+          "label": {
+            "ko": "FHD",
+            "en": "FHD (1920×1080)"
+          }
+        },
+        {
+          "value": "QHD",
+          "label": {
+            "ko": "QHD",
+            "en": "QHD (2560×1440)"
           }
         },
         {
@@ -346,17 +348,24 @@
           }
         },
         {
-          "value": "DUHD",
-          "label": {
-            "ko": "DUHD (7680×2160)",
-            "en": "Dual UHD (7680×2160)"
-          }
-        },
-        {
           "value": "RES5120X2880",
           "label": {
             "ko": "5K (5120×2880)",
             "en": "5K (5120×2880)"
+          }
+        },
+        {
+          "value": "UHD",
+          "label": {
+            "ko": "UHD",
+            "en": "UHD (3840×2160)"
+          }
+        },
+        {
+          "value": "UWQHD",
+          "label": {
+            "ko": "UWQHD",
+            "en": "UWQHD (3440×1440)"
           }
         }
       ]
@@ -373,38 +382,10 @@
       "multiple": false,
       "options": [
         {
-          "value": "TN",
-          "label": {
-            "ko": "TN",
-            "en": "TN"
-          }
-        },
-        {
-          "value": "FAST_TN",
-          "label": {
-            "ko": "Fast TN",
-            "en": "Fast TN"
-          }
-        },
-        {
           "value": "E_TN",
           "label": {
             "ko": "E-TN",
             "en": "E-TN"
-          }
-        },
-        {
-          "value": "VA",
-          "label": {
-            "ko": "VA",
-            "en": "VA"
-          }
-        },
-        {
-          "value": "IPS",
-          "label": {
-            "ko": "IPS",
-            "en": "IPS"
           }
         },
         {
@@ -415,6 +396,20 @@
           }
         },
         {
+          "value": "FAST_TN",
+          "label": {
+            "ko": "Fast TN",
+            "en": "Fast TN"
+          }
+        },
+        {
+          "value": "IPS",
+          "label": {
+            "ko": "IPS",
+            "en": "IPS"
+          }
+        },
+        {
           "value": "NANO_IPS",
           "label": {
             "ko": "Nano IPS",
@@ -422,10 +417,17 @@
           }
         },
         {
-          "value": "RAPID_IPS",
+          "value": "OLED",
           "label": {
-            "ko": "Rapid IPS",
-            "en": "Rapid IPS"
+            "ko": "OLED",
+            "en": "OLED"
+          }
+        },
+        {
+          "value": "PENTA_TANDEM_QD_OLED",
+          "label": {
+            "ko": "Penta Tandem QD-OLED",
+            "en": "Penta Tandem QD-OLED"
           }
         },
         {
@@ -443,24 +445,17 @@
           }
         },
         {
-          "value": "OLED",
+          "value": "QD_OLED",
           "label": {
-            "ko": "OLED",
-            "en": "OLED"
+            "ko": "QD-OLED",
+            "en": "QD-OLED"
           }
         },
         {
-          "value": "WOLED",
+          "value": "RAPID_IPS",
           "label": {
-            "ko": "WOLED",
-            "en": "WOLED"
-          }
-        },
-        {
-          "value": "TANDEM_WOLED",
-          "label": {
-            "ko": "Tandem WOLED",
-            "en": "Tandem WOLED"
+            "ko": "Rapid IPS",
+            "en": "Rapid IPS"
           }
         },
         {
@@ -471,17 +466,31 @@
           }
         },
         {
-          "value": "QD_OLED",
+          "value": "TANDEM_WOLED",
           "label": {
-            "ko": "QD-OLED",
-            "en": "QD-OLED"
+            "ko": "Tandem WOLED",
+            "en": "Tandem WOLED"
           }
         },
         {
-          "value": "PENTA_TANDEM_QD_OLED",
+          "value": "TN",
           "label": {
-            "ko": "Penta Tandem QD-OLED",
-            "en": "Penta Tandem QD-OLED"
+            "ko": "TN",
+            "en": "TN"
+          }
+        },
+        {
+          "value": "VA",
+          "label": {
+            "ko": "VA",
+            "en": "VA"
+          }
+        },
+        {
+          "value": "WOLED",
+          "label": {
+            "ko": "WOLED",
+            "en": "WOLED"
           }
         }
       ]
@@ -520,31 +529,17 @@
       "multiple": false,
       "options": [
         {
-          "value": "displayHdrTrueBlack400",
+          "value": "displayHdr1000",
           "label": {
-            "ko": "DisplayHDR True Black 400",
-            "en": "DisplayHDR True Black 400"
+            "ko": "DisplayHDR 1000",
+            "en": "DisplayHDR 1000"
           }
         },
         {
-          "value": "displayHdrTrueBlack500",
+          "value": "displayHdr1400",
           "label": {
-            "ko": "DisplayHDR True Black 500",
-            "en": "DisplayHDR True Black 500"
-          }
-        },
-        {
-          "value": "displayHdrTrueBlack600",
-          "label": {
-            "ko": "DisplayHDR True Black 600",
-            "en": "DisplayHDR True Black 600"
-          }
-        },
-        {
-          "value": "displayHdrTrueBlack1000",
-          "label": {
-            "ko": "DisplayHDR True Black 1000",
-            "en": "DisplayHDR True Black 1000"
+            "ko": "DisplayHDR 1400",
+            "en": "DisplayHDR 1400"
           }
         },
         {
@@ -569,17 +564,31 @@
           }
         },
         {
-          "value": "displayHdr1000",
+          "value": "displayHdrTrueBlack1000",
           "label": {
-            "ko": "DisplayHDR 1000",
-            "en": "DisplayHDR 1000"
+            "ko": "DisplayHDR True Black 1000",
+            "en": "DisplayHDR True Black 1000"
           }
         },
         {
-          "value": "displayHdr1400",
+          "value": "displayHdrTrueBlack400",
           "label": {
-            "ko": "DisplayHDR 1400",
-            "en": "DisplayHDR 1400"
+            "ko": "DisplayHDR True Black 400",
+            "en": "DisplayHDR True Black 400"
+          }
+        },
+        {
+          "value": "displayHdrTrueBlack500",
+          "label": {
+            "ko": "DisplayHDR True Black 500",
+            "en": "DisplayHDR True Black 500"
+          }
+        },
+        {
+          "value": "displayHdrTrueBlack600",
+          "label": {
+            "ko": "DisplayHDR True Black 600",
+            "en": "DisplayHDR True Black 600"
           }
         }
       ]
@@ -647,38 +656,10 @@
       "multiple": true,
       "options": [
         {
-          "value": "gsync",
+          "value": "freeSyncPremium",
           "label": {
-            "ko": "지싱크",
-            "en": "G-SYNC"
-          }
-        },
-        {
-          "value": "freesync",
-          "label": {
-            "ko": "프리싱크",
-            "en": "FreeSync"
-          }
-        },
-        {
-          "value": "none",
-          "label": {
-            "ko": "없음",
-            "en": "None"
-          }
-        },
-        {
-          "value": "gsyncPulsar",
-          "label": {
-            "ko": "지싱크 펄사",
-            "en": "G-SYNC Pulsar"
-          }
-        },
-        {
-          "value": "gsyncCompatible",
-          "label": {
-            "ko": "G-SYNC 호환",
-            "en": "G-SYNC Compatible"
+            "ko": "프리싱크 프리미엄",
+            "en": "FreeSync Premium"
           }
         },
         {
@@ -689,10 +670,10 @@
           }
         },
         {
-          "value": "freeSyncPremium",
+          "value": "freesync",
           "label": {
-            "ko": "프리싱크 프리미엄",
-            "en": "FreeSync Premium"
+            "ko": "프리싱크",
+            "en": "FreeSync"
           }
         },
         {
@@ -703,10 +684,38 @@
           }
         },
         {
+          "value": "gsync",
+          "label": {
+            "ko": "지싱크",
+            "en": "G-SYNC"
+          }
+        },
+        {
+          "value": "gsyncCompatible",
+          "label": {
+            "ko": "G-SYNC 호환",
+            "en": "G-SYNC Compatible"
+          }
+        },
+        {
           "value": "gsyncCompatibleVerify",
           "label": {
             "ko": "G-SYNC 호환 인증",
             "en": "G-SYNC Compatible Verify"
+          }
+        },
+        {
+          "value": "gsyncPulsar",
+          "label": {
+            "ko": "지싱크 펄사",
+            "en": "G-SYNC Pulsar"
+          }
+        },
+        {
+          "value": "none",
+          "label": {
+            "ko": "없음",
+            "en": "None"
           }
         }
       ]
@@ -734,38 +743,10 @@
       "multiple": false,
       "options": [
         {
-          "value": "hdmi2_1Frl6_48",
+          "value": "hdmi1_4",
           "label": {
-            "ko": "HDMI 2.1 FRL6 / 48Gbps",
-            "en": "HDMI 2.1 FRL6 / 48Gbps"
-          }
-        },
-        {
-          "value": "hdmi2_1Frl5_40",
-          "label": {
-            "ko": "HDMI 2.1 FRL5 / 40Gbps",
-            "en": "HDMI 2.1 FRL5 / 40Gbps"
-          }
-        },
-        {
-          "value": "hdmi2_1Frl4_32",
-          "label": {
-            "ko": "HDMI 2.1 FRL4 / 32Gbps",
-            "en": "HDMI 2.1 FRL4 / 32Gbps"
-          }
-        },
-        {
-          "value": "hdmi2_1Frl3_24",
-          "label": {
-            "ko": "HDMI 2.1 FRL3 / 24Gbps",
-            "en": "HDMI 2.1 FRL3 / 24Gbps"
-          }
-        },
-        {
-          "value": "hdmi2_1Tmds18",
-          "label": {
-            "ko": "HDMI 2.1 TMDS / 18Gbps",
-            "en": "HDMI 2.1 TMDS / 18Gbps"
+            "ko": "HDMI 1.4",
+            "en": "HDMI 1.4"
           }
         },
         {
@@ -776,10 +757,38 @@
           }
         },
         {
-          "value": "hdmi1_4",
+          "value": "hdmi2_1Frl3_24",
           "label": {
-            "ko": "HDMI 1.4",
-            "en": "HDMI 1.4"
+            "ko": "HDMI 2.1 FRL3 / 24Gbps",
+            "en": "HDMI 2.1 FRL3 / 24Gbps"
+          }
+        },
+        {
+          "value": "hdmi2_1Frl4_32",
+          "label": {
+            "ko": "HDMI 2.1 FRL4 / 32Gbps",
+            "en": "HDMI 2.1 FRL4 / 32Gbps"
+          }
+        },
+        {
+          "value": "hdmi2_1Frl5_40",
+          "label": {
+            "ko": "HDMI 2.1 FRL5 / 40Gbps",
+            "en": "HDMI 2.1 FRL5 / 40Gbps"
+          }
+        },
+        {
+          "value": "hdmi2_1Frl6_48",
+          "label": {
+            "ko": "HDMI 2.1 FRL6 / 48Gbps",
+            "en": "HDMI 2.1 FRL6 / 48Gbps"
+          }
+        },
+        {
+          "value": "hdmi2_1Tmds18",
+          "label": {
+            "ko": "HDMI 2.1 TMDS / 18Gbps",
+            "en": "HDMI 2.1 TMDS / 18Gbps"
           }
         }
       ]
@@ -807,31 +816,10 @@
       "multiple": false,
       "options": [
         {
-          "value": "dp2_1Uhbr20_80",
+          "value": "dp1_1Hbr_10_8",
           "label": {
-            "ko": "DP 2.1 UHBR20 / 80Gbps",
-            "en": "DP 2.1 UHBR20 / 80Gbps"
-          }
-        },
-        {
-          "value": "dp2_1Uhbr13_5_54",
-          "label": {
-            "ko": "DP 2.1 UHBR13.5 / 54Gbps",
-            "en": "DP 2.1 UHBR13.5 / 54Gbps"
-          }
-        },
-        {
-          "value": "dp2_1Uhbr10_40",
-          "label": {
-            "ko": "DP 2.1 UHBR10 / 40Gbps",
-            "en": "DP 2.1 UHBR10 / 40Gbps"
-          }
-        },
-        {
-          "value": "dp1_4Hbr3_32_4",
-          "label": {
-            "ko": "DP 1.4 HBR3 / 32.4Gbps",
-            "en": "DP 1.4 HBR3 / 32.4Gbps"
+            "ko": "DP 1.1 HBR / 10.8Gbps",
+            "en": "DP 1.1 HBR / 10.8Gbps"
           }
         },
         {
@@ -842,10 +830,31 @@
           }
         },
         {
-          "value": "dp1_1Hbr_10_8",
+          "value": "dp1_4Hbr3_32_4",
           "label": {
-            "ko": "DP 1.1 HBR / 10.8Gbps",
-            "en": "DP 1.1 HBR / 10.8Gbps"
+            "ko": "DP 1.4 HBR3 / 32.4Gbps",
+            "en": "DP 1.4 HBR3 / 32.4Gbps"
+          }
+        },
+        {
+          "value": "dp2_1Uhbr10_40",
+          "label": {
+            "ko": "DP 2.1 UHBR10 / 40Gbps",
+            "en": "DP 2.1 UHBR10 / 40Gbps"
+          }
+        },
+        {
+          "value": "dp2_1Uhbr13_5_54",
+          "label": {
+            "ko": "DP 2.1 UHBR13.5 / 54Gbps",
+            "en": "DP 2.1 UHBR13.5 / 54Gbps"
+          }
+        },
+        {
+          "value": "dp2_1Uhbr20_80",
+          "label": {
+            "ko": "DP 2.1 UHBR20 / 80Gbps",
+            "en": "DP 2.1 UHBR20 / 80Gbps"
           }
         }
       ]
@@ -862,17 +871,17 @@
       "multiple": false,
       "options": [
         {
+          "value": "modeDependent",
+          "label": {
+            "ko": "조건부/모드별",
+            "en": "Mode-dependent"
+          }
+        },
+        {
           "value": "noneConfirmed",
           "label": {
             "ko": "없음",
             "en": "None"
-          }
-        },
-        {
-          "value": "supported",
-          "label": {
-            "ko": "지원",
-            "en": "Supported"
           }
         },
         {
@@ -883,10 +892,10 @@
           }
         },
         {
-          "value": "modeDependent",
+          "value": "supported",
           "label": {
-            "ko": "조건부/모드별",
-            "en": "Mode-dependent"
+            "ko": "지원",
+            "en": "Supported"
           }
         }
       ]
@@ -923,31 +932,10 @@
       "multiple": false,
       "options": [
         {
-          "value": "noneConfirmed",
-          "label": {
-            "ko": "없음",
-            "en": "None"
-          }
-        },
-        {
-          "value": "usbBPlusUsbC",
-          "label": {
-            "ko": "USB‑B + USB‑C KVM",
-            "en": "USB-B + USB-C KVM"
-          }
-        },
-        {
           "value": "dualUsbC",
           "label": {
             "ko": "듀얼 USB‑C KVM",
             "en": "Dual USB-C KVM"
-          }
-        },
-        {
-          "value": "thunderboltKvm",
-          "label": {
-            "ko": "Thunderbolt KVM",
-            "en": "Thunderbolt KVM"
           }
         },
         {
@@ -958,10 +946,31 @@
           }
         },
         {
+          "value": "noneConfirmed",
+          "label": {
+            "ko": "없음",
+            "en": "None"
+          }
+        },
+        {
+          "value": "thunderboltKvm",
+          "label": {
+            "ko": "Thunderbolt KVM",
+            "en": "Thunderbolt KVM"
+          }
+        },
+        {
           "value": "unknownTopology",
           "label": {
             "ko": "KVM 있음, 구조 미확인",
             "en": "KVM, topology unknown"
+          }
+        },
+        {
+          "value": "usbBPlusUsbC",
+          "label": {
+            "ko": "USB‑B + USB‑C KVM",
+            "en": "USB-B + USB-C KVM"
           }
         }
       ]
@@ -1012,6 +1021,13 @@
       "multiple": true,
       "options": [
         {
+          "value": "noneConfirmed",
+          "label": {
+            "ko": "없음",
+            "en": "None"
+          }
+        },
+        {
           "value": "pbp",
           "label": {
             "ko": "PbP",
@@ -1031,13 +1047,6 @@
             "ko": "4분할 PbP",
             "en": "Quad PbP"
           }
-        },
-        {
-          "value": "noneConfirmed",
-          "label": {
-            "ko": "없음",
-            "en": "None"
-          }
         }
       ]
     },
@@ -1053,6 +1062,13 @@
       "multiple": true,
       "options": [
         {
+          "value": "dolbyVision",
+          "label": {
+            "ko": "Dolby Vision",
+            "en": "Dolby Vision"
+          }
+        },
+        {
           "value": "hdr10",
           "label": {
             "ko": "HDR10",
@@ -1064,13 +1080,6 @@
           "label": {
             "ko": "HDR10+",
             "en": "HDR10+"
-          }
-        },
-        {
-          "value": "dolbyVision",
-          "label": {
-            "ko": "Dolby Vision",
-            "en": "Dolby Vision"
           }
         },
         {
@@ -1094,13 +1103,6 @@
       "multiple": false,
       "options": [
         {
-          "value": "globalDimming",
-          "label": {
-            "ko": "글로벌 디밍",
-            "en": "Global Dimming"
-          }
-        },
-        {
           "value": "edgeLocalDimming",
           "label": {
             "ko": "엣지 로컬디밍",
@@ -1112,6 +1114,13 @@
           "label": {
             "ko": "FALD",
             "en": "FALD"
+          }
+        },
+        {
+          "value": "globalDimming",
+          "label": {
+            "ko": "글로벌 디밍",
+            "en": "Global Dimming"
           }
         },
         {
@@ -1146,6 +1155,13 @@
       "multiple": false,
       "options": [
         {
+          "value": "armOnly",
+          "label": {
+            "ko": "모니터암 전제",
+            "en": "Arm-only"
+          }
+        },
+        {
           "value": "included",
           "label": {
             "ko": "기본 스탠드 포함",
@@ -1165,13 +1181,6 @@
             "ko": "별매/옵션",
             "en": "Optional Stand"
           }
-        },
-        {
-          "value": "armOnly",
-          "label": {
-            "ko": "모니터암 전제",
-            "en": "Arm-only"
-          }
         }
       ]
     },
@@ -1187,10 +1196,10 @@
       "multiple": true,
       "options": [
         {
-          "value": "tilt",
+          "value": "cableManagement",
           "label": {
-            "ko": "틸트",
-            "en": "Tilt"
+            "ko": "케이블 정리",
+            "en": "Cable Management"
           }
         },
         {
@@ -1198,13 +1207,6 @@
           "label": {
             "ko": "높낮이",
             "en": "Height"
-          }
-        },
-        {
-          "value": "swivel",
-          "label": {
-            "ko": "스위블",
-            "en": "Swivel"
           }
         },
         {
@@ -1222,10 +1224,17 @@
           }
         },
         {
-          "value": "cableManagement",
+          "value": "swivel",
           "label": {
-            "ko": "케이블 정리",
-            "en": "Cable Management"
+            "ko": "스위블",
+            "en": "Swivel"
+          }
+        },
+        {
+          "value": "tilt",
+          "label": {
+            "ko": "틸트",
+            "en": "Tilt"
           }
         }
       ]
@@ -1253,17 +1262,24 @@
       "multiple": false,
       "options": [
         {
+          "value": "adapterRequired",
+          "label": {
+            "ko": "어댑터 필요",
+            "en": "Adapter Required"
+          }
+        },
+        {
+          "value": "custom",
+          "label": {
+            "ko": "특수 규격",
+            "en": "Custom"
+          }
+        },
+        {
           "value": "noneConfirmed",
           "label": {
             "ko": "없음",
             "en": "None"
-          }
-        },
-        {
-          "value": "vesa75x75",
-          "label": {
-            "ko": "75×75",
-            "en": "75x75"
           }
         },
         {
@@ -1288,17 +1304,10 @@
           }
         },
         {
-          "value": "adapterRequired",
+          "value": "vesa75x75",
           "label": {
-            "ko": "어댑터 필요",
-            "en": "Adapter Required"
-          }
-        },
-        {
-          "value": "custom",
-          "label": {
-            "ko": "특수 규격",
-            "en": "Custom"
+            "ko": "75×75",
+            "en": "75x75"
           }
         }
       ]
@@ -1315,10 +1324,45 @@
       "multiple": false,
       "options": [
         {
+          "value": "antiReflection",
+          "label": {
+            "ko": "반사 방지",
+            "en": "Anti-reflection"
+          }
+        },
+        {
+          "value": "etchedGlass",
+          "label": {
+            "ko": "에칭 글래스",
+            "en": "Etched Glass"
+          }
+        },
+        {
           "value": "glossy",
           "label": {
             "ko": "글레어",
             "en": "Glossy"
+          }
+        },
+        {
+          "value": "heavyMatteAntiGlare",
+          "label": {
+            "ko": "강한 무광 AG",
+            "en": "Heavy Matte Anti-glare"
+          }
+        },
+        {
+          "value": "matteAntiGlare",
+          "label": {
+            "ko": "무광 AG",
+            "en": "Matte Anti-glare"
+          }
+        },
+        {
+          "value": "nonglare",
+          "label": {
+            "ko": "논글레어",
+            "en": "Non-Glare"
           }
         },
         {
@@ -1333,41 +1377,6 @@
           "label": {
             "ko": "세미매트",
             "en": "Semi-matte"
-          }
-        },
-        {
-          "value": "matteAntiGlare",
-          "label": {
-            "ko": "무광 AG",
-            "en": "Matte Anti-glare"
-          }
-        },
-        {
-          "value": "heavyMatteAntiGlare",
-          "label": {
-            "ko": "강한 무광 AG",
-            "en": "Heavy Matte Anti-glare"
-          }
-        },
-        {
-          "value": "etchedGlass",
-          "label": {
-            "ko": "에칭 글래스",
-            "en": "Etched Glass"
-          }
-        },
-        {
-          "value": "antiReflection",
-          "label": {
-            "ko": "반사 방지",
-            "en": "Anti-reflection"
-          }
-        },
-        {
-          "value": "nonglare",
-          "label": {
-            "ko": "논글레어",
-            "en": "Non-Glare"
           }
         }
       ]
@@ -1593,13 +1602,6 @@
       "multiple": false,
       "options": [
         {
-          "value": "none",
-          "label": {
-            "ko": "거의 없음",
-            "en": "None"
-          }
-        },
-        {
           "value": "minor",
           "label": {
             "ko": "약함",
@@ -1611,6 +1613,13 @@
           "label": {
             "ko": "보통",
             "en": "Moderate"
+          }
+        },
+        {
+          "value": "none",
+          "label": {
+            "ko": "거의 없음",
+            "en": "None"
           }
         },
         {
@@ -1641,17 +1650,17 @@
           }
         },
         {
-          "value": "good",
-          "label": {
-            "ko": "좋음",
-            "en": "Good"
-          }
-        },
-        {
           "value": "fair",
           "label": {
             "ko": "보통",
             "en": "Fair"
+          }
+        },
+        {
+          "value": "good",
+          "label": {
+            "ko": "좋음",
+            "en": "Good"
           }
         },
         {
@@ -1705,7 +1714,7 @@
         "ko": "에이수스",
         "en": "ASUS"
       },
-      "priceKrw": 628400,
+      "priceKrw": 621500,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -1726,7 +1735,9 @@
           "swivel"
         ],
         "standType": "included"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "0059a4cd-3d81-4ccd-bd01-fb4613b156b4",
@@ -1760,7 +1771,9 @@
         "refreshRate": 165,
         "resolution": "QHD",
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "0138f613-dedd-4d4c-86a6-74798a5baf14",
@@ -1790,7 +1803,9 @@
         "refreshRate": 360,
         "resolution": "FHD",
         "sizeInch": 24.5
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "01c8f0a2-7a7a-44da-883c-d56ccb4c9933",
@@ -1840,7 +1855,9 @@
         "standType": "included",
         "usbCVideo": false,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "04637924-e187-4bb3-887d-2db3e803f961",
@@ -1876,7 +1893,9 @@
         "resolution": "QHD",
         "sizeInch": 27,
         "standType": "included"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "0492b863-db26-40ee-ac98-0af9bf816bde",
@@ -1907,7 +1926,9 @@
         "sizeInch": 31.4,
         "usbCPowerDeliveryW": 98,
         "usbCVideo": true
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "04b8167a-b806-4977-8f3e-d51d9ce70845",
@@ -1950,7 +1971,9 @@
         "usbCPowerDeliveryW": 15,
         "usbCVideo": true,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "04dac90d-6e04-45b3-ac85-798d84f74c2a",
@@ -1959,7 +1982,7 @@
         "ko": "애즈락",
         "en": "ASRock"
       },
-      "priceKrw": 936500,
+      "priceKrw": 926300,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -1972,7 +1995,9 @@
         "refreshRate": 500,
         "resolution": "QHD",
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "05532622-d03f-44df-89e9-f9ac1e72ee4c",
@@ -2011,7 +2036,9 @@
         "sizeInch": 27,
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "057297dd-106f-4c9c-b044-d3f19b9dc1ec",
@@ -2049,7 +2076,9 @@
         ],
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "06773cf0-ed8e-492a-aca3-833f173d5d2e",
@@ -2094,7 +2123,9 @@
         "sizeInch": 27,
         "usbCVideo": false,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "074e141a-1268-4ed1-b15c-6ffad18e8eec",
@@ -2122,7 +2153,9 @@
         "refreshRate": 180,
         "resolution": "FHD",
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "0780a9f3-3c88-41ac-97e9-1c45f31c9a38",
@@ -2155,7 +2188,9 @@
         "screenCoating": "matteAntiGlare",
         "sizeInch": 24.5,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "07c423a1-9667-4662-ac1b-31bae3820f4f",
@@ -2189,7 +2224,9 @@
         "resolution": "QHD",
         "sizeInch": 32,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "07fc3742-cd78-4a29-8c06-dae84de20cba",
@@ -2208,7 +2245,9 @@
         "refreshRate": 165,
         "resolution": "UHD",
         "sizeInch": 42
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "082cfde8-0850-4d44-8b25-7bb13ce1166c",
@@ -2247,7 +2286,9 @@
         "responseAverageRgb10": 1.24,
         "responseMax": 3.5,
         "sizeInch": 24
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "085980c6-5178-4c11-886e-e935167d9ea0",
@@ -2292,7 +2333,9 @@
         "usbCPowerDeliveryW": 65,
         "usbCVideo": true,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "093413b9-0e02-42e8-93d4-c1517845e9fb",
@@ -2320,7 +2363,9 @@
         "refreshRate": 240,
         "resolution": "QHD",
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "09fae4a0-cd80-4148-a91e-357a50c5906c",
@@ -2345,7 +2390,9 @@
         "refreshRate": 60,
         "resolution": "UHD",
         "sizeInch": 32
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "0a2b7f87-5d22-40ba-93a6-eff0a3ce22cd",
@@ -2391,7 +2438,9 @@
         "usbCPowerDeliveryW": 98,
         "usbCVideo": true,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "0b443249-fe11-411a-81f0-92d0b3c1ad8e",
@@ -2425,7 +2474,9 @@
         ],
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "0c7e0042-041f-44df-92e2-430393caee91",
@@ -2467,7 +2518,9 @@
         "standType": "included",
         "usbCVideo": false,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "0da16f5a-4ea9-4b42-9b82-9a1a353fc2f1",
@@ -2511,7 +2564,9 @@
         ],
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "0e6327d1-a78d-4ce1-89ff-ac1c2e3265aa",
@@ -2520,7 +2575,7 @@
         "ko": "레노버",
         "en": "Lenovo"
       },
-      "priceKrw": 401900,
+      "priceKrw": 397500,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -2532,7 +2587,9 @@
         "refreshRate": 320,
         "resolution": "QHD",
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "0f074dee-fc7a-4f52-bb2a-0485d25803d0",
@@ -2559,7 +2616,9 @@
         "refreshRate": 165,
         "resolution": "QHD",
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "0f1861a8-3606-4f99-8102-53bdc650fa75",
@@ -2584,7 +2643,9 @@
         "refreshRate": 144,
         "resolution": "FHD",
         "sizeInch": 24
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "0f47fc20-7149-424e-b464-96feaf1a61f8",
@@ -2610,7 +2671,9 @@
         "refreshRate": 165,
         "resolution": "FHD",
         "sizeInch": 24
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "0f7a9928-d13a-4769-a215-611ff73f3d45",
@@ -2632,7 +2695,9 @@
         "resolution": "UHD",
         "sizeInch": 27,
         "usbCVideo": false
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "105a5b8f-d344-486e-9b85-a392956ae99c",
@@ -2641,7 +2706,7 @@
         "ko": "알파스캔",
         "en": "Alphascan"
       },
-      "priceKrw": 1112000,
+      "priceKrw": 1099900,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -2667,7 +2732,9 @@
         "usbCPowerDeliveryW": 15,
         "usbCVideo": true,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "1074e1a4-22a1-416d-8b78-2bd0301cd737",
@@ -2702,7 +2769,9 @@
         "responseAverageRgb10": 8.4,
         "responseMax": 14.2,
         "sizeInch": 24
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "10c01c94-dfc1-4e6e-b8a4-481acfcdcc33",
@@ -2735,7 +2804,9 @@
         "screenCoating": "matteAntiGlare",
         "sizeInch": 27,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "1216a391-8ce1-4a54-a0b0-22d22e56a744",
@@ -2772,7 +2843,9 @@
         "sizeInch": 32,
         "usbCVideo": true,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "12be4f8e-c9db-4daa-91be-067af46e298a",
@@ -2815,7 +2888,9 @@
         "usbCPowerDeliveryW": 90,
         "usbCVideo": true,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "12c652aa-bb27-4584-9228-f5c8cf69ce31",
@@ -2841,7 +2916,9 @@
         "refreshRate": 240,
         "resolution": "FHD",
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "13052cd8-9538-4c18-a36c-fdeaa5305879",
@@ -2883,7 +2960,9 @@
         "standType": "included",
         "usbCPowerDeliveryW": 65,
         "usbCVideo": true
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "1319302f-6d71-4a1d-8d17-069dad7a1676",
@@ -2904,7 +2983,9 @@
         "refreshRate": 240,
         "resolution": "QHD",
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "13868403-402e-4304-aa96-a7362e10876f",
@@ -2956,7 +3037,9 @@
         "usbCPowerDeliveryW": 90,
         "usbCVideo": true,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "13d03e61-6a65-48d3-89c1-30e8ccdb89d7",
@@ -2991,7 +3074,9 @@
         "resolution": "QHD",
         "sizeInch": 27,
         "usbCVideo": false
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "13d94562-59e7-418f-b82f-461f1bcc8865",
@@ -3033,7 +3118,9 @@
         "usbCPowerDeliveryW": 90,
         "usbCVideo": true,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "140f6fa6-251f-411c-93a5-d7233dff334b",
@@ -3066,7 +3153,9 @@
           "swivel",
           "pivot"
         ]
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "1469c9c8-3598-42bc-9a3b-eafb9fb83a5d",
@@ -3093,7 +3182,9 @@
         "refreshRate": 165,
         "resolution": "QHD",
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "14867c97-76d2-4a57-abc3-ff811450b7f9",
@@ -3133,7 +3224,9 @@
         "responseAverageRgb10": 5.44,
         "responseMax": 12.2,
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "14dd1bb7-b041-46e5-a472-4425568c56aa",
@@ -3157,7 +3250,9 @@
         "refreshRate": 60,
         "resolution": "UHD",
         "sizeInch": 32
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "15679379-c748-4794-90f5-675bbddb652b",
@@ -3183,7 +3278,9 @@
         "sizeInch": 15.6,
         "standType": "included",
         "vesaMountPattern": "vesa75x75"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "16597659-2e68-4cee-bcf7-6dfeba38b9da",
@@ -3225,7 +3322,9 @@
         "usbCPowerDeliveryW": 90,
         "usbCVideo": true,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "168e2700-995b-4632-86e9-08613515a315",
@@ -3282,7 +3381,9 @@
         ],
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "16cff06d-ca64-482a-aa33-adf05830a96a",
@@ -3318,7 +3419,9 @@
         "usbCPowerDeliveryW": 15,
         "usbCVideo": true,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "1760c2f0-e55f-4401-8554-df6baaeebffd",
@@ -3339,7 +3442,9 @@
         "refreshRate": 360,
         "resolution": "DQHD",
         "sizeInch": 49
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "17ff99ca-6fc6-4ee1-8f15-a7ce51ff5252",
@@ -3365,7 +3470,9 @@
         "sizeInch": 39.7,
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "1801d367-11bd-42a8-88c9-b500bd31375c",
@@ -3374,7 +3481,7 @@
         "ko": "MINISFORUM",
         "en": "MINISFORUM"
       },
-      "priceKrw": 289300,
+      "priceKrw": 286100,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -3385,7 +3492,9 @@
         "resolution": "FHD",
         "sizeInch": 15.6,
         "standType": "included"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "189c720a-9718-47fd-8f11-5204dbb414ba",
@@ -3429,7 +3538,9 @@
         "sizeInch": 27,
         "usbCVideo": false,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "1a133520-b9bf-43f3-b165-f9fb2b768930",
@@ -3470,7 +3581,9 @@
         ],
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "1a13ba46-e3cb-47b4-aa71-541c031aee3d",
@@ -3505,7 +3618,9 @@
         "sizeInch": 27,
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "1a47df53-2b4f-44cf-8177-a7aa22bd341d",
@@ -3544,7 +3659,9 @@
         ],
         "standType": "included",
         "usbCVideo": true
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "1a4a9553-f2dc-4a34-8080-e201e8aef914",
@@ -3573,7 +3690,9 @@
         "resolution": "UHD",
         "sizeInch": 27,
         "usbCVideo": false
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "1ace7bb0-35fc-4fa2-903b-76bc30bcbc48",
@@ -3599,7 +3718,9 @@
         "refreshRate": 360,
         "resolution": "UWQHD",
         "sizeInch": 34
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "1b4960fd-69f5-4fa8-81d5-141bd1f294e7",
@@ -3639,7 +3760,9 @@
           "height"
         ],
         "standType": "included"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "1d0c630c-2a13-4613-84f3-70b66a4d3d71",
@@ -3678,7 +3801,9 @@
         "resolution": "UHD",
         "sizeInch": 32,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "1d135590-214f-4f5d-8822-3077d70bb594",
@@ -3702,7 +3827,9 @@
         "resolution": "FHD",
         "sizeInch": 27,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "1db635c2-f19e-492b-9849-ab7234b811d3",
@@ -3732,7 +3859,9 @@
         "standType": "included",
         "usbCPowerDeliveryW": 65,
         "usbCVideo": true
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "1dec11a1-f231-493c-a92a-67303d577e4e",
@@ -3760,7 +3889,9 @@
         "refreshRate": 165,
         "resolution": "QHD",
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "1eba8173-d907-4aa7-94d5-c6470ec09951",
@@ -3788,7 +3919,9 @@
           "tilt"
         ],
         "standType": "included"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "1ee35a5f-c139-4bd7-b56b-be7eb73b9288",
@@ -3832,7 +3965,9 @@
         ],
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "1f7604f5-d747-447e-8636-3676d94c68af",
@@ -3851,7 +3986,9 @@
         "refreshRate": 600,
         "resolution": "QHD",
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "1fe6fbc4-4fc1-4171-8211-9801a7b6c530",
@@ -3881,7 +4018,9 @@
         "screenCoating": "matteAntiGlare",
         "sizeInch": 24,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "2013e395-45fe-4acf-acc5-caa052e0b05e",
@@ -3900,7 +4039,9 @@
         "refreshRate": 320,
         "resolution": "FHD",
         "sizeInch": 24.5
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "201f420f-ac07-4aff-8caf-47a13402d314",
@@ -3940,7 +4081,9 @@
         ],
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "21eaf591-0ccc-4fe4-9fe4-08d07be41fd3",
@@ -3949,7 +4092,7 @@
         "ko": "애즈락",
         "en": "ASRock"
       },
-      "priceKrw": 936500,
+      "priceKrw": 926300,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -3961,7 +4104,9 @@
         "refreshRate": 540,
         "resolution": "QHD",
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "22595e6a-023e-4bc2-9a6c-0a3eccb70a67",
@@ -3995,7 +4140,9 @@
         "resolution": "QHD",
         "sizeInch": 31.5,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "246abb4e-6bca-4999-8625-f4e95dc5d587",
@@ -4004,7 +4151,7 @@
         "ko": "EHOMEWEI",
         "en": "EHOMEWEI"
       },
-      "priceKrw": 897500,
+      "priceKrw": 887700,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -4016,7 +4163,9 @@
         "resolution": "QHD",
         "sizeInch": 16,
         "standType": "included"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "25503a53-aed1-407b-ae13-f9288aa241fd",
@@ -4055,7 +4204,9 @@
         "responseAverageRgb10": 2.58,
         "responseMax": 7.5,
         "sizeInch": 24
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "25604a21-e5b1-474d-a6f1-8a954a40372a",
@@ -4081,7 +4232,9 @@
         "refreshRate": 500,
         "resolution": "FHD",
         "sizeInch": 24.5
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "2581e2c8-f4f1-4431-803f-f87a551c9968",
@@ -4129,7 +4282,9 @@
         ],
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "26228775-40b3-47fe-95e1-4870c05c031f",
@@ -4149,7 +4304,9 @@
         "refreshRate": 165,
         "resolution": "UHD",
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "2655596d-da8f-43e8-83c5-faf6dd2be436",
@@ -4182,7 +4339,9 @@
         "usbCPowerDeliveryW": 98,
         "usbCVideo": true,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "269deca2-c7ef-4a23-a1cd-87d48d07b446",
@@ -4214,7 +4373,9 @@
         "sizeInch": 32,
         "usbCPowerDeliveryW": 18,
         "usbCVideo": true
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "26b7b06f-7ee1-484e-a06e-5cc5a6e58881",
@@ -4259,7 +4420,9 @@
         ],
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "26e8268a-4ac3-4492-9c50-84228b3b8041",
@@ -4289,7 +4452,9 @@
         ],
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "2717ce8f-7c38-4c27-b56a-c10b175dc4c1",
@@ -4329,7 +4494,9 @@
         "usbCPowerDeliveryW": 15,
         "usbCVideo": true,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "2766f39e-321a-4c79-a93a-c38eca154f5f",
@@ -4374,7 +4541,9 @@
         ],
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "27683a8d-e4b8-41f0-9ecb-186410e3fce8",
@@ -4408,7 +4577,9 @@
         "screenCoating": "matteAntiGlare",
         "sizeInch": 27,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "279af611-5e9e-48f8-ada6-bdd98f3be5f9",
@@ -4450,7 +4621,9 @@
           "pivot"
         ],
         "standType": "included"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "27bf0e33-da57-4b05-b17e-c6cffbf57f0b",
@@ -4476,7 +4649,9 @@
         "refreshRate": 100,
         "resolution": "QHD",
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "27cbd241-2fe0-44d0-9f6f-7584df720308",
@@ -4505,7 +4680,9 @@
         "refreshRate": 170,
         "resolution": "QHD",
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "28840d13-3956-4af8-a9d2-cad77bdfec29",
@@ -4530,6 +4707,7 @@
         "displayPortCount": 1,
         "displayPortLinkClass": "dp2_1Uhbr20_80",
         "displayStreamCompression": "supported",
+        "earlyAccessAt": "2026-10-30T00:00:00.000Z",
         "eyejokerRating": "ANTICIPATING",
         "hdmiLinkClass": "hdmi2_1Frl6_48",
         "hdmiPortCount": 2,
@@ -4548,6 +4726,7 @@
         ],
         "panelMaker": "LGD",
         "panelType": "RGB_TANDEM_OLED",
+        "publicReleaseAt": "2026-11-06T00:00:00.000Z",
         "refreshRate": 165,
         "resolution": "5K2K",
         "sizeInch": 39,
@@ -4560,7 +4739,9 @@
         "usbCPowerDeliveryW": 90,
         "usbCVideo": true,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "2929f2fa-cd2f-4860-b483-1f263778bad2",
@@ -4587,7 +4768,9 @@
         "refreshRate": 165,
         "resolution": "QHD",
         "sizeInch": 32
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "29ac75ac-d4e2-407d-b416-020bf6d09ade",
@@ -4628,7 +4811,9 @@
         "responseMax": 11.3,
         "sizeInch": 27,
         "usbCVideo": false
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "29ccbf75-f593-43af-b3f3-570ddafe5c35",
@@ -4649,7 +4834,9 @@
         "refreshRate": 144,
         "resolution": "UWQHD",
         "sizeInch": 34
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "2a64133e-b637-4985-9161-d622969531be",
@@ -4692,7 +4879,9 @@
         "usbCPowerDeliveryW": 15,
         "usbCVideo": true,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "2abcfd8e-f908-47e9-959a-d012504e33ac",
@@ -4719,7 +4908,9 @@
         "refreshRate": 165,
         "resolution": "FHD",
         "sizeInch": 24
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "2b378319-9be4-4ba8-990a-99d421df5499",
@@ -4747,7 +4938,9 @@
         "screenCoating": "matteAntiGlare",
         "sizeInch": 32,
         "standType": "included"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "2b4d5b72-9332-408a-a40a-c217d68c5e66",
@@ -4756,7 +4949,7 @@
         "ko": "에이서",
         "en": "ACER"
       },
-      "priceKrw": 1740400,
+      "priceKrw": 1721400,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -4773,7 +4966,9 @@
         "refreshRate": 540,
         "resolution": "QHD",
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "2c69c532-9822-4f7c-b8c7-439bb4502dae",
@@ -4793,7 +4988,9 @@
         "resolution": "FHD",
         "sizeInch": 15.6,
         "standType": "included"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "2c88f086-ade5-4127-bd0f-369931b03b13",
@@ -4843,7 +5040,9 @@
         "usbCPowerDeliveryW": 18,
         "usbCVideo": true,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "2ca8f9a0-f32a-4308-a344-7ad023a409ab",
@@ -4866,7 +5065,9 @@
         "refreshRate": 540,
         "resolution": "FHD",
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "2e33c79a-cfc2-4c7f-b967-03d4806efe03",
@@ -4902,7 +5103,9 @@
         "resolution": "UHD",
         "screenCoating": "matteAntiGlare",
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "2fc62e47-9202-499d-b2bf-a7b9eb50f817",
@@ -4930,7 +5133,9 @@
         "refreshRate": 240,
         "resolution": "QHD",
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "30211292-dbf9-4b07-858c-ff3c3713edfe",
@@ -4957,7 +5162,9 @@
         "refreshRate": 144,
         "resolution": "QHD",
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "30acca9e-abfc-43ec-8c34-f439c10b9406",
@@ -4985,7 +5192,9 @@
         "refreshRate": 165,
         "resolution": "FHD",
         "sizeInch": 24
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "30e7d4ab-585f-45d8-b6fe-6095a442f175",
@@ -5004,7 +5213,9 @@
         "refreshRate": 240,
         "resolution": "QHD",
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "31a67766-b14f-40a5-a0de-76c431aa3105",
@@ -5034,7 +5245,9 @@
         "refreshRate": 180,
         "resolution": "FHD",
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "31da74da-1e39-4cab-a5cd-ae2e5272c392",
@@ -5056,7 +5269,9 @@
         "refreshRate": 500,
         "resolution": "QHD",
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "322d7fcd-21c9-4f65-bddc-798515d82612",
@@ -5065,7 +5280,7 @@
         "ko": "에이서",
         "en": "ACER"
       },
-      "priceKrw": 937900,
+      "priceKrw": 927600,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -5078,7 +5293,9 @@
         "refreshRate": 280,
         "resolution": "QHD",
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "34536b30-f5cb-40d0-a6cd-89c33df6db07",
@@ -5110,7 +5327,9 @@
         "resolution": "FHD",
         "sizeInch": 27,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "34968270-745f-4022-91a3-5b2c47ed79a3",
@@ -5119,7 +5338,7 @@
         "ko": "알파스캔",
         "en": "Alphascan"
       },
-      "priceKrw": 1415700,
+      "priceKrw": 1413200,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -5141,7 +5360,9 @@
         "resolution": "UHD",
         "sizeInch": 31.5,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "34ae44bc-8e02-40ff-90bd-e40f8f3d8c7e",
@@ -5167,7 +5388,9 @@
         "refreshRate": 165,
         "resolution": "FHD",
         "sizeInch": 24
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "354cd8c0-9e68-4d2c-91db-846953f81939",
@@ -5201,7 +5424,9 @@
         ],
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "359afb4b-846c-4fca-a7c9-a783d5e65358",
@@ -5230,7 +5455,9 @@
         ],
         "standType": "included",
         "usbCVideo": true
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "36092b74-876d-42f1-9773-a73077d166ae",
@@ -5260,7 +5487,9 @@
         "refreshRate": 144,
         "resolution": "UHD",
         "sizeInch": 32
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "364481bf-8a35-45e9-9698-e1066456ed55",
@@ -5306,7 +5535,9 @@
         "usbCPowerDeliveryW": 65,
         "usbCVideo": true,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "3646da14-a893-4f47-a8f9-ca6c4dc5068b",
@@ -5315,7 +5546,7 @@
         "ko": "TCL",
         "en": "TCL"
       },
-      "priceKrw": 798900,
+      "priceKrw": 792900,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -5327,7 +5558,9 @@
         "refreshRate": 550,
         "resolution": "QHD",
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "3662ea5f-c70a-419e-94d8-41c8684af867",
@@ -5349,7 +5582,9 @@
         "refreshRate": 280,
         "resolution": "UWQHD",
         "sizeInch": 34
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "36c109d2-2290-4b5b-bdbf-f67c50beb9e1",
@@ -5368,7 +5603,9 @@
         "refreshRate": 240,
         "resolution": "UHD",
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "37878706-1f2c-4688-bc19-f2f1781b0c95",
@@ -5396,7 +5633,9 @@
         "refreshRate": 240,
         "resolution": "UWQHD",
         "sizeInch": 34
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "38e2d63d-e04f-4451-9450-dd2e2fbfe94f",
@@ -5438,7 +5677,9 @@
           "pivot"
         ],
         "standType": "included"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "3a2bd363-cf3b-41c6-8fbf-053f0e52c687",
@@ -5469,7 +5710,9 @@
         "sizeInch": 27,
         "usbCPowerDeliveryW": 18,
         "usbCVideo": true
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "3a7a7d7b-1e5c-4f97-a408-f0d3cff4d1cf",
@@ -5499,7 +5742,9 @@
         "refreshRate": 160,
         "resolution": "UHD",
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "3c384c07-536b-4c69-b83f-dea20c57e684",
@@ -5547,7 +5792,9 @@
         "standType": "included",
         "usbCVideo": false,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "3c4ace81-1426-4707-9081-bb0b9fa81690",
@@ -5589,7 +5836,9 @@
         "responseAverageRgb10": 2.1,
         "responseMax": 4.7,
         "sizeInch": 24.5
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "3cc4f32a-e8a9-409b-adf2-3f7b5aa2e637",
@@ -5599,7 +5848,7 @@
         "en": "ANTGAMER"
       },
       "priceKrw": 1990000,
-      "status": "testing",
+      "status": "earlyAccess",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
       "image": "/images/0c0c3d9c-2e79-488c-98be-d29ddeaf98e1.avif",
@@ -5608,6 +5857,7 @@
         "colorGamutSrgbSpec": 99,
         "displayPortCount": 2,
         "displayPortLinkClass": "dp1_4Hbr3_32_4",
+        "earlyAccessAt": "2026-10-28T06:00:00.000Z",
         "eyejokerRating": "ANTICIPATING",
         "hdmiPortCount": 2,
         "hdrCertification": "displayHdr400",
@@ -5615,13 +5865,16 @@
         "maxBrightnessSdrSpec": 400,
         "panelMaker": "AUO",
         "panelType": "FAST_TN",
+        "publicReleaseAt": "2026-11-04T00:00:00.000Z",
         "refreshRate": 750,
         "resolution": "FHD",
         "sizeInch": 24.1,
         "standType": "included",
         "usbCVideo": false,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "3d797139-4eee-48c4-8613-fab0ea73b056",
@@ -5656,7 +5909,9 @@
         "sizeInch": 27,
         "usbCVideo": false,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "3dae98df-b79c-48da-a4fb-a3fcfc05ce81",
@@ -5701,7 +5956,9 @@
         ],
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "3f60ea48-fe7e-4622-a969-45e617db18c3",
@@ -5720,7 +5977,9 @@
         "refreshRate": 165,
         "resolution": "6K",
         "sizeInch": 32
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "408cde8a-402b-4a10-a138-6bbd9448cd13",
@@ -5768,7 +6027,9 @@
         "standType": "included",
         "usbCVideo": false,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "40fe85b5-2a0f-4178-8d08-b21f10eb0252",
@@ -5777,7 +6038,7 @@
         "ko": "델",
         "en": "Dell"
       },
-      "priceKrw": 1473800,
+      "priceKrw": 1457700,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -5793,7 +6054,9 @@
         "refreshRate": 165,
         "resolution": "5K2K",
         "sizeInch": 39
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "42888a83-8326-44ec-ba3c-b34fbdba866c",
@@ -5827,7 +6090,9 @@
           "pivot"
         ],
         "standType": "included"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "4303af4c-622a-41c9-956c-d61097a3875d",
@@ -5847,7 +6112,9 @@
         "refreshRate": 165,
         "resolution": "RES5120X2880",
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "449c02c4-769a-4daa-ad39-4dbeb7697f33",
@@ -5901,7 +6168,9 @@
         ],
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "44ea1d26-13f4-477a-8e97-880dac9dd05e",
@@ -5922,7 +6191,9 @@
         "resolution": "FHD",
         "sizeInch": 18.5,
         "standType": "included"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "44ff0621-6cbc-46b0-8024-a9117f8c7972",
@@ -5953,7 +6224,9 @@
         "screenCoating": "matteAntiGlare",
         "sizeInch": 31.5,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "463067df-9e91-4160-a089-b9e526c769e4",
@@ -5962,7 +6235,7 @@
         "ko": "델",
         "en": "Dell"
       },
-      "priceKrw": 4019400,
+      "priceKrw": 3975500,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -5972,7 +6245,9 @@
         "refreshRate": 120,
         "resolution": "6K",
         "sizeInch": 51.5
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "466ed6a4-cd4e-4528-a03a-b8749013dcc0",
@@ -6005,7 +6280,9 @@
         "resolution": "UHD",
         "screenCoating": "matteAntiGlare",
         "sizeInch": 31.5
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "469cad99-e686-437d-9b1c-3120bb2079fd",
@@ -6025,7 +6302,9 @@
         "refreshRate": 180,
         "resolution": "UHD",
         "sizeInch": 32
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "471edda1-7bb0-42d1-90b5-de37f2861a67",
@@ -6070,7 +6349,9 @@
         "usbCPowerDeliveryW": 98,
         "usbCVideo": true,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "47c6db5f-1e95-4f33-bf91-acec5ebac511",
@@ -6111,7 +6392,9 @@
         "standType": "included",
         "usbCVideo": false,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "485d5d7a-26f2-4d59-9353-4e1a7aec4d34",
@@ -6146,7 +6429,9 @@
         "standType": "included",
         "usbCPowerDeliveryW": 90,
         "usbCVideo": true
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "48d0137b-2187-4bc7-b4af-aa69dd6e2ab3",
@@ -6173,7 +6458,9 @@
         "refreshRate": 144,
         "resolution": "UHD",
         "sizeInch": 32
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "48dfe380-be45-4e83-8e27-a8414f01b439",
@@ -6194,7 +6481,9 @@
         "refreshRate": 540,
         "resolution": "QHD",
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "49def6c8-0751-485d-8137-56a18af4c0c5",
@@ -6235,7 +6524,9 @@
         ],
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "4ad98e3e-754c-4c2d-bc5a-454bd7f2e151",
@@ -6261,7 +6552,9 @@
         "refreshRate": 165,
         "resolution": "FHD",
         "sizeInch": 24
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "4ae908da-8faf-4a42-93c8-9fadc2664837",
@@ -6284,7 +6577,9 @@
         "resolution": "FHD",
         "sizeInch": 24.1,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "4b2897d0-0ce2-4308-8fe8-a9302956ac81",
@@ -6310,7 +6605,9 @@
         "refreshRate": 165,
         "resolution": "FHD",
         "sizeInch": 24
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "4c580ffd-ecad-4524-ab0e-ff52b4d5e7b4",
@@ -6319,7 +6616,7 @@
         "ko": "에이수스",
         "en": "ASUS"
       },
-      "priceKrw": 3616200,
+      "priceKrw": 3576700,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -6349,7 +6646,9 @@
         "screenCoating": "antiReflection",
         "sizeInch": 32,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "4d47ab74-fe49-43e8-bb41-74fd71af0548",
@@ -6383,7 +6682,9 @@
           "pivot"
         ],
         "standType": "included"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "4e5074ac-f9ac-4568-a340-7b9a19a8a3bf",
@@ -6419,7 +6720,9 @@
         "sizeInch": 27,
         "usbCVideo": false,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "4e7a965d-3942-426c-b144-dfabb4c37511",
@@ -6453,7 +6756,9 @@
         "resolution": "QHD",
         "sizeInch": 27,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "4f2a00d6-dab2-4bad-85a4-5f0d6a483e39",
@@ -6485,7 +6790,9 @@
         "screenCoating": "matteAntiGlare",
         "sizeInch": 27,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "504d498c-e10a-4389-a335-7f3fd8daeb15",
@@ -6531,7 +6838,9 @@
         ],
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "50dd2d76-9320-4f3e-ab09-3b2590f828d9",
@@ -6569,7 +6878,9 @@
         "resolution": "QHD",
         "sizeInch": 32,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "50fb8976-197f-42c1-a4db-da3a6dbdddc5",
@@ -6612,7 +6923,9 @@
         "usbCPowerDeliveryW": 18,
         "usbCVideo": true,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "516fa20e-045b-42a9-b756-806bd306382f",
@@ -6656,7 +6969,9 @@
         ],
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "5319f141-ce10-42b0-b031-7765d72a0f00",
@@ -6703,7 +7018,9 @@
         "usbCPowerDeliveryW": 90,
         "usbCVideo": true,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "535aa3e6-7ead-486f-9953-adebf6b9c426",
@@ -6745,7 +7062,9 @@
         "usbCPowerDeliveryW": 98,
         "usbCVideo": true,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "53f0ec27-5b6b-405f-941e-639512a62c24",
@@ -6773,7 +7092,9 @@
         "resolution": "UHD",
         "sizeInch": 27,
         "usbCVideo": false
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "543578d4-3b13-4799-8a28-6711caa767c7",
@@ -6799,7 +7120,9 @@
         "refreshRate": 75,
         "resolution": "QHD",
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "543c6ec4-da03-4072-a2d9-90dbca6160c3",
@@ -6826,7 +7149,9 @@
         "refreshRate": 165,
         "resolution": "QHD",
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "544b3e42-6dc9-43fd-9c29-26b7d1c13762",
@@ -6861,7 +7186,9 @@
         "usbCPowerDeliveryW": 96,
         "usbCVideo": true,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "556b6cb3-d332-4a14-bd14-d19583089a00",
@@ -6894,7 +7221,9 @@
         "screenCoating": "antiReflection",
         "sizeInch": 27,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "55a2cfce-3011-4794-a2e3-a73e5f408875",
@@ -6926,7 +7255,9 @@
         "sizeInch": 34,
         "usbCPowerDeliveryW": 18,
         "usbCVideo": true
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "56bee456-2b52-4542-9f35-9adf9883c91f",
@@ -6951,7 +7282,9 @@
         "refreshRate": 165,
         "resolution": "QHD",
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "57222b25-462a-45cd-93ae-6e0e3bdaf515",
@@ -6960,7 +7293,7 @@
         "ko": "ARZOPA",
         "en": "ARZOPA"
       },
-      "priceKrw": 254600,
+      "priceKrw": 252000,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -6973,7 +7306,9 @@
         "sizeInch": 16.1,
         "standType": "included",
         "usbCVideo": true
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "572c27dd-d194-484d-a4b3-304f0d784641",
@@ -6998,6 +7333,7 @@
         "colorGamutSrgbSpec": 130,
         "displayPortCount": 1,
         "displayPortLinkClass": "dp2_1Uhbr20_80",
+        "earlyAccessAt": "2026-10-29T00:00:00.000Z",
         "eyejokerRating": "ANTICIPATING",
         "hdmiLinkClass": "hdmi2_1Frl6_48",
         "hdmiPortCount": 2,
@@ -7013,6 +7349,7 @@
         "maxBrightnessSdrSpec": 250,
         "panelMaker": "LGD",
         "panelType": "RGB_TANDEM_OLED",
+        "publicReleaseAt": "2026-11-05T00:00:00.000Z",
         "refreshRate": 240,
         "resolution": "UHD",
         "screenCoating": "glossy",
@@ -7027,7 +7364,9 @@
         "usbCPowerDeliveryW": 90,
         "usbCVideo": true,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "57972272-f174-4829-bfe4-ac4e0ee23c38",
@@ -7046,7 +7385,9 @@
         "refreshRate": 240,
         "resolution": "QHD",
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "57cbf99b-55ff-4da9-bacb-a017d31f3345",
@@ -7069,7 +7410,9 @@
         "refreshRate": 240,
         "resolution": "UHD",
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "586ba23e-0fae-4b81-bf02-60a011a24a1b",
@@ -7099,7 +7442,9 @@
         "sizeInch": 27,
         "usbCPowerDeliveryW": 90,
         "usbCVideo": true
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "587668d4-35af-4834-800d-fb130a2505c4",
@@ -7131,7 +7476,9 @@
         "screenCoating": "matteAntiGlare",
         "sizeInch": 23.8,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "5893f8b1-75da-4d5b-a419-6a31b45819d8",
@@ -7155,7 +7502,9 @@
         "refreshRate": 120,
         "resolution": "UHD",
         "sizeInch": 32
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "58ca386f-f75a-406b-9ed1-0ae40eaf831b",
@@ -7193,7 +7542,9 @@
         ],
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "58e99b17-9bad-48c8-9d1b-85d9c771bf49",
@@ -7207,7 +7558,9 @@
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
       "image": null,
-      "values": {}
+      "values": {},
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "591929b2-c0e9-4210-bfe2-78720cbc013c",
@@ -7216,7 +7569,7 @@
         "ko": "레노버",
         "en": "Lenovo"
       },
-      "priceKrw": 844100,
+      "priceKrw": 834900,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -7226,7 +7579,9 @@
         "refreshRate": 240,
         "resolution": "QHD",
         "sizeInch": 26.5
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "593369ad-b6c0-47e1-a074-88955a286d89",
@@ -7255,7 +7610,9 @@
         "refreshRate": 144,
         "resolution": "QHD",
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "5a5dc7de-a1ef-45c4-8a4c-9acf11c1d7c5",
@@ -7294,7 +7651,9 @@
         ],
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "5b37404d-7443-4f61-885f-35e35517ca9a",
@@ -7314,7 +7673,9 @@
         "refreshRate": 540,
         "resolution": "QHD",
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "5b51ae4e-753a-4a1e-8bbf-6ef815c06ff6",
@@ -7349,7 +7710,9 @@
         "resolution": "FHD",
         "sizeInch": 27,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "5c05b6e9-86fb-414c-a1e2-138262e5ad9b",
@@ -7389,7 +7752,9 @@
         ],
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "5d26db23-5821-45f7-9ece-6f2cee855dae",
@@ -7436,7 +7801,9 @@
         "usbCPowerDeliveryW": 15,
         "usbCVideo": true,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "5e3f97c1-6a07-42f5-9cec-c973da41eff4",
@@ -7467,7 +7834,9 @@
         "sizeInch": 31.5,
         "usbCVideo": true,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "5e476f56-20b4-439a-9cbe-67d696e60068",
@@ -7526,7 +7895,9 @@
         ],
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "5e67229f-92be-4608-ae54-0940b90dfa42",
@@ -7553,7 +7924,9 @@
         "refreshRate": 165,
         "resolution": "QHD",
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "5eecee93-51e2-4ea4-bb3a-593141950324",
@@ -7592,7 +7965,9 @@
         "usbCPowerDeliveryW": 15,
         "usbCVideo": true,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "5f4f098d-a0c4-4f00-9c46-577fd514b597",
@@ -7612,7 +7987,9 @@
         "refreshRate": 360,
         "resolution": "UHD",
         "sizeInch": 32
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "5f645fbd-2a8f-48ed-9881-725e0a002237",
@@ -7642,7 +8019,9 @@
         ],
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "5f786b53-0efb-4706-b470-809cdea4c085",
@@ -7678,7 +8057,9 @@
         ],
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "5fbdb6bb-fe74-47f5-9795-5e4b1911cf32",
@@ -7700,7 +8081,9 @@
         "refreshRate": 240,
         "resolution": "UWQHD",
         "sizeInch": 34
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "6134be6a-abf3-439f-961b-4b67e8799cc2",
@@ -7743,7 +8126,9 @@
         "usbCPowerDeliveryW": 98,
         "usbCVideo": true,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "62801959-5040-47b3-95ed-2905c31ad1cb",
@@ -7768,7 +8153,9 @@
         "refreshRate": 120,
         "resolution": "UHD",
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "6288b567-0d8d-46d2-bf43-a4a3b1531277",
@@ -7809,7 +8196,9 @@
         "usbCPowerDeliveryW": 15,
         "usbCVideo": true,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "6386f006-306d-4a8f-82a7-f259d4eea57e",
@@ -7835,7 +8224,9 @@
         "refreshRate": 165,
         "resolution": "FHD",
         "sizeInch": 24
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "63a537ea-9904-4231-a2cc-3f34f82a8996",
@@ -7859,7 +8250,9 @@
         "resolution": "FHD",
         "sizeInch": 24.1,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "63e83f77-a95c-4c71-abd5-8d89a0052250",
@@ -7885,7 +8278,9 @@
         "refreshRate": 240,
         "resolution": "QHD",
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "6423f435-b689-4a1a-8079-a97ce0bc1f7d",
@@ -7910,7 +8305,9 @@
         "resolution": "UHD",
         "sizeInch": 42,
         "standType": "included"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "6437df7e-ad44-4614-9c69-9432281fc4a3",
@@ -7940,7 +8337,9 @@
         "resolution": "FHD",
         "sizeInch": 24.1,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "64631c18-7597-4247-bf4f-a22a7c44a879",
@@ -7963,7 +8362,9 @@
         "sizeInch": 15.6,
         "standType": "included",
         "usbCVideo": true
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "64de07a8-7e44-4027-9830-4b45befc8cb9",
@@ -8006,7 +8407,9 @@
         "sizeInch": 27,
         "usbCPowerDeliveryW": 18,
         "usbCVideo": true
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "65327992-f6cc-41d2-a894-a4356276d8ba",
@@ -8015,7 +8418,7 @@
         "ko": "MSI",
         "en": "MSI"
       },
-      "priceKrw": 735600,
+      "priceKrw": 727500,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -8030,7 +8433,9 @@
         "sizeInch": 26.5,
         "usbCPowerDeliveryW": 15,
         "usbCVideo": true
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "653cdd99-2356-4173-bb5a-48a47b060356",
@@ -8058,7 +8463,9 @@
         "resolution": "QHD",
         "sizeInch": 27,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "6613d3d7-2bab-4478-b90b-bfc11d089fa9",
@@ -8067,7 +8474,7 @@
         "ko": "Intehill",
         "en": "Intehill"
       },
-      "priceKrw": 588200,
+      "priceKrw": 581800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -8081,7 +8488,9 @@
         "sizeInch": 17.3,
         "standType": "included",
         "vesaMountPattern": "vesa75x75"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "663a9ba3-2e5f-438d-81f6-0d4df4074d4a",
@@ -8120,7 +8529,9 @@
         "usbCPowerDeliveryW": 90,
         "usbCVideo": true,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "6688dd7a-83ed-4b3c-a845-86d9436527d4",
@@ -8145,7 +8556,9 @@
         "refreshRate": 144,
         "resolution": "FHD",
         "sizeInch": 24
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "66f1c1dc-b899-4e01-8846-6ea003b65ea6",
@@ -8167,7 +8580,9 @@
         "refreshRate": 240,
         "resolution": "UHD",
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "6aa3029d-b18c-479e-afe9-256319537aba",
@@ -8176,7 +8591,7 @@
         "ko": "애플",
         "en": "Apple"
       },
-      "priceKrw": 4420000,
+      "priceKrw": 4371800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -8196,7 +8611,9 @@
           "height"
         ],
         "standType": "included"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "6b10ba96-6ec5-4f2d-87ab-fde11b7cb27b",
@@ -8205,7 +8622,7 @@
         "ko": "애즈락",
         "en": "ASRock"
       },
-      "priceKrw": 1267800,
+      "priceKrw": 1260900,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -8218,7 +8635,9 @@
         "refreshRate": 240,
         "resolution": "UHD",
         "sizeInch": 32
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "6b380e4b-08ed-4f2e-b38a-d713bfcb8952",
@@ -8239,7 +8658,9 @@
         "resolution": "QHD",
         "sizeInch": 14.36,
         "standType": "included"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "6ba03e89-3f42-446a-b423-1b520aa62801",
@@ -8275,7 +8696,9 @@
         "usbCPowerDeliveryW": 90,
         "usbCVideo": true,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "6baaeafd-e457-4f24-8bd5-b2196ff6a036",
@@ -8302,7 +8725,9 @@
         "refreshRate": 240,
         "resolution": "FHD",
         "sizeInch": 24
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "6bfe36ae-37bc-4c6f-9f66-49c00a181cf9",
@@ -8311,7 +8736,7 @@
         "ko": "알파스캔",
         "en": "Alphascan"
       },
-      "priceKrw": 375100,
+      "priceKrw": 371000,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -8329,7 +8754,9 @@
         "screenCoating": "matteAntiGlare",
         "sizeInch": 27,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "6c23a1a7-66eb-4173-af16-bcf6ce41c3f4",
@@ -8356,7 +8783,9 @@
         "refreshRate": 165,
         "resolution": "QHD",
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "6c8983b0-a0e3-475b-88b2-e19ce6840fa7",
@@ -8387,7 +8816,9 @@
         "resolution": "FHD",
         "sizeInch": 24.1,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "6c9b18c3-142c-46b8-950b-36e4eac73bcb",
@@ -8396,7 +8827,7 @@
         "ko": "에이서",
         "en": "ACER"
       },
-      "priceKrw": 1071800,
+      "priceKrw": 1060100,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -8406,7 +8837,9 @@
         "refreshRate": 500,
         "resolution": "QHD",
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "6d308e25-f8c5-43fd-9f0e-61c7d50e9e98",
@@ -8451,7 +8884,9 @@
         "responseMax": 6.9,
         "sizeInch": 27,
         "usbCVideo": false
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "6d5be529-ee4b-4d63-8047-dce3e6d6c2f2",
@@ -8472,7 +8907,9 @@
         "refreshRate": 60,
         "resolution": "UHD",
         "sizeInch": 32
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "6db1e98b-5378-471d-b15f-922b5e06458d",
@@ -8481,7 +8918,7 @@
         "ko": "벤큐",
         "en": "BenQ"
       },
-      "priceKrw": 1205800,
+      "priceKrw": 1192700,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -8504,7 +8941,9 @@
         "usbCPowerDeliveryW": 90,
         "usbCVideo": true,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "6dc59ba9-ac5e-47f4-a9a2-389ff8b014c6",
@@ -8536,7 +8975,9 @@
         "sizeInch": 27,
         "usbCVideo": true,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "6e47a214-1a42-43b3-9990-23f9f86682bf",
@@ -8582,7 +9023,9 @@
         ],
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "6ef134e2-0664-49aa-9b59-35953d76c625",
@@ -8622,7 +9065,9 @@
         "usbCPowerDeliveryW": 15,
         "usbCVideo": true,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "6f2dbbf3-645d-4c15-b8f3-5cddd09bb4a8",
@@ -8643,7 +9088,9 @@
         "refreshRate": 1000,
         "resolution": "FHD",
         "sizeInch": 24.1
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "7002bceb-deb9-4175-84d4-7b479bbf218e",
@@ -8678,7 +9125,9 @@
         "usbCPowerDeliveryW": 90,
         "usbCVideo": true,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "702ad666-81ce-4558-aa71-3475241f2cfa",
@@ -8711,7 +9160,9 @@
         "usbCPowerDeliveryW": 65,
         "usbCVideo": true,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "716785bd-22a6-4218-91e5-66117b3aaa14",
@@ -8739,7 +9190,9 @@
           "tilt"
         ],
         "standType": "included"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "71921a1e-92a2-424d-ad34-20b7f16464a8",
@@ -8761,7 +9214,9 @@
         "refreshRate": 120,
         "resolution": "UHD",
         "sizeInch": 32
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "725b6431-ba19-480d-86a2-b79c48e57814",
@@ -8801,7 +9256,9 @@
         ],
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "74a828c2-cfbc-4e32-af31-47b26edd7791",
@@ -8837,7 +9294,9 @@
         "usbCPowerDeliveryW": 15,
         "usbCVideo": true,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "77618448-25f4-4cf7-9a54-63d6c05a4776",
@@ -8886,7 +9345,9 @@
         "usbCPowerDeliveryW": 90,
         "usbCVideo": true,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "779bbaf9-96f9-416f-8799-5f6266738c62",
@@ -8919,7 +9380,9 @@
         "resolution": "FHD",
         "sizeInch": 24,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "789e5a7c-2a2b-407a-a8c9-f95be01818dd",
@@ -8959,7 +9422,9 @@
         ],
         "standType": "included",
         "usbCPowerDeliveryW": 15
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "78ed47de-267e-438f-8312-77c8b959d87d",
@@ -8988,7 +9453,9 @@
         "resolution": "QHD",
         "sizeInch": 27,
         "usbCVideo": false
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "7aa60f74-aa55-44f0-9858-9d672a19fba5",
@@ -9028,7 +9495,9 @@
         ],
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "7afd08b3-4842-42f1-b45c-31478c291af7",
@@ -9052,7 +9521,9 @@
         "refreshRate": 240,
         "resolution": "FHD",
         "sizeInch": 24
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "7be08e82-31ce-47ae-b004-4b302574ece3",
@@ -9078,7 +9549,9 @@
         "refreshRate": 165,
         "resolution": "FHD",
         "sizeInch": 24
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "7c983734-2654-43c7-a9f1-0fa37f10e7bd",
@@ -9136,7 +9609,9 @@
         ],
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "7cc67f5c-c2f5-4e80-894c-2eee928972d3",
@@ -9160,7 +9635,9 @@
         "refreshRate": 240,
         "resolution": "UHD",
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "7d80f9d7-dcee-4387-8e18-62d3f04e8106",
@@ -9193,7 +9670,9 @@
         "resolution": "FHD",
         "sizeInch": 24,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "7d824766-49c5-4e1b-90e9-5015ecaed816",
@@ -9202,7 +9681,7 @@
         "ko": "벤큐",
         "en": "BenQ"
       },
-      "priceKrw": 1138800,
+      "priceKrw": 1126400,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -9222,7 +9701,9 @@
         "resolution": "QHD",
         "sizeInch": 26.5,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "7e433fa4-6f70-41a8-bf65-4e4d39d1366e",
@@ -9231,7 +9712,7 @@
         "ko": "TCL",
         "en": "TCL"
       },
-      "priceKrw": 639100,
+      "priceKrw": 634300,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -9244,7 +9725,9 @@
         "refreshRate": 165,
         "resolution": "UHD",
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "7f6d4df7-13be-4606-94ef-29a3255db774",
@@ -9299,7 +9782,9 @@
         ],
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "80dad390-8eeb-4a51-b1d6-022fbaff0ffe",
@@ -9321,7 +9806,9 @@
         "refreshRate": 240,
         "resolution": "UHD",
         "sizeInch": 32
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "81830bc1-1022-4e91-841c-55f1c0aacd71",
@@ -9348,7 +9835,9 @@
         "refreshRate": 180,
         "resolution": "QHD",
         "sizeInch": 32
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "82959861-72d3-42ef-8397-40cec3597e68",
@@ -9367,7 +9856,9 @@
         "refreshRate": 144,
         "resolution": "FHD",
         "sizeInch": 24
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "82a8b4c5-8a84-4534-9d1e-e3dfcff4c1cc",
@@ -9406,7 +9897,9 @@
         "resolution": "5K2K",
         "sizeInch": 45,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "832243ad-1768-4938-9356-aa48e990bd2f",
@@ -9443,7 +9936,9 @@
           "height"
         ],
         "standType": "included"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "855c9e1b-2c75-47d9-a2a7-dbf7abb8289f",
@@ -9469,7 +9964,9 @@
         "refreshRate": 500,
         "resolution": "QHD",
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "8560fa5f-c52c-417d-bac9-04ae34e1b4a4",
@@ -9478,7 +9975,7 @@
         "ko": "에이수스",
         "en": "ASUS"
       },
-      "priceKrw": 1288200,
+      "priceKrw": 1274800,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -9505,7 +10002,9 @@
         "usbCPowerDeliveryW": 15,
         "usbCVideo": true,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "859d6f55-a237-4dfe-8863-27100a7eb337",
@@ -9548,7 +10047,9 @@
         "usbCPowerDeliveryW": 90,
         "usbCVideo": true,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "865cb582-3aa9-4220-bcb7-cd5588c83704",
@@ -9557,7 +10058,7 @@
         "ko": "에이서",
         "en": "ACER"
       },
-      "priceKrw": 937900,
+      "priceKrw": 927600,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -9572,7 +10073,9 @@
         "screenCoating": "matteAntiGlare",
         "sizeInch": 27,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "867f6341-21f0-4c7e-8ddc-42da49e46150",
@@ -9604,7 +10107,9 @@
         "resolution": "DQHD",
         "sizeInch": 48.9,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "86aeb80f-5ff0-40bc-9bb7-56e454f4c96d",
@@ -9639,7 +10144,9 @@
         ],
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "86b30979-3356-42d0-b57e-a0cb426732a7",
@@ -9675,7 +10182,9 @@
         "resolution": "FHD",
         "screenCoating": "glossy",
         "sizeInch": 24.5
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "86c7b725-2eba-4a3b-848f-98d3379d55b8",
@@ -9710,7 +10219,9 @@
         "sizeInch": 27,
         "usbCVideo": true,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "87e39358-1219-4a76-9278-8023fca4af23",
@@ -9750,7 +10261,9 @@
         "responseAverageRgb10": 4.2,
         "responseMax": 9.4,
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "88827f7a-0789-4081-b7d3-0831fc548ca2",
@@ -9759,7 +10272,7 @@
         "ko": "ARZOPA",
         "en": "ARZOPA"
       },
-      "priceKrw": 194300,
+      "priceKrw": 192100,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -9780,7 +10293,9 @@
         "sizeInch": 16.1,
         "standType": "included",
         "usbCVideo": true
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "8c275370-8e9e-41d5-ac56-66065112c749",
@@ -9818,7 +10333,9 @@
         "screenCoating": "matteAntiGlare",
         "sizeInch": 27,
         "usbCVideo": true
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "8c43a007-c151-4864-beab-828f5df1f1d8",
@@ -9854,7 +10371,9 @@
         "sizeInch": 26.5,
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "8d618ab8-9704-4b99-84b1-baa7205d408a",
@@ -9891,7 +10410,9 @@
           "pivot"
         ],
         "standType": "included"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "8dc76ca2-5e6a-4b13-8c3c-097ce7ea1b26",
@@ -9930,7 +10451,9 @@
         "standType": "included",
         "usbCPowerDeliveryW": 90,
         "usbCVideo": true
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "8e1ac583-70ed-4960-b4cc-244ac67f6870",
@@ -9963,7 +10486,9 @@
         "refreshRate": 540,
         "resolution": "QHD",
         "sizeInch": 26.5
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "8f2510b2-45b1-4d95-85e0-e02ee53aaeb6",
@@ -9972,7 +10497,7 @@
         "ko": "뷰소닉",
         "en": "ViewSonic"
       },
-      "priceKrw": 375100,
+      "priceKrw": 371000,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -9987,7 +10512,9 @@
         "sizeInch": 27,
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "8f26252a-c09b-4b96-9ecc-11878223694b",
@@ -10018,7 +10545,9 @@
         "sizeInch": 32,
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "8ff765d0-4a99-4062-b8bb-571029bb4a6f",
@@ -10046,7 +10575,9 @@
         "refreshRate": 165,
         "resolution": "QHD",
         "sizeInch": 32
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "9053368f-eed2-4300-9636-7ad72257c0e5",
@@ -10072,7 +10603,9 @@
         "resolution": "FHD",
         "sizeInch": 24,
         "usbCVideo": false
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "90ed2e93-2ca7-41b6-805e-51e47c114acf",
@@ -10081,7 +10614,7 @@
         "ko": "TCL",
         "en": "TCL"
       },
-      "priceKrw": 1298400,
+      "priceKrw": 1288600,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -10091,7 +10624,9 @@
         "refreshRate": 240,
         "resolution": "UHD",
         "sizeInch": 32
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "9115646d-21d7-44ec-9d59-1dd59a1f8f1b",
@@ -10123,7 +10658,9 @@
         "resolution": "QHD",
         "sizeInch": 27,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "91ce277a-2ab5-4c75-8a0b-5a8280f777da",
@@ -10170,7 +10707,9 @@
         "usbCPowerDeliveryW": 90,
         "usbCVideo": true,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "91d7f15f-444b-4168-92d2-c8faa147055d",
@@ -10192,7 +10731,9 @@
         "refreshRate": 480,
         "resolution": "QHD",
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "92021400-9b95-48d3-8bd5-e2a9f6e1b7aa",
@@ -10218,7 +10759,9 @@
         "refreshRate": 360,
         "resolution": "FHD",
         "sizeInch": 24.5
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "92619305-12f6-4efd-ad44-4cfbfe5b56d8",
@@ -10227,7 +10770,7 @@
         "ko": "ZEUSLAP",
         "en": "ZEUSLAP"
       },
-      "priceKrw": 241200,
+      "priceKrw": 238500,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -10241,7 +10784,9 @@
         "resolution": "QHD",
         "sizeInch": 16,
         "standType": "included"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "927bed66-d330-4e6e-8079-f44440f5b772",
@@ -10277,7 +10822,9 @@
         "sizeInch": 26.5,
         "usbCVideo": true,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "9321b485-560f-4eaf-b2c3-e7888384ad63",
@@ -10310,7 +10857,9 @@
         "usbCPowerDeliveryW": 90,
         "usbCVideo": true,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "93e3ffa0-3171-4135-9b12-48ffe5543ebd",
@@ -10332,7 +10881,9 @@
         "refreshRate": 240,
         "resolution": "UHD",
         "sizeInch": 32
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "9412a29b-0db7-4a08-bfd7-2436d6434712",
@@ -10353,7 +10904,9 @@
         "refreshRate": 360,
         "resolution": "UWQHD",
         "sizeInch": 34
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "94bf595f-9e62-4973-89de-91d43c7a6708",
@@ -10362,7 +10915,7 @@
         "ko": "벤큐",
         "en": "BenQ"
       },
-      "priceKrw": 1607800,
+      "priceKrw": 1590200,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -10385,7 +10938,9 @@
         "usbCPowerDeliveryW": 90,
         "usbCVideo": true,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "95fa7293-5cb3-469d-bed7-290a67886885",
@@ -10423,7 +10978,9 @@
         "responseMax": 2.5,
         "sizeInch": 24.1,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "966b6627-8dd6-4956-901d-41b9aa335eb2",
@@ -10454,7 +11011,9 @@
         "sizeInch": 27,
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "96e0e833-baef-41e2-a5be-4d9f631d2f0f",
@@ -10500,7 +11059,9 @@
         "usbCPowerDeliveryW": 18,
         "usbCVideo": true,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "97e3696f-5ad2-47fc-85b9-bc2dc7367ccc",
@@ -10544,7 +11105,9 @@
         ],
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "987bce87-2136-4713-8526-9e1e4ba7c982",
@@ -10566,7 +11129,9 @@
         "refreshRate": 360,
         "resolution": "UWQHD",
         "sizeInch": 34
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "989a52d9-2dee-47df-84c6-ce5390251d1d",
@@ -10607,7 +11172,9 @@
         "responseMax": 13.2,
         "sizeInch": 27,
         "usbCVideo": false
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "9992a47e-5461-480c-9d4c-df62778ea256",
@@ -10631,7 +11198,9 @@
         "sizeInch": 16,
         "standType": "included",
         "vesaMountPattern": "vesa75x75"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "9a1ee2ff-84ad-447c-b31e-13e76155553b",
@@ -10661,7 +11230,9 @@
         "refreshRate": 560,
         "resolution": "FHD",
         "sizeInch": 24.5
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "9a89dabd-dbf4-4848-be53-7da46093abc8",
@@ -10688,7 +11259,9 @@
         "refreshRate": 75,
         "resolution": "QHD",
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "9ac503ad-06e4-4aeb-8c27-84da9efeaf99",
@@ -10736,7 +11309,9 @@
         ],
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "9b54e33d-38f3-4472-8eb3-d30c548fb839",
@@ -10758,7 +11333,9 @@
         "refreshRate": 240,
         "resolution": "QHD",
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "9c05379d-f510-4881-b006-e8edbfc9465e",
@@ -10767,7 +11344,7 @@
         "ko": "에이서",
         "en": "ACER"
       },
-      "priceKrw": 1741700,
+      "priceKrw": 1722700,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -10777,7 +11354,9 @@
         "refreshRate": 180,
         "resolution": "UHD",
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "9ca9e765-3e13-4299-b4b6-f1bd04cae5ee",
@@ -10815,7 +11394,9 @@
           "swivel"
         ],
         "standType": "included"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "9ce10516-900c-42c4-a8d0-89f2eef0293a",
@@ -10824,7 +11405,7 @@
         "ko": "알파스캔",
         "en": "Alphascan"
       },
-      "priceKrw": 659100,
+      "priceKrw": 654100,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -10867,7 +11448,9 @@
         "usbCPowerDeliveryW": 65,
         "usbCVideo": true,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "9d8c508c-1495-4ce5-be4f-9de70f363927",
@@ -10876,7 +11459,7 @@
         "ko": "알파스캔",
         "en": "Alphascan"
       },
-      "priceKrw": 744200,
+      "priceKrw": 742900,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -10907,7 +11490,9 @@
         ],
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "9ddc66d0-631d-4ac8-9ab9-cba92167ccba",
@@ -10934,7 +11519,9 @@
         "screenCoating": "antiReflection",
         "sizeInch": 26.5,
         "standType": "included"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "9f5b8f70-b126-42b6-9e3f-df7b68eb30ed",
@@ -10969,7 +11556,9 @@
         "sizeInch": 24,
         "usbCVideo": false,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "9f74aa2a-c6bb-4b75-978a-16a79e0ead30",
@@ -11014,7 +11603,9 @@
         ],
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "a07495bf-6afe-411f-90a9-4ed1813e4ba8",
@@ -11037,7 +11628,9 @@
         "refreshRate": 240,
         "resolution": "QHD",
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "a0bab6e0-35e3-4846-83ee-e15b5ed2ea40",
@@ -11063,7 +11656,9 @@
         "refreshRate": 165,
         "resolution": "FHD",
         "sizeInch": 24
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "a0cd8631-ae73-4a39-ae7b-e8e4825f9982",
@@ -11104,7 +11699,9 @@
         ],
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "a1d9fe71-d4fe-4b9a-b4bc-5113b3f7b0b7",
@@ -11141,7 +11738,9 @@
         ],
         "standType": "included",
         "vesaMountPattern": "vesa75x75"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "a2c1658e-4bc5-4989-a309-00e1df5c733d",
@@ -11168,7 +11767,9 @@
         "refreshRate": 100,
         "resolution": "FHD",
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "a4a342fb-834a-44b5-9643-cde62e7ed83d",
@@ -11189,7 +11790,9 @@
         "refreshRate": 240,
         "resolution": "UHD",
         "sizeInch": 32
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "a5213ed2-b38f-4b8f-bf39-7e5aab3e48d2",
@@ -11215,7 +11818,9 @@
         "refreshRate": 165,
         "resolution": "FHD",
         "sizeInch": 24
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "a6378f28-2c85-4919-be59-e652b9cfb873",
@@ -11224,7 +11829,7 @@
         "ko": "MSI",
         "en": "MSI"
       },
-      "priceKrw": 209600,
+      "priceKrw": 208000,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -11256,7 +11861,9 @@
         "standType": "included",
         "usbCVideo": false,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "a6719350-7756-456c-aabb-d0af2a094386",
@@ -11295,7 +11902,9 @@
         ],
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "a6ed3516-8b81-4302-a6b3-619b5d9ad193",
@@ -11321,7 +11930,9 @@
         "refreshRate": 75,
         "resolution": "QHD",
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "a77344ca-0f09-416e-963d-29bf79e57c36",
@@ -11361,7 +11972,9 @@
         "usbCPowerDeliveryW": 15,
         "usbCVideo": true,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "a7887ad7-0b95-4a57-9e93-e5b79b669f0b",
@@ -11395,7 +12008,9 @@
         "screenCoating": "matteAntiGlare",
         "sizeInch": 24.5,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "a7e2fee1-f4c8-4a8b-8a7e-13bd07109423",
@@ -11430,7 +12045,9 @@
         "screenCoating": "matteAntiGlare",
         "sizeInch": 24,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "a8c91163-83c8-4e67-b214-320cce5ed902",
@@ -11458,7 +12075,9 @@
         "refreshRate": 165,
         "resolution": "QHD",
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "ab0b447a-a04a-411f-a0df-003b1163ec5f",
@@ -11506,7 +12125,9 @@
         ],
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "ab3d5630-fd9c-475e-9553-f21fd5356f94",
@@ -11544,7 +12165,9 @@
         ],
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "ab5c09fa-fc24-45d3-ae89-f27a8dbe14c9",
@@ -11585,7 +12208,9 @@
         "usbCPowerDeliveryW": 15,
         "usbCVideo": true,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "abaa1ce3-bf55-43cf-99cf-082979b049cb",
@@ -11626,7 +12251,9 @@
         "standType": "included",
         "usbCPowerDeliveryW": 15,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "acaeb056-1f56-41a2-9160-50a7bbf6a92f",
@@ -11650,7 +12277,9 @@
         "refreshRate": 240,
         "resolution": "UHD",
         "sizeInch": 32
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "acc72b17-b0e6-4e0d-b065-1f54304b479e",
@@ -11674,7 +12303,9 @@
         "resolution": "QHD",
         "sizeInch": 27,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "acfa2a1f-81fa-44d5-9547-d485a62d59ba",
@@ -11713,7 +12344,9 @@
         "responseAverageRgb10": 4.3,
         "responseMax": 10.8,
         "sizeInch": 24
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "add778f9-486e-4d39-b2f6-01ab04955e92",
@@ -11739,7 +12372,9 @@
         "standType": "included",
         "usbCVideo": true,
         "vesaMountPattern": "vesa75x75"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "adffd3ce-e018-414f-9fae-41bcdb8e6203",
@@ -11781,7 +12416,9 @@
         "standType": "included",
         "usbCPowerDeliveryW": 30,
         "usbCVideo": true
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "ae901777-f98a-437f-8b56-da6ffbfbf0d6",
@@ -11812,7 +12449,9 @@
         "sizeInch": 24,
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "ae9b4ae1-dd75-414c-8642-804e476ffa87",
@@ -11832,7 +12471,9 @@
         "refreshRate": 320,
         "resolution": "FHD",
         "sizeInch": 24.5
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "aeaf3456-e6ec-44e8-a2a2-98e898c65558",
@@ -11860,7 +12501,9 @@
         "refreshRate": 165,
         "resolution": "QHD",
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "afc171b9-1762-4353-84b3-d43da618c3cf",
@@ -11898,7 +12541,9 @@
         "usbCPowerDeliveryW": 90,
         "usbCVideo": true,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "b1bf15d6-4be6-488a-b825-2f4176ce8829",
@@ -11939,7 +12584,9 @@
         "usbCPowerDeliveryW": 140,
         "usbCVideo": true,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "b1c1abfb-25e9-4842-9b97-6b4b8613f46e",
@@ -11948,7 +12595,7 @@
         "ko": "에이서",
         "en": "ACER"
       },
-      "priceKrw": 1071800,
+      "priceKrw": 1060100,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -11959,7 +12606,9 @@
         "refreshRate": 165,
         "resolution": "RES5120X2880",
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "b2207ef1-15ee-41de-842b-26bf423ad108",
@@ -11992,7 +12641,9 @@
         "resolution": "QHD",
         "sizeInch": 32,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "b24b1973-5a67-49b3-a667-0ac774a8f0ad",
@@ -12028,7 +12679,9 @@
         "usbCPowerDeliveryW": 96,
         "usbCVideo": true,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "b27dc7ae-4676-4b3d-b6f2-f004da291c67",
@@ -12068,7 +12721,9 @@
         "usbCPowerDeliveryW": 90,
         "usbCVideo": true,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "b2ab4257-18ba-4292-ab9e-a2e4f4eed3d5",
@@ -12125,7 +12780,9 @@
         ],
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "b2ccb446-8a60-4c61-9baf-d6e845946ec6",
@@ -12164,7 +12821,9 @@
           "height"
         ],
         "standType": "included"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "b488f107-d6b9-40e2-b890-03a9b31e748d",
@@ -12173,7 +12832,7 @@
         "ko": "WIMAXIT",
         "en": "WIMAXIT"
       },
-      "priceKrw": 280000,
+      "priceKrw": 277000,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -12186,7 +12845,9 @@
         "resolution": "FHD",
         "sizeInch": 15.6,
         "standType": "included"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "b49a1c2e-89da-4538-8cf7-724990eb8c86",
@@ -12217,7 +12878,9 @@
         "refreshRate": 160,
         "resolution": "UHD",
         "sizeInch": 31.5
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "b5b04abb-78a9-4c71-a956-34bd7e6bf713",
@@ -12261,7 +12924,9 @@
         ],
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "b614a652-8845-4036-8483-cfec61d0e97c",
@@ -12297,7 +12962,9 @@
         ],
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "b61f36e7-ee95-42e5-b00b-99fbc1753edd",
@@ -12351,7 +13018,9 @@
         ],
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "b68c707c-b0a1-455a-a88e-0ecc01355c99",
@@ -12391,7 +13060,9 @@
         "sizeInch": 24,
         "usbCVideo": false,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "b68ed481-17f0-4be4-9a35-b6f8bf1fa8e8",
@@ -12400,7 +13071,7 @@
         "ko": "엘지전자",
         "en": "LGE"
       },
-      "priceKrw": 2009700,
+      "priceKrw": 1987800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -12425,7 +13096,9 @@
         "resolution": "5K2K",
         "sizeInch": 52,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "b6a93f3b-cce7-48cf-a9a5-311f62e3f446",
@@ -12452,7 +13125,9 @@
         "resolution": "FHD",
         "sizeInch": 24,
         "usbCVideo": false
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "b7082f1b-d049-4b12-ab24-54c294fd6802",
@@ -12499,7 +13174,9 @@
         ],
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "b79ebfe1-2751-4178-a552-b040b76162b1",
@@ -12544,7 +13221,9 @@
         "sizeInch": 24.1,
         "usbCVideo": false,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "b92da9d6-ba1f-47d3-99e4-eeba4599ccdf",
@@ -12563,7 +13242,9 @@
         "refreshRate": 300,
         "resolution": "FHD",
         "sizeInch": 24.5
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "b963c314-9ee6-4594-9be3-8f293a0d5c21",
@@ -12584,7 +13265,9 @@
         "refreshRate": 280,
         "resolution": "QHD",
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "b998e560-f4c7-40b3-83ae-88df2e049c90",
@@ -12618,7 +13301,9 @@
         "usbCPowerDeliveryW": 60,
         "usbCVideo": true,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "b9f3bb1b-cc15-455d-9fdf-49f81eb11c51",
@@ -12639,7 +13324,9 @@
         "refreshRate": 475,
         "resolution": "QHD",
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "b9f95357-efed-40d2-a7a5-cfc6377f5ae9",
@@ -12671,7 +13358,9 @@
         "resolution": "FHD",
         "sizeInch": 27,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "bb7964d4-5c5c-4332-b500-76c17537b54d",
@@ -12705,7 +13394,9 @@
         "resolution": "UHD",
         "sizeInch": 32,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "bc6e75c6-7c34-4285-acbe-b2fa6834ec76",
@@ -12745,7 +13436,9 @@
         ],
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "bd304dbd-5c9f-41cc-9f36-d11723b5382c",
@@ -12774,7 +13467,9 @@
         "refreshRate": 260,
         "resolution": "QHD",
         "sizeInch": 32
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "bd8677ba-ae44-4ea7-bf78-4d31fbd8c716",
@@ -12796,7 +13491,9 @@
         "refreshRate": 320,
         "resolution": "FHD",
         "sizeInch": 24.5
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "bdadedaf-34b2-4727-9222-cca59c833752",
@@ -12824,7 +13521,9 @@
         "refreshRate": 180,
         "resolution": "QHD",
         "sizeInch": 32
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "be320b90-dcd8-429c-81a4-f476cc6d7e69",
@@ -12851,7 +13550,9 @@
         "refreshRate": 165,
         "resolution": "QHD",
         "sizeInch": 32
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "be6572ae-927c-413c-96db-7f83b81526fa",
@@ -12889,7 +13590,9 @@
         "standType": "included",
         "usbCVideo": false,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "bece19ef-b73c-48c0-a5e6-322765ab4cdf",
@@ -12934,7 +13637,9 @@
         "usbCPowerDeliveryW": 140,
         "usbCVideo": true,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "bf608fd1-4f29-4b1e-a706-f0684c6f505a",
@@ -12980,7 +13685,9 @@
         "usbCPowerDeliveryW": 18,
         "usbCVideo": true,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "bf71ae53-b875-484f-9081-3786155a3d9e",
@@ -13018,7 +13725,9 @@
         ],
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "c0284c51-bca8-4006-bca0-f592448fa346",
@@ -13064,7 +13773,9 @@
         ],
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "c06243de-d1fb-4a78-b187-10e5891ce0bc",
@@ -13092,7 +13803,9 @@
         "refreshRate": 165,
         "resolution": "QHD",
         "sizeInch": 32
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "c0eadfe7-7c98-4887-8169-cea871544ff4",
@@ -13125,7 +13838,9 @@
         "resolution": "UHD",
         "sizeInch": 27,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "c120428e-08e5-4a31-8272-ca2259311b7c",
@@ -13152,7 +13867,9 @@
         "refreshRate": 75,
         "resolution": "QHD",
         "sizeInch": 32
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "c289daf7-a86f-4ee6-b9d3-e242a2f9e6ac",
@@ -13161,7 +13878,7 @@
         "ko": "애즈락",
         "en": "ASRock"
       },
-      "priceKrw": 534600,
+      "priceKrw": 528700,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -13191,7 +13908,9 @@
         ],
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "c2a6b236-1c5f-44af-b4b5-655fbd3541eb",
@@ -13219,7 +13938,9 @@
         "refreshRate": 165,
         "resolution": "QHD",
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "c34371ed-1d2e-48bd-a64c-44ed60e611bf",
@@ -13247,7 +13968,9 @@
         "standType": "included",
         "usbCPowerDeliveryW": 60,
         "usbCVideo": true
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "c39cf72f-3c28-4531-9f82-949b399272ff",
@@ -13279,7 +14002,9 @@
         "sizeInch": 32,
         "usbCPowerDeliveryW": 18,
         "usbCVideo": true
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "c4922b74-fd99-4974-b429-98b7bec1e84a",
@@ -13288,7 +14013,7 @@
         "ko": "KYY",
         "en": "KYY"
       },
-      "priceKrw": 171500,
+      "priceKrw": 169600,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -13301,7 +14026,9 @@
         "sizeInch": 15.6,
         "standType": "included",
         "usbCVideo": true
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "c516b430-863e-48da-8913-35b902044a6e",
@@ -13310,7 +14037,7 @@
         "ko": "MSI",
         "en": "MSI"
       },
-      "priceKrw": 844100,
+      "priceKrw": 834900,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -13340,7 +14067,9 @@
         ],
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "c5614d4e-c9a9-45da-acec-9b4d27249970",
@@ -13361,7 +14090,9 @@
         "resolution": "QHD",
         "sizeInch": 16,
         "standType": "included"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "c67def65-fde8-4430-8ce6-3e3e5a232af8",
@@ -13408,7 +14139,9 @@
         "responseMax": 8.2,
         "sizeInch": 25,
         "usbCVideo": false
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "c6f4fa41-9199-4555-8ae5-a0b4409b4e60",
@@ -13432,7 +14165,9 @@
         "resolution": "FHD",
         "sizeInch": 24.1,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "c7086c27-d960-4b6c-a72c-605488fdd830",
@@ -13479,7 +14214,9 @@
         "usbCPowerDeliveryW": 98,
         "usbCVideo": true,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "c88df2e2-28fa-4346-b25b-39b138ac6320",
@@ -13504,7 +14241,9 @@
         "refreshRate": 165,
         "resolution": "FHD",
         "sizeInch": 24
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "ca73b442-8784-4f81-acbd-3ef2d6bb6387",
@@ -13543,7 +14282,9 @@
         ],
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "ca7f243f-15a5-414d-b10e-3ae3e08d0529",
@@ -13562,7 +14303,9 @@
         "refreshRate": 400,
         "resolution": "FHD",
         "sizeInch": 24.5
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "ca7f4b12-806c-40fb-9da2-9a5f4585a1f8",
@@ -13608,7 +14351,9 @@
         ],
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "cbe3aa9a-9233-4b79-81ab-17baa28bede1",
@@ -13680,7 +14425,9 @@
         "usbCVideo": false,
         "vesaMountPattern": "vesa100x100",
         "vrrFlickerGrade": "moderate"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "ccc7c536-100d-4cfa-a3b0-1e7cd687dd35",
@@ -13724,7 +14471,9 @@
         ],
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "ce3baff8-eef0-4e41-b915-83a768599078",
@@ -13751,7 +14500,9 @@
         "refreshRate": 180,
         "resolution": "QHD",
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "ce870286-4c46-48d7-b594-39e7bded25a9",
@@ -13777,7 +14528,9 @@
         "resolution": "FHD",
         "sizeInch": 24.5,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "ce92b14d-c43a-4cd5-9842-05f0f8710db9",
@@ -13806,7 +14559,9 @@
         "screenCoating": "matteAntiGlare",
         "sizeInch": 24,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "ce9d4640-dd4a-4525-b56d-e685e335f29c",
@@ -13838,7 +14593,9 @@
         "sizeInch": 27,
         "standType": "included",
         "vesaMountPattern": "vesa75x75"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "cefcbc15-20d5-49a7-8f4b-6c405d8093a9",
@@ -13864,7 +14621,9 @@
         "refreshRate": 165,
         "resolution": "FHD",
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "d09bddcf-6e9c-458e-8d14-cdf782f4f2a9",
@@ -13902,7 +14661,9 @@
         ],
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "d1eec144-060e-4b93-920d-8a3480a3fd8d",
@@ -13937,7 +14698,9 @@
         ],
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "d239aefe-f2da-44fa-8abe-8732ce7a6f6a",
@@ -13973,7 +14736,9 @@
         ],
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "d3444512-165f-472b-b29b-a525d0744435",
@@ -13982,7 +14747,7 @@
         "ko": "에이서",
         "en": "ACER"
       },
-      "priceKrw": 1205800,
+      "priceKrw": 1192700,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -13995,7 +14760,9 @@
         "refreshRate": 120,
         "resolution": "UHD",
         "sizeInch": 32
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "d3eb3872-fdd7-47c2-a284-e4a2a1d3befc",
@@ -14004,7 +14771,7 @@
         "ko": "에이서",
         "en": "ACER"
       },
-      "priceKrw": 1205800,
+      "priceKrw": 1192700,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -14021,7 +14788,9 @@
         "usbCPowerDeliveryW": 65,
         "usbCVideo": true,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "d457af38-b81d-45aa-9fc2-43c8a4136f5f",
@@ -14046,7 +14815,9 @@
         "refreshRate": 165,
         "resolution": "FHD",
         "sizeInch": 24
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "d497dd03-f769-4c46-8b78-eedd70bc34be",
@@ -14090,7 +14861,9 @@
         "sizeInch": 24.5,
         "usbCVideo": false,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "d49bb4ac-a933-40d1-b240-2c64c023e9c6",
@@ -14150,7 +14923,9 @@
         "standType": "included",
         "usbCVideo": false,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "d4e37d17-eb50-46ef-b1c6-ed75798acf51",
@@ -14194,7 +14969,9 @@
         "usbCPowerDeliveryW": 98,
         "usbCVideo": true,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "d5dcc619-e737-455f-a00c-75a90cdf5341",
@@ -14220,7 +14997,9 @@
         "resolution": "FHD",
         "sizeInch": 24.5,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "d5f498d1-c3b4-4247-afd3-7ee3bdb679c8",
@@ -14251,7 +15030,9 @@
         "resolution": "UHD",
         "sizeInch": 27,
         "usbCVideo": false
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "d77c183e-056d-4149-8e47-5b9b946515bc",
@@ -14260,7 +15041,7 @@
         "ko": "필립스",
         "en": "Philips"
       },
-      "priceKrw": 1198500,
+      "priceKrw": 1189400,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -14277,7 +15058,9 @@
         "resolution": "UHD",
         "sizeInch": 31.5,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "d87de256-5722-424d-a1e5-bd0fa684aa39",
@@ -14286,7 +15069,7 @@
         "ko": "에이서",
         "en": "ACER"
       },
-      "priceKrw": 2009700,
+      "priceKrw": 1987800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -14297,7 +15080,9 @@
         "refreshRate": 60,
         "resolution": "6K",
         "sizeInch": 31.5
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "d87f494c-371f-4d80-863b-8956dcbc3fdf",
@@ -14345,7 +15130,9 @@
         ],
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "d8d179d8-6aa1-4801-bdcf-767bcb605f96",
@@ -14391,7 +15178,9 @@
         ],
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "d914f156-ae0e-4bdb-8a74-216a2545bd78",
@@ -14430,7 +15219,9 @@
         "resolution": "UHD",
         "sizeInch": 27,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "d97009e4-9380-450f-9f75-21acb8bb2d89",
@@ -14467,7 +15258,9 @@
         "responseAverageRgb10": 1.9,
         "responseMax": 3.9,
         "sizeInch": 24
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "d9a18c3b-bef2-481b-8b39-bfbe50f20884",
@@ -14476,7 +15269,7 @@
         "ko": "알파스캔",
         "en": "Alphascan"
       },
-      "priceKrw": 1271800,
+      "priceKrw": 1258600,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -14509,7 +15302,9 @@
         "usbCPowerDeliveryW": 65,
         "usbCVideo": true,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "d9d1d030-3f28-496f-84f5-9e30d4e889c4",
@@ -14550,7 +15345,9 @@
         ],
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "d9eed3aa-c2d6-40f7-856a-ab9955c89342",
@@ -14593,7 +15390,9 @@
         "screenCoating": "matteAntiGlare",
         "sizeInch": 23.8,
         "vesaMountPattern": "vesa75x75"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "da137d61-61bb-4ab4-ad6a-ba416ae717a4",
@@ -14643,7 +15442,9 @@
         "sizeInch": 27,
         "usbCVideo": false,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "da7b6c8c-d677-4982-aafc-c4338ca4e5df",
@@ -14669,7 +15470,9 @@
         "refreshRate": 144,
         "resolution": "FHD",
         "sizeInch": 24
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "db360ddb-3872-4fb5-bdd6-9a1d9bed5d06",
@@ -14698,7 +15501,9 @@
         "refreshRate": 144,
         "resolution": "UHD",
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "db45e552-d9b0-403c-a5f8-ae0dcb410f7f",
@@ -14707,7 +15512,7 @@
         "ko": "TCL",
         "en": "TCL"
       },
-      "priceKrw": 739000,
+      "priceKrw": 733400,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -14717,7 +15522,9 @@
         "refreshRate": 280,
         "resolution": "QHD",
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "dbcf0938-56ba-45da-9047-00270b7dda16",
@@ -14742,7 +15549,9 @@
         "refreshRate": 360,
         "resolution": "FHD",
         "sizeInch": 24
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "dcbd6bd0-e0df-4043-8c24-85d9c7b8f70d",
@@ -14777,7 +15586,9 @@
         "screenCoating": "matteAntiGlare",
         "sizeInch": 23.8,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "de479f60-190a-4ade-a099-50933dd3d672",
@@ -14820,7 +15631,9 @@
         ],
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "deb4e1ec-05c7-410e-8776-5f67b9756771",
@@ -14852,7 +15665,9 @@
         "resolution": "FHD",
         "sizeInch": 27,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "df4c636e-b2c7-4aef-a847-bd3417adcd4f",
@@ -14882,7 +15697,9 @@
         "usbCPowerDeliveryW": 18,
         "usbCVideo": true,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "dffc806a-da85-43f0-b44b-c9cc848a0c88",
@@ -14909,7 +15726,9 @@
         "refreshRate": 165,
         "resolution": "FHD",
         "sizeInch": 24
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "e0eb1f92-d277-4967-b003-6bf8d7db0db6",
@@ -14949,7 +15768,9 @@
         ],
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "e16c06d3-d41e-41ec-bedc-f74bf4e9362a",
@@ -14977,7 +15798,9 @@
         "resolution": "FHD",
         "sizeInch": 27,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "e1a4f2c4-bcee-4016-ab0b-76d74124c2b6",
@@ -14986,7 +15809,7 @@
         "ko": "에이수스",
         "en": "ASUS"
       },
-      "priceKrw": 2946200,
+      "priceKrw": 2914100,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -15016,7 +15839,9 @@
         "screenCoating": "antiReflection",
         "sizeInch": 27,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "e28321e2-73f7-4921-ba8b-8091af1ff9ec",
@@ -15025,7 +15850,7 @@
         "ko": "삼성전자",
         "en": "Samsung"
       },
-      "priceKrw": 1741700,
+      "priceKrw": 1722700,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -15056,7 +15881,9 @@
         ],
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "e34392bf-c680-495b-943c-3ae6fcbda816",
@@ -15096,7 +15923,9 @@
         ],
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "e352b5dc-a016-4380-a889-daadb0e0badc",
@@ -15121,7 +15950,9 @@
         "refreshRate": 165,
         "resolution": "QHD",
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "e36ffd57-20b2-42f2-a8b4-7faee2cea652",
@@ -15140,7 +15971,9 @@
         "refreshRate": 160,
         "resolution": "UHD",
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "e3db6d8c-fcf0-4163-ab58-b98e83eee14c",
@@ -15171,7 +16004,9 @@
         "resolution": "UWQHD",
         "sizeInch": 34,
         "usbCVideo": false
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "e5145ab3-06d4-4452-8551-29583b1be851",
@@ -15208,7 +16043,9 @@
         ],
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "e5170871-a3e2-4f2b-ac0b-c90916fb08b0",
@@ -15232,7 +16069,9 @@
         "refreshRate": 240,
         "resolution": "UHD",
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "e588f03f-8360-4e48-9692-779d1a3897bc",
@@ -15261,7 +16100,9 @@
         "usbCPowerDeliveryW": 15,
         "usbCVideo": true,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "e5f2aee0-a5d8-4fac-b599-32f9f3125713",
@@ -15270,7 +16111,7 @@
         "ko": "ARZOPA",
         "en": "ARZOPA"
       },
-      "priceKrw": 107200,
+      "priceKrw": 106000,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -15284,7 +16125,9 @@
         "sizeInch": 15.6,
         "standType": "included",
         "usbCVideo": true
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "e6f88be8-a77a-402e-94c4-5aca42cd1829",
@@ -15309,7 +16152,9 @@
         "resolution": "QHD",
         "sizeInch": 16,
         "standType": "included"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "e7bf3775-9913-4d18-9443-8c39e5455ad5",
@@ -15348,7 +16193,9 @@
         "resolution": "UHD",
         "screenCoating": "matteAntiGlare",
         "sizeInch": 32
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "e828d26a-6abe-43a6-a2c3-8c20f1a5c292",
@@ -15357,7 +16204,7 @@
         "ko": "에이수스",
         "en": "ASUS"
       },
-      "priceKrw": 1740400,
+      "priceKrw": 1721400,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -15390,7 +16237,9 @@
         "usbCPowerDeliveryW": 90,
         "usbCVideo": true,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "e871e11b-d6cb-4fac-b72f-f0126df5c934",
@@ -15440,7 +16289,9 @@
         ],
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "e89e0abb-d368-40fc-ac21-d75690734a00",
@@ -15483,7 +16334,9 @@
         "responseMax": 6.2,
         "sizeInch": 24.5,
         "usbCVideo": false
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "e8fda402-892d-446f-80e9-4580da95eab7",
@@ -15492,7 +16345,7 @@
         "ko": "MSI",
         "en": "MSI"
       },
-      "priceKrw": 1415700,
+      "priceKrw": 1413200,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -15522,7 +16375,9 @@
         "usbCPowerDeliveryW": 15,
         "usbCVideo": true,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "e972b5d5-14f7-49fd-a4ec-2830804ebe29",
@@ -15561,7 +16416,9 @@
         ],
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "e9737c87-1934-4af1-87af-4224fa8f7428",
@@ -15598,7 +16455,9 @@
         "screenCoating": "nonglare",
         "sizeInch": 24.5,
         "usbCVideo": false
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "e99cd687-1678-4847-835f-edc6d55d890d",
@@ -15630,7 +16489,9 @@
         "resolution": "UHD",
         "screenCoating": "antiReflection",
         "sizeInch": 31.5
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "ea363e85-8d7c-48a8-9ffd-2ec5b3389303",
@@ -15671,7 +16532,9 @@
         "usbCPowerDeliveryW": 90,
         "usbCVideo": true,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "ea7c4ef9-7212-45ad-a46c-9f2e2a2112be",
@@ -15698,7 +16561,9 @@
         "resolution": "FHD",
         "sizeInch": 24,
         "vesaMountPattern": "vesa75x75"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "eadad768-4844-42e0-b068-44f76ce2ba60",
@@ -15727,7 +16592,9 @@
         "refreshRate": 240,
         "resolution": "QHD",
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "ec3736ac-04a9-4599-b287-bb7b007b972c",
@@ -15766,7 +16633,9 @@
         "usbCPowerDeliveryW": 15,
         "usbCVideo": true,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "ec554fe0-a9a6-4026-a9d0-9aece6082075",
@@ -15800,7 +16669,9 @@
         "sizeInch": 27,
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "ec93dc7a-9666-41b1-b11c-89a12a8abdab",
@@ -15809,7 +16680,7 @@
         "ko": "ARZOPA",
         "en": "ARZOPA"
       },
-      "priceKrw": 174200,
+      "priceKrw": 172300,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -15823,7 +16694,9 @@
         "resolution": "QHD",
         "sizeInch": 16,
         "standType": "included"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "ed338ce8-e950-408b-8723-16c14aa7920d",
@@ -15864,7 +16737,9 @@
         "responseMax": 13.7,
         "sizeInch": 24,
         "usbCVideo": false
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "ed5a9762-a6f8-475e-bd5d-331f4738fa41",
@@ -15873,7 +16748,7 @@
         "ko": "에이수스",
         "en": "ASUS"
       },
-      "priceKrw": 1472500,
+      "priceKrw": 1456400,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -15886,7 +16761,9 @@
         "resolution": "FHD",
         "screenCoating": "glossy",
         "sizeInch": 24.5
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "edece6d5-1db8-4dfd-b7be-2f9d37dfbfe0",
@@ -15927,7 +16804,9 @@
         "responseMax": 4.6,
         "sizeInch": 24.5,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "eed8bbfe-e1ca-4bf8-8c48-ac6601e8e223",
@@ -15981,7 +16860,9 @@
         "usbCPowerDeliveryW": 0,
         "usbCVideo": false,
         "vesaMountPattern": "vesa75x75"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "eeef9b3b-aa48-43c0-82cb-a0b06d2bd326",
@@ -16007,7 +16888,9 @@
         "refreshRate": 180,
         "resolution": "FHD",
         "sizeInch": 24
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "ef0e1f3d-b0c6-41e8-97ca-8a55fa55b2a1",
@@ -16034,7 +16917,9 @@
         "refreshRate": 165,
         "resolution": "QHD",
         "sizeInch": 32
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "efda0579-75f3-4b43-9a7d-f235ecafd468",
@@ -16061,7 +16946,9 @@
         "resolution": "UHD",
         "sizeInch": 27,
         "usbCVideo": false
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "efde3c27-0713-4a12-bd44-9287ba18dc59",
@@ -16084,7 +16971,9 @@
         "refreshRate": 120,
         "resolution": "UHD",
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "f13d9e7a-1c98-4d91-a57a-6dd69903d85c",
@@ -16118,7 +17007,9 @@
         ],
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "f2064329-8602-4d67-9909-c6e8b63b3840",
@@ -16168,7 +17059,9 @@
         "usbCPowerDeliveryW": 98,
         "usbCVideo": true,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "f31a5e75-da03-41fc-be7c-e15ec8e4c80a",
@@ -16177,7 +17070,7 @@
         "ko": "삼성전자",
         "en": "Samsung"
       },
-      "priceKrw": 2813600,
+      "priceKrw": 2782900,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -16211,7 +17104,9 @@
         ],
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "f3356657-7aa9-44c1-a5c7-39a42e7d0899",
@@ -16220,7 +17115,7 @@
         "ko": "에이수스",
         "en": "ASUS"
       },
-      "priceKrw": 1057100,
+      "priceKrw": 1045600,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -16247,7 +17142,9 @@
         "usbCPowerDeliveryW": 15,
         "usbCVideo": true,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "f35fd949-1ac4-47a1-9a0d-29337d1203bc",
@@ -16269,7 +17166,9 @@
         "refreshRate": 240,
         "resolution": "FHD",
         "sizeInch": 24
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "f390a2f1-6db6-4a8c-a390-0935de14db9e",
@@ -16292,7 +17191,9 @@
         "refreshRate": 120,
         "resolution": "UHD",
         "sizeInch": 32
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "f39276f8-474b-42e1-96d9-d824ed98d293",
@@ -16301,7 +17202,7 @@
         "ko": "NexiGo",
         "en": "NexiGo"
       },
-      "priceKrw": 628400,
+      "priceKrw": 621500,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -16320,7 +17221,9 @@
         "sizeInch": 17.3,
         "standType": "included",
         "usbCVideo": true
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "f3c6b766-2f7a-40da-98dd-020c45fe4bbc",
@@ -16362,7 +17265,9 @@
         "sizeInch": 24.5,
         "usbCVideo": false,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "f3e3b658-50e3-49e6-a3d6-269766af7268",
@@ -16371,7 +17276,7 @@
         "ko": "에이서",
         "en": "ACER"
       },
-      "priceKrw": 1473800,
+      "priceKrw": 1457700,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -16385,7 +17290,9 @@
         "screenCoating": "matteAntiGlare",
         "sizeInch": 31.5,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "f4005bdf-6bec-440e-bda0-945d9cfad9dc",
@@ -16421,7 +17328,9 @@
         "standType": "included",
         "usbCVideo": false,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "f4d4a8c1-0c4e-42bf-a79c-dd6695d0157f",
@@ -16442,7 +17351,9 @@
         "refreshRate": 240,
         "resolution": "UHD",
         "sizeInch": 32
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "f6bede9c-51c5-4a62-81f6-310f4b3664b9",
@@ -16469,7 +17380,9 @@
         "refreshRate": 144,
         "resolution": "FHD",
         "sizeInch": 24
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "f6fc7262-afcf-4184-9985-c60b5e55ea02",
@@ -16507,7 +17420,9 @@
         ],
         "standType": "included",
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "f78b3cfb-f014-406a-924b-46dcdd236188",
@@ -16533,7 +17448,9 @@
         "refreshRate": 165,
         "resolution": "FHD",
         "sizeInch": 24
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "f7b1f1cf-891a-4471-a45c-809cb06b4244",
@@ -16556,7 +17473,9 @@
         "refreshRate": 60,
         "resolution": "6K",
         "sizeInch": 32
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "f83fcbad-bca4-4998-a47a-150f9e3fcd39",
@@ -16593,7 +17512,9 @@
         "responseAverageRgb10": 5.4,
         "responseMax": 13.2,
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "f85c1fcd-76f8-4e4a-af39-491482990289",
@@ -16620,7 +17541,9 @@
         "refreshRate": 360,
         "resolution": "UHD",
         "sizeInch": 31.5
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "fa661bd4-09d4-42b4-b118-0e9a87c9f166",
@@ -16645,7 +17568,9 @@
         "refreshRate": 165,
         "resolution": "FHD",
         "sizeInch": 24
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "fb27f13c-899a-4078-8810-a0e0232cc5c5",
@@ -16672,7 +17597,9 @@
         "refreshRate": 180,
         "resolution": "FHD",
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "fb93b388-6b88-4467-9940-03ef99ba35cb",
@@ -16728,7 +17655,9 @@
         "standType": "included",
         "usbCVideo": false,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "fbcbb6bf-4462-4e16-b28e-c3d7e1ef36d8",
@@ -16750,7 +17679,9 @@
         "refreshRate": 144,
         "resolution": "RES5120X2880",
         "sizeInch": 31.5
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "fc457991-5927-4243-b1eb-668306079f34",
@@ -16779,7 +17710,9 @@
         "resolution": "FHD",
         "sizeInch": 27,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "fc9a1f72-aafb-47e8-a9dc-d70de276255d",
@@ -16822,7 +17755,9 @@
         "usbCPowerDeliveryW": 90,
         "usbCVideo": true,
         "vesaMountPattern": "vesa100x100"
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "fcbca37b-2b02-4aab-b3dc-a1b45a8e4cbd",
@@ -16831,7 +17766,7 @@
         "ko": "레노버",
         "en": "Lenovo"
       },
-      "priceKrw": 669900,
+      "priceKrw": 662600,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -16843,7 +17778,9 @@
         "refreshRate": 180,
         "resolution": "UHD",
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "fccedc59-a03b-4498-baca-1e1dc65df700",
@@ -16863,7 +17800,9 @@
         "refreshRate": 240,
         "resolution": "QHD",
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "fd2285d5-67a5-49b9-8018-2bfc3b17fd06",
@@ -16894,7 +17833,9 @@
         "refreshRate": 165,
         "resolution": "QHD",
         "sizeInch": 27
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "fd7f5e95-c4da-4081-8f47-ec462baad43c",
@@ -16921,7 +17862,9 @@
         "refreshRate": 280,
         "resolution": "FHD",
         "sizeInch": 24
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     },
     {
       "id": "ff1949d5-063b-45c9-8655-4a4485bf9237",
@@ -16930,7 +17873,7 @@
         "ko": "TCL",
         "en": "TCL"
       },
-      "priceKrw": 798900,
+      "priceKrw": 792900,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -16943,7 +17886,9 @@
         "refreshRate": 165,
         "resolution": "UHD",
         "sizeInch": 31.5
-      }
+      },
+      "firstSeenAt": null,
+      "testedAt": null
     }
   ]
 }
