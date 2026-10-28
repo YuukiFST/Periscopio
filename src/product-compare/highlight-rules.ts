@@ -7,7 +7,7 @@ import { isCountEnum, roundedAsShown } from "../product-table/cell-values.ts";
 export type HighlightDirection = "lower" | "higher" | "none";
 
 /**
- * EyeJoker field keys and the better direction ("Regras de destaque na
+ * Fonte field keys and the better direction ("Regras de destaque na
  * comparação"). A `*` stands for any text. Rules are read in order and the
  * first match wins, so the exact `none` keys come before the patterns that
  * would otherwise catch them (`detachStroke` before `detach*`).

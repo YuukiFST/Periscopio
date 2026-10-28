@@ -2,18 +2,21 @@
     - heading "Dragonfly A9 Ultra" [level=2]
     - paragraph: ATK
     - term: Preço
-    - definition: /₩ \d+\.\d+/
+    - definition: /₩ \d+\.\d+ cerca de R\$ \d+ \(Cotação de \d+ de out\. de \d+\)/
+    - term: Nota geral
+    - definition: A+
+    - term: Recomendação
+    - definition: Boa
     - term: Status de teste
     - definition: Publicado
     - link "Ver no AliExpress (abre em nova aba)":
         - /url: https://s.click.aliexpress.com/e/_oFLhAg6
     - button "Adicionar à comparação"
+    - link "Comparar com parecidos":
+        - /url: /comparar/mouse?p=003586ba-0cbf-4932-843c-24e5f56e47c2,201270eb-b392-4e41-96a9-1b609a77e795
+    - button "Favoritar Dragonfly A9 Ultra"
     - region "Especificações":
         - heading "Especificações" [level=3]
-        - term: Nota geral
-        - definition: A+
-        - term: Recomendação
-        - definition: Boa
         - term: Formato
         - definition: Simétrico
         - term: Polling rate máximo
@@ -33,7 +36,7 @@
         - term: MCU
         - definition: Nordic nRF52840
         - term: Bateria
-        - definition: 500 mAh
+        - definition: /\d+ mAh/
         - term: Sensor
         - definition: /PAW3950 Ultra \([\d,.]+[bkmBKM]+\)/
         - term: Switch
@@ -57,7 +60,7 @@
         - term: Modo de LOD do sensor
         - definition: Faixa
         - term: Valores de LOD do sensor
-        - definition: /0,7 a 1,7 mm \(\d+ níveis, de 0,1 em 0,1 mm\)/
+        - definition: /\d+,\d+ a \d+,\d+ mm \(\d+ níveis, de \d+,\d+ em \d+,\d+ mm\)/
         - term: Situação de venda
         - definition: À venda
         - term: Versão do firmware
@@ -67,13 +70,9 @@
     - region "Medições":
         - heading "Medições" [level=3]
         - term: Resposta do sensor
-        - definition: /\d+,\d+ ms/
-        - term: Desvio padrão do sensor
-        - definition: /\d+,\d+ ms/
+        - definition: /\d+,\d+ ms desvio padrão \d+,\d+/
         - term: Resposta do clique
-        - definition: /\d+,\d+ ms/
-        - term: Desvio padrão do clique
-        - definition: /\d+,\d+ ms/
+        - definition: /\d+,\d+ ms desvio padrão \d+,\d+/
         - term: Debounce
         - definition: /\d+ ms/
         - term: Clique perdido
@@ -85,23 +84,13 @@
         - term: LOD mínimo
         - definition: /\d+,\d+ mm/
         - term: Resposta média do clique (ideal, ao pressionar)
-        - definition: /\d+,\d+ ms/
-        - term: Desvio padrão do clique (ideal, ao pressionar)
-        - definition: /\d+,\d+ ms/
+        - definition: /\d+,\d+ ms desvio padrão \d+,\d+/
         - term: Resposta média do clique (ideal, ao soltar)
-        - definition: /\d+,\d+ ms/
-        - term: Desvio padrão do clique (ideal, ao soltar)
-        - definition: /\d+,\d+ ms/
+        - definition: /\d+,\d+ ms desvio padrão \d+,\d+/
         - term: Resposta média do clique (sem fio, ao pressionar)
-        - definition: /\d+,\d+ ms/
-        - term: Desvio padrão do clique (sem fio, ao pressionar)
-        - definition: /\d+,\d+ ms/
+        - definition: /\d+,\d+ ms desvio padrão \d+,\d+/
         - term: Resposta média do clique (sem fio, ao soltar)
-        - definition: /\d+,\d+ ms/
-        - term: Desvio padrão do clique (sem fio, ao soltar)
-        - definition: /\d+,\d+ ms/
+        - definition: /\d+,\d+ ms desvio padrão \d+,\d+/
         - term: Resposta média do sensor (sem fio)
-        - definition: /\d+,\d+ ms/
-        - term: Desvio padrão do sensor (sem fio)
-        - definition: /\d+,\d+ ms/
+        - definition: /\d+,\d+ ms desvio padrão \d+,\d+/
     - paragraph

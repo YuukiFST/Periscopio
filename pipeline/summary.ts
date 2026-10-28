@@ -36,7 +36,7 @@ function krwBrlLine({ krwBrlFetch, krwBrl }: UpdateReport): string {
 
 export function renderSummary(report: UpdateReport): string {
   const lines = [
-    "## Atualização do EyeJoker",
+    "## Atualização dos dados",
     "",
     "| Categoria | Produtos |",
     "| --- | ---: |",
@@ -65,7 +65,7 @@ export function renderSummary(report: UpdateReport): string {
     lines.push(...bulletList(report.invalidAliUrlProductIds, ""));
   }
   if (report.ignoredFieldKeys.length > 0) {
-    lines.push("", "### Campos do EyeJoker ignorados", "");
+    lines.push("", "### Campos da fonte ignorados", "");
     lines.push(...bulletList(report.ignoredFieldKeys, ""));
   }
   return `${lines.join("\n")}\n`;

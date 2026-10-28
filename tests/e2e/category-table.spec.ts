@@ -3,7 +3,7 @@ import { metaSchema } from "../../src/data/schema.ts";
 
 /**
  * Runs against the production build served with the data the pipeline
- * generates from the recorded EyeJoker excerpt (`serve-fixture-build.ts`):
+ * generates from the recorded Fonte excerpt (`serve-fixture-build.ts`):
  * 6 mouses, 4 teclados and 4 monitores.
  */
 
@@ -15,7 +15,7 @@ const mouseDataOrder = [
   "Huan",
   "H200A",
 ];
-/** Nota geral, best first; ties keep EyeJoker's order, Products without a grade last. */
+/** Nota geral, best first; ties keep the Fonte's order, Products without a grade last. */
 const mouseDefaultOrder = [
   "Dragonfly A9 Ultra",
   "Huan",
@@ -99,7 +99,7 @@ const categoryTables = [
 ];
 
 for (const category of categoryTables) {
-  test(`/${category.slug} lists every Product with EyeJoker's columns in pt, its default order and the name as the AliExpress link only where one exists`, async ({
+  test(`/${category.slug} lists every Product with the Fonte's columns in pt, its default order and the name as the AliExpress link only where one exists`, async ({
     page,
   }) => {
     await page.goto(`/${category.slug}?status=todos`);

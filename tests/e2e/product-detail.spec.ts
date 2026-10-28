@@ -2,11 +2,11 @@ import { expect, test } from "@playwright/test";
 
 /**
  * Runs against the production build served with the data the pipeline
- * generates from the recorded EyeJoker excerpt (`serve-fixture-build.ts`).
+ * generates from the recorded Fonte excerpt (`serve-fixture-build.ts`).
  */
 
 const dragonflyA9UltraId = "003586ba-0cbf-4932-843c-24e5f56e47c2";
-/** A mouse EyeJoker lists without Medições, photo, Preço or AliExpress link. */
+/** A mouse the Fonte lists without Medições, photo, Preço or AliExpress link. */
 const vkM5MaxThorId = "0fbec015-8d94-469d-993e-1d9d5138fb9b";
 
 test("a Produto opened from the table shows its header and fields grouped in pt in the side panel, and closing it leaves the table as it was", async ({
@@ -32,10 +32,10 @@ test("a Produto opened from the table shows its header and fields grouped in pt 
   await expect(page.getByRole("article")).toMatchAriaSnapshot(`
     - term: Preço
     - definition: ₩ 98.900 cerca de R$ 377 (Cotação de 22 de out. de 2026)
-  `);
-  await expect(page.getByRole("region", { name: "Especificações" })).toMatchAriaSnapshot(`
     - term: Nota geral
     - definition: A+
+  `);
+  await expect(page.getByRole("region", { name: "Especificações" })).toMatchAriaSnapshot(`
     - term: Formato
     - definition: Simétrico
     - term: Peso
@@ -43,9 +43,9 @@ test("a Produto opened from the table shows its header and fields grouped in pt 
   `);
   await expect(page.getByRole("region", { name: "Medições" })).toMatchAriaSnapshot(`
     - term: Resposta do sensor
-    - definition: 0,70 ms
+    - definition: 0,70 ms desvio padrão 0,29
     - term: Resposta do clique
-    - definition: 0,49 ms
+    - definition: 0,49 ms desvio padrão 0,08
   `);
 
   await page.getByRole("button", { name: "Fechar detalhes" }).click();
@@ -98,9 +98,7 @@ test("a Produto without Medições shows no Medições group, and says what is m
   await expect(page.getByRole("dialog", { name: "VK M5 Max THOR" })).toBeVisible();
   await expect(page.getByRole("region", { name: "Especificações" })).toBeVisible();
   await expect(page.getByRole("region", { name: "Medições" })).toHaveCount(0);
-  await expect(
-    page.getByText("O EyeJoker ainda não publicou medições deste produto."),
-  ).toBeVisible();
+  await expect(page.getByText("Ainda não há medições publicadas deste produto.")).toBeVisible();
   await expect(page.getByRole("article")).toMatchAriaSnapshot(`
     - heading "VK M5 Max THOR" [level=2]
     - paragraph: VALKYRIE
@@ -201,7 +199,7 @@ test("regression: a value smaller than two decimals, such as 0,001 mm, is not sh
 test.describe("in a time zone behind Korea", () => {
   test.use({ timezoneId: "America/Sao_Paulo" });
 
-  test("regression: Data de publicação shows EyeJoker's day, not the viewer's", async ({
+  test("regression: Data de publicação shows the Fonte's day, not the viewer's", async ({
     page,
   }) => {
     // H200A was published at 2025-10-31T20:19Z: 1 November in Korea, 31 October in São Paulo.

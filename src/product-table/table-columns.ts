@@ -6,8 +6,8 @@ import { productFieldGroups, type ProductFieldGroupId } from "../product-fields/
 
 /**
  * A column of the Categoria table. `slug` is its name in the link
- * (`ordem=-peso`); field columns show one EyeJoker field, with the standard
- * deviation beside the average where EyeJoker shows one (`0,32 ms σ 0,05`).
+ * (`ordem=-peso`); field columns show one Fonte field, with the standard
+ * deviation beside the average where the Fonte shows one (`0,32 ms σ 0,05`).
  */
 export type TableColumn =
   | { kind: "product"; slug: "produto" }
@@ -37,9 +37,9 @@ function ratingAndPriceColumns(ratingKey: string): ColumnSpec[] {
 }
 
 /**
- * The columns EyeJoker lists per Categoria, in its order (research file, 2026-10-16),
+ * The columns the Fonte lists per Categoria, in its order (research file, 2026-10-16),
  * except the mouses' two response times: they matter most, so they follow the Produto
- * instead of closing a row too wide for a laptop. EyeJoker's AliExpress column is left
+ * instead of closing a row too wide for a laptop. The Fonte's AliExpress column is left
  * out: a Produto with the link shows its name as that link instead.
  */
 const categoryTables: Record<CategorySlug, CategoryTable> = {

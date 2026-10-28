@@ -92,3 +92,15 @@ test("a dot opens its Produto over the table with the chart's Filtros", async ({
   await expect(page.getByRole("dialog", { name: "Huan" })).toBeVisible();
   await expect(page.getByRole("rowheader")).toHaveCount(3);
 });
+
+test.describe("on a 320px screen", () => {
+  test.use({ viewport: { width: 320, height: 700 } });
+
+  test("regression: the chart's screen-reader table does not widen the page past the screen", async ({
+    page,
+  }) => {
+    await page.goto("/grafico/mouse");
+    await expect(page.getByRole("table", { name: "Dados do gráfico" })).toBeAttached();
+    expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBe(320);
+  });
+});

@@ -2,7 +2,7 @@ import { expect, test, type Page } from "@playwright/test";
 
 /**
  * Runs against the production build whose data comes from two Atualizações
- * of the recorded EyeJoker excerpt (`serve-fixture-build.ts`): the second one
+ * of the recorded Fonte excerpt (`serve-fixture-build.ts`): the second one
  * adds Dragonfly 3 PRO and VK M5 Max THOR (not tested) and marks H200A as
  * tested, so those three mouses are the Novidades; teclados and monitores have none.
  */

@@ -1,5 +1,5 @@
 /**
- * Portuguese text for the repeated short texts EyeJoker writes in Korean in
+ * Portuguese text for the repeated short texts the Fonte writes in Korean in
  * free-text fields. Values already in Latin script need no entry. Keys are
  * the trimmed raw values, as the pipeline writes them.
  */

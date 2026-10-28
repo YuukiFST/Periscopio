@@ -2,7 +2,7 @@ import { expect, test, type Page } from "@playwright/test";
 
 /**
  * Runs against the production build served with the data the pipeline
- * generates from the recorded EyeJoker excerpt (`serve-fixture-build.ts`).
+ * generates from the recorded Fonte excerpt (`serve-fixture-build.ts`).
  */
 
 const edge60HeProId = "021979aa-b222-47d3-b5ec-8b59d671aff4";
@@ -110,6 +110,11 @@ test("a Produto of the Categoria on screen opens over its table, which keeps its
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("Mouses");
   await page.keyboard.press("Control+k");
   await searchBox(page).fill("huan");
+  // The first result is highlighted once the Produtos load; Enter before that opens nothing.
+  const huanOption = searchDialog(page).getByRole("option", { name: /^Huan / });
+  await expect(huanOption).toHaveAttribute("id", /.+/);
+  const huanOptionId = await huanOption.getAttribute("id");
+  await expect(searchBox(page)).toHaveAttribute("aria-activedescendant", huanOptionId ?? "");
   await page.keyboard.press("Enter");
 
   await expect(page).toHaveURL(`/mouse/${huanId}${tableSearch}`);

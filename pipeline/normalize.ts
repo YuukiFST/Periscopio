@@ -64,7 +64,7 @@ const productImagePathSchema = z.string().regex(/^\/([0-9a-f-]{36})\.avif$/);
 
 export type NormalizedCategory = {
   data: CategoryData;
-  /** EyeJoker fields with no normalized type (FILE, COMPANY) beyond the known ones. */
+  /** Fonte fields with no normalized type (FILE, COMPANY) beyond the known ones. */
   ignoredFieldKeys: string[];
   /** Products with a non-empty photo URL, usable or not. */
   imageUrlCount: number;
@@ -136,7 +136,7 @@ function buildField(source: FieldSource, rows: EyejokerRow[]): Field | null {
   }
 }
 
-/** EyeJoker's option list, then the values rows use that the list leaves out. */
+/** The Fonte's option list, then the values rows use that the list leaves out. */
 function buildOptions(definition: EyejokerField, rows: EyejokerRow[]): FieldOption[] {
   const options = new Map<string, FieldOption>();
   for (const item of definition.dataList) {

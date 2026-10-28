@@ -42,11 +42,9 @@ function comparedProductsOf(
 function leftOutText({ unknownCount, overLimitCount }: ComparedProducts): string[] {
   const texts: string[] = [];
   if (unknownCount === 1) {
-    texts.push("1 produto do link não existe nos dados atuais do EyeJoker e ficou de fora.");
+    texts.push("1 produto do link não existe nos dados atuais e ficou de fora.");
   } else if (unknownCount > 1) {
-    texts.push(
-      `${unknownCount} produtos do link não existem nos dados atuais do EyeJoker e ficaram de fora.`,
-    );
+    texts.push(`${unknownCount} produtos do link não existem nos dados atuais e ficaram de fora.`);
   }
   if (overLimitCount === 1) {
     texts.push(

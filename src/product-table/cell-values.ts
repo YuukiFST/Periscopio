@@ -16,11 +16,11 @@ const reaisFormat = new Intl.NumberFormat(locale, {
 const krwBrlDateFormat = new Intl.DateTimeFormat(locale, { dateStyle: "medium", timeZone: "UTC" });
 const listFormat = new Intl.ListFormat(locale, { type: "conjunction" });
 const textCollator = new Intl.Collator(locale, { numeric: true, sensitivity: "base" });
-/** EyeJoker is a Korean site: its dates read as the day in Korea, wherever the app is opened. */
+/** The Fonte is a Korean site: its dates read as the day in Korea, wherever the app is opened. */
 const dateFormat = new Intl.DateTimeFormat(locale, { dateStyle: "medium", timeZone: "Asia/Seoul" });
 const timeZoneSuffix = /(?:Z|[+-]\d{2}:\d{2})$/;
 
-/** EyeJoker writes some dates without a time zone; those are Korean wall-clock times. */
+/** The Fonte writes some dates without a time zone; those are Korean wall-clock times. */
 function formatDate(value: string): string {
   const date = new Date(timeZoneSuffix.test(value) ? value : `${value}+09:00`);
   return Number.isNaN(date.getTime()) ? value : dateFormat.format(date);
@@ -115,7 +115,7 @@ export function roundedAsShown(field: Extract<Field, { type: "number" }>, value:
   );
 }
 
-/** The Preço to show; EyeJoker stores 0 for a Produto it no longer prices, which reads as no Preço. */
+/** The Preço to show; the Fonte stores 0 for a Produto it no longer prices, which reads as no Preço. */
 export function priceOf(product: Product): number | undefined {
   return product.priceKrw || undefined;
 }

@@ -2,7 +2,7 @@ import type { Product } from "../data/schema.ts";
 import { numberValue, type FilterChoice, type FilterDefinition } from "./filter-engine.ts";
 import { connectionChoices, enumValueChoices } from "./common-filters.ts";
 
-/** Volume of the bounding box in mm³, EyeJoker's measure of a mouse's size. */
+/** Volume of the bounding box in mm³, the Fonte's measure of a mouse's size. */
 function volumeOf(product: Product): number | undefined {
   const length = numberValue(product, "length");
   const width = numberValue(product, "maxWidth");
@@ -27,7 +27,7 @@ function volumeChoice(
 }
 
 /**
- * EyeJoker's mouse Filtros (`_a` in its bundle), in its order, with Sensor and the
+ * The Fonte's mouse Filtros (`_a` in its bundle), in its order, with Sensor and the
  * two response times (sensor, clique) after Peso, all in one list: none is set
  * apart as advanced.
  * Left out on purpose: the sensor class (the Sensor Filtro picks the sensors

@@ -1,5 +1,5 @@
 /**
- * EyeJoker's grades from worst to best, so a higher index is a better grade.
+ * The Fonte's grades from worst to best, so a higher index is a better grade.
  * `ANTICIPATING` (no review yet) has no place in the recommendation order.
  */
 const overallRatingOrder = [

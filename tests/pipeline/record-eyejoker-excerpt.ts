@@ -1,5 +1,5 @@
 /**
- * Records the EyeJoker excerpt the pipeline tests serve: the real responses of
+ * Records the Fonte excerpt the pipeline tests serve: the real responses of
  * `/api/benchmark/<category>/snapshot` with only the Products below, the
  * companies they reference, their photos, and the Cotação from Frankfurter. Run it with
  * `node tests/pipeline/record-eyejoker-excerpt.ts`, then regenerate the goldens.

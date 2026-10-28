@@ -1,6 +1,6 @@
 /**
  * Playwright's web server: builds the app for production with data the
- * pipeline generates from the recorded EyeJoker excerpt, then serves it with
+ * pipeline generates from the recorded Fonte excerpt, then serves it with
  * `vite preview`. Assertions stay deterministic because the data is the same
  * few Products on every run; `pnpm build` keeps using `public/`.
  *

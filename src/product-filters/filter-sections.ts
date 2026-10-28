@@ -4,7 +4,7 @@ import type { FilterParam } from "./filter-params.ts";
 
 type SectionDefinition = { title: string; params: readonly FilterParam[] };
 
-/** The Filtros every Categoria opens with: what EyeJoker rates and what it costs. */
+/** The Filtros every Categoria opens with: what the Fonte rates and what it costs. */
 const generalSection: SectionDefinition = {
   title: "Geral",
   params: ["nota", "recomendacao", "preco"],

@@ -109,7 +109,7 @@ export function ComparisonTable({
   const [isUnfolded, setIsUnfolded] = useState(false);
   const scrollerRef = useRef<HTMLDivElement>(null);
   const headerRef = useRef<HTMLTableSectionElement>(null);
-  // Long Produto names from the EyeJoker set the sticky header's height, so the scroll padding
+  // Long Produto names from the Fonte set the sticky header's height, so the scroll padding
   // follows it: a control scrolled into view at the top never lands under the header. A header
   // taller than half the box stops sticking, so the rows keep room to be read.
   useLayoutEffect(() => {
@@ -172,7 +172,7 @@ export function ComparisonTable({
           >
             <tr>
               <td className="sticky start-0 top-0 z-30 border-e border-b border-border bg-background p-2 align-bottom text-caption text-pretty text-muted-foreground sm:p-3 group-data-[header-tall=true]/scroller:top-auto">
-                O preço fica de fora da comparação porque preços mudam, e o EyeJoker não registra o
+                O preço fica de fora da comparação porque preços mudam, e a fonte não registra o
                 preço da sua região.
               </td>
               {products.map((product) => (
@@ -244,7 +244,7 @@ export function ComparisonTable({
                   className="px-2 py-3 text-pretty text-muted-foreground sm:px-3"
                 >
                   <span className="sticky start-2 block max-w-[calc(100cqw-1rem)] sm:start-3 sm:max-w-[calc(100cqw-1.5rem)]">
-                    O EyeJoker ainda não publicou medições destes produtos.
+                    Ainda não há medições publicadas destes produtos.
                   </span>
                 </td>
               </tr>

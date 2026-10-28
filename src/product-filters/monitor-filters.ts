@@ -2,10 +2,10 @@ import type { Product } from "../data/schema.ts";
 import { enumValues, type FilterChoice, type FilterDefinition } from "./filter-engine.ts";
 import { enumChoice } from "./common-filters.ts";
 
-/** EyeJoker's "와이드": every ultrawide resolution it groups together. */
+/** The Fonte's "와이드": every ultrawide resolution it groups together. */
 const ultrawideResolutions = ["UWQHD", "DQHD", "DWQHD", "5K2K", "6K"];
 
-/** EyeJoker's "TN류"…"OLED류": every panel whose type contains the family name. */
+/** The Fonte's "TN류"…"OLED류": every panel whose type contains the family name. */
 function panelFamilyChoice(id: string, family: string): FilterChoice {
   return {
     id,
@@ -16,9 +16,9 @@ function panelFamilyChoice(id: string, family: string): FilterChoice {
 }
 
 /**
- * EyeJoker's monitor Filtros (`ba` in its bundle), in its order, with
+ * The Fonte's monitor Filtros (`ba` in its bundle), in its order, with
  * Resposta geral after the Taxa de atualização. Screen size and refresh rate
- * take typed bounds instead of EyeJoker's bands.
+ * take typed bounds instead of the Fonte's bands.
  */
 export const monitorFilters: readonly FilterDefinition[] = [
   { kind: "range", param: "tamanho", label: "Tamanho da tela", fieldKey: "sizeInch", unit: "pol." },

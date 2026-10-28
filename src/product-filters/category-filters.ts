@@ -6,7 +6,7 @@ import { keyboardFilters } from "./keyboard-filters.ts";
 import { monitorFilters } from "./monitor-filters.ts";
 import { mouseFilters } from "./mouse-filters.ts";
 
-/** Every Categoria's Filtros, EyeJoker's common ones first (research file, 2026-10-16). */
+/** Every Categoria's Filtros, the Fonte's common ones first (research file, 2026-10-16). */
 const filterDefinitions: Record<CategorySlug, readonly FilterDefinition[]> = {
   mouse: [...commonFilters("mouse"), ...mouseFilters],
   teclado: [...commonFilters("teclado"), ...keyboardFilters],

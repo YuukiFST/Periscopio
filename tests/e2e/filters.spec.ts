@@ -3,7 +3,7 @@ import { categoryDataSchema } from "../../src/data/schema.ts";
 
 /**
  * Filtros on the production build with the data the pipeline generates from
- * the recorded EyeJoker excerpt (`serve-fixture-build.ts`). Expected lists are
+ * the recorded Fonte excerpt (`serve-fixture-build.ts`). Expected lists are
  * read off that excerpt by hand: 6 mouses, 4 teclados, 4 monitores, each list
  * in the table's default order.
  */
@@ -165,7 +165,7 @@ const categoryCases: {
 ];
 
 for (const category of categoryCases) {
-  test(`/${category.slug} shows EyeJoker's Filtros in pt, and two Filtros together narrow the list`, async ({
+  test(`/${category.slug} shows the Fonte's Filtros in pt, and two Filtros together narrow the list`, async ({
     page,
   }) => {
     await page.goto(`/${category.slug}?status=todos`);
@@ -288,7 +288,7 @@ test("regression: Com fio and Sem fio each keep the mouses that work both ways, 
   await page.goto("/mouse?status=todos");
   const connection = filterPanel(page).getByRole("group", { name: "Conexão", exact: true });
   await expect(connection.getByRole("button")).toHaveText(["Com fio", "Sem fio"]);
-  // Every excerpt mouse is EyeJoker's "유무선", wireless with a cable.
+  // Every excerpt mouse is the Fonte's "유무선", wireless with a cable.
   await markChoice(page, "Conexão", "Sem fio");
   await expect(page).toHaveURL("/mouse?status=todos&conexao=sem-fio");
   await expect.poll(() => productNames(page)).toEqual(allMouses);
@@ -381,7 +381,7 @@ test("marked sensors and a maximum Resposta do clique narrow the mouses and reop
   context,
 }) => {
   await page.goto("/mouse?status=todos");
-  // The sensors the excerpt's mouses have, by EyeJoker's label; four choices need no search box.
+  // The sensors the excerpt's mouses have, by the Fonte's label; four choices need no search box.
   const sensorNames = ["PAW3395", "PAW3950", "PAW3950 HS", "PAW3950 Ultra (42K)"];
   await expectChoiceNames(page, "Sensor", sensorNames);
   await expect(filterPanel(page).getByRole("combobox", { name: "Buscar sensor" })).toHaveCount(0);
