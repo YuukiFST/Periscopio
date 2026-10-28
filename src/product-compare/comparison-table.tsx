@@ -13,8 +13,7 @@ import {
 } from "@/product-fields/field-groups";
 import { FieldValueText } from "@/product-fields/field-value-text";
 import { ProductPhoto } from "@/product-photo/product-photo";
-import { fieldRangeOf, rangePositionOf } from "@/product-table/field-range";
-import { MissingValue, RangeBar } from "@/product-table/table-cells";
+import { MissingValue } from "@/product-table/table-cells";
 import { productIdsParam } from "./compare-selection";
 import { MarkIcon, markCellClass } from "./comparison-mark";
 import { GroupHeaderRow, RowLabel, valueCellClass } from "./comparison-rows";
@@ -192,7 +191,7 @@ export function ComparisonTable({
           {groups.map((group) => {
             const headingId = `comparacao-${group.id}`;
             const rows = group.fields.map((field) => (
-              <FieldRow key={field.key} data={data} field={field} products={products} />
+              <FieldRow key={field.key} field={field} products={products} />
             ));
             if (!group.foldable) {
               return (
@@ -331,18 +330,9 @@ function ProductColumnHeader({
   );
 }
 
-function FieldRow({
-  data,
-  field,
-  products,
-}: {
-  data: CategoryData;
-  field: Field;
-  products: readonly Product[];
-}) {
+function FieldRow({ field, products }: { field: Field; products: readonly Product[] }) {
   const values = products.map((product) => productFieldValue(product, field));
   const marks = comparisonMarks(field, values);
-  const range = fieldRangeOf(data, field);
   return (
     <tr>
       <RowLabel>{fieldLabel(field)}</RowLabel>
@@ -354,11 +344,11 @@ function FieldRow({
           {value === undefined ? (
             <MissingValue />
           ) : (
-            <RangeBar position={rangePositionOf(range, field, value)}>
+            <>
               <FieldValueText field={field} value={value} className="whitespace-normal" />
               {/* Inline after the value, so a long word wraps whole and the mark follows it. */}
               <MarkIcon mark={marks[position]} />
-            </RangeBar>
+            </>
           )}
         </td>
       ))}
