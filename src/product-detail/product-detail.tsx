@@ -6,14 +6,18 @@ import { DrawerTitle } from "@/components/ui/drawer";
 import type { CategoryData, Product } from "@/data/schema";
 import { fieldLabel, manufacturerName, valueLabel } from "@/i18n/labels";
 import { FieldValueText, isFigureField } from "@/product-fields/field-value-text";
+import { isRatingField } from "@/data/rating-order";
 import {
+  averageKeyOf,
+  deviationFieldOf,
   productFieldGroups,
   productFieldValue,
   type ProductFieldGroup,
 } from "@/product-fields/field-groups";
-import { formatPrice, priceOf } from "@/product-table/cell-values";
+import { formatDeviation, formatPrice, priceOf } from "@/product-table/cell-values";
 import { useFavoriteIds } from "@/product-table/favorite-products";
 import { PriceInReais } from "@/product-table/table-cells";
+import { FilledStar } from "@/product-table/table-toolbar";
 import { cn } from "@/lib/utils";
 import { CompareBar, compareStatusId } from "@/product-compare/compare-bar";
 import {
@@ -48,7 +52,13 @@ export function ProductDetail({
     // A new view in a single-page app: screen readers and the keyboard start from its title.
     headingRef.current?.focus();
   }, [product.name]);
-  const groups = productFieldGroups(data, [product]);
+  // The grades lead the header, so the Especificações start at the declared fields.
+  const groups = productFieldGroups(data, [product])
+    .map((group) => ({
+      ...group,
+      fields: group.fields.filter((field) => !isRatingField(field.key)),
+    }))
+    .filter((group) => group.fields.length > 0);
   const hasMeasurements = groups.some((group) => group.id === "medicoes");
   return (
     <article aria-labelledby="produto-titulo" className="flex w-full flex-col gap-8">
@@ -61,7 +71,7 @@ export function ProductDetail({
       />
       <div className="flex flex-col gap-8">
         {groups.map((group) => (
-          <FieldGroupSection key={group.id} group={group} product={product} />
+          <FieldGroupSection key={group.id} data={data} group={group} product={product} />
         ))}
         {!hasMeasurements && (
           <p className="max-w-prose text-muted-foreground">
@@ -95,61 +105,76 @@ function ProductHeader({
   const statusField = data.fields.find((field) => field.key === "status");
   const status =
     product.status && statusField ? valueLabel(statusField, product.status) : undefined;
+  // The Especificações group lists the grades first, Nota geral before Recomendação.
+  const grades = productFieldGroups(data, [product])
+    .flatMap((group) => group.fields)
+    .flatMap((field) => {
+      if (!isRatingField(field.key)) return [];
+      const value = productFieldValue(product, field);
+      return value === undefined ? [] : [{ field, value }];
+    });
   return (
-    <header className="flex flex-col gap-4 sm:flex-row sm:items-start sm:gap-6">
-      <ProductPhoto key={product.image} src={product.image} alt="" size="detail" />
-      <div className="flex min-w-0 flex-col gap-4">
-        <div>
-          <DrawerTitle
-            ref={headingRef}
-            id="produto-titulo"
-            tabIndex={-1}
-            className="text-display text-balance wrap-break-word outline-none"
-          >
-            {product.name}
-          </DrawerTitle>
-          <p className="text-subtitle text-muted-foreground wrap-break-word">
-            {manufacturerName(product.manufacturer)}
-          </p>
-        </div>
-        <dl className="flex flex-wrap gap-x-8 gap-y-3">
-          <HeaderFact label="Preço">
-            {price === undefined ? (
-              <span className="text-muted-foreground">Sem preço</span>
-            ) : (
-              <>
-                <span className="whitespace-nowrap tabular-nums">
-                  {formatPrice(price)}
-                  <PriceInReais priceKrw={price} />
-                </span>
-                <PriceHistorySparkline
-                  category={data.category}
-                  productId={product.id}
-                  priceKrw={price}
-                />
-              </>
-            )}
-          </HeaderFact>
-          {status !== undefined && <HeaderFact label="Status de teste">{status}</HeaderFact>}
-        </dl>
-        <div className="flex flex-wrap gap-2">
-          {product.aliUrl && (
-            <Button
-              trailingIcon={ExternalLink}
-              render={<a href={product.aliUrl} target="_blank" rel="noopener noreferrer" />}
+    <header className="flex flex-col gap-6">
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:gap-6">
+        <ProductPhoto key={product.image} src={product.image} alt="" size="detail" />
+        <div className="flex min-w-0 flex-col gap-4">
+          <div>
+            <DrawerTitle
+              ref={headingRef}
+              id="produto-titulo"
+              tabIndex={-1}
+              className="text-display text-balance wrap-break-word outline-none"
             >
-              Ver no AliExpress
-              <span className="sr-only">(abre em nova aba)</span>
-            </Button>
-          )}
-          <CompareToggleButton
-            isCompared={comparedIds.includes(product.id)}
-            isFull={comparedIds.length >= maxComparedProducts}
-            onToggle={() => onComparedIdsChange(toggleComparedId(comparedIds, product.id))}
-          />
-          <CompareSimilarLink data={data} product={product} />
-          <FavoriteToggleButton data={data} product={product} />
+              {product.name}
+            </DrawerTitle>
+            <p className="text-subtitle text-muted-foreground wrap-break-word">
+              {manufacturerName(product.manufacturer)}
+            </p>
+          </div>
+          <dl className="flex flex-wrap gap-x-8 gap-y-3">
+            <HeaderFact label="Preço">
+              {price === undefined ? (
+                <span className="text-muted-foreground">Sem preço</span>
+              ) : (
+                <>
+                  <span className="whitespace-nowrap tabular-nums">
+                    {formatPrice(price)}
+                    <PriceInReais priceKrw={price} />
+                  </span>
+                  <PriceHistorySparkline
+                    category={data.category}
+                    productId={product.id}
+                    priceKrw={price}
+                  />
+                </>
+              )}
+            </HeaderFact>
+            {grades.map(({ field, value }) => (
+              <HeaderFact key={field.key} label={fieldLabel(field)}>
+                <FieldValueText field={field} value={value} />
+              </HeaderFact>
+            ))}
+            {status !== undefined && <HeaderFact label="Status de teste">{status}</HeaderFact>}
+          </dl>
         </div>
+      </div>
+      <div className="flex flex-wrap gap-2 *:grow">
+        {product.aliUrl && (
+          <Button
+            trailingIcon={ExternalLink}
+            render={<a href={product.aliUrl} target="_blank" rel="noopener noreferrer" />}
+          >
+            Ver no AliExpress
+            <span className="sr-only">(abre em nova aba)</span>
+          </Button>
+        )}
+        <CompareToggleButton
+          isCompared={comparedIds.includes(product.id)}
+          isFull={comparedIds.length >= maxComparedProducts}
+          onToggle={() => onComparedIdsChange(toggleComparedId(comparedIds, product.id))}
+        />
+        <CompareSimilarLink data={data} product={product} />
+        <FavoriteToggleButton data={data} product={product} />
       </div>
     </header>
   );
@@ -192,15 +217,12 @@ function FavoriteToggleButton({ data, product }: { data: CategoryData; product: 
   return (
     <Button
       variant="tertiary"
+      leadingIcon={isFavorite ? FilledStar : Star}
       aria-pressed={isFavorite}
       aria-label={isFavorite ? "Remover dos favoritos" : `Favoritar ${product.name}`}
       onClick={() => toggleFavorite(product.id)}
+      className={isFavorite ? "[&_svg]:text-favorito" : undefined}
     >
-      <Star
-        aria-hidden="true"
-        data-icon="inline-start"
-        className={isFavorite ? "fill-current text-blue-600 dark:text-blue-400" : undefined}
-      />
       {isFavorite ? "Remover dos favoritos" : "Favoritar"}
     </Button>
   );
@@ -237,7 +259,15 @@ function HeaderFact({ label, children }: { label: string; children: ReactNode })
   );
 }
 
-function FieldGroupSection({ group, product }: { group: ProductFieldGroup; product: Product }) {
+function FieldGroupSection({
+  data,
+  group,
+  product,
+}: {
+  data: CategoryData;
+  group: ProductFieldGroup;
+  product: Product;
+}) {
   const headingId = `grupo-${group.id}`;
   return (
     <section aria-labelledby={headingId} className="flex min-w-0 flex-col gap-2">
@@ -248,16 +278,30 @@ function FieldGroupSection({ group, product }: { group: ProductFieldGroup; produ
         {group.fields.map((field) => {
           const value = productFieldValue(product, field);
           if (value === undefined) return null;
+          // A standard deviation reads beside its average, as in the table, while that one shows.
+          const average = data.fields.find((candidate) => candidate.key === averageKeyOf(field));
+          if (average && productFieldValue(product, average) !== undefined) return null;
+          const deviationField = deviationFieldOf(data, field);
+          const deviation = deviationField
+            ? formatDeviation(deviationField, productFieldValue(product, deviationField))
+            : undefined;
           return (
             <div key={field.key} className="flex items-baseline justify-between gap-4 py-2">
               <dt className="min-w-0 text-pretty text-muted-foreground">{fieldLabel(field)}</dt>
               <dd
                 className={cn(
-                  "min-w-0 text-end",
-                  isFigureField(field) ? "shrink-0" : "max-w-[60%] font-medium text-pretty",
+                  "min-w-0 text-end font-medium",
+                  isFigureField(field) ? "shrink-0" : "max-w-[60%] text-pretty",
                 )}
               >
                 <FieldValueText field={field} value={value} />
+                {deviation !== undefined && (
+                  <span className="font-mono text-caption font-normal whitespace-nowrap text-muted-foreground tabular-nums">
+                    {" "}
+                    <span aria-hidden="true">σ</span>
+                    <span className="sr-only">desvio padrão</span> {deviation}
+                  </span>
+                )}
               </dd>
             </div>
           );

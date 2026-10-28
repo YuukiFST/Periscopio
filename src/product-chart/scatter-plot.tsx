@@ -15,30 +15,67 @@ const tickFormat = new Intl.NumberFormat("pt-BR", {
 
 type Tick = { value: number; text: string };
 
+/**
+ * Past this ratio between the largest and the smallest amount, a linear axis
+ * crowds most Produtos into a corner (one ₩ 1,8 mi mouse leaves the rest in the
+ * first fifth), so the axis spreads its amounts by order of magnitude instead.
+ */
+const logScaleRatio = 20;
+
+function isRatingAxis(axis: ChartAxis): boolean {
+  return axis.column.kind === "field" && isRatingField(axis.column.field.key);
+}
+
+function isLogAxis(axis: ChartAxis, values: readonly number[]): boolean {
+  if (isRatingAxis(axis)) return false;
+  const min = Math.min(...values);
+  return min > 0 && Math.max(...values) / min >= logScaleRatio;
+}
+
+/** Round amounts on a log axis: 1, 2 and 5 times each power of ten in range, only the 1s when narrow. */
+function logTicks(min: number, max: number, isNarrow: boolean): number[] {
+  const ticks: number[] = [];
+  for (let power = Math.floor(Math.log10(min)); power <= Math.ceil(Math.log10(max)); power++) {
+    for (const factor of isNarrow ? [1] : [1, 2, 5]) {
+      const tick = factor * 10 ** power;
+      if (tick >= min && tick <= max) ticks.push(tick);
+    }
+  }
+  return ticks;
+}
+
 /** A grade axis ticks at each grade a Produto has; any other at round amounts. */
 function ticksOf(
   axis: ChartAxis,
   points: readonly ChartPoint[],
   pick: "x" | "y",
   count: number,
+  isLog: boolean,
 ): Tick[] {
   const values = points.map((point) => point[pick]);
-  if (axis.column.kind === "field" && isRatingField(axis.column.field.key)) {
+  if (isRatingAxis(axis)) {
     const textByRank = new Map(
       points.map((point) => [point[pick], axisValueText(axis, point.product)] as const),
     );
     return [...textByRank].toSorted(([a], [b]) => a - b).map(([value, text]) => ({ value, text }));
   }
-  return niceTicks(Math.min(...values), Math.max(...values), count).map((value) => ({
+  const min = Math.min(...values);
+  const max = Math.max(...values);
+  const logged = isLog ? logTicks(min, max, count < 5) : [];
+  return (logged.length >= 2 ? logged : niceTicks(min, max, count)).map((value) => ({
     value,
     text: tickFormat.format(value),
   }));
 }
 
-/** Maps a value onto `[from, to]` pixels, with 5% of room past the extreme values and ticks. */
-function scaleOf(values: readonly number[], from: number, to: number) {
-  let min = Math.min(...values);
-  let max = Math.max(...values);
+/**
+ * Maps a value onto `[from, to]` pixels, with 5% of room past the extreme values
+ * and ticks; a log axis measures that room, and every distance, in powers of ten.
+ */
+function scaleOf(values: readonly number[], from: number, to: number, isLog: boolean) {
+  const position = isLog ? Math.log10 : (value: number) => value;
+  let min = Math.min(...values.map(position));
+  let max = Math.max(...values.map(position));
   if (min === max) {
     min -= 1;
     max += 1;
@@ -46,7 +83,26 @@ function scaleOf(values: readonly number[], from: number, to: number) {
   const room = (max - min) * 0.05;
   min -= room;
   max += room;
-  return (value: number) => from + ((value - min) / (max - min)) * (to - from);
+  return (value: number) => from + ((position(value) - min) / (max - min)) * (to - from);
+}
+
+/**
+ * The Melhores relações as a staircase: each holds its vertical value until the
+ * next one along the horizontal axis, so the corners mark what can be had.
+ * With lower-is-better across, a step goes across first, then up or down.
+ */
+function bestTradeOffPath(
+  positions: readonly { x: number; y: number }[],
+  xDirection: ChartAxis["direction"],
+): string {
+  return positions
+    .map((position, index) => {
+      if (index === 0) return `M${position.x} ${position.y}`;
+      return xDirection === "higher"
+        ? `V${position.y}H${position.x}`
+        : `H${position.x}V${position.y}`;
+    })
+    .join("");
 }
 
 function useWidth() {
@@ -99,16 +155,33 @@ export function ScatterPlot({
   const height = Math.round(Math.min(520, Math.max(280, width * 0.6)));
   const plotRight = width - margin.right;
   const plotBottom = height - margin.bottom;
+  const isNarrow = width < 480;
   const xValues = points.map((point) => point.x);
   const yValues = points.map((point) => point.y);
-  const xTicks = ticksOf(xAxis, points, "x", width < 480 ? 3 : 6);
-  const yTicks = ticksOf(yAxis, points, "y", 5);
-  const xOf = scaleOf([...xValues, ...xTicks.map(({ value }) => value)], margin.left, plotRight);
-  const yOf = scaleOf([...yValues, ...yTicks.map(({ value }) => value)], plotBottom, margin.top);
+  const isXLog = isLogAxis(xAxis, xValues);
+  const isYLog = isLogAxis(yAxis, yValues);
+  const xTicks = ticksOf(xAxis, points, "x", isNarrow ? 3 : 6, isXLog);
+  const yTicks = ticksOf(yAxis, points, "y", 5, isYLog);
+  const xOf = scaleOf(
+    [...xValues, ...xTicks.map(({ value }) => value)],
+    margin.left,
+    plotRight,
+    isXLog,
+  );
+  const yOf = scaleOf(
+    [...yValues, ...yTicks.map(({ value }) => value)],
+    plotBottom,
+    margin.top,
+    isYLog,
+  );
   const bestIds = new Set(bestTradeOffs?.map((point) => point.product.id));
-  const bestLine = bestTradeOffs
-    ?.map((point) => `${xOf(point.x).toFixed(1)},${yOf(point.y).toFixed(1)}`)
-    .join(" ");
+  const bestDots = bestTradeOffs?.map((point) => ({
+    id: point.product.id,
+    x: xOf(point.x),
+    y: yOf(point.y),
+  }));
+  const bestPath =
+    bestDots && bestDots.length > 1 ? bestTradeOffPath(bestDots, xAxis.direction) : undefined;
   const activePoint = points.find((point) => point.product.id === activeId);
 
   return (
@@ -149,21 +222,21 @@ export function ScatterPlot({
               textAnchor="middle"
               className="fill-foreground font-medium"
             >
-              {xAxis.label}
+              {isXLog ? `${xAxis.label}, escala logarítmica` : xAxis.label}
             </text>
             <text
               transform={`translate(14,${(margin.top + plotBottom) / 2}) rotate(-90)`}
               textAnchor="middle"
               className="fill-foreground font-medium"
             >
-              {yAxis.label}
+              {isYLog ? `${yAxis.label}, escala logarítmica` : yAxis.label}
             </text>
-            {bestLine && (
-              <polyline
-                points={bestLine}
+            {bestPath && (
+              <path
+                d={bestPath}
                 strokeWidth={1.5}
-                strokeDasharray="4 3"
-                className="fill-none stroke-blue-500"
+                strokeLinejoin="round"
+                className="fill-none stroke-highlight-fg"
               />
             )}
           </g>
@@ -185,16 +258,10 @@ export function ScatterPlot({
               >
                 <g transform={`translate(${xOf(point.x)},${yOf(point.y)})`}>
                   <circle r={12} className="fill-transparent" />
-                  <circle
-                    r={isBest ? 6 : 5}
-                    strokeWidth={1.5}
-                    className={cn(
-                      "stroke-background",
-                      isBest
-                        ? "fill-blue-500"
-                        : "fill-muted-foreground/70 group-hover:fill-muted-foreground",
-                    )}
-                  />
+                  {/* No ring, so dots that overlap darken where they stack and show the crowd. */}
+                  {!isBest && (
+                    <circle r={isNarrow ? 3 : 3.5} className="fill-muted-foreground/70" />
+                  )}
                   <circle
                     r={10}
                     strokeWidth={2}
@@ -204,6 +271,28 @@ export function ScatterPlot({
               </Link>
             );
           })}
+          {/* Drawn after every dot, so none covers a Melhor relação. */}
+          <g aria-hidden="true" className="pointer-events-none">
+            {bestDots?.map((dot) => (
+              <circle
+                key={dot.id}
+                cx={dot.x}
+                cy={dot.y}
+                r={4.5}
+                strokeWidth={1.5}
+                className="fill-highlight-fg stroke-background"
+              />
+            ))}
+            {activePoint && (
+              <circle
+                cx={xOf(activePoint.x)}
+                cy={yOf(activePoint.y)}
+                r={6}
+                strokeWidth={1.5}
+                className="fill-none stroke-foreground"
+              />
+            )}
+          </g>
         </svg>
       )}
       {activePoint && (

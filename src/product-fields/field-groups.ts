@@ -14,6 +14,63 @@ function isOverallRating(field: Field): boolean {
 const headerFieldKeys = new Set(["status"]);
 
 /**
+ * Each standard deviation EyeJoker publishes, by the average it measures the
+ * spread of. Named one by one: the keys follow no single pattern
+ * (`bottomDeadzoneStddev` sits after `initialDetach` in the field list).
+ */
+const deviationKeyByAverageKey: Record<string, string> = {
+  sensorAvg: "sensorDeviationOpt",
+  optimalResponseSpeed: "optimalStddev",
+  pcbAvgOptimal: "pcbStddevOptimal",
+  pcbAvgOptimalDetach: "pcbStddevOptimalDetach",
+  pcbAvgWired: "pcbStddevWired",
+  detachAvgWired: "detachStddevWired",
+  sensorAvgWired: "sensorDeviationWired",
+  pcbAvgWireless: "pcbStddevWireless",
+  detachAvgWireless: "detachStddevWireless",
+  sensorAvgWireless: "sensorDeviationWireless",
+  pcbAvgBluetooth: "pcbStddevBluetooth",
+  sensorAvgMotionSyncOn: "sensorDeviationMotionSyncOn",
+  sensorAvgMotionSyncOff: "sensorDeviationMotionSyncOff",
+  sensorAvgWiredMotionSyncOn: "sensorDeviationWiredMotionSyncOn",
+  sensorAvgWiredMotionSyncOff: "sensorDeviationWiredMotionSyncOff",
+  sensorAvgWirelessMotionSyncOn: "sensorDeviationWirelessMotionSyncOn",
+  sensorAvgWirelessMotionSyncOff: "sensorDeviationWirelessMotionSyncOff",
+  slamClickPressAvg: "slamClickPressStddev",
+  slamClickReleaseAvg: "slamClickReleaseStddev",
+  emWPrRtAvgD0: "emWPrRtSdD0",
+  emWRlRtAvgD0: "emWRlRtSdD0",
+  solWPrRtAvg: "solWPrRtSd",
+  overallResponseSpeed: "overallStddev",
+  key6PressResponseTime: "key6PressStandardDeviation",
+  key6PullResponseTime: "key6PullStandardDeviation",
+  key10PressResponseTime: "key10PressStandardDeviation",
+  key10ResponseTime: "key10PullStandardDeviation",
+  strokeMeasured: "strokeMeasuredStddev",
+  bottomDeadzone: "bottomDeadzoneStddev",
+  keyboardPcbAvgWired: "stddevWired",
+  pcbAvgDetach: "stddevDetach",
+  keyboardPcbAvgWireless: "stddevWireless",
+  keyboardDetachAvgWireless: "keyboardDetachStddevWireless",
+  bluetoothAvg: "bluetoothStddev",
+};
+
+const averageKeyByDeviationKey = new Map(
+  Object.entries(deviationKeyByAverageKey).map(([average, deviation]) => [deviation, average]),
+);
+
+/** The field holding the standard deviation of `average`, when EyeJoker publishes one. */
+export function deviationFieldOf(data: CategoryData, average: Field): Field | undefined {
+  const key = deviationKeyByAverageKey[average.key];
+  return key === undefined ? undefined : data.fields.find((field) => field.key === key);
+}
+
+/** The key of the average a standard deviation belongs to, when `field` is one. */
+export function averageKeyOf(field: Field): string | undefined {
+  return averageKeyByDeviationKey.get(field.key);
+}
+
+/**
  * True when `value` is EyeJoker's mark for a time it could not measure: -1
  * (`pcbAvgWired: -1`), or 0 on anything but a debounce, which a switch with
  * none really measures at 0 ms.

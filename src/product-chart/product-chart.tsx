@@ -1,4 +1,5 @@
 import { getRouteApi } from "@tanstack/react-router";
+import { ChevronDown } from "lucide-react";
 import { useEffect, useId, useMemo, useRef } from "react";
 import { categoryLabels } from "@/categories";
 import { CopyLinkButton } from "@/components/copy-link-button";
@@ -139,7 +140,7 @@ export function ProductChart({ data, search, onAxisChange }: ProductChartProps) 
           value={yAxis.slug}
           onValueChange={(slug) => onAxisChange("y", slug)}
         />
-        <p aria-live="polite" className="text-muted-foreground tabular-nums">
+        <p aria-live="polite" className="min-w-0 wrap-anywhere text-muted-foreground tabular-nums">
           {narrowingText(search, activeFilterCount(filters, filterValues))}:{" "}
           {productCount(points.length)} no gráfico
           {leftOut > 0 && `, ${leftOut} sem dado em um dos eixos`}
@@ -150,6 +151,9 @@ export function ProductChart({ data, search, onAxisChange }: ProductChartProps) 
           <h2 id={plotTitleId} className="sr-only">
             {yAxis.label} por {xAxis.label}
           </h2>
+          <figcaption className="max-w-prose text-pretty text-muted-foreground">
+            <BestTradeOffsLegend xAxis={xAxis} yAxis={yAxis} />
+          </figcaption>
           <ScatterPlot
             category={data.category}
             points={points}
@@ -159,9 +163,6 @@ export function ProductChart({ data, search, onAxisChange }: ProductChartProps) 
             tableSearch={tableSearch}
             labelledBy={plotTitleId}
           />
-          <figcaption className="max-w-prose text-pretty text-muted-foreground">
-            <BestTradeOffsLegend xAxis={xAxis} yAxis={yAxis} />
-          </figcaption>
           <ChartDataTable
             points={points}
             bestTradeOffs={bestTradeOffs}
@@ -170,13 +171,11 @@ export function ProductChart({ data, search, onAxisChange }: ProductChartProps) 
           />
         </figure>
       ) : (
-        <div className="rounded-lg border border-border px-4 py-6">
-          <p className="font-medium text-pretty">
-            {products.length === 0
-              ? "Nenhum produto com essa busca, esses filtros e esse Status de teste."
-              : `Nenhum produto tem ${xAxis.label} e ${yAxis.label}.`}
-          </p>
-        </div>
+        <p className="max-w-prose py-6 text-pretty">
+          {products.length === 0
+            ? "Nenhum produto com a busca, os filtros e o Status de teste da tabela. Volte para a tabela e mude algum deles."
+            : `Nenhum produto tem ${xAxis.label} e ${yAxis.label}. Escolha outra coluna em um dos eixos.`}
+        </p>
       )}
     </article>
   );
@@ -196,22 +195,29 @@ function AxisSelect({ label, groups, value, onValueChange }: AxisSelectProps) {
       <label htmlFor={id} className="font-medium">
         {label}
       </label>
-      <select
-        id={id}
-        value={value}
-        onChange={(event) => onValueChange(event.target.value)}
-        className="h-9 max-w-full min-w-48 rounded-lg border border-input bg-transparent px-2 text-base focus-visible:border-ring focus-visible:outline-2 focus-visible:-outline-offset-1 focus-visible:outline-ring pointer-coarse:h-10 pointer-fine:text-body dark:bg-muted"
-      >
-        {groups.map((group) => (
-          <optgroup key={group.title} label={group.title}>
-            {group.axes.map((axis) => (
-              <option key={axis.slug} value={axis.slug}>
-                {axis.label}
-              </option>
-            ))}
-          </optgroup>
-        ))}
-      </select>
+      <div className="relative max-w-full">
+        <select
+          id={id}
+          value={value}
+          onChange={(event) => onValueChange(event.target.value)}
+          className="h-9 max-w-full min-w-48 appearance-none rounded-lg border border-input bg-transparent ps-2.5 pe-8 text-base field-sizing-content focus-visible:border-ring focus-visible:outline-2 focus-visible:-outline-offset-1 focus-visible:outline-ring pointer-coarse:h-10 pointer-fine:text-body dark:bg-muted"
+        >
+          {groups.map((group) => (
+            <optgroup key={group.title} label={group.title}>
+              {group.axes.map((axis) => (
+                <option key={axis.slug} value={axis.slug}>
+                  {axis.label}
+                </option>
+              ))}
+            </optgroup>
+          ))}
+        </select>
+        <ChevronDown
+          aria-hidden="true"
+          strokeWidth={1.5}
+          className="pointer-events-none absolute end-2.5 top-1/2 size-4 -translate-y-1/2 text-muted-foreground"
+        />
+      </div>
     </div>
   );
 }
@@ -224,10 +230,10 @@ function BestTradeOffsLegend({ xAxis, yAxis }: { xAxis: ChartAxis; yAxis: ChartA
   return (
     <>
       <svg aria-hidden="true" width="12" height="12" className="me-1.5 inline-block align-baseline">
-        <circle cx="6" cy="6" r="5" className="fill-blue-500" />
+        <circle cx="6" cy="6" r="4.5" className="fill-highlight-fg" />
       </svg>
-      Melhores relações: nenhum outro produto é ao menos tão bom nos dois eixos e melhor em um (
-      {xAxis.label}: {betterTexts[xAxis.direction]}; {yAxis.label}: {betterTexts[yAxis.direction]}).
+      Melhores relações: nenhum outro produto é ao menos tão bom nos dois eixos e melhor em um.{" "}
+      {xAxis.label}: {betterTexts[xAxis.direction]}. {yAxis.label}: {betterTexts[yAxis.direction]}.
     </>
   );
 }
@@ -242,27 +248,30 @@ type ChartDataTableProps = {
 /** The dots as rows, for screen readers. */
 function ChartDataTable({ points, bestTradeOffs, xAxis, yAxis }: ChartDataTableProps) {
   const bestIds = new Set(bestTradeOffs?.map((point) => point.product.id));
+  // The box hides it: a table grows to fit its cells past `sr-only`'s 1px width.
   return (
-    <table className="sr-only">
-      <caption>Dados do gráfico</caption>
-      <thead>
-        <tr>
-          <th scope="col">Produto</th>
-          <th scope="col">{xAxis.label}</th>
-          <th scope="col">{yAxis.label}</th>
-          {bestTradeOffs && <th scope="col">Melhor relação</th>}
-        </tr>
-      </thead>
-      <tbody>
-        {points.map((point) => (
-          <tr key={point.product.id}>
-            <th scope="row">{point.product.name}</th>
-            <td>{axisValueText(xAxis, point.product)}</td>
-            <td>{axisValueText(yAxis, point.product)}</td>
-            {bestTradeOffs && <td>{bestIds.has(point.product.id) ? "Sim" : "Não"}</td>}
+    <div className="sr-only">
+      <table>
+        <caption>Dados do gráfico</caption>
+        <thead>
+          <tr>
+            <th scope="col">Produto</th>
+            <th scope="col">{xAxis.label}</th>
+            <th scope="col">{yAxis.label}</th>
+            {bestTradeOffs && <th scope="col">Melhor relação</th>}
           </tr>
-        ))}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {points.map((point) => (
+            <tr key={point.product.id}>
+              <th scope="row">{point.product.name}</th>
+              <td>{axisValueText(xAxis, point.product)}</td>
+              <td>{axisValueText(yAxis, point.product)}</td>
+              {bestTradeOffs && <td>{bestIds.has(point.product.id) ? "Sim" : "Não"}</td>}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 }

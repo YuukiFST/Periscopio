@@ -72,13 +72,13 @@ export function ProductSidebar({ data }: { data: CategoryData }) {
       open={openId !== undefined}
       onOpenChange={(open, eventDetails) => {
         // Base UI hears Escape on the whole page; the table's search box and the Filtros drawer
-        // keep their own Escape while the panel is open.
+        // keep their own Escape while the panel is open. From a row, Escape still closes it.
         const target = eventDetails.event.target;
         if (
           eventDetails.reason === "escape-key" &&
           target instanceof Element &&
-          target !== document.body &&
-          !popupRef.current?.contains(target)
+          !popupRef.current?.contains(target) &&
+          target.closest("input, textarea, select, [role=combobox], [role=dialog]")
         ) {
           eventDetails.cancel();
           return;
@@ -99,25 +99,27 @@ export function ProductSidebar({ data }: { data: CategoryData }) {
         ref={popupRef}
         initialFocus={false}
         finalFocus={() => tableFocusTarget(product?.id) ?? true}
-        // Beside the table, Tab past the panel's last control goes back to the table it stays
-        // over; the panel has no trigger for Base UI to hand focus on to.
+        // Beside the table, Tab past the panel's last control, or Shift+Tab before its first,
+        // goes back to the table it stays over; the panel has no trigger for Base UI to hand
+        // focus on to.
         onKeyDown={(event) => {
-          if (!isBesideTable || event.key !== "Tab" || event.shiftKey) return;
+          if (!isBesideTable || event.key !== "Tab") return;
           const controls = event.currentTarget.querySelectorAll<HTMLElement>("a[href], button");
-          if (event.target !== controls[controls.length - 1]) return;
+          const edge = event.shiftKey ? controls[0] : controls[controls.length - 1];
+          if (event.target !== edge) return;
           const target = tableFocusTarget(product?.id);
           if (!target) return;
           event.preventDefault();
           target.focus();
         }}
-        className="w-full border-transparent text-body shadow-surface-5 duration-300 data-ending-style:duration-[calc(var(--drawer-swipe-strength)*300ms)] sm:w-lg"
+        className="w-full border-transparent text-body shadow-surface-5 duration-200 data-ending-style:duration-[calc(var(--drawer-swipe-strength)*200ms)] data-ending-style:data-swiping:duration-[calc(var(--drawer-swipe-strength)*200ms)] sm:w-lg"
       >
         <div className="flex shrink-0 justify-end px-2 pt-2">
           <Button variant="ghost" size="icon" aria-label="Fechar detalhes" onClick={close}>
             <X aria-hidden="true" />
           </Button>
         </div>
-        <div className="scroll-fade-y relative min-h-0 flex-1 has-[[role=region]]:scroll-fade-b-4 overflow-y-auto overscroll-contain px-4 pb-4 sm:px-6">
+        <div className="scroll-fade-y relative min-h-0 flex-1 has-[[role=region]]:scroll-fade-b-4 scroll-pb-24 overflow-y-auto overscroll-contain px-4 pb-4 sm:px-6">
           {product ? (
             <ProductDetail
               key={product.id}

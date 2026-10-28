@@ -32,10 +32,10 @@ test("a Produto opened from the table shows its header and fields grouped in pt 
   await expect(page.getByRole("article")).toMatchAriaSnapshot(`
     - term: Preço
     - definition: ₩ 98.900 cerca de R$ 377 (Cotação de 22 de out. de 2026)
-  `);
-  await expect(page.getByRole("region", { name: "Especificações" })).toMatchAriaSnapshot(`
     - term: Nota geral
     - definition: A+
+  `);
+  await expect(page.getByRole("region", { name: "Especificações" })).toMatchAriaSnapshot(`
     - term: Formato
     - definition: Simétrico
     - term: Peso
@@ -43,9 +43,9 @@ test("a Produto opened from the table shows its header and fields grouped in pt 
   `);
   await expect(page.getByRole("region", { name: "Medições" })).toMatchAriaSnapshot(`
     - term: Resposta do sensor
-    - definition: 0,70 ms
+    - definition: 0,70 ms desvio padrão 0,29
     - term: Resposta do clique
-    - definition: 0,49 ms
+    - definition: 0,49 ms desvio padrão 0,08
   `);
 
   await page.getByRole("button", { name: "Fechar detalhes" }).click();
