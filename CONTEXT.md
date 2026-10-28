@@ -1,21 +1,21 @@
-# EyeJoker PWA
+# Periscópio
 
-App privado para um grupo de amigos consultar e comparar os benchmarks de monitores, teclados e mouses publicados pelo EyeJoker.
+App privado para um grupo de amigos consultar e comparar os benchmarks de monitores, teclados e mouses publicados pela Fonte.
 
 ## Language
 
 ### Fonte e dados
 
-**EyeJoker**:
-O site eyejokerdb.com, única fonte dos produtos, medições e preços exibidos no app.
-_Avoid_: site original, fonte, DB
+**Fonte**:
+O site de benchmarks de onde vêm todos os produtos, medições e preços exibidos no app.
+_Avoid_: site original, DB
 
 **Categoria**:
 Um dos três tipos de produto do app: monitor, teclado ou mouse.
 _Avoid_: tipo, benchmark type, seção
 
 **Produto**:
-Um item testado ou listado pelo EyeJoker dentro de uma Categoria.
+Um item testado ou listado pela Fonte dentro de uma Categoria.
 _Avoid_: item, modelo, linha
 
 **Especificação**:
@@ -23,7 +23,7 @@ Um dado declarado do Produto, como peso, sensor, tamanho ou resolução.
 _Avoid_: spec, característica
 
 **Medição**:
-Um número obtido em teste pelo EyeJoker, como tempo médio de clique ou brilho máximo.
+Um número obtido em teste pela Fonte, como tempo médio de clique ou brilho máximo.
 _Avoid_: benchmark, resultado, score
 
 **Resposta do clique**:
@@ -31,15 +31,15 @@ A Medição do tempo médio de clique de um mouse, em milissegundos.
 _Avoid_: click latency, responsividade, Click Avg
 
 **Status de teste**:
-Se o Produto já foi testado pelo EyeJoker ou só está listado, aguardando teste.
+Se o Produto já foi testado pela Fonte ou só está listado, aguardando teste.
 _Avoid_: estado, review status
 
 **Preço**:
-O valor em won coreano (₩) que o EyeJoker registra para o Produto.
+O valor em won coreano (₩) que a Fonte registra para o Produto.
 _Avoid_: valor, custo
 
 **Atualização**:
-A cópia semanal dos dados do EyeJoker para o app.
+A cópia semanal dos dados da Fonte para o app.
 _Avoid_: sync, scrape, importação
 
 **Cotação**:
@@ -75,7 +75,7 @@ Conta qualquer conexão, ou só a escolhida (com fio ou sem fio); só entra na o
 _Avoid_: ranking, score, nota de desempenho
 
 **Link AliExpress**:
-O único link de compra mostrado em um Produto, quando o EyeJoker tem um.
+O único link de compra mostrado em um Produto, quando a Fonte tem um.
 _Avoid_: link de afiliado, link de compra
 
 **Novidade**:

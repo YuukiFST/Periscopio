@@ -1,6 +1,6 @@
 /**
  * Portuguese label for every field key the pipeline writes to `fields`.
- * Keys are EyeJoker field names; a key without an entry falls back to the
+ * Keys are Fonte field names; a key without an entry falls back to the
  * field's `en` label, and the pipeline lists it in the job summary.
  */
 export const fieldLabelsPt: Readonly<Record<string, string>> = {
@@ -250,7 +250,7 @@ export const fieldLabelsPt: Readonly<Record<string, string>> = {
 };
 
 /**
- * Portuguese text for field units EyeJoker writes in Korean. Units already in
+ * Portuguese text for field units the Fonte writes in Korean. Units already in
  * Latin script (`ms`, `Hz`, `mm`) need no entry. An empty string means the
  * unit is dropped in Portuguese.
  */

@@ -2,7 +2,7 @@ import { shortTextLabelsPt } from "./pt-short-text-labels.ts";
 
 type ValueLabels = Readonly<Record<string, string>>;
 
-/** EyeJoker's Impecável and Tier 0 to 4 as letter tiers, S on top. */
+/** The Fonte's Impecável and Tier 0 to 4 as letter tiers, S on top. */
 const overallRatingPt: ValueLabels = {
   FLAWLESS: "S",
   TIER_0: "A+",
@@ -30,7 +30,7 @@ const switchMechanismPt: ValueLabels = {
 const noneConfirmedPt = "Não tem";
 
 /**
- * Portuguese label per field key and raw EyeJoker value, for ENUM values and
+ * Portuguese label per field key and raw Fonte value, for ENUM values and
  * for the repeated short texts in Korean. Fields whose values are proper names
  * or numbers (sensor, MCU, polling rate) have no entry: their `en` label reads
  * the same in Portuguese.
@@ -90,7 +90,7 @@ export const valueLabelsPt: Readonly<Record<string, ValueLabels>> = {
     마그네틱: "Magnético",
   },
   sensorLodMode: { single: "Valor fixo", options: "Valores selecionáveis", range: "Faixa" },
-  // EyeJoker writes these in English with decimal points; the most common ones read as pt here.
+  // The Fonte writes these in English with decimal points; the most common ones read as pt here.
   sensorLodOptions: {
     "1.0, 2.0 mm": "1,0 mm e 2,0 mm",
     "0.7, 1.0, 2.0 mm": "0,7 mm, 1,0 mm e 2,0 mm",
@@ -102,7 +102,7 @@ export const valueLabelsPt: Readonly<Record<string, ValueLabels>> = {
     "0.7, 0.9, 1.2, 1.4, 1.6 mm": "0,7 mm, 0,9 mm, 1,2 mm, 1,4 mm e 1,6 mm",
     "0.7~1.7 mm": "0,7 a 1,7 mm",
   },
-  // EyeJoker names the side switches by raw ids; the others read as words through labels.ts.
+  // The Fonte names the side switches by raw ids; the others read as words through labels.ts.
   sideSwitch: {
     noneOrUnknownSideSwitch: "Nenhum ou desconhecido",
     twoPinMicroSwitch: "Micro switch de 2 pinos",
@@ -116,7 +116,7 @@ export const valueLabelsPt: Readonly<Record<string, ValueLabels>> = {
     kailh: "Kailh",
   },
   encoder: { kailhDustproofRed11mm: "Kailh Dustproof Red 11 mm" },
-  // EyeJoker's "X" on a mouse with no battery, almost always a wired one.
+  // The Fonte's "X" on a mouse with no battery, almost always a wired one.
   battery: { X: "Sem bateria" },
 
   connectionType: connectionPt,

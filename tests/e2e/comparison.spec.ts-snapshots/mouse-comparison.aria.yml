@@ -15,8 +15,8 @@
     - paragraph: "Melhor desempenho: Dragonfly A9 Ultra, com pontuação 100. Depois vem Huan, com 54."
     - table "Comparação de mouses":
         - rowgroup:
-            - row "O preço fica de fora da comparação porque preços mudam, e o EyeJoker não registra o preço da sua região. Dragonfly A9 Ultra Huan H200A":
-                - cell "O preço fica de fora da comparação porque preços mudam, e o EyeJoker não registra o preço da sua região."
+            - row "O preço fica de fora da comparação porque preços mudam, e a fonte não registra o preço da sua região. Dragonfly A9 Ultra Huan H200A":
+                - cell "O preço fica de fora da comparação porque preços mudam, e a fonte não registra o preço da sua região."
                 - columnheader "Dragonfly A9 Ultra":
                     - paragraph:
                         - link "Dragonfly A9 Ultra":

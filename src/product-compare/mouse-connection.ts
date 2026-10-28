@@ -18,7 +18,7 @@ export const connectionOfPreference: Record<ConnectionPreference, Connection> = 
 };
 
 /**
- * The connection an EyeJoker mouse field was measured on, from its key
+ * The connection a Fonte mouse field was measured on, from its key
  * (`sensorAvgWireless`, `pcbAvgWired`); `bluetooth` for the Bluetooth
  * times and undefined for a field that does not name one.
  */
@@ -34,14 +34,14 @@ export function isPerConnectionField(fieldKey: string): boolean {
   return fieldConnection(fieldKey) !== undefined || fieldKey.includes("MotionSync");
 }
 
-/** EyeJoker's `mouseConnection`: 유선 (com fio), 무선 (sem fio), 유무선 (both). */
+/** The Fonte's `mouseConnection`: 유선 (com fio), 무선 (sem fio), 유무선 (both). */
 const connectionsByValue: Readonly<Record<string, readonly Connection[]>> = {
   유선: ["com fio"],
   무선: ["sem fio"],
   유무선: ["com fio", "sem fio"],
 };
 
-/** The connections a mouse has; undefined when EyeJoker does not say. */
+/** The connections a mouse has; undefined when the Fonte does not say. */
 export function mouseConnections(product: Product): readonly Connection[] | undefined {
   const value = product.values["mouseConnection"];
   return typeof value === "string" ? connectionsByValue[value] : undefined;

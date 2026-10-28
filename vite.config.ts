@@ -23,7 +23,7 @@ export default defineConfig({
       manifest: {
         name: "Periscópio",
         short_name: "Periscópio",
-        description: "Benchmarks de mouses, teclados e monitores do EyeJoker, em português.",
+        description: "Benchmarks de mouses, teclados e monitores, em português.",
         lang: "pt-BR",
         start_url: "/",
         scope: "/",

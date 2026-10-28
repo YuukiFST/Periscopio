@@ -78,7 +78,7 @@ export function RecentProductsButton() {
                 )}
                 {load.status === "loaded" && items.length === 0 && (
                   <p className="px-4 py-6 text-body text-muted-foreground">
-                    Os produtos que você viu não estão mais no EyeJoker.
+                    Os produtos que você viu não estão mais nos dados.
                   </p>
                 )}
               </div>

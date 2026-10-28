@@ -9,8 +9,8 @@ import {
 const namedLayouts = ["tkl", "75%", "65%", "60%", "full", "96%"];
 
 /**
- * EyeJoker's keyboard Filtros (`na` in its bundle), in its order; Desempenho
- * real takes typed bounds instead of EyeJoker's bands.
+ * The Fonte's keyboard Filtros (`na` in its bundle), in its order; Desempenho
+ * real takes typed bounds instead of the Fonte's bands.
  */
 export const keyboardFilters: readonly FilterDefinition[] = [
   {

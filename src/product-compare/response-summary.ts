@@ -10,7 +10,7 @@ export type ResponseMeasureId = "clique" | "sensor";
 export type ResponseMeasure = { id: ResponseMeasureId; label: string };
 
 /**
- * The board's time to send a click on each connection. EyeJoker's headline
+ * The board's time to send a click on each connection. The Fonte's headline
  * Resposta do clique (`optimalResponseSpeed`) also counts the switch and is
  * measured once, on its best setting, so it cannot follow a chosen connection.
  */

@@ -39,7 +39,7 @@ const slugByEyejokerCategory = {
 /** A Categoria may shrink by at most 10% from the published version. */
 const minimumRowShare = 0.9;
 
-/** Above this share of photo URLs that are not `/<uuid>.avif`, EyeJoker moved its photos. */
+/** Above this share of photo URLs that are not `/<uuid>.avif`, the Fonte moved its photos. */
 const maximumUnusableImageShare = 0.1;
 
 /** A Categoria may take the photo away from at most 10% of the published Produtos it keeps. */

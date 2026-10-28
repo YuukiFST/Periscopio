@@ -3,7 +3,7 @@ import { categoryDataSchema, type Product } from "../../src/data/schema.ts";
 
 /**
  * Runs against the production build served with the data the pipeline
- * generates from the recorded EyeJoker excerpt (`serve-fixture-build.ts`).
+ * generates from the recorded Fonte excerpt (`serve-fixture-build.ts`).
  */
 
 const mouses = {
@@ -124,7 +124,7 @@ test("three mouses marked on the table open side by side, with the Destaque wher
     ["Velocidade máxima de rastreio", ["Dragonfly A9 Ultra", "Huan"]],
     // Huan has no Debounce and stays out; 19 ms beats 22 ms.
     ["Debounce", ["Dragonfly A9 Ultra"]],
-    // Grades in EyeJoker's order: A+ beats C and Sem nota.
+    // Grades in the Fonte's order: A+ beats C and Sem nota.
     ["Nota geral", ["Dragonfly A9 Ultra"]],
     // All three at 8000 Hz: nobody is better, so the row shows the Empate instead.
     ["Polling rate máximo", []],
@@ -147,7 +147,7 @@ test("three mouses marked on the table open side by side, with the Destaque wher
   await expect(page.getByRole("rowheader", { name: "Preço" })).toHaveCount(0);
   await expect(
     page.getByText(
-      "O preço fica de fora da comparação porque preços mudam, e o EyeJoker não registra o preço da sua região.",
+      "O preço fica de fora da comparação porque preços mudam, e a fonte não registra o preço da sua região.",
     ),
   ).toBeVisible();
 
@@ -305,7 +305,7 @@ test("an id the data no longer has is left out with a notice, and removing a Pro
     `/comparar/mouse?p=${mouses.dragonflyA9Ultra.id},${goneId},${mouses.huan.id},${mouses.h200a.id}`,
   );
   await expect(
-    page.getByText("1 produto do link não existe nos dados atuais do EyeJoker e ficou de fora."),
+    page.getByText("1 produto do link não existe nos dados atuais e ficou de fora."),
   ).toBeVisible();
   await expect
     .poll(() => comparedProductNames(page))
@@ -552,7 +552,7 @@ test.describe("with a weight that rounds to the one beside it", () => {
 test.describe("with edited data", () => {
   test.use({ serviceWorkers: "block" });
 
-  test("regression: a time EyeJoker could not measure (-1) shows as missing, not as -1,00 ms, and leaves the mouse unranked", async ({
+  test("regression: a time the Fonte could not measure (-1) shows as missing, not as -1,00 ms, and leaves the mouse unranked", async ({
     page,
   }) => {
     await editProducts(page, "mouse", (product) =>

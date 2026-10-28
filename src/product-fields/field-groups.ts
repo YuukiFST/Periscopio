@@ -14,7 +14,7 @@ function isOverallRating(field: Field): boolean {
 const headerFieldKeys = new Set(["status"]);
 
 /**
- * Each standard deviation EyeJoker publishes, by the average it measures the
+ * Each standard deviation the Fonte publishes, by the average it measures the
  * spread of. Named one by one: the keys follow no single pattern
  * (`bottomDeadzoneStddev` sits after `initialDetach` in the field list).
  */
@@ -59,7 +59,7 @@ const averageKeyByDeviationKey = new Map(
   Object.entries(deviationKeyByAverageKey).map(([average, deviation]) => [deviation, average]),
 );
 
-/** The field holding the standard deviation of `average`, when EyeJoker publishes one. */
+/** The field holding the standard deviation of `average`, when the Fonte publishes one. */
 export function deviationFieldOf(data: CategoryData, average: Field): Field | undefined {
   const key = deviationKeyByAverageKey[average.key];
   return key === undefined ? undefined : data.fields.find((field) => field.key === key);
@@ -71,7 +71,7 @@ export function averageKeyOf(field: Field): string | undefined {
 }
 
 /**
- * True when `value` is EyeJoker's mark for a time it could not measure: -1
+ * True when `value` is the Fonte's mark for a time it could not measure: -1
  * (`pcbAvgWired: -1`), or 0 on anything but a debounce, which a switch with
  * none really measures at 0 ms.
  */
@@ -93,7 +93,7 @@ export function productFieldValue(product: Product, field: Field): FieldValue | 
 }
 
 /**
- * Especificações (EyeJoker's `common` and `spec` fields, grades first) and
+ * Especificações (the Fonte's `common` and `spec` fields, grades first) and
  * Medições (its `bench` fields), each keeping only the fields at least one of
  * `products` has a value for, or listed in `keptKeys`; a group left without
  * fields is dropped.

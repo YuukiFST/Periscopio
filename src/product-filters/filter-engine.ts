@@ -7,7 +7,7 @@ import type { FilterParam } from "./filter-params.ts";
  * Filtros are data: each Categoria declares a list of definitions, and one
  * pure engine applies them. Within a Filtro the marked choices add up (OU);
  * across Filtros they narrow (E); a Produto without the value a Filtro reads
- * never passes it while it is active, as on EyeJoker.
+ * never passes it while it is active, as on the Fonte.
  */
 
 /** One choice of a list Filtro; `id` is its name in the link (`formato=simetrico`). */
@@ -22,7 +22,7 @@ type DefinitionBase = {
   label: string;
 };
 
-/** Named groups with their own rule, EyeJoker's cuts (connection, size by volume). */
+/** Named groups with their own rule, the Fonte's cuts (connection, size by volume). */
 export type BucketsDefinition = DefinitionBase & {
   kind: "buckets";
   buckets: readonly FilterChoice[];
@@ -84,7 +84,7 @@ export function booleanValue(product: Product, fieldKey: string): boolean | unde
 /** "PAW3360" before "PAW3950", and case or accents never split the order. */
 const choiceLabelOrder = new Intl.Collator("pt-BR", { numeric: true, sensitivity: "base" });
 
-/** The field's values some Produto has, by label: EyeJoker's own option order is not sorted. */
+/** The field's values some Produto has, by label: the Fonte's own option order is not sorted. */
 function optionChoices(field: Field, products: readonly Product[]): FilterChoice[] {
   if (field.type !== "enum") return [];
   const used = new Set(products.flatMap((product) => enumValues(product, field.key)));

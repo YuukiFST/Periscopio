@@ -75,7 +75,7 @@ export function ProductDetail({
         ))}
         {!hasMeasurements && (
           <p className="max-w-prose text-muted-foreground">
-            O EyeJoker ainda não publicou medições deste produto.
+            Ainda não há medições publicadas deste produto.
           </p>
         )}
       </div>

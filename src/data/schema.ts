@@ -19,7 +19,7 @@ export type FieldGroup = z.infer<typeof fieldGroupSchema>;
 const fieldKeySchema = z.string().min(1);
 const unitSchema = z.string().min(1).nullable();
 
-/** `label` is null for a value EyeJoker uses but leaves out of its option list. */
+/** `label` is null for a value the Fonte uses but leaves out of its option list. */
 export const fieldOptionSchema = z.strictObject({
   value: z.string().min(1),
   label: localizedTextSchema.nullable(),
@@ -87,7 +87,7 @@ export const productSchema = z.strictObject({
 });
 export type Product = z.infer<typeof productSchema>;
 
-/** EyeJoker's `reviewed` is the published review; every other status still awaits a full test. */
+/** The Fonte's `reviewed` is the published review; every other status still awaits a full test. */
 export function isTested(product: Pick<Product, "status">): boolean {
   return product.status === "reviewed";
 }

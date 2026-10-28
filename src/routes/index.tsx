@@ -90,8 +90,7 @@ function HomePage() {
               Periscópio
             </h1>
             <p className="text-muted-foreground">
-              Medições, especificações e preços de mouses, teclados e monitores do EyeJoker, em
-              português.
+              Medições, especificações e preços de mouses, teclados e monitores, em português.
             </p>
             <UpdatedAtLabel meta={meta} />
           </div>
@@ -139,7 +138,7 @@ function HomePage() {
                     items={(loaded) =>
                       recentProductItems(recent, loaded.categories).slice(0, homeRecentProductCount)
                     }
-                    emptyText="Os produtos que você viu não estão mais no EyeJoker."
+                    emptyText="Os produtos que você viu não estão mais nos dados."
                   />
                 </ProductListSection>
               )}
@@ -149,7 +148,7 @@ function HomePage() {
                     load={load}
                     onRetry={ensureLoaded}
                     items={() => favorites.slice(0, homeFavoriteProductCount)}
-                    emptyText="Os produtos favoritos não estão mais no EyeJoker."
+                    emptyText="Os produtos favoritos não estão mais nos dados."
                   />
                 </ProductListSection>
               )}

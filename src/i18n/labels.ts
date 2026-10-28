@@ -2,12 +2,12 @@ import type { Field, LocalizedText } from "../data/schema.ts";
 import { fieldLabelsPt, unitLabelsPt } from "./pt-field-labels.ts";
 import { valueLabelsPt } from "./pt-value-labels.ts";
 
-/** EyeJoker's own label in the order pt falls back to: en, then ko. */
+/** The Fonte's own label in the order pt falls back to: en, then ko. */
 function eyejokerLabel(label: LocalizedText | null): string | undefined {
   return label?.en || label?.ko || undefined;
 }
 
-/** A field's label: pt, then EyeJoker's en, ko, then the raw key. */
+/** A field's label: pt, then the Fonte's en, ko, then the raw key. */
 export function fieldLabel(field: Field): string {
   return fieldLabelsPt[field.key] ?? eyejokerLabel(field.label) ?? field.key;
 }
@@ -18,10 +18,10 @@ export function unitLabel(unit: string | null): string {
   return unitLabelsPt[unit] ?? unit;
 }
 
-/** An id such as `huanoMicroWhiteDot`, which EyeJoker sometimes gives as the label, maybe followed by words. */
+/** An id such as `huanoMicroWhiteDot`, which the Fonte sometimes gives as the label, maybe followed by words. */
 const camelCaseId = /^[a-z]+(?:[A-Z0-9][a-z0-9]+)+(?= |$)/;
 const acronyms = new Set(["ttc"]);
-/** Brands whose ids lose the casing EyeJoker gives them elsewhere. */
+/** Brands whose ids lose the casing the Fonte gives them elsewhere. */
 const brandCasing: Readonly<Record<string, string>> = { chanfen: "ChanFen", himake: "HIMAKE" };
 
 /** `huanoMicroWhiteDot` as "Huano Micro White Dot", so a raw id reads as a name. */
@@ -40,7 +40,7 @@ function readableId(label: string): string {
   );
 }
 
-/** One ENUM or short-text value: pt, then EyeJoker's en, ko, then the raw value. */
+/** One ENUM or short-text value: pt, then the Fonte's en, ko, then the raw value. */
 export function valueLabel(field: Field, value: string): string {
   const pt = valueLabelsPt[field.key]?.[value];
   if (pt !== undefined) return pt;

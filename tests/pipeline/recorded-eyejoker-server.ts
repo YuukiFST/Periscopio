@@ -8,7 +8,7 @@ const fixturesDir = join(import.meta.dirname, "fixtures");
 
 export type RecordedResponse = { status: number; contentType: string; body: Uint8Array | string };
 
-/** Path to response, as recorded from EyeJoker; tests edit a copy per case. */
+/** Path to response, as recorded from the Fonte; tests edit a copy per case. */
 export type RecordedRoutes = Map<string, RecordedResponse>;
 
 export const snapshotPath = (category: "mouse" | "keyboard" | "monitor") =>
@@ -128,7 +128,7 @@ export type RecordedEyejokerServer = {
   close: () => Promise<void>;
 };
 
-/** Serves the recorded EyeJoker excerpt and Cotação on a free local port; unknown paths answer 404. */
+/** Serves the recorded Fonte excerpt and Cotação on a free local port; unknown paths answer 404. */
 export async function startRecordedEyejokerServer(
   routes: RecordedRoutes,
 ): Promise<RecordedEyejokerServer> {

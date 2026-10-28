@@ -39,7 +39,7 @@ export function enumValueChoices(
 }
 
 /**
- * Com fio and Sem fio, each also matching EyeJoker's "유무선" (cable and
+ * Com fio and Sem fio, each also matching the Fonte's "유무선" (cable and
  * receiver): a Produto that works both ways answers either choice, and
  * leaving both unmarked shows every Produto.
  */
@@ -77,7 +77,7 @@ function overallRatingFilter(ratingKey: string): BucketsDefinition {
     buckets: [
       ...enumValueChoices(ratingKey, ratingIds),
       {
-        // EyeJoker's "등급외" holds every grade outside S to D (its Impecável to Tier 4).
+        // The Fonte's "등급외" holds every grade outside S to D (its Impecável to Tier 4).
         id: "sem-nota",
         label: ptValueLabel(ratingKey, "UNRATED"),
         matches: (product) =>
@@ -102,7 +102,7 @@ const recommendationFilter: BucketsDefinition = {
 
 /**
  * Preço in thousands of won, so "50" is ₩ 50 mil and a typed "50.000" never
- * reads as ₩ 50; EyeJoker leaves discontinued Produtos out of every price band.
+ * reads as ₩ 50; the Fonte leaves discontinued Produtos out of every price band.
  */
 const priceFilter: FilterDefinition = {
   kind: "range",
@@ -121,7 +121,7 @@ const overallRatingKeys: Record<CategorySlug, string> = {
   monitor: "overallRatingMonitor",
 };
 
-/** Nota geral, Recomendação and Preço, in EyeJoker's order. */
+/** Nota geral, Recomendação and Preço, in the Fonte's order. */
 export function commonFilters(category: CategorySlug): FilterDefinition[] {
   return [overallRatingFilter(overallRatingKeys[category]), recommendationFilter, priceFilter];
 }

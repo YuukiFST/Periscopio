@@ -2,7 +2,7 @@ import { expect, test, type Page } from "@playwright/test";
 
 /**
  * Runs against the production build served with the data the pipeline
- * generates from the recorded EyeJoker excerpt (`serve-fixture-build.ts`).
+ * generates from the recorded Fonte excerpt (`serve-fixture-build.ts`).
  */
 
 const huanId = "201270eb-b392-4e41-96a9-1b609a77e795";

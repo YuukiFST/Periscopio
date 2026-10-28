@@ -44,7 +44,7 @@ async function makeTempDir(): Promise<string> {
 
 type CliRun = { exitCode: number; stdout: string; stderr: string; requestedPaths: string[] };
 
-/** Runs `pipeline/update-data.ts` against the recorded EyeJoker, as `pnpm update-data` does. */
+/** Runs `pipeline/update-data.ts` against the recorded Fonte, as `pnpm update-data` does. */
 async function runUpdateCli(
   routes: RecordedRoutes,
   outDir: string,
@@ -91,7 +91,7 @@ async function listPhotos(imagesDir: string): Promise<string> {
   return `${lines.join("\n")}\n`;
 }
 
-describe("an Atualização against the recorded EyeJoker excerpt", () => {
+describe("an Atualização against the recorded Fonte excerpt", () => {
   let outDir: string;
   let summary: string;
   let run: CliRun;
@@ -159,7 +159,7 @@ type Refusal = {
 
 const refusals: Refusal[] = [
   {
-    name: "EyeJoker answers with an error",
+    name: "the Fonte answers with an error",
     edit: (routes) =>
       routes.set(snapshotPath("keyboard"), {
         status: 503,
@@ -328,7 +328,7 @@ test("the first Atualização over data published before the Novidade dates mark
   const mouse = categoryDataSchema.parse(JSON.parse(await readFile(mousePath, "utf8")));
   await writeFile(mousePath, JSON.stringify(mouse, withoutNovidadeDates));
 
-  // EyeJoker now lists the new mouse back and the other one as tested.
+  // The Fonte now lists the new mouse back and the other one as tested.
   const run = await runUpdateCli(await loadRecordedRoutes(), outDir, null);
   expect(run.exitCode).toBe(0);
   const { dates } = await readNovidadeDates(outDir);

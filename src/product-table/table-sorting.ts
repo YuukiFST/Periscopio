@@ -1,6 +1,6 @@
 import type { SortEntry } from "./table-columns.ts";
 
-/** `ordem=nenhuma` keeps EyeJoker's own order; no `ordem` means the default sort. */
+/** `ordem=nenhuma` keeps the Fonte's own order; no `ordem` means the default sort. */
 export const unsortedParam = "nenhuma";
 
 /** Shape of `ordem`: column slugs or field keys, comma-separated, `-` for descending. */
