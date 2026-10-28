@@ -1,6 +1,6 @@
 import { getRouteApi } from "@tanstack/react-router";
 import { ChevronDown } from "lucide-react";
-import { useEffect, useId, useMemo, useRef } from "react";
+import { useEffect, useId, useMemo, useRef, useState } from "react";
 import { categoryLabels } from "@/categories";
 import { CopyLinkButton } from "@/components/copy-link-button";
 import type { CategoryData } from "@/data/schema";
@@ -27,6 +27,7 @@ import {
   type ChartAxisGroup,
 } from "./chart-axes";
 import { bestTradeOffsOf, chartPointsOf, type ChartPoint } from "./chart-points";
+import { BestTradeOffList } from "./best-trade-off-list";
 import { ScatterPlot } from "./scatter-plot";
 import type { TableSearch } from "@/product-table/table-search";
 
@@ -108,6 +109,7 @@ export function ProductChart({ data, search, onAxisChange }: ProductChartProps) 
 
   const headingId = useId();
   const plotTitleId = useId();
+  const [emphasizedId, setEmphasizedId] = useState<string>();
   const leftOut = products.length - points.length;
   return (
     // The plot's height follows its width, so a scrollbar coming and going must not change the width.
@@ -162,7 +164,18 @@ export function ProductChart({ data, search, onAxisChange }: ProductChartProps) 
             yAxis={yAxis}
             tableSearch={tableSearch}
             labelledBy={plotTitleId}
+            emphasizedId={emphasizedId}
           />
+          {bestTradeOffs && bestTradeOffs.length > 0 && (
+            <BestTradeOffList
+              category={data.category}
+              bestTradeOffs={bestTradeOffs}
+              xAxis={xAxis}
+              yAxis={yAxis}
+              tableSearch={tableSearch}
+              onEmphasize={setEmphasizedId}
+            />
+          )}
           <ChartDataTable
             points={points}
             bestTradeOffs={bestTradeOffs}
