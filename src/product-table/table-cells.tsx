@@ -1,6 +1,5 @@
 import { getRouteApi, Link } from "@tanstack/react-router";
 import { Star } from "lucide-react";
-import type { ReactNode } from "react";
 import type { TableDensity } from "@/appearance/appearance";
 import type { Product } from "@/data/schema";
 import { manufacturerName } from "@/i18n/labels";
@@ -16,7 +15,6 @@ import {
   isCountEnum,
   priceOf,
 } from "./cell-values";
-import { rangePositionOf } from "./field-range";
 import { novidadeLabels, novidadeOf } from "./novidades";
 import type { TableColumn } from "./table-columns";
 
@@ -174,31 +172,6 @@ export function ProductCell({
   );
 }
 
-/**
- * `children` over a faint bar as long as the value's place in the Categoria,
- * from 0 (its worst value) to 1 (its best), on the Pontuação bar's fill.
- * Without a place, `children` alone.
- */
-export function RangeBar({
-  position,
-  children,
-}: {
-  position: number | undefined;
-  children: ReactNode;
-}) {
-  if (position === undefined) return children;
-  return (
-    <span className="relative block">
-      <span
-        aria-hidden="true"
-        className="absolute inset-y-0 start-0 rounded-xs bg-muted-foreground/15 forced-colors:hidden"
-        style={{ width: `${position * 100}%` }}
-      />
-      <span className="relative">{children}</span>
-    </span>
-  );
-}
-
 export function TableCellValue({ column, product }: { column: TableColumn; product: Product }) {
   switch (column.kind) {
     case "product":
@@ -225,18 +198,16 @@ export function TableCellValue({ column, product }: { column: TableColumn; produ
         ? formatDeviation(column.deviation, product.values[column.deviation.key])
         : undefined;
       return (
-        <RangeBar position={rangePositionOf(column.range, column.field, value)}>
-          <span className="font-mono text-caption whitespace-nowrap">
-            {text}
-            {deviation !== undefined && (
-              <span className="text-muted-foreground">
-                {" "}
-                <span aria-hidden="true">σ</span>
-                <span className="sr-only">desvio padrão</span> {deviation}
-              </span>
-            )}
-          </span>
-        </RangeBar>
+        <span className="font-mono text-caption whitespace-nowrap">
+          {text}
+          {deviation !== undefined && (
+            <span className="text-muted-foreground">
+              {" "}
+              <span aria-hidden="true">σ</span>
+              <span className="sr-only">desvio padrão</span> {deviation}
+            </span>
+          )}
+        </span>
       );
     }
   }

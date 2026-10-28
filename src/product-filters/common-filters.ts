@@ -38,6 +38,18 @@ export function enumValueChoices(
   );
 }
 
+/**
+ * Com fio and Sem fio, each also matching EyeJoker's "유무선" (cable and
+ * receiver): a Produto that works both ways answers either choice, and
+ * leaving both unmarked shows every Produto.
+ */
+export function connectionChoices(fieldKey: string): FilterChoice[] {
+  return [
+    enumChoice("com-fio", ptValueLabel(fieldKey, "유선"), fieldKey, ["유선", "유무선"]),
+    enumChoice("sem-fio", ptValueLabel(fieldKey, "무선"), fieldKey, ["무선", "유무선"]),
+  ];
+}
+
 export function booleanChoice(
   id: string,
   label: string,

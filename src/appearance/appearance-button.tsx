@@ -32,7 +32,7 @@ export function AppearanceButton() {
           collisionPadding={8}
           className="z-50"
         >
-          <Popover.Popup className="flex w-max max-w-[calc(100vw-1rem)] flex-col gap-4 rounded-2xl bg-popover p-4 text-body text-popover-foreground shadow-surface-5 transition-[opacity,scale] duration-150 ease-out-quint outline-none origin-(--transform-origin) data-ending-style:scale-[0.98] data-ending-style:opacity-0 data-starting-style:scale-[0.98] data-starting-style:opacity-0 motion-reduce:data-ending-style:scale-100 motion-reduce:data-starting-style:scale-100">
+          <Popover.Popup className="flex w-max max-w-[calc(100vw-1rem)] flex-col gap-4 rounded-2xl border border-transparent bg-popover p-4 text-body text-popover-foreground shadow-surface-5 transition-[opacity,scale] duration-150 ease-out-quint outline-none origin-(--transform-origin) data-ending-style:scale-[0.98] data-ending-style:opacity-0 data-starting-style:scale-[0.98] data-starting-style:opacity-0 motion-reduce:data-ending-style:scale-100 motion-reduce:data-starting-style:scale-100">
             <Popover.Title className="font-medium">Aparência</Popover.Title>
             <div className="flex flex-col gap-1.5">
               <p aria-hidden="true" className="text-caption text-muted-foreground">

@@ -1,19 +1,12 @@
-import type { Product } from "../data/schema.ts";
 import { enumValues, type FilterDefinition } from "./filter-engine.ts";
-import { booleanChoice, enumChoice, enumValueChoices } from "./common-filters.ts";
+import {
+  booleanChoice,
+  connectionChoices,
+  enumChoice,
+  enumValueChoices,
+} from "./common-filters.ts";
 
 const namedLayouts = ["tkl", "75%", "65%", "60%", "full", "96%"];
-
-/**
- * EyeJoker's "하우징 소재" splits keyboards into aluminium, plastic, both, and
- * the rest; the data lists each material, so the set of materials decides.
- */
-function housingIs(materials: readonly string[]): (product: Product) => boolean {
-  return (product) => {
-    const values = new Set(enumValues(product, "housingKeyboard"));
-    return values.size === materials.length && materials.every((material) => values.has(material));
-  };
-}
 
 /**
  * EyeJoker's keyboard Filtros (`na` in its bundle), in its order; Desempenho
@@ -43,24 +36,16 @@ export const keyboardFilters: readonly FilterDefinition[] = [
     kind: "buckets",
     param: "conexao",
     label: "Conexão",
-    buckets: enumValueChoices("connectionType", {
-      유선: "com-fio",
-      무선: "sem-fio",
-      유무선: "com-e-sem-fio",
-    }),
+    buckets: connectionChoices("connectionType"),
   },
   {
     kind: "buckets",
     param: "material",
     label: "Material da carcaça",
     buckets: [
-      { id: "aluminio", label: "Alumínio", matches: housingIs(["aluminum"]) },
-      { id: "plastico", label: "Plástico", matches: housingIs(["plastic"]) },
-      {
-        id: "aluminio-plastico",
-        label: "Alumínio e plástico",
-        matches: housingIs(["aluminum", "plastic"]),
-      },
+      // A housing of both materials answers either choice, like Conexão.
+      enumChoice("aluminio", "Alumínio", "housingKeyboard", ["aluminum"]),
+      enumChoice("plastico", "Plástico", "housingKeyboard", ["plastic"]),
       {
         id: "outro",
         label: "Outro",

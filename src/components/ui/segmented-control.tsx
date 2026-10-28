@@ -30,7 +30,8 @@ export function SegmentedControl<Value>({
             <input
               type="radio"
               name={name}
-              className="peer absolute inset-0 z-10 cursor-pointer appearance-none rounded-lg opacity-0"
+              // On touch it also takes the track's padding, so a tap there still picks the option.
+              className="peer absolute inset-0 z-10 cursor-pointer pointer-coarse:-inset-y-1 appearance-none rounded-lg opacity-0"
               checked={isChecked}
               onChange={() => onValueChange(option.value)}
             />
@@ -39,11 +40,14 @@ export function SegmentedControl<Value>({
                 aria-hidden="true"
                 layoutId={`${name}-selected`}
                 transition={spring.moderate}
-                className={`absolute inset-0 rounded-lg ${surfaceClasses(4)} forced-colors:border forced-colors:border-[Highlight]`}
+                // Set as a style, Motion corrects the corners while the pill stretches between options.
+                style={{ borderRadius: 8 }}
+                // In dark the pill and the track are near in lightness, so an edge marks the choice.
+                className={`absolute inset-0 ${surfaceClasses(4)} dark:ring-1 dark:ring-input forced-colors:border forced-colors:border-[Highlight]`}
               />
             )}
             {/* The input covers the label, so hover reaches it as peer-hover. */}
-            <span className="relative flex h-7 cursor-pointer items-center rounded-lg px-2.5 font-medium whitespace-nowrap text-muted-foreground transition-colors duration-80 select-none pointer-coarse:h-9 peer-checked:text-foreground peer-hover:text-foreground peer-focus-visible:outline-1 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-focus-ring sm:px-3">
+            <span className="relative flex h-7 cursor-pointer items-center rounded-lg px-2.5 font-medium whitespace-nowrap text-muted-foreground transition-colors duration-80 select-none pointer-coarse:h-8 peer-checked:text-foreground peer-hover:text-foreground peer-focus-visible:outline-1 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-focus-ring sm:px-3">
               {option.label}
             </span>
           </label>

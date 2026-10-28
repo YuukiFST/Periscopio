@@ -1,45 +1,57 @@
 - complementary "Filtros":
     - heading "Filtros" [level=2]
-    - button "Limpar" [disabled]
-    - group "Atalhos":
-        - button "Sem fio leve"
-    - button "Salvar filtros atuais" [disabled]
-    - text: Nota geral
-    - combobox "Nota geral": Todas
-    - text: Recomendação
-    - combobox "Recomendação": Todas
-    - group "Preço (mil ₩)":
-        - text: Preço (mil ₩) Mínimo
-        - textbox "Mínimo"
-        - text: Máximo
-        - textbox "Máximo"
-    - text: Formato
-    - combobox "Formato": Todas
-    - text: Tamanho
-    - combobox "Tamanho": Todas
-    - text: Conexão
-    - combobox "Conexão": Todas
-    - group "Peso (g)":
-        - text: Peso (g) Mínimo
-        - textbox "Mínimo"
-        - text: Máximo
-        - textbox "Máximo"
-    - text: Sensor
-    - combobox "Sensor": Todas
-    - group "Resposta do sensor (ms)":
-        - text: Resposta do sensor (ms) Mínimo
-        - textbox "Mínimo"
-        - text: Máximo
-        - textbox "Máximo"
-    - group "Resposta do clique (ms)":
-        - text: Resposta do clique (ms) Mínimo
-        - textbox "Mínimo"
-        - text: Máximo
-        - textbox "Máximo"
-    - group "Velocidade máxima de rastreio (IPS)":
-        - text: Velocidade máxima de rastreio (IPS) Mínimo
-        - textbox "Mínimo"
-        - text: Máximo
-        - textbox "Máximo"
-    - text: Carcaça furada
-    - combobox "Carcaça furada": Todas
+    - button "Limpar filtros" [disabled]
+    - region "Geral":
+        - heading "Geral" [level=3]
+        - text: Nota geral
+        - combobox "Nota geral": Qualquer
+        - text: Recomendação
+        - combobox "Recomendação": Qualquer
+        - group "Preço (mil ₩)":
+            - text: ""
+            - textbox "Mínimo"
+            - textbox "Máximo"
+    - region "Construção":
+        - heading "Construção" [level=3]
+        - text: Formato
+        - group "Formato":
+            - button "Simétrico"
+            - button "Assimétrico"
+        - text: Tamanho
+        - group "Tamanho":
+            - button "Pequeno"
+            - button "Médio"
+            - button "Grande"
+        - text: Conexão
+        - group "Conexão":
+            - button "Com fio"
+            - button "Sem fio"
+        - group "Peso (g)":
+            - text: ""
+            - textbox "Mínimo"
+            - textbox "Máximo"
+        - text: Carcaça furada
+        - group "Carcaça furada":
+            - button "Sim"
+            - button "Não"
+            - button "Só embaixo"
+    - region "Desempenho":
+        - heading "Desempenho" [level=3]
+        - text: Sensor
+        - group "Sensor":
+            - button "PAW3395"
+            - button "PAW3950"
+            - button "PAW3950 HS"
+            - button /PAW3950 Ultra \([\d,.]+[bkmBKM]+\)/
+        - group "Resposta do sensor (ms)":
+            - text: ""
+            - textbox "Mínimo"
+            - textbox "Máximo"
+        - group "Resposta do clique (ms)":
+            - text: ""
+            - textbox "Mínimo"
+            - textbox "Máximo"
+        - group "Velocidade máxima de rastreio (IPS)":
+            - text: ""
+            - textbox "Mínimo"
+            - textbox "Máximo"

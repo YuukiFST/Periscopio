@@ -21,28 +21,32 @@ const buttonVariants = cva(
     // whitespace-nowrap: a label never breaks onto 2 lines. It also makes
     // the label the button's narrowest width, so a tight row moves the
     // button (or overflows) instead of squeezing it.
-    "group relative isolate inline-flex items-center justify-center outline-none cursor-pointer select-none whitespace-nowrap",
+    "group relative isolate inline-flex items-center justify-center cursor-pointer select-none whitespace-nowrap",
     "transition-colors duration-80",
     // Base UI's focusableWhenDisabled keeps the button focusable and marks it
     // data-disabled instead of disabled.
     "disabled:opacity-50 disabled:pointer-events-none data-disabled:opacity-50 data-disabled:pointer-events-none",
-    "focus-visible:ring-1 focus-visible:ring-[color:var(--focus-ring,#6B97FF)]",
+    // outline-hidden keeps a transparent outline that forced colors paints, where the ring is dropped.
+    "focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-[color:var(--focus-ring,#6B97FF)]",
   ],
   {
     variants: {
       variant: {
         primary: "text-background",
         secondary: "text-foreground",
-        tertiary: "text-foreground",
+        // Forced colors drops the shadow that draws the edge, so a border stands in.
+        tertiary: "text-foreground forced-colors:border forced-colors:border-[ButtonBorder]",
         ghost: "text-muted-foreground hover:text-foreground",
       },
       // The two-step size ladder shared by every control — see /docs/sizes.
-      // default = 36px control height, compact = 28px for dense surfaces.
+      // default = 36px control height, compact = 28px for dense surfaces;
+      // a touch screen raises the default to 40px, like Input and the Filtro fields.
       size: {
-        default: "h-9 px-4 text-[length:var(--fs-body,13px)] leading-[var(--lh-body,20px)] gap-1.5",
+        default:
+          "h-9 pointer-coarse:h-10 px-4 text-[length:var(--fs-body,13px)] leading-[var(--lh-body,20px)] gap-1.5",
         compact:
           "h-7 px-3 text-[length:var(--fs-body-compact,12px)] leading-[var(--lh-body-compact,18px)] gap-1",
-        icon: "h-9 w-9 p-0 [&_svg]:h-4 [&_svg]:w-4",
+        icon: "h-9 w-9 pointer-coarse:size-10 p-0 [&_svg]:h-4 [&_svg]:w-4",
         "icon-compact": "h-7 w-7 p-0 [&_svg]:h-3.5 [&_svg]:w-3.5",
       },
       iconLeft: { true: "" },
@@ -217,7 +221,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
             bgClass,
           )}
         />
-        <span className="relative inline-flex items-center justify-center gap-[inherit]">
+        <span className="relative inline-flex min-w-0 items-center justify-center gap-[inherit]">
           {loading ? (
             <>
               <span className="flex items-center justify-center gap-[inherit] opacity-0">
@@ -259,7 +263,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
                   on the label span (a blockified flex item), not the flex root.
                   The button's height is fixed (h-*), so this doesn't change
                   layout — it just centers the cap-to-baseline box optically. */}
-              <span className="[text-box:trim-both_cap_alphabetic]">{label}</span>
+              <span className="min-w-0 [text-box:trim-both_cap_alphabetic]">{label}</span>
               {TrailingIcon && (
                 <TrailingIcon
                   size={iconSize}

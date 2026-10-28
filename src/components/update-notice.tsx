@@ -1,4 +1,4 @@
-import { Sparkles, TriangleAlert, X } from "lucide-react";
+import { Sparkles, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { z } from "zod";
 import type { CategorySlug } from "@/categories";
@@ -6,40 +6,14 @@ import { Button } from "@/components/ui/button";
 import type { Meta } from "@/data/schema";
 import type { NovidadeCounts } from "@/product-table/novidades";
 
-const dayMs = 24 * 60 * 60 * 1000;
-/** The weekly Atualização runs every Monday; past 8 days, one was missed. */
-const staleAfterDays = 8;
 const dateFormat = new Intl.DateTimeFormat("pt-BR", { dateStyle: "long" });
 
-export type UpdateAge = { date: string; ageDays: number; isStale: boolean };
-
-export function updateAgeOf(meta: Meta, now: number): UpdateAge {
-  const updatedAt = new Date(meta.updatedAt);
-  const ageMs = now - updatedAt.getTime();
-  return {
-    date: dateFormat.format(updatedAt),
-    ageDays: Math.floor(ageMs / dayMs),
-    isStale: ageMs > staleAfterDays * dayMs,
-  };
-}
-
-export function UpdatedAtLabel({ age }: { age: UpdateAge }) {
-  return <p className="text-caption text-muted-foreground">Atualizado em {age.date}</p>;
-}
-
-export function StaleDataAlert({ age }: { age: UpdateAge }) {
+/** The date of the last Atualização, small, so it never pushes the content down. */
+export function UpdatedAtLabel({ meta }: { meta: Meta }) {
   return (
-    <div className="flex items-start gap-2 rounded-lg bg-amber-500/10 px-3 py-2 text-body text-foreground">
-      <TriangleAlert
-        aria-hidden="true"
-        strokeWidth={1.5}
-        className="mt-0.5 size-4 shrink-0 text-amber-700 dark:text-amber-400"
-      />
-      <p className="max-w-prose">
-        <strong className="font-medium">Dados desatualizados:</strong> a última atualização foi em{" "}
-        {age.date}, há {age.ageDays} dias. Os preços e as medições podem ter mudado no EyeJoker.
-      </p>
-    </div>
+    <p className="text-caption text-muted-foreground">
+      Atualizado em {dateFormat.format(new Date(meta.updatedAt))}
+    </p>
   );
 }
 
@@ -120,14 +94,15 @@ export function NovidadesNotice({
   onDismiss: () => void;
 }) {
   return (
-    <div className="flex items-center gap-2 rounded-lg bg-blue-500/10 py-1 ps-3 pe-1 text-body text-foreground">
-      <Sparkles
-        aria-hidden="true"
-        strokeWidth={1.5}
-        className="size-4 shrink-0 text-blue-600 dark:text-blue-400"
-      />
-      <p className="min-w-0 flex-1">{novidadesNoticeText(counts)}</p>
-      <Button variant="ghost" onClick={onShow} className="text-blue-600 dark:text-blue-400">
+    // On a phone the buttons drop under the sentence, so it is not read a word per line.
+    <div className="flex flex-wrap items-center gap-x-2 rounded-xl bg-novidade-subtle py-1 ps-3 pe-1 text-body text-foreground">
+      <Sparkles aria-hidden="true" strokeWidth={1.5} className="size-4 shrink-0 text-novidade" />
+      <p className="min-w-0 flex-1 basis-48">{novidadesNoticeText(counts)}</p>
+      <Button
+        variant="ghost"
+        onClick={onShow}
+        className="ms-auto text-novidade hover:text-novidade"
+      >
         Ver novidades
       </Button>
       <Button variant="ghost" size="icon" aria-label="Fechar aviso" onClick={onDismiss}>

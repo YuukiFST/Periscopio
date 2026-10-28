@@ -23,14 +23,18 @@ export function RecentProductLink({
       search={keepsTableSearch ? true : undefined}
       state={keepsTableSearch ? { fromCategoryTable: true } : undefined}
       onClick={onClick}
-      className="flex items-center gap-3 rounded-lg px-3 py-2 text-body hover:bg-hover focus-visible:bg-hover focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-ring active:bg-active"
+      // Pressed, the quieter text turns full strength: bg-active over a popover is too close to it.
+      className="group flex items-start gap-3 rounded-lg px-3 py-2 text-body hover:bg-hover focus-visible:bg-hover focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-ring active:bg-active"
     >
       <ProductPhoto key={product.image} src={product.image} alt="" size="row" loading="lazy" />
       <span className="flex min-w-0 flex-1 flex-col">
-        <span className="truncate font-medium">{product.name}</span>
-        <span className="text-muted-foreground">{categoryLabels[category]}</span>
+        {/* Whole: names that differ only at the end, like PG32UCDM and PG32UCDP, stay apart. */}
+        <span className="font-medium wrap-anywhere">{product.name}</span>
+        <span className="text-muted-foreground group-active:text-foreground">
+          {categoryLabels[category]}
+        </span>
       </span>
-      <span className="shrink-0 whitespace-nowrap tabular-nums text-muted-foreground">
+      <span className="shrink-0 whitespace-nowrap tabular-nums text-muted-foreground group-active:text-foreground">
         {price === undefined ? "Sem preço" : formatPrice(price)}
       </span>
     </Link>

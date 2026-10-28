@@ -1,39 +1,50 @@
 - complementary "Filtros":
     - heading "Filtros" [level=2]
-    - button "Limpar" [disabled]
-    - group "Atalhos":
-        - button /\d+ Hz ou mais/
-        - button "OLED"
-    - button "Salvar filtros atuais" [disabled]
-    - text: Nota geral
-    - combobox "Nota geral": Todas
-    - text: Recomendação
-    - combobox "Recomendação": Todas
-    - group "Preço (mil ₩)":
-        - text: Preço (mil ₩) Mínimo
-        - textbox "Mínimo"
-        - text: Máximo
-        - textbox "Máximo"
-    - group "Tamanho da tela (pol.)":
-        - text: Tamanho da tela (pol.) Mínimo
-        - textbox "Mínimo"
-        - text: Máximo
-        - textbox "Máximo"
-    - text: Resolução
-    - combobox "Resolução": Todas
-    - group "Taxa de atualização (Hz)":
-        - text: Taxa de atualização (Hz) Mínimo
-        - textbox "Mínimo"
-        - text: Máximo
-        - textbox "Máximo"
-    - group "Resposta geral (ms)":
-        - text: Resposta geral (ms) Mínimo
-        - textbox "Mínimo"
-        - text: Máximo
-        - textbox "Máximo"
-    - text: Painel
-    - combobox "Painel": Todas
-    - text: Certificação HDR
-    - combobox "Certificação HDR": Todas
-    - text: Escurecimento da retroiluminação
-    - combobox "Escurecimento da retroiluminação": Todas
+    - button "Limpar filtros" [disabled]
+    - region "Geral":
+        - heading "Geral" [level=3]
+        - text: Nota geral
+        - combobox "Nota geral": Qualquer
+        - text: Recomendação
+        - combobox "Recomendação": Qualquer
+        - group "Preço (mil ₩)":
+            - text: ""
+            - textbox "Mínimo"
+            - textbox "Máximo"
+    - region "Tela":
+        - heading "Tela" [level=3]
+        - group "Tamanho da tela (pol.)":
+            - text: ""
+            - textbox "Mínimo"
+            - textbox "Máximo"
+        - text: Resolução
+        - group "Resolução":
+            - button /FHD \(\d+×\d+\)/
+            - button /QHD \(\d+×\d+\)/
+            - button /UHD \(\d+×\d+\)/
+            - button "Ultrawide"
+        - text: Painel
+        - group "Painel":
+            - button "TN"
+            - button "VA"
+            - button "IPS"
+            - button "OLED"
+        - group "Taxa de atualização (Hz)":
+            - text: ""
+            - textbox "Mínimo"
+            - textbox "Máximo"
+    - region "Imagem":
+        - heading "Imagem" [level=3]
+        - group "Resposta geral (ms)":
+            - text: ""
+            - textbox "Mínimo"
+            - textbox "Máximo"
+        - text: Certificação HDR
+        - group "Certificação HDR":
+            - button /True Black \d+/
+            - button /True Black \d+/
+            - button /True Black \d+ ou mais/
+            - button "DisplayHDR comum"
+        - text: Escurecimento da retroiluminação
+        - group "Escurecimento da retroiluminação":
+            - button "Mini LED"

@@ -16,7 +16,7 @@ const sidePanelQuery = "(min-width: 64rem)";
 const countFormat = new Intl.NumberFormat("pt-BR");
 
 function showProductsText(count: number): string {
-  if (count === 0) return "Fechar filtros";
+  if (count === 0) return "Fechar (nenhum produto)";
   return count === 1 ? "Ver 1 produto" : `Ver ${countFormat.format(count)} produtos`;
 }
 
@@ -56,7 +56,7 @@ export function FilterDrawer({ activeCount, resultCount, onClear, children }: Fi
         {activeCount === 0 ? "Filtros" : `Filtros (${activeCount})`}
       </DrawerTrigger>
       <DrawerContent className="border-transparent text-body shadow-surface-5">
-        <DrawerHeader className="flex-row items-center justify-between gap-4 border-b border-border/60 px-4 pt-2 pb-3 group-data-[swipe-axis=y]/drawer-popup:text-start">
+        <DrawerHeader className="flex-row items-center justify-between gap-4 border-b border-border px-4 pt-0 pb-3 group-data-[swipe-axis=y]/drawer-popup:text-start">
           <DrawerTitle className="text-title">Filtros</DrawerTitle>
           <Button
             variant="ghost"
@@ -65,7 +65,7 @@ export function FilterDrawer({ activeCount, resultCount, onClear, children }: Fi
             onClick={onClear}
             className="-me-2 pe-2"
           >
-            Limpar
+            Limpar filtros
           </Button>
         </DrawerHeader>
         {/* The modal hides the toolbar's count from screen readers while open. */}
@@ -75,7 +75,7 @@ export function FilterDrawer({ activeCount, resultCount, onClear, children }: Fi
         <div className="scroll-fade-y relative min-h-0 flex-1 overflow-y-auto overscroll-contain px-4 py-4">
           {children}
         </div>
-        <DrawerFooter className="border-t border-border/60 p-4">
+        <DrawerFooter className="border-t border-border p-4">
           {/* A full-width press shrinks less, so it reads as a press and not an effect. */}
           <Button className="h-10 tabular-nums" onClick={() => setOpen(false)}>
             {showProductsText(resultCount)}

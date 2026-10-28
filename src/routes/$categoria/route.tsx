@@ -10,13 +10,7 @@ import { categoryLabels, isCategorySlug } from "@/categories";
 import { Button } from "@/components/ui/button";
 import { CopyLinkButton } from "@/components/copy-link-button";
 import { CategorySkeleton } from "@/components/loading-skeletons";
-import {
-  NovidadesNotice,
-  StaleDataAlert,
-  UpdatedAtLabel,
-  updateAgeOf,
-  useLastSeenUpdate,
-} from "@/components/update-notice";
+import { NovidadesNotice, UpdatedAtLabel, useLastSeenUpdate } from "@/components/update-notice";
 import { loadCategoryData } from "@/data/load-data";
 import {
   isPageBehindModal,
@@ -101,9 +95,10 @@ function CategoryPage() {
   );
 }
 
-const statusAdjective: Record<Exclude<TestStatusFilter, "todos">, string> = {
-  testados: "testado",
-  "nao-testados": "não testado",
+/** The Status de teste as an adjective, in the noun's gender: "produto testado", "novidade testada". */
+const statusAdjective: Record<Exclude<TestStatusFilter, "todos">, { m: string; f: string }> = {
+  testados: { m: "testado", f: "testada" },
+  "nao-testados": { m: "não testado", f: "não testada" },
 };
 
 function emptyResultText(
@@ -111,11 +106,17 @@ function emptyResultText(
   status: TestStatusFilter,
   hasFilters: boolean,
   onlyFavorites: boolean,
+  onlyNovidades: boolean,
 ): string {
-  const noun = onlyFavorites ? "Nenhum produto favorito" : "Nenhum produto";
-  const kind = status === "todos" ? noun : `${noun} ${statusAdjective[status]}`;
-  if (searchText && hasFilters) return `${kind} encontrado para “${searchText}” com esses filtros.`;
-  if (searchText) return `${kind} encontrado para “${searchText}”.`;
+  // With the Novidades shown, the text speaks of them, so it never says a Novidade is missing that isn't.
+  const gender = onlyNovidades ? "f" : "m";
+  const favorite = onlyNovidades ? "favorita" : "favorito";
+  const base = onlyNovidades ? "Nenhuma novidade" : "Nenhum produto";
+  const noun = onlyFavorites ? `${base} ${favorite}` : base;
+  const kind = status === "todos" ? noun : `${noun} ${statusAdjective[status][gender]}`;
+  const found = onlyNovidades ? "encontrada" : "encontrado";
+  if (searchText && hasFilters) return `${kind} ${found} para “${searchText}” com esses filtros.`;
+  if (searchText) return `${kind} ${found} para “${searchText}”.`;
   return hasFilters ? `${kind} com esses filtros.` : `${kind} nesta categoria.`;
 }
 
@@ -310,8 +311,6 @@ function CategoryTable({ data }: { data: CategoryData }) {
     // Produto's panel opened with it and takes focus itself.
     if (!openedWithDetail) headingRef.current?.focus();
   }, [openedWithDetail]);
-  const [openedAt] = useState(() => Date.now());
-  const updateAge = updateAgeOf(meta, openedAt);
   return (
     <div className="flex min-h-0 flex-1 flex-col gap-4">
       <div className="flex items-start justify-between gap-4">
@@ -319,11 +318,10 @@ function CategoryTable({ data }: { data: CategoryData }) {
           <h1 ref={headingRef} id={headingId} tabIndex={-1} className="text-display outline-none">
             {categoryLabel}
           </h1>
-          {!updateAge.isStale && <UpdatedAtLabel age={updateAge} />}
+          <UpdatedAtLabel meta={meta} />
         </div>
         <CopyLinkButton />
       </div>
-      {updateAge.isStale && <StaleDataAlert age={updateAge} />}
       {/* With the Novidades already shown, as from the home page's link, it has nothing to offer. */}
       {novidades !== "1" &&
         novidadeCounts !== undefined &&
@@ -337,7 +335,7 @@ function CategoryTable({ data }: { data: CategoryData }) {
       <div className="flex min-h-0 flex-1 gap-6">
         <aside
           aria-labelledby={filtersHeadingId}
-          className="scroll-fade-b relative -ms-2 hidden w-64 shrink-0 scroll-pt-12 flex-col gap-3 overflow-y-auto overscroll-contain ps-2 pe-2 pb-4 lg:flex xl:w-72"
+          className="scroll-fade-b relative -ms-2 hidden w-64 shrink-0 scroll-pt-12 flex-col gap-2 overflow-y-auto overscroll-contain ps-2 pe-2 pb-4 lg:flex xl:w-72"
         >
           <div className="sticky top-0 z-20 flex min-h-9 items-center justify-between gap-2 bg-background">
             <h2 id={filtersHeadingId} className="text-title font-medium">
@@ -350,7 +348,7 @@ function CategoryTable({ data }: { data: CategoryData }) {
               onClick={clearFilters}
               className="-me-2 pe-2"
             >
-              Limpar
+              Limpar filtros
             </Button>
           </div>
           <FilterPanel
@@ -362,66 +360,79 @@ function CategoryTable({ data }: { data: CategoryData }) {
           />
         </aside>
         <div className="flex min-w-0 flex-1 flex-col gap-4">
-          <TableToolbar
-            searchText={searchText}
-            onSearchTextChange={changeSearchText}
-            testStatus={status}
-            onTestStatusChange={(nextStatus) =>
-              void navigate({
-                unsafeRelative: "path",
-                search: (previous) => ({
-                  ...previous,
-                  status: nextStatus === defaultTestStatus ? undefined : nextStatus,
-                }),
-                replace: true,
-              })
-            }
-            novidades={
-              hasNovidades || novidades
-                ? { pressed: novidades === "1", onPressedChange: changeNovidades }
-                : undefined
-            }
-            favorites={{ pressed: favoritos === "1", onPressedChange: changeFavoritos }}
-            countText={resultCountText(products.length, data.products.length)}
-          >
-            <FilterDrawer
-              activeCount={filterCount}
-              resultCount={products.length}
-              onClear={clearFilters}
-            >
-              <FilterPanel
-                category={data.category}
-                filters={filters}
-                values={filterValues}
-                onValuesChange={changeFilterValues}
-                clearCount={clearCount}
-              />
-            </FilterDrawer>
-            <ColumnsMenu
-              groups={columnChoices.groups}
-              chosenKeys={columnKeys}
-              isDefault={columnsParamOf(columnKeys, columnChoices.defaultKeys) === undefined}
-              onChosenKeysChange={changeColumnKeys}
-              onReset={() => changeColumnKeys(columnChoices.defaultKeys)}
+          <div className="flex flex-col gap-2">
+            <TableToolbar
+              searchText={searchText}
+              onSearchTextChange={changeSearchText}
+              testStatus={status}
+              onTestStatusChange={(nextStatus) =>
+                void navigate({
+                  unsafeRelative: "path",
+                  search: (previous) => ({
+                    ...previous,
+                    status: nextStatus === defaultTestStatus ? undefined : nextStatus,
+                  }),
+                  replace: true,
+                })
+              }
+              novidades={
+                hasNovidades || novidades
+                  ? { pressed: novidades === "1", onPressedChange: changeNovidades }
+                  : undefined
+              }
+              favorites={{ pressed: favoritos === "1", onPressedChange: changeFavoritos }}
+              countText={resultCountText(products.length, data.products.length)}
+              filterButton={
+                <FilterDrawer
+                  activeCount={filterCount}
+                  resultCount={products.length}
+                  onClear={clearFilters}
+                >
+                  <FilterPanel
+                    category={data.category}
+                    filters={filters}
+                    values={filterValues}
+                    onValuesChange={changeFilterValues}
+                    clearCount={clearCount}
+                  />
+                </FilterDrawer>
+              }
+              viewActions={
+                <>
+                  <ColumnsMenu
+                    groups={columnChoices.groups}
+                    chosenKeys={columnKeys}
+                    isDefault={columnsParamOf(columnKeys, columnChoices.defaultKeys) === undefined}
+                    onChosenKeysChange={changeColumnKeys}
+                    onReset={() => changeColumnKeys(columnChoices.defaultKeys)}
+                  />
+                  <ChartLink category={data.category} />
+                </>
+              }
             />
-            <ChartLink category={data.category} />
-          </TableToolbar>
-          <ActiveFilterChips
-            filters={filters}
-            values={filterValues}
-            onValuesChange={changeFilterValues}
-            focusAfterLastId={searchInputId}
-          />
+            <ActiveFilterChips
+              filters={filters}
+              values={filterValues}
+              onValuesChange={changeFilterValues}
+              focusAfterLastId={searchInputId}
+            />
+          </div>
           {products.length === 0 ? (
             <div className="flex flex-col items-start gap-3 rounded-lg border border-border px-4 py-6">
               <p className="font-medium wrap-anywhere">
                 {emptyResultText(
                   deferredSearchText.trim(),
                   status,
-                  filterCount > 0 || novidades === "1",
+                  filterCount > 0,
                   favoritos === "1",
+                  novidades === "1",
                 )}
               </p>
+              {favoritos === "1" && favoriteIds.size === 0 && (
+                <p className="text-muted-foreground">
+                  Marque um produto com a estrela para vê-lo aqui.
+                </p>
+              )}
               <Button variant="tertiary" onClick={showAllProducts}>
                 Mostrar todos os produtos
               </Button>

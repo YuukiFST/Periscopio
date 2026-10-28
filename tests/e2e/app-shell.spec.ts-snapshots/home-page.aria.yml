@@ -9,7 +9,7 @@
                     - link "Mouses":
                         - /url: /mouse
                 - paragraph: 6 produtos
-                - link "3 novidades":
+                - link "3 novidades em Mouses":
                     - /url: /mouse?novidades=1&status=todos
             - listitem:
                 - heading "Teclados" [level=3]:
