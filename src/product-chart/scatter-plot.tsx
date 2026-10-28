@@ -1,90 +1,21 @@
-import { Link } from "@tanstack/react-router";
-import { useLayoutEffect, useRef, useState } from "react";
+import { Link, useNavigate } from "@tanstack/react-router";
+import { useState } from "react";
 import type { CategorySlug } from "@/categories";
-import { isRatingField } from "@/data/rating-order";
+import { useElementWidth } from "@/lib/use-element-width";
 import { cn } from "@/lib/utils";
+import { priceOf } from "@/product-table/cell-values";
+import { PriceInReais } from "@/product-table/table-cells";
 import { axisValueText, type ChartAxis } from "./chart-axes";
-import { niceTicks, type ChartPoint } from "./chart-points";
+import type { ChartPoint } from "./chart-points";
+import { isLogAxis, scaleOf, stepSpreadOf, strayOf, ticksOf } from "./chart-scales";
 import type { TableSearch } from "@/product-table/table-search";
 
 const margin = { top: 12, right: 16, bottom: 48, left: 76 };
-const tickFormat = new Intl.NumberFormat("pt-BR", {
-  notation: "compact",
-  maximumFractionDigits: 2,
-});
+/** How far from a dot the pointer still picks it, in pixels. */
+const hoverRadius = 32;
 
-type Tick = { value: number; text: string };
-
-/**
- * Past this ratio between the largest and the smallest amount, a linear axis
- * crowds most Produtos into a corner (one ₩ 1,8 mi mouse leaves the rest in the
- * first fifth), so the axis spreads its amounts by order of magnitude instead.
- */
-const logScaleRatio = 20;
-
-function isRatingAxis(axis: ChartAxis): boolean {
-  return axis.column.kind === "field" && isRatingField(axis.column.field.key);
-}
-
-function isLogAxis(axis: ChartAxis, values: readonly number[]): boolean {
-  if (isRatingAxis(axis)) return false;
-  const min = Math.min(...values);
-  return min > 0 && Math.max(...values) / min >= logScaleRatio;
-}
-
-/** Round amounts on a log axis: 1, 2 and 5 times each power of ten in range, only the 1s when narrow. */
-function logTicks(min: number, max: number, isNarrow: boolean): number[] {
-  const ticks: number[] = [];
-  for (let power = Math.floor(Math.log10(min)); power <= Math.ceil(Math.log10(max)); power++) {
-    for (const factor of isNarrow ? [1] : [1, 2, 5]) {
-      const tick = factor * 10 ** power;
-      if (tick >= min && tick <= max) ticks.push(tick);
-    }
-  }
-  return ticks;
-}
-
-/** A grade axis ticks at each grade a Produto has; any other at round amounts. */
-function ticksOf(
-  axis: ChartAxis,
-  points: readonly ChartPoint[],
-  pick: "x" | "y",
-  count: number,
-  isLog: boolean,
-): Tick[] {
-  const values = points.map((point) => point[pick]);
-  if (isRatingAxis(axis)) {
-    const textByRank = new Map(
-      points.map((point) => [point[pick], axisValueText(axis, point.product)] as const),
-    );
-    return [...textByRank].toSorted(([a], [b]) => a - b).map(([value, text]) => ({ value, text }));
-  }
-  const min = Math.min(...values);
-  const max = Math.max(...values);
-  const logged = isLog ? logTicks(min, max, count < 5) : [];
-  return (logged.length >= 2 ? logged : niceTicks(min, max, count)).map((value) => ({
-    value,
-    text: tickFormat.format(value),
-  }));
-}
-
-/**
- * Maps a value onto `[from, to]` pixels, with 5% of room past the extreme values
- * and ticks; a log axis measures that room, and every distance, in powers of ten.
- */
-function scaleOf(values: readonly number[], from: number, to: number, isLog: boolean) {
-  const position = isLog ? Math.log10 : (value: number) => value;
-  let min = Math.min(...values.map(position));
-  let max = Math.max(...values.map(position));
-  if (min === max) {
-    min -= 1;
-    max += 1;
-  }
-  const room = (max - min) * 0.05;
-  min -= room;
-  max += room;
-  return (value: number) => from + ((position(value) - min) / (max - min)) * (to - from);
-}
+/** A Produto's dot where it is drawn, strayed from its step on a step axis. */
+type PlottedDot = { point: ChartPoint; x: number; y: number; isBest: boolean };
 
 /**
  * The Melhores relações as a staircase: each holds its vertical value until the
@@ -105,23 +36,24 @@ function bestTradeOffPath(
     .join("");
 }
 
-function useWidth() {
-  const ref = useRef<HTMLDivElement>(null);
-  const [width, setWidth] = useState(0);
-  useLayoutEffect(() => {
-    const element = ref.current;
-    if (!element) return;
-    const observer = new ResizeObserver(() => setWidth(element.clientWidth));
-    observer.observe(element);
-    return () => observer.disconnect();
-  }, []);
-  return [ref, width] as const;
-}
-
 /** The name a dot's link reads: "H200A: Preço (₩) ₩ 59.000, Nota geral A, melhor relação". */
 function pointLabel(point: ChartPoint, xAxis: ChartAxis, yAxis: ChartAxis, isBest: boolean) {
   const values = `${xAxis.label} ${axisValueText(xAxis, point.product)}, ${yAxis.label} ${axisValueText(yAxis, point.product)}`;
   return `${point.product.name}: ${values}${isBest ? ", melhor relação" : ""}`;
+}
+
+/** The dot nearest the pointer, within `hoverRadius`. */
+function nearestDot(dots: readonly PlottedDot[], x: number, y: number): PlottedDot | undefined {
+  let nearest: PlottedDot | undefined;
+  let nearestDistance = hoverRadius ** 2;
+  for (const dot of dots) {
+    const distance = (dot.x - x) ** 2 + (dot.y - y) ** 2;
+    if (distance <= nearestDistance) {
+      nearest = dot;
+      nearestDistance = distance;
+    }
+  }
+  return nearest;
 }
 
 type ScatterPlotProps = {
@@ -132,12 +64,15 @@ type ScatterPlotProps = {
   yAxis: ChartAxis;
   tableSearch: TableSearch;
   labelledBy: string;
+  /** A Produto pointed at outside the plot, as in the Melhores relações list. */
+  emphasizedId: string | undefined;
 };
 
 /**
- * One dot per Produto, each a link to its detail; hover or focus shows its
- * name and both values. The Melhores relações are filled in the brand color
- * and joined by a line.
+ * One dot per Produto, each a link to its detail; hover near a dot or focus it
+ * to see its name and both values. On a grade or count axis the dots stray a
+ * little from their step, so a crowded step shows how many share it. The
+ * Melhores relações sit on their step, filled in the brand color and joined by a line.
  */
 export function ScatterPlot({
   category,
@@ -147,11 +82,13 @@ export function ScatterPlot({
   yAxis,
   tableSearch,
   labelledBy,
+  emphasizedId,
 }: ScatterPlotProps) {
-  const [containerRef, width] = useWidth();
+  const navigate = useNavigate();
+  const [containerRef, width] = useElementWidth<HTMLDivElement>();
   const [hoveredId, setHoveredId] = useState<string>();
   const [focusedId, setFocusedId] = useState<string>();
-  const activeId = hoveredId ?? focusedId;
+  const activeId = hoveredId ?? focusedId ?? emphasizedId;
   const height = Math.round(Math.min(520, Math.max(280, width * 0.6)));
   const plotRight = width - margin.right;
   const plotBottom = height - margin.bottom;
@@ -174,15 +111,17 @@ export function ScatterPlot({
     margin.top,
     isYLog,
   );
+  const xSpread = stepSpreadOf(xAxis, xValues, xOf);
+  const ySpread = stepSpreadOf(yAxis, yValues, yOf);
   const bestIds = new Set(bestTradeOffs?.map((point) => point.product.id));
-  const bestDots = bestTradeOffs?.map((point) => ({
-    id: point.product.id,
-    x: xOf(point.x),
-    y: yOf(point.y),
-  }));
-  const bestPath =
-    bestDots && bestDots.length > 1 ? bestTradeOffPath(bestDots, xAxis.direction) : undefined;
-  const activePoint = points.find((point) => point.product.id === activeId);
+  const dots: PlottedDot[] = points.map((point) => {
+    const isBest = bestIds.has(point.product.id);
+    const stray = isBest ? 0 : strayOf(point.product.id);
+    return { point, x: xOf(point.x) + stray * xSpread, y: yOf(point.y) + stray * ySpread, isBest };
+  });
+  const bestDots = dots.filter((dot) => dot.isBest);
+  const bestPath = bestDots.length > 1 ? bestTradeOffPath(bestDots, xAxis.direction) : undefined;
+  const activeDot = dots.find((dot) => dot.point.product.id === activeId);
 
   return (
     <div ref={containerRef} className="relative w-full" style={{ height }}>
@@ -192,7 +131,25 @@ export function ScatterPlot({
           aria-labelledby={labelledBy}
           width={width}
           height={height}
-          className="block overflow-visible text-caption"
+          className={cn("block overflow-visible text-caption", hoveredId && "cursor-pointer")}
+          onPointerMove={(event) => {
+            if (event.pointerType === "touch") return;
+            const box = event.currentTarget.getBoundingClientRect();
+            const nearest = nearestDot(dots, event.clientX - box.left, event.clientY - box.top);
+            setHoveredId(nearest?.point.product.id);
+          }}
+          onPointerLeave={() => setHoveredId(undefined)}
+          onClick={(event) => {
+            // A click on a dot follows its own link; one beside it opens the dot the pointer picked.
+            if (!hoveredId || (event.target instanceof Element && event.target.closest("a"))) {
+              return;
+            }
+            void navigate({
+              to: "/$categoria/$id",
+              params: { categoria: category, id: hoveredId },
+              search: tableSearch,
+            });
+          }}
         >
           <g aria-hidden="true">
             {xTicks.map((tick) => (
@@ -239,43 +196,43 @@ export function ScatterPlot({
                 className="fill-none stroke-highlight-fg"
               />
             )}
+            {activeDot && (
+              <path
+                d={`M${margin.left} ${activeDot.y}H${activeDot.x}V${plotBottom}`}
+                strokeDasharray="2 3"
+                className="fill-none stroke-foreground/40"
+              />
+            )}
           </g>
-          {points.map((point) => {
-            const isBest = bestIds.has(point.product.id);
-            return (
-              <Link
-                key={point.product.id}
-                to="/$categoria/$id"
-                params={{ categoria: category, id: point.product.id }}
-                search={tableSearch}
-                aria-label={pointLabel(point, xAxis, yAxis, isBest)}
-                data-best={isBest || undefined}
-                className="group outline-none"
-                onMouseEnter={() => setHoveredId(point.product.id)}
-                onMouseLeave={() => setHoveredId(undefined)}
-                onFocus={() => setFocusedId(point.product.id)}
-                onBlur={() => setFocusedId(undefined)}
-              >
-                <g transform={`translate(${xOf(point.x)},${yOf(point.y)})`}>
-                  <circle r={12} className="fill-transparent" />
-                  {/* No ring, so dots that overlap darken where they stack and show the crowd. */}
-                  {!isBest && (
-                    <circle r={isNarrow ? 3 : 3.5} className="fill-muted-foreground/70" />
-                  )}
-                  <circle
-                    r={10}
-                    strokeWidth={2}
-                    className="fill-none stroke-ring opacity-0 group-focus-visible:opacity-100"
-                  />
-                </g>
-              </Link>
-            );
-          })}
+          {dots.map(({ point, x, y, isBest }) => (
+            <Link
+              key={point.product.id}
+              to="/$categoria/$id"
+              params={{ categoria: category, id: point.product.id }}
+              search={tableSearch}
+              aria-label={pointLabel(point, xAxis, yAxis, isBest)}
+              data-best={isBest || undefined}
+              className="group outline-none"
+              onFocus={() => setFocusedId(point.product.id)}
+              onBlur={() => setFocusedId(undefined)}
+            >
+              <g transform={`translate(${x},${y})`}>
+                <circle r={12} className="fill-transparent" />
+                {/* No ring, so dots that overlap darken where they stack and show the crowd. */}
+                {!isBest && <circle r={isNarrow ? 3 : 3.5} className="fill-muted-foreground/70" />}
+                <circle
+                  r={10}
+                  strokeWidth={2}
+                  className="fill-none stroke-ring opacity-0 group-focus-visible:opacity-100"
+                />
+              </g>
+            </Link>
+          ))}
           {/* Drawn after every dot, so none covers a Melhor relação. */}
           <g aria-hidden="true" className="pointer-events-none">
-            {bestDots?.map((dot) => (
+            {bestDots.map((dot) => (
               <circle
-                key={dot.id}
+                key={dot.point.product.id}
                 cx={dot.x}
                 cy={dot.y}
                 r={4.5}
@@ -283,11 +240,11 @@ export function ScatterPlot({
                 className="fill-highlight-fg stroke-background"
               />
             ))}
-            {activePoint && (
+            {activeDot && (
               <circle
-                cx={xOf(activePoint.x)}
-                cy={yOf(activePoint.y)}
-                r={6}
+                cx={activeDot.x}
+                cy={activeDot.y}
+                r={6.5}
                 strokeWidth={1.5}
                 className="fill-none stroke-foreground"
               />
@@ -295,13 +252,13 @@ export function ScatterPlot({
           </g>
         </svg>
       )}
-      {activePoint && (
+      {activeDot && (
         <PointTooltip
-          point={activePoint}
+          point={activeDot.point}
           xAxis={xAxis}
           yAxis={yAxis}
-          left={xOf(activePoint.x)}
-          top={yOf(activePoint.y)}
+          left={activeDot.x}
+          top={activeDot.y}
           width={width}
         />
       )}
@@ -338,15 +295,23 @@ function PointTooltip({ point, xAxis, yAxis, left, top, width }: PointTooltipPro
     >
       <p className="font-medium text-pretty">{point.product.name}</p>
       <dl className="grid grid-cols-[auto_auto] gap-x-3 text-muted-foreground">
-        <dt>{xAxis.label}</dt>
-        <dd className="text-end text-foreground tabular-nums">
-          {axisValueText(xAxis, point.product)}
-        </dd>
-        <dt>{yAxis.label}</dt>
-        <dd className="text-end text-foreground tabular-nums">
-          {axisValueText(yAxis, point.product)}
-        </dd>
+        <AxisValueRow axis={xAxis} point={point} />
+        <AxisValueRow axis={yAxis} point={point} />
       </dl>
     </div>
+  );
+}
+
+/** One axis in the tooltip; a Preço also reads in reais. */
+function AxisValueRow({ axis, point }: { axis: ChartAxis; point: ChartPoint }) {
+  const price = axis.column.kind === "price" ? priceOf(point.product) : undefined;
+  return (
+    <>
+      <dt>{axis.label}</dt>
+      <dd className="text-end text-foreground tabular-nums">
+        {axisValueText(axis, point.product)}
+        {price !== undefined && <PriceInReais priceKrw={price} />}
+      </dd>
+    </>
   );
 }

@@ -7,6 +7,7 @@ import { expect, test, type Page } from "@playwright/test";
  */
 
 const huanId = "201270eb-b392-4e41-96a9-1b609a77e795";
+const dragonflyA9UltraId = "003586ba-0cbf-4932-843c-24e5f56e47c2";
 
 function axisSelect(page: Page, name: "Eixo horizontal" | "Eixo vertical") {
   return page.getByRole("combobox", { name });
@@ -52,6 +53,38 @@ test("the chart plots Preço by Nota geral and marks the best trade-offs of the 
   // Lower is better on both: the lightest mouse and the fastest click.
   await expect(page.getByRole("link", { name: /^Huan: Peso \(g\) 48 g, / })).toBeVisible();
   expect(await bestTradeOffNames(page)).toEqual(["Huan", "Dragonfly A9 Ultra"]);
+});
+
+test("pointing beside a dot shows its Produto, and a click there opens it", async ({ page }) => {
+  await page.goto("/grafico/mouse");
+  const dot = page.getByRole("link", { name: /^Dragonfly A9 Ultra: / });
+  const box = await dot.boundingBox();
+  if (!box) throw new Error("Dragonfly A9 Ultra has no dot");
+  // Past the dot's own 12px hit circle, still nearest to it.
+  await page.mouse.move(box.x + box.width / 2, box.y + box.height / 2 + 24);
+
+  await expect(page.getByRole("tooltip")).toContainText("Dragonfly A9 Ultra");
+  await expect(page.getByRole("tooltip")).toContainText(/₩\s98\.900≈cerca de R\$\s\d+/);
+  await page.mouse.down();
+  await page.mouse.up();
+
+  await expect(page).toHaveURL(`/mouse/${dragonflyA9UltraId}`);
+  await expect(page.getByRole("dialog", { name: "Dragonfly A9 Ultra" })).toBeVisible();
+});
+
+test("the Melhores relações list names each one, marks its dot when pointed at and opens it", async ({
+  page,
+}) => {
+  await page.goto("/grafico/mouse");
+  const list = page.getByRole("region", { name: "Melhores relações" });
+  await expect(list.getByRole("link")).toHaveCount(2);
+  await expect(list.getByRole("link")).toContainText(["Dragonfly 3 PRO", "Dragonfly A9 Ultra"]);
+
+  await list.getByRole("link", { name: /^Dragonfly A9 Ultra/ }).hover();
+  await expect(page.getByRole("tooltip")).toContainText("Dragonfly A9 Ultra");
+  await list.getByRole("link", { name: /^Dragonfly A9 Ultra/ }).click();
+
+  await expect(page).toHaveURL(`/mouse/${dragonflyA9UltraId}`);
 });
 
 test("the chart shows the Produtos of the table's Filtros and leads back to the table as it was", async ({
