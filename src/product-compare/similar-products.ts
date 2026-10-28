@@ -1,4 +1,4 @@
-import type { CategorySlug } from "../categories.ts";
+import { overallRatingKeys, type CategorySlug } from "../categories.ts";
 import { ratingRank } from "../data/rating-order.ts";
 import { isTested, type CategoryData, type Product } from "../data/schema.ts";
 import { priceOf } from "../product-table/cell-values.ts";
@@ -8,29 +8,28 @@ export const similarPriceWeight = 1;
 export const similarRatingWeight = 1;
 export const similarSpecWeight = 1;
 
-/** The Nota geral field of each Categoria. */
-const ratingFieldKeys: Record<CategorySlug, string> = {
-  mouse: "overallRatingMouse",
-  teclado: "overallRatingKeyboard",
-  monitor: "overallRatingMonitor",
-};
-
-/** The one Especificação or Medição per Categoria that sets Produtos apart: Peso, Resposta geral, Tamanho da tela. */
+/**
+ * The one Especificação or Medição per Categoria that sets Produtos apart: Peso, Resposta
+ * geral, Tamanho da tela, Atrito dinâmico, Força no fim do curso and Adequação ao Valorant.
+ */
 const specFieldKeys: Record<CategorySlug, string> = {
   mouse: "weight",
   teclado: "overallResponseSpeed",
   monitor: "sizeInch",
+  mousepad: "dynamicFriction",
+  switch: "bottomOutForce",
+  fone: "earphoneValorantFrMatch",
 };
 
 type Point = { product: Product; price: number; rating: number; spec: number };
 
 function pointOf(data: CategoryData, product: Product): Point | undefined {
   const price = priceOf(product);
-  const ratingValue = product.values[ratingFieldKeys[data.category]];
+  const ratingValue = product.values[overallRatingKeys[data.category]];
   // UNRATED ranks lowest in the sort order, but reads "Sem nota": no Nota geral to measure.
   const rating =
     typeof ratingValue === "string" && ratingValue !== "UNRATED"
-      ? ratingRank(ratingFieldKeys[data.category], ratingValue)
+      ? ratingRank(overallRatingKeys[data.category], ratingValue)
       : undefined;
   const spec = product.values[specFieldKeys[data.category]];
   if (price === undefined || rating === undefined || typeof spec !== "number") return undefined;

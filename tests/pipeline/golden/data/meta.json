@@ -3,7 +3,10 @@
   "counts": {
     "mouse": 6,
     "teclado": 4,
-    "monitor": 4
+    "monitor": 4,
+    "mousepad": 3,
+    "switch": 3,
+    "fone": 2
   },
   "krwBrl": {
     "rate": 0.00381,

@@ -1,0 +1,96 @@
+- table "Mousepads":
+    - rowgroup:
+        - row "Comparar Produto Nota geral Recomendação Preço Material Perfil de deslize Atrito estático Diferença de sensibilidade (estático) Atrito dinâmico Diferença de sensibilidade (dinâmico) Dureza Uniformidade Aderência à mesa":
+            - columnheader "Comparar"
+            - columnheader "Produto":
+                - button "Produto"
+            - columnheader "Nota geral":
+                - button "Nota geral"
+            - columnheader "Recomendação":
+                - button "Recomendação"
+            - columnheader "Preço":
+                - button "Preço"
+            - columnheader "Material":
+                - button "Material"
+            - columnheader "Perfil de deslize":
+                - button "Perfil de deslize"
+            - columnheader "Atrito estático":
+                - button "Atrito estático"
+            - columnheader "Diferença de sensibilidade (estático)":
+                - button "Diferença de sensibilidade (estático)"
+            - columnheader "Atrito dinâmico":
+                - button "Atrito dinâmico"
+            - columnheader "Diferença de sensibilidade (dinâmico)":
+                - button "Diferença de sensibilidade (dinâmico)"
+            - columnheader "Dureza":
+                - button "Dureza"
+            - columnheader "Uniformidade":
+                - button "Uniformidade"
+            - columnheader "Aderência à mesa":
+                - button "Aderência à mesa"
+    - rowgroup:
+        - row /Comparar Aqua Control 2 Sakura Pink Aqua Control 2 Sakura Pink X-raypad A\+ Fraca ₩ \d+\.\d+ cerca de R\$ \d+ \(Cotação de \d+ de out\. de \d+\) Híbrido Controle \d+,\d+ μ 1% \d+,\d+ μ 3% 2 A C/:
+            - cell "Comparar Aqua Control 2 Sakura Pink":
+                - checkbox "Comparar Aqua Control 2 Sakura Pink"
+            - rowheader "Aqua Control 2 Sakura Pink X-raypad":
+                - button "Favoritar Aqua Control 2 Sakura Pink"
+                - link "Detalhes de Aqua Control 2 Sakura Pink":
+                    - /url: /mousepad/03986584-64e3-43a9-a783-589a977280c2?status=todos
+                - paragraph: Aqua Control 2 Sakura Pink
+                - paragraph: X-raypad
+            - cell "A+"
+            - cell "Fraca"
+            - cell /₩ \d+\.\d+ cerca de R\$ \d+ \(Cotação de \d+ de out\. de \d+\)/
+            - cell "Híbrido"
+            - cell "Controle"
+            - cell /\d+,\d+ μ/
+            - cell "1%"
+            - cell /\d+,\d+ μ/
+            - cell "3%"
+            - cell "2"
+            - cell "A"
+            - cell "C"
+        - row /Comparar Streamers Streamers HotlineGames A\+ Evitar ₩ \d+\.\d+ cerca de R\$ \d+ \(Cotação de \d+ de out\. de \d+\) Rígido Velocidade \d+,\d+ μ 5% \d+,\d+ μ -3% 3 A C/:
+            - cell "Comparar Streamers":
+                - checkbox "Comparar Streamers"
+            - rowheader "Streamers HotlineGames":
+                - button "Favoritar Streamers"
+                - link "Detalhes de Streamers":
+                    - /url: /mousepad/0e445432-bf3f-493e-b12b-bc0da30b9152?status=todos
+                - paragraph:
+                    - link "Streamers no AliExpress (abre em nova aba)":
+                        - /url: https://s.click.aliexpress.com/e/_ooBiTsA
+                - paragraph: HotlineGames
+            - cell "A+"
+            - cell "Evitar"
+            - cell /₩ \d+\.\d+ cerca de R\$ \d+ \(Cotação de \d+ de out\. de \d+\)/
+            - cell "Rígido"
+            - cell "Velocidade"
+            - cell /\d+,\d+ μ/
+            - cell "5%"
+            - cell /\d+,\d+ μ/
+            - cell "-3%"
+            - cell "3"
+            - cell "A"
+            - cell "C"
+        - row /Comparar Vancer ICE Vancer ICE BT\.L A\+ Evitar ₩ \d+\.\d+ cerca de R\$ \d+ \(Cotação de \d+ de out\. de \d+\) Rígido Controle \d+,\d+ μ 8% \d+,\d+ μ 2% 4 A C/:
+            - cell "Comparar Vancer ICE":
+                - checkbox "Comparar Vancer ICE"
+            - rowheader "Vancer ICE BT.L":
+                - button "Favoritar Vancer ICE"
+                - link "Detalhes de Vancer ICE":
+                    - /url: /mousepad/772219d3-04de-4c26-b8a7-57944bbe9da0?status=todos
+                - paragraph: Vancer ICE
+                - paragraph: BT.L
+            - cell "A+"
+            - cell "Evitar"
+            - cell /₩ \d+\.\d+ cerca de R\$ \d+ \(Cotação de \d+ de out\. de \d+\)/
+            - cell "Rígido"
+            - cell "Controle"
+            - cell /\d+,\d+ μ/
+            - cell "8%"
+            - cell /\d+,\d+ μ/
+            - cell "2%"
+            - cell "4"
+            - cell "A"
+            - cell "C"

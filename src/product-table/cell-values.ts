@@ -1,4 +1,4 @@
-import { isRatingField, ratingRank } from "../data/rating-order.ts";
+import { isGradeField, ratingRank } from "../data/rating-order.ts";
 import type { Field, FieldValue, KrwBrlRate, Product } from "../data/schema.ts";
 import { unitLabel, valueLabel } from "../i18n/labels.ts";
 import { productFieldValue } from "../product-fields/field-groups.ts";
@@ -155,7 +155,7 @@ export function sortValueOf(column: TableColumn, product: Product): SortValue {
       if (typeof value === "string" && isCountEnum(column.field) && countPattern.test(value)) {
         return Number(value);
       }
-      if (typeof value === "string" && isRatingField(column.field.key)) {
+      if (typeof value === "string" && isGradeField(column.field.key)) {
         return ratingRank(column.field.key, value);
       }
       return formatFieldValue(column.field, value);

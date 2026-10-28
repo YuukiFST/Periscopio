@@ -3,6 +3,7 @@ import { copyFile, mkdir, mkdtemp, readFile, readdir, rm, writeFile } from "node
 import { tmpdir } from "node:os";
 import { join, relative } from "node:path";
 import { afterEach, beforeAll, describe, expect, test } from "vitest";
+import { categorySlugs } from "../../src/categories.ts";
 import {
   categoryDataSchema,
   maxPriceEntries,
@@ -114,7 +115,7 @@ describe("an Atualização against the recorded Fonte excerpt", () => {
     expect(run.stderr).toBe("");
     expect(run.exitCode).toBe(0);
     expect(run.stdout).toBe("");
-    for (const slug of ["mouse", "teclado", "monitor"]) {
+    for (const slug of categorySlugs) {
       const written = await readFile(join(outDir, "data", `${slug}.json`), "utf8");
       await expect(written).toMatchFileSnapshot(join(goldenDir, "data", `${slug}.json`));
     }
@@ -129,7 +130,7 @@ describe("an Atualização against the recorded Fonte excerpt", () => {
     await expect(stableMeta).toMatchFileSnapshot(join(goldenDir, "data/meta.json"));
     // The first Atualização has no Histórico de preço to extend: one entry per Produto with a Preço, dated today.
     const priceDate = meta.updatedAt.slice(0, "YYYY-MM-DD".length);
-    for (const slug of ["mouse", "teclado", "monitor"]) {
+    for (const slug of categorySlugs) {
       const written = await readFile(join(outDir, "data/precos", `${slug}.json`), "utf8");
       await expect(written.replaceAll(priceDate, "<date>")).toMatchFileSnapshot(
         join(goldenDir, "data/precos", `${slug}.json`),
@@ -142,6 +143,8 @@ describe("an Atualização against the recorded Fonte excerpt", () => {
     );
     expect(run.requestedPaths.filter((path) => !path.startsWith("GET "))).toEqual([]);
     expect(run.requestedPaths).not.toContain(`GET /cdn/${keptPhoto}`);
+    // A photo the Fonte keeps only as PNG is left out, never fetched.
+    expect(run.requestedPaths.filter((path) => path.endsWith(".png"))).toEqual([]);
   });
 
   test("the recorded excerpt has a pt label for every key", () => {
@@ -238,6 +241,32 @@ test.each(refusals)(
     }
   },
 );
+
+test("a meta.json from before a Categoria joined the app takes the Categoria in", async () => {
+  const outDir = await makeTempDir();
+  await mkdir(join(outDir, "data"), { recursive: true });
+  await writeFile(
+    join(outDir, "data/meta.json"),
+    JSON.stringify({
+      updatedAt: "2026-10-26T09:00:00.000Z",
+      counts: { mouse: 6, teclado: 4, monitor: 4 },
+    }),
+  );
+
+  const run = await runUpdateCli(await loadRecordedRoutes(), outDir, null);
+
+  expect(run.stderr).toBe("");
+  expect(run.exitCode).toBe(0);
+  const meta = metaSchema.parse(JSON.parse(await readFile(join(outDir, "data/meta.json"), "utf8")));
+  expect(meta.counts).toEqual({
+    mouse: 6,
+    teclado: 4,
+    monitor: 4,
+    mousepad: 3,
+    switch: 3,
+    fone: 2,
+  });
+});
 
 test("a failed Cotação fetch keeps the published Cotação, notes it in the summary and never refuses the Atualização", async () => {
   const outDir = await makeTempDir();

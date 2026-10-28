@@ -1,7 +1,8 @@
 /**
  * Records the Fonte excerpt the pipeline tests serve: the real responses of
  * `/api/benchmark/<category>/snapshot` with only the Products below, the
- * companies they reference, their photos, and the Cotação from Frankfurter. Run it with
+ * companies they reference, their AVIF photos (the pipeline never fetches a PNG one),
+ * and the Cotação from Frankfurter. Run it with
  * `node tests/pipeline/record-eyejoker-excerpt.ts`, then regenerate the goldens.
  */
 import { mkdir, rm, writeFile } from "node:fs/promises";
@@ -34,6 +35,21 @@ const excerptProductIds: Record<string, string[]> = {
     "168e2700-995b-4632-86e9-08613515a315", // multi-select stand adjustments
     "0780a9f3-3c88-41ac-97e9-1c45f31c9a38", // discontinued, Korean product name
     "0138f613-dedd-4d4c-86a6-74798a5baf14", // no priceKrw
+  ],
+  "mouse-pad": [
+    "03986584-64e3-43a9-a783-589a977280c2", // photo under benchmark-data/, letter grades, Korean tendency
+    "772219d3-04de-4c26-b8a7-57944bbe9da0", // photo at the CDN root, Korean material and base
+    "0e445432-bf3f-493e-b12b-bc0da30b9152", // PNG photo, published without one; ALI link
+  ],
+  "keyboard-switch": [
+    "0b6be29e-286b-4809-a851-9e5d0c158687", // measured forces and travel, Korean feel "리니어"
+    "0d698b78-1590-444a-9e24-98ca40baf688", // priceKrw 1126, rounded to 1100
+    "22a93098-1df3-4dca-bdbc-36a5b7f4c3fb", // PNG photo at the CDN root; ALI link
+    "c6dd1f29-6524-40f5-bca6-ceaf6a415066", // no manufacturer yet, left out
+  ],
+  earphone: [
+    "0d24702d-a3a2-49ba-beff-c1e2a9dd7885", // wired, Korean FR texts and tags, ALI link
+    "03177f59-1a80-4502-8c74-8e70683a43bf", // wireless
   ],
 };
 const photosLeftOut = new Set(["1f2e9ba6-5ac5-4f0d-b986-7cb4203b5d6c"]);
@@ -77,7 +93,7 @@ for (const [category, ids] of Object.entries(excerptProductIds)) {
   for (const row of snapshot.data.rows) {
     manufacturerIds.add(row.values.manufacturer ?? "");
     const photoUrl = row.values.productImage ?? "";
-    if (photoUrl !== "" && !photosLeftOut.has(row.id)) photoUrls.push(photoUrl);
+    if (photoUrl.endsWith(".avif") && !photosLeftOut.has(row.id)) photoUrls.push(photoUrl);
   }
   await writeJson(join(fixturesDir, "api/benchmark", category, "snapshot.json"), snapshot);
 }
@@ -86,12 +102,12 @@ const companies = await getJson(`${apiUrl}/api/company`, recordedCompaniesSchema
 companies.data = companies.data.filter((company) => manufacturerIds.has(company.id));
 await writeJson(join(fixturesDir, "api/company.json"), companies);
 
-await mkdir(join(fixturesDir, "cdn"), { recursive: true });
 for (const photoUrl of photoUrls) {
   const response = await fetch(photoUrl);
   if (!response.ok) throw new Error(`GET ${photoUrl}: HTTP ${response.status}`);
-  const fileName = new URL(photoUrl).pathname.slice(1);
-  await writeFile(join(fixturesDir, "cdn", fileName), new Uint8Array(await response.arrayBuffer()));
+  const photoPath = join(fixturesDir, "cdn", new URL(photoUrl).pathname.slice(1));
+  await mkdir(join(photoPath, ".."), { recursive: true });
+  await writeFile(photoPath, new Uint8Array(await response.arrayBuffer()));
 }
 
 await writeJson(

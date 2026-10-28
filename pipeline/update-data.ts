@@ -4,9 +4,9 @@ import { z } from "zod";
 import type { CategorySlug } from "../src/categories.ts";
 import {
   categoryDataSchema,
+  categorySlugSchema,
   isTested,
   krwBrlRateSchema,
-  metaSchema,
   priceEntrySchema,
   priceHistorySchema,
   productSchema,
@@ -34,6 +34,9 @@ const slugByEyejokerCategory = {
   mouse: "mouse",
   keyboard: "teclado",
   monitor: "monitor",
+  "mouse-pad": "mousepad",
+  "keyboard-switch": "switch",
+  earphone: "fone",
 } as const satisfies Record<EyejokerCategory, CategorySlug>;
 
 /** A Categoria may shrink by at most 10% from the published version. */
@@ -60,9 +63,12 @@ const publishedProductsSchema = z.object({
 type PublishedProducts = z.infer<typeof publishedProductsSchema>;
 type PublishedProduct = PublishedProducts["products"][number];
 
-/** Only what the row check and the kept Cotação read, so a meta.json with newer keys still parses. */
+/**
+ * Only what the row check and the kept Cotação read, so a meta.json with newer keys still parses,
+ * and one written before a Categoria joined the app lacks its count.
+ */
 const publishedMetaSchema = z.object({
-  counts: metaSchema.shape.counts,
+  counts: z.partialRecord(categorySlugSchema, z.int().nonnegative()),
   krwBrl: krwBrlRateSchema.optional().catch(undefined),
 });
 type PublishedMeta = z.infer<typeof publishedMetaSchema>;
@@ -118,7 +124,7 @@ function refuseRowDrop(normalized: CategoryData[], published: PublishedMeta | nu
   if (!published) return;
   for (const { category, products } of normalized) {
     const previous = published.counts[category];
-    if (products.length >= previous * minimumRowShare) continue;
+    if (previous === undefined || products.length >= previous * minimumRowShare) continue;
     throw new UpdateRefusedError(
       `${category}: ${products.length} Produtos, abaixo de 90% dos ${previous} publicados antes.`,
     );
@@ -130,7 +136,7 @@ function refuseUnusableImages(normalized: NormalizedCategory[]): void {
     const unusable = unusableImageProductIds.length;
     if (unusable <= imageUrlCount * maximumUnusableImageShare) continue;
     throw new UpdateRefusedError(
-      `${data.category}: ${unusable} de ${imageUrlCount} Produtos com foto têm um endereço de foto inesperado (não é /<uuid>.avif), acima de 10%; as fotos publicadas seriam apagadas.`,
+      `${data.category}: ${unusable} de ${imageUrlCount} Produtos com foto têm um endereço de foto inesperado (nem /<uuid>.avif nem /<uuid>.png), acima de 10%; as fotos publicadas seriam apagadas.`,
     );
   }
 }
@@ -262,14 +268,10 @@ async function runUpdate(config: UpdateConfig): Promise<void> {
 
   await mkdir(priceHistoryDir, { recursive: true });
   await mkdir(imagesDir, { recursive: true });
-  const wantedImages = new Set(
-    validated.flatMap(({ products }) =>
-      products.flatMap((product) => (product.image ? [imageFileName(product.image)] : [])),
-    ),
-  );
+  const imageCdnPaths = new Map(normalized.flatMap((category) => [...category.imageCdnPaths]));
   const krwBrlFetch = await fetchKrwBrlRate(config.frankfurterUrl);
   const krwBrl = krwBrlFetch.ok ? krwBrlFetch.rate : publishedMeta?.krwBrl;
-  const images = await downloadNewImages(config.cdnUrl, imagesDir, wantedImages);
+  const images = await downloadNewImages(config.cdnUrl, imagesDir, imageCdnPaths);
   const published = validated.map((data) =>
     withNovidadeDates(
       withoutMissingImages(data, images.available),
@@ -282,7 +284,14 @@ async function runUpdate(config: UpdateConfig): Promise<void> {
   for (const history of priceHistories) {
     await writeJsonFile(join(priceHistoryDir, `${history.category}.json`), history);
   }
-  const counts = { mouse: 0, teclado: 0, monitor: 0 };
+  const counts: Meta["counts"] = {
+    mouse: 0,
+    teclado: 0,
+    monitor: 0,
+    mousepad: 0,
+    switch: 0,
+    fone: 0,
+  };
   for (const data of published) counts[data.category] = data.products.length;
   const meta: Meta = { updatedAt, counts, ...(krwBrl && { krwBrl }) };
   await writeJsonFile(metaPath, meta);
@@ -294,6 +303,8 @@ async function runUpdate(config: UpdateConfig): Promise<void> {
     imagesDeleted: deletedImages.length,
     imageFailures: images.failed,
     unusableImageProductIds: normalized.flatMap((category) => category.unusableImageProductIds),
+    pngImageProductIds: normalized.flatMap((category) => category.pngImageProductIds),
+    noManufacturerProductIds: normalized.flatMap((category) => category.noManufacturerProductIds),
     invalidAliUrlProductIds: normalized
       .flatMap((category) => category.invalidAliUrlProductIds)
       .toSorted(),

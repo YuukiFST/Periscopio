@@ -1,0 +1,101 @@
+- table "Switches":
+    - rowgroup:
+        - row /Comparar Produto Nota geral Recomendação Preço Tipo Curso total Força inicial Força no fim do curso Desvio de força Desvio de curso Resolução por \d+,\d+ mm Folga horizontal ao pressionar \(Hall\) Folga vertical ao pressionar \(Hall\) Folga rotacional \(Hall\)/:
+            - columnheader "Comparar"
+            - columnheader "Produto":
+                - button "Produto"
+            - columnheader "Nota geral":
+                - button "Nota geral"
+            - columnheader "Recomendação":
+                - button "Recomendação"
+            - columnheader "Preço":
+                - button "Preço"
+            - columnheader "Tipo":
+                - button "Tipo"
+            - columnheader "Curso total":
+                - button "Curso total"
+            - columnheader "Força inicial":
+                - button "Força inicial"
+            - columnheader "Força no fim do curso":
+                - button "Força no fim do curso"
+            - columnheader "Desvio de força":
+                - button "Desvio de força"
+            - columnheader "Desvio de curso":
+                - button "Desvio de curso"
+            - columnheader /Resolução por \d+,\d+ mm/:
+                - button /Resolução por \d+,\d+ mm/
+            - columnheader "Folga horizontal ao pressionar (Hall)":
+                - button "Folga horizontal ao pressionar (Hall)"
+            - columnheader "Folga vertical ao pressionar (Hall)":
+                - button "Folga vertical ao pressionar (Hall)"
+            - columnheader "Folga rotacional (Hall)":
+                - button "Folga rotacional (Hall)"
+    - rowgroup:
+        - row /Comparar Ti HE 50g Ti HE 50g Owlab S Boa ₩ \d+ cerca de R\$ 2 \(Cotação de \d+ de out\. de \d+\) Magnético \d+,\d+ mm \d+ gf \d+ gf ±0\.4gf \d+,\d+ mm \d+ níveis \d+,\d+% \d+,\d+% 0\.5%/:
+            - cell "Comparar Ti HE 50g":
+                - checkbox "Comparar Ti HE 50g"
+            - rowheader "Ti HE 50g Owlab":
+                - button "Favoritar Ti HE 50g"
+                - link "Detalhes de Ti HE 50g":
+                    - /url: /switch/22a93098-1df3-4dca-bdbc-36a5b7f4c3fb?status=todos
+                - paragraph:
+                    - link "Ti HE 50g no AliExpress (abre em nova aba)":
+                        - /url: https://s.click.aliexpress.com/e/_opBCSP5
+                - paragraph: Owlab
+            - cell "S"
+            - cell "Boa"
+            - cell /₩ \d+ cerca de R\$ 2 \(Cotação de \d+ de out\. de \d+\)/
+            - cell "Magnético"
+            - cell /\d+,\d+ mm/
+            - cell /\d+ gf/
+            - cell /\d+ gf/
+            - cell "±0.4gf"
+            - cell /\d+,\d+ mm/
+            - cell /\d+ níveis/
+            - cell /\d+,\d+%/
+            - cell /\d+,\d+%/
+            - cell "0.5%"
+        - row /Comparar Spark Spark GATERON A Fraca ₩ \d+\.\d+ cerca de R\$ 4 \(Cotação de \d+ de out\. de \d+\) Magnético \d+,\d+ mm \d+ gf \d+ gf ±0\.8gf \d+,\d+ mm \d+ níveis \d+,\d+% \d+,\d+% 1\.4%/:
+            - cell "Comparar Spark":
+                - checkbox "Comparar Spark"
+            - rowheader "Spark GATERON":
+                - button "Favoritar Spark"
+                - link "Detalhes de Spark":
+                    - /url: /switch/0d698b78-1590-444a-9e24-98ca40baf688?status=todos
+                - paragraph: Spark
+                - paragraph: GATERON
+            - cell "A"
+            - cell "Fraca"
+            - cell /₩ \d+\.\d+ cerca de R\$ 4 \(Cotação de \d+ de out\. de \d+\)/
+            - cell "Magnético"
+            - cell /\d+,\d+ mm/
+            - cell /\d+ gf/
+            - cell /\d+ gf/
+            - cell "±0.8gf"
+            - cell /\d+,\d+ mm/
+            - cell /\d+ níveis/
+            - cell /\d+,\d+%/
+            - cell /\d+,\d+%/
+            - cell "1.4%"
+        - row /Comparar NOVA HE NOVA HE Owlab C Fraca ₩ \d+ cerca de R\$ 2 \(Cotação de \d+ de out\. de \d+\) Magnético \d+,\d+ mm \d+ gf \d+ gf ±3\.5gf \d+,\d+ mm \d+ níveis \d+,\d+% \d+,\d+% 0\.7%/:
+            - cell "Comparar NOVA HE":
+                - checkbox "Comparar NOVA HE"
+            - rowheader "NOVA HE Owlab":
+                - button "Favoritar NOVA HE"
+                - link "Detalhes de NOVA HE":
+                    - /url: /switch/0b6be29e-286b-4809-a851-9e5d0c158687?status=todos
+                - paragraph: NOVA HE
+                - paragraph: Owlab
+            - cell "C"
+            - cell "Fraca"
+            - cell /₩ \d+ cerca de R\$ 2 \(Cotação de \d+ de out\. de \d+\)/
+            - cell "Magnético"
+            - cell /\d+,\d+ mm/
+            - cell /\d+ gf/
+            - cell /\d+ gf/
+            - cell "±3.5gf"
+            - cell /\d+,\d+ mm/
+            - cell /\d+ níveis/
+            - cell /\d+,\d+%/
+            - cell /\d+,\d+%/
+            - cell "0.7%"

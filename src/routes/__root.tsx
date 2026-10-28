@@ -1,5 +1,5 @@
-import { createRootRoute, Link, Outlet, useRouter } from "@tanstack/react-router";
-import type { ReactNode } from "react";
+import { createRootRoute, Link, Outlet, useParams, useRouter } from "@tanstack/react-router";
+import { useEffect, useRef, type ReactNode } from "react";
 import { AppearanceButton } from "@/appearance/appearance-button";
 import { categoryLabels, categorySlugs } from "@/categories";
 import { Button } from "@/components/ui/button";
@@ -15,6 +15,24 @@ export const Route = createRootRoute({
 });
 
 function AppShell({ children }: { children: ReactNode }) {
+  const categoria = useParams({ strict: false, select: (params) => params.categoria });
+  const navRef = useRef<HTMLElement>(null);
+  useEffect(() => {
+    if (categoria === undefined) return;
+    let current = true;
+    // On a phone the Categorias scroll sideways; the open one comes into view, even the last.
+    // The web font widens the links as it loads, so the scroll waits for it.
+    void document.fonts.ready.then(() => {
+      if (!current) return;
+      navRef.current
+        ?.querySelector(`[data-categoria="${categoria}"]`)
+        ?.scrollIntoView({ block: "nearest", inline: "nearest" });
+    });
+    return () => {
+      current = false;
+    };
+  }, [categoria]);
+
   return (
     <div className="flex h-dvh flex-col bg-background text-foreground">
       <a
@@ -29,16 +47,19 @@ function AppShell({ children }: { children: ReactNode }) {
             Periscópio
           </Link>
           <nav
+            ref={navRef}
             aria-label="Categorias"
-            // A phone puts the Categorias on their own row, under the title and the actions.
-            className="-mx-2.5 flex gap-1 max-sm:order-last max-sm:w-full sm:mx-0"
+            // A phone puts the Categorias on their own row, under the title and the actions,
+            // scrolling sideways when they outgrow it; the padding keeps the taller tap areas inside.
+            className="-mx-2.5 flex gap-1 max-sm:order-last max-sm:-my-1 max-sm:w-[calc(100%+1.25rem)] max-sm:overflow-x-auto max-sm:scroll-px-10 max-sm:py-1 max-sm:[scrollbar-width:none] pointer-coarse:max-sm:scroll-fade-e sm:mx-0"
           >
             {categorySlugs.map((slug) => (
               <Link
                 key={slug}
                 to="/$categoria"
                 params={{ categoria: slug }}
-                className="relative rounded-lg px-2.5 py-1 text-body font-medium pointer-coarse:after:absolute pointer-coarse:after:inset-x-0 pointer-coarse:after:-inset-y-1 text-muted-foreground underline-offset-4 hover:bg-hover hover:text-foreground active:bg-active data-[status=active]:bg-active data-[status=active]:text-foreground data-[status=active]:underline"
+                data-categoria={slug}
+                className="relative shrink-0 rounded-lg px-2.5 py-1 text-body font-medium pointer-coarse:after:absolute pointer-coarse:after:inset-x-0 pointer-coarse:after:-inset-y-1 text-muted-foreground underline-offset-4 hover:bg-hover hover:text-foreground active:bg-active data-[status=active]:bg-active data-[status=active]:text-foreground data-[status=active]:underline"
               >
                 {categoryLabels[slug]}
               </Link>

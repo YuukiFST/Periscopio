@@ -28,6 +28,23 @@ export const filterParams = [
   "painel",
   "hdr",
   "iluminacao",
+  "base",
+  "largura",
+  "espessura",
+  "perfil",
+  "atrito",
+  "tipo",
+  "sensacao",
+  "batida-seca",
+  "forca-inicial",
+  "forca-final",
+  "curso",
+  "encaixe",
+  "conector",
+  "microfone",
+  "anc",
+  "valorant",
+  "overwatch",
 ] as const;
 
 export type FilterParam = (typeof filterParams)[number];

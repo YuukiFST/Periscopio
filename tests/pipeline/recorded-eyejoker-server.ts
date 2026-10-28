@@ -1,8 +1,9 @@
 import { readFile, readdir } from "node:fs/promises";
 import { createServer, type Server } from "node:http";
-import { join } from "node:path";
+import { join, relative } from "node:path";
 import { z } from "zod";
 import { frankfurterKrwBrlPath } from "../../pipeline/exchange-rate.ts";
+import { eyejokerCategories, type EyejokerCategory } from "../../pipeline/eyejoker-api.ts";
 
 const fixturesDir = join(import.meta.dirname, "fixtures");
 
@@ -11,8 +12,7 @@ export type RecordedResponse = { status: number; contentType: string; body: Uint
 /** Path to response, as recorded from the Fonte; tests edit a copy per case. */
 export type RecordedRoutes = Map<string, RecordedResponse>;
 
-export const snapshotPath = (category: "mouse" | "keyboard" | "monitor") =>
-  `/api/benchmark/${category}/snapshot`;
+export const snapshotPath = (category: EyejokerCategory) => `/api/benchmark/${category}/snapshot`;
 export const companyPath = "/api/company";
 /** The Cotação, under `/frankfurter` on the same server. */
 export const krwBrlRatePath = `/frankfurter${frankfurterKrwBrlPath}`;
@@ -23,7 +23,7 @@ function jsonResponse(text: string): RecordedResponse {
 
 export async function loadRecordedRoutes(): Promise<RecordedRoutes> {
   const routes: RecordedRoutes = new Map();
-  for (const category of ["mouse", "keyboard", "monitor"] as const) {
+  for (const category of eyejokerCategories) {
     const text = await readFile(
       join(fixturesDir, "api/benchmark", category, "snapshot.json"),
       "utf8",
@@ -38,9 +38,13 @@ export async function loadRecordedRoutes(): Promise<RecordedRoutes> {
     krwBrlRatePath,
     jsonResponse(await readFile(join(fixturesDir, "frankfurter/krw-brl.json"), "utf8")),
   );
-  for (const fileName of await readdir(join(fixturesDir, "cdn"))) {
-    const bytes = new Uint8Array(await readFile(join(fixturesDir, "cdn", fileName)));
-    routes.set(`/cdn/${fileName}`, { status: 200, contentType: "image/avif", body: bytes });
+  const cdnDir = join(fixturesDir, "cdn");
+  for (const entry of await readdir(cdnDir, { recursive: true, withFileTypes: true })) {
+    if (!entry.isFile()) continue;
+    const filePath = join(entry.parentPath, entry.name);
+    const cdnPath = relative(cdnDir, filePath).replaceAll("\\", "/");
+    const bytes = new Uint8Array(await readFile(filePath));
+    routes.set(`/cdn/${cdnPath}`, { status: 200, contentType: "image/avif", body: bytes });
   }
   return routes;
 }
@@ -88,7 +92,7 @@ function editJsonRoute<Schema extends z.ZodType>(
 
 export function editRecordedSnapshot(
   routes: RecordedRoutes,
-  category: "mouse" | "keyboard" | "monitor",
+  category: EyejokerCategory,
   edit: (snapshot: z.infer<typeof recordedSnapshotSchema>) => void,
 ) {
   editJsonRoute(routes, snapshotPath(category), recordedSnapshotSchema, edit);

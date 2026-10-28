@@ -1,8 +1,9 @@
+import { letterGradeFieldKeys } from "../src/data/rating-order.ts";
 import type { CategoryData } from "../src/data/schema.ts";
 import { fieldLabelsPt, unitLabelsPt } from "../src/i18n/pt-field-labels.ts";
 import { valueLabelsPt } from "../src/i18n/pt-value-labels.ts";
 
-/** ENUM fields whose values are proper names or numbers: they need no pt entry. */
+/** ENUM fields whose values are proper names, numbers or letter grades: they need no pt entry. */
 const properNameEnumKeys = new Set([
   "sensor",
   "mouseMcu",
@@ -21,10 +22,28 @@ const properNameEnumKeys = new Set([
   "hdrFormatSupport",
   "resolution",
   "panelType",
+  "polarity",
+  "upperHousing",
+  "lowerHousing",
+  "stem",
+  ...letterGradeFieldKeys,
 ]);
 
 /** Free-text fields with short Korean texts repeated across Products. */
-const shortTextKeys = new Set(["wheelSwitch", "soundAbsorption", "angleAdjustment", "switchType"]);
+const shortTextKeys = new Set([
+  "wheelSwitch",
+  "soundAbsorption",
+  "angleAdjustment",
+  "switchType",
+  "tendency",
+  "base",
+  "material",
+  "coating",
+  "earphoneFrSignature",
+  "earphoneFrTrebleRisk",
+  "earphoneValorantFrTags",
+  "earphoneOverwatchFrTags",
+]);
 
 const hangul = /[ᄀ-ᇿ㄰-㆏가-힯]/;
 

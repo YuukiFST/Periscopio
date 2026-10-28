@@ -7,9 +7,7 @@ function mouseNovidadesLink(page: Page) {
   return page.getByRole("main").getByRole("link", { name: "3 novidades" });
 }
 
-test("/ opens the home page, and the header switches between the three categories", async ({
-  page,
-}) => {
+test("/ opens the home page, and the header switches between the categories", async ({ page }) => {
   await page.goto("/");
   await expect(page).toHaveURL("/");
   await expect(page).toHaveTitle("Periscópio");
@@ -31,6 +29,18 @@ test("/ opens the home page, and the header switches between the three categorie
   await categoryNav.getByRole("link", { name: "Monitores" }).click();
   await expect(page).toHaveURL("/monitor");
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("Monitores");
+
+  await categoryNav.getByRole("link", { name: "Mousepads" }).click();
+  await expect(page).toHaveURL("/mousepad");
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText("Mousepads");
+
+  await categoryNav.getByRole("link", { name: "Switches" }).click();
+  await expect(page).toHaveURL("/switch");
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText("Switches");
+
+  await categoryNav.getByRole("link", { name: "Fones" }).click();
+  await expect(page).toHaveURL("/fone");
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText("Fones");
 
   await page.getByRole("banner").getByRole("link", { name: "Periscópio" }).click();
   await expect(page).toHaveURL("/");
@@ -122,13 +132,13 @@ test("on a phone the Categoria cards stack in one column, and the installed app 
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/");
   const cards = page.getByRole("main").getByRole("listitem");
-  await expect(cards).toHaveCount(3);
+  await expect(cards).toHaveCount(6);
   const boxes = await Promise.all((await cards.all()).map((card) => card.boundingBox()));
   const lefts = new Set(boxes.map((box) => box?.x));
   expect(lefts.size).toBe(1);
   const tops = boxes.map((box) => box?.y ?? Number.NaN);
   expect(tops).toEqual(tops.toSorted((a, b) => a - b));
-  expect(new Set(tops).size).toBe(3);
+  expect(new Set(tops).size).toBe(6);
 
   const manifestHref = await page.locator('link[rel="manifest"]').getAttribute("href");
   const manifest = await (await request.get(manifestHref ?? "")).json();
@@ -162,4 +172,19 @@ test("the theme follows the system color scheme", async ({ page }) => {
 
   await page.emulateMedia({ colorScheme: "light" });
   await expect(page.locator("html")).not.toHaveClass(/\bdark\b/);
+});
+
+test.describe("on a phone", () => {
+  test.use({ viewport: { width: 360, height: 780 }, hasTouch: true });
+
+  test("the Categorias scroll sideways in the header, and the open one shows in full", async ({
+    page,
+  }) => {
+    await page.goto("/fone");
+    await expect(page.getByRole("heading", { level: 1 })).toHaveText("Fones");
+    const categoryNav = page.getByRole("navigation", { name: "Categorias" });
+    // The page itself never scrolls sideways: the Categorias do, inside the header.
+    expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBe(360);
+    await expect(categoryNav.getByRole("link", { name: "Fones" })).toBeInViewport({ ratio: 1 });
+  });
 });

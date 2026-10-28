@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useLayoutEffect, useRef, useState } from "react";
 import type { CategorySlug } from "@/categories";
-import { isRatingField } from "@/data/rating-order";
+import { isGradeField } from "@/data/rating-order";
 import { cn } from "@/lib/utils";
 import { axisValueText, type ChartAxis } from "./chart-axes";
 import { niceTicks, type ChartPoint } from "./chart-points";
@@ -23,7 +23,7 @@ type Tick = { value: number; text: string };
 const logScaleRatio = 20;
 
 function isRatingAxis(axis: ChartAxis): boolean {
-  return axis.column.kind === "field" && isRatingField(axis.column.field.key);
+  return axis.column.kind === "field" && isGradeField(axis.column.field.key);
 }
 
 function isLogAxis(axis: ChartAxis, values: readonly number[]): boolean {

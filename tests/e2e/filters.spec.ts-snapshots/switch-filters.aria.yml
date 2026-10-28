@@ -1,0 +1,42 @@
+- complementary "Filtros":
+    - heading "Filtros" [level=2]
+    - button "Limpar filtros" [disabled]
+    - region "Geral":
+        - heading "Geral" [level=3]
+        - text: Nota geral
+        - combobox "Nota geral": Qualquer
+        - text: Recomendação
+        - combobox "Recomendação": Qualquer
+        - group "Preço (mil ₩)":
+            - text: ""
+            - textbox "Mínimo"
+            - textbox "Máximo"
+    - region "Construção":
+        - heading "Construção" [level=3]
+        - text: Tipo
+        - group "Tipo":
+            - button "Magnético"
+            - button "Mecânico"
+        - text: Sensação
+        - group "Sensação":
+            - button "Linear"
+            - button "Tátil"
+            - button "Clicky"
+        - text: Batida seca no fim do curso
+        - group "Batida seca no fim do curso":
+            - button "Não"
+            - button "Sim"
+    - region "Medições":
+        - heading "Medições" [level=3]
+        - group "Força inicial (gf)":
+            - text: ""
+            - textbox "Mínimo"
+            - textbox "Máximo"
+        - group "Força no fim do curso (gf)":
+            - text: ""
+            - textbox "Mínimo"
+            - textbox "Máximo"
+        - group "Curso total (mm)":
+            - text: ""
+            - textbox "Mínimo"
+            - textbox "Máximo"

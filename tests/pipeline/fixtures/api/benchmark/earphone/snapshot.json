@@ -1,0 +1,2882 @@
+{
+  "data": {
+    "rows": [
+      {
+        "id": "03177f59-1a80-4502-8c74-8e70683a43bf",
+        "values": {
+          "youtubeReviewUrl": "",
+          "tag": "",
+          "driverLinkId": "",
+          "status": "reviewed",
+          "saleStatus": "FOR_SALE",
+          "manufacturer": "abcc14e8-39aa-47fb-a6e3-02642f4754f6",
+          "productName": "VR3000 Wireless",
+          "eyejokerRating": "MILD_RECOMMENDATION",
+          "priceCurrency": "USD",
+          "price": "129",
+          "as": "",
+          "oneLineNote": "",
+          "benchVersion": "",
+          "firmwareVersion": "",
+          "productImage": "https://cdn.eyejokerdb.com/73d4361f-8e14-46f3-9554-38ad04501fc2.avif",
+          "purchasedDate": "2026-07-20T19:11:44.207Z",
+          "arrivedDate": "2026-07-20T19:11:44.207Z",
+          "testingStartDate": "2026-07-03T17:50:07.764158Z",
+          "publicReleaseAt": "2026-07-03T15:00:00.000Z",
+          "earphoneConnection": "WIRELESS",
+          "earphoneWearType": "UNDER_EAR",
+          "earphoneMicrophone": "WITH_MIC",
+          "earphoneWeightG": "4.8",
+          "earphoneNozzleDiameterMm": "",
+          "earphoneNozzleDiameterMaxMm": "",
+          "earphoneDriverConfiguration": "1DD",
+          "earphoneShellMaterial": "POLYMER",
+          "earphoneCable": "",
+          "earphoneAnc": "true",
+          "earphoneDriverDiameter": "",
+          "earphoneImpedanceOhm": "",
+          "earphoneSensitivityDbSplMw": "",
+          "overallRatingEarphone": "TIER_2",
+          "earphoneComfort": "",
+          "earphoneChannelBalance": "87.325",
+          "earphoneFrSignature": "차분한 저음형",
+          "earphoneFrTrebleRisk": "보통",
+          "earphoneValorantFrMatch": "62.831",
+          "earphoneValorantPostAutoeqScore": "75.431",
+          "earphoneValorantFrTags": "상단 대역 급감 주의 · 발소리 대역 약함",
+          "earphoneOverwatchFrMatch": "78.345",
+          "earphoneOverwatchPostAutoeqScore": "100",
+          "earphoneOverwatchFrTags": "저역 마스킹 주의"
+        },
+        "priceKrw": 170949,
+        "createdAt": "2026-07-03T17:49:31.338115Z",
+        "updatedAt": "2026-10-27T19:00:02.211899Z",
+        "isPrivate": false,
+        "hasMeshShell": false,
+        "hasFrequencyResponse": true,
+        "colors": {
+          "earphoneWearType": "#1681FF",
+          "earphoneChannelBalance": "#15B67C",
+          "earphoneFrTrebleRisk": "#1681FF",
+          "earphoneValorantFrMatch": "#EF4444",
+          "earphoneValorantPostAutoeqScore": "#FF9900",
+          "earphoneOverwatchFrMatch": "#FF9900",
+          "earphoneOverwatchPostAutoeqScore": "#A456E1"
+        },
+        "affiliateLinks": [
+          {
+            "id": "0b981581-2cb9-4f2e-bc5d-33f73c0e9628",
+            "platform": "COUPANG",
+            "affiliateUrl": "https://link.coupang.com/a/fKrYxxEGyq",
+            "price": 163800,
+            "currency": "KRW",
+            "purchaseRoute": "IMPORT",
+            "status": "ACTIVE",
+            "approvalStatus": "APPROVED",
+            "isPrimary": false,
+            "priorityOrder": 0
+          }
+        ]
+      },
+      {
+        "id": "0d24702d-a3a2-49ba-beff-c1e2a9dd7885",
+        "values": {
+          "youtubeReviewUrl": "",
+          "driverLinkId": "",
+          "tag": "",
+          "status": "reviewed",
+          "saleStatus": "FOR_SALE",
+          "manufacturer": "5a93466b-ba57-4739-9b29-64d7eee63688",
+          "productName": "Horizon",
+          "eyejokerRating": "NO_RECOMMENDATION",
+          "priceCurrency": "KRW",
+          "price": "62500",
+          "as": "",
+          "oneLineNote": "",
+          "benchVersion": "",
+          "firmwareVersion": "",
+          "productImage": "https://cdn.eyejokerdb.com/3be38942-debf-4120-baee-866d1018d64b.avif",
+          "purchasedDate": "2026-06-22T21:04:14.000Z",
+          "arrivedDate": "2026-07-01T15:57:00.000Z",
+          "testingStartDate": "2026-07-02T13:03:50.559900Z",
+          "publicReleaseAt": "2026-07-01T15:00:00.000Z",
+          "earphoneConnection": "WIRED",
+          "earphoneCableConnector": "TWO_PIN_078",
+          "earphoneSourceConnector": "PLUG_35MM,USB_C_DAC",
+          "earphoneWearType": "OVER_EAR",
+          "earphoneMicrophone": "WITH_MIC",
+          "earphoneWeightG": "",
+          "earphoneNozzleDiameterMm": "",
+          "earphoneNozzleDiameterMaxMm": "",
+          "earphoneDriverConfiguration": "1DD",
+          "earphoneShellMaterial": "POLYMER",
+          "earphoneCable": "1.2m 4심 OFC, 0.78mm 2-pin, 3.5mm/USB-C 옵션",
+          "earphoneAnc": "false",
+          "earphoneDriverDiameter": "10mm",
+          "earphoneImpedanceOhm": "16",
+          "earphoneSensitivityDbSplMw": "",
+          "overallRatingEarphone": "TIER_3",
+          "earphoneComfort": "A",
+          "earphoneChannelBalance": "68.153",
+          "earphoneFrSignature": "차분한 저음형",
+          "earphoneFrTrebleRisk": "주의",
+          "earphoneValorantFrMatch": "39.497",
+          "earphoneValorantPostAutoeqScore": "78.551",
+          "earphoneValorantFrTags": "고역 피크 주의 · 상단 대역 급감 주의",
+          "earphoneOverwatchFrMatch": "71.621",
+          "earphoneOverwatchPostAutoeqScore": "100",
+          "earphoneOverwatchFrTags": "저역 마스킹 주의"
+        },
+        "priceKrw": 62500,
+        "createdAt": "2026-06-22T21:04:18.486953Z",
+        "updatedAt": "2026-08-27T23:31:04.377957Z",
+        "isPrivate": false,
+        "hasMeshShell": false,
+        "hasFrequencyResponse": true,
+        "colors": {
+          "earphoneWearType": "#A456E1",
+          "earphoneComfort": "#1681FF",
+          "earphoneChannelBalance": "#EF4444",
+          "earphoneFrTrebleRisk": "#FF9900",
+          "earphoneValorantFrMatch": "#64748B",
+          "earphoneValorantPostAutoeqScore": "#FF9900",
+          "earphoneOverwatchFrMatch": "#FF9900",
+          "earphoneOverwatchPostAutoeqScore": "#A456E1"
+        },
+        "affiliateLinks": [
+          {
+            "id": "f5e7c9b5-e28c-4e60-8d7a-d636f32bb3ad",
+            "platform": "ALI",
+            "affiliateUrl": "https://s.click.aliexpress.com/e/_c4sEPz69",
+            "price": 72000,
+            "currency": "KRW",
+            "purchaseRoute": "IMPORT",
+            "status": "ACTIVE",
+            "approvalStatus": "APPROVED",
+            "isPrimary": false,
+            "priorityOrder": 0
+          },
+          {
+            "id": "dbba79d9-97e7-48b8-b607-01d8250bdd5f",
+            "platform": "COUPANG",
+            "affiliateUrl": "https://link.coupang.com/re/AFFSDP?lptag=AF5650931&pageKey=9461909950&itemId=28155636690&vendorItemId=95110835544&traceid=V0-153-f196aed7702237d5&requestid=20260625061717637182817837&token=31850C%7CGM",
+            "price": 67500,
+            "currency": "KRW",
+            "purchaseRoute": "IMPORT",
+            "status": "ACTIVE",
+            "approvalStatus": "APPROVED",
+            "isPrimary": false,
+            "priorityOrder": 0
+          }
+        ]
+      }
+    ],
+    "benchmarkType": {
+      "id": "earphone",
+      "enName": "earphone",
+      "koName": "이어폰",
+      "visibility": "PUBLIC"
+    },
+    "columns": {
+      "common": [
+        {
+          "id": "fa336b12-6b23-4e36-8a10-eeaf03547104",
+          "dataType": "COMPANY",
+          "field": "manufacturer",
+          "enName": "manufacturer",
+          "koName": "제조사",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 7,
+          "detailOrder": 6,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": true,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "제조사",
+            "en": "manufacturer"
+          }
+        },
+        {
+          "id": "d089bb4b-c935-434e-8607-1df473f50ced",
+          "dataType": "STRING",
+          "field": "productName",
+          "enName": "product name",
+          "koName": "제품 명",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 8,
+          "detailOrder": 8,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": true,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "제품 명",
+            "en": "product name"
+          }
+        },
+        {
+          "id": "13ad32a3-7028-4841-bb0a-5045ae488a09",
+          "dataType": "FILE",
+          "field": "productImage",
+          "enName": "Product Image",
+          "koName": "제품 사진",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 9,
+          "detailOrder": 17,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "제품 사진",
+            "en": "Product Image"
+          }
+        },
+        {
+          "id": "f790df98-e3a4-4d91-b091-2104c0e3e815",
+          "dataType": "ENUM",
+          "field": "eyejokerRating",
+          "enName": "Recommendation Grade",
+          "koName": "추천 등급",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 10,
+          "detailOrder": 9,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "HIGHLY_RECOMMENDED",
+              "enName": "Highly Recommend",
+              "koName": "매우추천",
+              "autoFill": {},
+              "names": {
+                "ko": "매우추천",
+                "en": "Highly Recommend"
+              }
+            },
+            {
+              "field": "RECOMMENDED",
+              "enName": "Recommend",
+              "koName": "추천",
+              "autoFill": {},
+              "names": {
+                "ko": "추천",
+                "en": "Recommend"
+              }
+            },
+            {
+              "field": "MILD_RECOMMENDATION",
+              "enName": "Meh",
+              "koName": "추천까지는",
+              "autoFill": {},
+              "names": {
+                "ko": "추천까지는",
+                "en": "Meh"
+              }
+            },
+            {
+              "field": "NO_RECOMMENDATION",
+              "enName": "Not Recommend",
+              "koName": "추천안함",
+              "autoFill": {},
+              "names": {
+                "ko": "추천안함",
+                "en": "Not Recommend"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "추천 등급",
+            "en": "Recommendation Grade",
+            "ja": "推奨グレード",
+            "zh": "推荐等级"
+          }
+        },
+        {
+          "id": "d3713a36-85d6-4107-94b3-e33f581cbacd",
+          "dataType": "ENUM",
+          "field": "status",
+          "enName": "Status",
+          "koName": "상태",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 11,
+          "detailOrder": 1,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "unreleased",
+              "enName": "Unreleased",
+              "koName": "미출시",
+              "autoFill": {},
+              "names": {
+                "ko": "미출시",
+                "en": "Unreleased"
+              }
+            },
+            {
+              "field": "proposed",
+              "enName": "Proposed",
+              "koName": "제안",
+              "autoFill": {},
+              "names": {
+                "ko": "제안",
+                "en": "Proposed"
+              }
+            },
+            {
+              "field": "purchased",
+              "enName": "Purchased",
+              "koName": "구매 완료",
+              "autoFill": {},
+              "names": {
+                "ko": "구매 완료",
+                "en": "Purchased"
+              }
+            },
+            {
+              "field": "arrived",
+              "enName": "Arrived",
+              "koName": "제품 도착",
+              "autoFill": {},
+              "names": {
+                "ko": "제품 도착",
+                "en": "Arrived"
+              }
+            },
+            {
+              "field": "testing",
+              "enName": "Testing",
+              "koName": "벤치 진행",
+              "autoFill": {},
+              "names": {
+                "ko": "벤치 진행",
+                "en": "Testing"
+              }
+            },
+            {
+              "field": "earlyAccess",
+              "enName": "Early Access",
+              "koName": "선 공개",
+              "autoFill": {},
+              "names": {
+                "ko": "선 공개",
+                "en": "Early Access"
+              }
+            },
+            {
+              "field": "reviewed",
+              "enName": "Reviewed",
+              "koName": "공개 완료",
+              "autoFill": {},
+              "names": {
+                "ko": "공개 완료",
+                "en": "Reviewed"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "상태",
+            "en": "Status"
+          }
+        },
+        {
+          "id": "a61ae634-0251-437c-933e-dd49522465f7",
+          "dataType": "NUMBER",
+          "field": "price",
+          "enName": "Price",
+          "koName": "가격",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 12,
+          "detailOrder": 12,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "가격",
+            "en": "Price"
+          }
+        },
+        {
+          "id": "e537ac0b-f39c-4800-9b4e-53130d02dfb3",
+          "dataType": "ENUM",
+          "field": "saleStatus",
+          "enName": "Sale Status",
+          "koName": "판매 상태",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 13,
+          "detailOrder": 2,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": true,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "unreleased",
+              "enName": "Unreleased",
+              "koName": "미출시",
+              "autoFill": {},
+              "names": {
+                "ko": "미출시",
+                "en": "Unreleased"
+              }
+            },
+            {
+              "field": "FOR_SALE",
+              "enName": "FOR_SALE",
+              "koName": "판매중",
+              "autoFill": {},
+              "names": {
+                "ko": "판매중",
+                "en": "FOR_SALE"
+              }
+            },
+            {
+              "field": "DISCONTINUED",
+              "enName": "Discontinued",
+              "koName": "단종",
+              "autoFill": {},
+              "names": {
+                "ko": "단종",
+                "en": "Discontinued"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "판매 상태",
+            "en": "Sale Status"
+          }
+        }
+      ],
+      "spec": [
+        {
+          "id": "34efc72e-fe77-4c41-b59c-13970f92cc7c",
+          "dataType": "ENUM",
+          "field": "earphoneConnection",
+          "enName": "Connection",
+          "koName": "연결",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 30,
+          "detailOrder": 30,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "TRUE_WIRELESS",
+              "enName": "True Wireless",
+              "koName": "완전무선",
+              "autoFill": {},
+              "names": {
+                "ko": "완전무선",
+                "en": "True Wireless"
+              }
+            },
+            {
+              "field": "WIRED",
+              "enName": "Wired",
+              "koName": "유선",
+              "autoFill": {},
+              "names": {
+                "ko": "유선",
+                "en": "Wired"
+              }
+            },
+            {
+              "field": "WIRELESS",
+              "enName": "Wireless",
+              "koName": "무선",
+              "autoFill": {},
+              "names": {
+                "ko": "무선",
+                "en": "Wireless"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "연결",
+            "en": "Connection"
+          }
+        },
+        {
+          "id": "b97b2d54-3c74-44b0-8a48-18c2077efba5",
+          "dataType": "ENUM",
+          "field": "earphoneWearType",
+          "enName": "Wear Type",
+          "koName": "착용 타입",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 31,
+          "detailOrder": 33,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "OPEN_EAR",
+              "enName": "Open earbuds",
+              "koName": "오픈형",
+              "autoFill": {},
+              "names": {
+                "ko": "오픈형",
+                "en": "Open earbuds"
+              }
+            },
+            {
+              "field": "OVER_EAR",
+              "enName": "Over-ear",
+              "koName": "오버이어",
+              "autoFill": {},
+              "names": {
+                "ko": "오버이어",
+                "en": "Over-ear"
+              }
+            },
+            {
+              "field": "UNDER_EAR",
+              "enName": "Under-ear",
+              "koName": "언더이어",
+              "autoFill": {},
+              "names": {
+                "ko": "언더이어",
+                "en": "Under-ear"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "착용 타입",
+            "en": "Wear Type"
+          }
+        },
+        {
+          "id": "167103b3-23e2-4c42-a742-1c9afe5541e3",
+          "dataType": "STRING",
+          "field": "earphoneDriverConfiguration",
+          "enName": "Driver Configuration",
+          "koName": "드라이버 구성",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 32,
+          "detailOrder": 38,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "드라이버 구성",
+            "en": "Driver Configuration"
+          }
+        }
+      ],
+      "bench": [
+        {
+          "id": "00deeb5c-d268-4f6c-b7ae-a063504bd1f2",
+          "dataType": "ENUM",
+          "field": "overallRatingEarphone",
+          "enName": "OverallRatingEarphone",
+          "koName": "종합 등급",
+          "prefix": null,
+          "suffix": null,
+          "showInList": true,
+          "listOrder": 49,
+          "detailOrder": 49,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "FLAWLESS",
+              "enName": "Flawless",
+              "koName": "무결점",
+              "autoFill": {},
+              "names": {
+                "ko": "무결점",
+                "en": "Flawless"
+              }
+            },
+            {
+              "field": "TIER_0",
+              "enName": "Tier0",
+              "koName": "0티어",
+              "autoFill": {},
+              "names": {
+                "ko": "0티어",
+                "en": "Tier0"
+              }
+            },
+            {
+              "field": "TIER_1",
+              "enName": "Tier1",
+              "koName": "1티어",
+              "autoFill": {},
+              "names": {
+                "ko": "1티어",
+                "en": "Tier1"
+              }
+            },
+            {
+              "field": "TIER_2",
+              "enName": "Tier2",
+              "koName": "2티어",
+              "autoFill": {},
+              "names": {
+                "ko": "2티어",
+                "en": "Tier2"
+              }
+            },
+            {
+              "field": "TIER_3",
+              "enName": "Tier3",
+              "koName": "3티어",
+              "autoFill": {},
+              "names": {
+                "ko": "3티어",
+                "en": "Tier3"
+              }
+            },
+            {
+              "field": "TIER_4",
+              "enName": "Tier4",
+              "koName": "4티어",
+              "autoFill": {},
+              "names": {
+                "ko": "4티어",
+                "en": "Tier4"
+              }
+            },
+            {
+              "field": "UNRATED",
+              "enName": "Unrated",
+              "koName": "등급외",
+              "autoFill": {},
+              "names": {
+                "ko": "등급외",
+                "en": "Unrated"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "종합 등급",
+            "en": "OverallRatingEarphone"
+          }
+        },
+        {
+          "id": "4a4b138c-eacd-4975-8f2c-87c6fa914833",
+          "dataType": "NUMBER",
+          "field": "earphoneChannelBalance",
+          "enName": "Channel Balance",
+          "koName": "좌우 밸런스",
+          "prefix": "",
+          "suffix": "%",
+          "showInList": true,
+          "listOrder": 53,
+          "detailOrder": 57,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": "raw.stats.frequencyResponse.channelImbalance.score",
+          "hasComma": true,
+          "decimalPlaces": 0,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "좌우 밸런스",
+            "en": "Channel Balance"
+          }
+        },
+        {
+          "id": "f3716de1-3732-4da8-84df-903c9df37b79",
+          "dataType": "STRING",
+          "field": "earphoneFrSignature",
+          "enName": "FR Signature",
+          "koName": "성향",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 55,
+          "detailOrder": 59,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": "raw.stats.frequencyResponse.toneBalance.signature.tagsText",
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "성향",
+            "en": "FR Signature"
+          }
+        },
+        {
+          "id": "118dbe94-e953-4770-a5b9-8609585d5b10",
+          "dataType": "STRING",
+          "field": "earphoneFrTrebleRisk",
+          "enName": "Treble Risk",
+          "koName": "고역 자극",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 56,
+          "detailOrder": 60,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": "raw.stats.frequencyResponse.toneBalance.risk.treble.label",
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "고역 자극",
+            "en": "Treble Risk"
+          }
+        },
+        {
+          "id": "ca2d8eff-5471-4823-a1bc-959189e57bed",
+          "dataType": "NUMBER",
+          "field": "earphoneValorantFrMatch",
+          "enName": "Valorant FR",
+          "koName": "발로란트 FR",
+          "prefix": "",
+          "suffix": "%",
+          "showInList": true,
+          "listOrder": 59,
+          "detailOrder": 85,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": "raw.stats.frequencyResponse.valorantFrMatch.score",
+          "hasComma": true,
+          "decimalPlaces": 0,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "발로란트 FR",
+            "en": "Valorant FR"
+          }
+        },
+        {
+          "id": "47e0e10e-7003-44d2-bc3a-f0a9606fc008",
+          "dataType": "NUMBER",
+          "field": "earphoneValorantPostAutoeqScore",
+          "enName": "Valorant FR (Post-AutoEQ)",
+          "koName": "발로 FR (EQ 보정 후)",
+          "prefix": "",
+          "suffix": "%",
+          "showInList": true,
+          "listOrder": 60,
+          "detailOrder": 86,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": "raw.stats.frequencyResponse.valorantFrMatchPostAutoeq.score",
+          "hasComma": true,
+          "decimalPlaces": 0,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "발로 FR (EQ 보정 후)",
+            "en": "Valorant FR (Post-AutoEQ)"
+          }
+        }
+      ]
+    },
+    "detailColumns": {
+      "common": [
+        {
+          "id": "59412d3e-7076-4a32-897e-dad19fb3b17f",
+          "dataType": "STRING",
+          "field": "youtubeReviewUrl",
+          "enName": "youtubeReviewUrl",
+          "koName": "유튜브 리뷰 링크",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 0,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "유튜브 리뷰 링크",
+            "en": "youtubeReviewUrl"
+          }
+        },
+        {
+          "id": "85c761c8-41fe-42b2-ae31-63c63e8d3921",
+          "dataType": "STRING",
+          "field": "tag",
+          "enName": "tag",
+          "koName": "태그",
+          "prefix": null,
+          "suffix": null,
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 0,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "태그",
+            "en": "tag"
+          }
+        },
+        {
+          "id": "2d0b566e-fa58-42f4-a7d7-80c94f38fecb",
+          "dataType": "STRING",
+          "field": "driverLinkId",
+          "enName": "DriverLink",
+          "koName": "드라이버 링크",
+          "prefix": null,
+          "suffix": null,
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 0,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "드라이버 링크",
+            "en": "DriverLink"
+          }
+        },
+        {
+          "id": "d3713a36-85d6-4107-94b3-e33f581cbacd",
+          "dataType": "ENUM",
+          "field": "status",
+          "enName": "Status",
+          "koName": "상태",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 11,
+          "detailOrder": 1,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "unreleased",
+              "enName": "Unreleased",
+              "koName": "미출시",
+              "autoFill": {},
+              "names": {
+                "ko": "미출시",
+                "en": "Unreleased"
+              }
+            },
+            {
+              "field": "proposed",
+              "enName": "Proposed",
+              "koName": "제안",
+              "autoFill": {},
+              "names": {
+                "ko": "제안",
+                "en": "Proposed"
+              }
+            },
+            {
+              "field": "purchased",
+              "enName": "Purchased",
+              "koName": "구매 완료",
+              "autoFill": {},
+              "names": {
+                "ko": "구매 완료",
+                "en": "Purchased"
+              }
+            },
+            {
+              "field": "arrived",
+              "enName": "Arrived",
+              "koName": "제품 도착",
+              "autoFill": {},
+              "names": {
+                "ko": "제품 도착",
+                "en": "Arrived"
+              }
+            },
+            {
+              "field": "testing",
+              "enName": "Testing",
+              "koName": "벤치 진행",
+              "autoFill": {},
+              "names": {
+                "ko": "벤치 진행",
+                "en": "Testing"
+              }
+            },
+            {
+              "field": "earlyAccess",
+              "enName": "Early Access",
+              "koName": "선 공개",
+              "autoFill": {},
+              "names": {
+                "ko": "선 공개",
+                "en": "Early Access"
+              }
+            },
+            {
+              "field": "reviewed",
+              "enName": "Reviewed",
+              "koName": "공개 완료",
+              "autoFill": {},
+              "names": {
+                "ko": "공개 완료",
+                "en": "Reviewed"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "상태",
+            "en": "Status"
+          }
+        },
+        {
+          "id": "359ad016-0cd3-43ed-a375-b9c7c3437f13",
+          "dataType": "ENUM",
+          "field": "driverSupportStatus",
+          "enName": "Driver Support Status",
+          "koName": "드라이버 지원 상태",
+          "prefix": null,
+          "suffix": null,
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 1,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "notAvailable",
+              "enName": "No Official Configuration Software",
+              "koName": "공식 설정 소프트웨어 없음",
+              "autoFill": {},
+              "names": {
+                "ko": "공식 설정 소프트웨어 없음",
+                "en": "No Official Configuration Software",
+                "ja": "公式設定ソフトウェアなし",
+                "zh": "无官方配置软件"
+              }
+            },
+            {
+              "field": "notRequired",
+              "enName": "No Separate Configuration Software Required",
+              "koName": "별도 설정 소프트웨어 불필요",
+              "autoFill": {},
+              "names": {
+                "ko": "별도 설정 소프트웨어 불필요",
+                "en": "No Separate Configuration Software Required",
+                "ja": "個別の設定ソフトウェアは不要",
+                "zh": "无需单独的配置软件"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "드라이버 지원 상태",
+            "en": "Driver Support Status",
+            "ja": "ドライバー対応状況",
+            "zh": "驱动支持状态"
+          }
+        },
+        {
+          "id": "e537ac0b-f39c-4800-9b4e-53130d02dfb3",
+          "dataType": "ENUM",
+          "field": "saleStatus",
+          "enName": "Sale Status",
+          "koName": "판매 상태",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 13,
+          "detailOrder": 2,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": true,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "unreleased",
+              "enName": "Unreleased",
+              "koName": "미출시",
+              "autoFill": {},
+              "names": {
+                "ko": "미출시",
+                "en": "Unreleased"
+              }
+            },
+            {
+              "field": "FOR_SALE",
+              "enName": "FOR_SALE",
+              "koName": "판매중",
+              "autoFill": {},
+              "names": {
+                "ko": "판매중",
+                "en": "FOR_SALE"
+              }
+            },
+            {
+              "field": "DISCONTINUED",
+              "enName": "Discontinued",
+              "koName": "단종",
+              "autoFill": {},
+              "names": {
+                "ko": "단종",
+                "en": "Discontinued"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "판매 상태",
+            "en": "Sale Status"
+          }
+        },
+        {
+          "id": "fa336b12-6b23-4e36-8a10-eeaf03547104",
+          "dataType": "COMPANY",
+          "field": "manufacturer",
+          "enName": "manufacturer",
+          "koName": "제조사",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 7,
+          "detailOrder": 6,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": true,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "제조사",
+            "en": "manufacturer"
+          }
+        },
+        {
+          "id": "d089bb4b-c935-434e-8607-1df473f50ced",
+          "dataType": "STRING",
+          "field": "productName",
+          "enName": "product name",
+          "koName": "제품 명",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 8,
+          "detailOrder": 8,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": true,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "제품 명",
+            "en": "product name"
+          }
+        },
+        {
+          "id": "f790df98-e3a4-4d91-b091-2104c0e3e815",
+          "dataType": "ENUM",
+          "field": "eyejokerRating",
+          "enName": "Recommendation Grade",
+          "koName": "추천 등급",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 10,
+          "detailOrder": 9,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "HIGHLY_RECOMMENDED",
+              "enName": "Highly Recommend",
+              "koName": "매우추천",
+              "autoFill": {},
+              "names": {
+                "ko": "매우추천",
+                "en": "Highly Recommend"
+              }
+            },
+            {
+              "field": "RECOMMENDED",
+              "enName": "Recommend",
+              "koName": "추천",
+              "autoFill": {},
+              "names": {
+                "ko": "추천",
+                "en": "Recommend"
+              }
+            },
+            {
+              "field": "MILD_RECOMMENDATION",
+              "enName": "Meh",
+              "koName": "추천까지는",
+              "autoFill": {},
+              "names": {
+                "ko": "추천까지는",
+                "en": "Meh"
+              }
+            },
+            {
+              "field": "NO_RECOMMENDATION",
+              "enName": "Not Recommend",
+              "koName": "추천안함",
+              "autoFill": {},
+              "names": {
+                "ko": "추천안함",
+                "en": "Not Recommend"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "추천 등급",
+            "en": "Recommendation Grade",
+            "ja": "推奨グレード",
+            "zh": "推荐等级"
+          }
+        },
+        {
+          "id": "e1d84163-20c9-4ecb-95fc-793bfb2c9d71",
+          "dataType": "ENUM",
+          "field": "priceCurrency",
+          "enName": "PriceCurrency",
+          "koName": "통화코드",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 10,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "CNY",
+              "enName": "CNY",
+              "koName": "CNY",
+              "autoFill": {},
+              "names": {
+                "ko": "CNY",
+                "en": "CNY",
+                "ja": "CNY",
+                "zh": "CNY"
+              }
+            },
+            {
+              "field": "EUR",
+              "enName": "EUR",
+              "koName": "EUR",
+              "autoFill": {},
+              "names": {
+                "ko": "EUR",
+                "en": "EUR",
+                "ja": "EUR",
+                "zh": "EUR"
+              }
+            },
+            {
+              "field": "GBP",
+              "enName": "GBP",
+              "koName": "GBP",
+              "autoFill": {},
+              "names": {
+                "ko": "GBP",
+                "en": "GBP",
+                "ja": "GBP",
+                "zh": "GBP"
+              }
+            },
+            {
+              "field": "INR",
+              "enName": "INR",
+              "koName": "INR",
+              "autoFill": {},
+              "names": {
+                "ko": "INR",
+                "en": "INR"
+              }
+            },
+            {
+              "field": "JPY",
+              "enName": "JPY",
+              "koName": "JPY",
+              "autoFill": {},
+              "names": {
+                "ko": "JPY",
+                "en": "JPY",
+                "ja": "JPY",
+                "zh": "JPY"
+              }
+            },
+            {
+              "field": "KRW",
+              "enName": "KRW",
+              "koName": "KRW",
+              "autoFill": {},
+              "names": {
+                "ko": "KRW",
+                "en": "KRW"
+              }
+            },
+            {
+              "field": "USD",
+              "enName": "USD",
+              "koName": "USD",
+              "autoFill": {},
+              "names": {
+                "ko": "USD",
+                "en": "USD"
+              }
+            },
+            {
+              "field": "AED",
+              "enName": "AED",
+              "koName": "AED",
+              "autoFill": {},
+              "names": {
+                "ko": "AED",
+                "en": "AED"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "통화코드",
+            "en": "PriceCurrency"
+          }
+        },
+        {
+          "id": "a61ae634-0251-437c-933e-dd49522465f7",
+          "dataType": "NUMBER",
+          "field": "price",
+          "enName": "Price",
+          "koName": "가격",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 12,
+          "detailOrder": 12,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "가격",
+            "en": "Price"
+          }
+        },
+        {
+          "id": "3f6d06e4-1904-4210-976f-7b98099aad79",
+          "dataType": "NUMBER",
+          "field": "as",
+          "enName": "AS",
+          "koName": "보증 기간",
+          "prefix": "",
+          "suffix": "년",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 13,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "보증 기간",
+            "en": "AS"
+          }
+        },
+        {
+          "id": "c95edff9-a285-4554-a796-394f53f2f02a",
+          "dataType": "STRING",
+          "field": "oneLineNote",
+          "enName": "ShortReview",
+          "koName": "한줄평",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 6,
+          "detailOrder": 14,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "한줄평",
+            "en": "ShortReview"
+          }
+        },
+        {
+          "id": "861849f5-8189-408b-aa02-fac2d2d5d83b",
+          "dataType": "STRING",
+          "field": "benchVersion",
+          "enName": "BenchVersion",
+          "koName": "벤치버전",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 7,
+          "detailOrder": 15,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "벤치버전",
+            "en": "BenchVersion"
+          }
+        },
+        {
+          "id": "c62da328-85aa-46db-ab92-50e0e5ed2411",
+          "dataType": "STRING",
+          "field": "firmwareVersion",
+          "enName": "FirmwareVersion",
+          "koName": "펌웨어 버전",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 8,
+          "detailOrder": 16,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "펌웨어 버전",
+            "en": "FirmwareVersion"
+          }
+        },
+        {
+          "id": "13ad32a3-7028-4841-bb0a-5045ae488a09",
+          "dataType": "FILE",
+          "field": "productImage",
+          "enName": "Product Image",
+          "koName": "제품 사진",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 9,
+          "detailOrder": 17,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "제품 사진",
+            "en": "Product Image"
+          }
+        },
+        {
+          "id": "9db61dbd-15b2-4fcc-bee8-1fc64b74374b",
+          "dataType": "DATETIME",
+          "field": "purchasedDate",
+          "enName": "Purchased Date",
+          "koName": "구매 완료 시간",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 20,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "구매 완료 시간",
+            "en": "Purchased Date"
+          }
+        },
+        {
+          "id": "1a8848c0-053c-4c5a-bfd9-377d32ecc79f",
+          "dataType": "DATETIME",
+          "field": "arrivedDate",
+          "enName": "Arrived Date",
+          "koName": "제품 도착 시간",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 21,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "제품 도착 시간",
+            "en": "Arrived Date"
+          }
+        },
+        {
+          "id": "774a633f-e245-470c-9cbc-00cc537ea985",
+          "dataType": "DATETIME",
+          "field": "testingStartDate",
+          "enName": "Testing Start Date",
+          "koName": "벤치 진행 시작 날짜",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 22,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "벤치 진행 시작 날짜",
+            "en": "Testing Start Date"
+          }
+        },
+        {
+          "id": "2937e309-2712-40f4-8e48-56534c8e0237",
+          "dataType": "DATETIME",
+          "field": "publicReleaseAt",
+          "enName": "Public Release At",
+          "koName": "전체 공개 일자",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 23,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "전체 공개 일자",
+            "en": "Public Release At"
+          }
+        },
+        {
+          "id": "d9c9365f-1e57-4480-8dc7-984918803cc3",
+          "dataType": "DATETIME",
+          "field": "earlyAccessAt",
+          "enName": "Early Access At",
+          "koName": "선공개 일자",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 23,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "선공개 일자",
+            "en": "Early Access At"
+          }
+        }
+      ],
+      "spec": [
+        {
+          "id": "34efc72e-fe77-4c41-b59c-13970f92cc7c",
+          "dataType": "ENUM",
+          "field": "earphoneConnection",
+          "enName": "Connection",
+          "koName": "연결",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 30,
+          "detailOrder": 30,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "TRUE_WIRELESS",
+              "enName": "True Wireless",
+              "koName": "완전무선",
+              "autoFill": {},
+              "names": {
+                "ko": "완전무선",
+                "en": "True Wireless"
+              }
+            },
+            {
+              "field": "WIRED",
+              "enName": "Wired",
+              "koName": "유선",
+              "autoFill": {},
+              "names": {
+                "ko": "유선",
+                "en": "Wired"
+              }
+            },
+            {
+              "field": "WIRELESS",
+              "enName": "Wireless",
+              "koName": "무선",
+              "autoFill": {},
+              "names": {
+                "ko": "무선",
+                "en": "Wireless"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "연결",
+            "en": "Connection"
+          }
+        },
+        {
+          "id": "aa1a4a9e-493d-4c7c-a632-16f56c9a4d00",
+          "dataType": "ENUM",
+          "field": "earphoneCableConnector",
+          "enName": "Earphone-side Connector",
+          "koName": "이어폰 측 단자",
+          "prefix": null,
+          "suffix": null,
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 31,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "A2DC",
+              "enName": "A2DC",
+              "koName": "A2DC",
+              "autoFill": {},
+              "names": {
+                "ko": "A2DC",
+                "en": "A2DC"
+              }
+            },
+            {
+              "field": "FIXED_CABLE",
+              "enName": "Fixed Cable",
+              "koName": "일체형",
+              "autoFill": {},
+              "names": {
+                "ko": "일체형",
+                "en": "Fixed Cable"
+              }
+            },
+            {
+              "field": "MMCX",
+              "enName": "MMCX",
+              "koName": "MMCX",
+              "autoFill": {},
+              "names": {
+                "ko": "MMCX",
+                "en": "MMCX"
+              }
+            },
+            {
+              "field": "OTHER_DETACHABLE",
+              "enName": "Other Detachable",
+              "koName": "기타 분리형",
+              "autoFill": {},
+              "names": {
+                "ko": "기타 분리형",
+                "en": "Other Detachable"
+              }
+            },
+            {
+              "field": "PENTACONN_EAR",
+              "enName": "Pentaconn Ear",
+              "koName": "Pentaconn Ear",
+              "autoFill": {},
+              "names": {
+                "ko": "Pentaconn Ear",
+                "en": "Pentaconn Ear"
+              }
+            },
+            {
+              "field": "QDC_2PIN",
+              "enName": "QDC 2-pin",
+              "koName": "QDC 2-pin",
+              "autoFill": {},
+              "names": {
+                "ko": "QDC 2-pin",
+                "en": "QDC 2-pin"
+              }
+            },
+            {
+              "field": "T2_IPX",
+              "enName": "T2 / IPX",
+              "koName": "T2/IPX",
+              "autoFill": {},
+              "names": {
+                "ko": "T2/IPX",
+                "en": "T2 / IPX"
+              }
+            },
+            {
+              "field": "TWO_PIN_075",
+              "enName": "0.75mm 2-pin",
+              "koName": "0.75mm 2-pin",
+              "autoFill": {},
+              "names": {
+                "ko": "0.75mm 2-pin",
+                "en": "0.75mm 2-pin"
+              }
+            },
+            {
+              "field": "TWO_PIN_078",
+              "enName": "0.78mm 2-pin",
+              "koName": "0.78mm 2-pin",
+              "autoFill": {},
+              "names": {
+                "ko": "0.78mm 2-pin",
+                "en": "0.78mm 2-pin"
+              }
+            }
+          ],
+          "multiSelect": true,
+          "names": {
+            "ko": "이어폰 측 단자",
+            "en": "Earphone-side Connector"
+          }
+        },
+        {
+          "id": "b22f1dba-35a7-4000-8145-5bb4190036fd",
+          "dataType": "ENUM",
+          "field": "earphoneSourceConnector",
+          "enName": "Source-side Connector",
+          "koName": "기기 측 단자",
+          "prefix": null,
+          "suffix": null,
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 32,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "LIGHTNING_DAC",
+              "enName": "Lightning DAC",
+              "koName": "Lightning DAC",
+              "autoFill": {},
+              "names": {
+                "ko": "Lightning DAC",
+                "en": "Lightning DAC"
+              }
+            },
+            {
+              "field": "PLUG_25MM",
+              "enName": "2.5mm",
+              "koName": "2.5mm",
+              "autoFill": {},
+              "names": {
+                "ko": "2.5mm",
+                "en": "2.5mm"
+              }
+            },
+            {
+              "field": "PLUG_35MM",
+              "enName": "3.5mm",
+              "koName": "3.5mm",
+              "autoFill": {},
+              "names": {
+                "ko": "3.5mm",
+                "en": "3.5mm"
+              }
+            },
+            {
+              "field": "PLUG_44MM",
+              "enName": "4.4mm",
+              "koName": "4.4mm",
+              "autoFill": {},
+              "names": {
+                "ko": "4.4mm",
+                "en": "4.4mm"
+              }
+            },
+            {
+              "field": "USB_C_DAC",
+              "enName": "USB-C DAC",
+              "koName": "USB-C DAC",
+              "autoFill": {},
+              "names": {
+                "ko": "USB-C DAC",
+                "en": "USB-C DAC"
+              }
+            }
+          ],
+          "multiSelect": true,
+          "names": {
+            "ko": "기기 측 단자",
+            "en": "Source-side Connector"
+          }
+        },
+        {
+          "id": "b97b2d54-3c74-44b0-8a48-18c2077efba5",
+          "dataType": "ENUM",
+          "field": "earphoneWearType",
+          "enName": "Wear Type",
+          "koName": "착용 타입",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 31,
+          "detailOrder": 33,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "OPEN_EAR",
+              "enName": "Open earbuds",
+              "koName": "오픈형",
+              "autoFill": {},
+              "names": {
+                "ko": "오픈형",
+                "en": "Open earbuds"
+              }
+            },
+            {
+              "field": "OVER_EAR",
+              "enName": "Over-ear",
+              "koName": "오버이어",
+              "autoFill": {},
+              "names": {
+                "ko": "오버이어",
+                "en": "Over-ear"
+              }
+            },
+            {
+              "field": "UNDER_EAR",
+              "enName": "Under-ear",
+              "koName": "언더이어",
+              "autoFill": {},
+              "names": {
+                "ko": "언더이어",
+                "en": "Under-ear"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "착용 타입",
+            "en": "Wear Type"
+          }
+        },
+        {
+          "id": "59abec87-abdb-4fe0-b5d7-e046b1ecb82c",
+          "dataType": "ENUM",
+          "field": "earphoneMicrophone",
+          "enName": "Microphone",
+          "koName": "마이크 유무",
+          "prefix": null,
+          "suffix": null,
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 34,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "WITHOUT_MIC",
+              "enName": "Not available",
+              "koName": "없음",
+              "autoFill": {},
+              "names": {
+                "ko": "없음",
+                "en": "Not available",
+                "ja": "なし",
+                "zh": "无"
+              }
+            },
+            {
+              "field": "WITH_MIC",
+              "enName": "Available",
+              "koName": "있음",
+              "autoFill": {},
+              "names": {
+                "ko": "있음",
+                "en": "Available",
+                "ja": "あり",
+                "zh": "有"
+              }
+            }
+          ],
+          "multiSelect": true,
+          "names": {
+            "ko": "마이크 유무",
+            "en": "Microphone",
+            "ja": "マイク",
+            "zh": "麦克风"
+          }
+        },
+        {
+          "id": "857060fd-b35f-4db3-8da0-093f72efac45",
+          "dataType": "NUMBER",
+          "field": "earphoneWeightG",
+          "enName": "Weight",
+          "koName": "무게",
+          "prefix": "",
+          "suffix": "g",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 35,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": 1,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "무게",
+            "en": "Weight"
+          }
+        },
+        {
+          "id": "106a1767-70b4-4d9d-a3ca-8ca52cf6a05e",
+          "dataType": "NUMBER",
+          "field": "earphoneNozzleDiameterMm",
+          "enName": "Nozzle Diameter",
+          "koName": "노즐직경",
+          "prefix": "",
+          "suffix": "mm",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 36,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": 2,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "노즐직경",
+            "en": "Nozzle Diameter"
+          }
+        },
+        {
+          "id": "67b2ea51-9ddd-4479-9781-feb625347f2c",
+          "dataType": "NUMBER",
+          "field": "earphoneNozzleDiameterMaxMm",
+          "enName": "Max Nozzle Diameter",
+          "koName": "노즐직경 최대",
+          "prefix": "",
+          "suffix": "mm",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 37,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": 2,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "노즐직경 최대",
+            "en": "Max Nozzle Diameter"
+          }
+        },
+        {
+          "id": "167103b3-23e2-4c42-a742-1c9afe5541e3",
+          "dataType": "STRING",
+          "field": "earphoneDriverConfiguration",
+          "enName": "Driver Configuration",
+          "koName": "드라이버 구성",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 32,
+          "detailOrder": 38,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "드라이버 구성",
+            "en": "Driver Configuration"
+          }
+        },
+        {
+          "id": "504dba81-40ff-4106-8d54-66006cb69fd4",
+          "dataType": "ENUM",
+          "field": "earphoneShellMaterial",
+          "enName": "Shell Material",
+          "koName": "셸 소재",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 39,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "CERAMIC",
+              "enName": "Ceramic",
+              "koName": "세라믹",
+              "autoFill": {},
+              "names": {
+                "ko": "세라믹",
+                "en": "Ceramic"
+              }
+            },
+            {
+              "field": "METAL",
+              "enName": "Metal",
+              "koName": "금속",
+              "autoFill": {},
+              "names": {
+                "ko": "금속",
+                "en": "Metal"
+              }
+            },
+            {
+              "field": "OTHER",
+              "enName": "Other",
+              "koName": "기타",
+              "autoFill": {},
+              "names": {
+                "ko": "기타",
+                "en": "Other"
+              }
+            },
+            {
+              "field": "POLYMER",
+              "enName": "Plastic / Resin",
+              "koName": "플라스틱·레진",
+              "autoFill": {},
+              "names": {
+                "ko": "플라스틱·레진",
+                "en": "Plastic / Resin"
+              }
+            },
+            {
+              "field": "SILICONE",
+              "enName": "Silicone",
+              "koName": "실리콘",
+              "autoFill": {},
+              "names": {
+                "ko": "실리콘",
+                "en": "Silicone"
+              }
+            },
+            {
+              "field": "WOOD",
+              "enName": "Wood",
+              "koName": "목재",
+              "autoFill": {},
+              "names": {
+                "ko": "목재",
+                "en": "Wood"
+              }
+            }
+          ],
+          "multiSelect": true,
+          "names": {
+            "ko": "셸 소재",
+            "en": "Shell Material"
+          }
+        },
+        {
+          "id": "1f135156-a240-42ac-aac9-4b1f2b169e32",
+          "dataType": "STRING",
+          "field": "earphoneCable",
+          "enName": "Cable",
+          "koName": "케이블",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 41,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "케이블",
+            "en": "Cable"
+          }
+        },
+        {
+          "id": "4c62d1f5-6917-4481-a267-b3f44df0387b",
+          "dataType": "BOOLEAN",
+          "field": "earphoneAnc",
+          "enName": "ANC",
+          "koName": "ANC",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 42,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "ANC",
+            "en": "ANC"
+          }
+        },
+        {
+          "id": "fb42fb6f-9257-429b-89ba-0453979b057b",
+          "dataType": "STRING",
+          "field": "earphoneDriverDiameter",
+          "enName": "Driver",
+          "koName": "드라이버",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 44,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "드라이버",
+            "en": "Driver"
+          }
+        },
+        {
+          "id": "f788b389-67b6-42f2-9ff7-864ba1b9c0fa",
+          "dataType": "NUMBER",
+          "field": "earphoneImpedanceOhm",
+          "enName": "Impedance",
+          "koName": "임피던스",
+          "prefix": "",
+          "suffix": "Ω",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 45,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": 1,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "임피던스",
+            "en": "Impedance"
+          }
+        },
+        {
+          "id": "7da337e2-ca01-4c86-9a70-0147cf28a98d",
+          "dataType": "NUMBER",
+          "field": "earphoneSensitivityDbSplMw",
+          "enName": "Sensitivity",
+          "koName": "감도",
+          "prefix": "",
+          "suffix": "dB SPL/mW",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 46,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": 1,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "감도",
+            "en": "Sensitivity"
+          }
+        }
+      ],
+      "bench": [
+        {
+          "id": "00deeb5c-d268-4f6c-b7ae-a063504bd1f2",
+          "dataType": "ENUM",
+          "field": "overallRatingEarphone",
+          "enName": "OverallRatingEarphone",
+          "koName": "종합 등급",
+          "prefix": null,
+          "suffix": null,
+          "showInList": true,
+          "listOrder": 49,
+          "detailOrder": 49,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "FLAWLESS",
+              "enName": "Flawless",
+              "koName": "무결점",
+              "autoFill": {},
+              "names": {
+                "ko": "무결점",
+                "en": "Flawless"
+              }
+            },
+            {
+              "field": "TIER_0",
+              "enName": "Tier0",
+              "koName": "0티어",
+              "autoFill": {},
+              "names": {
+                "ko": "0티어",
+                "en": "Tier0"
+              }
+            },
+            {
+              "field": "TIER_1",
+              "enName": "Tier1",
+              "koName": "1티어",
+              "autoFill": {},
+              "names": {
+                "ko": "1티어",
+                "en": "Tier1"
+              }
+            },
+            {
+              "field": "TIER_2",
+              "enName": "Tier2",
+              "koName": "2티어",
+              "autoFill": {},
+              "names": {
+                "ko": "2티어",
+                "en": "Tier2"
+              }
+            },
+            {
+              "field": "TIER_3",
+              "enName": "Tier3",
+              "koName": "3티어",
+              "autoFill": {},
+              "names": {
+                "ko": "3티어",
+                "en": "Tier3"
+              }
+            },
+            {
+              "field": "TIER_4",
+              "enName": "Tier4",
+              "koName": "4티어",
+              "autoFill": {},
+              "names": {
+                "ko": "4티어",
+                "en": "Tier4"
+              }
+            },
+            {
+              "field": "UNRATED",
+              "enName": "Unrated",
+              "koName": "등급외",
+              "autoFill": {},
+              "names": {
+                "ko": "등급외",
+                "en": "Unrated"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "종합 등급",
+            "en": "OverallRatingEarphone"
+          }
+        },
+        {
+          "id": "6e6241ed-bc98-4c82-9672-db6837047f1a",
+          "dataType": "ENUM",
+          "field": "earphoneComfort",
+          "enName": "Comfort",
+          "koName": "착용감",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 55,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "A",
+              "enName": "A",
+              "koName": "A",
+              "autoFill": {},
+              "names": {
+                "ko": "A",
+                "en": "A"
+              }
+            },
+            {
+              "field": "B",
+              "enName": "B",
+              "koName": "B",
+              "autoFill": {},
+              "names": {
+                "ko": "B",
+                "en": "B"
+              }
+            },
+            {
+              "field": "C",
+              "enName": "C",
+              "koName": "C",
+              "autoFill": {},
+              "names": {
+                "ko": "C",
+                "en": "C"
+              }
+            },
+            {
+              "field": "D",
+              "enName": "D",
+              "koName": "D",
+              "autoFill": {},
+              "names": {
+                "ko": "D",
+                "en": "D"
+              }
+            },
+            {
+              "field": "F",
+              "enName": "F",
+              "koName": "F",
+              "autoFill": {},
+              "names": {
+                "ko": "F",
+                "en": "F"
+              }
+            },
+            {
+              "field": "S",
+              "enName": "S",
+              "koName": "S",
+              "autoFill": {},
+              "names": {
+                "ko": "S",
+                "en": "S"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "착용감",
+            "en": "Comfort"
+          }
+        },
+        {
+          "id": "4a4b138c-eacd-4975-8f2c-87c6fa914833",
+          "dataType": "NUMBER",
+          "field": "earphoneChannelBalance",
+          "enName": "Channel Balance",
+          "koName": "좌우 밸런스",
+          "prefix": "",
+          "suffix": "%",
+          "showInList": true,
+          "listOrder": 53,
+          "detailOrder": 57,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": "raw.stats.frequencyResponse.channelImbalance.score",
+          "hasComma": true,
+          "decimalPlaces": 0,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "좌우 밸런스",
+            "en": "Channel Balance"
+          }
+        },
+        {
+          "id": "f3716de1-3732-4da8-84df-903c9df37b79",
+          "dataType": "STRING",
+          "field": "earphoneFrSignature",
+          "enName": "FR Signature",
+          "koName": "성향",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 55,
+          "detailOrder": 59,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": "raw.stats.frequencyResponse.toneBalance.signature.tagsText",
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "성향",
+            "en": "FR Signature"
+          }
+        },
+        {
+          "id": "118dbe94-e953-4770-a5b9-8609585d5b10",
+          "dataType": "STRING",
+          "field": "earphoneFrTrebleRisk",
+          "enName": "Treble Risk",
+          "koName": "고역 자극",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 56,
+          "detailOrder": 60,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": "raw.stats.frequencyResponse.toneBalance.risk.treble.label",
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "고역 자극",
+            "en": "Treble Risk"
+          }
+        },
+        {
+          "id": "ca2d8eff-5471-4823-a1bc-959189e57bed",
+          "dataType": "NUMBER",
+          "field": "earphoneValorantFrMatch",
+          "enName": "Valorant FR",
+          "koName": "발로란트 FR",
+          "prefix": "",
+          "suffix": "%",
+          "showInList": true,
+          "listOrder": 59,
+          "detailOrder": 85,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": "raw.stats.frequencyResponse.valorantFrMatch.score",
+          "hasComma": true,
+          "decimalPlaces": 0,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "발로란트 FR",
+            "en": "Valorant FR"
+          }
+        },
+        {
+          "id": "47e0e10e-7003-44d2-bc3a-f0a9606fc008",
+          "dataType": "NUMBER",
+          "field": "earphoneValorantPostAutoeqScore",
+          "enName": "Valorant FR (Post-AutoEQ)",
+          "koName": "발로 FR (EQ 보정 후)",
+          "prefix": "",
+          "suffix": "%",
+          "showInList": true,
+          "listOrder": 60,
+          "detailOrder": 86,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": "raw.stats.frequencyResponse.valorantFrMatchPostAutoeq.score",
+          "hasComma": true,
+          "decimalPlaces": 0,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "발로 FR (EQ 보정 후)",
+            "en": "Valorant FR (Post-AutoEQ)"
+          }
+        },
+        {
+          "id": "6271f0b5-75b9-4551-bb84-720ca79d4d75",
+          "dataType": "STRING",
+          "field": "earphoneValorantFrTags",
+          "enName": "Valorant FR Tags",
+          "koName": "발로 FR 태그",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 86,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": "raw.stats.frequencyResponse.valorantFrMatch.tagsText",
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "발로 FR 태그",
+            "en": "Valorant FR Tags"
+          }
+        },
+        {
+          "id": "0915cbd4-df5b-4b1f-8e01-42ba84aa0c9a",
+          "dataType": "NUMBER",
+          "field": "earphoneOverwatchFrMatch",
+          "enName": "Overwatch FR",
+          "koName": "옵치 FR",
+          "prefix": "",
+          "suffix": "%",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 92,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": "raw.stats.frequencyResponse.overwatchFrMatch.score",
+          "hasComma": true,
+          "decimalPlaces": 0,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "옵치 FR",
+            "en": "Overwatch FR"
+          }
+        },
+        {
+          "id": "2fd0410b-1074-4bc4-a494-8703714afaf3",
+          "dataType": "NUMBER",
+          "field": "earphoneOverwatchPostAutoeqScore",
+          "enName": "Overwatch FR (Post-AutoEQ)",
+          "koName": "옵치 FR (AutoEQ 보정 후)",
+          "prefix": "",
+          "suffix": "%",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 93,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": "raw.stats.frequencyResponse.overwatchFrMatchPostAutoeq.score",
+          "hasComma": true,
+          "decimalPlaces": 0,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "옵치 FR (AutoEQ 보정 후)",
+            "en": "Overwatch FR (Post-AutoEQ)"
+          }
+        },
+        {
+          "id": "27533235-dde8-4647-9d54-16f597796174",
+          "dataType": "STRING",
+          "field": "earphoneOverwatchFrTags",
+          "enName": "Overwatch FR Tags",
+          "koName": "옵치 태그",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 94,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": "raw.stats.frequencyResponse.overwatchFrMatch.tagsText",
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "옵치 태그",
+            "en": "Overwatch FR Tags"
+          }
+        }
+      ]
+    },
+    "fieldGroups": {
+      "common": [
+        {
+          "id": "basic_product",
+          "koName": "기본 제품 정보",
+          "enName": null,
+          "names": {},
+          "order": 1,
+          "type": null,
+          "fieldIds": [
+            "d3713a36-85d6-4107-94b3-e33f581cbacd",
+            "__system:overall_rating__",
+            "f790df98-e3a4-4d91-b091-2104c0e3e815",
+            "d089bb4b-c935-434e-8607-1df473f50ced",
+            "fa336b12-6b23-4e36-8a10-eeaf03547104",
+            "c95edff9-a285-4554-a796-394f53f2f02a",
+            "13ad32a3-7028-4841-bb0a-5045ae488a09",
+            "85c761c8-41fe-42b2-ae31-63c63e8d3921",
+            "c62da328-85aa-46db-ab92-50e0e5ed2411"
+          ],
+          "subGroups": null,
+          "additionalFields": null
+        },
+        {
+          "id": "purchase",
+          "koName": "구매 정보",
+          "enName": null,
+          "names": {},
+          "order": 2,
+          "type": null,
+          "fieldIds": [
+            "e537ac0b-f39c-4800-9b4e-53130d02dfb3",
+            "2d0b566e-fa58-42f4-a7d7-80c94f38fecb",
+            "e1d84163-20c9-4ecb-95fc-793bfb2c9d71",
+            "a61ae634-0251-437c-933e-dd49522465f7"
+          ],
+          "subGroups": null,
+          "additionalFields": null
+        },
+        {
+          "id": "dates",
+          "koName": "날짜 정보",
+          "enName": null,
+          "names": {},
+          "order": 3,
+          "type": null,
+          "fieldIds": [
+            "9db61dbd-15b2-4fcc-bee8-1fc64b74374b",
+            "1a8848c0-053c-4c5a-bfd9-377d32ecc79f",
+            "774a633f-e245-470c-9cbc-00cc537ea985",
+            "d9c9365f-1e57-4480-8dc7-984918803cc3",
+            "2937e309-2712-40f4-8e48-56534c8e0237"
+          ],
+          "subGroups": null,
+          "additionalFields": null
+        }
+      ],
+      "spec": [
+        {
+          "id": "earphone_core_specs",
+          "koName": "이어폰 기본 사양",
+          "enName": "Earphone Specs",
+          "names": {
+            "en": "Earphone Specs",
+            "ko": "이어폰 기본 사양"
+          },
+          "order": 1,
+          "type": null,
+          "fieldIds": [
+            "34efc72e-fe77-4c41-b59c-13970f92cc7c",
+            "aa1a4a9e-493d-4c7c-a632-16f56c9a4d00",
+            "b22f1dba-35a7-4000-8145-5bb4190036fd",
+            "b97b2d54-3c74-44b0-8a48-18c2077efba5",
+            "167103b3-23e2-4c42-a742-1c9afe5541e3",
+            "504dba81-40ff-4106-8d54-66006cb69fd4",
+            "1f135156-a240-42ac-aac9-4b1f2b169e32",
+            "857060fd-b35f-4db3-8da0-093f72efac45",
+            "106a1767-70b4-4d9d-a3ca-8ca52cf6a05e",
+            "67b2ea51-9ddd-4479-9781-feb625347f2c",
+            "4c62d1f5-6917-4481-a267-b3f44df0387b",
+            "fb42fb6f-9257-429b-89ba-0453979b057b",
+            "f788b389-67b6-42f2-9ff7-864ba1b9c0fa",
+            "7da337e2-ca01-4c86-9a70-0147cf28a98d"
+          ],
+          "subGroups": null,
+          "additionalFields": null
+        }
+      ],
+      "bench": [
+        {
+          "id": "earphone_game_eval",
+          "koName": "게임/청감 평가",
+          "enName": "Gaming Evaluation",
+          "names": {
+            "en": "Gaming Evaluation",
+            "ko": "게임/청감 평가"
+          },
+          "order": 1,
+          "type": null,
+          "fieldIds": [
+            "6e6241ed-bc98-4c82-9672-db6837047f1a"
+          ],
+          "subGroups": null,
+          "additionalFields": null
+        },
+        {
+          "id": "frequency_response_gaming",
+          "koName": "게이밍 FR",
+          "enName": "Gaming FR",
+          "names": {
+            "en": "Gaming FR",
+            "ko": "게이밍 FR"
+          },
+          "order": 2,
+          "type": null,
+          "fieldIds": [
+            "ca2d8eff-5471-4823-a1bc-959189e57bed",
+            "47e0e10e-7003-44d2-bc3a-f0a9606fc008",
+            "6271f0b5-75b9-4551-bb84-720ca79d4d75",
+            "0915cbd4-df5b-4b1f-8e01-42ba84aa0c9a",
+            "2fd0410b-1074-4bc4-a494-8703714afaf3",
+            "27533235-dde8-4647-9d54-16f597796174"
+          ],
+          "subGroups": null,
+          "additionalFields": null
+        },
+        {
+          "id": "frequency_response_tone",
+          "koName": "FR 성향/튜닝",
+          "enName": null,
+          "names": {},
+          "order": 1,
+          "type": null,
+          "fieldIds": [
+            "4a4b138c-eacd-4975-8f2c-87c6fa914833",
+            "f3716de1-3732-4da8-84df-903c9df37b79",
+            "118dbe94-e953-4770-a5b9-8609585d5b10"
+          ],
+          "subGroups": null,
+          "additionalFields": null
+        }
+      ]
+    }
+  },
+  "resultCode": "SUCCESS",
+  "resultMessage": "정상적으로 처리되었습니다.",
+  "requestId": null,
+  "errorLogId": null
+}

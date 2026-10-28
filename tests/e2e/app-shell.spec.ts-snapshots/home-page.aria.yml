@@ -1,5 +1,6 @@
 - main:
     - heading "Periscópio" [level=1]
+    - paragraph: Medições, especificações e preços de mouses, teclados, monitores, mousepads, switches e fones, em português.
     - paragraph: /Atualizado em \d+ de .+ de \d+/
     - region "Categorias":
         - heading "Categorias" [level=2]
@@ -21,3 +22,18 @@
                     - link "Monitores":
                         - /url: /monitor
                 - paragraph: 4 produtos
+            - listitem:
+                - heading "Mousepads" [level=3]:
+                    - link "Mousepads":
+                        - /url: /mousepad
+                - paragraph: 3 produtos
+            - listitem:
+                - heading "Switches" [level=3]:
+                    - link "Switches":
+                        - /url: /switch
+                - paragraph: 3 produtos
+            - listitem:
+                - heading "Fones" [level=3]:
+                    - link "Fones":
+                        - /url: /fone
+                - paragraph: 2 produtos

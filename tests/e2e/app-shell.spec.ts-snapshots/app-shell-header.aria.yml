@@ -8,5 +8,11 @@
             - /url: /teclado
         - link "Monitores":
             - /url: /monitor
+        - link "Mousepads":
+            - /url: /mousepad
+        - link "Switches":
+            - /url: /switch
+        - link "Fones":
+            - /url: /fone
     - button "Buscar"
     - button "Aparência"

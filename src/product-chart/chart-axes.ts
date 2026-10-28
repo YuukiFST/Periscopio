@@ -1,4 +1,4 @@
-import { isRatingField } from "../data/rating-order.ts";
+import { isGradeField } from "../data/rating-order.ts";
 import type { CategoryData, Product } from "../data/schema.ts";
 import { fieldLabel, unitLabel } from "../i18n/labels.ts";
 import { highlightDirection, type HighlightDirection } from "../product-compare/highlight-rules.ts";
@@ -39,7 +39,7 @@ export const defaultYSlug = "nota";
 function isNumberColumn(column: AxisColumn): boolean {
   if (column.kind === "price") return true;
   const { field } = column;
-  return field.type === "number" || isCountEnum(field) || isRatingField(field.key);
+  return field.type === "number" || isCountEnum(field) || isGradeField(field.key);
 }
 
 function axisOf(column: AxisColumn): ChartAxis {

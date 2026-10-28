@@ -1,0 +1,23 @@
+{
+  "category": "mousepad",
+  "products": {
+    "03986584-64e3-43a9-a783-589a977280c2": [
+      {
+        "date": "<date>",
+        "priceKrw": 34900
+      }
+    ],
+    "0e445432-bf3f-493e-b12b-bc0da30b9152": [
+      {
+        "date": "<date>",
+        "priceKrw": 29900
+      }
+    ],
+    "772219d3-04de-4c26-b8a7-57944bbe9da0": [
+      {
+        "date": "<date>",
+        "priceKrw": 49900
+      }
+    ]
+  }
+}

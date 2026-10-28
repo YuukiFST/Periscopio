@@ -23,7 +23,8 @@ export default defineConfig({
       manifest: {
         name: "Periscópio",
         short_name: "Periscópio",
-        description: "Benchmarks de mouses, teclados e monitores, em português.",
+        description:
+          "Benchmarks de mouses, teclados, monitores, mousepads, switches e fones, em português.",
         lang: "pt-BR",
         start_url: "/",
         scope: "/",

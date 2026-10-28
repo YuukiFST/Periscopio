@@ -1,0 +1,3376 @@
+{
+  "data": {
+    "rows": [
+      {
+        "id": "0b6be29e-286b-4809-a851-9e5d0c158687",
+        "values": {
+          "driverLinkId": "",
+          "tag": "",
+          "youtubeReviewUrl": "",
+          "driverSupportStatus": "",
+          "status": "reviewed",
+          "saleStatus": "FOR_SALE",
+          "manufacturer": "7467dbd1-4aac-43d0-89fd-1620cdb6b7b3",
+          "productName": "NOVA HE",
+          "eyejokerRating": "MILD_RECOMMENDATION",
+          "priceCurrency": "KRW",
+          "price": "590",
+          "as": "",
+          "oneLineNote": "같은 590원이면 Ti HE가 나음. 키압 편차도 크고 무거운 편이라 굳이?",
+          "benchVersion": "",
+          "firmwareVersion": "",
+          "productImage": "https://cdn.eyejokerdb.com/fe8d2dff-7302-43fb-9b1b-b4d79654b9df.avif",
+          "purchasedDate": "",
+          "arrivedDate": "",
+          "testingStartDate": "2026-08-06T09:32:00.000Z",
+          "publicReleaseAt": "2026-08-24T16:39:17Z",
+          "mechanism": "magnetic",
+          "category": "리니어",
+          "polarity": "N",
+          "upperHousing": "PC",
+          "lowerHousing": "NYLONPA",
+          "stem": "POM",
+          "spring": "싱글",
+          "springLength": "20",
+          "stemLength": "",
+          "startingForceSpec": "",
+          "actuationForceSpec": "",
+          "bottomOutForceSpec": "50",
+          "actuationTravelSpec": "",
+          "totalTravelSpec": "3.3",
+          "bottomOutHarshness": "true",
+          "travelDistance": "3.385666666666667",
+          "keyboardSwitchResolutionSummary": "",
+          "wobble": "",
+          "resolutionDeviation": "",
+          "resolutionPerMm": "328",
+          "resolutionSwitch": "",
+          "actuationPoint": "",
+          "overallAverage": "",
+          "horizontalAverage": "",
+          "horizontalDeviation": "",
+          "verticalAverage": "",
+          "verticalDeviation": "",
+          "startingForce": "34.424499999999995",
+          "bottomOutForce": "52.76691666666665",
+          "overallRatingKeyboardSwitch": "TIER_3",
+          "measurementDeviationSummary": "±3.5gf",
+          "hallResolutionSteps": "11094",
+          "travelMeasurementDeviationMm": "0.07218937287132753",
+          "hallWobbleVariationPercent": "0.7%",
+          "hallSampleVariationPercent": "",
+          "hallPressedHorizontalVariationPercent": "0.5798848751303192",
+          "hallPressedVerticalVariationPercent": "0.5617549743915258"
+        },
+        "priceKrw": 590,
+        "createdAt": "2026-08-06T09:32:37.194120Z",
+        "updatedAt": "2026-10-14T13:37:58.222209Z",
+        "isPrivate": false,
+        "hasMeshShell": false,
+        "hasFrequencyResponse": false,
+        "colors": {
+          "resolutionPerMm": "#1681FF",
+          "measurementDeviationSummary": "#94A9D2",
+          "travelMeasurementDeviationMm": "rgba(69,74,82,0.48)",
+          "hallWobbleVariationPercent": "#1681FF",
+          "hallPressedHorizontalVariationPercent": "#1681FF",
+          "hallPressedVerticalVariationPercent": "#1681FF"
+        }
+      },
+      {
+        "id": "0d698b78-1590-444a-9e24-98ca40baf688",
+        "values": {
+          "youtubeReviewUrl": "",
+          "driverLinkId": "",
+          "tag": "",
+          "status": "reviewed",
+          "driverSupportStatus": "",
+          "saleStatus": "FOR_SALE",
+          "manufacturer": "474ac539-f5e5-4ec3-9eeb-7d969bbed20f",
+          "productName": "Spark",
+          "eyejokerRating": "MILD_RECOMMENDATION",
+          "priceCurrency": "USD",
+          "price": "0.85",
+          "as": "",
+          "oneLineNote": "좋긴한데. 비싼 수준의 값어치는 못하는 느낌",
+          "benchVersion": "",
+          "firmwareVersion": "",
+          "productImage": "https://cdn.eyejokerdb.com/32dc62c4-30fb-4275-a0d9-47e7b02dcfb2.avif",
+          "purchasedDate": "",
+          "arrivedDate": "2025-04-03T05:41:00.000Z",
+          "testingStartDate": "2026-08-05T08:31:00.000Z",
+          "publicReleaseAt": "2026-08-24T23:09:32",
+          "mechanism": "magnetic",
+          "category": "리니어",
+          "polarity": "N",
+          "upperHousing": "PC",
+          "lowerHousing": "PA66",
+          "stem": "PC",
+          "spring": "싱글",
+          "springLength": "22",
+          "stemLength": "",
+          "startingForceSpec": "33",
+          "actuationForceSpec": "",
+          "bottomOutForceSpec": "45",
+          "actuationTravelSpec": "",
+          "totalTravelSpec": "3.2",
+          "bottomOutHarshness": "true",
+          "travelDistance": "3.1440512500000004",
+          "keyboardSwitchResolutionSummary": "",
+          "wobble": "",
+          "resolutionDeviation": "",
+          "resolutionPerMm": "296",
+          "resolutionSwitch": "",
+          "actuationPoint": "",
+          "overallAverage": "",
+          "horizontalAverage": "",
+          "horizontalDeviation": "",
+          "verticalAverage": "",
+          "verticalDeviation": "",
+          "startingForce": "33.74319083333333",
+          "bottomOutForce": "43.62980416666667",
+          "overallRatingKeyboardSwitch": "TIER_1",
+          "measurementDeviationSummary": "±0.8gf",
+          "travelMeasurementDeviationMm": "0.01741920905985207",
+          "hallResolutionSteps": "9298",
+          "hallWobbleVariationPercent": "1.4%",
+          "hallSampleVariationPercent": "",
+          "hallPressedHorizontalVariationPercent": "1.0951203783318941",
+          "hallPressedVerticalVariationPercent": "1.2360275150472915"
+        },
+        "priceKrw": 1126,
+        "createdAt": "2026-01-02T20:14:45.920641Z",
+        "updatedAt": "2026-10-27T19:00:03.214996Z",
+        "isPrivate": false,
+        "hasMeshShell": false,
+        "hasFrequencyResponse": false,
+        "colors": {
+          "resolutionPerMm": "#15B67C",
+          "measurementDeviationSummary": "#1681FF",
+          "travelMeasurementDeviationMm": "#1681FF",
+          "hallWobbleVariationPercent": "#15B67C",
+          "hallPressedHorizontalVariationPercent": "#15B67C",
+          "hallPressedVerticalVariationPercent": "#15B67C"
+        }
+      },
+      {
+        "id": "22a93098-1df3-4dca-bdbc-36a5b7f4c3fb",
+        "values": {
+          "driverLinkId": "",
+          "youtubeReviewUrl": "",
+          "tag": "",
+          "status": "reviewed",
+          "driverSupportStatus": "",
+          "saleStatus": "FOR_SALE",
+          "manufacturer": "7467dbd1-4aac-43d0-89fd-1620cdb6b7b3",
+          "productName": "Ti HE 50g",
+          "eyejokerRating": "RECOMMENDED",
+          "priceCurrency": "KRW",
+          "price": "590",
+          "as": "",
+          "oneLineNote": "흔들림 거의 없고 꽉 찬 소리. 590원인데 키압 편차도 제일 적은 편이라 가성비 좋음. 다만 소리가 큰 편이고 하우징이 갈색이라 RGB가 어두움",
+          "benchVersion": "",
+          "firmwareVersion": "",
+          "productImage": "https://cdn.eyejokerdb.com/9d916d9c-9dae-4267-a3b5-cf2648fa7cd6.png",
+          "purchasedDate": "",
+          "arrivedDate": "2025-05-10T06:04:00.000Z",
+          "testingStartDate": "2026-08-05T09:16:00.000Z",
+          "publicReleaseAt": "2026-08-24T16:39:17Z",
+          "mechanism": "magnetic",
+          "category": "리니어",
+          "polarity": "N",
+          "upperHousing": "PC",
+          "lowerHousing": "NYLON",
+          "stem": "POM",
+          "spring": "싱글",
+          "springLength": "22",
+          "stemLength": "",
+          "startingForceSpec": "",
+          "actuationForceSpec": "",
+          "bottomOutForceSpec": "50",
+          "actuationTravelSpec": "",
+          "totalTravelSpec": "3.4",
+          "bottomOutHarshness": "false",
+          "travelDistance": "3.342833333333333",
+          "wobble": "",
+          "keyboardSwitchResolutionSummary": "",
+          "resolutionDeviation": "",
+          "resolutionPerMm": "334",
+          "resolutionSwitch": "",
+          "actuationPoint": "",
+          "overallAverage": "",
+          "horizontalAverage": "",
+          "horizontalDeviation": "",
+          "verticalAverage": "",
+          "verticalDeviation": "",
+          "startingForce": "33.84791666666667",
+          "bottomOutForce": "47.628166666666665",
+          "overallRatingKeyboardSwitch": "FLAWLESS",
+          "measurementDeviationSummary": "±0.4gf",
+          "travelMeasurementDeviationMm": "0.0007993052538853654",
+          "hallResolutionSteps": "11181",
+          "hallWobbleVariationPercent": "0.5%",
+          "hallSampleVariationPercent": "",
+          "hallPressedHorizontalVariationPercent": "0.4021088374586722",
+          "hallPressedVerticalVariationPercent": "0.46465910106335445"
+        },
+        "priceKrw": 590,
+        "createdAt": "2025-08-08T08:36:34.778321Z",
+        "updatedAt": "2026-10-15T14:30:11.159161Z",
+        "isPrivate": false,
+        "hasMeshShell": false,
+        "hasFrequencyResponse": false,
+        "colors": {
+          "resolutionPerMm": "#1681FF",
+          "measurementDeviationSummary": "#A456E1",
+          "travelMeasurementDeviationMm": "#A456E1",
+          "hallWobbleVariationPercent": "#A456E1",
+          "hallPressedHorizontalVariationPercent": "#A456E1",
+          "hallPressedVerticalVariationPercent": "#A456E1"
+        },
+        "affiliateLinks": [
+          {
+            "id": "670f4f4c-0553-4862-afc6-e7b50c7dd3de",
+            "platform": "ALI",
+            "affiliateUrl": "https://s.click.aliexpress.com/e/_opBCSP5",
+            "price": 7320,
+            "currency": "KRW",
+            "purchaseRoute": "IMPORT",
+            "status": "ACTIVE",
+            "approvalStatus": "APPROVED",
+            "isPrimary": true,
+            "priorityOrder": 0
+          }
+        ]
+      },
+      {
+        "id": "c6dd1f29-6524-40f5-bca6-ceaf6a415066",
+        "values": {
+          "status": "proposed",
+          "saleStatus": "FOR_SALE",
+          "manufacturer": "",
+          "productName": "MAD60HE PRO 스위치",
+          "eyejokerRating": "",
+          "priceCurrency": "KRW",
+          "price": "",
+          "as": "",
+          "oneLineNote": "",
+          "benchVersion": "",
+          "firmwareVersion": "",
+          "productImage": "",
+          "purchasedDate": "",
+          "arrivedDate": "",
+          "testingStartDate": "",
+          "publicReleaseAt": "",
+          "mechanism": "magnetic",
+          "category": "리니어",
+          "polarity": "N",
+          "upperHousing": "",
+          "lowerHousing": "",
+          "stem": "",
+          "spring": "",
+          "springLength": "",
+          "stemLength": "",
+          "startingForceSpec": "",
+          "actuationForceSpec": "",
+          "bottomOutForceSpec": "",
+          "actuationTravelSpec": "",
+          "totalTravelSpec": "",
+          "bottomOutHarshness": "true",
+          "travelDistance": "",
+          "wobble": "",
+          "keyboardSwitchResolutionSummary": "",
+          "resolutionDeviation": "",
+          "resolutionPerMm": "",
+          "resolutionSwitch": "",
+          "actuationPoint": "",
+          "overallAverage": "",
+          "horizontalAverage": "",
+          "horizontalDeviation": "",
+          "verticalAverage": "",
+          "verticalDeviation": "",
+          "startingForce": "",
+          "bottomOutForce": "",
+          "overallRatingKeyboardSwitch": "",
+          "measurementDeviationSummary": "",
+          "travelMeasurementDeviationMm": "",
+          "hallResolutionSteps": "",
+          "hallWobbleVariationPercent": "",
+          "hallSampleVariationPercent": "",
+          "hallPressedHorizontalVariationPercent": "",
+          "hallPressedVerticalVariationPercent": ""
+        },
+        "createdAt": "2025-08-08T06:51:18.007663Z",
+        "updatedAt": "2026-10-01T16:32:44.714604Z",
+        "isPrivate": false,
+        "hasMeshShell": false,
+        "hasFrequencyResponse": false
+      }
+    ],
+    "benchmarkType": {
+      "id": "keyboard-switch",
+      "enName": "Keyboard Switch",
+      "koName": "키보드 스위치",
+      "visibility": "PUBLIC"
+    },
+    "columns": {
+      "common": [
+        {
+          "id": "fa336b12-6b23-4e36-8a10-eeaf03547104",
+          "dataType": "COMPANY",
+          "field": "manufacturer",
+          "enName": "manufacturer",
+          "koName": "제조사",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 7,
+          "detailOrder": 6,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": true,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "제조사",
+            "en": "manufacturer"
+          }
+        },
+        {
+          "id": "d089bb4b-c935-434e-8607-1df473f50ced",
+          "dataType": "STRING",
+          "field": "productName",
+          "enName": "product name",
+          "koName": "제품 명",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 8,
+          "detailOrder": 8,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": true,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "제품 명",
+            "en": "product name"
+          }
+        },
+        {
+          "id": "13ad32a3-7028-4841-bb0a-5045ae488a09",
+          "dataType": "FILE",
+          "field": "productImage",
+          "enName": "Product Image",
+          "koName": "제품 사진",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 9,
+          "detailOrder": 17,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "제품 사진",
+            "en": "Product Image"
+          }
+        },
+        {
+          "id": "f790df98-e3a4-4d91-b091-2104c0e3e815",
+          "dataType": "ENUM",
+          "field": "eyejokerRating",
+          "enName": "Recommendation Grade",
+          "koName": "추천 등급",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 10,
+          "detailOrder": 9,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "HIGHLY_RECOMMENDED",
+              "enName": "Highly Recommend",
+              "koName": "매우추천",
+              "autoFill": {},
+              "names": {
+                "ko": "매우추천",
+                "en": "Highly Recommend"
+              }
+            },
+            {
+              "field": "RECOMMENDED",
+              "enName": "Recommend",
+              "koName": "추천",
+              "autoFill": {},
+              "names": {
+                "ko": "추천",
+                "en": "Recommend"
+              }
+            },
+            {
+              "field": "MILD_RECOMMENDATION",
+              "enName": "Meh",
+              "koName": "추천까지는",
+              "autoFill": {},
+              "names": {
+                "ko": "추천까지는",
+                "en": "Meh"
+              }
+            },
+            {
+              "field": "NO_RECOMMENDATION",
+              "enName": "Not Recommend",
+              "koName": "추천안함",
+              "autoFill": {},
+              "names": {
+                "ko": "추천안함",
+                "en": "Not Recommend"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "추천 등급",
+            "en": "Recommendation Grade",
+            "ja": "推奨グレード",
+            "zh": "推荐等级"
+          }
+        },
+        {
+          "id": "d3713a36-85d6-4107-94b3-e33f581cbacd",
+          "dataType": "ENUM",
+          "field": "status",
+          "enName": "Status",
+          "koName": "상태",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 11,
+          "detailOrder": 1,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "unreleased",
+              "enName": "Unreleased",
+              "koName": "미출시",
+              "autoFill": {},
+              "names": {
+                "ko": "미출시",
+                "en": "Unreleased"
+              }
+            },
+            {
+              "field": "proposed",
+              "enName": "Proposed",
+              "koName": "제안",
+              "autoFill": {},
+              "names": {
+                "ko": "제안",
+                "en": "Proposed"
+              }
+            },
+            {
+              "field": "purchased",
+              "enName": "Purchased",
+              "koName": "구매 완료",
+              "autoFill": {},
+              "names": {
+                "ko": "구매 완료",
+                "en": "Purchased"
+              }
+            },
+            {
+              "field": "arrived",
+              "enName": "Arrived",
+              "koName": "제품 도착",
+              "autoFill": {},
+              "names": {
+                "ko": "제품 도착",
+                "en": "Arrived"
+              }
+            },
+            {
+              "field": "testing",
+              "enName": "Testing",
+              "koName": "벤치 진행",
+              "autoFill": {},
+              "names": {
+                "ko": "벤치 진행",
+                "en": "Testing"
+              }
+            },
+            {
+              "field": "earlyAccess",
+              "enName": "Early Access",
+              "koName": "선 공개",
+              "autoFill": {},
+              "names": {
+                "ko": "선 공개",
+                "en": "Early Access"
+              }
+            },
+            {
+              "field": "reviewed",
+              "enName": "Reviewed",
+              "koName": "공개 완료",
+              "autoFill": {},
+              "names": {
+                "ko": "공개 완료",
+                "en": "Reviewed"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "상태",
+            "en": "Status"
+          }
+        },
+        {
+          "id": "a61ae634-0251-437c-933e-dd49522465f7",
+          "dataType": "NUMBER",
+          "field": "price",
+          "enName": "Price",
+          "koName": "가격",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 12,
+          "detailOrder": 12,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "가격",
+            "en": "Price"
+          }
+        },
+        {
+          "id": "e537ac0b-f39c-4800-9b4e-53130d02dfb3",
+          "dataType": "ENUM",
+          "field": "saleStatus",
+          "enName": "Sale Status",
+          "koName": "판매 상태",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 13,
+          "detailOrder": 2,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": true,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "unreleased",
+              "enName": "Unreleased",
+              "koName": "미출시",
+              "autoFill": {},
+              "names": {
+                "ko": "미출시",
+                "en": "Unreleased"
+              }
+            },
+            {
+              "field": "FOR_SALE",
+              "enName": "FOR_SALE",
+              "koName": "판매중",
+              "autoFill": {},
+              "names": {
+                "ko": "판매중",
+                "en": "FOR_SALE"
+              }
+            },
+            {
+              "field": "DISCONTINUED",
+              "enName": "Discontinued",
+              "koName": "단종",
+              "autoFill": {},
+              "names": {
+                "ko": "단종",
+                "en": "Discontinued"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "판매 상태",
+            "en": "Sale Status"
+          }
+        }
+      ],
+      "spec": [
+        {
+          "id": "3400ed94-f8cd-4cfe-b689-c53b8a72b066",
+          "dataType": "ENUM",
+          "field": "mechanism",
+          "enName": "Mechanism",
+          "koName": "방식",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 14,
+          "detailOrder": 140,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "magnetic",
+              "enName": "magnetic",
+              "koName": "자석축",
+              "autoFill": {},
+              "names": {
+                "ko": "자석축",
+                "en": "magnetic"
+              }
+            },
+            {
+              "field": "mechanic",
+              "enName": "mechanic",
+              "koName": "기계식",
+              "autoFill": {},
+              "names": {
+                "ko": "기계식",
+                "en": "mechanic"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "방식",
+            "en": "Mechanism"
+          }
+        },
+        {
+          "id": "427f25f3-c87b-421d-9bc5-fd85b8247830",
+          "dataType": "ENUM",
+          "field": "overallRatingKeyboardSwitch",
+          "enName": "OverallRatingKeyboardSwitch",
+          "koName": "종합 등급",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 21,
+          "detailOrder": 168,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "FLAWLESS",
+              "enName": "Flawless",
+              "koName": "무결점",
+              "autoFill": {},
+              "names": {
+                "ko": "무결점",
+                "en": "Flawless"
+              }
+            },
+            {
+              "field": "LAUNCHING_SOON",
+              "enName": "Coming Soon",
+              "koName": "출시예정",
+              "autoFill": {},
+              "names": {
+                "ko": "출시예정",
+                "en": "Coming Soon"
+              }
+            },
+            {
+              "field": "OTHER",
+              "enName": "Other",
+              "koName": "기타",
+              "autoFill": {},
+              "names": {
+                "ko": "기타",
+                "en": "Other"
+              }
+            },
+            {
+              "field": "RE_MEASUREMENT",
+              "enName": "Retest",
+              "koName": "재측정",
+              "autoFill": {},
+              "names": {
+                "ko": "재측정",
+                "en": "Retest"
+              }
+            },
+            {
+              "field": "TIER_0",
+              "enName": "Tier0",
+              "koName": "0티어",
+              "autoFill": {},
+              "names": {
+                "ko": "0티어",
+                "en": "Tier0"
+              }
+            },
+            {
+              "field": "TIER_1",
+              "enName": "Tier1",
+              "koName": "1티어",
+              "autoFill": {},
+              "names": {
+                "ko": "1티어",
+                "en": "Tier1"
+              }
+            },
+            {
+              "field": "TIER_2",
+              "enName": "Tier2",
+              "koName": "2티어",
+              "autoFill": {},
+              "names": {
+                "ko": "2티어",
+                "en": "Tier2"
+              }
+            },
+            {
+              "field": "TIER_3",
+              "enName": "Tier3",
+              "koName": "3티어",
+              "autoFill": {},
+              "names": {
+                "ko": "3티어",
+                "en": "Tier3"
+              }
+            },
+            {
+              "field": "TIER_4",
+              "enName": "Tier4",
+              "koName": "4티어",
+              "autoFill": {},
+              "names": {
+                "ko": "4티어",
+                "en": "Tier4"
+              }
+            },
+            {
+              "field": "UNRATED",
+              "enName": "Unrated",
+              "koName": "등급없음",
+              "autoFill": {},
+              "names": {
+                "ko": "등급없음",
+                "en": "Unrated"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "종합 등급",
+            "en": "OverallRatingKeyboardSwitch"
+          }
+        }
+      ],
+      "bench": [
+        {
+          "id": "b5851205-7f8e-4aef-9f5c-183ab162dd64",
+          "dataType": "NUMBER",
+          "field": "travelDistance",
+          "enName": "Travel Distance",
+          "koName": "이동거리",
+          "prefix": "",
+          "suffix": "mm",
+          "showInList": true,
+          "listOrder": 18,
+          "detailOrder": 155,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": 2,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "이동거리",
+            "en": "Travel Distance"
+          }
+        },
+        {
+          "id": "4b6c16f0-3d99-4526-9fb5-2920eb344111",
+          "dataType": "NUMBER",
+          "field": "startingForce",
+          "enName": "Starting Force",
+          "koName": "시작압",
+          "prefix": "",
+          "suffix": "gf",
+          "showInList": true,
+          "listOrder": 19,
+          "detailOrder": 166,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": 0,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "시작압",
+            "en": "Starting Force"
+          }
+        },
+        {
+          "id": "861885d4-e9d5-4429-8205-65649f18c3ed",
+          "dataType": "NUMBER",
+          "field": "bottomOutForce",
+          "enName": "Bottom-out Force",
+          "koName": "바닥압",
+          "prefix": "",
+          "suffix": "gf",
+          "showInList": true,
+          "listOrder": 20,
+          "detailOrder": 167,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": 0,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "바닥압",
+            "en": "Bottom-out Force"
+          }
+        },
+        {
+          "id": "2f25ff47-7a90-4358-ba52-8ef99c52c3d8",
+          "dataType": "STRING",
+          "field": "measurementDeviationSummary",
+          "enName": "Force Deviation",
+          "koName": "키압 편차",
+          "prefix": null,
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 21,
+          "detailOrder": 170,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": "raw.stats.forceCurve",
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "키압 편차",
+            "en": "Force Deviation"
+          }
+        },
+        {
+          "id": "c452f8ca-9084-4cdc-9c89-acf0ab8db057",
+          "dataType": "NUMBER",
+          "field": "travelMeasurementDeviationMm",
+          "enName": "Travel Deviation",
+          "koName": "이동거리 편차",
+          "prefix": "±",
+          "suffix": "mm",
+          "showInList": true,
+          "listOrder": 22,
+          "detailOrder": 171,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": false,
+          "decimalPlaces": 2,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "이동거리 편차",
+            "en": "Travel Deviation"
+          }
+        },
+        {
+          "id": "14fe8569-59d2-40d2-a347-86fb94789048",
+          "dataType": "NUMBER",
+          "field": "resolutionPerMm",
+          "enName": "Resolution per 0.1 mm",
+          "koName": "0.1mm 해상도",
+          "prefix": "",
+          "suffix": "단계",
+          "showInList": true,
+          "listOrder": 23,
+          "detailOrder": 158,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": 0,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "0.1mm 해상도",
+            "en": "Resolution per 0.1 mm"
+          }
+        },
+        {
+          "id": "669f65d6-9bc0-4415-8170-9899ea2a8d10",
+          "dataType": "NUMBER",
+          "field": "hallPressedHorizontalVariationPercent",
+          "enName": "Pressed Horizontal Hall Wobble",
+          "koName": "Hall 좌우 흔들림",
+          "prefix": "",
+          "suffix": "%",
+          "showInList": true,
+          "listOrder": 24,
+          "detailOrder": 174,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": false,
+          "decimalPlaces": 1,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "Hall 좌우 흔들림",
+            "en": "Pressed Horizontal Hall Wobble"
+          }
+        },
+        {
+          "id": "62659b28-4d10-419a-bbec-d981aed3e2d2",
+          "dataType": "NUMBER",
+          "field": "hallPressedVerticalVariationPercent",
+          "enName": "Pressed Vertical Hall Wobble",
+          "koName": "Hall 상하 흔들림",
+          "prefix": "",
+          "suffix": "%",
+          "showInList": true,
+          "listOrder": 25,
+          "detailOrder": 175,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": false,
+          "decimalPlaces": 1,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "Hall 상하 흔들림",
+            "en": "Pressed Vertical Hall Wobble"
+          }
+        },
+        {
+          "id": "770cc460-cfd7-4623-8a2f-4829f400f442",
+          "dataType": "STRING",
+          "field": "hallWobbleVariationPercent",
+          "enName": "Hall Rotational Wobble",
+          "koName": "Hall 회전 흔들림",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 26,
+          "detailOrder": 172,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": "raw.stats.magneticResponse.wobbleVariationPercent",
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "Hall 회전 흔들림",
+            "en": "Hall Rotational Wobble"
+          }
+        }
+      ]
+    },
+    "detailColumns": {
+      "common": [
+        {
+          "id": "59412d3e-7076-4a32-897e-dad19fb3b17f",
+          "dataType": "STRING",
+          "field": "youtubeReviewUrl",
+          "enName": "youtubeReviewUrl",
+          "koName": "유튜브 리뷰 링크",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 0,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "유튜브 리뷰 링크",
+            "en": "youtubeReviewUrl"
+          }
+        },
+        {
+          "id": "85c761c8-41fe-42b2-ae31-63c63e8d3921",
+          "dataType": "STRING",
+          "field": "tag",
+          "enName": "tag",
+          "koName": "태그",
+          "prefix": null,
+          "suffix": null,
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 0,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "태그",
+            "en": "tag"
+          }
+        },
+        {
+          "id": "2d0b566e-fa58-42f4-a7d7-80c94f38fecb",
+          "dataType": "STRING",
+          "field": "driverLinkId",
+          "enName": "DriverLink",
+          "koName": "드라이버 링크",
+          "prefix": null,
+          "suffix": null,
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 0,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "드라이버 링크",
+            "en": "DriverLink"
+          }
+        },
+        {
+          "id": "d3713a36-85d6-4107-94b3-e33f581cbacd",
+          "dataType": "ENUM",
+          "field": "status",
+          "enName": "Status",
+          "koName": "상태",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 11,
+          "detailOrder": 1,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "unreleased",
+              "enName": "Unreleased",
+              "koName": "미출시",
+              "autoFill": {},
+              "names": {
+                "ko": "미출시",
+                "en": "Unreleased"
+              }
+            },
+            {
+              "field": "proposed",
+              "enName": "Proposed",
+              "koName": "제안",
+              "autoFill": {},
+              "names": {
+                "ko": "제안",
+                "en": "Proposed"
+              }
+            },
+            {
+              "field": "purchased",
+              "enName": "Purchased",
+              "koName": "구매 완료",
+              "autoFill": {},
+              "names": {
+                "ko": "구매 완료",
+                "en": "Purchased"
+              }
+            },
+            {
+              "field": "arrived",
+              "enName": "Arrived",
+              "koName": "제품 도착",
+              "autoFill": {},
+              "names": {
+                "ko": "제품 도착",
+                "en": "Arrived"
+              }
+            },
+            {
+              "field": "testing",
+              "enName": "Testing",
+              "koName": "벤치 진행",
+              "autoFill": {},
+              "names": {
+                "ko": "벤치 진행",
+                "en": "Testing"
+              }
+            },
+            {
+              "field": "earlyAccess",
+              "enName": "Early Access",
+              "koName": "선 공개",
+              "autoFill": {},
+              "names": {
+                "ko": "선 공개",
+                "en": "Early Access"
+              }
+            },
+            {
+              "field": "reviewed",
+              "enName": "Reviewed",
+              "koName": "공개 완료",
+              "autoFill": {},
+              "names": {
+                "ko": "공개 완료",
+                "en": "Reviewed"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "상태",
+            "en": "Status"
+          }
+        },
+        {
+          "id": "359ad016-0cd3-43ed-a375-b9c7c3437f13",
+          "dataType": "ENUM",
+          "field": "driverSupportStatus",
+          "enName": "Driver Support Status",
+          "koName": "드라이버 지원 상태",
+          "prefix": null,
+          "suffix": null,
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 1,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "notAvailable",
+              "enName": "No Official Configuration Software",
+              "koName": "공식 설정 소프트웨어 없음",
+              "autoFill": {},
+              "names": {
+                "ko": "공식 설정 소프트웨어 없음",
+                "en": "No Official Configuration Software",
+                "ja": "公式設定ソフトウェアなし",
+                "zh": "无官方配置软件"
+              }
+            },
+            {
+              "field": "notRequired",
+              "enName": "No Separate Configuration Software Required",
+              "koName": "별도 설정 소프트웨어 불필요",
+              "autoFill": {},
+              "names": {
+                "ko": "별도 설정 소프트웨어 불필요",
+                "en": "No Separate Configuration Software Required",
+                "ja": "個別の設定ソフトウェアは不要",
+                "zh": "无需单独的配置软件"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "드라이버 지원 상태",
+            "en": "Driver Support Status",
+            "ja": "ドライバー対応状況",
+            "zh": "驱动支持状态"
+          }
+        },
+        {
+          "id": "e537ac0b-f39c-4800-9b4e-53130d02dfb3",
+          "dataType": "ENUM",
+          "field": "saleStatus",
+          "enName": "Sale Status",
+          "koName": "판매 상태",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 13,
+          "detailOrder": 2,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": true,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "unreleased",
+              "enName": "Unreleased",
+              "koName": "미출시",
+              "autoFill": {},
+              "names": {
+                "ko": "미출시",
+                "en": "Unreleased"
+              }
+            },
+            {
+              "field": "FOR_SALE",
+              "enName": "FOR_SALE",
+              "koName": "판매중",
+              "autoFill": {},
+              "names": {
+                "ko": "판매중",
+                "en": "FOR_SALE"
+              }
+            },
+            {
+              "field": "DISCONTINUED",
+              "enName": "Discontinued",
+              "koName": "단종",
+              "autoFill": {},
+              "names": {
+                "ko": "단종",
+                "en": "Discontinued"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "판매 상태",
+            "en": "Sale Status"
+          }
+        },
+        {
+          "id": "fa336b12-6b23-4e36-8a10-eeaf03547104",
+          "dataType": "COMPANY",
+          "field": "manufacturer",
+          "enName": "manufacturer",
+          "koName": "제조사",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 7,
+          "detailOrder": 6,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": true,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "제조사",
+            "en": "manufacturer"
+          }
+        },
+        {
+          "id": "d089bb4b-c935-434e-8607-1df473f50ced",
+          "dataType": "STRING",
+          "field": "productName",
+          "enName": "product name",
+          "koName": "제품 명",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 8,
+          "detailOrder": 8,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": true,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "제품 명",
+            "en": "product name"
+          }
+        },
+        {
+          "id": "f790df98-e3a4-4d91-b091-2104c0e3e815",
+          "dataType": "ENUM",
+          "field": "eyejokerRating",
+          "enName": "Recommendation Grade",
+          "koName": "추천 등급",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 10,
+          "detailOrder": 9,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "HIGHLY_RECOMMENDED",
+              "enName": "Highly Recommend",
+              "koName": "매우추천",
+              "autoFill": {},
+              "names": {
+                "ko": "매우추천",
+                "en": "Highly Recommend"
+              }
+            },
+            {
+              "field": "RECOMMENDED",
+              "enName": "Recommend",
+              "koName": "추천",
+              "autoFill": {},
+              "names": {
+                "ko": "추천",
+                "en": "Recommend"
+              }
+            },
+            {
+              "field": "MILD_RECOMMENDATION",
+              "enName": "Meh",
+              "koName": "추천까지는",
+              "autoFill": {},
+              "names": {
+                "ko": "추천까지는",
+                "en": "Meh"
+              }
+            },
+            {
+              "field": "NO_RECOMMENDATION",
+              "enName": "Not Recommend",
+              "koName": "추천안함",
+              "autoFill": {},
+              "names": {
+                "ko": "추천안함",
+                "en": "Not Recommend"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "추천 등급",
+            "en": "Recommendation Grade",
+            "ja": "推奨グレード",
+            "zh": "推荐等级"
+          }
+        },
+        {
+          "id": "e1d84163-20c9-4ecb-95fc-793bfb2c9d71",
+          "dataType": "ENUM",
+          "field": "priceCurrency",
+          "enName": "PriceCurrency",
+          "koName": "통화코드",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 10,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "CNY",
+              "enName": "CNY",
+              "koName": "CNY",
+              "autoFill": {},
+              "names": {
+                "ko": "CNY",
+                "en": "CNY",
+                "ja": "CNY",
+                "zh": "CNY"
+              }
+            },
+            {
+              "field": "EUR",
+              "enName": "EUR",
+              "koName": "EUR",
+              "autoFill": {},
+              "names": {
+                "ko": "EUR",
+                "en": "EUR",
+                "ja": "EUR",
+                "zh": "EUR"
+              }
+            },
+            {
+              "field": "GBP",
+              "enName": "GBP",
+              "koName": "GBP",
+              "autoFill": {},
+              "names": {
+                "ko": "GBP",
+                "en": "GBP",
+                "ja": "GBP",
+                "zh": "GBP"
+              }
+            },
+            {
+              "field": "INR",
+              "enName": "INR",
+              "koName": "INR",
+              "autoFill": {},
+              "names": {
+                "ko": "INR",
+                "en": "INR"
+              }
+            },
+            {
+              "field": "JPY",
+              "enName": "JPY",
+              "koName": "JPY",
+              "autoFill": {},
+              "names": {
+                "ko": "JPY",
+                "en": "JPY",
+                "ja": "JPY",
+                "zh": "JPY"
+              }
+            },
+            {
+              "field": "KRW",
+              "enName": "KRW",
+              "koName": "KRW",
+              "autoFill": {},
+              "names": {
+                "ko": "KRW",
+                "en": "KRW"
+              }
+            },
+            {
+              "field": "USD",
+              "enName": "USD",
+              "koName": "USD",
+              "autoFill": {},
+              "names": {
+                "ko": "USD",
+                "en": "USD"
+              }
+            },
+            {
+              "field": "AED",
+              "enName": "AED",
+              "koName": "AED",
+              "autoFill": {},
+              "names": {
+                "ko": "AED",
+                "en": "AED"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "통화코드",
+            "en": "PriceCurrency"
+          }
+        },
+        {
+          "id": "a61ae634-0251-437c-933e-dd49522465f7",
+          "dataType": "NUMBER",
+          "field": "price",
+          "enName": "Price",
+          "koName": "가격",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 12,
+          "detailOrder": 12,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "가격",
+            "en": "Price"
+          }
+        },
+        {
+          "id": "3f6d06e4-1904-4210-976f-7b98099aad79",
+          "dataType": "NUMBER",
+          "field": "as",
+          "enName": "AS",
+          "koName": "보증 기간",
+          "prefix": "",
+          "suffix": "년",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 13,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "보증 기간",
+            "en": "AS"
+          }
+        },
+        {
+          "id": "c95edff9-a285-4554-a796-394f53f2f02a",
+          "dataType": "STRING",
+          "field": "oneLineNote",
+          "enName": "ShortReview",
+          "koName": "한줄평",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 6,
+          "detailOrder": 14,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "한줄평",
+            "en": "ShortReview"
+          }
+        },
+        {
+          "id": "861849f5-8189-408b-aa02-fac2d2d5d83b",
+          "dataType": "STRING",
+          "field": "benchVersion",
+          "enName": "BenchVersion",
+          "koName": "벤치버전",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 7,
+          "detailOrder": 15,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "벤치버전",
+            "en": "BenchVersion"
+          }
+        },
+        {
+          "id": "c62da328-85aa-46db-ab92-50e0e5ed2411",
+          "dataType": "STRING",
+          "field": "firmwareVersion",
+          "enName": "FirmwareVersion",
+          "koName": "펌웨어 버전",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 8,
+          "detailOrder": 16,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "펌웨어 버전",
+            "en": "FirmwareVersion"
+          }
+        },
+        {
+          "id": "13ad32a3-7028-4841-bb0a-5045ae488a09",
+          "dataType": "FILE",
+          "field": "productImage",
+          "enName": "Product Image",
+          "koName": "제품 사진",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 9,
+          "detailOrder": 17,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "제품 사진",
+            "en": "Product Image"
+          }
+        },
+        {
+          "id": "9db61dbd-15b2-4fcc-bee8-1fc64b74374b",
+          "dataType": "DATETIME",
+          "field": "purchasedDate",
+          "enName": "Purchased Date",
+          "koName": "구매 완료 시간",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 20,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "구매 완료 시간",
+            "en": "Purchased Date"
+          }
+        },
+        {
+          "id": "1a8848c0-053c-4c5a-bfd9-377d32ecc79f",
+          "dataType": "DATETIME",
+          "field": "arrivedDate",
+          "enName": "Arrived Date",
+          "koName": "제품 도착 시간",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 21,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "제품 도착 시간",
+            "en": "Arrived Date"
+          }
+        },
+        {
+          "id": "774a633f-e245-470c-9cbc-00cc537ea985",
+          "dataType": "DATETIME",
+          "field": "testingStartDate",
+          "enName": "Testing Start Date",
+          "koName": "벤치 진행 시작 날짜",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 22,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "벤치 진행 시작 날짜",
+            "en": "Testing Start Date"
+          }
+        },
+        {
+          "id": "2937e309-2712-40f4-8e48-56534c8e0237",
+          "dataType": "DATETIME",
+          "field": "publicReleaseAt",
+          "enName": "Public Release At",
+          "koName": "전체 공개 일자",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 23,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "전체 공개 일자",
+            "en": "Public Release At"
+          }
+        },
+        {
+          "id": "d9c9365f-1e57-4480-8dc7-984918803cc3",
+          "dataType": "DATETIME",
+          "field": "earlyAccessAt",
+          "enName": "Early Access At",
+          "koName": "선공개 일자",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 23,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "선공개 일자",
+            "en": "Early Access At"
+          }
+        }
+      ],
+      "spec": [
+        {
+          "id": "365568aa-ca74-4ab3-ae96-cb25a7e42dc5",
+          "dataType": "COMPANY",
+          "field": "actualManufacturer",
+          "enName": "Actual Manufacturer",
+          "koName": "실제 생산사",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 139,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "실제 생산사",
+            "en": "Actual Manufacturer"
+          }
+        },
+        {
+          "id": "3400ed94-f8cd-4cfe-b689-c53b8a72b066",
+          "dataType": "ENUM",
+          "field": "mechanism",
+          "enName": "Mechanism",
+          "koName": "방식",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 14,
+          "detailOrder": 140,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "magnetic",
+              "enName": "magnetic",
+              "koName": "자석축",
+              "autoFill": {},
+              "names": {
+                "ko": "자석축",
+                "en": "magnetic"
+              }
+            },
+            {
+              "field": "mechanic",
+              "enName": "mechanic",
+              "koName": "기계식",
+              "autoFill": {},
+              "names": {
+                "ko": "기계식",
+                "en": "mechanic"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "방식",
+            "en": "Mechanism"
+          }
+        },
+        {
+          "id": "17768df1-da2a-4533-8279-315358e1022f",
+          "dataType": "ENUM",
+          "field": "category",
+          "enName": "Category",
+          "koName": "분류",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 141,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "리니어",
+              "enName": "Linear",
+              "koName": "리니어",
+              "autoFill": {},
+              "names": {
+                "ko": "리니어",
+                "en": "Linear"
+              }
+            },
+            {
+              "field": "클릭",
+              "enName": "Clicky",
+              "koName": "클릭",
+              "autoFill": {},
+              "names": {
+                "ko": "클릭",
+                "en": "Clicky"
+              }
+            },
+            {
+              "field": "택타일",
+              "enName": "Tactile",
+              "koName": "택타일",
+              "autoFill": {},
+              "names": {
+                "ko": "택타일",
+                "en": "Tactile"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "분류",
+            "en": "Category"
+          }
+        },
+        {
+          "id": "fd96e559-b7cd-439f-bbcf-338f8767edb1",
+          "dataType": "ENUM",
+          "field": "polarity",
+          "enName": "Polarity",
+          "koName": "극성",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 142,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "N",
+              "enName": "N",
+              "koName": "N",
+              "autoFill": {},
+              "names": {
+                "ko": "N",
+                "en": "N"
+              }
+            },
+            {
+              "field": "S",
+              "enName": "S",
+              "koName": "S",
+              "autoFill": {},
+              "names": {
+                "ko": "S",
+                "en": "S"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "극성",
+            "en": "Polarity"
+          }
+        },
+        {
+          "id": "3e4eb609-9a45-47a2-867e-cd5e8702a39d",
+          "dataType": "ENUM",
+          "field": "upperHousing",
+          "enName": "Upper Housing",
+          "koName": "상부 하우징",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 143,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "NYLON",
+              "enName": "Nylon",
+              "koName": "나일론",
+              "autoFill": {},
+              "names": {
+                "ko": "나일론",
+                "en": "Nylon"
+              }
+            },
+            {
+              "field": "PA12",
+              "enName": "PA12",
+              "koName": "PA12",
+              "autoFill": {},
+              "names": {
+                "ko": "PA12",
+                "en": "PA12"
+              }
+            },
+            {
+              "field": "PC",
+              "enName": "PC",
+              "koName": "PC",
+              "autoFill": {},
+              "names": {
+                "ko": "PC",
+                "en": "PC"
+              }
+            },
+            {
+              "field": "POM",
+              "enName": "POM",
+              "koName": "POM",
+              "autoFill": {},
+              "names": {
+                "ko": "POM",
+                "en": "POM"
+              }
+            }
+          ],
+          "multiSelect": true,
+          "names": {
+            "ko": "상부 하우징",
+            "en": "Upper Housing"
+          }
+        },
+        {
+          "id": "35c222a0-e6ff-4dc1-9222-82a4e147f02c",
+          "dataType": "ENUM",
+          "field": "lowerHousing",
+          "enName": "Lower Housing",
+          "koName": "하부 하우징",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 144,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "NYLON",
+              "enName": "Nylon",
+              "koName": "나일론",
+              "autoFill": {},
+              "names": {
+                "ko": "나일론",
+                "en": "Nylon"
+              }
+            },
+            {
+              "field": "NYLONPA",
+              "enName": "NylonPS",
+              "koName": "나일론PA",
+              "autoFill": {},
+              "names": {
+                "ko": "나일론PA",
+                "en": "NylonPS"
+              }
+            },
+            {
+              "field": "PA12",
+              "enName": "PA12",
+              "koName": "PA12",
+              "autoFill": {},
+              "names": {
+                "ko": "PA12",
+                "en": "PA12"
+              }
+            },
+            {
+              "field": "PA12Nylon",
+              "enName": "Nylon",
+              "koName": "PA12",
+              "autoFill": {},
+              "names": {
+                "ko": "PA12",
+                "en": "Nylon"
+              }
+            },
+            {
+              "field": "PA66",
+              "enName": "PA66",
+              "koName": "PA66",
+              "autoFill": {},
+              "names": {
+                "ko": "PA66",
+                "en": "PA66"
+              }
+            },
+            {
+              "field": "PC",
+              "enName": "PC",
+              "koName": "PC",
+              "autoFill": {},
+              "names": {
+                "ko": "PC",
+                "en": "PC"
+              }
+            },
+            {
+              "field": "POM",
+              "enName": "POM",
+              "koName": "폼",
+              "autoFill": {},
+              "names": {
+                "ko": "폼",
+                "en": "POM"
+              }
+            }
+          ],
+          "multiSelect": true,
+          "names": {
+            "ko": "하부 하우징",
+            "en": "Lower Housing"
+          }
+        },
+        {
+          "id": "bb827c50-d742-4498-9582-dce1065fadf4",
+          "dataType": "ENUM",
+          "field": "stem",
+          "enName": "Stem",
+          "koName": "스템",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 145,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "LY",
+              "enName": "LY",
+              "koName": "LY",
+              "autoFill": {},
+              "names": {
+                "ko": "LY",
+                "en": "LY"
+              }
+            },
+            {
+              "field": "PA12",
+              "enName": "PA12",
+              "koName": "PA12",
+              "autoFill": {},
+              "names": {
+                "ko": "PA12",
+                "en": "PA12"
+              }
+            },
+            {
+              "field": "PC",
+              "enName": "PC",
+              "koName": "PC",
+              "autoFill": {},
+              "names": {
+                "ko": "PC",
+                "en": "PC"
+              }
+            },
+            {
+              "field": "POK",
+              "enName": "POK",
+              "koName": "POK",
+              "autoFill": {},
+              "names": {
+                "ko": "POK",
+                "en": "POK"
+              }
+            },
+            {
+              "field": "POM",
+              "enName": "POM",
+              "koName": "POM",
+              "autoFill": {},
+              "names": {
+                "ko": "POM",
+                "en": "POM"
+              }
+            },
+            {
+              "field": "UMPTE",
+              "enName": "UMPTE",
+              "koName": "UMPTE",
+              "autoFill": {},
+              "names": {
+                "ko": "UMPTE",
+                "en": "UMPTE"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "스템",
+            "en": "Stem"
+          }
+        },
+        {
+          "id": "6800716c-85cb-49cb-9d67-ebd442acd103",
+          "dataType": "ENUM",
+          "field": "spring",
+          "enName": "Spring",
+          "koName": "스프링",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 146,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "SUS",
+              "enName": "SUS",
+              "koName": "SUS",
+              "autoFill": {},
+              "names": {
+                "ko": "SUS",
+                "en": "SUS"
+              }
+            },
+            {
+              "field": "금도금",
+              "enName": "Gold-plated",
+              "koName": "금도금",
+              "autoFill": {},
+              "names": {
+                "ko": "금도금",
+                "en": "Gold-plated"
+              }
+            },
+            {
+              "field": "러버돔",
+              "enName": "러버돔",
+              "koName": "러버돔",
+              "autoFill": {},
+              "names": {
+                "ko": "러버돔",
+                "en": "러버돔"
+              }
+            },
+            {
+              "field": "싱글",
+              "enName": "Single",
+              "koName": "싱글",
+              "autoFill": {},
+              "names": {
+                "ko": "싱글",
+                "en": "Single"
+              }
+            },
+            {
+              "field": "싱글(비자성)",
+              "enName": "Single (non-magnetic)",
+              "koName": "싱글(비자성)",
+              "autoFill": {},
+              "names": {
+                "ko": "싱글(비자성)",
+                "en": "Single (non-magnetic)"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "스프링",
+            "en": "Spring"
+          }
+        },
+        {
+          "id": "ee8eb6b6-217a-4709-9bd7-c024445a6d57",
+          "dataType": "NUMBER",
+          "field": "springLength",
+          "enName": "Spring Length",
+          "koName": "스프링길이",
+          "prefix": "",
+          "suffix": "mm",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 147,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "스프링길이",
+            "en": "Spring Length"
+          }
+        },
+        {
+          "id": "3a5771d0-5f0e-46f0-a2de-56d55ce414ca",
+          "dataType": "NUMBER",
+          "field": "stemLength",
+          "enName": "Stem Length",
+          "koName": "스템길이",
+          "prefix": "",
+          "suffix": "mm",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 148,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "스템길이",
+            "en": "Stem Length"
+          }
+        },
+        {
+          "id": "e5b064c3-60a7-431c-abd8-96b8ff2dc939",
+          "dataType": "NUMBER",
+          "field": "startingForceSpec",
+          "enName": "Spec Starting Force",
+          "koName": "시작압",
+          "prefix": "",
+          "suffix": "gf",
+          "showInList": false,
+          "listOrder": 16,
+          "detailOrder": 149,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "시작압",
+            "en": "Spec Starting Force"
+          }
+        },
+        {
+          "id": "6cd12d1a-6ae1-427b-8985-78448b97dfbe",
+          "dataType": "NUMBER",
+          "field": "actuationForceSpec",
+          "enName": "Spec Actuation Force",
+          "koName": "입력압[스펙]",
+          "prefix": "",
+          "suffix": "gf",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 150,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "입력압[스펙]",
+            "en": "Spec Actuation Force"
+          }
+        },
+        {
+          "id": "3cc7772c-1951-4a5c-aa5a-f8518907d4f0",
+          "dataType": "NUMBER",
+          "field": "bottomOutForceSpec",
+          "enName": "Spec Bottom-out Force",
+          "koName": "바닥압",
+          "prefix": "",
+          "suffix": "gf",
+          "showInList": false,
+          "listOrder": 17,
+          "detailOrder": 151,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "바닥압",
+            "en": "Spec Bottom-out Force"
+          }
+        },
+        {
+          "id": "406c1380-3c39-4642-beaf-a6766b85e471",
+          "dataType": "NUMBER",
+          "field": "actuationTravelSpec",
+          "enName": "Spec Actuation Travel",
+          "koName": "입력 이동거리",
+          "prefix": "",
+          "suffix": "mm",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 152,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "입력 이동거리",
+            "en": "Spec Actuation Travel"
+          }
+        },
+        {
+          "id": "0f150e4c-76ff-460f-bfe7-ddfc6b1dfb80",
+          "dataType": "NUMBER",
+          "field": "totalTravelSpec",
+          "enName": "Spec Total Travel",
+          "koName": "총 이동거리",
+          "prefix": "",
+          "suffix": "mm",
+          "showInList": false,
+          "listOrder": 15,
+          "detailOrder": 153,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "총 이동거리",
+            "en": "Spec Total Travel"
+          }
+        },
+        {
+          "id": "5ae468b5-c5bd-4eb3-a371-6a08ec8e6c45",
+          "dataType": "BOOLEAN",
+          "field": "bottomOutHarshness",
+          "enName": "Bottom-out Harshness",
+          "koName": "바치리",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 154,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "바치리",
+            "en": "Bottom-out Harshness"
+          }
+        },
+        {
+          "id": "427f25f3-c87b-421d-9bc5-fd85b8247830",
+          "dataType": "ENUM",
+          "field": "overallRatingKeyboardSwitch",
+          "enName": "OverallRatingKeyboardSwitch",
+          "koName": "종합 등급",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 21,
+          "detailOrder": 168,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "FLAWLESS",
+              "enName": "Flawless",
+              "koName": "무결점",
+              "autoFill": {},
+              "names": {
+                "ko": "무결점",
+                "en": "Flawless"
+              }
+            },
+            {
+              "field": "LAUNCHING_SOON",
+              "enName": "Coming Soon",
+              "koName": "출시예정",
+              "autoFill": {},
+              "names": {
+                "ko": "출시예정",
+                "en": "Coming Soon"
+              }
+            },
+            {
+              "field": "OTHER",
+              "enName": "Other",
+              "koName": "기타",
+              "autoFill": {},
+              "names": {
+                "ko": "기타",
+                "en": "Other"
+              }
+            },
+            {
+              "field": "RE_MEASUREMENT",
+              "enName": "Retest",
+              "koName": "재측정",
+              "autoFill": {},
+              "names": {
+                "ko": "재측정",
+                "en": "Retest"
+              }
+            },
+            {
+              "field": "TIER_0",
+              "enName": "Tier0",
+              "koName": "0티어",
+              "autoFill": {},
+              "names": {
+                "ko": "0티어",
+                "en": "Tier0"
+              }
+            },
+            {
+              "field": "TIER_1",
+              "enName": "Tier1",
+              "koName": "1티어",
+              "autoFill": {},
+              "names": {
+                "ko": "1티어",
+                "en": "Tier1"
+              }
+            },
+            {
+              "field": "TIER_2",
+              "enName": "Tier2",
+              "koName": "2티어",
+              "autoFill": {},
+              "names": {
+                "ko": "2티어",
+                "en": "Tier2"
+              }
+            },
+            {
+              "field": "TIER_3",
+              "enName": "Tier3",
+              "koName": "3티어",
+              "autoFill": {},
+              "names": {
+                "ko": "3티어",
+                "en": "Tier3"
+              }
+            },
+            {
+              "field": "TIER_4",
+              "enName": "Tier4",
+              "koName": "4티어",
+              "autoFill": {},
+              "names": {
+                "ko": "4티어",
+                "en": "Tier4"
+              }
+            },
+            {
+              "field": "UNRATED",
+              "enName": "Unrated",
+              "koName": "등급없음",
+              "autoFill": {},
+              "names": {
+                "ko": "등급없음",
+                "en": "Unrated"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "종합 등급",
+            "en": "OverallRatingKeyboardSwitch"
+          }
+        }
+      ],
+      "bench": [
+        {
+          "id": "b5851205-7f8e-4aef-9f5c-183ab162dd64",
+          "dataType": "NUMBER",
+          "field": "travelDistance",
+          "enName": "Travel Distance",
+          "koName": "이동거리",
+          "prefix": "",
+          "suffix": "mm",
+          "showInList": true,
+          "listOrder": 18,
+          "detailOrder": 155,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": 2,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "이동거리",
+            "en": "Travel Distance"
+          }
+        },
+        {
+          "id": "04d7f73a-4260-4c72-b6b0-38b8da47fc34",
+          "dataType": "ENUM",
+          "field": "wobble",
+          "enName": "Wobble",
+          "koName": "워블",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 156,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [
+            {
+              "field": "S",
+              "enName": "S",
+              "koName": "S",
+              "autoFill": {},
+              "names": {
+                "ko": "S",
+                "en": "S"
+              }
+            },
+            {
+              "field": "A",
+              "enName": "A",
+              "koName": "A",
+              "autoFill": {},
+              "names": {
+                "ko": "A",
+                "en": "A"
+              }
+            },
+            {
+              "field": "B",
+              "enName": "B",
+              "koName": "B",
+              "autoFill": {},
+              "names": {
+                "ko": "B",
+                "en": "B"
+              }
+            },
+            {
+              "field": "C",
+              "enName": "C",
+              "koName": "C",
+              "autoFill": {},
+              "names": {
+                "ko": "C",
+                "en": "C"
+              }
+            },
+            {
+              "field": "D",
+              "enName": "D",
+              "koName": "D",
+              "autoFill": {},
+              "names": {
+                "ko": "D",
+                "en": "D"
+              }
+            },
+            {
+              "field": "F",
+              "enName": "F",
+              "koName": "F",
+              "autoFill": {},
+              "names": {
+                "ko": "F",
+                "en": "F"
+              }
+            }
+          ],
+          "multiSelect": false,
+          "names": {
+            "ko": "워블",
+            "en": "Wobble"
+          }
+        },
+        {
+          "id": "76252a40-14c1-48ec-ae91-045500562784",
+          "dataType": "STRING",
+          "field": "keyboardSwitchResolutionSummary",
+          "enName": "Resolution",
+          "koName": "해상력",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 22,
+          "detailOrder": 156,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "해상력",
+            "en": "Resolution"
+          }
+        },
+        {
+          "id": "ed0ad601-943a-4c9a-a615-0747314c15c3",
+          "dataType": "NUMBER",
+          "field": "resolutionDeviation",
+          "enName": "Resolution Deviation",
+          "koName": "해상력 편차",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 23,
+          "detailOrder": 157,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "해상력 편차",
+            "en": "Resolution Deviation"
+          }
+        },
+        {
+          "id": "14fe8569-59d2-40d2-a347-86fb94789048",
+          "dataType": "NUMBER",
+          "field": "resolutionPerMm",
+          "enName": "Resolution per 0.1 mm",
+          "koName": "0.1mm 해상도",
+          "prefix": "",
+          "suffix": "단계",
+          "showInList": true,
+          "listOrder": 23,
+          "detailOrder": 158,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": 0,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "0.1mm 해상도",
+            "en": "Resolution per 0.1 mm"
+          }
+        },
+        {
+          "id": "ff8c951f-e17a-428a-8d8b-382c0ddb83db",
+          "dataType": "NUMBER",
+          "field": "resolutionSwitch",
+          "enName": "Resolution",
+          "koName": "해상력",
+          "prefix": "",
+          "suffix": "",
+          "showInList": false,
+          "listOrder": 22,
+          "detailOrder": 159,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "해상력",
+            "en": "Resolution"
+          }
+        },
+        {
+          "id": "e733a4c6-327f-4acf-b73a-29e4cd126eb1",
+          "dataType": "NUMBER",
+          "field": "actuationPoint",
+          "enName": "Actuation Point",
+          "koName": "입력지점",
+          "prefix": "",
+          "suffix": "mm",
+          "showInList": false,
+          "listOrder": 0,
+          "detailOrder": 160,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": 2,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "입력지점",
+            "en": "Actuation Point"
+          }
+        },
+        {
+          "id": "0e3e2733-60c7-44ae-8e7e-f7a47a6763ad",
+          "dataType": "NUMBER",
+          "field": "overallAverage",
+          "enName": "Overall Average",
+          "koName": "전체 평균",
+          "prefix": "",
+          "suffix": "mm",
+          "showInList": false,
+          "listOrder": 24,
+          "detailOrder": 161,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": 3,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "전체 평균",
+            "en": "Overall Average"
+          }
+        },
+        {
+          "id": "ce7a7152-1012-4005-9377-a3129ae07450",
+          "dataType": "NUMBER",
+          "field": "horizontalAverage",
+          "enName": "Horizontal Average",
+          "koName": "좌우 평균",
+          "prefix": "",
+          "suffix": "mm",
+          "showInList": false,
+          "listOrder": 28,
+          "detailOrder": 162,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": 3,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "좌우 평균",
+            "en": "Horizontal Average"
+          }
+        },
+        {
+          "id": "1693ce63-3432-4d28-ac74-5d84bb2a4459",
+          "dataType": "NUMBER",
+          "field": "horizontalDeviation",
+          "enName": "Horizontal Deviation",
+          "koName": "좌우 편차",
+          "prefix": "",
+          "suffix": "mm",
+          "showInList": false,
+          "listOrder": 29,
+          "detailOrder": 163,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": 3,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "좌우 편차",
+            "en": "Horizontal Deviation"
+          }
+        },
+        {
+          "id": "e72111f1-d811-4502-b05a-001d27b9253a",
+          "dataType": "NUMBER",
+          "field": "verticalAverage",
+          "enName": "Vertical Average",
+          "koName": "상하 평균",
+          "prefix": "",
+          "suffix": "mm",
+          "showInList": false,
+          "listOrder": 26,
+          "detailOrder": 164,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": 3,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "상하 평균",
+            "en": "Vertical Average"
+          }
+        },
+        {
+          "id": "ca8a4b08-6e2f-416c-b353-9e4239101593",
+          "dataType": "NUMBER",
+          "field": "verticalDeviation",
+          "enName": "Vertical Deviation",
+          "koName": "상하 편차",
+          "prefix": "",
+          "suffix": "mm",
+          "showInList": false,
+          "listOrder": 27,
+          "detailOrder": 165,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": 3,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "상하 편차",
+            "en": "Vertical Deviation"
+          }
+        },
+        {
+          "id": "4b6c16f0-3d99-4526-9fb5-2920eb344111",
+          "dataType": "NUMBER",
+          "field": "startingForce",
+          "enName": "Starting Force",
+          "koName": "시작압",
+          "prefix": "",
+          "suffix": "gf",
+          "showInList": true,
+          "listOrder": 19,
+          "detailOrder": 166,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": 0,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "시작압",
+            "en": "Starting Force"
+          }
+        },
+        {
+          "id": "861885d4-e9d5-4429-8205-65649f18c3ed",
+          "dataType": "NUMBER",
+          "field": "bottomOutForce",
+          "enName": "Bottom-out Force",
+          "koName": "바닥압",
+          "prefix": "",
+          "suffix": "gf",
+          "showInList": true,
+          "listOrder": 20,
+          "detailOrder": 167,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": true,
+          "decimalPlaces": 0,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "바닥압",
+            "en": "Bottom-out Force"
+          }
+        },
+        {
+          "id": "2f25ff47-7a90-4358-ba52-8ef99c52c3d8",
+          "dataType": "STRING",
+          "field": "measurementDeviationSummary",
+          "enName": "Force Deviation",
+          "koName": "키압 편차",
+          "prefix": null,
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 21,
+          "detailOrder": 170,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": "raw.stats.forceCurve",
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "키압 편차",
+            "en": "Force Deviation"
+          }
+        },
+        {
+          "id": "3330b59f-e0f9-4f88-a120-095a74adebf1",
+          "dataType": "NUMBER",
+          "field": "hallResolutionSteps",
+          "enName": "Resolution",
+          "koName": "해상력",
+          "prefix": "",
+          "suffix": "단계",
+          "showInList": false,
+          "listOrder": 22,
+          "detailOrder": 171,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": "raw.stats.magneticResponse.resolutionSteps",
+          "hasComma": true,
+          "decimalPlaces": 0,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "해상력",
+            "en": "Resolution"
+          }
+        },
+        {
+          "id": "c452f8ca-9084-4cdc-9c89-acf0ab8db057",
+          "dataType": "NUMBER",
+          "field": "travelMeasurementDeviationMm",
+          "enName": "Travel Deviation",
+          "koName": "이동거리 편차",
+          "prefix": "±",
+          "suffix": "mm",
+          "showInList": true,
+          "listOrder": 22,
+          "detailOrder": 171,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": false,
+          "decimalPlaces": 2,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "이동거리 편차",
+            "en": "Travel Deviation"
+          }
+        },
+        {
+          "id": "770cc460-cfd7-4623-8a2f-4829f400f442",
+          "dataType": "STRING",
+          "field": "hallWobbleVariationPercent",
+          "enName": "Hall Rotational Wobble",
+          "koName": "Hall 회전 흔들림",
+          "prefix": "",
+          "suffix": "",
+          "showInList": true,
+          "listOrder": 26,
+          "detailOrder": 172,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": "raw.stats.magneticResponse.wobbleVariationPercent",
+          "hasComma": true,
+          "decimalPlaces": null,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "Hall 회전 흔들림",
+            "en": "Hall Rotational Wobble"
+          }
+        },
+        {
+          "id": "bb168d71-1c2d-4e73-972c-98848897f435",
+          "dataType": "NUMBER",
+          "field": "hallSampleVariationPercent",
+          "enName": "Hall Unit Variation",
+          "koName": "개체 편차",
+          "prefix": "",
+          "suffix": "%",
+          "showInList": false,
+          "listOrder": 27,
+          "detailOrder": 173,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": "raw.stats.magneticResponse.sampleVariationPercent",
+          "hasComma": false,
+          "decimalPlaces": 2,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "개체 편차",
+            "en": "Hall Unit Variation"
+          }
+        },
+        {
+          "id": "669f65d6-9bc0-4415-8170-9899ea2a8d10",
+          "dataType": "NUMBER",
+          "field": "hallPressedHorizontalVariationPercent",
+          "enName": "Pressed Horizontal Hall Wobble",
+          "koName": "Hall 좌우 흔들림",
+          "prefix": "",
+          "suffix": "%",
+          "showInList": true,
+          "listOrder": 24,
+          "detailOrder": 174,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": false,
+          "decimalPlaces": 1,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "Hall 좌우 흔들림",
+            "en": "Pressed Horizontal Hall Wobble"
+          }
+        },
+        {
+          "id": "62659b28-4d10-419a-bbec-d981aed3e2d2",
+          "dataType": "NUMBER",
+          "field": "hallPressedVerticalVariationPercent",
+          "enName": "Pressed Vertical Hall Wobble",
+          "koName": "Hall 상하 흔들림",
+          "prefix": "",
+          "suffix": "%",
+          "showInList": true,
+          "listOrder": 25,
+          "detailOrder": 175,
+          "expression": null,
+          "colorExpression": null,
+          "adminOnly": false,
+          "isRequired": false,
+          "computedField": null,
+          "hasComma": false,
+          "decimalPlaces": 1,
+          "dataList": [],
+          "multiSelect": false,
+          "names": {
+            "ko": "Hall 상하 흔들림",
+            "en": "Pressed Vertical Hall Wobble"
+          }
+        }
+      ]
+    },
+    "fieldGroups": {
+      "common": [
+        {
+          "id": "basic_product",
+          "koName": "기본 제품 정보",
+          "enName": null,
+          "names": {},
+          "order": 1,
+          "type": null,
+          "fieldIds": [
+            "d3713a36-85d6-4107-94b3-e33f581cbacd",
+            "__system:overall_rating__",
+            "f790df98-e3a4-4d91-b091-2104c0e3e815",
+            "d089bb4b-c935-434e-8607-1df473f50ced",
+            "fa336b12-6b23-4e36-8a10-eeaf03547104",
+            "c95edff9-a285-4554-a796-394f53f2f02a",
+            "13ad32a3-7028-4841-bb0a-5045ae488a09",
+            "85c761c8-41fe-42b2-ae31-63c63e8d3921",
+            "c62da328-85aa-46db-ab92-50e0e5ed2411"
+          ],
+          "subGroups": null,
+          "additionalFields": null
+        },
+        {
+          "id": "purchase",
+          "koName": "구매 정보",
+          "enName": null,
+          "names": {},
+          "order": 2,
+          "type": null,
+          "fieldIds": [
+            "e537ac0b-f39c-4800-9b4e-53130d02dfb3",
+            "2d0b566e-fa58-42f4-a7d7-80c94f38fecb",
+            "e1d84163-20c9-4ecb-95fc-793bfb2c9d71",
+            "a61ae634-0251-437c-933e-dd49522465f7"
+          ],
+          "subGroups": null,
+          "additionalFields": null
+        },
+        {
+          "id": "dates",
+          "koName": "날짜 정보",
+          "enName": null,
+          "names": {},
+          "order": 3,
+          "type": null,
+          "fieldIds": [
+            "9db61dbd-15b2-4fcc-bee8-1fc64b74374b",
+            "1a8848c0-053c-4c5a-bfd9-377d32ecc79f",
+            "774a633f-e245-470c-9cbc-00cc537ea985",
+            "d9c9365f-1e57-4480-8dc7-984918803cc3",
+            "2937e309-2712-40f4-8e48-56534c8e0237"
+          ],
+          "subGroups": null,
+          "additionalFields": null
+        }
+      ],
+      "spec": [],
+      "bench": [
+        {
+          "id": "switch_force_curve",
+          "koName": "이동거리·키압",
+          "enName": "Travel & Force",
+          "names": {
+            "ko": "이동거리·키압",
+            "en": "Travel & Force"
+          },
+          "order": 1,
+          "type": null,
+          "fieldIds": [
+            "b5851205-7f8e-4aef-9f5c-183ab162dd64",
+            "4b6c16f0-3d99-4526-9fb5-2920eb344111",
+            "861885d4-e9d5-4429-8205-65649f18c3ed",
+            "2f25ff47-7a90-4358-ba52-8ef99c52c3d8",
+            "c452f8ca-9084-4cdc-9c89-acf0ab8db057",
+            "e733a4c6-327f-4acf-b73a-29e4cd126eb1"
+          ],
+          "subGroups": null,
+          "additionalFields": null
+        },
+        {
+          "id": "switch_resolution",
+          "koName": "해상도",
+          "enName": "Resolution",
+          "names": {
+            "ko": "해상도",
+            "en": "Resolution"
+          },
+          "order": 2,
+          "type": null,
+          "fieldIds": [
+            "14fe8569-59d2-40d2-a347-86fb94789048",
+            "3330b59f-e0f9-4f88-a120-095a74adebf1",
+            "ff8c951f-e17a-428a-8d8b-382c0ddb83db",
+            "ed0ad601-943a-4c9a-a615-0747314c15c3",
+            "76252a40-14c1-48ec-ae91-045500562784",
+            "bb168d71-1c2d-4e73-972c-98848897f435"
+          ],
+          "subGroups": null,
+          "additionalFields": null
+        },
+        {
+          "id": "switch_wobble",
+          "koName": "흔들림",
+          "enName": "Wobble",
+          "names": {
+            "ko": "흔들림",
+            "en": "Wobble"
+          },
+          "order": 3,
+          "type": null,
+          "fieldIds": [
+            "669f65d6-9bc0-4415-8170-9899ea2a8d10",
+            "62659b28-4d10-419a-bbec-d981aed3e2d2",
+            "770cc460-cfd7-4623-8a2f-4829f400f442",
+            "04d7f73a-4260-4c72-b6b0-38b8da47fc34",
+            "0e3e2733-60c7-44ae-8e7e-f7a47a6763ad",
+            "ce7a7152-1012-4005-9377-a3129ae07450",
+            "1693ce63-3432-4d28-ac74-5d84bb2a4459",
+            "e72111f1-d811-4502-b05a-001d27b9253a",
+            "ca8a4b08-6e2f-416c-b353-9e4239101593"
+          ],
+          "subGroups": null,
+          "additionalFields": null
+        }
+      ]
+    }
+  },
+  "resultCode": "SUCCESS",
+  "resultMessage": "정상적으로 처리되었습니다.",
+  "requestId": null,
+  "errorLogId": null
+}

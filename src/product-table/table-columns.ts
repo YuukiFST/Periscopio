@@ -1,4 +1,4 @@
-import type { CategorySlug } from "../categories.ts";
+import { overallRatingKeys, type CategorySlug } from "../categories.ts";
 import { isRatingField } from "../data/rating-order.ts";
 import type { CategoryData, Field } from "../data/schema.ts";
 import { fieldLabel } from "../i18n/labels.ts";
@@ -37,7 +37,8 @@ function ratingAndPriceColumns(ratingKey: string): ColumnSpec[] {
 }
 
 /**
- * The columns the Fonte lists per Categoria, in its order (research file, 2026-10-16),
+ * The columns the Fonte lists per Categoria, in its order (research file, 2026-10-16; the
+ * snapshot's `columns` for mousepads, switches and fones, plus the mousepad's Material),
  * except the mouses' two response times: they matter most, so they follow the Produto
  * instead of closing a row too wide for a laptop. The Fonte's AliExpress column is left
  * out: a Produto with the link shows its name as that link instead.
@@ -57,7 +58,7 @@ const categoryTables: Record<CategorySlug, CategoryTable> = {
         fieldKey: "optimalResponseSpeed",
         deviationKey: "optimalStddev",
       },
-      ...ratingAndPriceColumns("overallRatingMouse"),
+      ...ratingAndPriceColumns(overallRatingKeys.mouse),
       { kind: "field", slug: "sensor", fieldKey: "sensor" },
       { kind: "field", slug: "mcu", fieldKey: "mouseMcu" },
       { kind: "field", slug: "formato", fieldKey: "housingMouse" },
@@ -67,7 +68,7 @@ const categoryTables: Record<CategorySlug, CategoryTable> = {
   },
   teclado: {
     columns: [
-      ...ratingAndPriceColumns("overallRatingKeyboard"),
+      ...ratingAndPriceColumns(overallRatingKeys.teclado),
       {
         kind: "field",
         slug: "resposta",
@@ -84,7 +85,7 @@ const categoryTables: Record<CategorySlug, CategoryTable> = {
   },
   monitor: {
     columns: [
-      ...ratingAndPriceColumns("overallRatingMonitor"),
+      ...ratingAndPriceColumns(overallRatingKeys.monitor),
       { kind: "field", slug: "tamanho", fieldKey: "sizeInch" },
       { kind: "field", slug: "taxa", fieldKey: "refreshRate" },
       { kind: "field", slug: "resolucao", fieldKey: "resolution" },
@@ -99,6 +100,55 @@ const categoryTables: Record<CategorySlug, CategoryTable> = {
       { slug: "nota", desc: true },
       { slug: "resposta", desc: false },
     ],
+  },
+  mousepad: {
+    columns: [
+      ...ratingAndPriceColumns(overallRatingKeys.mousepad),
+      { kind: "field", slug: "material", fieldKey: "material" },
+      { kind: "field", slug: "perfil", fieldKey: "tendency" },
+      { kind: "field", slug: "atrito-estatico", fieldKey: "staticFriction" },
+      { kind: "field", slug: "sensibilidade-estatico", fieldKey: "senseDiffStatic" },
+      { kind: "field", slug: "atrito-dinamico", fieldKey: "dynamicFriction" },
+      { kind: "field", slug: "sensibilidade-dinamico", fieldKey: "senseDiffDynamic" },
+      { kind: "field", slug: "dureza", fieldKey: "hardness" },
+      { kind: "field", slug: "uniformidade", fieldKey: "uniformity" },
+      { kind: "field", slug: "aderencia", fieldKey: "gripForce" },
+    ],
+    defaultSort: [{ slug: "nota", desc: true }],
+  },
+  switch: {
+    columns: [
+      ...ratingAndPriceColumns(overallRatingKeys.switch),
+      { kind: "field", slug: "tipo", fieldKey: "mechanism" },
+      { kind: "field", slug: "curso", fieldKey: "travelDistance" },
+      { kind: "field", slug: "forca-inicial", fieldKey: "startingForce" },
+      { kind: "field", slug: "forca-final", fieldKey: "bottomOutForce" },
+      { kind: "field", slug: "desvio-forca", fieldKey: "measurementDeviationSummary" },
+      { kind: "field", slug: "desvio-curso", fieldKey: "travelMeasurementDeviationMm" },
+      { kind: "field", slug: "resolucao", fieldKey: "resolutionPerMm" },
+      {
+        kind: "field",
+        slug: "folga-horizontal",
+        fieldKey: "hallPressedHorizontalVariationPercent",
+      },
+      { kind: "field", slug: "folga-vertical", fieldKey: "hallPressedVerticalVariationPercent" },
+      { kind: "field", slug: "folga-rotacional", fieldKey: "hallWobbleVariationPercent" },
+    ],
+    defaultSort: [{ slug: "nota", desc: true }],
+  },
+  fone: {
+    columns: [
+      ...ratingAndPriceColumns(overallRatingKeys.fone),
+      { kind: "field", slug: "conexao", fieldKey: "earphoneConnection" },
+      { kind: "field", slug: "encaixe", fieldKey: "earphoneWearType" },
+      { kind: "field", slug: "drivers", fieldKey: "earphoneDriverConfiguration" },
+      { kind: "field", slug: "equilibrio", fieldKey: "earphoneChannelBalance" },
+      { kind: "field", slug: "assinatura", fieldKey: "earphoneFrSignature" },
+      { kind: "field", slug: "agudo", fieldKey: "earphoneFrTrebleRisk" },
+      { kind: "field", slug: "valorant", fieldKey: "earphoneValorantFrMatch" },
+      { kind: "field", slug: "valorant-eq", fieldKey: "earphoneValorantPostAutoeqScore" },
+    ],
+    defaultSort: [{ slug: "nota", desc: true }],
   },
 };
 
