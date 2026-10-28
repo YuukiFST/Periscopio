@@ -1,4 +1,4 @@
-import type { Product } from "../data/schema.ts";
+import { isTested, type Product } from "../data/schema.ts";
 
 const dayMs = 24 * 60 * 60 * 1000;
 /** A Produto stays a Novidade for the 14 days before the Atualização. */
@@ -21,8 +21,12 @@ function isWithinWindow(date: string | null | undefined, updatedAt: string): dat
   return ageDays >= 0 && ageDays <= novidadeWindowDays;
 }
 
-/** The latest of the two in the window; a Produto new and tested in one Atualização is "novo". */
+/**
+ * The latest of the two in the window; a Produto new and tested in one Atualização is "novo".
+ * A Produto not tested yet has no Medições to show, so it waits for its test to be one.
+ */
 export function novidadeOf(product: Product, updatedAt: string): Novidade | undefined {
+  if (!isTested(product)) return undefined;
   const { firstSeenAt, testedAt } = product;
   const isNew = isWithinWindow(firstSeenAt, updatedAt);
   if (isWithinWindow(testedAt, updatedAt)) {
@@ -39,7 +43,7 @@ export type NovidadeCounts = { novos: number; testados: number };
 
 /**
  * The Novidades dated after `lastSeenAt`, the Atualização the last visit showed:
- * a Produto first seen since then is new, else one tested since then is tested.
+ * a tested Produto first seen since then is new, else one tested since then is tested.
  */
 export function countNovidadesSince(
   products: Product[],
@@ -51,6 +55,7 @@ export function countNovidadesSince(
     isWithinWindow(date, updatedAt) && Date.parse(date) > lastSeenMs;
   const counts: NovidadeCounts = { novos: 0, testados: 0 };
   for (const product of products) {
+    if (!isTested(product)) continue;
     if (isSinceLastVisit(product.firstSeenAt)) counts.novos++;
     else if (isSinceLastVisit(product.testedAt)) counts.testados++;
   }

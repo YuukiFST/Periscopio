@@ -3,8 +3,9 @@ import { expect, test, type Page } from "@playwright/test";
 /**
  * Runs against the production build whose data comes from two Atualizações
  * of the recorded Fonte excerpt (`serve-fixture-build.ts`): the second one
- * adds Dragonfly 3 PRO and VK M5 Max THOR (not tested) and marks H200A as
- * tested, so those three mouses are the Novidades; teclados and monitores have none.
+ * adds Dragonfly 3 PRO (tested) and VK M5 Max THOR (not tested) and marks H200A
+ * as tested, so Dragonfly 3 PRO and H200A are the Novidades; teclados and
+ * monitores have none.
  */
 
 async function productNames(page: Page): Promise<string[]> {
@@ -26,12 +27,12 @@ test("the table marks the Produtos new in the last Atualização and the one tes
   await page.goto("/mouse?status=todos");
   await expect(page.getByRole("rowheader")).toHaveCount(6);
 
-  for (const name of ["Dragonfly 3 PRO", "VK M5 Max THOR"]) {
-    await expect(productRow(page, name).getByText("Novo", { exact: true })).toBeVisible();
-  }
+  await expect(
+    productRow(page, "Dragonfly 3 PRO").getByText("Novo", { exact: true }),
+  ).toBeVisible();
   await expect(productRow(page, "H200A").getByText("Testado agora", { exact: true })).toBeVisible();
   const table = page.getByRole("table");
-  await expect(table.getByText("Novo", { exact: true })).toHaveCount(2);
+  await expect(table.getByText("Novo", { exact: true })).toHaveCount(1);
   await expect(table.getByText("Testado agora", { exact: true })).toHaveCount(1);
 });
 
@@ -58,6 +59,19 @@ test("the Novidades toggle keeps only the marked Produtos, with the other Filtro
   await expect
     .poll(() => productNames(page))
     .toEqual(["Dragonfly A9 Ultra", "Huan", "Dragonfly 3 PRO"]);
+});
+
+test("regression: a Produto new in the Atualização but not tested yet is no Novidade", async ({
+  page,
+}) => {
+  await page.goto("/mouse?status=todos");
+  await expect(productRow(page, "VK M5 Max THOR")).toBeVisible();
+  await expect(productRow(page, "VK M5 Max THOR").getByText("Novo", { exact: true })).toHaveCount(
+    0,
+  );
+
+  await novidadesToggle(page).click();
+  await expect.poll(() => productNames(page)).toEqual(["Dragonfly 3 PRO", "H200A"]);
 });
 
 test("a Categoria without Novidades shows no badge and no toggle", async ({ page }) => {

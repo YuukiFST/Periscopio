@@ -241,13 +241,13 @@ function CategoryTable({ data }: { data: CategoryData }) {
 
   function showNovidades() {
     markUpdateSeen();
-    // The notice counts untested Produtos too, so every Status de teste shows.
+    // Every Novidade is tested, so the default Status de teste shows them all.
     void navigate({
       unsafeRelative: "path",
       search: (previous) => ({
         ...previous,
         novidades: "1",
-        status: "todos",
+        status: undefined,
         favoritos: undefined,
       }),
       replace: true,
