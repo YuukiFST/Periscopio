@@ -4,7 +4,7 @@ import { metaSchema } from "../../src/data/schema.ts";
 /**
  * Runs against the production build served with the data the pipeline
  * generates from the recorded Fonte excerpt (`serve-fixture-build.ts`):
- * 6 mouses, 4 teclados and 4 monitores.
+ * 6 mouses, 4 teclados, 4 monitores, 3 mousepads, 3 switches and 2 fones.
  */
 
 const mouseDataOrder = [
@@ -94,6 +94,66 @@ const categoryTables = [
       "277 cd/m²",
       "Sem dado",
       "Sem dado",
+    ],
+  },
+  {
+    slug: "mousepad",
+    heading: "Mousepads",
+    count: 3,
+    rowHeader: "Aqua Control 2 Sakura Pink X-raypad",
+    cells: [
+      "A+",
+      "Fraca",
+      "₩ 34.900 cerca de R$ 133 (Cotação de 22 de out. de 2026)",
+      "Híbrido",
+      "Controle",
+      "0,139 μ",
+      "1%",
+      "0,121 μ",
+      "3%",
+      "2",
+      "A",
+      "C",
+    ],
+  },
+  {
+    slug: "switch",
+    heading: "Switches",
+    count: 3,
+    rowHeader: "Spark GATERON",
+    cells: [
+      "A",
+      "Fraca",
+      "₩ 1.100 cerca de R$ 4 (Cotação de 22 de out. de 2026)",
+      "Magnético",
+      "3,14 mm",
+      "34 gf",
+      "44 gf",
+      "±0.8gf",
+      "0,02 mm",
+      "296 níveis",
+      "1,1%",
+      "1,2%",
+      "1.4%",
+    ],
+  },
+  {
+    slug: "fone",
+    heading: "Fones",
+    count: 2,
+    rowHeader: "VR3000 Wireless Final Audio",
+    cells: [
+      "B",
+      "Fraca",
+      "₩ 170.900 cerca de R$ 651 (Cotação de 22 de out. de 2026)",
+      "Sem fio",
+      "Por baixo da orelha",
+      "1DD",
+      "87%",
+      "Graves suaves",
+      "Médio",
+      "63%",
+      "75%",
     ],
   },
 ];

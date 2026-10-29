@@ -40,10 +40,17 @@
       "multiple": false,
       "options": [
         {
-          "value": "unreleased",
+          "value": "arrived",
           "label": {
-            "ko": "미출시",
-            "en": "Unreleased"
+            "ko": "제품 도착",
+            "en": "Arrived"
+          }
+        },
+        {
+          "value": "earlyAccess",
+          "label": {
+            "ko": "선 공개",
+            "en": "Early Access"
           }
         },
         {
@@ -61,10 +68,10 @@
           }
         },
         {
-          "value": "arrived",
+          "value": "reviewed",
           "label": {
-            "ko": "제품 도착",
-            "en": "Arrived"
+            "ko": "공개 완료",
+            "en": "Reviewed"
           }
         },
         {
@@ -75,17 +82,10 @@
           }
         },
         {
-          "value": "earlyAccess",
+          "value": "unreleased",
           "label": {
-            "ko": "선 공개",
-            "en": "Early Access"
-          }
-        },
-        {
-          "value": "reviewed",
-          "label": {
-            "ko": "공개 완료",
-            "en": "Reviewed"
+            "ko": "미출시",
+            "en": "Unreleased"
           }
         }
       ]
@@ -102,10 +102,10 @@
       "multiple": false,
       "options": [
         {
-          "value": "unreleased",
+          "value": "DISCONTINUED",
           "label": {
-            "ko": "미출시",
-            "en": "Unreleased"
+            "ko": "단종",
+            "en": "Discontinued"
           }
         },
         {
@@ -116,10 +116,10 @@
           }
         },
         {
-          "value": "DISCONTINUED",
+          "value": "unreleased",
           "label": {
-            "ko": "단종",
-            "en": "Discontinued"
+            "ko": "미출시",
+            "en": "Unreleased"
           }
         }
       ]
@@ -143,13 +143,6 @@
           }
         },
         {
-          "value": "RECOMMENDED",
-          "label": {
-            "ko": "추천",
-            "en": "Recommend"
-          }
-        },
-        {
           "value": "MILD_RECOMMENDATION",
           "label": {
             "ko": "추천까지는",
@@ -161,6 +154,13 @@
           "label": {
             "ko": "추천안함",
             "en": "Not Recommend"
+          }
+        },
+        {
+          "value": "RECOMMENDED",
+          "label": {
+            "ko": "추천",
+            "en": "Recommend"
           }
         },
         {
@@ -219,27 +219,6 @@
       "multiple": false,
       "options": [
         {
-          "value": "sparklink",
-          "label": {
-            "ko": "스파크링크",
-            "en": "SparkLink"
-          }
-        },
-        {
-          "value": "arbitor",
-          "label": {
-            "ko": "아비터",
-            "en": "arbitor"
-          }
-        },
-        {
-          "value": "Rongyuan",
-          "label": {
-            "ko": "롱위안",
-            "en": "Rongyuan"
-          }
-        },
-        {
           "value": "Beiying",
           "label": {
             "ko": "베이잉",
@@ -268,10 +247,17 @@
           }
         },
         {
-          "value": "자체 솔루션",
+          "value": "Rongyuan",
           "label": {
-            "ko": "자체 솔루션",
-            "en": "In-house"
+            "ko": "롱위안",
+            "en": "Rongyuan"
+          }
+        },
+        {
+          "value": "arbitor",
+          "label": {
+            "ko": "아비터",
+            "en": "arbitor"
           }
         },
         {
@@ -279,6 +265,20 @@
           "label": {
             "ko": "기타",
             "en": "etc"
+          }
+        },
+        {
+          "value": "sparklink",
+          "label": {
+            "ko": "스파크링크",
+            "en": "SparkLink"
+          }
+        },
+        {
+          "value": "자체 솔루션",
+          "label": {
+            "ko": "자체 솔루션",
+            "en": "In-house"
           }
         }
       ]
@@ -357,13 +357,6 @@
       "multiple": false,
       "options": [
         {
-          "value": "유선",
-          "label": {
-            "ko": "유선",
-            "en": "Wired"
-          }
-        },
-        {
           "value": "무선",
           "label": {
             "ko": "무선",
@@ -375,6 +368,13 @@
           "label": {
             "ko": "유무선",
             "en": "Wired/Wireless"
+          }
+        },
+        {
+          "value": "유선",
+          "label": {
+            "ko": "유선",
+            "en": "Wired"
           }
         }
       ]
@@ -391,27 +391,6 @@
       "multiple": false,
       "options": [
         {
-          "value": "32000",
-          "label": {
-            "ko": "32000",
-            "en": "32000"
-          }
-        },
-        {
-          "value": "16000",
-          "label": {
-            "ko": "16000",
-            "en": "16000"
-          }
-        },
-        {
-          "value": "8000",
-          "label": {
-            "ko": "8000",
-            "en": "8000"
-          }
-        },
-        {
           "value": "1000",
           "label": {
             "ko": "1000",
@@ -423,6 +402,27 @@
           "label": {
             "ko": "125",
             "en": "125"
+          }
+        },
+        {
+          "value": "16000",
+          "label": {
+            "ko": "16000",
+            "en": "16000"
+          }
+        },
+        {
+          "value": "32000",
+          "label": {
+            "ko": "32000",
+            "en": "32000"
+          }
+        },
+        {
+          "value": "8000",
+          "label": {
+            "ko": "8000",
+            "en": "8000"
           }
         }
       ]
@@ -447,20 +447,6 @@
       "unit": null,
       "multiple": false,
       "options": [
-        {
-          "value": "tkl",
-          "label": {
-            "ko": "TKL",
-            "en": "TKL"
-          }
-        },
-        {
-          "value": "full",
-          "label": {
-            "ko": "FULL",
-            "en": "FULL"
-          }
-        },
         {
           "value": "60%",
           "label": {
@@ -495,6 +481,20 @@
             "ko": "기타",
             "en": "etc"
           }
+        },
+        {
+          "value": "full",
+          "label": {
+            "ko": "FULL",
+            "en": "FULL"
+          }
+        },
+        {
+          "value": "tkl",
+          "label": {
+            "ko": "TKL",
+            "en": "TKL"
+          }
         }
       ]
     },
@@ -510,13 +510,6 @@
       "multiple": true,
       "options": [
         {
-          "value": "자석축",
-          "label": {
-            "ko": "자석축",
-            "en": "Magnetic Switch"
-          }
-        },
-        {
           "value": "광축",
           "label": {
             "ko": "광축",
@@ -531,6 +524,13 @@
           }
         },
         {
+          "value": "멤브레인",
+          "label": {
+            "ko": "멤브레인",
+            "en": "Membrane"
+          }
+        },
+        {
           "value": "무접점",
           "label": {
             "ko": "무접점",
@@ -538,10 +538,10 @@
           }
         },
         {
-          "value": "멤브레인",
+          "value": "자석축",
           "label": {
-            "ko": "멤브레인",
-            "en": "Membrane"
+            "ko": "자석축",
+            "en": "Magnetic Switch"
           }
         }
       ]
@@ -558,10 +558,10 @@
       "multiple": false,
       "options": [
         {
-          "value": "자석축",
+          "value": "광축",
           "label": {
-            "ko": "자석축",
-            "en": "Magnetic Switch"
+            "ko": "광축",
+            "en": "Optical Switch"
           }
         },
         {
@@ -572,10 +572,10 @@
           }
         },
         {
-          "value": "광축",
+          "value": "멤브레인",
           "label": {
-            "ko": "광축",
-            "en": "Optical Switch"
+            "ko": "멤브레인",
+            "en": "Membrane"
           }
         },
         {
@@ -586,10 +586,10 @@
           }
         },
         {
-          "value": "멤브레인",
+          "value": "자석축",
           "label": {
-            "ko": "멤브레인",
-            "en": "Membrane"
+            "ko": "자석축",
+            "en": "Magnetic Switch"
           }
         }
       ]
@@ -613,17 +613,17 @@
           }
         },
         {
-          "value": "oemProfile",
-          "label": {
-            "ko": "OEM 프로파일",
-            "en": "OEM Profile"
-          }
-        },
-        {
           "value": "lowProfile",
           "label": {
             "ko": "Low Profile",
             "en": "Low Profile"
+          }
+        },
+        {
+          "value": "oemProfile",
+          "label": {
+            "ko": "OEM 프로파일",
+            "en": "OEM Profile"
           }
         }
       ]
@@ -639,13 +639,6 @@
       "unit": null,
       "multiple": false,
       "options": [
-        {
-          "value": "true",
-          "label": {
-            "ko": "O",
-            "en": "O"
-          }
-        },
         {
           "value": "false",
           "label": {
@@ -665,6 +658,13 @@
           "label": {
             "ko": "RGB",
             "en": "RGB"
+          }
+        },
+        {
+          "value": "true",
+          "label": {
+            "ko": "O",
+            "en": "O"
           }
         }
       ]
@@ -815,24 +815,10 @@
       "multiple": true,
       "options": [
         {
-          "value": "plastic",
-          "label": {
-            "ko": "플라스틱",
-            "en": "Plastic"
-          }
-        },
-        {
           "value": "aluminum",
           "label": {
             "ko": "알루미늄",
             "en": "Aluminum"
-          }
-        },
-        {
-          "value": "mixed",
-          "label": {
-            "ko": "혼합",
-            "en": "Mixed"
           }
         },
         {
@@ -843,10 +829,24 @@
           }
         },
         {
+          "value": "mixed",
+          "label": {
+            "ko": "혼합",
+            "en": "Mixed"
+          }
+        },
+        {
           "value": "other",
           "label": {
             "ko": "기타",
             "en": "Other"
+          }
+        },
+        {
+          "value": "plastic",
+          "label": {
+            "ko": "플라스틱",
+            "en": "Plastic"
           }
         }
       ]
@@ -863,24 +863,17 @@
       "multiple": true,
       "options": [
         {
+          "value": "bottom",
+          "label": {
+            "ko": "바텀",
+            "en": "Bottom"
+          }
+        },
+        {
           "value": "gasket",
           "label": {
             "ko": "가스켓",
             "en": "Gasket"
-          }
-        },
-        {
-          "value": "tray",
-          "label": {
-            "ko": "트레이",
-            "en": "Tray"
-          }
-        },
-        {
-          "value": "top",
-          "label": {
-            "ko": "탑",
-            "en": "Top"
           }
         },
         {
@@ -891,10 +884,10 @@
           }
         },
         {
-          "value": "bottom",
+          "value": "oring",
           "label": {
-            "ko": "바텀",
-            "en": "Bottom"
+            "ko": "거미오링",
+            "en": "O-ring"
           }
         },
         {
@@ -905,10 +898,17 @@
           }
         },
         {
-          "value": "oring",
+          "value": "top",
           "label": {
-            "ko": "거미오링",
-            "en": "O-ring"
+            "ko": "탑",
+            "en": "Top"
+          }
+        },
+        {
+          "value": "tray",
+          "label": {
+            "ko": "트레이",
+            "en": "Tray"
           }
         }
       ]
@@ -943,10 +943,10 @@
       "multiple": false,
       "options": [
         {
-          "value": "usbTypeC",
+          "value": "Battery",
           "label": {
-            "ko": "USB-C",
-            "en": "USB-C"
+            "ko": "배터리",
+            "en": "Battery"
           }
         },
         {
@@ -954,6 +954,13 @@
           "label": {
             "ko": "고정형 케이블",
             "en": "Fixed Cable"
+          }
+        },
+        {
+          "value": "ps2",
+          "label": {
+            "ko": "PS/2",
+            "en": "PS/2"
           }
         },
         {
@@ -971,17 +978,10 @@
           }
         },
         {
-          "value": "ps2",
+          "value": "usbTypeC",
           "label": {
-            "ko": "PS/2",
-            "en": "PS/2"
-          }
-        },
-        {
-          "value": "Battery",
-          "label": {
-            "ko": "배터리",
-            "en": "Battery"
+            "ko": "USB-C",
+            "en": "USB-C"
           }
         }
       ]
@@ -1027,17 +1027,17 @@
       "multiple": false,
       "options": [
         {
-          "value": "pbtDoubleShot",
-          "label": {
-            "ko": "PBT 이중사출",
-            "en": "PBT Double-shot"
-          }
-        },
-        {
           "value": "absDoubleShot",
           "label": {
             "ko": "ABS 이중사출",
             "en": "ABS Double-shot"
+          }
+        },
+        {
+          "value": "pbtDoubleShot",
+          "label": {
+            "ko": "PBT 이중사출",
+            "en": "PBT Double-shot"
           }
         },
         {
@@ -1075,17 +1075,17 @@
           }
         },
         {
-          "value": "hybridPlateMount",
-          "label": {
-            "ko": "하이브리드 보강판 결합",
-            "en": "Hybrid Plate Mount"
-          }
-        },
-        {
           "value": "cherryPlatePcbMount",
           "label": {
             "ko": "체리식 보강판, PCB 결합",
             "en": "Cherry Plate, PCB Mount"
+          }
+        },
+        {
+          "value": "hybridPlateMount",
+          "label": {
+            "ko": "하이브리드 보강판 결합",
+            "en": "Hybrid Plate Mount"
           }
         }
       ]
@@ -1111,227 +1111,17 @@
       "multiple": false,
       "options": [
         {
-          "value": "nxplpc5528jbd100(150m)",
+          "value": "?",
           "label": {
-            "ko": "NXP LPC5528JBD100(150M)",
-            "en": "NXP LPC5528JBD100(150M)"
+            "ko": "?",
+            "en": "?"
           }
         },
         {
-          "value": "visionvs11k17a(48m)",
+          "value": "armcortex600mhz",
           "label": {
-            "ko": "Vision VS11K17A(48M)",
-            "en": "Vision VS11K17A(48M)"
-          }
-        },
-        {
-          "value": "holtekht32f52352(48m)",
-          "label": {
-            "ko": "HOLTEK HT32F52352(48M)",
-            "en": "HOLTEK HT32F52352(48M)"
-          }
-        },
-        {
-          "value": "spmstm32u5a5rjt6(160m)",
-          "label": {
-            "ko": "SPM STM32U5A5 RJT6(160M)",
-            "en": "SPM STM32U5A5 RJT6(160M)"
-          }
-        },
-        {
-          "value": "nuvotonnuc123sd4bn0(72m)+m0518ld2ae(50m)",
-          "label": {
-            "ko": "NUVOTON NUC123SD4BN0(72M) + M0518LD2AE(50M)",
-            "en": "NUVOTON NUC123SD4BN0(72M) + M0518LD2AE(50M)"
-          }
-        },
-        {
-          "value": "stm32f103vct6(72m)+stm32f103rct6(72m)",
-          "label": {
-            "ko": "STM32F103 VCT6(72M) + STM32F103 RCT6(72M)",
-            "en": "STM32F103 VCT6(72M) + STM32F103 RCT6(72M)"
-          }
-        },
-        {
-          "value": "stm32g070cbt6(64m)+n52833(64m)",
-          "label": {
-            "ko": "STM32G070 CBT6(64M) + N52833(64M)",
-            "en": "STM32G070 CBT6(64M) + N52833(64M)"
-          }
-        },
-        {
-          "value": "stm32l100r8t6(32m)",
-          "label": {
-            "ko": "STM32L100 R8T6(32M)",
-            "en": "STM32L100 R8T6(32M)"
-          }
-        },
-        {
-          "value": "nordicnrf52833(64m)",
-          "label": {
-            "ko": "Nordic nRF52833(64M)",
-            "en": "Nordic nRF52833(64M)"
-          }
-        },
-        {
-          "value": "nxplpc5516(150m)",
-          "label": {
-            "ko": "NXP LPC5516(150M)",
-            "en": "NXP LPC5516(150M)"
-          }
-        },
-        {
-          "value": "armm3mcu",
-          "label": {
-            "ko": "ARM M3 MCU",
-            "en": "ARM M3 MCU"
-          }
-        },
-        {
-          "value": "giadevicegd32f303cgt6(120m)",
-          "label": {
-            "ko": "Giadevice GD32F303 CGT6(120M)",
-            "en": "Giadevice GD32F303 CGT6(120M)"
-          }
-        },
-        {
-          "value": "holtekht32f12365(96m)",
-          "label": {
-            "ko": "HOLTEK HT32F12365(96M)",
-            "en": "HOLTEK HT32F12365(96M)"
-          }
-        },
-        {
-          "value": "riscpic32mzec(200m)",
-          "label": {
-            "ko": "RISC PIC32MZ EC(200M)",
-            "en": "RISC PIC32MZ EC(200M)"
-          }
-        },
-        {
-          "value": "nxplpc54605j512bd100(180m)",
-          "label": {
-            "ko": "NXP LPC54605j512BD100(180M)",
-            "en": "NXP LPC54605j512BD100(180M)"
-          }
-        },
-        {
-          "value": "nuvotonnuc1261sg4ae(72m)",
-          "label": {
-            "ko": "Nuvoton NUC1261SG4AE(72M)",
-            "en": "Nuvoton NUC1261SG4AE(72M)"
-          }
-        },
-        {
-          "value": "wchch32v307(144m)",
-          "label": {
-            "ko": "WCH CH32V307(144M)",
-            "en": "WCH CH32V307(144M)"
-          }
-        },
-        {
-          "value": "rc30035302(72m)",
-          "label": {
-            "ko": "RC30-035302(72M)",
-            "en": "RC30-035302(72M)"
-          }
-        },
-        {
-          "value": "riscvch32v307wcu6(144m)",
-          "label": {
-            "ko": "RISC-V CH32V307WCU6(144M)",
-            "en": "RISC-V CH32V307WCU6(144M)"
-          }
-        },
-        {
-          "value": "atmel128a4uh(32m)",
-          "label": {
-            "ko": "Atmel128A4U-H(32M)",
-            "en": "Atmel128A4U-H(32M)"
-          }
-        },
-        {
-          "value": "stm32l412rbt6(80m)",
-          "label": {
-            "ko": "STM32L412 RBT6(80M)",
-            "en": "STM32L412 RBT6(80M)"
-          }
-        },
-        {
-          "value": "nuvotonm484s1dae2u(192m)",
-          "label": {
-            "ko": "NUVOTON M484S1DAE2U(192M)",
-            "en": "NUVOTON M484S1DAE2U(192M)"
-          }
-        },
-        {
-          "value": "nxplpc5516jbd64(150m)",
-          "label": {
-            "ko": "NXP LPC5516JBD64(150M)",
-            "en": "NXP LPC5516JBD64(150M)"
-          }
-        },
-        {
-          "value": "riscvch32v307rct6(144m)+ch32v2036개",
-          "label": {
-            "ko": "RISC-V CH32V307RCT6(144M) + CH32V203 6개",
-            "en": "RISC-V CH32V307RCT6(144M) + CH32V203 x6"
-          }
-        },
-        {
-          "value": "ry7203n48cc2214cc",
-          "label": {
-            "ko": "RY7203 N48C-C 2214-CC",
-            "en": "RY7203 N48C-C 2214-CC"
-          }
-        },
-        {
-          "value": "stm32f103rbt6(72m)",
-          "label": {
-            "ko": "STM32F103 RBT6(72M)",
-            "en": "STM32F103 RBT6(72M)"
-          }
-        },
-        {
-          "value": "stm32l412rb(80m)",
-          "label": {
-            "ko": "STM32L412RB(80M)",
-            "en": "STM32L412RB(80M)"
-          }
-        },
-        {
-          "value": "stm32l4p5rgt6(120m)",
-          "label": {
-            "ko": "STM32L4P5 RGT6(120M)",
-            "en": "STM32L4P5 RGT6(120M)"
-          }
-        },
-        {
-          "value": "stm32u595rit6(160mhz)",
-          "label": {
-            "ko": "STM32U595RIT6 (160MHz)",
-            "en": "STM32U595RIT6 (160MHz)"
-          }
-        },
-        {
-          "value": "vgndrm32f100(ep5889)",
-          "label": {
-            "ko": "VGN DRM32F100(ep5889)",
-            "en": "VGN DRM32F100(ep5889)"
-          }
-        },
-        {
-          "value": "visionvs11k09a1(48m)",
-          "label": {
-            "ko": "VISION VS11K09A-1(48M)",
-            "en": "VISION VS11K09A-1(48M)"
-          }
-        },
-        {
-          "value": "wchicch32v305(144m)",
-          "label": {
-            "ko": "WCH-IC CH32V305(144M)",
-            "en": "WCH-IC CH32V305(144M)"
+            "ko": "ARM Cortex 600MHz",
+            "en": "ARM Cortex 600MHz"
           }
         },
         {
@@ -1342,10 +1132,24 @@
           }
         },
         {
+          "value": "armm3mcu",
+          "label": {
+            "ko": "ARM M3 MCU",
+            "en": "ARM M3 MCU"
+          }
+        },
+        {
           "value": "atkv10h12b1g708h2523",
           "label": {
             "ko": "ATK V10H12B1G708H2523",
             "en": "ATK V10H12B1G708H2523"
+          }
+        },
+        {
+          "value": "atmel128a4uh(32m)",
+          "label": {
+            "ko": "Atmel128A4U-H(32M)",
+            "en": "Atmel128A4U-H(32M)"
           }
         },
         {
@@ -1377,10 +1181,31 @@
           }
         },
         {
+          "value": "giadevicegd32f303cgt6(120m)",
+          "label": {
+            "ko": "Giadevice GD32F303 CGT6(120M)",
+            "en": "Giadevice GD32F303 CGT6(120M)"
+          }
+        },
+        {
           "value": "giadevicegd32f425rgtg(200mhz)",
           "label": {
             "ko": "Giadevice GD32F425RGTG(200MHz)",
             "en": "Giadevice GD32F425RGTG(200MHz)"
+          }
+        },
+        {
+          "value": "holtekht32f12365(96m)",
+          "label": {
+            "ko": "HOLTEK HT32F12365(96M)",
+            "en": "HOLTEK HT32F12365(96M)"
+          }
+        },
+        {
+          "value": "holtekht32f52352(48m)",
+          "label": {
+            "ko": "HOLTEK HT32F52352(48M)",
+            "en": "HOLTEK HT32F52352(48M)"
           }
         },
         {
@@ -1391,10 +1216,31 @@
           }
         },
         {
+          "value": "nordicnrf52833(64m)",
+          "label": {
+            "ko": "Nordic nRF52833(64M)",
+            "en": "Nordic nRF52833(64M)"
+          }
+        },
+        {
+          "value": "nordicnrf52840(64m)",
+          "label": {
+            "ko": "Nordic nRF52840(64M)",
+            "en": "Nordic nRF52840(64M)"
+          }
+        },
+        {
           "value": "nuc123sd4bn0[armcortexm0(72m)]",
           "label": {
             "ko": "NUC123SD4BN0[ARM Cortex-M0(72M)]",
             "en": "NUC123SD4BN0[ARM Cortex-M0(72M)]"
+          }
+        },
+        {
+          "value": "nuvotonm484s1dae2u(192m)",
+          "label": {
+            "ko": "NUVOTON M484S1DAE2U(192M)",
+            "en": "NUVOTON M484S1DAE2U(192M)"
           }
         },
         {
@@ -1409,6 +1255,27 @@
           "label": {
             "ko": "NUVOTON M484SIDAE2U(192M)",
             "en": "NUVOTON M484SIDAE2U(192M)"
+          }
+        },
+        {
+          "value": "nuvotonnuc123sd4an0(72m)",
+          "label": {
+            "ko": "Nuvoton NUC123SD4AN0(72M)",
+            "en": "Nuvoton NUC123SD4AN0(72M)"
+          }
+        },
+        {
+          "value": "nuvotonnuc123sd4bn0(72m)+m0518ld2ae(50m)",
+          "label": {
+            "ko": "NUVOTON NUC123SD4BN0(72M) + M0518LD2AE(50M)",
+            "en": "NUVOTON NUC123SD4BN0(72M) + M0518LD2AE(50M)"
+          }
+        },
+        {
+          "value": "nuvotonnuc1261sg4ae(72m)",
+          "label": {
+            "ko": "Nuvoton NUC1261SG4AE(72M)",
+            "en": "Nuvoton NUC1261SG4AE(72M)"
           }
         },
         {
@@ -1440,10 +1307,24 @@
           }
         },
         {
+          "value": "nxplpc54605j512bd100(180m)",
+          "label": {
+            "ko": "NXP LPC54605j512BD100(180M)",
+            "en": "NXP LPC54605j512BD100(180M)"
+          }
+        },
+        {
           "value": "nxplpc5465j512bd100(220m)",
           "label": {
             "ko": "NXP LPC5465J512BD100(220M)",
             "en": "NXP LPC5465J512BD100(220M)"
+          }
+        },
+        {
+          "value": "nxplpc5516(150m)",
+          "label": {
+            "ko": "NXP LPC5516(150M)",
+            "en": "NXP LPC5516(150M)"
           }
         },
         {
@@ -1454,6 +1335,13 @@
           }
         },
         {
+          "value": "nxplpc5516jbd64(150m)",
+          "label": {
+            "ko": "NXP LPC5516JBD64(150M)",
+            "en": "NXP LPC5516JBD64(150M)"
+          }
+        },
+        {
           "value": "nxplpc5528(150m)",
           "label": {
             "ko": "NXP LPC5528(150M)",
@@ -1461,17 +1349,10 @@
           }
         },
         {
-          "value": "nordicnrf52840(64m)",
+          "value": "nxplpc5528jbd100(150m)",
           "label": {
-            "ko": "Nordic nRF52840(64M)",
-            "en": "Nordic nRF52840(64M)"
-          }
-        },
-        {
-          "value": "nuvotonnuc123sd4an0(72m)",
-          "label": {
-            "ko": "Nuvoton NUC123SD4AN0(72M)",
-            "en": "Nuvoton NUC123SD4AN0(72M)"
+            "ko": "NXP LPC5528JBD100(150M)",
+            "en": "NXP LPC5528JBD100(150M)"
           }
         },
         {
@@ -1482,17 +1363,136 @@
           }
         },
         {
-          "value": "armcortex600mhz",
+          "value": "rc30035302(72m)",
           "label": {
-            "ko": "ARM Cortex 600MHz",
-            "en": "ARM Cortex 600MHz"
+            "ko": "RC30-035302(72M)",
+            "en": "RC30-035302(72M)"
           }
         },
         {
-          "value": "?",
+          "value": "riscpic32mzec(200m)",
           "label": {
-            "ko": "?",
-            "en": "?"
+            "ko": "RISC PIC32MZ EC(200M)",
+            "en": "RISC PIC32MZ EC(200M)"
+          }
+        },
+        {
+          "value": "riscvch32v307rct6(144m)+ch32v2036개",
+          "label": {
+            "ko": "RISC-V CH32V307RCT6(144M) + CH32V203 6개",
+            "en": "RISC-V CH32V307RCT6(144M) + CH32V203 x6"
+          }
+        },
+        {
+          "value": "riscvch32v307wcu6(144m)",
+          "label": {
+            "ko": "RISC-V CH32V307WCU6(144M)",
+            "en": "RISC-V CH32V307WCU6(144M)"
+          }
+        },
+        {
+          "value": "ry7203n48cc2214cc",
+          "label": {
+            "ko": "RY7203 N48C-C 2214-CC",
+            "en": "RY7203 N48C-C 2214-CC"
+          }
+        },
+        {
+          "value": "spmstm32u5a5rjt6(160m)",
+          "label": {
+            "ko": "SPM STM32U5A5 RJT6(160M)",
+            "en": "SPM STM32U5A5 RJT6(160M)"
+          }
+        },
+        {
+          "value": "stm32f103rbt6(72m)",
+          "label": {
+            "ko": "STM32F103 RBT6(72M)",
+            "en": "STM32F103 RBT6(72M)"
+          }
+        },
+        {
+          "value": "stm32f103vct6(72m)+stm32f103rct6(72m)",
+          "label": {
+            "ko": "STM32F103 VCT6(72M) + STM32F103 RCT6(72M)",
+            "en": "STM32F103 VCT6(72M) + STM32F103 RCT6(72M)"
+          }
+        },
+        {
+          "value": "stm32g070cbt6(64m)+n52833(64m)",
+          "label": {
+            "ko": "STM32G070 CBT6(64M) + N52833(64M)",
+            "en": "STM32G070 CBT6(64M) + N52833(64M)"
+          }
+        },
+        {
+          "value": "stm32l100r8t6(32m)",
+          "label": {
+            "ko": "STM32L100 R8T6(32M)",
+            "en": "STM32L100 R8T6(32M)"
+          }
+        },
+        {
+          "value": "stm32l412rb(80m)",
+          "label": {
+            "ko": "STM32L412RB(80M)",
+            "en": "STM32L412RB(80M)"
+          }
+        },
+        {
+          "value": "stm32l412rbt6(80m)",
+          "label": {
+            "ko": "STM32L412 RBT6(80M)",
+            "en": "STM32L412 RBT6(80M)"
+          }
+        },
+        {
+          "value": "stm32l4p5rgt6(120m)",
+          "label": {
+            "ko": "STM32L4P5 RGT6(120M)",
+            "en": "STM32L4P5 RGT6(120M)"
+          }
+        },
+        {
+          "value": "stm32u595rit6(160mhz)",
+          "label": {
+            "ko": "STM32U595RIT6 (160MHz)",
+            "en": "STM32U595RIT6 (160MHz)"
+          }
+        },
+        {
+          "value": "vgndrm32f100(ep5889)",
+          "label": {
+            "ko": "VGN DRM32F100(ep5889)",
+            "en": "VGN DRM32F100(ep5889)"
+          }
+        },
+        {
+          "value": "visionvs11k09a1(48m)",
+          "label": {
+            "ko": "VISION VS11K09A-1(48M)",
+            "en": "VISION VS11K09A-1(48M)"
+          }
+        },
+        {
+          "value": "visionvs11k17a(48m)",
+          "label": {
+            "ko": "Vision VS11K17A(48M)",
+            "en": "Vision VS11K17A(48M)"
+          }
+        },
+        {
+          "value": "wchch32v307(144m)",
+          "label": {
+            "ko": "WCH CH32V307(144M)",
+            "en": "WCH CH32V307(144M)"
+          }
+        },
+        {
+          "value": "wchicch32v305(144m)",
+          "label": {
+            "ko": "WCH-IC CH32V305(144M)",
+            "en": "WCH-IC CH32V305(144M)"
           }
         }
       ]
@@ -1650,38 +1650,17 @@
       "multiple": false,
       "options": [
         {
-          "value": "8000",
+          "value": "1000",
           "label": {
-            "ko": "8000",
-            "en": "8000"
+            "ko": "1000",
+            "en": "1000"
           }
         },
         {
-          "value": "4000",
+          "value": "125",
           "label": {
-            "ko": "4000",
-            "en": "4000"
-          }
-        },
-        {
-          "value": "2666",
-          "label": {
-            "ko": "2666",
-            "en": "2666"
-          }
-        },
-        {
-          "value": "2000",
-          "label": {
-            "ko": "2000",
-            "en": "2000"
-          }
-        },
-        {
-          "value": "1600",
-          "label": {
-            "ko": "1600",
-            "en": "1600"
+            "ko": "125",
+            "en": "125"
           }
         },
         {
@@ -1692,17 +1671,17 @@
           }
         },
         {
-          "value": "1000",
+          "value": "1600",
           "label": {
-            "ko": "1000",
-            "en": "1000"
+            "ko": "1600",
+            "en": "1600"
           }
         },
         {
-          "value": "500",
+          "value": "2000",
           "label": {
-            "ko": "500",
-            "en": "500"
+            "ko": "2000",
+            "en": "2000"
           }
         },
         {
@@ -1713,10 +1692,31 @@
           }
         },
         {
-          "value": "125",
+          "value": "2666",
           "label": {
-            "ko": "125",
-            "en": "125"
+            "ko": "2666",
+            "en": "2666"
+          }
+        },
+        {
+          "value": "4000",
+          "label": {
+            "ko": "4000",
+            "en": "4000"
+          }
+        },
+        {
+          "value": "500",
+          "label": {
+            "ko": "500",
+            "en": "500"
+          }
+        },
+        {
+          "value": "8000",
+          "label": {
+            "ko": "8000",
+            "en": "8000"
           }
         }
       ]

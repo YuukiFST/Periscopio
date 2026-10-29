@@ -30,6 +30,21 @@ const sectionDefinitions: Record<CategorySlug, readonly SectionDefinition[]> = {
     { title: "Tela", params: ["tamanho", "resolucao", "painel", "taxa"] },
     { title: "Imagem", params: ["resposta", "hdr", "iluminacao"] },
   ],
+  mousepad: [
+    generalSection,
+    { title: "Construção", params: ["material", "base", "largura", "espessura"] },
+    { title: "Deslize", params: ["perfil", "atrito"] },
+  ],
+  switch: [
+    generalSection,
+    { title: "Construção", params: ["tipo", "sensacao", "batida-seca"] },
+    { title: "Medições", params: ["forca-inicial", "forca-final", "curso"] },
+  ],
+  fone: [
+    generalSection,
+    { title: "Construção", params: ["conexao", "encaixe", "conector", "microfone", "anc"] },
+    { title: "Som", params: ["valorant", "overwatch"] },
+  ],
 };
 
 /** A group's title: above the field labels in size, so the groups read as the panel's sections. */

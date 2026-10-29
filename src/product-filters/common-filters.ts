@@ -1,4 +1,4 @@
-import type { CategorySlug } from "../categories.ts";
+import { overallRatingKeys, type CategorySlug } from "../categories.ts";
 import { valueLabelsPt } from "../i18n/pt-value-labels.ts";
 import { priceOf } from "../product-table/cell-values.ts";
 import {
@@ -113,12 +113,6 @@ const priceFilter: FilterDefinition = {
     const price = priceOf(product);
     return price === undefined || product.saleStatus === "DISCONTINUED" ? undefined : price / 1000;
   },
-};
-
-const overallRatingKeys: Record<CategorySlug, string> = {
-  mouse: "overallRatingMouse",
-  teclado: "overallRatingKeyboard",
-  monitor: "overallRatingMonitor",
 };
 
 /** Nota geral, Recomendação and Preço, in the Fonte's order. */

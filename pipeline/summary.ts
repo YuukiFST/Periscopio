@@ -10,6 +10,8 @@ export type UpdateReport = {
   imagesDeleted: number;
   imageFailures: ImageFailure[];
   unusableImageProductIds: string[];
+  pngImageProductIds: string[];
+  noManufacturerProductIds: string[];
   invalidAliUrlProductIds: string[];
   ignoredFieldKeys: string[];
   untranslatedKeys: string[];
@@ -59,6 +61,14 @@ export function renderSummary(report: UpdateReport): string {
   if (report.unusableImageProductIds.length > 0) {
     lines.push("", "### Produtos com endereço de foto inesperado", "");
     lines.push(...bulletList(report.unusableImageProductIds, ""));
+  }
+  if (report.pngImageProductIds.length > 0) {
+    lines.push("", "### Produtos com foto só em PNG, publicados sem foto", "");
+    lines.push(...bulletList(report.pngImageProductIds, ""));
+  }
+  if (report.noManufacturerProductIds.length > 0) {
+    lines.push("", "### Produtos sem fabricante, deixados de fora", "");
+    lines.push(...bulletList(report.noManufacturerProductIds, ""));
   }
   if (report.invalidAliUrlProductIds.length > 0) {
     lines.push("", "### Produtos com Link AliExpress inválido", "");

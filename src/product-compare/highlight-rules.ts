@@ -1,4 +1,4 @@
-import { isRatingField, ratingRank } from "../data/rating-order.ts";
+import { isGradeField, letterGradeFieldKeys, ratingRank } from "../data/rating-order.ts";
 import type { Field, FieldValue } from "../data/schema.ts";
 import { isPlaceholderTime } from "../product-fields/field-groups.ts";
 import { isCountEnum, roundedAsShown } from "../product-table/cell-values.ts";
@@ -20,8 +20,10 @@ const directionRules: readonly (readonly [pattern: string, direction: HighlightD
   // Grades: the better grade ranks higher. ANTICIPATING has no rank, so it stays out.
   ["overallRating*", "higher"],
   ["eyejokerRating", "higher"],
+  ...[...letterGradeFieldKeys].map((key) => [key, "higher"] as const),
   // Defects: `false` is better.
   ["clickGhosting", "lower"],
+  ["bottomOutHarshness", "lower"],
   ["slamClick", "lower"],
   ["multiKeyDelay", "lower"],
   ["keyGhosting", "lower"],
@@ -48,6 +50,11 @@ const directionRules: readonly (readonly [pattern: string, direction: HighlightD
   ["localDimmingZones", "higher"],
   ["pwmFrequencyMeasured", "higher"],
   ["buildQualityScore", "higher"],
+  ["resolutionPerMm", "higher"],
+  ["hallResolutionSteps", "higher"],
+  ["earphoneChannelBalance", "higher"],
+  ["earphone*FrMatch", "higher"],
+  ["earphone*PostAutoeqScore", "higher"],
   ["as", "higher"],
   ["battery", "higher"],
   // Times, delays and their standard deviations: lower is better.
@@ -100,6 +107,13 @@ const directionRules: readonly (readonly [pattern: string, direction: HighlightD
   ["colorDeAvg", "lower"],
   ["totalReflectanceMeasured", "lower"],
   ["diffuseReflectanceMeasured", "lower"],
+  ["earphoneWeightG", "lower"],
+  ["travelMeasurementDeviationMm", "lower"],
+  ["resolutionDeviation", "lower"],
+  ["horizontalDeviation", "lower"],
+  ["verticalDeviation", "lower"],
+  ["hallSampleVariationPercent", "lower"],
+  ["hallPressed*VariationPercent", "lower"],
 ];
 
 function keyPattern(pattern: string): RegExp {
@@ -148,7 +162,7 @@ function comparableNumber(field: Field, value: FieldValue): number | undefined {
       return typeof value === "boolean" ? Number(value) : undefined;
     case "enum":
       if (typeof value !== "string") return undefined;
-      if (isRatingField(field.key)) return ratingRank(field.key, value);
+      if (isGradeField(field.key)) return ratingRank(field.key, value);
       return enumAmount(field, value);
     case "text":
     case "date":

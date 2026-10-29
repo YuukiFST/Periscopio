@@ -1,0 +1,42 @@
+- complementary "Filtros":
+    - heading "Filtros" [level=2]
+    - button "Limpar filtros" [disabled]
+    - region "Geral":
+        - heading "Geral" [level=3]
+        - text: Nota geral
+        - combobox "Nota geral": Qualquer
+        - text: Recomendação
+        - combobox "Recomendação": Qualquer
+        - group "Preço (mil ₩)":
+            - text: ""
+            - textbox "Mínimo"
+            - textbox "Máximo"
+    - region "Construção":
+        - heading "Construção" [level=3]
+        - text: Material
+        - combobox "Material": Qualquer
+        - text: Base
+        - group "Base":
+            - button "Borracha"
+            - button "Poron"
+            - button "Vidro"
+            - button "SCR"
+        - group "Largura (mm)":
+            - text: ""
+            - textbox "Mínimo"
+            - textbox "Máximo"
+        - group "Espessura (mm)":
+            - text: ""
+            - textbox "Mínimo"
+            - textbox "Máximo"
+    - region "Deslize":
+        - heading "Deslize" [level=3]
+        - text: Perfil de deslize
+        - group "Perfil de deslize":
+            - button "Controle"
+            - button "Equilibrado"
+            - button "Velocidade"
+        - group "Atrito dinâmico (μ)":
+            - text: ""
+            - textbox "Mínimo"
+            - textbox "Máximo"

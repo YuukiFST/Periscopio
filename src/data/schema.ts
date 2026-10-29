@@ -140,11 +140,7 @@ export type KrwBrlRate = z.infer<typeof krwBrlRateSchema>;
 
 export const metaSchema = z.strictObject({
   updatedAt: z.iso.datetime(),
-  counts: z.strictObject({
-    mouse: z.int().nonnegative(),
-    teclado: z.int().nonnegative(),
-    monitor: z.int().nonnegative(),
-  }),
+  counts: z.record(categorySlugSchema, z.int().nonnegative()),
   /** Absent from a `meta.json` written before the Cotação, and until a fetch succeeds. */
   krwBrl: krwBrlRateSchema.optional(),
 });

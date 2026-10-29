@@ -1,0 +1,1077 @@
+{
+  "category": "switch",
+  "fields": [
+    {
+      "key": "driverSupportStatus",
+      "group": "common",
+      "label": {
+        "ko": "드라이버 지원 상태",
+        "en": "Driver Support Status"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "notAvailable",
+          "label": {
+            "ko": "공식 설정 소프트웨어 없음",
+            "en": "No Official Configuration Software"
+          }
+        },
+        {
+          "value": "notRequired",
+          "label": {
+            "ko": "별도 설정 소프트웨어 불필요",
+            "en": "No Separate Configuration Software Required"
+          }
+        }
+      ]
+    },
+    {
+      "key": "status",
+      "group": "common",
+      "label": {
+        "ko": "상태",
+        "en": "Status"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "unreleased",
+          "label": {
+            "ko": "미출시",
+            "en": "Unreleased"
+          }
+        },
+        {
+          "value": "proposed",
+          "label": {
+            "ko": "제안",
+            "en": "Proposed"
+          }
+        },
+        {
+          "value": "purchased",
+          "label": {
+            "ko": "구매 완료",
+            "en": "Purchased"
+          }
+        },
+        {
+          "value": "arrived",
+          "label": {
+            "ko": "제품 도착",
+            "en": "Arrived"
+          }
+        },
+        {
+          "value": "testing",
+          "label": {
+            "ko": "벤치 진행",
+            "en": "Testing"
+          }
+        },
+        {
+          "value": "earlyAccess",
+          "label": {
+            "ko": "선 공개",
+            "en": "Early Access"
+          }
+        },
+        {
+          "value": "reviewed",
+          "label": {
+            "ko": "공개 완료",
+            "en": "Reviewed"
+          }
+        }
+      ]
+    },
+    {
+      "key": "saleStatus",
+      "group": "common",
+      "label": {
+        "ko": "판매 상태",
+        "en": "Sale Status"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "unreleased",
+          "label": {
+            "ko": "미출시",
+            "en": "Unreleased"
+          }
+        },
+        {
+          "value": "FOR_SALE",
+          "label": {
+            "ko": "판매중",
+            "en": "FOR_SALE"
+          }
+        },
+        {
+          "value": "DISCONTINUED",
+          "label": {
+            "ko": "단종",
+            "en": "Discontinued"
+          }
+        }
+      ]
+    },
+    {
+      "key": "eyejokerRating",
+      "group": "common",
+      "label": {
+        "ko": "추천 등급",
+        "en": "Recommendation Grade"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "HIGHLY_RECOMMENDED",
+          "label": {
+            "ko": "매우추천",
+            "en": "Highly Recommend"
+          }
+        },
+        {
+          "value": "RECOMMENDED",
+          "label": {
+            "ko": "추천",
+            "en": "Recommend"
+          }
+        },
+        {
+          "value": "MILD_RECOMMENDATION",
+          "label": {
+            "ko": "추천까지는",
+            "en": "Meh"
+          }
+        },
+        {
+          "value": "NO_RECOMMENDATION",
+          "label": {
+            "ko": "추천안함",
+            "en": "Not Recommend"
+          }
+        }
+      ]
+    },
+    {
+      "key": "as",
+      "group": "common",
+      "label": {
+        "ko": "보증 기간",
+        "en": "AS"
+      },
+      "type": "number",
+      "unit": "년",
+      "decimals": null
+    },
+    {
+      "key": "firmwareVersion",
+      "group": "common",
+      "label": {
+        "ko": "펌웨어 버전",
+        "en": "FirmwareVersion"
+      },
+      "type": "text"
+    },
+    {
+      "key": "earlyAccessAt",
+      "group": "common",
+      "label": {
+        "ko": "선공개 일자",
+        "en": "Early Access At"
+      },
+      "type": "date"
+    },
+    {
+      "key": "publicReleaseAt",
+      "group": "common",
+      "label": {
+        "ko": "전체 공개 일자",
+        "en": "Public Release At"
+      },
+      "type": "date"
+    },
+    {
+      "key": "mechanism",
+      "group": "spec",
+      "label": {
+        "ko": "방식",
+        "en": "Mechanism"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "magnetic",
+          "label": {
+            "ko": "자석축",
+            "en": "magnetic"
+          }
+        },
+        {
+          "value": "mechanic",
+          "label": {
+            "ko": "기계식",
+            "en": "mechanic"
+          }
+        }
+      ]
+    },
+    {
+      "key": "category",
+      "group": "spec",
+      "label": {
+        "ko": "분류",
+        "en": "Category"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "리니어",
+          "label": {
+            "ko": "리니어",
+            "en": "Linear"
+          }
+        },
+        {
+          "value": "클릭",
+          "label": {
+            "ko": "클릭",
+            "en": "Clicky"
+          }
+        },
+        {
+          "value": "택타일",
+          "label": {
+            "ko": "택타일",
+            "en": "Tactile"
+          }
+        }
+      ]
+    },
+    {
+      "key": "polarity",
+      "group": "spec",
+      "label": {
+        "ko": "극성",
+        "en": "Polarity"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "N",
+          "label": {
+            "ko": "N",
+            "en": "N"
+          }
+        },
+        {
+          "value": "S",
+          "label": {
+            "ko": "S",
+            "en": "S"
+          }
+        }
+      ]
+    },
+    {
+      "key": "upperHousing",
+      "group": "spec",
+      "label": {
+        "ko": "상부 하우징",
+        "en": "Upper Housing"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": true,
+      "options": [
+        {
+          "value": "NYLON",
+          "label": {
+            "ko": "나일론",
+            "en": "Nylon"
+          }
+        },
+        {
+          "value": "PA12",
+          "label": {
+            "ko": "PA12",
+            "en": "PA12"
+          }
+        },
+        {
+          "value": "PC",
+          "label": {
+            "ko": "PC",
+            "en": "PC"
+          }
+        },
+        {
+          "value": "POM",
+          "label": {
+            "ko": "POM",
+            "en": "POM"
+          }
+        }
+      ]
+    },
+    {
+      "key": "lowerHousing",
+      "group": "spec",
+      "label": {
+        "ko": "하부 하우징",
+        "en": "Lower Housing"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": true,
+      "options": [
+        {
+          "value": "NYLON",
+          "label": {
+            "ko": "나일론",
+            "en": "Nylon"
+          }
+        },
+        {
+          "value": "NYLONPA",
+          "label": {
+            "ko": "나일론PA",
+            "en": "NylonPS"
+          }
+        },
+        {
+          "value": "PA12",
+          "label": {
+            "ko": "PA12",
+            "en": "PA12"
+          }
+        },
+        {
+          "value": "PA12Nylon",
+          "label": {
+            "ko": "PA12",
+            "en": "Nylon"
+          }
+        },
+        {
+          "value": "PA66",
+          "label": {
+            "ko": "PA66",
+            "en": "PA66"
+          }
+        },
+        {
+          "value": "PC",
+          "label": {
+            "ko": "PC",
+            "en": "PC"
+          }
+        },
+        {
+          "value": "POM",
+          "label": {
+            "ko": "폼",
+            "en": "POM"
+          }
+        }
+      ]
+    },
+    {
+      "key": "stem",
+      "group": "spec",
+      "label": {
+        "ko": "스템",
+        "en": "Stem"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "LY",
+          "label": {
+            "ko": "LY",
+            "en": "LY"
+          }
+        },
+        {
+          "value": "PA12",
+          "label": {
+            "ko": "PA12",
+            "en": "PA12"
+          }
+        },
+        {
+          "value": "PC",
+          "label": {
+            "ko": "PC",
+            "en": "PC"
+          }
+        },
+        {
+          "value": "POK",
+          "label": {
+            "ko": "POK",
+            "en": "POK"
+          }
+        },
+        {
+          "value": "POM",
+          "label": {
+            "ko": "POM",
+            "en": "POM"
+          }
+        },
+        {
+          "value": "UMPTE",
+          "label": {
+            "ko": "UMPTE",
+            "en": "UMPTE"
+          }
+        }
+      ]
+    },
+    {
+      "key": "spring",
+      "group": "spec",
+      "label": {
+        "ko": "스프링",
+        "en": "Spring"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "SUS",
+          "label": {
+            "ko": "SUS",
+            "en": "SUS"
+          }
+        },
+        {
+          "value": "금도금",
+          "label": {
+            "ko": "금도금",
+            "en": "Gold-plated"
+          }
+        },
+        {
+          "value": "러버돔",
+          "label": {
+            "ko": "러버돔",
+            "en": "러버돔"
+          }
+        },
+        {
+          "value": "싱글",
+          "label": {
+            "ko": "싱글",
+            "en": "Single"
+          }
+        },
+        {
+          "value": "싱글(비자성)",
+          "label": {
+            "ko": "싱글(비자성)",
+            "en": "Single (non-magnetic)"
+          }
+        }
+      ]
+    },
+    {
+      "key": "springLength",
+      "group": "spec",
+      "label": {
+        "ko": "스프링길이",
+        "en": "Spring Length"
+      },
+      "type": "number",
+      "unit": "mm",
+      "decimals": null
+    },
+    {
+      "key": "stemLength",
+      "group": "spec",
+      "label": {
+        "ko": "스템길이",
+        "en": "Stem Length"
+      },
+      "type": "number",
+      "unit": "mm",
+      "decimals": null
+    },
+    {
+      "key": "startingForceSpec",
+      "group": "spec",
+      "label": {
+        "ko": "시작압",
+        "en": "Spec Starting Force"
+      },
+      "type": "number",
+      "unit": "gf",
+      "decimals": null
+    },
+    {
+      "key": "actuationForceSpec",
+      "group": "spec",
+      "label": {
+        "ko": "입력압[스펙]",
+        "en": "Spec Actuation Force"
+      },
+      "type": "number",
+      "unit": "gf",
+      "decimals": null
+    },
+    {
+      "key": "bottomOutForceSpec",
+      "group": "spec",
+      "label": {
+        "ko": "바닥압",
+        "en": "Spec Bottom-out Force"
+      },
+      "type": "number",
+      "unit": "gf",
+      "decimals": null
+    },
+    {
+      "key": "actuationTravelSpec",
+      "group": "spec",
+      "label": {
+        "ko": "입력 이동거리",
+        "en": "Spec Actuation Travel"
+      },
+      "type": "number",
+      "unit": "mm",
+      "decimals": null
+    },
+    {
+      "key": "totalTravelSpec",
+      "group": "spec",
+      "label": {
+        "ko": "총 이동거리",
+        "en": "Spec Total Travel"
+      },
+      "type": "number",
+      "unit": "mm",
+      "decimals": null
+    },
+    {
+      "key": "bottomOutHarshness",
+      "group": "spec",
+      "label": {
+        "ko": "바치리",
+        "en": "Bottom-out Harshness"
+      },
+      "type": "boolean"
+    },
+    {
+      "key": "overallRatingKeyboardSwitch",
+      "group": "spec",
+      "label": {
+        "ko": "종합 등급",
+        "en": "OverallRatingKeyboardSwitch"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "FLAWLESS",
+          "label": {
+            "ko": "무결점",
+            "en": "Flawless"
+          }
+        },
+        {
+          "value": "LAUNCHING_SOON",
+          "label": {
+            "ko": "출시예정",
+            "en": "Coming Soon"
+          }
+        },
+        {
+          "value": "OTHER",
+          "label": {
+            "ko": "기타",
+            "en": "Other"
+          }
+        },
+        {
+          "value": "RE_MEASUREMENT",
+          "label": {
+            "ko": "재측정",
+            "en": "Retest"
+          }
+        },
+        {
+          "value": "TIER_0",
+          "label": {
+            "ko": "0티어",
+            "en": "Tier0"
+          }
+        },
+        {
+          "value": "TIER_1",
+          "label": {
+            "ko": "1티어",
+            "en": "Tier1"
+          }
+        },
+        {
+          "value": "TIER_2",
+          "label": {
+            "ko": "2티어",
+            "en": "Tier2"
+          }
+        },
+        {
+          "value": "TIER_3",
+          "label": {
+            "ko": "3티어",
+            "en": "Tier3"
+          }
+        },
+        {
+          "value": "TIER_4",
+          "label": {
+            "ko": "4티어",
+            "en": "Tier4"
+          }
+        },
+        {
+          "value": "UNRATED",
+          "label": {
+            "ko": "등급없음",
+            "en": "Unrated"
+          }
+        }
+      ]
+    },
+    {
+      "key": "travelDistance",
+      "group": "bench",
+      "label": {
+        "ko": "이동거리",
+        "en": "Travel Distance"
+      },
+      "type": "number",
+      "unit": "mm",
+      "decimals": 2
+    },
+    {
+      "key": "keyboardSwitchResolutionSummary",
+      "group": "bench",
+      "label": {
+        "ko": "해상력",
+        "en": "Resolution"
+      },
+      "type": "text"
+    },
+    {
+      "key": "wobble",
+      "group": "bench",
+      "label": {
+        "ko": "워블",
+        "en": "Wobble"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "S",
+          "label": {
+            "ko": "S",
+            "en": "S"
+          }
+        },
+        {
+          "value": "A",
+          "label": {
+            "ko": "A",
+            "en": "A"
+          }
+        },
+        {
+          "value": "B",
+          "label": {
+            "ko": "B",
+            "en": "B"
+          }
+        },
+        {
+          "value": "C",
+          "label": {
+            "ko": "C",
+            "en": "C"
+          }
+        },
+        {
+          "value": "D",
+          "label": {
+            "ko": "D",
+            "en": "D"
+          }
+        },
+        {
+          "value": "F",
+          "label": {
+            "ko": "F",
+            "en": "F"
+          }
+        }
+      ]
+    },
+    {
+      "key": "resolutionDeviation",
+      "group": "bench",
+      "label": {
+        "ko": "해상력 편차",
+        "en": "Resolution Deviation"
+      },
+      "type": "number",
+      "unit": null,
+      "decimals": null
+    },
+    {
+      "key": "resolutionPerMm",
+      "group": "bench",
+      "label": {
+        "ko": "0.1mm 해상도",
+        "en": "Resolution per 0.1 mm"
+      },
+      "type": "number",
+      "unit": "단계",
+      "decimals": 0
+    },
+    {
+      "key": "resolutionSwitch",
+      "group": "bench",
+      "label": {
+        "ko": "해상력",
+        "en": "Resolution"
+      },
+      "type": "number",
+      "unit": null,
+      "decimals": null
+    },
+    {
+      "key": "actuationPoint",
+      "group": "bench",
+      "label": {
+        "ko": "입력지점",
+        "en": "Actuation Point"
+      },
+      "type": "number",
+      "unit": "mm",
+      "decimals": 2
+    },
+    {
+      "key": "overallAverage",
+      "group": "bench",
+      "label": {
+        "ko": "전체 평균",
+        "en": "Overall Average"
+      },
+      "type": "number",
+      "unit": "mm",
+      "decimals": 3
+    },
+    {
+      "key": "horizontalAverage",
+      "group": "bench",
+      "label": {
+        "ko": "좌우 평균",
+        "en": "Horizontal Average"
+      },
+      "type": "number",
+      "unit": "mm",
+      "decimals": 3
+    },
+    {
+      "key": "horizontalDeviation",
+      "group": "bench",
+      "label": {
+        "ko": "좌우 편차",
+        "en": "Horizontal Deviation"
+      },
+      "type": "number",
+      "unit": "mm",
+      "decimals": 3
+    },
+    {
+      "key": "verticalAverage",
+      "group": "bench",
+      "label": {
+        "ko": "상하 평균",
+        "en": "Vertical Average"
+      },
+      "type": "number",
+      "unit": "mm",
+      "decimals": 3
+    },
+    {
+      "key": "verticalDeviation",
+      "group": "bench",
+      "label": {
+        "ko": "상하 편차",
+        "en": "Vertical Deviation"
+      },
+      "type": "number",
+      "unit": "mm",
+      "decimals": 3
+    },
+    {
+      "key": "startingForce",
+      "group": "bench",
+      "label": {
+        "ko": "시작압",
+        "en": "Starting Force"
+      },
+      "type": "number",
+      "unit": "gf",
+      "decimals": 0
+    },
+    {
+      "key": "bottomOutForce",
+      "group": "bench",
+      "label": {
+        "ko": "바닥압",
+        "en": "Bottom-out Force"
+      },
+      "type": "number",
+      "unit": "gf",
+      "decimals": 0
+    },
+    {
+      "key": "measurementDeviationSummary",
+      "group": "bench",
+      "label": {
+        "ko": "키압 편차",
+        "en": "Force Deviation"
+      },
+      "type": "text"
+    },
+    {
+      "key": "hallResolutionSteps",
+      "group": "bench",
+      "label": {
+        "ko": "해상력",
+        "en": "Resolution"
+      },
+      "type": "number",
+      "unit": "단계",
+      "decimals": 0
+    },
+    {
+      "key": "travelMeasurementDeviationMm",
+      "group": "bench",
+      "label": {
+        "ko": "이동거리 편차",
+        "en": "Travel Deviation"
+      },
+      "type": "number",
+      "unit": "mm",
+      "decimals": 2
+    },
+    {
+      "key": "hallWobbleVariationPercent",
+      "group": "bench",
+      "label": {
+        "ko": "Hall 회전 흔들림",
+        "en": "Hall Rotational Wobble"
+      },
+      "type": "text"
+    },
+    {
+      "key": "hallSampleVariationPercent",
+      "group": "bench",
+      "label": {
+        "ko": "개체 편차",
+        "en": "Hall Unit Variation"
+      },
+      "type": "number",
+      "unit": "%",
+      "decimals": 2
+    },
+    {
+      "key": "hallPressedHorizontalVariationPercent",
+      "group": "bench",
+      "label": {
+        "ko": "Hall 좌우 흔들림",
+        "en": "Pressed Horizontal Hall Wobble"
+      },
+      "type": "number",
+      "unit": "%",
+      "decimals": 1
+    },
+    {
+      "key": "hallPressedVerticalVariationPercent",
+      "group": "bench",
+      "label": {
+        "ko": "Hall 상하 흔들림",
+        "en": "Pressed Vertical Hall Wobble"
+      },
+      "type": "number",
+      "unit": "%",
+      "decimals": 1
+    }
+  ],
+  "products": [
+    {
+      "id": "0b6be29e-286b-4809-a851-9e5d0c158687",
+      "name": "NOVA HE",
+      "manufacturer": {
+        "ko": "오울랩",
+        "en": "Owlab"
+      },
+      "priceKrw": 600,
+      "status": "reviewed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/fe8d2dff-7302-43fb-9b1b-b4d79654b9df.avif",
+      "values": {
+        "bottomOutForce": 52.76691666666665,
+        "bottomOutForceSpec": 50,
+        "bottomOutHarshness": true,
+        "category": "리니어",
+        "eyejokerRating": "MILD_RECOMMENDATION",
+        "hallPressedHorizontalVariationPercent": 0.5798848751303192,
+        "hallPressedVerticalVariationPercent": 0.5617549743915258,
+        "hallResolutionSteps": 11094,
+        "hallWobbleVariationPercent": "0.7%",
+        "lowerHousing": [
+          "NYLONPA"
+        ],
+        "measurementDeviationSummary": "±3.5gf",
+        "mechanism": "magnetic",
+        "overallRatingKeyboardSwitch": "TIER_3",
+        "polarity": "N",
+        "publicReleaseAt": "2026-08-24T16:39:17Z",
+        "resolutionPerMm": 328,
+        "spring": "싱글",
+        "springLength": 20,
+        "startingForce": 34.424499999999995,
+        "stem": "POM",
+        "totalTravelSpec": 3.3,
+        "travelDistance": 3.385666666666667,
+        "travelMeasurementDeviationMm": 0.07218937287132753,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "0d698b78-1590-444a-9e24-98ca40baf688",
+      "name": "Spark",
+      "manufacturer": {
+        "ko": "게이트론",
+        "en": "GATERON"
+      },
+      "priceKrw": 1100,
+      "status": "reviewed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/32dc62c4-30fb-4275-a0d9-47e7b02dcfb2.avif",
+      "values": {
+        "bottomOutForce": 43.62980416666667,
+        "bottomOutForceSpec": 45,
+        "bottomOutHarshness": true,
+        "category": "리니어",
+        "eyejokerRating": "MILD_RECOMMENDATION",
+        "hallPressedHorizontalVariationPercent": 1.0951203783318941,
+        "hallPressedVerticalVariationPercent": 1.2360275150472915,
+        "hallResolutionSteps": 9298,
+        "hallWobbleVariationPercent": "1.4%",
+        "lowerHousing": [
+          "PA66"
+        ],
+        "measurementDeviationSummary": "±0.8gf",
+        "mechanism": "magnetic",
+        "overallRatingKeyboardSwitch": "TIER_1",
+        "polarity": "N",
+        "publicReleaseAt": "2026-08-24T23:09:32",
+        "resolutionPerMm": 296,
+        "spring": "싱글",
+        "springLength": 22,
+        "startingForce": 33.74319083333333,
+        "startingForceSpec": 33,
+        "stem": "PC",
+        "totalTravelSpec": 3.2,
+        "travelDistance": 3.1440512500000004,
+        "travelMeasurementDeviationMm": 0.01741920905985207,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "22a93098-1df3-4dca-bdbc-36a5b7f4c3fb",
+      "name": "Ti HE 50g",
+      "manufacturer": {
+        "ko": "오울랩",
+        "en": "Owlab"
+      },
+      "priceKrw": 600,
+      "status": "reviewed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": "https://s.click.aliexpress.com/e/_opBCSP5",
+      "image": null,
+      "values": {
+        "bottomOutForce": 47.628166666666665,
+        "bottomOutForceSpec": 50,
+        "bottomOutHarshness": false,
+        "category": "리니어",
+        "eyejokerRating": "RECOMMENDED",
+        "hallPressedHorizontalVariationPercent": 0.4021088374586722,
+        "hallPressedVerticalVariationPercent": 0.46465910106335445,
+        "hallResolutionSteps": 11181,
+        "hallWobbleVariationPercent": "0.5%",
+        "lowerHousing": [
+          "NYLON"
+        ],
+        "measurementDeviationSummary": "±0.4gf",
+        "mechanism": "magnetic",
+        "overallRatingKeyboardSwitch": "FLAWLESS",
+        "polarity": "N",
+        "publicReleaseAt": "2026-08-24T16:39:17Z",
+        "resolutionPerMm": 334,
+        "spring": "싱글",
+        "springLength": 22,
+        "startingForce": 33.84791666666667,
+        "stem": "POM",
+        "totalTravelSpec": 3.4,
+        "travelDistance": 3.342833333333333,
+        "travelMeasurementDeviationMm": 0.0007993052538853654,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    }
+  ]
+}

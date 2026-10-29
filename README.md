@@ -1,6 +1,6 @@
 # Periscópio
 
-Consultar e comparar, em português, os benchmarks de monitores, teclados e mouses da Fonte, num app instalável que funciona offline.
+Consultar e comparar, em português, os benchmarks de mouses, teclados, monitores, mousepads, switches e fones da Fonte, num app instalável que funciona offline.
 
 ## Comandos
 
@@ -21,8 +21,9 @@ Consultar e comparar, em português, os benchmarks de monitores, teclados e mous
 
 ## Atualização dos dados
 
-- `pnpm update-data` busca na Fonte os Produtos das três Categorias e `/api/company`, valida, normaliza e grava `public/data/{mouse,teclado,monitor}.json`, `public/data/meta.json` e as fotos novas em `public/images/<uuid>.avif`, apagando as que nenhum Produto usa.
-- A Atualização é recusada, sem mudar nenhum arquivo e com saída de erro, se a Fonte falhar 3 vezes seguidas, mudar o formato, citar um fabricante fora de `/api/company`, se uma Categoria cair abaixo de 90% dos Produtos publicados antes, se mais de 10% dos Produtos com foto de uma Categoria vierem com endereço que não é `/<uuid>.avif` ou se mais de 10% dos Produtos publicados com foto que continuam na Categoria ficarem sem foto; foto que falha só fica nula.
+- `pnpm update-data` busca na Fonte os Produtos das seis Categorias e `/api/company`, valida, normaliza e grava `public/data/{mouse,teclado,monitor,mousepad,switch,fone}.json`, `public/data/meta.json` e as fotos novas em `public/images/<uuid>.avif`, apagando as que nenhum Produto usa.
+- A foto vem da raiz do CDN ou de `benchmark-data/`; a que a Fonte só tem em PNG (centenas de KB cada) fica de fora, e o Produto sai sem foto. Um Produto ainda sem fabricante também fica de fora. O resumo lista os dois casos.
+- A Atualização é recusada, sem mudar nenhum arquivo e com saída de erro, se a Fonte falhar 3 vezes seguidas, mudar o formato, citar um fabricante fora de `/api/company`, se uma Categoria cair abaixo de 90% dos Produtos publicados antes, se mais de 10% dos Produtos com foto de uma Categoria vierem com endereço que não é `/<uuid>.avif` nem `/<uuid>.png` ou se mais de 10% dos Produtos publicados com foto que continuam na Categoria ficarem sem foto; foto que falha só fica nula.
 - Variáveis de ambiente: `EYEJOKER_API_URL` (padrão `https://eyejokerdb.com`), `EYEJOKER_CDN_URL` (padrão `https://cdn.eyejokerdb.com`), `EYEJOKER_OUT_DIR` (padrão `public/`) e `GITHUB_STEP_SUMMARY` (o resumo vai para a saída padrão quando ela não existe).
 - A Atualização também grava em `meta.json` a Cotação KRW→BRL (`krwBrl: { rate, date, source }`) do Banco Central Europeu, pela API pública e sem chave do [Frankfurter](https://frankfurter.dev) (`/v2/providers/ECB/rate/KRW/BRL`); o app mostra "≈ R$" abaixo do Preço em won. Se a Cotação falhar, a publicada antes continua em `meta.json`, o resumo avisa e a Atualização segue; sem nenhuma Cotação, o app mostra só o won. `FRANKFURTER_API_URL` (padrão `https://api.frankfurter.dev`) troca o endereço.
 - O resumo lista cada chave sem tradução pt (`campo:`, `unidade:`, `valor:`); a tabela fica em `src/i18n/`.

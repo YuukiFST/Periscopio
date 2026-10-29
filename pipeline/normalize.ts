@@ -60,7 +60,9 @@ const booleanTextSchema = z.enum(["true", "false"]).transform((text) => text ===
 const dateTextSchema = z
   .string()
   .regex(/^\d{4}-\d{2}-\d{2}(T\d{2}:\d{2}(:\d{2}(\.\d+)?)?(Z|[+-]\d{2}:\d{2})?)?$/);
-const productImagePathSchema = z.string().regex(/^\/([0-9a-f-]{36})\.avif$/);
+/** The Fonte's photo files, at the CDN root or under `benchmark-data/`. */
+const avifImagePathPattern = /^\/(?:benchmark-data\/)?([0-9a-f-]{36}\.avif)$/;
+const pngImagePathPattern = /\/[0-9a-f-]{36}\.png$/;
 
 export type NormalizedCategory = {
   data: CategoryData;
@@ -68,10 +70,16 @@ export type NormalizedCategory = {
   ignoredFieldKeys: string[];
   /** Products with a non-empty photo URL, usable or not. */
   imageUrlCount: number;
-  /** Products whose photo URL is not a `<uuid>.avif` file. */
+  /** Products whose photo URL is neither a `<uuid>.avif` nor a `<uuid>.png` file. */
   unusableImageProductIds: string[];
+  /** Products whose photo the Fonte keeps only as PNG, published with `image: null`. */
+  pngImageProductIds: string[];
+  /** Where each published photo file sits on the CDN, by file name. */
+  imageCdnPaths: Map<string, string>;
   /** Products whose ALI link is not `https` on aliexpress.com, published with `aliUrl: null`. */
   invalidAliUrlProductIds: string[];
+  /** Products the Fonte lists with no manufacturer yet, left out of the Categoria. */
+  noManufacturerProductIds: string[];
 };
 
 type FieldSource = { group: FieldGroup; definition: EyejokerField };
@@ -200,11 +208,23 @@ function buildValues(slug: CategorySlug, row: EyejokerRow, valueFields: Field[])
   return values;
 }
 
-function imagePathFrom(url: string): string | null | undefined {
-  if (url.trim() === "") return null;
-  if (!URL.canParse(url)) return undefined;
-  const match = productImagePathSchema.safeParse(new URL(url).pathname);
-  return match.success ? `/images${match.data}` : undefined;
+/**
+ * A photo URL as the app can publish it. PNG files run to hundreds of
+ * kilobytes, far past the AVIF ones, so the app leaves them out.
+ */
+type ProductImageSource =
+  | { kind: "none" }
+  | { kind: "avif"; fileName: string; cdnPath: string }
+  | { kind: "png" }
+  | { kind: "unknown" };
+
+function productImageSourceFrom(url: string): ProductImageSource {
+  if (url.trim() === "") return { kind: "none" };
+  if (!URL.canParse(url)) return { kind: "unknown" };
+  const { pathname } = new URL(url);
+  const fileName = avifImagePathPattern.exec(pathname)?.[1];
+  if (fileName !== undefined) return { kind: "avif", fileName, cdnPath: pathname };
+  return pngImagePathPattern.test(pathname) ? { kind: "png" } : { kind: "unknown" };
 }
 
 type EyejokerAffiliateLink = NonNullable<EyejokerRow["affiliateLinks"]>[number];
@@ -245,21 +265,30 @@ export function normalizeCategory(
 
   let imageUrlCount = 0;
   const unusableImageProductIds: string[] = [];
+  const pngImageProductIds: string[] = [];
+  const imageCdnPaths = new Map<string, string>();
   const invalidAliUrlProductIds: string[] = [];
+  const noManufacturerProductIds: string[] = [];
   const products: Product[] = [];
   for (const row of snapshot.rows) {
     const name = optionalText(row.values[productNameKey]);
     if (name === null) throw new UpdateRefusedError(`${slug}: o Produto ${row.id} não tem nome.`);
-    const manufacturerId = row.values[manufacturerKey] ?? "";
+    const manufacturerId = row.values[manufacturerKey]?.trim() ?? "";
+    if (manufacturerId === "") {
+      noManufacturerProductIds.push(row.id);
+      continue;
+    }
     const company = companies.get(manufacturerId);
     if (!company) {
       throw new UpdateRefusedError(
         `${slug}: o fabricante "${manufacturerId}" do Produto ${row.id} não está em /api/company.`,
       );
     }
-    const image = imagePathFrom(row.values[productImageKey] ?? "");
-    if (image !== null) imageUrlCount++;
-    if (image === undefined) unusableImageProductIds.push(row.id);
+    const imageSource = productImageSourceFrom(row.values[productImageKey] ?? "");
+    if (imageSource.kind !== "none") imageUrlCount++;
+    if (imageSource.kind === "unknown") unusableImageProductIds.push(row.id);
+    if (imageSource.kind === "png") pngImageProductIds.push(row.id);
+    if (imageSource.kind === "avif") imageCdnPaths.set(imageSource.fileName, imageSource.cdnPath);
     const aliUrl = aliUrlFrom(row);
     if (aliUrl === undefined) invalidAliUrlProductIds.push(row.id);
     products.push({
@@ -270,7 +299,7 @@ export function normalizeCategory(
       status: optionalText(row.values[statusKey]),
       saleStatus: optionalText(row.values[saleStatusKey]),
       aliUrl: aliUrl ?? null,
-      image: image ?? null,
+      image: imageSource.kind === "avif" ? `/images/${imageSource.fileName}` : null,
       values: buildValues(slug, row, valueFields),
     });
   }
@@ -281,6 +310,9 @@ export function normalizeCategory(
     ignoredFieldKeys,
     imageUrlCount,
     unusableImageProductIds,
+    pngImageProductIds,
+    imageCdnPaths,
     invalidAliUrlProductIds,
+    noManufacturerProductIds,
   };
 }

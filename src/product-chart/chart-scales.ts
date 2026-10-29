@@ -1,4 +1,4 @@
-import { isRatingField } from "../data/rating-order.ts";
+import { isGradeField } from "../data/rating-order.ts";
 import { isCountEnum } from "../product-table/cell-values.ts";
 import { axisValueText, type ChartAxis } from "./chart-axes.ts";
 import { niceTicks, type ChartPoint } from "./chart-points.ts";
@@ -18,7 +18,7 @@ export type Tick = { value: number; text: string };
 const logScaleRatio = 20;
 
 function isRatingAxis(axis: ChartAxis): boolean {
-  return axis.column.kind === "field" && isRatingField(axis.column.field.key);
+  return axis.column.kind === "field" && isGradeField(axis.column.field.key);
 }
 
 /** An axis of a few separate values, a grade or a count, where many Produtos share each one. */

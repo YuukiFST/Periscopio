@@ -1,0 +1,5796 @@
+{
+  "category": "switch",
+  "fields": [
+    {
+      "key": "driverSupportStatus",
+      "group": "common",
+      "label": {
+        "ko": "드라이버 지원 상태",
+        "en": "Driver Support Status"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "notAvailable",
+          "label": {
+            "ko": "공식 설정 소프트웨어 없음",
+            "en": "No Official Configuration Software"
+          }
+        },
+        {
+          "value": "notRequired",
+          "label": {
+            "ko": "별도 설정 소프트웨어 불필요",
+            "en": "No Separate Configuration Software Required"
+          }
+        }
+      ]
+    },
+    {
+      "key": "status",
+      "group": "common",
+      "label": {
+        "ko": "상태",
+        "en": "Status"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "unreleased",
+          "label": {
+            "ko": "미출시",
+            "en": "Unreleased"
+          }
+        },
+        {
+          "value": "proposed",
+          "label": {
+            "ko": "제안",
+            "en": "Proposed"
+          }
+        },
+        {
+          "value": "purchased",
+          "label": {
+            "ko": "구매 완료",
+            "en": "Purchased"
+          }
+        },
+        {
+          "value": "arrived",
+          "label": {
+            "ko": "제품 도착",
+            "en": "Arrived"
+          }
+        },
+        {
+          "value": "testing",
+          "label": {
+            "ko": "벤치 진행",
+            "en": "Testing"
+          }
+        },
+        {
+          "value": "earlyAccess",
+          "label": {
+            "ko": "선 공개",
+            "en": "Early Access"
+          }
+        },
+        {
+          "value": "reviewed",
+          "label": {
+            "ko": "공개 완료",
+            "en": "Reviewed"
+          }
+        }
+      ]
+    },
+    {
+      "key": "saleStatus",
+      "group": "common",
+      "label": {
+        "ko": "판매 상태",
+        "en": "Sale Status"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "unreleased",
+          "label": {
+            "ko": "미출시",
+            "en": "Unreleased"
+          }
+        },
+        {
+          "value": "FOR_SALE",
+          "label": {
+            "ko": "판매중",
+            "en": "FOR_SALE"
+          }
+        },
+        {
+          "value": "DISCONTINUED",
+          "label": {
+            "ko": "단종",
+            "en": "Discontinued"
+          }
+        }
+      ]
+    },
+    {
+      "key": "eyejokerRating",
+      "group": "common",
+      "label": {
+        "ko": "추천 등급",
+        "en": "Recommendation Grade"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "HIGHLY_RECOMMENDED",
+          "label": {
+            "ko": "매우추천",
+            "en": "Highly Recommend"
+          }
+        },
+        {
+          "value": "RECOMMENDED",
+          "label": {
+            "ko": "추천",
+            "en": "Recommend"
+          }
+        },
+        {
+          "value": "MILD_RECOMMENDATION",
+          "label": {
+            "ko": "추천까지는",
+            "en": "Meh"
+          }
+        },
+        {
+          "value": "NO_RECOMMENDATION",
+          "label": {
+            "ko": "추천안함",
+            "en": "Not Recommend"
+          }
+        },
+        {
+          "value": "ANTICIPATING",
+          "label": null
+        }
+      ]
+    },
+    {
+      "key": "as",
+      "group": "common",
+      "label": {
+        "ko": "보증 기간",
+        "en": "AS"
+      },
+      "type": "number",
+      "unit": "년",
+      "decimals": null
+    },
+    {
+      "key": "firmwareVersion",
+      "group": "common",
+      "label": {
+        "ko": "펌웨어 버전",
+        "en": "FirmwareVersion"
+      },
+      "type": "text"
+    },
+    {
+      "key": "earlyAccessAt",
+      "group": "common",
+      "label": {
+        "ko": "선공개 일자",
+        "en": "Early Access At"
+      },
+      "type": "date"
+    },
+    {
+      "key": "publicReleaseAt",
+      "group": "common",
+      "label": {
+        "ko": "전체 공개 일자",
+        "en": "Public Release At"
+      },
+      "type": "date"
+    },
+    {
+      "key": "mechanism",
+      "group": "spec",
+      "label": {
+        "ko": "방식",
+        "en": "Mechanism"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "magnetic",
+          "label": {
+            "ko": "자석축",
+            "en": "magnetic"
+          }
+        },
+        {
+          "value": "mechanic",
+          "label": {
+            "ko": "기계식",
+            "en": "mechanic"
+          }
+        }
+      ]
+    },
+    {
+      "key": "category",
+      "group": "spec",
+      "label": {
+        "ko": "분류",
+        "en": "Category"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "리니어",
+          "label": {
+            "ko": "리니어",
+            "en": "Linear"
+          }
+        },
+        {
+          "value": "클릭",
+          "label": {
+            "ko": "클릭",
+            "en": "Clicky"
+          }
+        },
+        {
+          "value": "택타일",
+          "label": {
+            "ko": "택타일",
+            "en": "Tactile"
+          }
+        }
+      ]
+    },
+    {
+      "key": "polarity",
+      "group": "spec",
+      "label": {
+        "ko": "극성",
+        "en": "Polarity"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "N",
+          "label": {
+            "ko": "N",
+            "en": "N"
+          }
+        },
+        {
+          "value": "S",
+          "label": {
+            "ko": "S",
+            "en": "S"
+          }
+        }
+      ]
+    },
+    {
+      "key": "upperHousing",
+      "group": "spec",
+      "label": {
+        "ko": "상부 하우징",
+        "en": "Upper Housing"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": true,
+      "options": [
+        {
+          "value": "NYLON",
+          "label": {
+            "ko": "나일론",
+            "en": "Nylon"
+          }
+        },
+        {
+          "value": "PA12",
+          "label": {
+            "ko": "PA12",
+            "en": "PA12"
+          }
+        },
+        {
+          "value": "PC",
+          "label": {
+            "ko": "PC",
+            "en": "PC"
+          }
+        },
+        {
+          "value": "POM",
+          "label": {
+            "ko": "POM",
+            "en": "POM"
+          }
+        }
+      ]
+    },
+    {
+      "key": "lowerHousing",
+      "group": "spec",
+      "label": {
+        "ko": "하부 하우징",
+        "en": "Lower Housing"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": true,
+      "options": [
+        {
+          "value": "NYLON",
+          "label": {
+            "ko": "나일론",
+            "en": "Nylon"
+          }
+        },
+        {
+          "value": "NYLONPA",
+          "label": {
+            "ko": "나일론PA",
+            "en": "NylonPS"
+          }
+        },
+        {
+          "value": "PA12",
+          "label": {
+            "ko": "PA12",
+            "en": "PA12"
+          }
+        },
+        {
+          "value": "PA12Nylon",
+          "label": {
+            "ko": "PA12",
+            "en": "Nylon"
+          }
+        },
+        {
+          "value": "PA66",
+          "label": {
+            "ko": "PA66",
+            "en": "PA66"
+          }
+        },
+        {
+          "value": "PC",
+          "label": {
+            "ko": "PC",
+            "en": "PC"
+          }
+        },
+        {
+          "value": "POM",
+          "label": {
+            "ko": "폼",
+            "en": "POM"
+          }
+        }
+      ]
+    },
+    {
+      "key": "stem",
+      "group": "spec",
+      "label": {
+        "ko": "스템",
+        "en": "Stem"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "LY",
+          "label": {
+            "ko": "LY",
+            "en": "LY"
+          }
+        },
+        {
+          "value": "PA12",
+          "label": {
+            "ko": "PA12",
+            "en": "PA12"
+          }
+        },
+        {
+          "value": "PC",
+          "label": {
+            "ko": "PC",
+            "en": "PC"
+          }
+        },
+        {
+          "value": "POK",
+          "label": {
+            "ko": "POK",
+            "en": "POK"
+          }
+        },
+        {
+          "value": "POM",
+          "label": {
+            "ko": "POM",
+            "en": "POM"
+          }
+        },
+        {
+          "value": "UMPTE",
+          "label": {
+            "ko": "UMPTE",
+            "en": "UMPTE"
+          }
+        }
+      ]
+    },
+    {
+      "key": "spring",
+      "group": "spec",
+      "label": {
+        "ko": "스프링",
+        "en": "Spring"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "SUS",
+          "label": {
+            "ko": "SUS",
+            "en": "SUS"
+          }
+        },
+        {
+          "value": "금도금",
+          "label": {
+            "ko": "금도금",
+            "en": "Gold-plated"
+          }
+        },
+        {
+          "value": "러버돔",
+          "label": {
+            "ko": "러버돔",
+            "en": "러버돔"
+          }
+        },
+        {
+          "value": "싱글",
+          "label": {
+            "ko": "싱글",
+            "en": "Single"
+          }
+        },
+        {
+          "value": "싱글(비자성)",
+          "label": {
+            "ko": "싱글(비자성)",
+            "en": "Single (non-magnetic)"
+          }
+        }
+      ]
+    },
+    {
+      "key": "springLength",
+      "group": "spec",
+      "label": {
+        "ko": "스프링길이",
+        "en": "Spring Length"
+      },
+      "type": "number",
+      "unit": "mm",
+      "decimals": null
+    },
+    {
+      "key": "stemLength",
+      "group": "spec",
+      "label": {
+        "ko": "스템길이",
+        "en": "Stem Length"
+      },
+      "type": "number",
+      "unit": "mm",
+      "decimals": null
+    },
+    {
+      "key": "startingForceSpec",
+      "group": "spec",
+      "label": {
+        "ko": "시작압",
+        "en": "Spec Starting Force"
+      },
+      "type": "number",
+      "unit": "gf",
+      "decimals": null
+    },
+    {
+      "key": "actuationForceSpec",
+      "group": "spec",
+      "label": {
+        "ko": "입력압[스펙]",
+        "en": "Spec Actuation Force"
+      },
+      "type": "number",
+      "unit": "gf",
+      "decimals": null
+    },
+    {
+      "key": "bottomOutForceSpec",
+      "group": "spec",
+      "label": {
+        "ko": "바닥압",
+        "en": "Spec Bottom-out Force"
+      },
+      "type": "number",
+      "unit": "gf",
+      "decimals": null
+    },
+    {
+      "key": "actuationTravelSpec",
+      "group": "spec",
+      "label": {
+        "ko": "입력 이동거리",
+        "en": "Spec Actuation Travel"
+      },
+      "type": "number",
+      "unit": "mm",
+      "decimals": null
+    },
+    {
+      "key": "totalTravelSpec",
+      "group": "spec",
+      "label": {
+        "ko": "총 이동거리",
+        "en": "Spec Total Travel"
+      },
+      "type": "number",
+      "unit": "mm",
+      "decimals": null
+    },
+    {
+      "key": "bottomOutHarshness",
+      "group": "spec",
+      "label": {
+        "ko": "바치리",
+        "en": "Bottom-out Harshness"
+      },
+      "type": "boolean"
+    },
+    {
+      "key": "overallRatingKeyboardSwitch",
+      "group": "spec",
+      "label": {
+        "ko": "종합 등급",
+        "en": "OverallRatingKeyboardSwitch"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "FLAWLESS",
+          "label": {
+            "ko": "무결점",
+            "en": "Flawless"
+          }
+        },
+        {
+          "value": "LAUNCHING_SOON",
+          "label": {
+            "ko": "출시예정",
+            "en": "Coming Soon"
+          }
+        },
+        {
+          "value": "OTHER",
+          "label": {
+            "ko": "기타",
+            "en": "Other"
+          }
+        },
+        {
+          "value": "RE_MEASUREMENT",
+          "label": {
+            "ko": "재측정",
+            "en": "Retest"
+          }
+        },
+        {
+          "value": "TIER_0",
+          "label": {
+            "ko": "0티어",
+            "en": "Tier0"
+          }
+        },
+        {
+          "value": "TIER_1",
+          "label": {
+            "ko": "1티어",
+            "en": "Tier1"
+          }
+        },
+        {
+          "value": "TIER_2",
+          "label": {
+            "ko": "2티어",
+            "en": "Tier2"
+          }
+        },
+        {
+          "value": "TIER_3",
+          "label": {
+            "ko": "3티어",
+            "en": "Tier3"
+          }
+        },
+        {
+          "value": "TIER_4",
+          "label": {
+            "ko": "4티어",
+            "en": "Tier4"
+          }
+        },
+        {
+          "value": "UNRATED",
+          "label": {
+            "ko": "등급없음",
+            "en": "Unrated"
+          }
+        }
+      ]
+    },
+    {
+      "key": "travelDistance",
+      "group": "bench",
+      "label": {
+        "ko": "이동거리",
+        "en": "Travel Distance"
+      },
+      "type": "number",
+      "unit": "mm",
+      "decimals": 2
+    },
+    {
+      "key": "keyboardSwitchResolutionSummary",
+      "group": "bench",
+      "label": {
+        "ko": "해상력",
+        "en": "Resolution"
+      },
+      "type": "text"
+    },
+    {
+      "key": "wobble",
+      "group": "bench",
+      "label": {
+        "ko": "워블",
+        "en": "Wobble"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "S",
+          "label": {
+            "ko": "S",
+            "en": "S"
+          }
+        },
+        {
+          "value": "A",
+          "label": {
+            "ko": "A",
+            "en": "A"
+          }
+        },
+        {
+          "value": "B",
+          "label": {
+            "ko": "B",
+            "en": "B"
+          }
+        },
+        {
+          "value": "C",
+          "label": {
+            "ko": "C",
+            "en": "C"
+          }
+        },
+        {
+          "value": "D",
+          "label": {
+            "ko": "D",
+            "en": "D"
+          }
+        },
+        {
+          "value": "F",
+          "label": {
+            "ko": "F",
+            "en": "F"
+          }
+        }
+      ]
+    },
+    {
+      "key": "resolutionDeviation",
+      "group": "bench",
+      "label": {
+        "ko": "해상력 편차",
+        "en": "Resolution Deviation"
+      },
+      "type": "number",
+      "unit": null,
+      "decimals": null
+    },
+    {
+      "key": "resolutionPerMm",
+      "group": "bench",
+      "label": {
+        "ko": "0.1mm 해상도",
+        "en": "Resolution per 0.1 mm"
+      },
+      "type": "number",
+      "unit": "단계",
+      "decimals": 0
+    },
+    {
+      "key": "resolutionSwitch",
+      "group": "bench",
+      "label": {
+        "ko": "해상력",
+        "en": "Resolution"
+      },
+      "type": "number",
+      "unit": null,
+      "decimals": null
+    },
+    {
+      "key": "actuationPoint",
+      "group": "bench",
+      "label": {
+        "ko": "입력지점",
+        "en": "Actuation Point"
+      },
+      "type": "number",
+      "unit": "mm",
+      "decimals": 2
+    },
+    {
+      "key": "overallAverage",
+      "group": "bench",
+      "label": {
+        "ko": "전체 평균",
+        "en": "Overall Average"
+      },
+      "type": "number",
+      "unit": "mm",
+      "decimals": 3
+    },
+    {
+      "key": "horizontalAverage",
+      "group": "bench",
+      "label": {
+        "ko": "좌우 평균",
+        "en": "Horizontal Average"
+      },
+      "type": "number",
+      "unit": "mm",
+      "decimals": 3
+    },
+    {
+      "key": "horizontalDeviation",
+      "group": "bench",
+      "label": {
+        "ko": "좌우 편차",
+        "en": "Horizontal Deviation"
+      },
+      "type": "number",
+      "unit": "mm",
+      "decimals": 3
+    },
+    {
+      "key": "verticalAverage",
+      "group": "bench",
+      "label": {
+        "ko": "상하 평균",
+        "en": "Vertical Average"
+      },
+      "type": "number",
+      "unit": "mm",
+      "decimals": 3
+    },
+    {
+      "key": "verticalDeviation",
+      "group": "bench",
+      "label": {
+        "ko": "상하 편차",
+        "en": "Vertical Deviation"
+      },
+      "type": "number",
+      "unit": "mm",
+      "decimals": 3
+    },
+    {
+      "key": "startingForce",
+      "group": "bench",
+      "label": {
+        "ko": "시작압",
+        "en": "Starting Force"
+      },
+      "type": "number",
+      "unit": "gf",
+      "decimals": 0
+    },
+    {
+      "key": "bottomOutForce",
+      "group": "bench",
+      "label": {
+        "ko": "바닥압",
+        "en": "Bottom-out Force"
+      },
+      "type": "number",
+      "unit": "gf",
+      "decimals": 0
+    },
+    {
+      "key": "measurementDeviationSummary",
+      "group": "bench",
+      "label": {
+        "ko": "키압 편차",
+        "en": "Force Deviation"
+      },
+      "type": "text"
+    },
+    {
+      "key": "hallResolutionSteps",
+      "group": "bench",
+      "label": {
+        "ko": "해상력",
+        "en": "Resolution"
+      },
+      "type": "number",
+      "unit": "단계",
+      "decimals": 0
+    },
+    {
+      "key": "travelMeasurementDeviationMm",
+      "group": "bench",
+      "label": {
+        "ko": "이동거리 편차",
+        "en": "Travel Deviation"
+      },
+      "type": "number",
+      "unit": "mm",
+      "decimals": 2
+    },
+    {
+      "key": "hallWobbleVariationPercent",
+      "group": "bench",
+      "label": {
+        "ko": "Hall 회전 흔들림",
+        "en": "Hall Rotational Wobble"
+      },
+      "type": "text"
+    },
+    {
+      "key": "hallSampleVariationPercent",
+      "group": "bench",
+      "label": {
+        "ko": "개체 편차",
+        "en": "Hall Unit Variation"
+      },
+      "type": "number",
+      "unit": "%",
+      "decimals": 2
+    },
+    {
+      "key": "hallPressedHorizontalVariationPercent",
+      "group": "bench",
+      "label": {
+        "ko": "Hall 좌우 흔들림",
+        "en": "Pressed Horizontal Hall Wobble"
+      },
+      "type": "number",
+      "unit": "%",
+      "decimals": 1
+    },
+    {
+      "key": "hallPressedVerticalVariationPercent",
+      "group": "bench",
+      "label": {
+        "ko": "Hall 상하 흔들림",
+        "en": "Pressed Vertical Hall Wobble"
+      },
+      "type": "number",
+      "unit": "%",
+      "decimals": 1
+    }
+  ],
+  "products": [
+    {
+      "id": "008eabe7-6ee4-4830-8710-07a21584693d",
+      "name": "Siren V2",
+      "manufacturer": {
+        "ko": "에버글라이드",
+        "en": "EVERGLIDE"
+      },
+      "priceKrw": null,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": null,
+      "values": {
+        "mechanism": "magnetic"
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "01d41e7a-f569-4ca9-925c-433260d438d1",
+      "name": "Six Realms HE Silent Pro",
+      "manufacturer": {
+        "ko": "오프스튜디오 x TNT",
+        "en": "OFF Studio x TNT"
+      },
+      "priceKrw": null,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/c37386e0-9311-4bf5-9f5e-361f81ad251d.avif",
+      "values": {
+        "bottomOutForceSpec": 55,
+        "category": "리니어",
+        "lowerHousing": [
+          "PA66"
+        ],
+        "mechanism": "magnetic",
+        "startingForceSpec": 40,
+        "stem": "POM",
+        "totalTravelSpec": 3.5,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "043832e1-4a00-47f1-a5ee-0a93ad8c0402",
+      "name": "팬지 자축 4.0_타오",
+      "manufacturer": {
+        "ko": "하이무",
+        "en": "Haimu"
+      },
+      "priceKrw": 100,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": null,
+      "values": {
+        "bottomOutForceSpec": 60,
+        "bottomOutHarshness": false,
+        "category": "리니어",
+        "mechanism": "magnetic",
+        "polarity": "N",
+        "startingForceSpec": 50,
+        "totalTravelSpec": 4
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "053d4dc2-11ef-4d84-8e9b-41a18bff2be2",
+      "name": "KTEK",
+      "manufacturer": {
+        "ko": "TTC",
+        "en": "TTC"
+      },
+      "priceKrw": null,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": "https://s.click.aliexpress.com/e/_oBW05RZ",
+      "image": "/images/fac00656-babd-49f0-a7f9-84ef29bc49ba.avif",
+      "values": {
+        "bottomOutHarshness": true,
+        "category": "리니어",
+        "mechanism": "magnetic",
+        "polarity": "N"
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "06a5ab42-af20-4d73-a79b-53140cbe7759",
+      "name": "Six Realms HE Silent",
+      "manufacturer": {
+        "ko": "오프스튜디오 x TNT",
+        "en": "OFF Studio x TNT"
+      },
+      "priceKrw": 800,
+      "status": "earlyAccess",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/dea167ba-9f8a-47a3-9c2e-3b127af413b3.avif",
+      "values": {
+        "bottomOutForceSpec": 45,
+        "bottomOutHarshness": false,
+        "category": "리니어",
+        "earlyAccessAt": "2026-10-28T06:00:00.000Z",
+        "eyejokerRating": "ANTICIPATING",
+        "lowerHousing": [
+          "PA66"
+        ],
+        "mechanism": "magnetic",
+        "polarity": "N",
+        "publicReleaseAt": "2026-11-04T00:00:00.000Z",
+        "spring": "SUS",
+        "springLength": 18,
+        "startingForceSpec": 30,
+        "stem": "POM",
+        "totalTravelSpec": 3.5,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "0b6be29e-286b-4809-a851-9e5d0c158687",
+      "name": "NOVA HE",
+      "manufacturer": {
+        "ko": "오울랩",
+        "en": "Owlab"
+      },
+      "priceKrw": 600,
+      "status": "reviewed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/fe8d2dff-7302-43fb-9b1b-b4d79654b9df.avif",
+      "values": {
+        "bottomOutForce": 52.76691666666665,
+        "bottomOutForceSpec": 50,
+        "bottomOutHarshness": true,
+        "category": "리니어",
+        "eyejokerRating": "MILD_RECOMMENDATION",
+        "hallPressedHorizontalVariationPercent": 0.5798848751303192,
+        "hallPressedVerticalVariationPercent": 0.5617549743915258,
+        "hallResolutionSteps": 11094,
+        "hallWobbleVariationPercent": "0.7%",
+        "lowerHousing": [
+          "NYLONPA"
+        ],
+        "measurementDeviationSummary": "±3.5gf",
+        "mechanism": "magnetic",
+        "overallRatingKeyboardSwitch": "TIER_3",
+        "polarity": "N",
+        "publicReleaseAt": "2026-08-24T16:39:17Z",
+        "resolutionPerMm": 328,
+        "spring": "싱글",
+        "springLength": 20,
+        "startingForce": 34.424499999999995,
+        "stem": "POM",
+        "totalTravelSpec": 3.3,
+        "travelDistance": 3.385666666666667,
+        "travelMeasurementDeviationMm": 0.07218937287132753,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "0bcd8a25-582c-4434-a1ff-d555e78e0cbf",
+      "name": "WS Diamond Sun Tear",
+      "manufacturer": {
+        "ko": "우큐 스튜디오",
+        "en": "Wuque Studio"
+      },
+      "priceKrw": null,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/61820a85-0e61-43ea-bdb5-250671e0fee5.avif",
+      "values": {
+        "bottomOutHarshness": false,
+        "category": "리니어",
+        "mechanism": "magnetic"
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "0c0d312c-530e-458d-a5a7-930ba90f8c2a",
+      "name": "Magnetic Jade Sapphire",
+      "manufacturer": {
+        "ko": "게이트론",
+        "en": "GATERON"
+      },
+      "priceKrw": null,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/95ce53c4-5e10-4737-b0f1-c7763e81109d.avif",
+      "values": {
+        "bottomOutForceSpec": 50,
+        "category": "리니어",
+        "lowerHousing": [
+          "PA12"
+        ],
+        "mechanism": "magnetic",
+        "springLength": 20,
+        "startingForceSpec": 36,
+        "stem": "POM",
+        "totalTravelSpec": 3.5,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "0c16ceff-613d-4968-b97c-2833ba72f752",
+      "name": "WS Diamond Heart of the Ocean",
+      "manufacturer": {
+        "ko": "우큐 스튜디오",
+        "en": "Wuque Studio"
+      },
+      "priceKrw": 2400,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/b69a6daa-6122-4257-8ba3-a96f469036ce.avif",
+      "values": {
+        "bottomOutHarshness": false,
+        "category": "리니어",
+        "mechanism": "magnetic"
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "0d698b78-1590-444a-9e24-98ca40baf688",
+      "name": "Spark",
+      "manufacturer": {
+        "ko": "게이트론",
+        "en": "GATERON"
+      },
+      "priceKrw": 1100,
+      "status": "reviewed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/32dc62c4-30fb-4275-a0d9-47e7b02dcfb2.avif",
+      "values": {
+        "bottomOutForce": 43.62980416666667,
+        "bottomOutForceSpec": 45,
+        "bottomOutHarshness": true,
+        "category": "리니어",
+        "eyejokerRating": "MILD_RECOMMENDATION",
+        "hallPressedHorizontalVariationPercent": 1.0951203783318941,
+        "hallPressedVerticalVariationPercent": 1.2360275150472915,
+        "hallResolutionSteps": 9298,
+        "hallWobbleVariationPercent": "1.4%",
+        "lowerHousing": [
+          "PA66"
+        ],
+        "measurementDeviationSummary": "±0.8gf",
+        "mechanism": "magnetic",
+        "overallRatingKeyboardSwitch": "TIER_1",
+        "polarity": "N",
+        "publicReleaseAt": "2026-08-24T23:09:32",
+        "resolutionPerMm": 296,
+        "spring": "싱글",
+        "springLength": 22,
+        "startingForce": 33.74319083333333,
+        "startingForceSpec": 33,
+        "stem": "PC",
+        "totalTravelSpec": 3.2,
+        "travelDistance": 3.1440512500000004,
+        "travelMeasurementDeviationMm": 0.01741920905985207,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "0ec99c6a-27e3-479b-9aba-6258156aceb4",
+      "name": "OMEGA",
+      "manufacturer": {
+        "ko": "후아노",
+        "en": "Huano"
+      },
+      "priceKrw": 1300,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/089dd445-7d54-464e-a659-48e98f94feef.avif",
+      "values": {
+        "bottomOutHarshness": false,
+        "eyejokerRating": "ANTICIPATING",
+        "mechanism": "magnetic"
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "104396c7-3906-43c8-aca5-f1d8a862c1d4",
+      "name": "NA87 PRO 스위치",
+      "manufacturer": {
+        "ko": "그레인골드",
+        "en": "Graingold"
+      },
+      "priceKrw": null,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": null,
+      "values": {
+        "category": "리니어",
+        "mechanism": "magnetic",
+        "polarity": "N"
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "116118a6-e23f-4093-b87d-2415800087a3",
+      "name": "Mount Tai GT HE",
+      "manufacturer": {
+        "ko": "ugaming",
+        "en": "ugaming"
+      },
+      "priceKrw": null,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/f37129c9-c242-4424-a2f2-688a91750c5d.avif",
+      "values": {
+        "bottomOutForceSpec": 47,
+        "category": "리니어",
+        "mechanism": "magnetic",
+        "polarity": "N",
+        "springLength": 22,
+        "startingForceSpec": 35,
+        "totalTravelSpec": 3.4,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "13b4c3a5-35a0-45ec-8619-3d413555adcd",
+      "name": "Crystal Magnetic HE",
+      "manufacturer": {
+        "ko": "HMX",
+        "en": "HMX"
+      },
+      "priceKrw": 500,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/75c66153-4d9c-47a8-a7b9-69787103a1bc.avif",
+      "values": {},
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "1773c771-6f75-4d65-967d-8e4eadad2609",
+      "name": "ICE ULTRA R2",
+      "manufacturer": {
+        "ko": "UR STUDIO",
+        "en": "UR STUDIO"
+      },
+      "priceKrw": 600,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": null,
+      "values": {
+        "bottomOutForceSpec": 50,
+        "category": "리니어",
+        "lowerHousing": [
+          "PC"
+        ],
+        "mechanism": "magnetic",
+        "polarity": "N",
+        "springLength": 22,
+        "startingForceSpec": 35,
+        "stem": "POM",
+        "totalTravelSpec": 3.3,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "1809c649-3092-42e2-9046-591e03504a06",
+      "name": "Lekker L60 v2",
+      "manufacturer": {
+        "ko": "우팅",
+        "en": "Wooting"
+      },
+      "priceKrw": 900,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/7176e24c-68d0-438e-b354-e7eb0bc0a8ba.avif",
+      "values": {
+        "bottomOutForceSpec": 60,
+        "bottomOutHarshness": false,
+        "category": "리니어",
+        "lowerHousing": [
+          "NYLON"
+        ],
+        "mechanism": "magnetic",
+        "polarity": "N",
+        "spring": "싱글(비자성)",
+        "startingForceSpec": 40,
+        "stem": "POM",
+        "totalTravelSpec": 4,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "1982feb4-f9b8-48f0-9598-8ec81056ee60",
+      "name": "RAW HE 40g",
+      "manufacturer": {
+        "ko": "지온웍스",
+        "en": "GEONWORKS"
+      },
+      "priceKrw": 600,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": "https://s.click.aliexpress.com/e/_oFp5mbd",
+      "image": "/images/d01fc7dd-77ad-42de-9374-42ec5c97f005.avif",
+      "values": {
+        "bottomOutForceSpec": 40,
+        "bottomOutHarshness": true,
+        "category": "리니어",
+        "eyejokerRating": "ANTICIPATING",
+        "lowerHousing": [
+          "NYLON"
+        ],
+        "mechanism": "magnetic",
+        "polarity": "N",
+        "spring": "싱글(비자성)",
+        "springLength": 15,
+        "stem": "POM",
+        "totalTravelSpec": 3.4,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "1c94aa8b-bd73-4004-88b5-a8ee7f74c44c",
+      "name": "45g Linear",
+      "manufacturer": {
+        "ko": "텍씨",
+        "en": "Tecsee"
+      },
+      "priceKrw": null,
+      "status": "testing",
+      "saleStatus": "DISCONTINUED",
+      "aliUrl": null,
+      "image": null,
+      "values": {},
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "1ed553c9-0ed1-4d07-8c86-03a0d11298c0",
+      "name": "RAW HE 50g",
+      "manufacturer": {
+        "ko": "지온웍스",
+        "en": "GEONWORKS"
+      },
+      "priceKrw": 600,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": "https://s.click.aliexpress.com/e/_oFLR9OP",
+      "image": "/images/23bb7f93-289b-438d-96fd-c5eb734ed29d.avif",
+      "values": {
+        "bottomOutForceSpec": 50,
+        "bottomOutHarshness": true,
+        "category": "리니어",
+        "earlyAccessAt": "2026-10-29T00:00:00.000Z",
+        "eyejokerRating": "ANTICIPATING",
+        "lowerHousing": [
+          "NYLON"
+        ],
+        "mechanism": "magnetic",
+        "polarity": "N",
+        "publicReleaseAt": "2026-11-05T00:00:00.000Z",
+        "spring": "싱글(비자성)",
+        "springLength": 15,
+        "stem": "POM",
+        "stemLength": 11,
+        "totalTravelSpec": 3.4,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "20d75f7a-daec-4058-afb9-9fb644fd32fe",
+      "name": "Polar Magnetic Snow Shine",
+      "manufacturer": {
+        "ko": "Unionwell",
+        "en": "Unionwell"
+      },
+      "priceKrw": null,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/38071ec5-19a3-4b3b-b940-5a373d605e8f.avif",
+      "values": {
+        "bottomOutForceSpec": 45,
+        "bottomOutHarshness": false,
+        "category": "리니어",
+        "eyejokerRating": "ANTICIPATING",
+        "lowerHousing": [
+          "POM"
+        ],
+        "mechanism": "magnetic",
+        "springLength": 21,
+        "startingForceSpec": 35,
+        "stem": "POM",
+        "totalTravelSpec": 3.2,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "22a93098-1df3-4dca-bdbc-36a5b7f4c3fb",
+      "name": "Ti HE 50g",
+      "manufacturer": {
+        "ko": "오울랩",
+        "en": "Owlab"
+      },
+      "priceKrw": 600,
+      "status": "reviewed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": "https://s.click.aliexpress.com/e/_opBCSP5",
+      "image": null,
+      "values": {
+        "bottomOutForce": 47.628166666666665,
+        "bottomOutForceSpec": 50,
+        "bottomOutHarshness": false,
+        "category": "리니어",
+        "eyejokerRating": "RECOMMENDED",
+        "hallPressedHorizontalVariationPercent": 0.4021088374586722,
+        "hallPressedVerticalVariationPercent": 0.46465910106335445,
+        "hallResolutionSteps": 11181,
+        "hallWobbleVariationPercent": "0.5%",
+        "lowerHousing": [
+          "NYLON"
+        ],
+        "measurementDeviationSummary": "±0.4gf",
+        "mechanism": "magnetic",
+        "overallRatingKeyboardSwitch": "FLAWLESS",
+        "polarity": "N",
+        "publicReleaseAt": "2026-08-24T16:39:17Z",
+        "resolutionPerMm": 334,
+        "spring": "싱글",
+        "springLength": 22,
+        "startingForce": 33.84791666666667,
+        "stem": "POM",
+        "totalTravelSpec": 3.4,
+        "travelDistance": 3.342833333333333,
+        "travelMeasurementDeviationMm": 0.0007993052538853654,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "23cf4e78-db5b-49ae-b526-3bda6994ed34",
+      "name": "KOM Lite",
+      "manufacturer": {
+        "ko": "TTC",
+        "en": "TTC"
+      },
+      "priceKrw": null,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/e73cbebf-436f-4fcd-9757-104ed1962dfc.avif",
+      "values": {
+        "category": "리니어",
+        "mechanism": "magnetic",
+        "springLength": 21,
+        "startingForceSpec": 35,
+        "totalTravelSpec": 3.4,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "286293cf-6122-48f1-a5a3-86e7787abbb4",
+      "name": "Peony HE",
+      "manufacturer": {
+        "ko": "스위키",
+        "en": "SWK"
+      },
+      "priceKrw": 400,
+      "status": "arrived",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": null,
+      "values": {
+        "bottomOutHarshness": true,
+        "category": "리니어",
+        "eyejokerRating": "ANTICIPATING",
+        "lowerHousing": [
+          "POM"
+        ],
+        "mechanism": "magnetic",
+        "polarity": "N",
+        "spring": "싱글",
+        "springLength": 14,
+        "startingForceSpec": 39,
+        "stem": "POK",
+        "totalTravelSpec": 3.4,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "29031d8e-2e14-486f-8d37-6b2e8ad52539",
+      "name": "Very Peri Magnetic Switch 샘플",
+      "manufacturer": {
+        "ko": "바로",
+        "en": "VARO"
+      },
+      "priceKrw": null,
+      "status": "testing",
+      "saleStatus": "unreleased",
+      "aliUrl": null,
+      "image": null,
+      "values": {
+        "bottomOutHarshness": false
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "2a3fcc21-9baa-4036-9814-f57277516d77",
+      "name": "Magnetic Green Dragon HE Switch",
+      "manufacturer": {
+        "ko": "게이트론",
+        "en": "GATERON"
+      },
+      "priceKrw": 78800,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/7aaaa6a6-8f00-4461-a489-68eb586fb14e.avif",
+      "values": {
+        "bottomOutHarshness": false
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "2dbb20b5-1a72-47c8-9130-c798ee5fc085",
+      "name": "Chixiao Magnetic Switch",
+      "manufacturer": {
+        "ko": "고특",
+        "en": "OUTEMU"
+      },
+      "priceKrw": 600,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/bfd7a34d-e2d3-4f76-a6ab-6bb9e2a5ab82.avif",
+      "values": {
+        "category": "리니어",
+        "mechanism": "magnetic",
+        "totalTravelSpec": 3.5
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "306a7eef-ff64-44b0-b93c-e48dfae51688",
+      "name": "우라누스 E스포츠",
+      "manufacturer": {
+        "ko": "TTC",
+        "en": "TTC"
+      },
+      "priceKrw": 900,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": "https://s.click.aliexpress.com/e/_opdg2gr",
+      "image": "/images/d976f7b5-ebc3-4e0f-8874-9b443577179e.avif",
+      "values": {
+        "bottomOutHarshness": true,
+        "category": "리니어",
+        "eyejokerRating": "ANTICIPATING",
+        "lowerHousing": [
+          "NYLON"
+        ],
+        "mechanism": "magnetic",
+        "polarity": "N",
+        "spring": "싱글",
+        "springLength": 20,
+        "startingForceSpec": 35,
+        "totalTravelSpec": 3.4,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "32092662-2e3a-4bef-9bb3-ef663984657c",
+      "name": "Noble Horse HE",
+      "manufacturer": {
+        "ko": "TTC",
+        "en": "TTC"
+      },
+      "priceKrw": 1100,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/9ec5ddc5-0ced-4df7-95cf-3b63422ac794.avif",
+      "values": {
+        "category": "리니어",
+        "lowerHousing": [
+          "PC"
+        ],
+        "mechanism": "magnetic",
+        "spring": "싱글",
+        "springLength": 21,
+        "startingForceSpec": 35,
+        "stem": "POM",
+        "totalTravelSpec": 3.45,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "32c89b59-aa05-4d02-a843-d89d02b32de6",
+      "name": "Flux Deep Clacky(팔보 리듬)",
+      "manufacturer": {
+        "ko": "우큐 스튜디오",
+        "en": "Wuque Studio"
+      },
+      "priceKrw": 1300,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/e5fd916d-32d3-4d20-b0a9-76af5cb0fe04.avif",
+      "values": {
+        "bottomOutForceSpec": 50,
+        "bottomOutHarshness": false,
+        "category": "리니어",
+        "eyejokerRating": "ANTICIPATING",
+        "lowerHousing": [
+          "PA66"
+        ],
+        "mechanism": "magnetic",
+        "springLength": 18,
+        "startingForceSpec": 35,
+        "stem": "POM",
+        "totalTravelSpec": 3.5,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "34cd243c-91e6-4d5f-bb99-f8d9d7cb50d2",
+      "name": "Raptor HE",
+      "manufacturer": {
+        "ko": "지온웍스",
+        "en": "GEONWORKS"
+      },
+      "priceKrw": 600,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": "https://s.click.aliexpress.com/e/_onvz1G7",
+      "image": null,
+      "values": {
+        "actuationForceSpec": 42,
+        "bottomOutForceSpec": 52,
+        "bottomOutHarshness": false,
+        "category": "리니어",
+        "lowerHousing": [
+          "PA66",
+          "NYLON"
+        ],
+        "mechanism": "magnetic",
+        "polarity": "N",
+        "spring": "싱글",
+        "springLength": 16,
+        "stem": "POM",
+        "totalTravelSpec": 4,
+        "upperHousing": [
+          "PA12",
+          "NYLON"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "36169f70-274c-41ae-b5e9-837c2e61e7eb",
+      "name": "Qian",
+      "manufacturer": {
+        "ko": "드렁크디어",
+        "en": "DrunkDeer"
+      },
+      "priceKrw": 900,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/d99ed224-fd39-4dce-8a7b-f38f0085fe9a.avif",
+      "values": {
+        "bottomOutHarshness": false,
+        "eyejokerRating": "ANTICIPATING",
+        "mechanism": "magnetic"
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "367da21b-98b7-4543-8eed-36d23dcc9e0e",
+      "name": "Key Magnetic 900Gs",
+      "manufacturer": {
+        "ko": "듀훅",
+        "en": "DUHUK"
+      },
+      "priceKrw": null,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/5df8de7d-2148-40d2-a005-dc39929d6311.avif",
+      "values": {
+        "bottomOutForceSpec": 42,
+        "category": "리니어",
+        "lowerHousing": [
+          "PA66"
+        ],
+        "mechanism": "magnetic",
+        "spring": "싱글(비자성)",
+        "springLength": 15.5,
+        "startingForceSpec": 35,
+        "stem": "POM",
+        "totalTravelSpec": 3.3,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "36e9ad4f-37d6-42d7-bb2d-7a827d69c036",
+      "name": "RED Magnetic Switch",
+      "manufacturer": {
+        "ko": "레샤",
+        "en": "RAESHA"
+      },
+      "priceKrw": null,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": null,
+      "values": {
+        "bottomOutForceSpec": 50,
+        "bottomOutHarshness": false,
+        "category": "리니어",
+        "mechanism": "magnetic",
+        "startingForceSpec": 30,
+        "totalTravelSpec": 4
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "38f2c26b-5dbc-482a-ba20-417a39ce0933",
+      "name": "KS20 White",
+      "manufacturer": {
+        "ko": "게이트론",
+        "en": "GATERON"
+      },
+      "priceKrw": 800,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": "https://s.click.aliexpress.com/e/_oCOMOCr",
+      "image": "/images/3606641e-4b6c-491c-860f-e5bc35fd01d8.avif",
+      "values": {
+        "bottomOutForceSpec": 55,
+        "bottomOutHarshness": false,
+        "category": "리니어",
+        "lowerHousing": [
+          "NYLON"
+        ],
+        "mechanism": "magnetic",
+        "polarity": "N",
+        "spring": "싱글",
+        "springLength": 20,
+        "startingForceSpec": 30,
+        "stem": "POM",
+        "totalTravelSpec": 4.1,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "3a667b73-3875-4fdc-a469-4217f67d2636",
+      "name": "ZENAIM KEY SWITCH",
+      "manufacturer": {
+        "ko": "젠에임",
+        "en": "ZENAIM"
+      },
+      "priceKrw": null,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": null,
+      "values": {
+        "bottomOutForceSpec": 50,
+        "category": "리니어",
+        "mechanism": "magnetic",
+        "startingForceSpec": 32,
+        "totalTravelSpec": 1.9
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "3be2025c-1934-49a3-9e6d-14665d878556",
+      "name": "QuickSilver Ghost 32g",
+      "manufacturer": {
+        "ko": "프리플로우",
+        "en": "Preflow"
+      },
+      "priceKrw": 300,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/093907c0-0be6-406b-a686-809e8a86cf91.avif",
+      "values": {
+        "bottomOutForceSpec": 35,
+        "category": "리니어",
+        "lowerHousing": [
+          "PC"
+        ],
+        "polarity": "N",
+        "startingForceSpec": 27,
+        "stem": "POM",
+        "totalTravelSpec": 2.8,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "3cd8147f-92d2-48a4-8639-aa971d4b92e8",
+      "name": "Rock HE",
+      "manufacturer": {
+        "ko": "듀록",
+        "en": "DUROCK"
+      },
+      "priceKrw": 700,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/ac3a4bb0-be90-4a51-9c77-92154c1c449f.avif",
+      "values": {
+        "actuationForceSpec": 35,
+        "bottomOutForceSpec": 48,
+        "category": "리니어",
+        "lowerHousing": [
+          "PC"
+        ],
+        "mechanism": "magnetic",
+        "polarity": "N",
+        "spring": "SUS",
+        "springLength": 15.5,
+        "startingForceSpec": 35,
+        "stem": "POM",
+        "totalTravelSpec": 3.4,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "3f05ce51-9641-4f3c-99e6-aa6ce72c2162",
+      "name": "FLIP KOM",
+      "manufacturer": {
+        "ko": "TTC",
+        "en": "TTC"
+      },
+      "priceKrw": 1700,
+      "status": "arrived",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/ce4f3008-5428-4bbf-8757-e48c7384e2a4.avif",
+      "values": {
+        "bottomOutHarshness": false,
+        "category": "리니어",
+        "eyejokerRating": "ANTICIPATING",
+        "mechanism": "magnetic",
+        "springLength": 21,
+        "startingForceSpec": 35,
+        "totalTravelSpec": 3.5
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "3f178ad5-8cfc-45a8-af42-a95ed0edd650",
+      "name": "Lekker Tikken Light",
+      "manufacturer": {
+        "ko": "우팅",
+        "en": "Wooting"
+      },
+      "priceKrw": 17000,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/3c8916e6-0032-4877-b00a-874a43c63db0.avif",
+      "values": {
+        "bottomOutForceSpec": 48,
+        "bottomOutHarshness": false,
+        "category": "리니어",
+        "eyejokerRating": "ANTICIPATING",
+        "lowerHousing": [
+          "PA66"
+        ],
+        "polarity": "N",
+        "spring": "싱글(비자성)",
+        "springLength": 21.3,
+        "startingForceSpec": 34,
+        "stem": "POM",
+        "totalTravelSpec": 4,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "3f99e1eb-b97b-40c8-a721-ef84169d09e6",
+      "name": "KOM(매그니토)",
+      "manufacturer": {
+        "ko": "TTC",
+        "en": "TTC"
+      },
+      "priceKrw": 1200,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": "https://s.click.aliexpress.com/e/_ol8Hzc7",
+      "image": null,
+      "values": {
+        "bottomOutHarshness": true,
+        "category": "리니어",
+        "eyejokerRating": "ANTICIPATING",
+        "mechanism": "magnetic",
+        "polarity": "N",
+        "totalTravelSpec": 3.5
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "408ca465-59d3-4aa7-9f90-599a717c1289",
+      "name": "Skyline V3",
+      "manufacturer": {
+        "ko": "에버글라이드",
+        "en": "EVERGLIDE"
+      },
+      "priceKrw": null,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": null,
+      "values": {
+        "actuationForceSpec": 43,
+        "bottomOutForceSpec": 53,
+        "category": "리니어",
+        "lowerHousing": [
+          "PA66"
+        ],
+        "mechanism": "magnetic",
+        "stem": "POM",
+        "totalTravelSpec": 3.5,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "4134d68d-6e12-47e2-b552-09f4b7066875",
+      "name": "Magnetic Genty Silent",
+      "manufacturer": {
+        "ko": "게이트론",
+        "en": "GATERON"
+      },
+      "priceKrw": 1100,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/500e63b6-2895-4446-a376-c1f3dc90d66c.avif",
+      "values": {
+        "category": "리니어",
+        "mechanism": "magnetic",
+        "startingForceSpec": 35,
+        "totalTravelSpec": 3.7
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "437a515d-c77c-4691-9ab8-c271d286e1a0",
+      "name": "JADE Gaming",
+      "manufacturer": {
+        "ko": "게이트론",
+        "en": "GATERON"
+      },
+      "priceKrw": 1000,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": "https://s.click.aliexpress.com/e/_olBDFIB",
+      "image": null,
+      "values": {
+        "bottomOutHarshness": true,
+        "category": "리니어",
+        "eyejokerRating": "ANTICIPATING",
+        "lowerHousing": [
+          "PA66"
+        ],
+        "mechanism": "magnetic",
+        "polarity": "N",
+        "startingForceSpec": 36,
+        "stem": "POM",
+        "totalTravelSpec": 3.5,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "46b2c62b-25fd-4358-8e57-1b6a7b4f4b2f",
+      "name": "Sticky Rice v2(찹쌀) 4.0",
+      "manufacturer": {
+        "ko": "하이무",
+        "en": "Haimu"
+      },
+      "priceKrw": 200,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/fa476248-eb5a-4f8f-97dc-5b5a3327dff4.avif",
+      "values": {
+        "bottomOutForceSpec": 50,
+        "bottomOutHarshness": false,
+        "category": "리니어",
+        "lowerHousing": [
+          "POM"
+        ],
+        "mechanism": "magnetic",
+        "polarity": "N",
+        "spring": "싱글",
+        "springLength": 15,
+        "startingForceSpec": 40,
+        "stem": "POM",
+        "totalTravelSpec": 4,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "46ec624d-bcb7-4e87-aa0b-35a57bb56f56",
+      "name": "ROG HFX V2 Magnetic Switch",
+      "manufacturer": {
+        "ko": "에이수스",
+        "en": "ASUS"
+      },
+      "priceKrw": null,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/dfcc00ab-9654-48f8-b5fa-8386451dedf0.avif",
+      "values": {
+        "bottomOutForceSpec": 49,
+        "lowerHousing": [
+          "POM"
+        ],
+        "mechanism": "magnetic",
+        "startingForceSpec": 32,
+        "stem": "POM",
+        "totalTravelSpec": 3.5,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "48e7dc43-4bad-4bfa-ad6c-3d02d582ea22",
+      "name": "Lekker Tikken",
+      "manufacturer": {
+        "ko": "우팅",
+        "en": "Wooting"
+      },
+      "priceKrw": 900,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/4391ff5f-6779-4dba-91a7-83f092ec5d34.avif",
+      "values": {
+        "actuationForceSpec": 42,
+        "bottomOutForceSpec": 54,
+        "bottomOutHarshness": true,
+        "category": "리니어",
+        "eyejokerRating": "ANTICIPATING",
+        "lowerHousing": [
+          "NYLON"
+        ],
+        "mechanism": "magnetic",
+        "polarity": "N",
+        "spring": "싱글(비자성)",
+        "springLength": 22,
+        "startingForceSpec": 42,
+        "stem": "POM",
+        "totalTravelSpec": 4,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "4e3a4a52-988e-493e-a647-794a94189257",
+      "name": "MGX",
+      "manufacturer": {
+        "ko": "커세어",
+        "en": "CORSAIR"
+      },
+      "priceKrw": null,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/9da63070-69bc-419f-8aa6-582eac76389f.avif",
+      "values": {
+        "bottomOutForceSpec": 55,
+        "bottomOutHarshness": false,
+        "category": "리니어",
+        "mechanism": "magnetic",
+        "startingForceSpec": 30,
+        "totalTravelSpec": 4
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "4f29ab92-e0b4-4d54-91e9-138013a95111",
+      "name": "Jade Mini E",
+      "manufacturer": {
+        "ko": "게이트론",
+        "en": "GATERON"
+      },
+      "priceKrw": 900,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": "https://s.click.aliexpress.com/e/_opTjDYj",
+      "image": null,
+      "values": {
+        "bottomOutForceSpec": 50,
+        "bottomOutHarshness": false,
+        "category": "리니어",
+        "mechanism": "magnetic",
+        "startingForceSpec": 30,
+        "totalTravelSpec": 3.5
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "4f31ced6-1c23-4fc8-9b2d-01ec1d3fb967",
+      "name": "KS-20B Dual Rail Orange",
+      "manufacturer": {
+        "ko": "게이트론",
+        "en": "GATERON"
+      },
+      "priceKrw": 900,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/e6ce4dcc-38e0-47e2-9ecf-2112ccada421.avif",
+      "values": {
+        "actuationForceSpec": 30,
+        "bottomOutForceSpec": 50,
+        "bottomOutHarshness": false,
+        "category": "리니어",
+        "lowerHousing": [
+          "NYLON"
+        ],
+        "mechanism": "magnetic",
+        "polarity": "N",
+        "spring": "싱글",
+        "springLength": 20,
+        "startingForceSpec": 30,
+        "stem": "POM",
+        "totalTravelSpec": 4.1,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "5820c7ef-971a-4deb-89b7-eb278cba9a6f",
+      "name": "Jade Delta Light",
+      "manufacturer": {
+        "ko": "게이트론",
+        "en": "GATERON"
+      },
+      "priceKrw": 1400,
+      "status": "reviewed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/330388d8-e94e-4dc6-bce2-d38f6615bc09.avif",
+      "values": {
+        "bottomOutForce": 46.40566666666666,
+        "bottomOutForceSpec": 45,
+        "bottomOutHarshness": true,
+        "category": "리니어",
+        "eyejokerRating": "RECOMMENDED",
+        "hallPressedHorizontalVariationPercent": 0.23513452407867963,
+        "hallPressedVerticalVariationPercent": 0.17969735182850594,
+        "hallResolutionSteps": 11076,
+        "hallWobbleVariationPercent": "0.3%",
+        "lowerHousing": [
+          "POM"
+        ],
+        "measurementDeviationSummary": "±1.9gf",
+        "mechanism": "magnetic",
+        "overallRatingKeyboardSwitch": "TIER_1",
+        "polarity": "N",
+        "publicReleaseAt": "2026-08-24T23:09:32",
+        "resolutionPerMm": 324,
+        "spring": "SUS",
+        "springLength": 20,
+        "startingForce": 34.34808333333333,
+        "startingForceSpec": 33,
+        "stem": "POM",
+        "totalTravelSpec": 3.5,
+        "travelDistance": 3.418166666666666,
+        "travelMeasurementDeviationMm": 0.023107838977763032,
+        "upperHousing": [
+          "POM"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "59bb2b8e-b957-4780-bdb9-d04b1ce22fc2",
+      "name": "자석축 스위치 (레이븐)",
+      "manufacturer": {
+        "ko": "그레인골드",
+        "en": "Graingold"
+      },
+      "priceKrw": null,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": null,
+      "values": {
+        "bottomOutForceSpec": 50,
+        "bottomOutHarshness": false,
+        "category": "리니어",
+        "mechanism": "magnetic",
+        "polarity": "N",
+        "startingForceSpec": 35,
+        "totalTravelSpec": 4
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "5a4a390f-5e1e-48ee-aae6-e4875aa3015c",
+      "name": "카이퍼 축",
+      "manufacturer": {
+        "ko": "카일",
+        "en": "Kailh"
+      },
+      "priceKrw": 800,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": null,
+      "values": {
+        "category": "리니어",
+        "mechanism": "magnetic"
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "5ad376c8-820b-49bf-892f-930c48eb1122",
+      "name": "Very Peri Non-Contact Magnetic Switch",
+      "manufacturer": {
+        "ko": "바로",
+        "en": "VARO"
+      },
+      "priceKrw": null,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/d182659e-f55a-40f3-8b07-1071149dcea7.avif",
+      "values": {
+        "category": "택타일",
+        "lowerHousing": [
+          "NYLON"
+        ],
+        "mechanism": "magnetic",
+        "spring": "러버돔",
+        "stem": "POM",
+        "totalTravelSpec": 3.5,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "5d881fb3-f0b7-4ae8-9337-d1cb3b8711e8",
+      "name": "Siren",
+      "manufacturer": {
+        "ko": "에버글라이드",
+        "en": "EVERGLIDE"
+      },
+      "priceKrw": 1200,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/50f0b5f4-ea0f-455b-9ae6-55e2ea33f681.avif",
+      "values": {
+        "mechanism": "magnetic"
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "5eb3350c-428b-4779-af4d-187fafc1230e",
+      "name": "Jade Air",
+      "manufacturer": {
+        "ko": "게이트론",
+        "en": "GATERON"
+      },
+      "priceKrw": 1100,
+      "status": "reviewed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": "https://s.click.aliexpress.com/e/_ootJAj5",
+      "image": null,
+      "values": {
+        "bottomOutForce": 49.564166666666665,
+        "bottomOutForceSpec": 50,
+        "bottomOutHarshness": true,
+        "category": "리니어",
+        "eyejokerRating": "HIGHLY_RECOMMENDED",
+        "hallPressedHorizontalVariationPercent": 0.4242451595432594,
+        "hallPressedVerticalVariationPercent": 0.48607048021963184,
+        "hallResolutionSteps": 11123,
+        "hallWobbleVariationPercent": "0.6%",
+        "lowerHousing": [
+          "NYLON"
+        ],
+        "measurementDeviationSummary": "±1.4gf",
+        "mechanism": "magnetic",
+        "overallRatingKeyboardSwitch": "TIER_1",
+        "polarity": "N",
+        "publicReleaseAt": "2026-08-24T23:09:32",
+        "resolutionPerMm": 322,
+        "spring": "싱글",
+        "springLength": 20,
+        "startingForce": 35.862249999999996,
+        "startingForceSpec": 36,
+        "stem": "POM",
+        "totalTravelSpec": 3.5,
+        "travelDistance": 3.4577499999999994,
+        "travelMeasurementDeviationMm": 0.02510353560755935,
+        "upperHousing": [
+          "PC"
+        ],
+        "wobble": "S"
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "5ec5708d-c658-4f1f-870d-819ab97a39bc",
+      "name": "Yellow",
+      "manufacturer": {
+        "ko": "그레인골드",
+        "en": "Graingold"
+      },
+      "priceKrw": 600,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": null,
+      "values": {
+        "bottomOutForceSpec": 50,
+        "category": "리니어",
+        "lowerHousing": [
+          "PA66"
+        ],
+        "mechanism": "magnetic",
+        "spring": "SUS",
+        "startingForceSpec": 35,
+        "stem": "POM",
+        "totalTravelSpec": 4,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "61c4f887-7e91-4ccb-95ac-bda40d478c06",
+      "name": "Flaming Yellow King HE",
+      "manufacturer": {
+        "ko": "TTC",
+        "en": "TTC"
+      },
+      "priceKrw": null,
+      "status": "purchased",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": null,
+      "values": {
+        "category": "리니어",
+        "mechanism": "magnetic"
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "61d9eafe-3e25-431b-a636-f7068fc9f8af",
+      "name": "BingYao Magnetic Switch",
+      "manufacturer": {
+        "ko": "Unionwell",
+        "en": "Unionwell"
+      },
+      "priceKrw": 2100,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/1f3c68e4-1261-447f-ba5d-a8dd8f5ddb93.avif",
+      "values": {
+        "category": "리니어",
+        "mechanism": "magnetic"
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "6455e3e9-d2e1-4e44-beda-bee81617f356",
+      "name": "Lekker v1 stem + raptor HE",
+      "manufacturer": {
+        "ko": "지온웍스",
+        "en": "GEONWORKS"
+      },
+      "priceKrw": null,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": null,
+      "values": {
+        "category": "리니어",
+        "mechanism": "magnetic"
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "65397dd8-b3c1-4a98-8794-1ffffc7768ab",
+      "name": "ICE ULTRA",
+      "manufacturer": {
+        "ko": "UR STUDIO",
+        "en": "UR STUDIO"
+      },
+      "priceKrw": 600,
+      "status": "reviewed",
+      "saleStatus": "DISCONTINUED",
+      "aliUrl": null,
+      "image": null,
+      "values": {
+        "bottomOutForce": 46.84055374999999,
+        "bottomOutForceSpec": 50,
+        "bottomOutHarshness": true,
+        "category": "리니어",
+        "eyejokerRating": "RECOMMENDED",
+        "hallPressedHorizontalVariationPercent": 0.8654981300410117,
+        "hallPressedVerticalVariationPercent": 0.460013577732516,
+        "hallResolutionSteps": 11076,
+        "hallWobbleVariationPercent": "0.6%",
+        "lowerHousing": [
+          "PC"
+        ],
+        "measurementDeviationSummary": "±2.8gf",
+        "mechanism": "magnetic",
+        "overallRatingKeyboardSwitch": "TIER_2",
+        "polarity": "N",
+        "publicReleaseAt": "2026-08-24T16:39:17Z",
+        "resolutionPerMm": 331,
+        "spring": "싱글",
+        "springLength": 15.3,
+        "startingForce": 37.21857166666666,
+        "startingForceSpec": 35,
+        "stem": "POM",
+        "stemLength": 11.15,
+        "totalTravelSpec": 3.3,
+        "travelDistance": 3.3480062499999996,
+        "travelMeasurementDeviationMm": 0.026853880975335722,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "66f26dad-5e43-4c1a-bc14-02ae559dbebc",
+      "name": "Dove HE V2",
+      "manufacturer": {
+        "ko": "하이무",
+        "en": "Haimu"
+      },
+      "priceKrw": 900,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": null,
+      "values": {
+        "actuationForceSpec": 40,
+        "bottomOutForceSpec": 50,
+        "category": "리니어",
+        "lowerHousing": [
+          "NYLON"
+        ],
+        "mechanism": "magnetic",
+        "totalTravelSpec": 3.8,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "689dbffc-b6fb-4d3f-a493-128ee5f67391",
+      "name": "KS‑20 Magnetic Jade",
+      "manufacturer": {
+        "ko": "게이트론",
+        "en": "GATERON"
+      },
+      "priceKrw": 900,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": "https://s.click.aliexpress.com/e/_o2aGaI3",
+      "image": "/images/1c59d8c5-7e83-4f5d-a637-eaf2111ddc35.avif",
+      "values": {
+        "bottomOutForceSpec": 50,
+        "bottomOutHarshness": true,
+        "category": "리니어",
+        "lowerHousing": [
+          "NYLON"
+        ],
+        "mechanism": "magnetic",
+        "polarity": "N",
+        "spring": "싱글",
+        "springLength": 15,
+        "startingForceSpec": 30,
+        "stem": "POM",
+        "totalTravelSpec": 3.5,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "68d87117-ee57-4d30-a583-e3541f6be852",
+      "name": "Polar Magnetic RGB",
+      "manufacturer": {
+        "ko": "Unionwell",
+        "en": "Unionwell"
+      },
+      "priceKrw": null,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/4e094b44-f529-4e3b-a2f4-d8a807bf3764.avif",
+      "values": {},
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "691e4c80-145b-4746-be79-e3167f776c73",
+      "name": "Tai'e Sword Magnetic",
+      "manufacturer": {
+        "ko": "TTC",
+        "en": "TTC"
+      },
+      "priceKrw": 1000,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/2740fa60-d3c3-4b1a-9d50-2cc8d11fbf71.avif",
+      "values": {
+        "category": "리니어",
+        "mechanism": "magnetic",
+        "springLength": 20,
+        "startingForceSpec": 35,
+        "totalTravelSpec": 3.4
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "6ae70dbe-848a-4eac-b492-64758fbdb4f0",
+      "name": "Flora HE",
+      "manufacturer": {
+        "ko": "NDIY",
+        "en": "NDIY"
+      },
+      "priceKrw": 500,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": null,
+      "values": {
+        "bottomOutHarshness": false,
+        "category": "리니어",
+        "eyejokerRating": "ANTICIPATING",
+        "mechanism": "magnetic"
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "6ecdf67b-0567-4464-9248-83bbd3a85d1d",
+      "name": "Skyline V2",
+      "manufacturer": {
+        "ko": "에버글라이드",
+        "en": "EVERGLIDE"
+      },
+      "priceKrw": 400,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": "https://s.click.aliexpress.com/e/_oEVyhnZ",
+      "image": "/images/7a53973a-66b1-4a6c-9c14-1a0c1de41c59.avif",
+      "values": {
+        "actuationForceSpec": 53,
+        "bottomOutForceSpec": 59,
+        "bottomOutHarshness": false,
+        "category": "리니어",
+        "lowerHousing": [
+          "PA66"
+        ],
+        "mechanism": "magnetic",
+        "startingForceSpec": 43,
+        "stem": "POM",
+        "totalTravelSpec": 3.5,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "703a96d4-3002-436b-ac90-4cf0ddf57100",
+      "name": "드렁크디어형",
+      "manufacturer": {
+        "ko": "TTC",
+        "en": "TTC"
+      },
+      "priceKrw": null,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": null,
+      "values": {
+        "bottomOutHarshness": true,
+        "category": "리니어",
+        "mechanism": "magnetic",
+        "polarity": "S"
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "731cec0f-c99b-48ca-95ef-3e1b45f492a5",
+      "name": "Strike HE",
+      "manufacturer": {
+        "ko": "지온웍스",
+        "en": "GEONWORKS"
+      },
+      "priceKrw": null,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/4b60ae61-3878-4f50-b86d-ed70116cba5d.avif",
+      "values": {
+        "actuationForceSpec": 35,
+        "bottomOutForceSpec": 55,
+        "bottomOutHarshness": false,
+        "category": "클릭",
+        "lowerHousing": [
+          "PA66"
+        ],
+        "mechanism": "magnetic",
+        "springLength": 18.8,
+        "stem": "POM",
+        "totalTravelSpec": 3.5,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "776d0b77-4a93-455c-b72a-ccc26606e528",
+      "name": "Siren V3",
+      "manufacturer": {
+        "ko": "에버글라이드",
+        "en": "EVERGLIDE"
+      },
+      "priceKrw": 700,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/afc5d67c-bbb6-45c0-97dc-5ff80e2904bc.avif",
+      "values": {
+        "bottomOutHarshness": false
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "77c77f86-3559-4414-a308-a70eb9ae9151",
+      "name": "Jade Delta Dark",
+      "manufacturer": {
+        "ko": "게이트론",
+        "en": "GATERON"
+      },
+      "priceKrw": 1400,
+      "status": "reviewed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/235e3baf-16d4-46a6-b834-1a4de8d0da62.avif",
+      "values": {
+        "bottomOutForce": 52.042249999999996,
+        "bottomOutForceSpec": 50,
+        "bottomOutHarshness": true,
+        "category": "리니어",
+        "eyejokerRating": "MILD_RECOMMENDATION",
+        "hallPressedHorizontalVariationPercent": 0.1979553062517056,
+        "hallPressedVerticalVariationPercent": 0.19687443865635218,
+        "hallResolutionSteps": 11097,
+        "hallWobbleVariationPercent": "0.2%",
+        "lowerHousing": [
+          "POM"
+        ],
+        "measurementDeviationSummary": "±2.4gf",
+        "mechanism": "magnetic",
+        "overallRatingKeyboardSwitch": "TIER_2",
+        "polarity": "N",
+        "publicReleaseAt": "2026-08-24T16:39:17Z",
+        "resolutionPerMm": 325,
+        "spring": "싱글",
+        "springLength": 20,
+        "startingForce": 36.89366666666667,
+        "startingForceSpec": 38,
+        "stem": "POM",
+        "totalTravelSpec": 3.5,
+        "travelDistance": 3.417583333333333,
+        "travelMeasurementDeviationMm": 0.019788289185497833,
+        "upperHousing": [
+          "POM"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "77e95417-50e7-4751-9a64-59ccb7b7410b",
+      "name": "Y3 Magnetic",
+      "manufacturer": {
+        "ko": "MZ Studio",
+        "en": "MZ Studio"
+      },
+      "priceKrw": 400,
+      "status": "reviewed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/76029784-77d8-41e9-b45f-86c840c47e66.avif",
+      "values": {
+        "actuationForceSpec": 40,
+        "bottomOutForce": 57.240916666666664,
+        "bottomOutForceSpec": 48,
+        "bottomOutHarshness": false,
+        "category": "리니어",
+        "eyejokerRating": "MILD_RECOMMENDATION",
+        "hallPressedHorizontalVariationPercent": 0.4386334879797554,
+        "hallPressedVerticalVariationPercent": 0.46701197248874926,
+        "hallResolutionSteps": 11816,
+        "hallWobbleVariationPercent": "0.4%",
+        "lowerHousing": [
+          "PC"
+        ],
+        "measurementDeviationSummary": "±2.0gf",
+        "mechanism": "magnetic",
+        "overallRatingKeyboardSwitch": "TIER_1",
+        "polarity": "N",
+        "publicReleaseAt": "2026-08-24T16:39:17Z",
+        "resolutionPerMm": 320,
+        "spring": "싱글(비자성)",
+        "startingForce": 35.47608333333333,
+        "stem": "LY",
+        "totalTravelSpec": 3.6,
+        "travelDistance": 3.6919583333333335,
+        "travelMeasurementDeviationMm": 0.034473998857432,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "77fd4b78-f819-44a0-b9be-9dfa50528e69",
+      "name": "Jade Ultra",
+      "manufacturer": {
+        "ko": "게이트론",
+        "en": "GATERON"
+      },
+      "priceKrw": 1100,
+      "status": "reviewed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/99cd00bb-762c-45cc-a386-03d829a0d8af.avif",
+      "values": {
+        "bottomOutForce": 42.950773,
+        "bottomOutForceSpec": 40,
+        "bottomOutHarshness": false,
+        "category": "리니어",
+        "eyejokerRating": "RECOMMENDED",
+        "hallPressedHorizontalVariationPercent": 0.8945245593679289,
+        "hallPressedVerticalVariationPercent": 0.7015841142347101,
+        "hallResolutionSteps": 9047,
+        "hallWobbleVariationPercent": "0.9%",
+        "measurementDeviationSummary": "±2.0gf",
+        "mechanism": "magnetic",
+        "overallRatingKeyboardSwitch": "TIER_2",
+        "polarity": "N",
+        "publicReleaseAt": "2026-08-24T16:39:17Z",
+        "resolutionPerMm": 285,
+        "spring": "SUS",
+        "springLength": 19,
+        "startingForce": 30.644243000000007,
+        "startingForceSpec": 30,
+        "totalTravelSpec": 3.2,
+        "travelDistance": 3.176887,
+        "travelMeasurementDeviationMm": 0.01163930844165577
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "795a0791-0f79-4d32-a4bd-be7e18aa16cd",
+      "name": "Cherry Blossom",
+      "manufacturer": {
+        "ko": "UR STUDIO",
+        "en": "UR STUDIO"
+      },
+      "priceKrw": null,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/a393c866-ae00-4adc-a17c-cf22418e2b85.avif",
+      "values": {
+        "actuationForceSpec": 35,
+        "bottomOutForceSpec": 47,
+        "bottomOutHarshness": false,
+        "category": "리니어",
+        "lowerHousing": [
+          "POM"
+        ],
+        "mechanism": "magnetic",
+        "polarity": "N",
+        "spring": "싱글",
+        "springLength": 15.3,
+        "startingForceSpec": 35,
+        "totalTravelSpec": 3.3,
+        "upperHousing": [
+          "POM"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "7a758bd7-cd97-4232-a48d-e21e3a265010",
+      "name": "WS Diamond Star Kiss",
+      "manufacturer": {
+        "ko": "우큐 스튜디오",
+        "en": "Wuque Studio"
+      },
+      "priceKrw": 2700,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/0b507d02-04ce-437a-b23b-ff204464f842.avif",
+      "values": {
+        "bottomOutHarshness": false,
+        "category": "리니어",
+        "mechanism": "magnetic"
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "7c8d63f7-117f-4cc0-91e8-34c6ab3171f3",
+      "name": "Sticky Rice v2(찹쌀밥)",
+      "manufacturer": {
+        "ko": "그레인골드",
+        "en": "Graingold"
+      },
+      "priceKrw": 200,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": "https://s.click.aliexpress.com/e/_okL4IZt",
+      "image": null,
+      "values": {
+        "bottomOutForceSpec": 47,
+        "bottomOutHarshness": true,
+        "category": "리니어",
+        "eyejokerRating": "ANTICIPATING",
+        "lowerHousing": [
+          "NYLON"
+        ],
+        "mechanism": "magnetic",
+        "polarity": "N",
+        "spring": "싱글",
+        "startingForceSpec": 37,
+        "stem": "POM",
+        "totalTravelSpec": 3.7,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "7cacbc70-5507-44c7-846a-2ff639299062",
+      "name": "x TNT Silent Storm Magnetic Switch",
+      "manufacturer": {
+        "ko": "FL CMMK",
+        "en": "FL CMMK"
+      },
+      "priceKrw": 800,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/dea167ba-9f8a-47a3-9c2e-3b127af413b3.avif",
+      "values": {
+        "bottomOutHarshness": false,
+        "category": "리니어",
+        "eyejokerRating": "ANTICIPATING",
+        "mechanism": "magnetic"
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "7ef0c4ff-e92f-4174-b010-7819d7533b20",
+      "name": "Crystal Magnetic Switch",
+      "manufacturer": {
+        "ko": "고특",
+        "en": "OUTEMU"
+      },
+      "priceKrw": null,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/a425cb92-6a1c-4c3b-bf82-5a4edbba10c5.avif",
+      "values": {
+        "category": "리니어",
+        "lowerHousing": [
+          "PC"
+        ],
+        "mechanism": "magnetic",
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "7ef1619a-ea09-4e7c-993e-e78a5ddd3661",
+      "name": "ROG HFX V2X Magnetic Switch",
+      "manufacturer": {
+        "ko": "에이수스",
+        "en": "ASUS"
+      },
+      "priceKrw": null,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/dd2c9038-9e88-4080-901a-e34e20879e24.avif",
+      "values": {
+        "bottomOutForceSpec": 45,
+        "lowerHousing": [
+          "POM"
+        ],
+        "mechanism": "magnetic",
+        "startingForceSpec": 30,
+        "stem": "POM",
+        "totalTravelSpec": 3.5,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "7f3bdd27-daf4-409d-9001-fcb9fdd1c73b",
+      "name": "소백색축 / 샤오바이바이?",
+      "manufacturer": {
+        "ko": "에버글라이드",
+        "en": "EVERGLIDE"
+      },
+      "priceKrw": 26600,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": null,
+      "values": {
+        "bottomOutForceSpec": 48,
+        "bottomOutHarshness": false,
+        "category": "리니어",
+        "mechanism": "magnetic",
+        "polarity": "N",
+        "startingForceSpec": 37,
+        "totalTravelSpec": 3.7
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "80c937a3-3526-4ccc-b71f-3df6a137117c",
+      "name": "Quick Silver V2",
+      "manufacturer": {
+        "ko": "프리플로우",
+        "en": "Preflow"
+      },
+      "priceKrw": null,
+      "status": "reviewed",
+      "saleStatus": "DISCONTINUED",
+      "aliUrl": null,
+      "image": "/images/9bdd9ace-f9b8-481d-a6ad-63f187c40480.avif",
+      "values": {
+        "bottomOutForce": 47.86933333333334,
+        "bottomOutForceSpec": 45,
+        "bottomOutHarshness": false,
+        "category": "리니어",
+        "eyejokerRating": "MILD_RECOMMENDATION",
+        "hallPressedHorizontalVariationPercent": 2.38880438089443,
+        "hallPressedVerticalVariationPercent": 1.5501249417644318,
+        "hallResolutionSteps": 11563,
+        "hallWobbleVariationPercent": "4.1%",
+        "lowerHousing": [
+          "PC"
+        ],
+        "measurementDeviationSummary": "±1.8gf",
+        "mechanism": "magnetic",
+        "overallRatingKeyboardSwitch": "TIER_4",
+        "polarity": "N",
+        "publicReleaseAt": "2026-10-01T11:34:10.177811Z",
+        "resolutionPerMm": 383,
+        "startingForce": 32.54088888888888,
+        "startingForceSpec": 27,
+        "stem": "POM",
+        "totalTravelSpec": 3.3,
+        "travelDistance": 3.016083333333333,
+        "travelMeasurementDeviationMm": 0.05934146713911129,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "84e4b35c-31cf-4044-87f3-89cec8fc632b",
+      "name": "Deng Shen V2",
+      "manufacturer": {
+        "ko": "라텐포우",
+        "en": "LATENPOW"
+      },
+      "priceKrw": 200,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": "https://s.click.aliexpress.com/e/_oDxzyMR",
+      "image": "/images/538a043a-6b4d-4a70-addf-63cd505fbf5a.avif",
+      "values": {
+        "actuationForceSpec": 45,
+        "bottomOutHarshness": false,
+        "category": "리니어",
+        "eyejokerRating": "ANTICIPATING",
+        "lowerHousing": [
+          "PA66"
+        ],
+        "mechanism": "magnetic",
+        "polarity": "N",
+        "spring": "싱글",
+        "stem": "POM",
+        "totalTravelSpec": 3.8,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "86793205-556c-4d11-9669-967e3043f3f9",
+      "name": "Jade LP PRO",
+      "manufacturer": {
+        "ko": "게이트론",
+        "en": "GATERON"
+      },
+      "priceKrw": null,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/2c776088-88ea-4737-a11a-79c3a13caa5c.avif",
+      "values": {
+        "bottomOutForceSpec": 60,
+        "bottomOutHarshness": false,
+        "category": "리니어",
+        "lowerHousing": [
+          "POM"
+        ],
+        "mechanism": "magnetic",
+        "springLength": 18,
+        "startingForceSpec": 40,
+        "stem": "POM",
+        "totalTravelSpec": 3.5,
+        "upperHousing": [
+          "POM"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "86a283b2-9cc8-4ff7-b522-1543bfad33d3",
+      "name": "Magnetic Switch",
+      "manufacturer": {
+        "ko": "레샤",
+        "en": "RAESHA"
+      },
+      "priceKrw": 100,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": "https://s.click.aliexpress.com/e/_oBqg8xd",
+      "image": null,
+      "values": {
+        "bottomOutForceSpec": 60,
+        "bottomOutHarshness": false,
+        "category": "리니어",
+        "mechanism": "magnetic",
+        "startingForceSpec": 30,
+        "totalTravelSpec": 3.6
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "86dd7050-bdd1-432c-a579-f08c0e58eee5",
+      "name": "만자왕 UE",
+      "manufacturer": {
+        "ko": "에버글라이드",
+        "en": "EVERGLIDE"
+      },
+      "priceKrw": 400,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": "https://s.click.aliexpress.com/e/_okZmrg3",
+      "image": "/images/d0b5d5a7-621e-47ba-9d86-86ccefbdb288.avif",
+      "values": {
+        "actuationForceSpec": 38,
+        "bottomOutHarshness": false,
+        "category": "리니어",
+        "lowerHousing": [
+          "NYLON"
+        ],
+        "mechanism": "magnetic",
+        "polarity": "N",
+        "spring": "싱글",
+        "springLength": 15,
+        "stem": "POM",
+        "totalTravelSpec": 3.5,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "871e6725-8eb0-43ed-931b-1716c7dc9fc8",
+      "name": "Zero35 Magnetic Switch",
+      "manufacturer": {
+        "ko": "멜긱",
+        "en": "MelGeek"
+      },
+      "priceKrw": 3400,
+      "status": "reviewed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/679f05b8-2385-49e5-a4e0-3855d1b11759.avif",
+      "values": {
+        "actuationForceSpec": 35,
+        "bottomOutForce": 36.9825,
+        "bottomOutForceSpec": 35,
+        "bottomOutHarshness": true,
+        "category": "리니어",
+        "eyejokerRating": "MILD_RECOMMENDATION",
+        "hallPressedHorizontalVariationPercent": 0.1260422726391313,
+        "hallPressedVerticalVariationPercent": 0.19645400520603112,
+        "hallResolutionSteps": 10192,
+        "hallWobbleVariationPercent": "0.2%",
+        "lowerHousing": [
+          "PA66"
+        ],
+        "measurementDeviationSummary": "±2.6gf",
+        "mechanism": "magnetic",
+        "overallRatingKeyboardSwitch": "TIER_2",
+        "polarity": "N",
+        "publicReleaseAt": "2026-08-24T23:09:32",
+        "resolutionPerMm": 296,
+        "spring": "싱글",
+        "springLength": 22,
+        "startingForce": 33.296173913043475,
+        "startingForceSpec": 35,
+        "stem": "POM",
+        "totalTravelSpec": 3.4,
+        "travelDistance": 3.4422083333333333,
+        "travelMeasurementDeviationMm": 0.039952032871376615,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "880f06a8-2f7c-43e5-89fa-17b0afbe0507",
+      "name": "Deng Shen Pro",
+      "manufacturer": {
+        "ko": "라텐포우",
+        "en": "LATENPOW"
+      },
+      "priceKrw": 600,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/ad323338-51cf-4373-acd0-0e4a9d6da27e.avif",
+      "values": {
+        "actuationForceSpec": 35,
+        "bottomOutForceSpec": 50,
+        "bottomOutHarshness": false,
+        "category": "리니어",
+        "mechanism": "magnetic",
+        "polarity": "N",
+        "totalTravelSpec": 3.5,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "89017298-1871-4e5e-8a29-272d528b70fe",
+      "name": "Black Knight",
+      "manufacturer": {
+        "ko": "모유 스튜디오",
+        "en": "Moyu Studio"
+      },
+      "priceKrw": 200,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/10bf6666-939b-4961-97ef-cd4715f9d616.avif",
+      "values": {
+        "bottomOutForceSpec": 55,
+        "bottomOutHarshness": false,
+        "category": "리니어",
+        "eyejokerRating": "ANTICIPATING",
+        "lowerHousing": [
+          "NYLON"
+        ],
+        "mechanism": "magnetic",
+        "polarity": "N",
+        "springLength": 15,
+        "startingForceSpec": 45,
+        "stem": "POM",
+        "totalTravelSpec": 3.6,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "8b0cd7e2-99b9-43bf-a1c5-ffc8746a6c20",
+      "name": "Wild Pansy V2",
+      "manufacturer": {
+        "ko": "에버글라이드",
+        "en": "EVERGLIDE"
+      },
+      "priceKrw": 900,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/2bf71d78-16f1-4e21-aefb-f377fe4701d1.avif",
+      "values": {
+        "actuationForceSpec": 40,
+        "bottomOutForceSpec": 48,
+        "category": "택타일",
+        "lowerHousing": [
+          "NYLON"
+        ],
+        "mechanism": "mechanic",
+        "spring": "금도금",
+        "springLength": 22,
+        "stem": "POM",
+        "totalTravelSpec": 3.8,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "8dc41ab6-5382-4897-bb20-7a82f09e8aba",
+      "name": "Astrolink Magnetic Switch",
+      "manufacturer": {
+        "ko": "아코",
+        "en": "Akko"
+      },
+      "priceKrw": 1000,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/ad7dd6a3-3026-4a25-8ec2-6e8d1d462911.avif",
+      "values": {
+        "bottomOutForceSpec": 46,
+        "bottomOutHarshness": false,
+        "category": "리니어",
+        "lowerHousing": [
+          "NYLON"
+        ],
+        "mechanism": "magnetic",
+        "polarity": "N",
+        "springLength": 20,
+        "startingForceSpec": 36,
+        "stem": "POM",
+        "totalTravelSpec": 3.4,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "8e5da3df-9871-4700-a63e-1c8562728256",
+      "name": "Flux Ocean Whisper",
+      "manufacturer": {
+        "ko": "우큐 스튜디오",
+        "en": "Wuque Studio"
+      },
+      "priceKrw": null,
+      "status": "testing",
+      "saleStatus": "unreleased",
+      "aliUrl": null,
+      "image": null,
+      "values": {
+        "bottomOutHarshness": false,
+        "eyejokerRating": "ANTICIPATING",
+        "mechanism": "magnetic"
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "908d53ea-7344-4fed-9a7c-7385e2bf2b6c",
+      "name": "Polar Magnetic Blazing Bloom",
+      "manufacturer": {
+        "ko": "Unionwell",
+        "en": "Unionwell"
+      },
+      "priceKrw": null,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/1ee38adf-688d-43af-9d16-994e4edef8c9.avif",
+      "values": {
+        "bottomOutForceSpec": 50,
+        "bottomOutHarshness": false,
+        "category": "리니어",
+        "mechanism": "magnetic",
+        "springLength": 23,
+        "startingForceSpec": 37,
+        "stem": "POM",
+        "totalTravelSpec": 3.5
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "936d32eb-1feb-4fbf-87c9-ef2e8495da1b",
+      "name": "Mount Maglev HE",
+      "manufacturer": {
+        "ko": "ugaming",
+        "en": "ugaming"
+      },
+      "priceKrw": 9900,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/b05ba40e-5db3-4401-bbbb-3977be7ca246.avif",
+      "values": {
+        "bottomOutForceSpec": 36,
+        "category": "리니어",
+        "lowerHousing": [
+          "PC"
+        ],
+        "polarity": "N",
+        "springLength": 22,
+        "startingForceSpec": 36,
+        "totalTravelSpec": 3.4,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "94452d7b-564b-494d-b6f5-beaeff918b2b",
+      "name": "Snow Blade Magnetic Switch",
+      "manufacturer": {
+        "ko": "모크블레이드",
+        "en": "MorkBlade"
+      },
+      "priceKrw": null,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/6a9d7ac6-4ce3-4718-8cfe-1496e1a8d723.avif",
+      "values": {
+        "bottomOutHarshness": false,
+        "category": "리니어",
+        "lowerHousing": [
+          "POM"
+        ],
+        "mechanism": "magnetic",
+        "polarity": "N",
+        "spring": "싱글",
+        "springLength": 15,
+        "startingForceSpec": 30,
+        "stem": "POM",
+        "totalTravelSpec": 3.5,
+        "upperHousing": [
+          "POM"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "94f5fc19-ca9b-40f9-963e-f3111f3091fd",
+      "name": "OTM MagBP Magnetic Beige Pink Switch",
+      "manufacturer": {
+        "ko": "고특",
+        "en": "OUTEMU"
+      },
+      "priceKrw": 300,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": "https://s.click.aliexpress.com/e/_okJgPen",
+      "image": "/images/14d04c31-e5a1-40a0-9bbe-091a2c46b988.avif",
+      "values": {
+        "bottomOutForceSpec": 60,
+        "bottomOutHarshness": false,
+        "category": "리니어",
+        "mechanism": "magnetic",
+        "polarity": "S",
+        "startingForceSpec": 40,
+        "totalTravelSpec": 4
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "95a840f8-097e-4e8f-9a1e-a47f653fe6d3",
+      "name": "Polar Magnetic PRO",
+      "manufacturer": {
+        "ko": "Unionwell",
+        "en": "Unionwell"
+      },
+      "priceKrw": null,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/7fb66ea3-a88e-429d-8a4e-986a13453f4f.avif",
+      "values": {
+        "actuationForceSpec": 35,
+        "bottomOutForceSpec": 45,
+        "bottomOutHarshness": true,
+        "category": "리니어",
+        "lowerHousing": [
+          "POM"
+        ],
+        "mechanism": "magnetic",
+        "polarity": "N",
+        "spring": "SUS",
+        "springLength": 21,
+        "startingForceSpec": 35,
+        "stem": "POM",
+        "totalTravelSpec": 3.5,
+        "upperHousing": [
+          "POM"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "979fc349-5315-4570-abe3-32be7ad2f242",
+      "name": "ICE Cherry Blossom V1",
+      "manufacturer": {
+        "ko": "UR STUDIO",
+        "en": "UR STUDIO"
+      },
+      "priceKrw": null,
+      "status": "testing",
+      "saleStatus": "DISCONTINUED",
+      "aliUrl": null,
+      "image": null,
+      "values": {},
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "99d5bb86-7283-48ae-a4ef-578eb99a7077",
+      "name": "Silent Peach HE",
+      "manufacturer": {
+        "ko": "고특",
+        "en": "OUTEMU"
+      },
+      "priceKrw": 500,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/ab9178f8-03a9-4bab-84c5-f8ffa8daeab6.avif",
+      "values": {
+        "actuationForceSpec": 40,
+        "bottomOutForceSpec": 50,
+        "bottomOutHarshness": false,
+        "category": "리니어",
+        "eyejokerRating": "ANTICIPATING",
+        "lowerHousing": [
+          "PC"
+        ],
+        "mechanism": "magnetic",
+        "polarity": "N",
+        "spring": "싱글",
+        "stem": "POM",
+        "totalTravelSpec": 3.5,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "9a2615bc-5836-4a21-99e4-fac9730341d2",
+      "name": "Qian Magnetic Switch – Blue",
+      "manufacturer": {
+        "ko": "레샤",
+        "en": "RAESHA"
+      },
+      "priceKrw": null,
+      "status": "testing",
+      "saleStatus": "DISCONTINUED",
+      "aliUrl": null,
+      "image": "/images/89ae2b22-b44a-4a84-9e50-548ee2617943.avif",
+      "values": {
+        "bottomOutHarshness": false
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "9af7e108-13a7-45a8-be86-e4ceebd98e16",
+      "name": "Hejin Magnetic Yellow Switch 7.0 Edition",
+      "manufacturer": {
+        "ko": "그레인골드",
+        "en": "Graingold"
+      },
+      "priceKrw": 500,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": null,
+      "values": {
+        "bottomOutForceSpec": 50,
+        "bottomOutHarshness": false,
+        "category": "리니어",
+        "lowerHousing": [
+          "PA66"
+        ],
+        "mechanism": "magnetic",
+        "spring": "SUS",
+        "startingForceSpec": 35,
+        "stem": "POM",
+        "totalTravelSpec": 4,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "9b666b10-c5fe-45af-9a51-e8d72235913c",
+      "name": "Teal",
+      "manufacturer": {
+        "ko": "그레인골드",
+        "en": "Graingold"
+      },
+      "priceKrw": 600,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/f56792dc-e2c8-475c-bb9c-79db59b2c478.avif",
+      "values": {
+        "bottomOutForceSpec": 50,
+        "category": "리니어",
+        "lowerHousing": [
+          "PA66"
+        ],
+        "mechanism": "magnetic",
+        "spring": "SUS",
+        "startingForceSpec": 35,
+        "stem": "POM",
+        "totalTravelSpec": 4,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "9c755df6-5c17-43ea-bf44-fde95c0f87e2",
+      "name": "WS Dash HE",
+      "manufacturer": {
+        "ko": "우큐 스튜디오",
+        "en": "Wuque Studio"
+      },
+      "priceKrw": 1100,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/bfae012d-45d8-413a-9c34-4fe547c37aa7.avif",
+      "values": {
+        "bottomOutForceSpec": 50,
+        "category": "리니어",
+        "lowerHousing": [
+          "NYLONPA"
+        ],
+        "mechanism": "magnetic",
+        "polarity": "N",
+        "spring": "싱글",
+        "springLength": 15,
+        "startingForceSpec": 30,
+        "stem": "POM",
+        "totalTravelSpec": 3.5,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "9f81db1c-5297-4eb0-8751-81ce7426897e",
+      "name": "WS Flux Clacky Green RGB",
+      "manufacturer": {
+        "ko": "우큐 스튜디오",
+        "en": "Wuque Studio"
+      },
+      "priceKrw": 2600,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/ffc2724d-bc25-4ffa-b48c-e347c7bea44a.avif",
+      "values": {
+        "bottomOutHarshness": false,
+        "category": "리니어",
+        "lowerHousing": [
+          "PC"
+        ],
+        "polarity": "N",
+        "spring": "싱글",
+        "springLength": 18,
+        "startingForceSpec": 35,
+        "stem": "POM",
+        "totalTravelSpec": 3.5,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "a00cc8d0-c642-4749-b002-9ea8b59dccb3",
+      "name": "JADE PRO",
+      "manufacturer": {
+        "ko": "게이트론",
+        "en": "GATERON"
+      },
+      "priceKrw": 1100,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": "https://s.click.aliexpress.com/e/_oFqUSFN",
+      "image": null,
+      "values": {
+        "bottomOutForceSpec": 50,
+        "bottomOutHarshness": true,
+        "category": "리니어",
+        "earlyAccessAt": "2026-10-30T00:00:00.000Z",
+        "eyejokerRating": "ANTICIPATING",
+        "lowerHousing": [
+          "PA66"
+        ],
+        "mechanism": "magnetic",
+        "polarity": "N",
+        "publicReleaseAt": "2026-11-06T00:00:00.000Z",
+        "spring": "싱글",
+        "springLength": 20,
+        "startingForceSpec": 36,
+        "stem": "POM",
+        "totalTravelSpec": 3.5,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "a0345d8f-80d3-4496-aeb5-97a38885928f",
+      "name": "Magnetic Amber Switch",
+      "manufacturer": {
+        "ko": "매드라이온스",
+        "en": "MADLIONS"
+      },
+      "priceKrw": null,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/de964833-40eb-4007-884e-aaf0dfc64d35.avif",
+      "values": {
+        "bottomOutHarshness": false,
+        "category": "리니어",
+        "mechanism": "magnetic",
+        "polarity": "N",
+        "startingForceSpec": 30,
+        "totalTravelSpec": 4
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "a7dc75e8-ff04-450e-86b5-26c9a4adb6a5",
+      "name": "KOM(매그니토) RGB",
+      "manufacturer": {
+        "ko": "TTC",
+        "en": "TTC"
+      },
+      "priceKrw": 1300,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": "https://s.click.aliexpress.com/e/_oE78yRl",
+      "image": "/images/e1032618-e183-4cb8-8786-790f9179473c.avif",
+      "values": {
+        "bottomOutHarshness": true,
+        "category": "리니어",
+        "eyejokerRating": "ANTICIPATING",
+        "mechanism": "magnetic",
+        "polarity": "N",
+        "totalTravelSpec": 3.4
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "a7ed2db1-aef4-4d6f-934d-a14ef10b782d",
+      "name": "RAEDS HE",
+      "manufacturer": {
+        "ko": "AEBoards",
+        "en": "AEBoards"
+      },
+      "priceKrw": 900,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/926b565c-4b5f-447b-8f9d-15b13d1cc5c4.avif",
+      "values": {
+        "actuationForceSpec": 35,
+        "bottomOutHarshness": false,
+        "category": "리니어",
+        "lowerHousing": [
+          "PC"
+        ],
+        "mechanism": "magnetic",
+        "polarity": "N",
+        "spring": "러버돔",
+        "startingForceSpec": 45,
+        "stem": "POM",
+        "totalTravelSpec": 3.9,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "a85539fb-a7da-44c1-bc87-6cbe744998d5",
+      "name": "NOVA",
+      "manufacturer": {
+        "ko": "키톡",
+        "en": "KeyTok"
+      },
+      "priceKrw": 2200,
+      "status": "reviewed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/9a109890-7b09-46b8-a070-85a7a6aeea80.avif",
+      "values": {
+        "bottomOutForce": 48.854485000000004,
+        "bottomOutForceSpec": 48,
+        "bottomOutHarshness": false,
+        "category": "리니어",
+        "eyejokerRating": "HIGHLY_RECOMMENDED",
+        "hallPressedHorizontalVariationPercent": 0.29226413371084115,
+        "hallPressedVerticalVariationPercent": 0.26453819840364884,
+        "hallResolutionSteps": 10947,
+        "hallWobbleVariationPercent": "0.4%",
+        "lowerHousing": [
+          "PA12"
+        ],
+        "measurementDeviationSummary": "±1.3gf",
+        "mechanism": "magnetic",
+        "overallRatingKeyboardSwitch": "TIER_1",
+        "publicReleaseAt": "2026-08-24T23:09:32",
+        "resolutionPerMm": 331,
+        "spring": "싱글",
+        "springLength": 21,
+        "startingForce": 35.513165,
+        "startingForceSpec": 35,
+        "stem": "PA12",
+        "totalTravelSpec": 3.4,
+        "travelDistance": 3.302272,
+        "travelMeasurementDeviationMm": 0.0067153522617954264,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "a92a4c75-b9ca-450c-8698-8cc6c316ec2d",
+      "name": "RAW HE 60g",
+      "manufacturer": {
+        "ko": "지온웍스",
+        "en": "GEONWORKS"
+      },
+      "priceKrw": 600,
+      "status": "arrived",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": "https://s.click.aliexpress.com/e/_o2CiisB",
+      "image": null,
+      "values": {
+        "bottomOutForceSpec": 60,
+        "bottomOutHarshness": true,
+        "category": "리니어",
+        "eyejokerRating": "ANTICIPATING",
+        "mechanism": "magnetic",
+        "polarity": "N",
+        "spring": "싱글(비자성)",
+        "springLength": 15,
+        "stem": "POM",
+        "stemLength": 11,
+        "totalTravelSpec": 3.4,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "a981a9bb-0442-47c4-805e-e23217ea68f0",
+      "name": "Very Peri Magnetic Switch V2",
+      "manufacturer": {
+        "ko": "바로",
+        "en": "VARO"
+      },
+      "priceKrw": null,
+      "status": "testing",
+      "saleStatus": "unreleased",
+      "aliUrl": null,
+      "image": null,
+      "values": {},
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "aa18cfc1-d234-4799-a104-4f2ef94b5a10",
+      "name": "Everfree(Fire68기본)",
+      "manufacturer": {
+        "ko": "매드라이온스",
+        "en": "MADLIONS"
+      },
+      "priceKrw": null,
+      "status": "proposed",
+      "saleStatus": "DISCONTINUED",
+      "aliUrl": null,
+      "image": null,
+      "values": {
+        "bottomOutHarshness": false,
+        "category": "리니어",
+        "eyejokerRating": "ANTICIPATING",
+        "mechanism": "magnetic",
+        "polarity": "N"
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "aa9d2e79-584c-4943-a8f5-708a8e307c78",
+      "name": "Jade",
+      "manufacturer": {
+        "ko": "게이트론",
+        "en": "GATERON"
+      },
+      "priceKrw": 1000,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/f0dbbb8c-983a-4f64-b3c2-6bbc762f7544.avif",
+      "values": {
+        "bottomOutForceSpec": 50,
+        "bottomOutHarshness": false,
+        "category": "리니어",
+        "lowerHousing": [
+          "PA66"
+        ],
+        "mechanism": "magnetic",
+        "polarity": "N",
+        "spring": "싱글",
+        "startingForceSpec": 30,
+        "stem": "POM",
+        "totalTravelSpec": 3.5,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "aae25f27-f7e1-4a90-9852-d7c17968284a",
+      "name": "ICE Extreme",
+      "manufacturer": {
+        "ko": "UR STUDIO",
+        "en": "UR STUDIO"
+      },
+      "priceKrw": 600,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/daf7fdea-67ef-4760-8fac-0e1cafeca31d.avif",
+      "values": {
+        "actuationForceSpec": 35,
+        "bottomOutForceSpec": 50,
+        "bottomOutHarshness": true,
+        "category": "리니어",
+        "eyejokerRating": "ANTICIPATING",
+        "lowerHousing": [
+          "PC"
+        ],
+        "mechanism": "magnetic",
+        "polarity": "N",
+        "spring": "SUS",
+        "springLength": 22,
+        "startingForceSpec": 35,
+        "stem": "PC",
+        "totalTravelSpec": 3.5,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "aaed6f07-8bad-4e44-a54a-18c04dc7d03b",
+      "name": "자석축 초기형(매그니톡스)",
+      "manufacturer": {
+        "ko": "카일",
+        "en": "Kailh"
+      },
+      "priceKrw": 600,
+      "status": "proposed",
+      "saleStatus": "DISCONTINUED",
+      "aliUrl": null,
+      "image": "/images/70bf2f60-fdb8-4ae6-964d-0831c4f0eead.avif",
+      "values": {
+        "bottomOutForceSpec": 65,
+        "bottomOutHarshness": false,
+        "category": "리니어",
+        "lowerHousing": [
+          "POM"
+        ],
+        "mechanism": "magnetic",
+        "polarity": "S",
+        "spring": "싱글",
+        "startingForceSpec": 30,
+        "stem": "POM",
+        "totalTravelSpec": 3.8,
+        "upperHousing": [
+          "POM"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "ad476951-2519-456d-b704-1c406d96b543",
+      "name": "Flash Magnetic Switch",
+      "manufacturer": {
+        "ko": "아코",
+        "en": "Akko"
+      },
+      "priceKrw": 500,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/014d535b-1f51-4078-a1d9-eeab51f77a17.avif",
+      "values": {
+        "bottomOutHarshness": false,
+        "category": "리니어",
+        "mechanism": "magnetic"
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "ad7ffca3-1a34-4b27-8205-21598b0bca1d",
+      "name": "KOM(매그니토) 초기 배치",
+      "manufacturer": {
+        "ko": "TTC",
+        "en": "TTC"
+      },
+      "priceKrw": 1100,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/b8b62549-da1a-4271-8382-78e9097fe470.avif",
+      "values": {
+        "bottomOutHarshness": true,
+        "category": "리니어",
+        "mechanism": "magnetic",
+        "polarity": "N",
+        "totalTravelSpec": 3.5
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "af64c443-270d-4b28-8a0e-41b5915a7e98",
+      "name": "오공",
+      "manufacturer": {
+        "ko": "에버글라이드",
+        "en": "EVERGLIDE"
+      },
+      "priceKrw": 2100,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": "https://s.click.aliexpress.com/e/_olWCLy7",
+      "image": "/images/cff82831-a467-4567-bd0f-bb36bf4ec31d.avif",
+      "values": {
+        "bottomOutForceSpec": 47,
+        "bottomOutHarshness": false,
+        "category": "리니어",
+        "lowerHousing": [
+          "PC"
+        ],
+        "mechanism": "magnetic",
+        "springLength": 16,
+        "stem": "POM",
+        "totalTravelSpec": 3.4,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "aff2c8ac-6f66-4ec7-b821-5819da60ad56",
+      "name": "WS Flux Agate (마노)",
+      "manufacturer": {
+        "ko": "우큐 스튜디오",
+        "en": "Wuque Studio"
+      },
+      "priceKrw": null,
+      "status": "purchased",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": null,
+      "values": {
+        "category": "리니어",
+        "mechanism": "magnetic"
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "b0c531a6-f9fb-4262-9a37-a83706331368",
+      "name": "JADE MAX",
+      "manufacturer": {
+        "ko": "게이트론",
+        "en": "GATERON"
+      },
+      "priceKrw": 1300,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": "https://s.click.aliexpress.com/e/_oogIieT",
+      "image": null,
+      "values": {
+        "bottomOutHarshness": true,
+        "category": "리니어",
+        "eyejokerRating": "ANTICIPATING",
+        "lowerHousing": [
+          "PA12"
+        ],
+        "mechanism": "magnetic",
+        "polarity": "N",
+        "spring": "금도금",
+        "startingForceSpec": 36,
+        "stem": "PC",
+        "totalTravelSpec": 3.5,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "b3aa33d4-34c8-479e-98ea-0386e6e4bf32",
+      "name": "Ti HE 40g",
+      "manufacturer": {
+        "ko": "오울랩",
+        "en": "Owlab"
+      },
+      "priceKrw": 600,
+      "status": "reviewed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": "https://s.click.aliexpress.com/e/_oCNI96R",
+      "image": null,
+      "values": {
+        "actuationForceSpec": 40,
+        "bottomOutForce": 41.44316666666666,
+        "bottomOutForceSpec": 40,
+        "bottomOutHarshness": false,
+        "category": "리니어",
+        "eyejokerRating": "RECOMMENDED",
+        "hallPressedHorizontalVariationPercent": 0.4645760743321719,
+        "hallPressedVerticalVariationPercent": 0.6376446225183425,
+        "hallResolutionSteps": 11166,
+        "hallWobbleVariationPercent": "0.6%",
+        "lowerHousing": [
+          "NYLON"
+        ],
+        "measurementDeviationSummary": "±1.1gf",
+        "mechanism": "magnetic",
+        "overallRatingKeyboardSwitch": "TIER_1",
+        "polarity": "N",
+        "publicReleaseAt": "2026-08-24T16:39:17Z",
+        "resolutionPerMm": 331,
+        "spring": "싱글",
+        "springLength": 22,
+        "startingForce": 27.225454545454546,
+        "stem": "POM",
+        "totalTravelSpec": 3.4,
+        "travelDistance": 3.377583333333334,
+        "travelMeasurementDeviationMm": 0.025286552201164575,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "b47715f2-8ab0-4e57-8761-5c4bf8d885f7",
+      "name": "RAW HE 40g Sample",
+      "manufacturer": {
+        "ko": "지온웍스",
+        "en": "GEONWORKS"
+      },
+      "priceKrw": null,
+      "status": "testing",
+      "saleStatus": "DISCONTINUED",
+      "aliUrl": null,
+      "image": null,
+      "values": {
+        "bottomOutForceSpec": 40,
+        "bottomOutHarshness": true,
+        "category": "리니어",
+        "eyejokerRating": "ANTICIPATING",
+        "lowerHousing": [
+          "NYLON"
+        ],
+        "mechanism": "magnetic",
+        "polarity": "N",
+        "spring": "싱글(비자성)",
+        "springLength": 15,
+        "stem": "POM",
+        "stemLength": 11,
+        "totalTravelSpec": 3.4,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "b4cf9855-8ad8-47a9-8370-1d3ce8f4ea9a",
+      "name": "LUBAN Magnetic Switch",
+      "manufacturer": {
+        "ko": "다얼유",
+        "en": "DAREU"
+      },
+      "priceKrw": null,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": null,
+      "values": {
+        "mechanism": "magnetic"
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "b86af6b3-5918-47da-8d5d-c2990232d99e",
+      "name": "Raptor v2",
+      "manufacturer": {
+        "ko": "지온웍스",
+        "en": "GEONWORKS"
+      },
+      "priceKrw": 500,
+      "status": "reviewed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/a07894bc-1424-4645-b366-ddd84ad4f803.avif",
+      "values": {
+        "bottomOutForce": 48.33103541666666,
+        "bottomOutForceSpec": 45,
+        "bottomOutHarshness": false,
+        "category": "리니어",
+        "eyejokerRating": "MILD_RECOMMENDATION",
+        "hallPressedHorizontalVariationPercent": 0.19883410908762256,
+        "hallPressedVerticalVariationPercent": 0.18916354105472719,
+        "hallResolutionSteps": 11065,
+        "hallWobbleVariationPercent": "0.2%",
+        "lowerHousing": [
+          "NYLON"
+        ],
+        "measurementDeviationSummary": "±2.1gf",
+        "mechanism": "magnetic",
+        "overallRatingKeyboardSwitch": "TIER_2",
+        "publicReleaseAt": "2026-08-24T16:39:17Z",
+        "resolutionPerMm": 328,
+        "spring": "싱글",
+        "springLength": 19.5,
+        "startingForce": 34.36097958333334,
+        "startingForceSpec": 35,
+        "stem": "POM",
+        "totalTravelSpec": 3.4,
+        "travelDistance": 3.3710550000000006,
+        "travelMeasurementDeviationMm": 0.018164511416495596,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "b91047ab-912d-48de-8337-c3084c7919c8",
+      "name": "QuickSilver Ghost 42g 블랙",
+      "manufacturer": {
+        "ko": "프리플로우",
+        "en": "Preflow"
+      },
+      "priceKrw": 300,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/9dd978af-75d9-44b1-90af-52c1ac645297.avif",
+      "values": {
+        "bottomOutForceSpec": 45,
+        "bottomOutHarshness": false,
+        "category": "리니어",
+        "lowerHousing": [
+          "PC"
+        ],
+        "polarity": "N",
+        "startingForceSpec": 37,
+        "stem": "POM",
+        "totalTravelSpec": 2.8,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "ba8c4716-9fbf-462c-a426-bafdde4a7919",
+      "name": "silent magnetic",
+      "manufacturer": {
+        "ko": "하이무",
+        "en": "Haimu"
+      },
+      "priceKrw": null,
+      "status": "testing",
+      "saleStatus": "DISCONTINUED",
+      "aliUrl": null,
+      "image": null,
+      "values": {},
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "bacb6302-bdd6-478b-bb0f-b73362ab3037",
+      "name": "VAROX하이무 샘플",
+      "manufacturer": {
+        "ko": "바로",
+        "en": "VARO"
+      },
+      "priceKrw": null,
+      "status": "testing",
+      "saleStatus": "DISCONTINUED",
+      "aliUrl": null,
+      "image": null,
+      "values": {},
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "bbfe1386-4cf2-489b-ab2d-06e9eb96e482",
+      "name": "Lekker L45 v2",
+      "manufacturer": {
+        "ko": "우팅",
+        "en": "Wooting"
+      },
+      "priceKrw": 900,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/7f59ee56-7a3d-4a69-a630-155b495eaf98.avif",
+      "values": {
+        "bottomOutForceSpec": 45,
+        "bottomOutHarshness": false,
+        "category": "리니어",
+        "lowerHousing": [
+          "NYLON"
+        ],
+        "mechanism": "magnetic",
+        "spring": "싱글(비자성)",
+        "startingForceSpec": 30,
+        "stem": "POM",
+        "totalTravelSpec": 4,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "be573c53-9013-48ce-8fb4-6e57c70522d8",
+      "name": "Ice Blade Magnetic Switch",
+      "manufacturer": {
+        "ko": "ATK",
+        "en": "ATK"
+      },
+      "priceKrw": 600,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/68c6b386-4f35-4342-9d37-945b223b42ba.avif",
+      "values": {
+        "category": "리니어",
+        "mechanism": "magnetic",
+        "stem": "POM",
+        "totalTravelSpec": 3.3
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "c05f02bb-140d-479d-8260-2241052787bc",
+      "name": "QuickSilver Longpring 40g",
+      "manufacturer": {
+        "ko": "프리플로우",
+        "en": "Preflow"
+      },
+      "priceKrw": 300,
+      "status": "testing",
+      "saleStatus": "DISCONTINUED",
+      "aliUrl": null,
+      "image": "/images/3b2662e8-f75a-4f52-9842-4cb16500fc29.avif",
+      "values": {
+        "bottomOutForceSpec": 45,
+        "bottomOutHarshness": false,
+        "category": "리니어",
+        "lowerHousing": [
+          "PC"
+        ],
+        "polarity": "N",
+        "startingForceSpec": 35,
+        "stem": "POM",
+        "totalTravelSpec": 3.3,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "c0662b23-5a65-4547-ae14-b5b172a8f74a",
+      "name": "POLARIS2",
+      "manufacturer": {
+        "ko": "한성컴퓨터",
+        "en": "HANSUNG"
+      },
+      "priceKrw": 600,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": null,
+      "values": {
+        "mechanism": "magnetic"
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "c09e1c2e-cb08-42de-a447-f5133fb61425",
+      "name": "Flux Clacky(팔보)",
+      "manufacturer": {
+        "ko": "우큐 스튜디오",
+        "en": "Wuque Studio"
+      },
+      "priceKrw": 1300,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/b02f1fbb-9975-45cb-b62d-6beffdfab28a.avif",
+      "values": {
+        "bottomOutForceSpec": 50,
+        "bottomOutHarshness": false,
+        "category": "리니어",
+        "lowerHousing": [
+          "PA66"
+        ],
+        "mechanism": "magnetic",
+        "springLength": 18,
+        "startingForceSpec": 35,
+        "stem": "POM",
+        "totalTravelSpec": 3.5,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "c224a0ba-6e34-493a-a7e8-21ea89656092",
+      "name": "Herz",
+      "manufacturer": {
+        "ko": "듀훅",
+        "en": "DUHUK"
+      },
+      "priceKrw": 400,
+      "status": "reviewed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/3927cfea-898b-47fa-8f3b-425fb9161cfe.avif",
+      "values": {
+        "actuationForceSpec": 35,
+        "bottomOutForce": 49.08441666666667,
+        "bottomOutForceSpec": 42,
+        "bottomOutHarshness": true,
+        "category": "리니어",
+        "eyejokerRating": "RECOMMENDED",
+        "hallPressedHorizontalVariationPercent": 0.5460499753263701,
+        "hallPressedVerticalVariationPercent": 0.6448342380332779,
+        "hallResolutionSteps": 11096,
+        "hallWobbleVariationPercent": "0.6%",
+        "lowerHousing": [
+          "PA66"
+        ],
+        "measurementDeviationSummary": "±0.2gf",
+        "mechanism": "magnetic",
+        "overallRatingKeyboardSwitch": "TIER_0",
+        "polarity": "N",
+        "publicReleaseAt": "2026-08-24T16:39:17Z",
+        "resolutionPerMm": 329,
+        "spring": "싱글",
+        "springLength": 15.5,
+        "startingForce": 30.394666666666666,
+        "startingForceSpec": 30,
+        "stem": "POM",
+        "totalTravelSpec": 3.3,
+        "travelDistance": 3.3708333333333336,
+        "travelMeasurementDeviationMm": 0.00037267799624992394,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "c3b92377-00c8-45a9-8092-a48e1bfb96be",
+      "name": "AstroAim",
+      "manufacturer": {
+        "ko": "아코",
+        "en": "Akko"
+      },
+      "priceKrw": null,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/791555c2-ec7e-4df6-8ef0-541a8668a6e2.avif",
+      "values": {
+        "mechanism": "magnetic"
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "c5685de9-f68d-4af0-8cf1-0fcb88c876cc",
+      "name": "Lekker L45",
+      "manufacturer": {
+        "ko": "그레인골드",
+        "en": "Graingold"
+      },
+      "priceKrw": 700,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/32c7ae6e-ea1e-4b8f-89f3-357af23c7444.avif",
+      "values": {
+        "bottomOutForceSpec": 45,
+        "bottomOutHarshness": false,
+        "category": "리니어",
+        "lowerHousing": [
+          "NYLON"
+        ],
+        "mechanism": "magnetic",
+        "polarity": "N",
+        "spring": "싱글(비자성)",
+        "startingForceSpec": 30,
+        "stem": "POM",
+        "totalTravelSpec": 4,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "c5dfbf48-8242-4f9b-a0dd-18ff3184a481",
+      "name": "Lemon Magnetic Click Switch",
+      "manufacturer": {
+        "ko": "FL CMMK",
+        "en": "FL CMMK"
+      },
+      "priceKrw": 600,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": null,
+      "values": {
+        "category": "클릭",
+        "mechanism": "magnetic"
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "c657cf88-3ca4-4c62-a7e4-18fe431055d7",
+      "name": "Freya Silent HE",
+      "manufacturer": {
+        "ko": "NDIY",
+        "en": "NDIY"
+      },
+      "priceKrw": null,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": null,
+      "values": {
+        "category": "리니어",
+        "mechanism": "magnetic",
+        "stem": "POM"
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "c6f03306-2845-457c-8718-f916400c3046",
+      "name": "KOM Pro",
+      "manufacturer": {
+        "ko": "TTC",
+        "en": "TTC"
+      },
+      "priceKrw": 2200,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/f2b8dbe6-350e-465c-ba0f-55d29232b149.avif",
+      "values": {
+        "bottomOutHarshness": true,
+        "category": "리니어",
+        "mechanism": "magnetic",
+        "polarity": "N",
+        "spring": "싱글",
+        "springLength": 21,
+        "startingForceSpec": 35,
+        "stem": "POM",
+        "totalTravelSpec": 3.4,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "c83ef3b6-1b32-4f03-9a7a-3aad67ba7e6b",
+      "name": "C1",
+      "manufacturer": {
+        "ko": "MMD",
+        "en": "MMD"
+      },
+      "priceKrw": 400,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/a3ca0107-4268-4a81-97ce-fbb07ed98170.avif",
+      "values": {
+        "bottomOutHarshness": false,
+        "eyejokerRating": "ANTICIPATING",
+        "mechanism": "magnetic"
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "c8e84856-fbe2-4d7c-bdb5-d6185d196126",
+      "name": "Horse HE OG White (백마)",
+      "manufacturer": {
+        "ko": "TTC",
+        "en": "TTC"
+      },
+      "priceKrw": null,
+      "status": "purchased",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": null,
+      "values": {
+        "category": "리니어",
+        "mechanism": "magnetic"
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "ca9fd526-48ff-4c9e-9499-c0a9e63d2871",
+      "name": "Yaoguang Magnetic Switch",
+      "manufacturer": {
+        "ko": "Unionwell",
+        "en": "Unionwell"
+      },
+      "priceKrw": 7000,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/fef298d6-e14a-4c20-82e4-7b92d7d47425.avif",
+      "values": {
+        "bottomOutForceSpec": 45,
+        "category": "리니어",
+        "lowerHousing": [
+          "POM"
+        ],
+        "polarity": "N",
+        "spring": "SUS",
+        "springLength": 21,
+        "startingForceSpec": 35,
+        "stem": "POM",
+        "totalTravelSpec": 3.2,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "cb282cb4-a0c2-4d72-b5ec-46f7ee95ecdd",
+      "name": "Magnetic Jade Ruby HE",
+      "manufacturer": {
+        "ko": "게이트론",
+        "en": "GATERON"
+      },
+      "priceKrw": 2100,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/2b53f16b-a88d-423b-a0e8-1f4085981917.avif",
+      "values": {
+        "bottomOutForceSpec": 50,
+        "category": "리니어",
+        "eyejokerRating": "ANTICIPATING",
+        "lowerHousing": [
+          "PA66"
+        ],
+        "mechanism": "magnetic",
+        "polarity": "N",
+        "spring": "싱글",
+        "springLength": 20,
+        "startingForceSpec": 36,
+        "stem": "POM",
+        "totalTravelSpec": 3.5,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "cc5d5b4b-36c8-437e-b97a-0b7af851537e",
+      "name": "Jellyfish",
+      "manufacturer": {
+        "ko": "카일",
+        "en": "Kailh"
+      },
+      "priceKrw": null,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": null,
+      "values": {
+        "eyejokerRating": "ANTICIPATING",
+        "mechanism": "magnetic"
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "cc66296b-9a42-4197-afe1-29071cab5676",
+      "name": "Polar Magnetic PRO+",
+      "manufacturer": {
+        "ko": "Unionwell",
+        "en": "Unionwell"
+      },
+      "priceKrw": null,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/84d4b4b7-c95c-4f23-9c94-5931ea3c3af1.avif",
+      "values": {
+        "bottomOutHarshness": false,
+        "category": "리니어",
+        "lowerHousing": [
+          "POM"
+        ],
+        "mechanism": "magnetic",
+        "springLength": 21,
+        "startingForceSpec": 35,
+        "stem": "POM",
+        "totalTravelSpec": 3.5,
+        "upperHousing": [
+          "POM"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "cc7a0e15-55f8-4725-8a53-3caf429c8540",
+      "name": "UFO",
+      "manufacturer": {
+        "ko": "그라바스타",
+        "en": "Gravastar"
+      },
+      "priceKrw": 2500,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/aec60f45-01d7-45d5-99f1-9ada33a13a69.avif",
+      "values": {
+        "bottomOutHarshness": false,
+        "category": "리니어",
+        "eyejokerRating": "ANTICIPATING",
+        "mechanism": "magnetic",
+        "polarity": "N"
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "cfcd59c6-1c13-4ca5-bef9-ea000b004a86",
+      "name": "Lekker L60 V1",
+      "manufacturer": {
+        "ko": "우팅",
+        "en": "Wooting"
+      },
+      "priceKrw": 700,
+      "status": "testing",
+      "saleStatus": "DISCONTINUED",
+      "aliUrl": null,
+      "image": "/images/0de30a8e-bbd4-453a-8529-af3a20740e90.avif",
+      "values": {
+        "bottomOutForceSpec": 60,
+        "bottomOutHarshness": false,
+        "category": "리니어",
+        "lowerHousing": [
+          "NYLON"
+        ],
+        "mechanism": "magnetic",
+        "polarity": "N",
+        "spring": "싱글(비자성)",
+        "startingForceSpec": 40,
+        "stem": "POM",
+        "totalTravelSpec": 4,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "d288bc29-b478-4aa4-9696-7c079a2d2772",
+      "name": "Very Peri Magnetic",
+      "manufacturer": {
+        "ko": "바로",
+        "en": "VARO"
+      },
+      "priceKrw": null,
+      "status": "testing",
+      "saleStatus": "DISCONTINUED",
+      "aliUrl": null,
+      "image": "/images/ce3ea4fe-7436-4158-8425-01994214592c.avif",
+      "values": {
+        "bottomOutHarshness": false,
+        "category": "리니어",
+        "eyejokerRating": "ANTICIPATING",
+        "mechanism": "magnetic"
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "d29c78d8-1fb1-4c24-85f8-eff3d20447c5",
+      "name": "Strawberry Magnetic Switch",
+      "manufacturer": {
+        "ko": "라텐포우",
+        "en": "LATENPOW"
+      },
+      "priceKrw": 400,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/0e3f55b5-07bd-4b4e-98b4-15e8fb6320db.avif",
+      "values": {
+        "actuationForceSpec": 30,
+        "category": "리니어",
+        "lowerHousing": [
+          "POM"
+        ],
+        "mechanism": "magnetic",
+        "stem": "POM",
+        "totalTravelSpec": 4,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "d366cd96-04d3-4e04-8cb3-21218c8504a0",
+      "name": "Uranus Standard",
+      "manufacturer": {
+        "ko": "TTC",
+        "en": "TTC"
+      },
+      "priceKrw": 800,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": "https://s.click.aliexpress.com/e/_olazJ9H",
+      "image": "/images/fa1cca40-cbe1-420c-9e81-7e80deced4ef.avif",
+      "values": {
+        "bottomOutHarshness": true,
+        "category": "리니어",
+        "eyejokerRating": "ANTICIPATING",
+        "lowerHousing": [
+          "NYLON"
+        ],
+        "mechanism": "magnetic",
+        "polarity": "N",
+        "spring": "싱글",
+        "springLength": 18,
+        "startingForceSpec": 32,
+        "totalTravelSpec": 3.5,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "d3e2d50d-8216-4396-8c67-6f242aaa3e16",
+      "name": "KS-20B Dual Rail White",
+      "manufacturer": {
+        "ko": "게이트론",
+        "en": "GATERON"
+      },
+      "priceKrw": 900,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": null,
+      "values": {
+        "bottomOutForceSpec": 50,
+        "category": "리니어",
+        "lowerHousing": [
+          "NYLON"
+        ],
+        "mechanism": "magnetic",
+        "startingForceSpec": 30,
+        "stem": "POM",
+        "totalTravelSpec": 4,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "d6272579-2eb6-4d44-b5bf-ba55ffb9259f",
+      "name": "BLUE ICE HE",
+      "manufacturer": {
+        "ko": "UR STUDIO",
+        "en": "UR STUDIO"
+      },
+      "priceKrw": null,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/6b97b047-541b-47a6-b9e7-085da72d3ae6.avif",
+      "values": {
+        "actuationForceSpec": 35,
+        "bottomOutForceSpec": 50,
+        "bottomOutHarshness": false,
+        "category": "리니어",
+        "lowerHousing": [
+          "PC"
+        ],
+        "mechanism": "magnetic",
+        "polarity": "N",
+        "spring": "SUS",
+        "springLength": 22,
+        "startingForceSpec": 35,
+        "stem": "POM",
+        "totalTravelSpec": 3.5,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "d8f391b0-2d77-4e5b-844b-6e73ce9b6c7c",
+      "name": "WS Flux Pink Lotus",
+      "manufacturer": {
+        "ko": "우큐 스튜디오",
+        "en": "Wuque Studio"
+      },
+      "priceKrw": 1300,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/71dece26-3a46-4e94-847a-ee83444d45f7.avif",
+      "values": {
+        "bottomOutForceSpec": 50,
+        "category": "리니어",
+        "lowerHousing": [
+          "NYLON"
+        ],
+        "mechanism": "magnetic",
+        "springLength": 18,
+        "startingForceSpec": 35,
+        "stem": "POM",
+        "totalTravelSpec": 3.5,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "d93c8838-ef6b-43e0-9098-854ec23a8c73",
+      "name": "우라누스 SE",
+      "manufacturer": {
+        "ko": "TTC",
+        "en": "TTC"
+      },
+      "priceKrw": null,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/5239c202-3a36-444c-bd9d-e53f09e154c0.avif",
+      "values": {
+        "category": "리니어",
+        "mechanism": "magnetic",
+        "polarity": "N"
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "df5c83d2-1f26-401f-aef0-57f0f417f7ae",
+      "name": "Ivy Magnetic Switch",
+      "manufacturer": {
+        "ko": "FL CMMK",
+        "en": "FL CMMK"
+      },
+      "priceKrw": 500,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": null,
+      "values": {
+        "category": "리니어",
+        "lowerHousing": [
+          "PA66"
+        ],
+        "mechanism": "magnetic",
+        "stem": "POK",
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "e0cf69a2-fd1f-4085-b4f9-d8ac2b77e7eb",
+      "name": "Key Magnetic 700Gs",
+      "manufacturer": {
+        "ko": "듀훅",
+        "en": "DUHUK"
+      },
+      "priceKrw": null,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/5df8de7d-2148-40d2-a005-dc39929d6311.avif",
+      "values": {
+        "bottomOutForceSpec": 42,
+        "category": "리니어",
+        "lowerHousing": [
+          "PA66"
+        ],
+        "mechanism": "magnetic",
+        "spring": "싱글(비자성)",
+        "springLength": 15.5,
+        "startingForceSpec": 35,
+        "stem": "POM",
+        "totalTravelSpec": 3.3,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "e2952f94-44c8-4439-8b65-46e122ffdc8c",
+      "name": "Magnetic God Switch",
+      "manufacturer": {
+        "ko": "카일",
+        "en": "Kailh"
+      },
+      "priceKrw": 800,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/03b760da-6057-4760-b3df-bb4e9f6c68d6.avif",
+      "values": {
+        "category": "리니어",
+        "mechanism": "magnetic",
+        "startingForceSpec": 35,
+        "totalTravelSpec": 3.5,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "e2c95b66-6a47-451f-832f-6a94889253a3",
+      "name": "Six Realms HE HiFi",
+      "manufacturer": {
+        "ko": "오프스튜디오 x TNT",
+        "en": "OFF Studio x TNT"
+      },
+      "priceKrw": 700,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/a6e722f8-bf1c-4bbd-85d0-35d777c7b66a.avif",
+      "values": {
+        "bottomOutForceSpec": 50,
+        "category": "리니어",
+        "eyejokerRating": "ANTICIPATING",
+        "lowerHousing": [
+          "PA66"
+        ],
+        "mechanism": "magnetic",
+        "polarity": "N",
+        "spring": "SUS",
+        "springLength": 18,
+        "startingForceSpec": 35,
+        "stem": "POM",
+        "totalTravelSpec": 3.5,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "e4185b7a-0891-4628-8c6c-65b86eeaad6f",
+      "name": "Magnetic Spark Pink",
+      "manufacturer": {
+        "ko": "게이트론",
+        "en": "GATERON"
+      },
+      "priceKrw": 2900,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/059ececc-6b9a-407b-bace-00878f7514e4.avif",
+      "values": {
+        "bottomOutForceSpec": 45,
+        "category": "리니어",
+        "lowerHousing": [
+          "PA66"
+        ],
+        "mechanism": "magnetic",
+        "polarity": "N",
+        "spring": "싱글",
+        "springLength": 22,
+        "startingForceSpec": 33,
+        "stem": "PC",
+        "totalTravelSpec": 3.2,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "e444b49f-5a45-4278-9404-370f85e0e16a",
+      "name": "KOM POM",
+      "manufacturer": {
+        "ko": "TTC",
+        "en": "TTC"
+      },
+      "priceKrw": 1400,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/fce30e66-3993-4b49-b3d9-e58af8abe71c.avif",
+      "values": {
+        "bottomOutHarshness": false,
+        "category": "리니어",
+        "eyejokerRating": "ANTICIPATING",
+        "mechanism": "magnetic",
+        "polarity": "N"
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "e7441365-6be0-4d37-a65a-7134cccffe49",
+      "name": "ICE Blossom V2",
+      "manufacturer": {
+        "ko": "UR STUDIO",
+        "en": "UR STUDIO"
+      },
+      "priceKrw": 500,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": null,
+      "values": {
+        "mechanism": "magnetic"
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "e944c2e7-06ac-4508-91cf-750f3d32cf80",
+      "name": "FOCUS HE",
+      "manufacturer": {
+        "ko": "타이거 게이밍",
+        "en": "ESPTiger"
+      },
+      "priceKrw": 900,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/c3f20007-b291-453c-b13b-3b9b74b838c4.avif",
+      "values": {
+        "actuationForceSpec": 33,
+        "bottomOutForceSpec": 50,
+        "category": "리니어",
+        "eyejokerRating": "ANTICIPATING",
+        "mechanism": "magnetic",
+        "polarity": "N",
+        "spring": "싱글",
+        "springLength": 16,
+        "startingForceSpec": 33,
+        "totalTravelSpec": 3.3
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "ea58e639-4183-4ea4-8499-6163c42a4938",
+      "name": "Lucifer HE",
+      "manufacturer": {
+        "ko": "지온웍스",
+        "en": "GEONWORKS"
+      },
+      "priceKrw": 300,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/39f21646-35f8-4812-a508-4deca1bad01f.avif",
+      "values": {
+        "bottomOutForceSpec": 45,
+        "bottomOutHarshness": false,
+        "category": "리니어",
+        "lowerHousing": [
+          "NYLON"
+        ],
+        "mechanism": "magnetic",
+        "polarity": "N",
+        "spring": "싱글",
+        "springLength": 15.8,
+        "stem": "POM",
+        "totalTravelSpec": 3.8,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "ea898f6b-6a86-465b-afdc-4a8c230a45fb",
+      "name": "자석축 신형(매그니톡스)",
+      "manufacturer": {
+        "ko": "카일",
+        "en": "Kailh"
+      },
+      "priceKrw": null,
+      "status": "arrived",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": "https://s.click.aliexpress.com/e/_omUXQmL",
+      "image": "/images/5eb1fa4d-a22b-47f6-80a0-25594ac700bc.avif",
+      "values": {
+        "bottomOutForceSpec": 55,
+        "bottomOutHarshness": false,
+        "category": "리니어",
+        "eyejokerRating": "ANTICIPATING",
+        "mechanism": "magnetic",
+        "polarity": "N",
+        "startingForceSpec": 35,
+        "totalTravelSpec": 3.8
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "ec332fe0-576e-4181-b697-f617ec984720",
+      "name": "QuickSilver(3세대?)",
+      "manufacturer": {
+        "ko": "프리플로우",
+        "en": "Preflow"
+      },
+      "priceKrw": 300,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": null,
+      "values": {
+        "bottomOutHarshness": false,
+        "category": "리니어",
+        "eyejokerRating": "ANTICIPATING",
+        "mechanism": "magnetic",
+        "polarity": "N"
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "ec573961-8e57-48b1-be32-87f8b669b750",
+      "name": "Horse HE OG Black (흑마)",
+      "manufacturer": {
+        "ko": "TTC",
+        "en": "TTC"
+      },
+      "priceKrw": null,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/646aae96-1538-44ba-a45d-a8d221505981.avif",
+      "values": {
+        "bottomOutHarshness": false,
+        "category": "리니어",
+        "mechanism": "magnetic"
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "f0263fb1-e229-44a9-89f8-26c0848719a5",
+      "name": "ICE MAX",
+      "manufacturer": {
+        "ko": "UR STUDIO",
+        "en": "UR STUDIO"
+      },
+      "priceKrw": null,
+      "status": "proposed",
+      "saleStatus": "DISCONTINUED",
+      "aliUrl": null,
+      "image": null,
+      "values": {
+        "bottomOutHarshness": false,
+        "eyejokerRating": "ANTICIPATING",
+        "mechanism": "magnetic"
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "f0ae2e0c-34e3-4200-ae23-3d17298a272b",
+      "name": "Jade LP",
+      "manufacturer": {
+        "ko": "게이트론",
+        "en": "GATERON"
+      },
+      "priceKrw": null,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": "https://s.click.aliexpress.com/e/_opZU6ZZ",
+      "image": "/images/0fc63579-459a-4505-97fb-8567683cf334.avif",
+      "values": {
+        "bottomOutForceSpec": 50,
+        "bottomOutHarshness": false,
+        "category": "리니어",
+        "mechanism": "magnetic",
+        "springLength": 18,
+        "startingForceSpec": 30,
+        "totalTravelSpec": 3.5
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "f0f94842-29e2-467f-82bf-bf230ab5631b",
+      "name": "AIGLASTON",
+      "manufacturer": {
+        "ko": "HMX",
+        "en": "HMX"
+      },
+      "priceKrw": 600,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": null,
+      "values": {
+        "bottomOutHarshness": false,
+        "eyejokerRating": "ANTICIPATING",
+        "mechanism": "magnetic"
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "f31c4c04-fae8-4802-a150-22a1299d4fc2",
+      "name": "WS Diamond Cullinan",
+      "manufacturer": {
+        "ko": "우큐 스튜디오",
+        "en": "Wuque Studio"
+      },
+      "priceKrw": 2400,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/5d69806e-bc6a-4158-94d2-d6f25a21782a.avif",
+      "values": {
+        "bottomOutHarshness": false,
+        "category": "리니어",
+        "mechanism": "magnetic"
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "f379a946-eb5e-4914-9362-96d19e17f0c5",
+      "name": "라벤더 HE",
+      "manufacturer": {
+        "ko": "쿼티키스(네오)",
+        "en": "Qwertykeys(Neo)"
+      },
+      "priceKrw": 600,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": null,
+      "values": {
+        "bottomOutForceSpec": 52,
+        "bottomOutHarshness": true,
+        "category": "리니어",
+        "eyejokerRating": "ANTICIPATING",
+        "lowerHousing": [
+          "PA66"
+        ],
+        "mechanism": "magnetic",
+        "polarity": "N",
+        "spring": "싱글",
+        "springLength": 16,
+        "startingForceSpec": 42,
+        "stem": "POM",
+        "stemLength": 10.95,
+        "totalTravelSpec": 3.8,
+        "upperHousing": [
+          "PA12"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "f6df4e05-55b1-4964-9e7f-021cad426ca7",
+      "name": "KS-20 Magnetic Orange",
+      "manufacturer": {
+        "ko": "게이트론",
+        "en": "GATERON"
+      },
+      "priceKrw": 800,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/cec41190-0d6f-4a2c-b23c-36f5b7552be5.avif",
+      "values": {
+        "bottomOutForceSpec": 50,
+        "bottomOutHarshness": false,
+        "category": "리니어",
+        "lowerHousing": [
+          "NYLON"
+        ],
+        "mechanism": "magnetic",
+        "polarity": "N",
+        "spring": "싱글",
+        "springLength": 20,
+        "startingForceSpec": 38,
+        "stem": "POM",
+        "totalTravelSpec": 4.1,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "f857e54c-3d3b-4a51-9913-ff632d8626c7",
+      "name": "Aurora Magnetic Switch",
+      "manufacturer": {
+        "ko": "카일",
+        "en": "Kailh"
+      },
+      "priceKrw": null,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/93c03784-dbd4-4312-b80e-e2338dfd230f.avif",
+      "values": {
+        "mechanism": "magnetic"
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "f91e3273-2915-45aa-8a9d-ffa55c77fce9",
+      "name": "Gen3 스위치",
+      "manufacturer": {
+        "ko": "스틸시리즈",
+        "en": "Steelseries"
+      },
+      "priceKrw": null,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": null,
+      "values": {
+        "category": "리니어",
+        "mechanism": "magnetic",
+        "polarity": "N"
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "fa0585ff-32f6-4d9d-9d76-e340d2ae8fb0",
+      "name": "Pink JADE",
+      "manufacturer": {
+        "ko": "게이트론",
+        "en": "GATERON"
+      },
+      "priceKrw": 1000,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": "https://s.click.aliexpress.com/e/_ol15KoP",
+      "image": "/images/d816a201-3cc0-497a-b81d-691f31f83d09.avif",
+      "values": {
+        "actuationForceSpec": 30,
+        "bottomOutHarshness": false,
+        "category": "리니어",
+        "mechanism": "magnetic",
+        "totalTravelSpec": 3.5
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "fa43d898-4bec-4418-b383-4a59f891c702",
+      "name": "허금 2세대",
+      "manufacturer": {
+        "ko": "에버글라이드",
+        "en": "EVERGLIDE"
+      },
+      "priceKrw": 15100,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": null,
+      "values": {
+        "bottomOutForceSpec": 50,
+        "bottomOutHarshness": false,
+        "category": "리니어",
+        "mechanism": "magnetic",
+        "polarity": "N",
+        "startingForceSpec": 40,
+        "totalTravelSpec": 4
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "fc58b73f-b64e-4a69-ba14-1f7415dd5612",
+      "name": "Mount Tai",
+      "manufacturer": {
+        "ko": "ugaming",
+        "en": "ugaming"
+      },
+      "priceKrw": 2400,
+      "status": "testing",
+      "saleStatus": "DISCONTINUED",
+      "aliUrl": null,
+      "image": "/images/d3f80a7a-d9ba-4307-8276-aed9dbbcb9b5.avif",
+      "values": {
+        "bottomOutForceSpec": 47,
+        "bottomOutHarshness": false,
+        "category": "리니어",
+        "mechanism": "magnetic",
+        "polarity": "N",
+        "springLength": 22,
+        "startingForceSpec": 35,
+        "totalTravelSpec": 3.5,
+        "upperHousing": [
+          "PC"
+        ]
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "fcf25569-7a77-4485-9d37-c48eba25e175",
+      "name": "Blue Topaz",
+      "manufacturer": {
+        "ko": "HMX",
+        "en": "HMX"
+      },
+      "priceKrw": 8800,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/5d0e59cd-a1ef-4482-b437-2bb76a9c8654.avif",
+      "values": {
+        "bottomOutHarshness": false
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    }
+  ]
+}

@@ -131,6 +131,72 @@
         "en": "LGE"
       },
       "aliasesList": []
+    },
+    {
+      "id": "abcc14e8-39aa-47fb-a6e3-02642f4754f6",
+      "koName": "Final Audio",
+      "enName": "Final Audio",
+      "aliases": null,
+      "names": {
+        "ko": "Final Audio",
+        "en": "Final Audio"
+      },
+      "aliasesList": []
+    },
+    {
+      "id": "474ac539-f5e5-4ec3-9eeb-7d969bbed20f",
+      "koName": "게이트론",
+      "enName": "GATERON",
+      "aliases": null,
+      "names": {
+        "ko": "게이트론",
+        "en": "GATERON"
+      },
+      "aliasesList": []
+    },
+    {
+      "id": "50848edc-352f-4a8f-a13d-7eb628cb2c40",
+      "koName": "핫라인게임즈",
+      "enName": "HotlineGames",
+      "aliases": null,
+      "names": {
+        "ko": "핫라인게임즈",
+        "en": "HotlineGames"
+      },
+      "aliasesList": []
+    },
+    {
+      "id": "724aec71-55f3-4c13-859c-a2a1091e8947",
+      "koName": "BT.L",
+      "enName": "BT.L",
+      "aliases": null,
+      "names": {
+        "ko": "BT.L",
+        "en": "BT.L"
+      },
+      "aliasesList": []
+    },
+    {
+      "id": "7467dbd1-4aac-43d0-89fd-1620cdb6b7b3",
+      "koName": "오울랩",
+      "enName": "Owlab",
+      "aliases": null,
+      "names": {
+        "ko": "오울랩",
+        "en": "Owlab"
+      },
+      "aliasesList": []
+    },
+    {
+      "id": "c702b3fc-a1c0-45e2-8571-a7b1b287e98f",
+      "koName": "엑스레이패드",
+      "enName": "X-raypad",
+      "aliases": null,
+      "names": {
+        "ko": "엑스레이패드",
+        "en": "X-raypad"
+      },
+      "aliasesList": []
     }
   ],
   "resultCode": "SUCCESS",

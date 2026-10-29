@@ -65,6 +65,15 @@ export const valueLabelsPt: Readonly<Record<string, ValueLabels>> = {
   overallRatingMouse: overallRatingPt,
   overallRatingKeyboard: overallRatingPt,
   overallRatingMonitor: overallRatingPt,
+  overallRatingMousepad: overallRatingPt,
+  overallRatingEarphone: overallRatingPt,
+  // Switches also mark a Produto still on its way to a grade.
+  overallRatingKeyboardSwitch: {
+    ...overallRatingPt,
+    LAUNCHING_SOON: "Em breve",
+    OTHER: "Outra",
+    RE_MEASUREMENT: "Em novo teste",
+  },
 
   housingMouse: { 대칭: "Simétrico", 비대칭: "Assimétrico" },
   mouseConnection: connectionPt,
@@ -242,6 +251,54 @@ export const valueLabelsPt: Readonly<Record<string, ValueLabels>> = {
   },
   vrrFlickerGrade: { none: "Quase nenhuma", minor: "Leve", moderate: "Moderada", severe: "Forte" },
   textClarityGrade: { excellent: "Excelente", good: "Boa", fair: "Regular", poor: "Ruim" },
+
+  mechanism: { magnetic: "Magnético", mechanic: "Mecânico" },
+  category: { 리니어: "Linear", 택타일: "Tátil", 클릭: "Clicky" },
+  spring: {
+    SUS: "Aço inox (SUS)",
+    금도금: "Banhada a ouro",
+    러버돔: "Domo de borracha",
+    싱글: "Simples",
+    "싱글(비자성)": "Simples, não magnética",
+  },
+
+  earphoneConnection: {
+    WIRED: "Com fio",
+    WIRELESS: "Sem fio",
+    TRUE_WIRELESS: "True wireless (TWS)",
+  },
+  earphoneCableConnector: {
+    A2DC: "A2DC",
+    FIXED_CABLE: "Cabo fixo",
+    MMCX: "MMCX",
+    OTHER_DETACHABLE: "Outro destacável",
+    PENTACONN_EAR: "Pentaconn Ear",
+    QDC_2PIN: "QDC de 2 pinos",
+    T2_IPX: "T2 / IPX",
+    TWO_PIN_075: "2 pinos de 0,75 mm",
+    TWO_PIN_078: "2 pinos de 0,78 mm",
+  },
+  earphoneSourceConnector: {
+    LIGHTNING_DAC: "Lightning com DAC",
+    PLUG_25MM: "2,5 mm",
+    PLUG_35MM: "3,5 mm",
+    PLUG_44MM: "4,4 mm",
+    USB_C_DAC: "USB-C com DAC",
+  },
+  earphoneWearType: {
+    OPEN_EAR: "Earbud aberto",
+    OVER_EAR: "Por cima da orelha",
+    UNDER_EAR: "Por baixo da orelha",
+  },
+  earphoneMicrophone: { WITH_MIC: "Com microfone", WITHOUT_MIC: "Sem microfone" },
+  earphoneShellMaterial: {
+    CERAMIC: "Cerâmica",
+    METAL: "Metal",
+    OTHER: "Outro",
+    POLYMER: "Plástico ou resina",
+    SILICONE: "Silicone",
+    WOOD: "Madeira",
+  },
 
   ...shortTextLabelsPt,
 };

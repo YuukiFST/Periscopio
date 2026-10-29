@@ -47,7 +47,10 @@ function useFavoriteIdsByCategory(): Record<CategorySlug, ReadonlySet<string>> {
   const [mouse] = useFavoriteIds("mouse");
   const [teclado] = useFavoriteIds("teclado");
   const [monitor] = useFavoriteIds("monitor");
-  return { mouse, teclado, monitor };
+  const [mousepad] = useFavoriteIds("mousepad");
+  const [keyboardSwitch] = useFavoriteIds("switch");
+  const [fone] = useFavoriteIds("fone");
+  return { mouse, teclado, monitor, mousepad, switch: keyboardSwitch, fone };
 }
 
 /** The starred Produtos the data still has, Categoria by Categoria. */
@@ -90,7 +93,8 @@ function HomePage() {
               Periscópio
             </h1>
             <p className="text-muted-foreground">
-              Medições, especificações e preços de mouses, teclados e monitores, em português.
+              Medições, especificações e preços de mouses, teclados, monitores, mousepads, switches
+              e fones, em português.
             </p>
             <UpdatedAtLabel meta={meta} />
           </div>

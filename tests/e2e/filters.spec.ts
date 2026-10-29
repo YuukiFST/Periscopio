@@ -4,7 +4,8 @@ import { categoryDataSchema } from "../../src/data/schema.ts";
 /**
  * Filtros on the production build with the data the pipeline generates from
  * the recorded Fonte excerpt (`serve-fixture-build.ts`). Expected lists are
- * read off that excerpt by hand: 6 mouses, 4 teclados, 4 monitores, each list
+ * read off that excerpt by hand: 6 mouses, 4 teclados, 4 monitores, 3 mousepads,
+ * 3 switches and 2 fones, each list
  * in the table's default order.
  */
 
@@ -161,6 +162,45 @@ const categoryCases: {
     second: { range: "Preço (mil ₩)", max: "900" },
     afterSecond: ["ROG SWIFT PG259QN"],
     url: "/monitor?status=todos&resolucao=fhd&preco=-900",
+  },
+  {
+    slug: "mousepad",
+    exactChoices: {
+      Base: ["Borracha", "Poron", "Vidro", "SCR"],
+      "Perfil de deslize": ["Controle", "Equilibrado", "Velocidade"],
+    },
+    first: { filter: "Material", choices: ["Rígido"] },
+    afterFirst: ["Streamers", "Vancer ICE"],
+    // The Fonte calls Vancer ICE "브레이킹" and Streamers "슬라이딩".
+    second: { filter: "Perfil de deslize", choices: ["Controle"] },
+    afterSecond: ["Vancer ICE"],
+    url: "/mousepad?status=todos&material=rigido&perfil=controle",
+  },
+  {
+    slug: "switch",
+    exactChoices: {
+      Tipo: ["Magnético", "Mecânico"],
+      Sensação: ["Linear", "Tátil", "Clicky"],
+    },
+    first: { filter: "Batida seca no fim do curso", choices: ["Sim"] },
+    afterFirst: ["Spark", "NOVA HE"],
+    // Spark bottoms out at 44 gf, NOVA HE at 53.
+    second: { range: "Força no fim do curso (gf)", max: "50" },
+    afterSecond: ["Spark"],
+    url: "/switch?status=todos&batida-seca=sim&forca-final=-50",
+  },
+  {
+    slug: "fone",
+    exactChoices: {
+      Conexão: ["Com fio", "Sem fio"],
+      Encaixe: ["Por cima da orelha", "Por baixo da orelha", "Earbud aberto"],
+    },
+    first: { filter: "Microfone", choices: ["Com microfone"] },
+    afterFirst: ["VR3000 Wireless", "Horizon"],
+    // VR3000 Wireless scores 63% for Valorant, Horizon 39%.
+    second: { range: "Adequação ao Valorant (%)", min: "50" },
+    afterSecond: ["VR3000 Wireless"],
+    url: "/fone?status=todos&microfone=com&valorant=50-",
   },
 ];
 

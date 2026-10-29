@@ -1,0 +1,44 @@
+- complementary "Filtros":
+    - heading "Filtros" [level=2]
+    - button "Limpar filtros" [disabled]
+    - region "Geral":
+        - heading "Geral" [level=3]
+        - text: Nota geral
+        - combobox "Nota geral": Qualquer
+        - text: Recomendação
+        - combobox "Recomendação": Qualquer
+        - group "Preço (mil ₩)":
+            - text: ""
+            - textbox "Mínimo"
+            - textbox "Máximo"
+    - region "Construção":
+        - heading "Construção" [level=3]
+        - text: Conexão
+        - group "Conexão":
+            - button "Com fio"
+            - button "Sem fio"
+        - text: Encaixe
+        - group "Encaixe":
+            - button "Por cima da orelha"
+            - button "Por baixo da orelha"
+            - button "Earbud aberto"
+        - text: Conector no fone
+        - group "Conector no fone":
+            - button /2 pinos de \d+,\d+ mm/
+        - text: Microfone
+        - group "Microfone":
+            - button "Com microfone"
+        - text: Cancelamento de ruído (ANC)
+        - group "Cancelamento de ruído (ANC)":
+            - button "Sim"
+            - button "Não"
+    - region "Som":
+        - heading "Som" [level=3]
+        - group "Adequação ao Valorant (%)":
+            - text: ""
+            - textbox "Mínimo"
+            - textbox "Máximo"
+        - group "Adequação ao Overwatch (%)":
+            - text: ""
+            - textbox "Mínimo"
+            - textbox "Máximo"

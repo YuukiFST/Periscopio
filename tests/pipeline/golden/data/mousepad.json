@@ -1,0 +1,1154 @@
+{
+  "category": "mousepad",
+  "fields": [
+    {
+      "key": "driverSupportStatus",
+      "group": "common",
+      "label": {
+        "ko": "드라이버 지원 상태",
+        "en": "Driver Support Status"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "notAvailable",
+          "label": {
+            "ko": "공식 설정 소프트웨어 없음",
+            "en": "No Official Configuration Software"
+          }
+        },
+        {
+          "value": "notRequired",
+          "label": {
+            "ko": "별도 설정 소프트웨어 불필요",
+            "en": "No Separate Configuration Software Required"
+          }
+        }
+      ]
+    },
+    {
+      "key": "status",
+      "group": "common",
+      "label": {
+        "ko": "상태",
+        "en": "Status"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "arrived",
+          "label": {
+            "ko": "제품 도착",
+            "en": "Arrived"
+          }
+        },
+        {
+          "value": "earlyAccess",
+          "label": {
+            "ko": "선 공개",
+            "en": "Early Access"
+          }
+        },
+        {
+          "value": "proposed",
+          "label": {
+            "ko": "제안",
+            "en": "Proposed"
+          }
+        },
+        {
+          "value": "purchased",
+          "label": {
+            "ko": "구매 완료",
+            "en": "Purchased"
+          }
+        },
+        {
+          "value": "reviewed",
+          "label": {
+            "ko": "공개 완료",
+            "en": "Reviewed"
+          }
+        },
+        {
+          "value": "testing",
+          "label": {
+            "ko": "벤치 진행",
+            "en": "Testing"
+          }
+        },
+        {
+          "value": "unreleased",
+          "label": {
+            "ko": "미출시",
+            "en": "Unreleased"
+          }
+        }
+      ]
+    },
+    {
+      "key": "saleStatus",
+      "group": "common",
+      "label": {
+        "ko": "판매 상태",
+        "en": "Sale Status"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "DISCONTINUED",
+          "label": {
+            "ko": "단종",
+            "en": "Discontinued"
+          }
+        },
+        {
+          "value": "FOR_SALE",
+          "label": {
+            "ko": "판매중",
+            "en": "FOR_SALE"
+          }
+        },
+        {
+          "value": "unreleased",
+          "label": {
+            "ko": "미출시",
+            "en": "Unreleased"
+          }
+        }
+      ]
+    },
+    {
+      "key": "eyejokerRating",
+      "group": "common",
+      "label": {
+        "ko": "추천 등급",
+        "en": "Recommendation Grade"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "HIGHLY_RECOMMENDED",
+          "label": {
+            "ko": "매우추천",
+            "en": "Highly Recommend"
+          }
+        },
+        {
+          "value": "MILD_RECOMMENDATION",
+          "label": {
+            "ko": "추천까지는",
+            "en": "Meh"
+          }
+        },
+        {
+          "value": "NO_RECOMMENDATION",
+          "label": {
+            "ko": "추천안함",
+            "en": "Not Recommend"
+          }
+        },
+        {
+          "value": "RECOMMENDED",
+          "label": {
+            "ko": "추천",
+            "en": "Recommend"
+          }
+        }
+      ]
+    },
+    {
+      "key": "as",
+      "group": "common",
+      "label": {
+        "ko": "보증 기간",
+        "en": "AS"
+      },
+      "type": "number",
+      "unit": "년",
+      "decimals": null
+    },
+    {
+      "key": "firmwareVersion",
+      "group": "common",
+      "label": {
+        "ko": "펌웨어 버전",
+        "en": "FirmwareVersion"
+      },
+      "type": "text"
+    },
+    {
+      "key": "earlyAccessAt",
+      "group": "common",
+      "label": {
+        "ko": "선공개 일자",
+        "en": "Early Access At"
+      },
+      "type": "date"
+    },
+    {
+      "key": "publicReleaseAt",
+      "group": "common",
+      "label": {
+        "ko": "전체 공개 일자",
+        "en": "Public Release At"
+      },
+      "type": "date"
+    },
+    {
+      "key": "overallRatingMousepad",
+      "group": "spec",
+      "label": {
+        "ko": "종합 등급",
+        "en": "OverallRatingMousepad"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "FLAWLESS",
+          "label": {
+            "ko": "무결점",
+            "en": "Flawless"
+          }
+        },
+        {
+          "value": "TIER_0",
+          "label": {
+            "ko": "0티어",
+            "en": "Tier0"
+          }
+        },
+        {
+          "value": "TIER_1",
+          "label": {
+            "ko": "1티어",
+            "en": "Tier1"
+          }
+        },
+        {
+          "value": "TIER_2",
+          "label": {
+            "ko": "2티어",
+            "en": "Tier2"
+          }
+        },
+        {
+          "value": "TIER_3",
+          "label": {
+            "ko": "3티어",
+            "en": "Tier3"
+          }
+        },
+        {
+          "value": "TIER_4",
+          "label": {
+            "ko": "4티어",
+            "en": "Tier4"
+          }
+        },
+        {
+          "value": "UNRATED",
+          "label": {
+            "ko": "등급없음",
+            "en": "Unrated"
+          }
+        }
+      ]
+    },
+    {
+      "key": "width",
+      "group": "spec",
+      "label": {
+        "ko": "가로",
+        "en": "Width"
+      },
+      "type": "number",
+      "unit": "mm",
+      "decimals": null
+    },
+    {
+      "key": "base",
+      "group": "spec",
+      "label": {
+        "ko": "베이스",
+        "en": "Base"
+      },
+      "type": "text"
+    },
+    {
+      "key": "coating",
+      "group": "spec",
+      "label": {
+        "ko": "코팅",
+        "en": "Coating"
+      },
+      "type": "text"
+    },
+    {
+      "key": "mousepadLength",
+      "group": "spec",
+      "label": {
+        "ko": "세로",
+        "en": "Height"
+      },
+      "type": "number",
+      "unit": "mm",
+      "decimals": null
+    },
+    {
+      "key": "thickness",
+      "group": "spec",
+      "label": {
+        "ko": "두께",
+        "en": "Thickness"
+      },
+      "type": "number",
+      "unit": "mm",
+      "decimals": null
+    },
+    {
+      "key": "material",
+      "group": "spec",
+      "label": {
+        "ko": "재질",
+        "en": "Material"
+      },
+      "type": "text"
+    },
+    {
+      "key": "dynamicFriction",
+      "group": "bench",
+      "label": {
+        "ko": "동적마찰",
+        "en": "Dynamic Friction"
+      },
+      "type": "number",
+      "unit": "μ",
+      "decimals": 3
+    },
+    {
+      "key": "senseDiffDynamic",
+      "group": "bench",
+      "label": {
+        "ko": "감도차이 (동적)",
+        "en": "Sense Diff (Dynamic)"
+      },
+      "type": "number",
+      "unit": "%",
+      "decimals": 0
+    },
+    {
+      "key": "staticFriction",
+      "group": "bench",
+      "label": {
+        "ko": "정적마찰",
+        "en": "Static Friction"
+      },
+      "type": "number",
+      "unit": "μ",
+      "decimals": 3
+    },
+    {
+      "key": "senseDiffStatic",
+      "group": "bench",
+      "label": {
+        "ko": "감도차이 (정적)",
+        "en": "Sense Diff (Static)"
+      },
+      "type": "number",
+      "unit": "%",
+      "decimals": 0
+    },
+    {
+      "key": "tendency",
+      "group": "bench",
+      "label": {
+        "ko": "성향",
+        "en": "Tendency"
+      },
+      "type": "text"
+    },
+    {
+      "key": "skinFriction",
+      "group": "bench",
+      "label": {
+        "ko": "피부 마찰",
+        "en": "Skin Friction"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "A",
+          "label": {
+            "ko": "A",
+            "en": "A"
+          }
+        },
+        {
+          "value": "B",
+          "label": {
+            "ko": "B",
+            "en": "B"
+          }
+        },
+        {
+          "value": "C",
+          "label": {
+            "ko": "C",
+            "en": "C"
+          }
+        },
+        {
+          "value": "D",
+          "label": {
+            "ko": "D",
+            "en": "D"
+          }
+        },
+        {
+          "value": "E",
+          "label": {
+            "ko": "E",
+            "en": "E"
+          }
+        },
+        {
+          "value": "F",
+          "label": {
+            "ko": "F",
+            "en": "F"
+          }
+        },
+        {
+          "value": "S",
+          "label": {
+            "ko": "S",
+            "en": "S"
+          }
+        }
+      ]
+    },
+    {
+      "key": "sleeveSideFrictionV",
+      "group": "bench",
+      "label": {
+        "ko": "팔토시 수직마찰",
+        "en": "Sleeve Friction (V)"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "A",
+          "label": {
+            "ko": "A",
+            "en": "A"
+          }
+        },
+        {
+          "value": "B",
+          "label": {
+            "ko": "B",
+            "en": "B"
+          }
+        },
+        {
+          "value": "C",
+          "label": {
+            "ko": "C",
+            "en": "C"
+          }
+        },
+        {
+          "value": "D",
+          "label": {
+            "ko": "D",
+            "en": "D"
+          }
+        },
+        {
+          "value": "E",
+          "label": {
+            "ko": "E",
+            "en": "E"
+          }
+        },
+        {
+          "value": "F",
+          "label": {
+            "ko": "F",
+            "en": "F"
+          }
+        },
+        {
+          "value": "S",
+          "label": {
+            "ko": "S",
+            "en": "S"
+          }
+        }
+      ]
+    },
+    {
+      "key": "sleeveSideFrictionH",
+      "group": "bench",
+      "label": {
+        "ko": "팔토시 수평마찰",
+        "en": "Sleeve Friction (H)"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "A",
+          "label": {
+            "ko": "A",
+            "en": "A"
+          }
+        },
+        {
+          "value": "B",
+          "label": {
+            "ko": "B",
+            "en": "B"
+          }
+        },
+        {
+          "value": "C",
+          "label": {
+            "ko": "C",
+            "en": "C"
+          }
+        },
+        {
+          "value": "D",
+          "label": {
+            "ko": "D",
+            "en": "D"
+          }
+        },
+        {
+          "value": "E",
+          "label": {
+            "ko": "E",
+            "en": "E"
+          }
+        },
+        {
+          "value": "F",
+          "label": {
+            "ko": "F",
+            "en": "F"
+          }
+        },
+        {
+          "value": "S",
+          "label": {
+            "ko": "S",
+            "en": "S"
+          }
+        }
+      ]
+    },
+    {
+      "key": "sleeveSideFrictionD",
+      "group": "bench",
+      "label": {
+        "ko": "팔토시 대각선 마찰",
+        "en": "Sleeve Friction (D)"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "A",
+          "label": {
+            "ko": "A",
+            "en": "A"
+          }
+        },
+        {
+          "value": "B",
+          "label": {
+            "ko": "B",
+            "en": "B"
+          }
+        },
+        {
+          "value": "C",
+          "label": {
+            "ko": "C",
+            "en": "C"
+          }
+        },
+        {
+          "value": "D",
+          "label": {
+            "ko": "D",
+            "en": "D"
+          }
+        },
+        {
+          "value": "E",
+          "label": {
+            "ko": "E",
+            "en": "E"
+          }
+        },
+        {
+          "value": "F",
+          "label": {
+            "ko": "F",
+            "en": "F"
+          }
+        },
+        {
+          "value": "S",
+          "label": {
+            "ko": "S",
+            "en": "S"
+          }
+        }
+      ]
+    },
+    {
+      "key": "hardness",
+      "group": "bench",
+      "label": {
+        "ko": "경도",
+        "en": "Hardness"
+      },
+      "type": "number",
+      "unit": null,
+      "decimals": null
+    },
+    {
+      "key": "uniformity",
+      "group": "bench",
+      "label": {
+        "ko": "균일도",
+        "en": "Uniformity"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "A",
+          "label": {
+            "ko": "A",
+            "en": "A"
+          }
+        },
+        {
+          "value": "B",
+          "label": {
+            "ko": "B",
+            "en": "B"
+          }
+        },
+        {
+          "value": "C",
+          "label": {
+            "ko": "C",
+            "en": "C"
+          }
+        },
+        {
+          "value": "D",
+          "label": {
+            "ko": "D",
+            "en": "D"
+          }
+        },
+        {
+          "value": "E",
+          "label": {
+            "ko": "E",
+            "en": "E"
+          }
+        },
+        {
+          "value": "F",
+          "label": {
+            "ko": "F",
+            "en": "F"
+          }
+        },
+        {
+          "value": "S",
+          "label": {
+            "ko": "S",
+            "en": "S"
+          }
+        }
+      ]
+    },
+    {
+      "key": "gripForce",
+      "group": "bench",
+      "label": {
+        "ko": "접지력",
+        "en": "Grip Force"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "A",
+          "label": {
+            "ko": "A",
+            "en": "A"
+          }
+        },
+        {
+          "value": "B",
+          "label": {
+            "ko": "B",
+            "en": "B"
+          }
+        },
+        {
+          "value": "C",
+          "label": {
+            "ko": "C",
+            "en": "C"
+          }
+        },
+        {
+          "value": "D",
+          "label": {
+            "ko": "D",
+            "en": "D"
+          }
+        },
+        {
+          "value": "E",
+          "label": {
+            "ko": "E",
+            "en": "E"
+          }
+        },
+        {
+          "value": "F",
+          "label": {
+            "ko": "F",
+            "en": "F"
+          }
+        },
+        {
+          "value": "S",
+          "label": {
+            "ko": "S",
+            "en": "S"
+          }
+        }
+      ]
+    },
+    {
+      "key": "stretch",
+      "group": "bench",
+      "label": {
+        "ko": "펴짐",
+        "en": "Stretch"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "A",
+          "label": {
+            "ko": "A",
+            "en": "A"
+          }
+        },
+        {
+          "value": "B",
+          "label": {
+            "ko": "B",
+            "en": "B"
+          }
+        },
+        {
+          "value": "C",
+          "label": {
+            "ko": "C",
+            "en": "C"
+          }
+        },
+        {
+          "value": "D",
+          "label": {
+            "ko": "D",
+            "en": "D"
+          }
+        },
+        {
+          "value": "E",
+          "label": {
+            "ko": "E",
+            "en": "E"
+          }
+        },
+        {
+          "value": "F",
+          "label": {
+            "ko": "F",
+            "en": "F"
+          }
+        },
+        {
+          "value": "S",
+          "label": {
+            "ko": "S",
+            "en": "S"
+          }
+        }
+      ]
+    },
+    {
+      "key": "edgeOverlock",
+      "group": "bench",
+      "label": {
+        "ko": "테두리 오버로크",
+        "en": "Edge Overlock"
+      },
+      "type": "text"
+    },
+    {
+      "key": "durability",
+      "group": "bench",
+      "label": {
+        "ko": "내구성",
+        "en": "Durability"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "A",
+          "label": {
+            "ko": "A",
+            "en": "A"
+          }
+        },
+        {
+          "value": "B",
+          "label": {
+            "ko": "B",
+            "en": "B"
+          }
+        },
+        {
+          "value": "C",
+          "label": {
+            "ko": "C",
+            "en": "C"
+          }
+        },
+        {
+          "value": "D",
+          "label": {
+            "ko": "D",
+            "en": "D"
+          }
+        },
+        {
+          "value": "E",
+          "label": {
+            "ko": "E",
+            "en": "E"
+          }
+        },
+        {
+          "value": "F",
+          "label": {
+            "ko": "F",
+            "en": "F"
+          }
+        },
+        {
+          "value": "S",
+          "label": {
+            "ko": "S",
+            "en": "S"
+          }
+        }
+      ]
+    },
+    {
+      "key": "moistureProof",
+      "group": "bench",
+      "label": {
+        "ko": "내습성",
+        "en": "Moisture Proof"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "A",
+          "label": {
+            "ko": "A",
+            "en": "A"
+          }
+        },
+        {
+          "value": "B",
+          "label": {
+            "ko": "B",
+            "en": "B"
+          }
+        },
+        {
+          "value": "C",
+          "label": {
+            "ko": "C",
+            "en": "C"
+          }
+        },
+        {
+          "value": "D",
+          "label": {
+            "ko": "D",
+            "en": "D"
+          }
+        },
+        {
+          "value": "E",
+          "label": {
+            "ko": "E",
+            "en": "E"
+          }
+        },
+        {
+          "value": "F",
+          "label": {
+            "ko": "F",
+            "en": "F"
+          }
+        },
+        {
+          "value": "S",
+          "label": {
+            "ko": "S",
+            "en": "S"
+          }
+        }
+      ]
+    },
+    {
+      "key": "surfaceGentleness",
+      "group": "bench",
+      "label": {
+        "ko": "표면 부드러움",
+        "en": "Surface Gentleness"
+      },
+      "type": "number",
+      "unit": null,
+      "decimals": null
+    },
+    {
+      "key": "dynamicFrictionLegacy",
+      "group": "bench",
+      "label": {
+        "ko": "동적마찰 (레거시)",
+        "en": "Dynamic Friction (Legacy)"
+      },
+      "type": "number",
+      "unit": "gf",
+      "decimals": null
+    },
+    {
+      "key": "senseDiffDynamicLegacy",
+      "group": "bench",
+      "label": {
+        "ko": "감도차이 (동, 레거시)",
+        "en": "Sense Diff Dynamic (Legacy)"
+      },
+      "type": "number",
+      "unit": "%",
+      "decimals": null
+    },
+    {
+      "key": "staticFrictionLegacy",
+      "group": "bench",
+      "label": {
+        "ko": "정적마찰 (레거시)",
+        "en": "Static Friction (Legacy)"
+      },
+      "type": "number",
+      "unit": "gf",
+      "decimals": null
+    },
+    {
+      "key": "senseDiffStaticLegacy",
+      "group": "bench",
+      "label": {
+        "ko": "감도차이 (정, 레거시)",
+        "en": "Sense Diff Static (Legacy)"
+      },
+      "type": "number",
+      "unit": "%",
+      "decimals": null
+    }
+  ],
+  "products": [
+    {
+      "id": "03986584-64e3-43a9-a783-589a977280c2",
+      "name": "Aqua Control 2 Sakura Pink",
+      "manufacturer": {
+        "ko": "엑스레이패드",
+        "en": "X-raypad"
+      },
+      "priceKrw": 34900,
+      "status": "reviewed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/1e89677c-3540-4de9-9eb8-0fcd8df60015.avif",
+      "values": {
+        "base": "고무",
+        "durability": "B",
+        "dynamicFriction": 0.121,
+        "dynamicFrictionLegacy": 40,
+        "edgeOverlock": "C",
+        "eyejokerRating": "MILD_RECOMMENDATION",
+        "gripForce": "C",
+        "hardness": 2,
+        "material": "하이브리드",
+        "moistureProof": "B",
+        "mousepadLength": 500,
+        "overallRatingMousepad": "TIER_0",
+        "publicReleaseAt": "2025-01-01T00:00:00",
+        "senseDiffDynamic": 3,
+        "senseDiffDynamicLegacy": 4,
+        "senseDiffStatic": 1,
+        "senseDiffStaticLegacy": -6,
+        "sleeveSideFrictionH": "D",
+        "sleeveSideFrictionV": "B",
+        "staticFriction": 0.139,
+        "staticFrictionLegacy": 121,
+        "stretch": "D",
+        "surfaceGentleness": 1,
+        "tendency": "브레이킹",
+        "thickness": 4,
+        "uniformity": "A",
+        "width": 500
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "0e445432-bf3f-493e-b12b-bc0da30b9152",
+      "name": "Streamers",
+      "manufacturer": {
+        "ko": "핫라인게임즈",
+        "en": "HotlineGames"
+      },
+      "priceKrw": 29900,
+      "status": "reviewed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": "https://s.click.aliexpress.com/e/_ooBiTsA",
+      "image": null,
+      "values": {
+        "base": "고무",
+        "coating": "유리섬유",
+        "durability": "B",
+        "dynamicFriction": 0.093,
+        "dynamicFrictionLegacy": 33,
+        "edgeOverlock": "X",
+        "eyejokerRating": "NO_RECOMMENDATION",
+        "gripForce": "C",
+        "hardness": 3,
+        "material": "하드",
+        "moistureProof": "A",
+        "mousepadLength": 400,
+        "overallRatingMousepad": "TIER_0",
+        "publicReleaseAt": "2025-01-01T00:00:00",
+        "senseDiffDynamic": -3,
+        "senseDiffDynamicLegacy": -4,
+        "senseDiffStatic": 5,
+        "senseDiffStaticLegacy": -1,
+        "skinFriction": "B",
+        "sleeveSideFrictionD": "A",
+        "sleeveSideFrictionH": "B",
+        "sleeveSideFrictionV": "A",
+        "staticFriction": 0.118,
+        "staticFrictionLegacy": 83,
+        "stretch": "B",
+        "surfaceGentleness": 5,
+        "tendency": "슬라이딩",
+        "thickness": 3,
+        "uniformity": "A",
+        "width": 450
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "772219d3-04de-4c26-b8a7-57944bbe9da0",
+      "name": "Vancer ICE",
+      "manufacturer": {
+        "ko": "BT.L",
+        "en": "BT.L"
+      },
+      "priceKrw": 49900,
+      "status": "reviewed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/59dd5a78-57d0-4670-9c26-0143e7a1646b.avif",
+      "values": {
+        "base": "고무",
+        "coating": "유리섬유",
+        "durability": "B",
+        "dynamicFriction": 0.123,
+        "dynamicFrictionLegacy": 33,
+        "edgeOverlock": "O",
+        "eyejokerRating": "NO_RECOMMENDATION",
+        "gripForce": "C",
+        "hardness": 4,
+        "material": "하드",
+        "moistureProof": "A",
+        "mousepadLength": 500,
+        "overallRatingMousepad": "TIER_0",
+        "publicReleaseAt": "2025-01-01T00:00:00",
+        "senseDiffDynamic": 2,
+        "senseDiffDynamicLegacy": 7,
+        "senseDiffStatic": 8,
+        "senseDiffStaticLegacy": -4,
+        "skinFriction": "D",
+        "sleeveSideFrictionH": "B",
+        "sleeveSideFrictionV": "A",
+        "staticFriction": 0.138,
+        "staticFrictionLegacy": 104,
+        "stretch": "A",
+        "surfaceGentleness": 5,
+        "tendency": "브레이킹",
+        "thickness": 4,
+        "uniformity": "A",
+        "width": 500
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    }
+  ]
+}

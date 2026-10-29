@@ -1,7 +1,14 @@
 import { z } from "zod";
 import { UpdateRefusedError } from "./update-refused-error.ts";
 
-export const eyejokerCategories = ["mouse", "keyboard", "monitor"] as const;
+export const eyejokerCategories = [
+  "mouse",
+  "keyboard",
+  "monitor",
+  "mouse-pad",
+  "keyboard-switch",
+  "earphone",
+] as const;
 export type EyejokerCategory = (typeof eyejokerCategories)[number];
 
 const userAgent = "eyejoker-pwa-update (weekly copy for a private PWA)";

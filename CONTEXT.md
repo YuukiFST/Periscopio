@@ -1,6 +1,6 @@
 # Periscópio
 
-App privado para um grupo de amigos consultar e comparar os benchmarks de monitores, teclados e mouses publicados pela Fonte.
+App privado para um grupo de amigos consultar e comparar os benchmarks de mouses, teclados, monitores, mousepads, switches de teclado e fones intra-auriculares publicados pela Fonte.
 
 ## Language
 
@@ -11,7 +11,7 @@ O site de benchmarks de onde vêm todos os produtos, medições e preços exibid
 _Avoid_: site original, DB
 
 **Categoria**:
-Um dos três tipos de produto do app: monitor, teclado ou mouse.
+Um dos seis tipos de produto do app: mouse, teclado, monitor, mousepad, switch ou fone.
 _Avoid_: tipo, benchmark type, seção
 
 **Produto**:

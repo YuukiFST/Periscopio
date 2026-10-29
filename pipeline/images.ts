@@ -36,8 +36,13 @@ async function fileExists(path: string): Promise<boolean> {
   }
 }
 
-async function downloadImage(cdnUrl: string, imagesDir: string, fileName: string): Promise<void> {
-  const response = await getWithRetries(`${cdnUrl}/${fileName}`);
+async function downloadImage(
+  cdnUrl: string,
+  imagesDir: string,
+  fileName: string,
+  cdnPath: string,
+): Promise<void> {
+  const response = await getWithRetries(`${cdnUrl}${cdnPath}`);
   const bytes = new Uint8Array(await response.arrayBuffer());
   if (!isAvif(bytes)) throw new Error("o arquivo não é AVIF");
   const target = join(imagesDir, fileName);
@@ -47,26 +52,30 @@ async function downloadImage(cdnUrl: string, imagesDir: string, fileName: string
 }
 
 /**
- * Downloads each photo missing from `imagesDir`, 4 at a time. A photo file is
- * immutable (its name is a UUID), so one already on disk is kept as is. A
- * failed download is reported and never throws.
+ * Downloads each photo missing from `imagesDir`, 4 at a time, from its path
+ * on the CDN (`cdnPaths`, by file name). A photo file is immutable (its name
+ * is a UUID), so one already on disk is kept as is. A failed download is
+ * reported and never throws.
  */
 export async function downloadNewImages(
   cdnUrl: string,
   imagesDir: string,
-  fileNames: ReadonlySet<string>,
+  cdnPaths: ReadonlyMap<string, string>,
 ): Promise<ImageSyncResult> {
   const result: ImageSyncResult = { available: new Set(), downloaded: [], failed: [] };
-  const queue: string[] = [];
-  for (const fileName of [...fileNames].toSorted()) {
+  const queue: [fileName: string, cdnPath: string][] = [];
+  for (const [fileName, cdnPath] of [...cdnPaths].toSorted(([left], [right]) =>
+    left < right ? -1 : 1,
+  )) {
     if (await fileExists(join(imagesDir, fileName))) result.available.add(fileName);
-    else queue.push(fileName);
+    else queue.push([fileName, cdnPath]);
   }
 
   async function worker(): Promise<void> {
-    for (let fileName = queue.shift(); fileName !== undefined; fileName = queue.shift()) {
+    for (let entry = queue.shift(); entry !== undefined; entry = queue.shift()) {
+      const [fileName, cdnPath] = entry;
       try {
-        await downloadImage(cdnUrl, imagesDir, fileName);
+        await downloadImage(cdnUrl, imagesDir, fileName, cdnPath);
         result.available.add(fileName);
         result.downloaded.push(fileName);
       } catch (error) {

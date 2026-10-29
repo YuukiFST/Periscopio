@@ -1,0 +1,872 @@
+{
+  "category": "fone",
+  "fields": [
+    {
+      "key": "driverSupportStatus",
+      "group": "common",
+      "label": {
+        "ko": "드라이버 지원 상태",
+        "en": "Driver Support Status"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "notAvailable",
+          "label": {
+            "ko": "공식 설정 소프트웨어 없음",
+            "en": "No Official Configuration Software"
+          }
+        },
+        {
+          "value": "notRequired",
+          "label": {
+            "ko": "별도 설정 소프트웨어 불필요",
+            "en": "No Separate Configuration Software Required"
+          }
+        }
+      ]
+    },
+    {
+      "key": "status",
+      "group": "common",
+      "label": {
+        "ko": "상태",
+        "en": "Status"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "unreleased",
+          "label": {
+            "ko": "미출시",
+            "en": "Unreleased"
+          }
+        },
+        {
+          "value": "proposed",
+          "label": {
+            "ko": "제안",
+            "en": "Proposed"
+          }
+        },
+        {
+          "value": "purchased",
+          "label": {
+            "ko": "구매 완료",
+            "en": "Purchased"
+          }
+        },
+        {
+          "value": "arrived",
+          "label": {
+            "ko": "제품 도착",
+            "en": "Arrived"
+          }
+        },
+        {
+          "value": "testing",
+          "label": {
+            "ko": "벤치 진행",
+            "en": "Testing"
+          }
+        },
+        {
+          "value": "earlyAccess",
+          "label": {
+            "ko": "선 공개",
+            "en": "Early Access"
+          }
+        },
+        {
+          "value": "reviewed",
+          "label": {
+            "ko": "공개 완료",
+            "en": "Reviewed"
+          }
+        }
+      ]
+    },
+    {
+      "key": "saleStatus",
+      "group": "common",
+      "label": {
+        "ko": "판매 상태",
+        "en": "Sale Status"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "unreleased",
+          "label": {
+            "ko": "미출시",
+            "en": "Unreleased"
+          }
+        },
+        {
+          "value": "FOR_SALE",
+          "label": {
+            "ko": "판매중",
+            "en": "FOR_SALE"
+          }
+        },
+        {
+          "value": "DISCONTINUED",
+          "label": {
+            "ko": "단종",
+            "en": "Discontinued"
+          }
+        }
+      ]
+    },
+    {
+      "key": "eyejokerRating",
+      "group": "common",
+      "label": {
+        "ko": "추천 등급",
+        "en": "Recommendation Grade"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "HIGHLY_RECOMMENDED",
+          "label": {
+            "ko": "매우추천",
+            "en": "Highly Recommend"
+          }
+        },
+        {
+          "value": "RECOMMENDED",
+          "label": {
+            "ko": "추천",
+            "en": "Recommend"
+          }
+        },
+        {
+          "value": "MILD_RECOMMENDATION",
+          "label": {
+            "ko": "추천까지는",
+            "en": "Meh"
+          }
+        },
+        {
+          "value": "NO_RECOMMENDATION",
+          "label": {
+            "ko": "추천안함",
+            "en": "Not Recommend"
+          }
+        }
+      ]
+    },
+    {
+      "key": "as",
+      "group": "common",
+      "label": {
+        "ko": "보증 기간",
+        "en": "AS"
+      },
+      "type": "number",
+      "unit": "년",
+      "decimals": null
+    },
+    {
+      "key": "firmwareVersion",
+      "group": "common",
+      "label": {
+        "ko": "펌웨어 버전",
+        "en": "FirmwareVersion"
+      },
+      "type": "text"
+    },
+    {
+      "key": "earlyAccessAt",
+      "group": "common",
+      "label": {
+        "ko": "선공개 일자",
+        "en": "Early Access At"
+      },
+      "type": "date"
+    },
+    {
+      "key": "publicReleaseAt",
+      "group": "common",
+      "label": {
+        "ko": "전체 공개 일자",
+        "en": "Public Release At"
+      },
+      "type": "date"
+    },
+    {
+      "key": "earphoneConnection",
+      "group": "spec",
+      "label": {
+        "ko": "연결",
+        "en": "Connection"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "TRUE_WIRELESS",
+          "label": {
+            "ko": "완전무선",
+            "en": "True Wireless"
+          }
+        },
+        {
+          "value": "WIRED",
+          "label": {
+            "ko": "유선",
+            "en": "Wired"
+          }
+        },
+        {
+          "value": "WIRELESS",
+          "label": {
+            "ko": "무선",
+            "en": "Wireless"
+          }
+        }
+      ]
+    },
+    {
+      "key": "earphoneCableConnector",
+      "group": "spec",
+      "label": {
+        "ko": "이어폰 측 단자",
+        "en": "Earphone-side Connector"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": true,
+      "options": [
+        {
+          "value": "A2DC",
+          "label": {
+            "ko": "A2DC",
+            "en": "A2DC"
+          }
+        },
+        {
+          "value": "FIXED_CABLE",
+          "label": {
+            "ko": "일체형",
+            "en": "Fixed Cable"
+          }
+        },
+        {
+          "value": "MMCX",
+          "label": {
+            "ko": "MMCX",
+            "en": "MMCX"
+          }
+        },
+        {
+          "value": "OTHER_DETACHABLE",
+          "label": {
+            "ko": "기타 분리형",
+            "en": "Other Detachable"
+          }
+        },
+        {
+          "value": "PENTACONN_EAR",
+          "label": {
+            "ko": "Pentaconn Ear",
+            "en": "Pentaconn Ear"
+          }
+        },
+        {
+          "value": "QDC_2PIN",
+          "label": {
+            "ko": "QDC 2-pin",
+            "en": "QDC 2-pin"
+          }
+        },
+        {
+          "value": "T2_IPX",
+          "label": {
+            "ko": "T2/IPX",
+            "en": "T2 / IPX"
+          }
+        },
+        {
+          "value": "TWO_PIN_075",
+          "label": {
+            "ko": "0.75mm 2-pin",
+            "en": "0.75mm 2-pin"
+          }
+        },
+        {
+          "value": "TWO_PIN_078",
+          "label": {
+            "ko": "0.78mm 2-pin",
+            "en": "0.78mm 2-pin"
+          }
+        }
+      ]
+    },
+    {
+      "key": "earphoneSourceConnector",
+      "group": "spec",
+      "label": {
+        "ko": "기기 측 단자",
+        "en": "Source-side Connector"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": true,
+      "options": [
+        {
+          "value": "LIGHTNING_DAC",
+          "label": {
+            "ko": "Lightning DAC",
+            "en": "Lightning DAC"
+          }
+        },
+        {
+          "value": "PLUG_25MM",
+          "label": {
+            "ko": "2.5mm",
+            "en": "2.5mm"
+          }
+        },
+        {
+          "value": "PLUG_35MM",
+          "label": {
+            "ko": "3.5mm",
+            "en": "3.5mm"
+          }
+        },
+        {
+          "value": "PLUG_44MM",
+          "label": {
+            "ko": "4.4mm",
+            "en": "4.4mm"
+          }
+        },
+        {
+          "value": "USB_C_DAC",
+          "label": {
+            "ko": "USB-C DAC",
+            "en": "USB-C DAC"
+          }
+        }
+      ]
+    },
+    {
+      "key": "earphoneWearType",
+      "group": "spec",
+      "label": {
+        "ko": "착용 타입",
+        "en": "Wear Type"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "OPEN_EAR",
+          "label": {
+            "ko": "오픈형",
+            "en": "Open earbuds"
+          }
+        },
+        {
+          "value": "OVER_EAR",
+          "label": {
+            "ko": "오버이어",
+            "en": "Over-ear"
+          }
+        },
+        {
+          "value": "UNDER_EAR",
+          "label": {
+            "ko": "언더이어",
+            "en": "Under-ear"
+          }
+        }
+      ]
+    },
+    {
+      "key": "earphoneMicrophone",
+      "group": "spec",
+      "label": {
+        "ko": "마이크 유무",
+        "en": "Microphone"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": true,
+      "options": [
+        {
+          "value": "WITHOUT_MIC",
+          "label": {
+            "ko": "없음",
+            "en": "Not available"
+          }
+        },
+        {
+          "value": "WITH_MIC",
+          "label": {
+            "ko": "있음",
+            "en": "Available"
+          }
+        }
+      ]
+    },
+    {
+      "key": "earphoneWeightG",
+      "group": "spec",
+      "label": {
+        "ko": "무게",
+        "en": "Weight"
+      },
+      "type": "number",
+      "unit": "g",
+      "decimals": 1
+    },
+    {
+      "key": "earphoneNozzleDiameterMm",
+      "group": "spec",
+      "label": {
+        "ko": "노즐직경",
+        "en": "Nozzle Diameter"
+      },
+      "type": "number",
+      "unit": "mm",
+      "decimals": 2
+    },
+    {
+      "key": "earphoneNozzleDiameterMaxMm",
+      "group": "spec",
+      "label": {
+        "ko": "노즐직경 최대",
+        "en": "Max Nozzle Diameter"
+      },
+      "type": "number",
+      "unit": "mm",
+      "decimals": 2
+    },
+    {
+      "key": "earphoneDriverConfiguration",
+      "group": "spec",
+      "label": {
+        "ko": "드라이버 구성",
+        "en": "Driver Configuration"
+      },
+      "type": "text"
+    },
+    {
+      "key": "earphoneShellMaterial",
+      "group": "spec",
+      "label": {
+        "ko": "셸 소재",
+        "en": "Shell Material"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": true,
+      "options": [
+        {
+          "value": "CERAMIC",
+          "label": {
+            "ko": "세라믹",
+            "en": "Ceramic"
+          }
+        },
+        {
+          "value": "METAL",
+          "label": {
+            "ko": "금속",
+            "en": "Metal"
+          }
+        },
+        {
+          "value": "OTHER",
+          "label": {
+            "ko": "기타",
+            "en": "Other"
+          }
+        },
+        {
+          "value": "POLYMER",
+          "label": {
+            "ko": "플라스틱·레진",
+            "en": "Plastic / Resin"
+          }
+        },
+        {
+          "value": "SILICONE",
+          "label": {
+            "ko": "실리콘",
+            "en": "Silicone"
+          }
+        },
+        {
+          "value": "WOOD",
+          "label": {
+            "ko": "목재",
+            "en": "Wood"
+          }
+        }
+      ]
+    },
+    {
+      "key": "earphoneCable",
+      "group": "spec",
+      "label": {
+        "ko": "케이블",
+        "en": "Cable"
+      },
+      "type": "text"
+    },
+    {
+      "key": "earphoneAnc",
+      "group": "spec",
+      "label": {
+        "ko": "ANC",
+        "en": "ANC"
+      },
+      "type": "boolean"
+    },
+    {
+      "key": "earphoneDriverDiameter",
+      "group": "spec",
+      "label": {
+        "ko": "드라이버",
+        "en": "Driver"
+      },
+      "type": "text"
+    },
+    {
+      "key": "earphoneImpedanceOhm",
+      "group": "spec",
+      "label": {
+        "ko": "임피던스",
+        "en": "Impedance"
+      },
+      "type": "number",
+      "unit": "Ω",
+      "decimals": 1
+    },
+    {
+      "key": "earphoneSensitivityDbSplMw",
+      "group": "spec",
+      "label": {
+        "ko": "감도",
+        "en": "Sensitivity"
+      },
+      "type": "number",
+      "unit": "dB SPL/mW",
+      "decimals": 1
+    },
+    {
+      "key": "overallRatingEarphone",
+      "group": "bench",
+      "label": {
+        "ko": "종합 등급",
+        "en": "OverallRatingEarphone"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "FLAWLESS",
+          "label": {
+            "ko": "무결점",
+            "en": "Flawless"
+          }
+        },
+        {
+          "value": "TIER_0",
+          "label": {
+            "ko": "0티어",
+            "en": "Tier0"
+          }
+        },
+        {
+          "value": "TIER_1",
+          "label": {
+            "ko": "1티어",
+            "en": "Tier1"
+          }
+        },
+        {
+          "value": "TIER_2",
+          "label": {
+            "ko": "2티어",
+            "en": "Tier2"
+          }
+        },
+        {
+          "value": "TIER_3",
+          "label": {
+            "ko": "3티어",
+            "en": "Tier3"
+          }
+        },
+        {
+          "value": "TIER_4",
+          "label": {
+            "ko": "4티어",
+            "en": "Tier4"
+          }
+        },
+        {
+          "value": "UNRATED",
+          "label": {
+            "ko": "등급외",
+            "en": "Unrated"
+          }
+        }
+      ]
+    },
+    {
+      "key": "earphoneComfort",
+      "group": "bench",
+      "label": {
+        "ko": "착용감",
+        "en": "Comfort"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "A",
+          "label": {
+            "ko": "A",
+            "en": "A"
+          }
+        },
+        {
+          "value": "B",
+          "label": {
+            "ko": "B",
+            "en": "B"
+          }
+        },
+        {
+          "value": "C",
+          "label": {
+            "ko": "C",
+            "en": "C"
+          }
+        },
+        {
+          "value": "D",
+          "label": {
+            "ko": "D",
+            "en": "D"
+          }
+        },
+        {
+          "value": "F",
+          "label": {
+            "ko": "F",
+            "en": "F"
+          }
+        },
+        {
+          "value": "S",
+          "label": {
+            "ko": "S",
+            "en": "S"
+          }
+        }
+      ]
+    },
+    {
+      "key": "earphoneChannelBalance",
+      "group": "bench",
+      "label": {
+        "ko": "좌우 밸런스",
+        "en": "Channel Balance"
+      },
+      "type": "number",
+      "unit": "%",
+      "decimals": 0
+    },
+    {
+      "key": "earphoneFrSignature",
+      "group": "bench",
+      "label": {
+        "ko": "성향",
+        "en": "FR Signature"
+      },
+      "type": "text"
+    },
+    {
+      "key": "earphoneFrTrebleRisk",
+      "group": "bench",
+      "label": {
+        "ko": "고역 자극",
+        "en": "Treble Risk"
+      },
+      "type": "text"
+    },
+    {
+      "key": "earphoneValorantFrMatch",
+      "group": "bench",
+      "label": {
+        "ko": "발로란트 FR",
+        "en": "Valorant FR"
+      },
+      "type": "number",
+      "unit": "%",
+      "decimals": 0
+    },
+    {
+      "key": "earphoneValorantFrTags",
+      "group": "bench",
+      "label": {
+        "ko": "발로 FR 태그",
+        "en": "Valorant FR Tags"
+      },
+      "type": "text"
+    },
+    {
+      "key": "earphoneValorantPostAutoeqScore",
+      "group": "bench",
+      "label": {
+        "ko": "발로 FR (EQ 보정 후)",
+        "en": "Valorant FR (Post-AutoEQ)"
+      },
+      "type": "number",
+      "unit": "%",
+      "decimals": 0
+    },
+    {
+      "key": "earphoneOverwatchFrMatch",
+      "group": "bench",
+      "label": {
+        "ko": "옵치 FR",
+        "en": "Overwatch FR"
+      },
+      "type": "number",
+      "unit": "%",
+      "decimals": 0
+    },
+    {
+      "key": "earphoneOverwatchPostAutoeqScore",
+      "group": "bench",
+      "label": {
+        "ko": "옵치 FR (AutoEQ 보정 후)",
+        "en": "Overwatch FR (Post-AutoEQ)"
+      },
+      "type": "number",
+      "unit": "%",
+      "decimals": 0
+    },
+    {
+      "key": "earphoneOverwatchFrTags",
+      "group": "bench",
+      "label": {
+        "ko": "옵치 태그",
+        "en": "Overwatch FR Tags"
+      },
+      "type": "text"
+    }
+  ],
+  "products": [
+    {
+      "id": "03177f59-1a80-4502-8c74-8e70683a43bf",
+      "name": "VR3000 Wireless",
+      "manufacturer": {
+        "ko": "Final Audio",
+        "en": "Final Audio"
+      },
+      "priceKrw": 170900,
+      "status": "reviewed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/73d4361f-8e14-46f3-9554-38ad04501fc2.avif",
+      "values": {
+        "earphoneAnc": true,
+        "earphoneChannelBalance": 87.325,
+        "earphoneConnection": "WIRELESS",
+        "earphoneDriverConfiguration": "1DD",
+        "earphoneFrSignature": "차분한 저음형",
+        "earphoneFrTrebleRisk": "보통",
+        "earphoneMicrophone": [
+          "WITH_MIC"
+        ],
+        "earphoneOverwatchFrMatch": 78.345,
+        "earphoneOverwatchFrTags": "저역 마스킹 주의",
+        "earphoneOverwatchPostAutoeqScore": 100,
+        "earphoneShellMaterial": [
+          "POLYMER"
+        ],
+        "earphoneValorantFrMatch": 62.831,
+        "earphoneValorantFrTags": "상단 대역 급감 주의 · 발소리 대역 약함",
+        "earphoneValorantPostAutoeqScore": 75.431,
+        "earphoneWearType": "UNDER_EAR",
+        "earphoneWeightG": 4.8,
+        "eyejokerRating": "MILD_RECOMMENDATION",
+        "overallRatingEarphone": "TIER_2",
+        "publicReleaseAt": "2026-07-03T15:00:00.000Z"
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "0d24702d-a3a2-49ba-beff-c1e2a9dd7885",
+      "name": "Horizon",
+      "manufacturer": {
+        "ko": "ATK",
+        "en": "ATK"
+      },
+      "priceKrw": 62500,
+      "status": "reviewed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": "https://s.click.aliexpress.com/e/_c4sEPz69",
+      "image": "/images/3be38942-debf-4120-baee-866d1018d64b.avif",
+      "values": {
+        "earphoneAnc": false,
+        "earphoneCable": "1.2m 4심 OFC, 0.78mm 2-pin, 3.5mm/USB-C 옵션",
+        "earphoneCableConnector": [
+          "TWO_PIN_078"
+        ],
+        "earphoneChannelBalance": 68.153,
+        "earphoneComfort": "A",
+        "earphoneConnection": "WIRED",
+        "earphoneDriverConfiguration": "1DD",
+        "earphoneDriverDiameter": "10mm",
+        "earphoneFrSignature": "차분한 저음형",
+        "earphoneFrTrebleRisk": "주의",
+        "earphoneImpedanceOhm": 16,
+        "earphoneMicrophone": [
+          "WITH_MIC"
+        ],
+        "earphoneOverwatchFrMatch": 71.621,
+        "earphoneOverwatchFrTags": "저역 마스킹 주의",
+        "earphoneOverwatchPostAutoeqScore": 100,
+        "earphoneShellMaterial": [
+          "POLYMER"
+        ],
+        "earphoneSourceConnector": [
+          "PLUG_35MM",
+          "USB_C_DAC"
+        ],
+        "earphoneValorantFrMatch": 39.497,
+        "earphoneValorantFrTags": "고역 피크 주의 · 상단 대역 급감 주의",
+        "earphoneValorantPostAutoeqScore": 78.551,
+        "earphoneWearType": "OVER_EAR",
+        "eyejokerRating": "NO_RECOMMENDATION",
+        "overallRatingEarphone": "TIER_3",
+        "publicReleaseAt": "2026-07-01T15:00:00.000Z"
+      },
+      "firstSeenAt": null,
+      "testedAt": null
+    }
+  ]
+}

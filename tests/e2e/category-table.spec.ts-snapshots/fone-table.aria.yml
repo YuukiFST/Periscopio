@@ -1,0 +1,71 @@
+- table "Fones":
+    - rowgroup:
+        - row "Comparar Produto Nota geral Recomendação Preço Conexão Encaixe Drivers Equilíbrio entre os lados Assinatura sonora Risco de agudo estridente Adequação ao Valorant Adequação ao Valorant (com AutoEQ)":
+            - columnheader "Comparar"
+            - columnheader "Produto":
+                - button "Produto"
+            - columnheader "Nota geral":
+                - button "Nota geral"
+            - columnheader "Recomendação":
+                - button "Recomendação"
+            - columnheader "Preço":
+                - button "Preço"
+            - columnheader "Conexão":
+                - button "Conexão"
+            - columnheader "Encaixe":
+                - button "Encaixe"
+            - columnheader "Drivers":
+                - button "Drivers"
+            - columnheader "Equilíbrio entre os lados":
+                - button "Equilíbrio entre os lados"
+            - columnheader "Assinatura sonora":
+                - button "Assinatura sonora"
+            - columnheader "Risco de agudo estridente":
+                - button "Risco de agudo estridente"
+            - columnheader "Adequação ao Valorant":
+                - button "Adequação ao Valorant"
+            - columnheader "Adequação ao Valorant (com AutoEQ)":
+                - button "Adequação ao Valorant (com AutoEQ)"
+    - rowgroup:
+        - row /Comparar VR3000 Wireless VR3000 Wireless Final Audio B Fraca ₩ \d+\.\d+ cerca de R\$ \d+ \(Cotação de \d+ de out\. de \d+\) Sem fio Por baixo da orelha 1DD \d+% Graves suaves Médio \d+% \d+%/:
+            - cell "Comparar VR3000 Wireless":
+                - checkbox "Comparar VR3000 Wireless"
+            - rowheader "VR3000 Wireless Final Audio":
+                - button "Favoritar VR3000 Wireless"
+                - link "Detalhes de VR3000 Wireless":
+                    - /url: /fone/03177f59-1a80-4502-8c74-8e70683a43bf?status=todos
+                - paragraph: VR3000 Wireless
+                - paragraph: Final Audio
+            - cell "B"
+            - cell "Fraca"
+            - cell /₩ \d+\.\d+ cerca de R\$ \d+ \(Cotação de \d+ de out\. de \d+\)/
+            - cell "Sem fio"
+            - cell "Por baixo da orelha"
+            - cell "1DD"
+            - cell /\d+%/
+            - cell "Graves suaves"
+            - cell "Médio"
+            - cell /\d+%/
+            - cell /\d+%/
+        - row /Comparar Horizon Horizon ATK C Evitar ₩ \d+\.\d+ cerca de R\$ \d+ \(Cotação de \d+ de out\. de \d+\) Com fio Por cima da orelha 1DD \d+% Graves suaves Atenção \d+% \d+%/:
+            - cell "Comparar Horizon":
+                - checkbox "Comparar Horizon"
+            - rowheader "Horizon ATK":
+                - button "Favoritar Horizon"
+                - link "Detalhes de Horizon":
+                    - /url: /fone/0d24702d-a3a2-49ba-beff-c1e2a9dd7885?status=todos
+                - paragraph:
+                    - link "Horizon no AliExpress (abre em nova aba)":
+                        - /url: https://s.click.aliexpress.com/e/_c4sEPz69
+                - paragraph: ATK
+            - cell "C"
+            - cell "Evitar"
+            - cell /₩ \d+\.\d+ cerca de R\$ \d+ \(Cotação de \d+ de out\. de \d+\)/
+            - cell "Com fio"
+            - cell "Por cima da orelha"
+            - cell "1DD"
+            - cell /\d+%/
+            - cell "Graves suaves"
+            - cell "Atenção"
+            - cell /\d+%/
+            - cell /\d+%/
