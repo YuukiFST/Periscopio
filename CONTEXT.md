@@ -79,7 +79,8 @@ O único link de compra mostrado em um Produto, quando a Fonte tem um.
 _Avoid_: link de afiliado, link de compra
 
 **Novidade**:
-Um Produto publicado pela primeira vez (Novo) ou que passou a ser testado (Testado agora) em uma Atualização dos 14 dias antes da mais recente.
+Um Produto testado que foi publicado pela primeira vez (Novo) ou que passou a ser testado (Testado agora) em uma Atualização dos 14 dias antes da mais recente.
+Um Produto ainda não testado não é Novidade, mesmo recém-publicado.
 _Avoid_: novo produto, lançamento, changelog
 
 **Fila de testes**:

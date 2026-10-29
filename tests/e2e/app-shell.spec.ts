@@ -2,9 +2,9 @@ import { expect, test, type Page } from "@playwright/test";
 
 const huanId = "201270eb-b392-4e41-96a9-1b609a77e795";
 
-/** The Novidades come with the Categorias' Produtos, after the cards; the fixture's are 3 mouses. */
+/** The Novidades come with the Categorias' Produtos, after the cards; the fixture's are 2 mouses. */
 function mouseNovidadesLink(page: Page) {
-  return page.getByRole("main").getByRole("link", { name: "3 novidades" });
+  return page.getByRole("main").getByRole("link", { name: "2 novidades" });
 }
 
 test("/ opens the home page, and the header switches between the categories", async ({ page }) => {
@@ -57,13 +57,12 @@ test("a Categoria card opens its table, and its Novidades link opens the table w
 
   await page.goBack();
   await mouseNovidadesLink(page).click();
-  await expect(page).toHaveURL("/mouse?novidades=1&status=todos");
+  await expect(page).toHaveURL("/mouse?novidades=1");
   await expect(page.getByRole("button", { name: "Novidades", exact: true })).toHaveAttribute(
     "aria-pressed",
     "true",
   );
-  // VK M5 Max THOR is not tested yet, and still counts.
-  await expect(page.getByRole("rowheader")).toHaveCount(3);
+  await expect(page.getByRole("rowheader")).toHaveCount(2);
 });
 
 test("after the Novidades link, the table skips the notice that offers them, until the toggle goes off", async ({
@@ -76,7 +75,7 @@ test("after the Novidades link, the table skips the notice that offers them, unt
   );
   await page.reload();
   await mouseNovidadesLink(page).click();
-  await expect(page.getByRole("rowheader")).toHaveCount(3);
+  await expect(page.getByRole("rowheader")).toHaveCount(2);
   await expect(page.getByRole("button", { name: "Ver novidades" })).toHaveCount(0);
 
   await page.getByRole("button", { name: "Novidades", exact: true }).click();

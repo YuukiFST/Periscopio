@@ -217,8 +217,7 @@ function CategoryCard({
           {hasNovidades && (
             <CardLink
               category={category}
-              // The Novidades include Produtos not tested yet, so every Status de teste shows.
-              search={{ novidades: "1", status: "todos" }}
+              search={{ novidades: "1" }}
               icon={<Sparkles aria-hidden="true" className="size-4 shrink-0 text-novidade" />}
             >
               {novidadeCountText(novidadeCount)}
@@ -250,7 +249,7 @@ function CardLink({
   children,
 }: {
   category: CategorySlug;
-  search: { novidades?: "1"; favoritos?: "1"; status: "todos" };
+  search: { novidades: "1" } | { favoritos: "1"; status: "todos" };
   icon: ReactNode;
   children: string;
 }) {
