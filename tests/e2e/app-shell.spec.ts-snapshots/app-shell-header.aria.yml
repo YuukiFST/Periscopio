@@ -15,4 +15,5 @@
         - link "Fones":
             - /url: /fone
     - button "Buscar"
+    - button "Apoiar"
     - button "Aparência"

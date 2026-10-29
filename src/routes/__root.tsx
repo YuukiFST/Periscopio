@@ -4,6 +4,7 @@ import { AppearanceButton } from "@/appearance/appearance-button";
 import { categoryLabels, categorySlugs } from "@/categories";
 import { Button } from "@/components/ui/button";
 import { loadMeta } from "@/data/load-data";
+import { DonationButton } from "@/donation/donation-button";
 import { GlobalSearch } from "@/global-search/global-search";
 import { RecentProductsButton } from "@/recent-products/recent-products-button";
 
@@ -68,6 +69,7 @@ function AppShell({ children }: { children: ReactNode }) {
           <div className="ms-auto flex items-center gap-2">
             <GlobalSearch />
             <RecentProductsButton />
+            <DonationButton />
             <AppearanceButton />
           </div>
         </div>

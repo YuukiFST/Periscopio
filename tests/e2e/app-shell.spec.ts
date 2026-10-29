@@ -91,7 +91,7 @@ test("the home page lists the Produtos seen last, and opens one", async ({ page 
   await expect(page.getByRole("dialog", { name: "Huan" })).toBeVisible();
   await page.goto("/");
   const recentSection = page.getByRole("region", { name: "Vistos recentemente" });
-  await expect(recentSection.getByRole("link")).toHaveText([/^Huan\s*Mouses/]);
+  await expect(recentSection.getByRole("link")).toHaveText([/^Huan\s*WLMouse · Mouses/]);
 
   await recentSection.getByRole("link", { name: /^Huan/ }).click();
   await expect(page).toHaveURL(`/mouse/${huanId}`);
@@ -119,7 +119,7 @@ test.describe("with the data requests failing on purpose", () => {
     failsTecladoData = false;
     await recentSection.getByRole("button", { name: "Tentar de novo" }).click();
     await expect(page.getByRole("heading", { level: 1 })).toBeFocused();
-    await expect(recentSection.getByRole("link")).toHaveText([/^Huan\s*Mouses/]);
+    await expect(recentSection.getByRole("link")).toHaveText([/^Huan\s*WLMouse · Mouses/]);
     await expect(mouseNovidadesLink(page)).toBeVisible();
   });
 });

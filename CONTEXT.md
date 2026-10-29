@@ -46,10 +46,6 @@ _Avoid_: sync, scrape, importação
 Quantos reais valia um won no dia de referência, segundo o Banco Central Europeu (via Frankfurter), registrada a cada Atualização para mostrar o Preço aproximado em reais.
 _Avoid_: câmbio, taxa, conversão
 
-**Histórico de preço**:
-Os Preços de um Produto nas Atualizações em que mudaram, até 52, mostrados no detalhe do Produto.
-_Avoid_: histórico de valores, evolução, price history
-
 ### Uso
 
 **Filtro**:

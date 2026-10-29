@@ -1,17 +1,12 @@
 import { useMatch, useNavigate, useSearch } from "@tanstack/react-router";
-import { X } from "lucide-react";
-import { useEffect, useMemo, useRef, useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Drawer, DrawerContent } from "@/components/ui/drawer";
+import { useEffect, useMemo, useState } from "react";
 import type { CategoryData } from "@/data/schema";
 import { comparedIdsFromParam } from "@/product-compare/compare-selection";
 import { recordRecentProduct } from "@/recent-products/recent-products";
 import { ProductDetail } from "./product-detail";
 import { ProductNotFound } from "./product-not-found";
+import { ProductPanel } from "./product-panel";
 import { useChangeComparedIds } from "./use-change-compared-ids";
-
-/** Where the panel stops covering the whole screen (Tailwind's `sm`). */
-const besideTableQuery = "(min-width: 40rem)";
 
 /** Where keyboard focus goes back to the table: the Produto's row, else the Categoria's title. */
 function tableFocusTarget(productId: string | undefined): HTMLElement | null {
@@ -23,9 +18,7 @@ function tableFocusTarget(productId: string | undefined): HTMLElement | null {
 }
 
 /**
- * The open Produto's details in a panel on the right, over the table. It is not
- * modal: the table stays usable, and another Produto clicked there takes the panel.
- * On a phone the panel covers the table, so the keyboard stays inside it.
+ * The open Produto's details in the side panel over the Categoria table.
  * Keyed by Categoria: a new one starts closed, not sliding out a Produto it lacks.
  */
 export function ProductSidebar({ data }: { data: CategoryData }) {
@@ -37,7 +30,6 @@ export function ProductSidebar({ data }: { data: CategoryData }) {
   const search = useSearch({ strict: false });
   const navigate = useNavigate();
   const changeComparedIds = useChangeComparedIds(data.category);
-  const popupRef = useRef<HTMLDivElement>(null);
   const productIds = useMemo(
     () => new Set(data.products.map((product) => product.id)),
     [data.products],
@@ -47,15 +39,6 @@ export function ProductSidebar({ data }: { data: CategoryData }) {
   useEffect(() => {
     if (openId !== undefined && productIds.has(openId)) recordRecentProduct(data.category, openId);
   }, [openId, productIds, data.category]);
-  const [isBesideTable, setIsBesideTable] = useState(
-    () => window.matchMedia(besideTableQuery).matches,
-  );
-  useEffect(() => {
-    const besideTable = window.matchMedia(besideTableQuery);
-    const update = () => setIsBesideTable(besideTable.matches);
-    besideTable.addEventListener("change", update);
-    return () => besideTable.removeEventListener("change", update);
-  }, []);
 
   function close() {
     // Replaces the entry: the table comes back with the search the panel left it.
@@ -68,72 +51,26 @@ export function ProductSidebar({ data }: { data: CategoryData }) {
   }
 
   return (
-    <Drawer
+    <ProductPanel
       open={openId !== undefined}
-      onOpenChange={(open, eventDetails) => {
-        // Base UI hears Escape on the whole page; the table's search box and the Filtros drawer
-        // keep their own Escape while the panel is open. From a row, Escape still closes it.
-        const target = eventDetails.event.target;
-        if (
-          eventDetails.reason === "escape-key" &&
-          target instanceof Element &&
-          !popupRef.current?.contains(target) &&
-          target.closest("input, textarea, select, [role=combobox], [role=dialog]")
-        ) {
-          eventDetails.cancel();
-          return;
-        }
-        if (!open) close();
-      }}
-      onOpenChangeComplete={(open) => {
-        if (!open) setShownId(undefined);
-      }}
-      swipeDirection="right"
-      modal={isBesideTable ? false : "trap-focus"}
-      // A click on the table picks another Produto instead of closing the panel.
-      disablePointerDismissal
+      onClose={close}
+      onClosed={() => setShownId(undefined)}
+      returnFocusTo={() => tableFocusTarget(product?.id)}
     >
-      {/* The details move focus to their title themselves, on every Produto they show;
-          closing hands it back to the Produto's row while the table still shows it. */}
-      <DrawerContent
-        ref={popupRef}
-        initialFocus={false}
-        finalFocus={() => tableFocusTarget(product?.id) ?? true}
-        // Beside the table, Tab past the panel's last control, or Shift+Tab before its first,
-        // goes back to the table it stays over; the panel has no trigger for Base UI to hand
-        // focus on to.
-        onKeyDown={(event) => {
-          if (!isBesideTable || event.key !== "Tab") return;
-          const controls = event.currentTarget.querySelectorAll<HTMLElement>("a[href], button");
-          const edge = event.shiftKey ? controls[0] : controls[controls.length - 1];
-          if (event.target !== edge) return;
-          const target = tableFocusTarget(product?.id);
-          if (!target) return;
-          event.preventDefault();
-          target.focus();
-        }}
-        className="w-full border-transparent text-body shadow-surface-5 duration-200 data-ending-style:duration-[calc(var(--drawer-swipe-strength)*200ms)] data-ending-style:data-swiping:duration-[calc(var(--drawer-swipe-strength)*200ms)] sm:w-lg"
-      >
-        <div className="flex shrink-0 justify-end px-2 pt-2">
-          <Button variant="ghost" size="icon" aria-label="Fechar detalhes" onClick={close}>
-            <X aria-hidden="true" />
-          </Button>
-        </div>
-        <div className="scroll-fade-y relative min-h-0 flex-1 has-[[role=region]]:scroll-fade-b-4 scroll-pb-24 overflow-y-auto overscroll-contain px-4 pb-4 sm:px-6">
-          {product ? (
-            <ProductDetail
-              key={product.id}
-              data={data}
-              product={product}
-              comparedIds={comparedIds}
-              onComparedIdsChange={changeComparedIds}
-              showCompareBar={openId !== undefined}
-            />
-          ) : (
-            shownId !== undefined && <ProductNotFound category={data.category} />
-          )}
-        </div>
-      </DrawerContent>
-    </Drawer>
+      {product ? (
+        <ProductDetail
+          key={product.id}
+          data={data}
+          product={product}
+          comparison={{
+            comparedIds,
+            onComparedIdsChange: changeComparedIds,
+            showsCompareBar: openId !== undefined,
+          }}
+        />
+      ) : (
+        shownId !== undefined && <ProductNotFound category={data.category} />
+      )}
+    </ProductPanel>
   );
 }

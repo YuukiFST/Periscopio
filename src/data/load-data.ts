@@ -1,13 +1,6 @@
 import type { z } from "zod";
 import type { CategorySlug } from "../categories.ts";
-import {
-  categoryDataSchema,
-  metaSchema,
-  priceHistorySchema,
-  type CategoryData,
-  type Meta,
-  type PriceHistory,
-} from "./schema.ts";
+import { categoryDataSchema, metaSchema, type CategoryData, type Meta } from "./schema.ts";
 
 async function fetchValidated<Schema extends z.ZodType>(
   path: string,
@@ -37,7 +30,6 @@ function loadOnce<Key, Value>(
 
 const categoryDataCache = new Map<CategorySlug, Promise<CategoryData>>();
 const metaCache = new Map<"meta", Promise<Meta>>();
-const priceHistoryCache = new Map<CategorySlug, Promise<PriceHistory>>();
 
 export function loadCategoryData(category: CategorySlug): Promise<CategoryData> {
   return loadOnce(categoryDataCache, category, () =>
@@ -47,11 +39,4 @@ export function loadCategoryData(category: CategorySlug): Promise<CategoryData> 
 
 export function loadMeta(): Promise<Meta> {
   return loadOnce(metaCache, "meta", () => fetchValidated("/data/meta.json", metaSchema));
-}
-
-/** Fetched only when a detail opens; the service worker caches it then, not on install. */
-export function loadPriceHistory(category: CategorySlug): Promise<PriceHistory> {
-  return loadOnce(priceHistoryCache, category, () =>
-    fetchValidated(`/data/precos/${category}.json`, priceHistorySchema),
-  );
 }

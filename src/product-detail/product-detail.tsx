@@ -27,25 +27,24 @@ import {
 } from "@/product-compare/compare-selection";
 import { similarProducts } from "@/product-compare/similar-products";
 import { ProductPhoto } from "@/product-photo/product-photo";
-import { PriceHistorySection } from "./price-history";
 
-type ProductDetailProps = {
-  data: CategoryData;
-  product: Product;
+/** The Comparação marks the detail edits, kept in the Categoria table's link. */
+type DetailComparison = {
   /** The Produtos marked for the Comparação, carried in the link from the table. */
   comparedIds: readonly string[];
   onComparedIdsChange: (ids: readonly string[]) => void;
   /** Off while the panel slides out: the table's own bar is back by then. */
-  showCompareBar: boolean;
+  showsCompareBar: boolean;
 };
 
-export function ProductDetail({
-  data,
-  product,
-  comparedIds,
-  onComparedIdsChange,
-  showCompareBar,
-}: ProductDetailProps) {
+type ProductDetailProps = {
+  data: CategoryData;
+  product: Product;
+  /** Absent over a page with no Categoria table to hold the marks, like the Fila de testes. */
+  comparison?: DetailComparison;
+};
+
+export function ProductDetail({ data, product, comparison }: ProductDetailProps) {
   const headingRef = useRef<HTMLHeadingElement>(null);
   useEffect(() => {
     document.title = `${product.name} · Periscópio`;
@@ -60,19 +59,14 @@ export function ProductDetail({
     }))
     .filter((group) => group.fields.length > 0);
   const hasMeasurements = groups.some((group) => group.id === "medicoes");
-  const price = priceOf(product);
   return (
     <article aria-labelledby="produto-titulo" className="flex w-full flex-col gap-8">
       <ProductHeader
         data={data}
         product={product}
         headingRef={headingRef}
-        comparedIds={comparedIds}
-        onComparedIdsChange={onComparedIdsChange}
+        comparison={comparison}
       />
-      {price !== undefined && (
-        <PriceHistorySection category={data.category} productId={product.id} priceKrw={price} />
-      )}
       <div className="flex flex-col gap-8">
         {groups.map((group) => (
           <FieldGroupSection key={group.id} data={data} group={group} product={product} />
@@ -83,11 +77,11 @@ export function ProductDetail({
           </p>
         )}
       </div>
-      {showCompareBar && (
+      {comparison?.showsCompareBar && (
         <CompareBar
           category={data.category}
-          comparedIds={comparedIds}
-          onClear={() => onComparedIdsChange([])}
+          comparedIds={comparison.comparedIds}
+          onClear={() => comparison.onComparedIdsChange([])}
           focusAfterClearId="produto-titulo"
           className="sticky bottom-0 border-transparent shadow-surface-5"
         />
@@ -100,9 +94,8 @@ function ProductHeader({
   data,
   product,
   headingRef,
-  comparedIds,
-  onComparedIdsChange,
-}: Omit<ProductDetailProps, "showCompareBar"> & {
+  comparison,
+}: ProductDetailProps & {
   headingRef: RefObject<HTMLHeadingElement | null>;
 }) {
   const price = priceOf(product);
@@ -165,11 +158,15 @@ function ProductHeader({
             <span className="sr-only">(abre em nova aba)</span>
           </Button>
         )}
-        <CompareToggleButton
-          isCompared={comparedIds.includes(product.id)}
-          isFull={comparedIds.length >= maxComparedProducts}
-          onToggle={() => onComparedIdsChange(toggleComparedId(comparedIds, product.id))}
-        />
+        {comparison && (
+          <CompareToggleButton
+            isCompared={comparison.comparedIds.includes(product.id)}
+            isFull={comparison.comparedIds.length >= maxComparedProducts}
+            onToggle={() =>
+              comparison.onComparedIdsChange(toggleComparedId(comparison.comparedIds, product.id))
+            }
+          />
+        )}
         <CompareSimilarLink data={data} product={product} />
         <FavoriteToggleButton data={data} product={product} />
       </div>

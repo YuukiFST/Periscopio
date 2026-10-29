@@ -2,6 +2,10 @@
     - heading "Periscópio" [level=1]
     - paragraph: Medições, especificações e preços de mouses, teclados, monitores, mousepads, switches e fones, em português.
     - paragraph: /Atualizado em \d+ de .+ de \d+/
+    - paragraph:
+        - text: Dados do
+        - link "EyeJokerDB (abre em nova aba)":
+            - /url: https://eyejokerdb.com
     - region "Categorias":
         - heading "Categorias" [level=2]
         - list:

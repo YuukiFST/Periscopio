@@ -7,12 +7,9 @@ import {
   categorySlugSchema,
   isTested,
   krwBrlRateSchema,
-  priceEntrySchema,
-  priceHistorySchema,
   productSchema,
   type CategoryData,
   type Meta,
-  type PriceHistory,
   type Product,
 } from "../src/data/schema.ts";
 import {
@@ -25,7 +22,6 @@ import {
 import { fetchKrwBrlRate } from "./exchange-rate.ts";
 import { deleteOrphanImages, downloadNewImages } from "./images.ts";
 import { normalizeCategory, type NormalizedCategory } from "./normalize.ts";
-import { nextPriceHistory, priceDateOf } from "./price-history.ts";
 import { publishSummary, renderSummary } from "./summary.ts";
 import { findUntranslatedKeys } from "./translation-gaps.ts";
 import { UpdateRefusedError } from "./update-refused-error.ts";
@@ -72,16 +68,6 @@ const publishedMetaSchema = z.object({
   krwBrl: krwBrlRateSchema.optional().catch(undefined),
 });
 type PublishedMeta = z.infer<typeof publishedMetaSchema>;
-
-/** Any number of entries and any extra keys, so a change to the cap or the entry shape still reads it. */
-const publishedPriceHistorySchema = z.object({
-  products: z.record(
-    z.string(),
-    z.array(
-      z.object({ date: priceEntrySchema.shape.date, priceKrw: priceEntrySchema.shape.priceKrw }),
-    ),
-  ),
-});
 
 type UpdateConfig = {
   apiUrl: string;
@@ -162,15 +148,6 @@ function validateOutput(data: CategoryData): CategoryData {
   );
 }
 
-function validatePriceHistory(history: PriceHistory): PriceHistory {
-  const result = priceHistorySchema.safeParse(history);
-  if (result.success) return result.data;
-  throw new UpdateRefusedError(
-    `${history.category}: o Histórico de preço não passou na validação:
-${z.prettifyError(result.error)}`,
-  );
-}
-
 function imageFileName(imagePath: string): string {
   return imagePath.slice("/images/".length);
 }
@@ -229,7 +206,6 @@ async function writeJsonFile(path: string, value: unknown): Promise<void> {
 
 async function runUpdate(config: UpdateConfig): Promise<void> {
   const dataDir = join(config.outDir, "data");
-  const priceHistoryDir = join(dataDir, "precos");
   const imagesDir = join(config.outDir, "images");
   const metaPath = join(dataDir, "meta.json");
 
@@ -250,23 +226,14 @@ async function runUpdate(config: UpdateConfig): Promise<void> {
   refuseRowDrop(validated, publishedMeta);
   const updatedAt = new Date().toISOString();
   const publishedProducts = new Map<CategorySlug, PublishedProducts | null>();
-  const priceHistories: PriceHistory[] = [];
   for (const data of validated) {
     const publishedPath = join(dataDir, `${data.category}.json`);
     const published = await readPublishedFile(publishedPath, publishedProductsSchema);
     refuseLostImages(data, published);
     publishedProducts.set(data.category, published);
-    const priceHistoryPath = join(priceHistoryDir, `${data.category}.json`);
-    const publishedPriceHistory = await readPublishedFile(
-      priceHistoryPath,
-      publishedPriceHistorySchema,
-    );
-    priceHistories.push(
-      validatePriceHistory(nextPriceHistory(publishedPriceHistory, data, priceDateOf(updatedAt))),
-    );
   }
 
-  await mkdir(priceHistoryDir, { recursive: true });
+  await mkdir(dataDir, { recursive: true });
   await mkdir(imagesDir, { recursive: true });
   const imageCdnPaths = new Map(normalized.flatMap((category) => [...category.imageCdnPaths]));
   const krwBrlFetch = await fetchKrwBrlRate(config.frankfurterUrl);
@@ -281,9 +248,6 @@ async function runUpdate(config: UpdateConfig): Promise<void> {
   );
 
   for (const data of published) await writeJsonFile(join(dataDir, `${data.category}.json`), data);
-  for (const history of priceHistories) {
-    await writeJsonFile(join(priceHistoryDir, `${history.category}.json`), history);
-  }
   const counts: Meta["counts"] = {
     mouse: 0,
     teclado: 0,

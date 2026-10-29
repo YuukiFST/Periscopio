@@ -157,7 +157,8 @@
   --selected: #525252;
   --destructive-light: #450a0a;
   --overlay: 255 255 255;
-  --focus-ring: var(--color-blue-500);
+  /* blue-400: 3:1 or more on a hovered row of a popover, where blue-500 drops to 2.8:1. */
+  --focus-ring: var(--color-blue-400);
   --tint: rgb(255 255 255 / 0.25);
   --tint-hover: rgb(255 255 255 / 0.2);
   --foreground: oklch(98.5% 0 0);
@@ -210,6 +211,13 @@
   --color-novidade-subtle: color-mix(in oklab, var(--color-blue-500) 10%, transparent);
   --color-warning-fg: var(--warning-fg);
   --color-warning-subtle: color-mix(in oklab, var(--color-amber-500) 10%, transparent);
+  /* Each Categoria's hue on its home card, clear of the blue of Novidade and Favorito. */
+  --color-categoria-mouse: var(--color-violet-500);
+  --color-categoria-teclado: var(--color-amber-500);
+  --color-categoria-monitor: var(--color-emerald-500);
+  --color-categoria-mousepad: var(--color-rose-500);
+  --color-categoria-switch: var(--color-lime-500);
+  --color-categoria-fone: var(--color-fuchsia-500);
 
   --color-surface-1: var(--surface-1);
   --color-surface-2: var(--surface-2);

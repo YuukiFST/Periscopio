@@ -145,23 +145,3 @@ export const metaSchema = z.strictObject({
   krwBrl: krwBrlRateSchema.optional(),
 });
 export type Meta = z.infer<typeof metaSchema>;
-
-/** About a year of weekly Atualizações. */
-export const maxPriceEntries = 52;
-
-/** The Preço one Atualização recorded, on the day (UTC) it ran. */
-export const priceEntrySchema = z.strictObject({
-  date: z.iso.date(),
-  priceKrw: z.int().positive().multipleOf(100),
-});
-export type PriceEntry = z.infer<typeof priceEntrySchema>;
-
-/**
- * The Histórico de preço of a Categoria, in `public/data/precos/<categoria>.json`:
- * per Produto id, oldest first, one entry each time the Preço changed.
- */
-export const priceHistorySchema = z.strictObject({
-  category: categorySlugSchema,
-  products: z.record(z.guid(), z.array(priceEntrySchema).min(1).max(maxPriceEntries)),
-});
-export type PriceHistory = z.infer<typeof priceHistorySchema>;
