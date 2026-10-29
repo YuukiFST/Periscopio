@@ -1,5 +1,5 @@
 import { createFileRoute, getRouteApi, Link } from "@tanstack/react-router";
-import { Sparkles, Star } from "lucide-react";
+import { FlaskConical, Sparkles, Star } from "lucide-react";
 import { useEffect, useRef, type ReactNode } from "react";
 import { categoryLabels, categorySlugs, type CategorySlug } from "@/categories";
 import { Button } from "@/components/ui/button";
@@ -8,7 +8,8 @@ import { useAllCategories, type CategoriesLoad } from "@/data/use-all-categories
 import { useFavoriteIds } from "@/product-table/favorite-products";
 import { filterNovidades } from "@/product-table/novidades";
 import { productCount } from "@/product-table/table-toolbar";
-import { RecentProductLink } from "@/recent-products/recent-product-link";
+import { testQueueCount } from "@/test-queue/test-queue";
+import { ProductList } from "@/recent-products/product-list";
 import {
   recentProductItems,
   useRecentProducts,
@@ -130,6 +131,23 @@ function HomePage() {
                 );
               })}
             </ul>
+            <Link
+              to="/fila"
+              className="inline-flex items-center gap-2 self-start font-medium tabular-nums underline-offset-4 hover:underline active:underline"
+            >
+              <FlaskConical aria-hidden="true" className="size-4 shrink-0 text-muted-foreground" />
+              Fila de testes
+              {load.status === "loaded" && (
+                <span className="font-normal text-muted-foreground">
+                  {productCount(
+                    load.categories.reduce(
+                      (sum, { products }) => sum + testQueueCount(products),
+                      0,
+                    ),
+                  )}
+                </span>
+              )}
+            </Link>
           </section>
           {hasLists && (
             // Between a phone and a wide screen the lists sit side by side, so a price stays near its name.
@@ -315,17 +333,5 @@ function LoadedProductList({
       )}
       {shown.length > 0 && <ProductList items={shown} />}
     </>
-  );
-}
-
-function ProductList({ items }: { items: readonly RecentProductItem[] }) {
-  return (
-    <ul className="-mx-3 flex flex-col">
-      {items.map((item) => (
-        <li key={`${item.category}/${item.product.id}`}>
-          <RecentProductLink item={item} />
-        </li>
-      ))}
-    </ul>
   );
 }
