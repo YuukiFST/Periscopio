@@ -2,6 +2,7 @@ import { Popover } from "@base-ui/react/popover";
 import { createFileRoute, getRouteApi, Link } from "@tanstack/react-router";
 import {
   Cuboid,
+  ExternalLink,
   FlaskConical,
   Headphones,
   Keyboard,
@@ -154,6 +155,19 @@ function HomePage() {
               e fones, em português.
             </p>
             <UpdatedAtLabel meta={meta} />
+            <p className="text-caption text-muted-foreground">
+              Dados do{" "}
+              <a
+                href="https://eyejokerdb.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="EyeJokerDB (abre em nova aba)"
+                className="inline-flex items-center gap-0.5 font-medium text-blue-600 dark:text-blue-400 underline-offset-4 hover:underline active:underline"
+              >
+                EyeJokerDB
+                <ExternalLink aria-hidden="true" className="size-3 shrink-0" />
+              </a>
+            </p>
           </div>
         </div>
         <section aria-labelledby="categorias-titulo" className="flex min-w-0 flex-col gap-3">
