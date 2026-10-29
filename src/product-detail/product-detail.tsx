@@ -27,7 +27,6 @@ import {
 } from "@/product-compare/compare-selection";
 import { similarProducts } from "@/product-compare/similar-products";
 import { ProductPhoto } from "@/product-photo/product-photo";
-import { PriceHistorySection } from "./price-history";
 
 type ProductDetailProps = {
   data: CategoryData;
@@ -60,7 +59,6 @@ export function ProductDetail({
     }))
     .filter((group) => group.fields.length > 0);
   const hasMeasurements = groups.some((group) => group.id === "medicoes");
-  const price = priceOf(product);
   return (
     <article aria-labelledby="produto-titulo" className="flex w-full flex-col gap-8">
       <ProductHeader
@@ -70,9 +68,6 @@ export function ProductDetail({
         comparedIds={comparedIds}
         onComparedIdsChange={onComparedIdsChange}
       />
-      {price !== undefined && (
-        <PriceHistorySection category={data.category} productId={product.id} priceKrw={price} />
-      )}
       <div className="flex flex-col gap-8">
         {groups.map((group) => (
           <FieldGroupSection key={group.id} data={data} group={group} product={product} />
