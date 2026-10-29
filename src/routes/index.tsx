@@ -1,15 +1,30 @@
+import { Popover } from "@base-ui/react/popover";
 import { createFileRoute, getRouteApi, Link } from "@tanstack/react-router";
-import { FlaskConical, Sparkles, Star } from "lucide-react";
+import {
+  Cuboid,
+  FlaskConical,
+  Headphones,
+  Keyboard,
+  Monitor,
+  Mouse,
+  RectangleHorizontal,
+  Sparkles,
+  Star,
+  type LucideIcon,
+} from "lucide-react";
 import { useEffect, useRef, type ReactNode } from "react";
 import { categoryLabels, categorySlugs, type CategorySlug } from "@/categories";
 import { Button } from "@/components/ui/button";
 import { UpdatedAtLabel } from "@/components/update-notice";
+import { isTested, type Product } from "@/data/schema";
 import { useAllCategories, type CategoriesLoad } from "@/data/use-all-categories";
+import { ProductPhoto } from "@/product-photo/product-photo";
 import { useFavoriteIds } from "@/product-table/favorite-products";
 import { filterNovidades } from "@/product-table/novidades";
 import { productCount } from "@/product-table/table-toolbar";
 import { testQueueCount } from "@/test-queue/test-queue";
 import { ProductList } from "@/recent-products/product-list";
+import { recentProductsPopover } from "@/recent-products/recent-products-button";
 import {
   recentProductItems,
   useRecentProducts,
@@ -18,7 +33,7 @@ import {
 
 /**
  * The home page: one card per Categoria with its Novidades and Favoritos, and
- * beside the cards the Produtos seen last and the ones starred.
+ * under the cards the Produtos seen last and the ones starred.
  */
 export const Route = createFileRoute("/")({
   component: HomePage,
@@ -31,14 +46,54 @@ const homeRecentProductCount = 6;
 /** As many Favoritos as recent Produtos, so the two lists stand level. */
 const homeFavoriteProductCount = 6;
 
+/** Photos of a Categoria's tested Produtos on its card. */
+const cardPhotoCount = 3;
+
 const countFormat = new Intl.NumberFormat("pt-BR");
 
-function novidadeCountText(count: number): string {
-  return count === 1 ? "1 novidade" : `${countFormat.format(count)} novidades`;
-}
+/**
+ * Each Categoria's icon and hue on its card. Full class strings, so Tailwind
+ * finds them; the hues are the `--color-categoria-*` tokens. The fill is fainter
+ * in the light theme, so the gray count on it keeps 4.5:1.
+ */
+const categoryLooks: Record<CategorySlug, { icon: LucideIcon; fill: string; watermark: string }> = {
+  mouse: {
+    icon: Mouse,
+    fill: "border-categoria-mouse/30 from-categoria-mouse/15 to-categoria-mouse/5 dark:from-categoria-mouse/25",
+    watermark: "text-categoria-mouse/25",
+  },
+  teclado: {
+    icon: Keyboard,
+    fill: "border-categoria-teclado/30 from-categoria-teclado/15 to-categoria-teclado/5 dark:from-categoria-teclado/25",
+    watermark: "text-categoria-teclado/25",
+  },
+  monitor: {
+    icon: Monitor,
+    fill: "border-categoria-monitor/30 from-categoria-monitor/15 to-categoria-monitor/5 dark:from-categoria-monitor/25",
+    watermark: "text-categoria-monitor/25",
+  },
+  mousepad: {
+    icon: RectangleHorizontal,
+    fill: "border-categoria-mousepad/30 from-categoria-mousepad/15 to-categoria-mousepad/5 dark:from-categoria-mousepad/25",
+    watermark: "text-categoria-mousepad/25",
+  },
+  switch: {
+    icon: Cuboid,
+    fill: "border-categoria-switch/30 from-categoria-switch/15 to-categoria-switch/5 dark:from-categoria-switch/25",
+    watermark: "text-categoria-switch/25",
+  },
+  fone: {
+    icon: Headphones,
+    fill: "border-categoria-fone/30 from-categoria-fone/15 to-categoria-fone/5 dark:from-categoria-fone/25",
+    watermark: "text-categoria-fone/25",
+  },
+};
 
-function favoriteCountText(count: number): string {
-  return count === 1 ? "1 favorito" : `${countFormat.format(count)} favoritos`;
+/** The first few tested Produtos that have a photo. */
+function cardPhotos(products: readonly Product[]): string[] {
+  return products
+    .flatMap((product) => (isTested(product) && product.image !== null ? [product.image] : []))
+    .slice(0, cardPhotoCount);
 }
 
 type LoadedCategories = Extract<CategoriesLoad, { status: "loaded" }>;
@@ -81,6 +136,7 @@ function HomePage() {
     headingRef.current?.focus();
   }, []);
 
+  const recentItems = load.status === "loaded" ? recentProductItems(recent, load.categories) : [];
   const favorites = load.status === "loaded" ? favoriteProductItems(favoriteIds, load) : [];
   const hasStoredFavorites = categorySlugs.some((slug) => favoriteIds[slug].size > 0);
   const hasLists = recent.length > 0 || hasStoredFavorites;
@@ -100,83 +156,79 @@ function HomePage() {
             <UpdatedAtLabel meta={meta} />
           </div>
         </div>
-        {/* The lists sit beside the cards on a wide screen and under them on a phone. */}
-        <div
-          className={
-            hasLists
-              ? "grid gap-x-10 gap-y-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,24rem)] lg:items-start"
-              : "flex flex-col"
-          }
-        >
-          <section aria-labelledby="categorias-titulo" className="flex min-w-0 flex-col gap-3">
-            <h2 id="categorias-titulo" className="text-title font-medium">
-              Categorias
-            </h2>
-            <ul className="grid grid-cols-1 gap-3 sm:grid-cols-3">
-              {categorySlugs.map((slug) => {
-                const categoryLoad = load.status === "loaded" ? load : undefined;
-                const products = categoryLoad?.categories.find(
-                  ({ category }) => category === slug,
-                )?.products;
-                return (
-                  <CategoryCard
-                    key={slug}
-                    category={slug}
-                    count={meta.counts[slug]}
-                    novidadeCount={products && filterNovidades(products, meta.updatedAt).length}
-                    favoriteCount={
-                      products?.filter((product) => favoriteIds[slug].has(product.id)).length
-                    }
-                  />
-                );
-              })}
-            </ul>
-            <Link
-              to="/fila"
-              className="inline-flex items-center gap-2 self-start font-medium tabular-nums underline-offset-4 hover:underline active:underline"
-            >
-              <FlaskConical aria-hidden="true" className="size-4 shrink-0 text-muted-foreground" />
-              Fila de testes
-              {load.status === "loaded" && (
-                <span className="font-normal text-muted-foreground">
-                  {productCount(
-                    load.categories.reduce(
-                      (sum, { products }) => sum + testQueueCount(products),
-                      0,
-                    ),
-                  )}
-                </span>
-              )}
-            </Link>
-          </section>
-          {hasLists && (
-            // Between a phone and a wide screen the lists sit side by side, so a price stays near its name.
-            <div className="flex min-w-0 flex-col gap-8 sm:grid sm:grid-cols-2 sm:gap-x-10 lg:flex">
-              {recent.length > 0 && (
-                <ProductListSection id="recentes-titulo" title="Vistos recentemente">
-                  <LoadedProductList
-                    load={load}
-                    onRetry={ensureLoaded}
-                    items={(loaded) =>
-                      recentProductItems(recent, loaded.categories).slice(0, homeRecentProductCount)
-                    }
-                    emptyText="Os produtos que você viu não estão mais nos dados."
-                  />
-                </ProductListSection>
-              )}
-              {hasStoredFavorites && (
-                <ProductListSection id="favoritos-titulo" title="Favoritos">
-                  <LoadedProductList
-                    load={load}
-                    onRetry={ensureLoaded}
-                    items={() => favorites.slice(0, homeFavoriteProductCount)}
-                    emptyText="Os produtos favoritos não estão mais nos dados."
-                  />
-                </ProductListSection>
-              )}
-            </div>
-          )}
-        </div>
+        <section aria-labelledby="categorias-titulo" className="flex min-w-0 flex-col gap-3">
+          <h2 id="categorias-titulo" className="text-title font-medium">
+            Categorias
+          </h2>
+          <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {categorySlugs.map((slug) => {
+              const categoryLoad = load.status === "loaded" ? load : undefined;
+              const products = categoryLoad?.categories.find(
+                ({ category }) => category === slug,
+              )?.products;
+              return (
+                <CategoryCard
+                  key={slug}
+                  category={slug}
+                  count={meta.counts[slug]}
+                  novidadeCount={products && filterNovidades(products, meta.updatedAt).length}
+                  favoriteCount={
+                    products?.filter((product) => favoriteIds[slug].has(product.id)).length
+                  }
+                  photos={products ? cardPhotos(products) : []}
+                />
+              );
+            })}
+          </ul>
+          <Link
+            to="/fila"
+            className="inline-flex items-center gap-2 self-start font-medium tabular-nums underline-offset-4 hover:underline active:underline"
+          >
+            <FlaskConical aria-hidden="true" className="size-4 shrink-0 text-muted-foreground" />
+            Fila de testes
+            {load.status === "loaded" && (
+              <span className="font-normal text-muted-foreground">
+                {productCount(
+                  load.categories.reduce((sum, { products }) => sum + testQueueCount(products), 0),
+                )}
+              </span>
+            )}
+          </Link>
+        </section>
+        {hasLists && (
+          // Capped, so a price stays near its name even when one list stands alone.
+          <div className="grid gap-8 md:max-w-4xl md:grid-cols-2 md:items-start md:gap-x-10">
+            {recent.length > 0 && (
+              <ProductListSection id="recentes-titulo" title="Vistos recentemente">
+                <LoadedProductList
+                  load={load}
+                  onRetry={ensureLoaded}
+                  items={() => recentItems.slice(0, homeRecentProductCount)}
+                  emptyText="Os produtos que você viu não estão mais nos dados. Os próximos que você abrir aparecem aqui."
+                />
+                {recentItems.length > homeRecentProductCount && (
+                  // Opens the header's Recentes list, which holds the rest, under this button.
+                  <Popover.Trigger
+                    handle={recentProductsPopover}
+                    render={<Button variant="tertiary" className="self-start" />}
+                  >
+                    Ver todos os {countFormat.format(recentItems.length)}
+                  </Popover.Trigger>
+                )}
+              </ProductListSection>
+            )}
+            {hasStoredFavorites && (
+              <ProductListSection id="favoritos-titulo" title="Favoritos">
+                <LoadedProductList
+                  load={load}
+                  onRetry={ensureLoaded}
+                  items={() => favorites.slice(0, homeFavoriteProductCount)}
+                  emptyText="Os produtos favoritos não estão mais nos dados."
+                />
+              </ProductListSection>
+            )}
+          </div>
+        )}
       </div>
     </div>
   );
@@ -187,6 +239,7 @@ function CategoryCard({
   count,
   novidadeCount,
   favoriteCount,
+  photos,
 }: {
   category: CategorySlug;
   /** From `meta.counts`, so it shows before the Produtos load. */
@@ -195,33 +248,43 @@ function CategoryCard({
   novidadeCount: number | undefined;
   /** The starred Produtos the data has; undefined until they load. */
   favoriteCount: number | undefined;
+  /** Empty until the Categoria's Produtos load. */
+  photos: readonly string[];
 }) {
+  const look = categoryLooks[category];
   const hasNovidades = novidadeCount !== undefined && novidadeCount > 0;
   const hasFavorites = favoriteCount !== undefined && favoriteCount > 0;
   return (
-    <li className="relative flex flex-col gap-1 rounded-xl sm:min-h-28 border border-border p-4 [@media(hover:hover)]:has-[h3_a:hover]:bg-hover has-[h3_a:active]:bg-active">
-      <h3 className="text-subtitle font-medium">
-        {/* The whole card opens the Categoria; the links below sit above it. */}
-        <Link
-          to="/$categoria"
-          params={{ categoria: category }}
-          className="outline-none after:absolute after:inset-0 after:rounded-xl focus-visible:after:outline-2 focus-visible:after:outline-ring"
-        >
-          {categoryLabels[category]}
-        </Link>
-      </h3>
-      <p className="text-muted-foreground tabular-nums">{productCount(count)}</p>
-      {(hasNovidades || hasFavorites) && (
-        // On touch the gap clears the links' larger tap areas, so wrapped rows never overlap.
-        <div className="mt-auto flex flex-wrap items-center gap-x-4 gap-y-1 pt-2 pointer-coarse:gap-y-5">
+    <li
+      className={`relative isolate flex items-center gap-4 overflow-hidden rounded-xl border bg-linear-to-br p-4 transition-[filter] [@media(hover:hover)]:has-[h3_a:hover]:brightness-125 has-[h3_a:active]:brightness-110 ${look.fill}`}
+    >
+      <look.icon
+        aria-hidden="true"
+        strokeWidth={1.5}
+        className={`absolute start-1/3 -bottom-8 -z-10 size-32 -rotate-12 ${look.watermark}`}
+      />
+      <div className="flex min-w-0 flex-1 flex-col gap-1">
+        <h3 className="text-title font-medium">
+          {/* The whole card opens the Categoria; the links below sit above it. */}
+          <Link
+            to="/$categoria"
+            params={{ categoria: category }}
+            className="outline-none after:absolute after:inset-0 after:rounded-xl focus-visible:after:outline-2 focus-visible:after:outline-ring"
+          >
+            {categoryLabels[category]}
+          </Link>
+        </h3>
+        {/* On touch the gap clears the links' larger tap areas, so wrapped rows never overlap. */}
+        <div className="flex flex-wrap items-center gap-x-3 gap-y-1 pointer-coarse:gap-y-5">
+          <p className="text-muted-foreground tabular-nums">{productCount(count)}</p>
           {hasNovidades && (
             <CardLink
               category={category}
               search={{ novidades: "1" }}
               icon={<Sparkles aria-hidden="true" className="size-4 shrink-0 text-novidade" />}
-            >
-              {novidadeCountText(novidadeCount)}
-            </CardLink>
+              count={novidadeCount}
+              noun={novidadeCount === 1 ? "novidade" : "novidades"}
+            />
           )}
           {hasFavorites && (
             <CardLink
@@ -231,27 +294,41 @@ function CategoryCard({
               icon={
                 <Star aria-hidden="true" className="size-4 shrink-0 fill-current text-favorito" />
               }
-            >
-              {favoriteCountText(favoriteCount)}
-            </CardLink>
+              count={favoriteCount}
+              noun={favoriteCount === 1 ? "favorito" : "favoritos"}
+            />
           )}
+        </div>
+      </div>
+      {photos.length > 0 && (
+        <div className="flex shrink-0 -space-x-4">
+          {photos.map((photo) => (
+            <span key={photo} className="rounded-lg shadow-md ring-2 ring-background">
+              <ProductPhoto src={photo} alt="" size="compare" loading="lazy" />
+            </span>
+          ))}
         </div>
       )}
     </li>
   );
 }
 
-/** A link inside a Categoria card, above the card's own link so it opens its own view. */
+/**
+ * A link inside a Categoria card, above the card's own link so it opens its own view.
+ * It shows the icon and the number; the noun is read out, not shown.
+ */
 function CardLink({
   category,
   search,
   icon,
-  children,
+  count,
+  noun,
 }: {
   category: CategorySlug;
   search: { novidades: "1" } | { favoritos: "1"; status: "todos" };
   icon: ReactNode;
-  children: string;
+  count: number;
+  noun: string;
 }) {
   return (
     <Link
@@ -262,7 +339,8 @@ function CardLink({
       className={`relative z-10 inline-flex items-center gap-1 font-medium tabular-nums underline-offset-4 hover:underline active:underline pointer-coarse:after:absolute pointer-coarse:after:-inset-x-1 pointer-coarse:after:-inset-y-2.5`}
     >
       {icon}
-      {children}
+      {countFormat.format(count)}
+      <span className="sr-only"> {noun}</span>
       {/* Every card has these links, so the name says which Categoria each opens. */}
       <span className="sr-only"> em {categoryLabels[category]}</span>
     </Link>
@@ -279,7 +357,8 @@ function ProductListSection({
   children: ReactNode;
 }) {
   return (
-    <section aria-labelledby={id} className="flex flex-col gap-3">
+    // The first row's own padding completes the heading's gap, as on the Categoria cards.
+    <section aria-labelledby={id} className="flex flex-col gap-1">
       <h2 id={id} className="text-title font-medium">
         {title}
       </h2>
@@ -304,7 +383,7 @@ function LoadedProductList({
   return (
     <>
       {/* Mounted all along, so a screen reader hears the loading end either way. */}
-      <div role="status" className="empty:hidden">
+      <div role="status" className="py-2 empty:hidden">
         {load.status === "loading" && (
           <p className="text-body text-muted-foreground">Carregando produtos…</p>
         )}

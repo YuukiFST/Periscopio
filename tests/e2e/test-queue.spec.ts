@@ -35,15 +35,19 @@ test("the Fila de testes lists the Produtos bought, in the lab or in prévia, an
   await expect(page).toHaveTitle("Fila de testes · Periscópio");
   await expect(page.getByRole("heading", { level: 1 })).toBeFocused();
 
-  await expect(stage(page, /^Comprados/).getByRole("link")).toHaveText([
-    /^VK M5 Max THOR\s*Mouses/,
+  // Every Categoria shows, so each stage groups its Produtos under a heading per Categoria.
+  await expect(stage(page, /^Comprados/).getByRole("heading", { level: 3 })).toHaveText([
+    /^Mouses\s*1$/,
   ]);
-  await expect(stage(page, /^Recebidos e em teste/).getByRole("link")).toHaveText([
-    /^Cloud XS\s*Mouses/,
+  await expect(stage(page, /^Comprados/).getByRole("link")).toHaveText([/^VK M5 Max THOR/]);
+  await expect(stage(page, /^Recebidos e em teste/).getByRole("heading", { level: 3 })).toHaveText([
+    /^Mouses\s*1$/,
   ]);
-  await expect(stage(page, /^Em prévia/).getByRole("link")).toHaveText([
-    /^Archon M3 600 MAX\s*Teclados/,
+  await expect(stage(page, /^Recebidos e em teste/).getByRole("link")).toHaveText([/^Cloud XS/]);
+  await expect(stage(page, /^Em prévia/).getByRole("heading", { level: 3 })).toHaveText([
+    /^Teclados\s*1$/,
   ]);
+  await expect(stage(page, /^Em prévia/).getByRole("link")).toHaveText([/^Archon M3 600 MAX/]);
 
   const queueCategories = page.getByRole("navigation", { name: "Categorias da fila" });
   await expect(queueCategories.getByRole("link", { name: "Todas 3" })).toHaveAttribute(
@@ -62,10 +66,48 @@ test("the Fila de testes lists the Produtos bought, in the lab or in prévia, an
   await expect(stage(page, /^Comprados/)).toContainText("Nenhum produto nesta etapa.");
   await expect(stage(page, /^Recebidos e em teste/)).toContainText("Nenhum produto nesta etapa.");
   await expect(stage(page, /^Em prévia/).getByRole("link")).toHaveText([/^Archon M3 600 MAX/]);
+  await expect(stage(page, /^Em prévia/).getByRole("heading", { level: 3 })).toHaveCount(0);
 
   await stage(page, /^Em prévia/)
     .getByRole("link", { name: /^Archon M3 600 MAX/ })
     .click();
-  await expect(page).toHaveURL(/\/teclado\/[\w-]+$/);
+  await expect(page).toHaveURL(/\/fila\/teclado\/[\w-]+\?categoria=teclado$/);
   await expect(page.getByRole("dialog", { name: "Archon M3 600 MAX" })).toBeVisible();
+});
+
+test("a Produto of the Fila opens in a side panel over the Fila, which Escape closes", async ({
+  page,
+}) => {
+  await queueMousesInTheLab(page);
+  await page.goto("/fila");
+  const row = stage(page, /^Comprados/).getByRole("link", { name: /^VK M5 Max THOR/ });
+  await row.click();
+
+  await expect(page).toHaveURL(/^[^?]*\/fila\/mouse\/[\w-]+$/);
+  await expect(page.getByRole("dialog", { name: "VK M5 Max THOR" })).toBeVisible();
+  await expect(page).toHaveTitle("VK M5 Max THOR · Periscópio");
+  await expect(page.getByRole("heading", { level: 1, name: "Fila de testes" })).toBeVisible();
+  await expect(row).toHaveAttribute("aria-current", "page");
+  // No Categoria table holds the marks, so the panel offers no Comparação toggle.
+  await expect(page.getByRole("button", { name: "Adicionar à comparação" })).toHaveCount(0);
+
+  await page.keyboard.press("Escape");
+  await expect(page).toHaveURL("/fila");
+  await expect(page.getByRole("dialog")).toHaveCount(0);
+  await expect(page).toHaveTitle("Fila de testes · Periscópio");
+  await expect(row).toBeFocused();
+});
+
+test("a link to a Produto of the Fila opens its panel over the Fila", async ({ page }) => {
+  await queueMousesInTheLab(page);
+  await page.goto("/fila");
+  const href = await stage(page, /^Recebidos e em teste/)
+    .getByRole("link", { name: /^Cloud XS/ })
+    .getAttribute("href");
+  await page.goto(href ?? "");
+
+  await expect(page.getByRole("dialog", { name: "Cloud XS" })).toBeVisible();
+  await expect(page.getByRole("heading", { level: 2, name: "Cloud XS" })).toBeFocused();
+  await page.getByRole("button", { name: "Fechar detalhes" }).click();
+  await expect(page).toHaveURL("/fila");
 });

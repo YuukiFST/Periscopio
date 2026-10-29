@@ -5,8 +5,12 @@ import { useId, useRef, useState } from "react";
 import { flushSync } from "react-dom";
 import { Button } from "@/components/ui/button";
 import { useAllCategories } from "@/data/use-all-categories";
+import { productCount } from "@/product-table/table-toolbar";
 import { RecentProductLink } from "./recent-product-link";
 import { clearRecentProducts, recentProductItems, useRecentProducts } from "./recent-products";
+
+/** Lets a button outside the header, like the home page's, open the same list. */
+export const recentProductsPopover = Popover.createHandle();
 
 /**
  * The header's "Recentes" button, shown once a Produto has been opened, and
@@ -19,6 +23,8 @@ export function RecentProductsButton() {
   // The history goes at once and for good, so the first press only asks.
   const [isConfirmingClear, setIsConfirmingClear] = useState(false);
   const openedProduct = useRef(false);
+  // Set by the confirmed clearing, which waits for the list to finish closing.
+  const clearsOnClose = useRef(false);
   const [load, ensureLoaded] = useAllCategories();
   const questionId = useId();
   const clearButtonRef = useRef<HTMLButtonElement>(null);
@@ -28,6 +34,7 @@ export function RecentProductsButton() {
 
   return (
     <Popover.Root
+      handle={recentProductsPopover}
       open={isOpen}
       onOpenChange={(open) => {
         setIsOpen(open);
@@ -35,6 +42,12 @@ export function RecentProductsButton() {
         if (!open) return;
         openedProduct.current = false;
         ensureLoaded();
+      }}
+      // Clearing unmounts the button and the list with it, so it waits for the list's exit.
+      onOpenChangeComplete={(open) => {
+        if (open || !clearsOnClose.current) return;
+        clearsOnClose.current = false;
+        clearRecentProducts();
       }}
     >
       <Popover.Trigger
@@ -59,31 +72,34 @@ export function RecentProductsButton() {
         >
           <Popover.Popup
             // Opening a Produto leaves focus to its details, which move it to their title.
-            finalFocus={() => !openedProduct.current}
-            className="flex max-h-[min(var(--available-height),32rem)] w-[min(calc(100vw-1rem),24rem)] flex-col overflow-hidden rounded-2xl border border-transparent bg-popover text-popover-foreground shadow-surface-5 transition-[opacity,scale] duration-150 ease-out-quint outline-none origin-(--transform-origin) data-ending-style:scale-[0.98] data-ending-style:opacity-0 data-starting-style:scale-[0.98] data-starting-style:opacity-0 motion-reduce:data-ending-style:scale-100 motion-reduce:data-starting-style:scale-100"
+            // Clearing leaves it on the page's title, since the button goes with the history.
+            finalFocus={() => !openedProduct.current && !clearsOnClose.current}
+            className="flex max-h-[min(var(--available-height),32rem)] w-[min(calc(100vw-1rem),24rem)] flex-col overflow-hidden rounded-2xl border border-transparent bg-popover text-popover-foreground shadow-surface-5 transition-[opacity,scale] duration-150 ease-out-quint outline-none focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-ring origin-(--transform-origin) data-ending-style:scale-[0.98] data-ending-style:opacity-0 data-starting-style:scale-[0.98] data-starting-style:opacity-0 motion-reduce:data-ending-style:scale-100 motion-reduce:data-starting-style:scale-100"
           >
-            <Popover.Title className="border-b border-border px-4 py-3 text-subtitle font-medium">
+            <Popover.Title className="border-b border-border px-5 py-3 text-subtitle font-medium">
               Vistos recentemente
             </Popover.Title>
-            <div className="min-h-0 overflow-y-auto overscroll-contain">
+            {/* The fade shows only on a side with more Produtos past the edge. */}
+            <div className="min-h-0 scroll-fade-y overflow-y-auto overscroll-contain">
               {/* Mounted all along, so a screen reader hears the loading end either way. */}
               <div role="status" className="empty:sr-only">
                 {load.status === "failed" && (
-                  <p className="px-4 pt-6 pb-3 text-body text-muted-foreground">
+                  <p className="px-5 pt-6 pb-3 text-body text-muted-foreground">
                     Não deu para carregar os produtos. Verifique a conexão e tente de novo.
                   </p>
                 )}
                 {load.status === "loading" && (
-                  <p className="px-4 py-6 text-body text-muted-foreground">Carregando produtos…</p>
+                  <p className="px-5 py-6 text-body text-muted-foreground">Carregando produtos…</p>
                 )}
                 {load.status === "loaded" && items.length === 0 && (
-                  <p className="px-4 py-6 text-body text-muted-foreground">
-                    Os produtos que você viu não estão mais nos dados.
+                  <p className="px-5 py-6 text-body text-muted-foreground">
+                    Os produtos que você viu não estão mais nos dados. Os próximos que você abrir
+                    aparecem aqui.
                   </p>
                 )}
               </div>
               {load.status === "failed" && (
-                <div className="px-4 pb-6">
+                <div className="px-5 pb-6">
                   <Button variant="tertiary" onClick={ensureLoaded}>
                     Tentar de novo
                   </Button>
@@ -112,8 +128,8 @@ export function RecentProductsButton() {
                 {isConfirmingClear ? (
                   <>
                     {/* On its own line, so a phone keeps the question whole above its buttons. */}
-                    <p id={questionId} className="basis-full ps-2 text-body text-muted-foreground">
-                      Limpar o histórico? Não dá para desfazer.
+                    <p id={questionId} className="basis-full ps-3 text-body text-muted-foreground">
+                      Limpar o histórico de {productCount(recent.length)}? Não dá para desfazer.
                     </p>
                     <Button
                       // The keyboard lands on the safe answer, so a repeated Enter keeps the history.
@@ -133,8 +149,8 @@ export function RecentProductsButton() {
                       onClick={() => {
                         // The button goes with the list; focus moves on to the page's title.
                         document.querySelector<HTMLElement>("main h1")?.focus();
+                        clearsOnClose.current = true;
                         setIsOpen(false);
-                        clearRecentProducts();
                       }}
                     >
                       Limpar histórico

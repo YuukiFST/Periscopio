@@ -8,10 +8,21 @@ import type { RecentProductItem } from "../recent-products/recent-products.ts";
  * in the queue yet, and a reviewed one has left it.
  */
 export const testQueueStages = [
-  { slug: "comprados", title: "Comprados", statuses: ["purchased"] },
-  { slug: "em-teste", title: "Recebidos e em teste", statuses: ["arrived", "testing"] },
-  { slug: "previa", title: "Em prévia", statuses: ["earlyAccess"] },
-] as const satisfies readonly { slug: string; title: string; statuses: readonly string[] }[];
+  { slug: "comprados", title: "Comprados", shortTitle: "Comprados", statuses: ["purchased"] },
+  {
+    slug: "em-teste",
+    title: "Recebidos e em teste",
+    shortTitle: "Em teste",
+    statuses: ["arrived", "testing"],
+  },
+  { slug: "previa", title: "Em prévia", shortTitle: "Em prévia", statuses: ["earlyAccess"] },
+] as const satisfies readonly {
+  slug: string;
+  title: string;
+  /** Fits the phone's stage picker, three across at 320px. */
+  shortTitle: string;
+  statuses: readonly string[];
+}[];
 
 export type TestQueueStage = (typeof testQueueStages)[number];
 
@@ -25,22 +36,27 @@ export function isInTestQueue(product: Pick<Product, "status">): boolean {
 
 const nameCollator = new Intl.Collator("pt-BR", { numeric: true, sensitivity: "base" });
 
-/** A stage's Produtos, Categoria by Categoria in the app's order, then by name. */
-export function testQueueItems(
+/** A stage's Produtos of one Categoria, by name; never empty. */
+export type TestQueueGroup = { category: CategorySlug; items: RecentProductItem[] };
+
+/** A stage's Produtos, one group per Categoria that has any, in the app's order. */
+export function testQueueGroups(
   categories: readonly CategoryData[],
   stage: TestQueueStage,
   onlyCategory: CategorySlug | undefined,
-): RecentProductItem[] {
+): TestQueueGroup[] {
   const statuses: ReadonlySet<string> = new Set(stage.statuses);
   return categorySlugs
     .filter((slug) => onlyCategory === undefined || slug === onlyCategory)
-    .flatMap((slug) => {
+    .map((slug) => {
       const products = categories.find(({ category }) => category === slug)?.products ?? [];
-      return products
+      const items = products
         .filter((product) => product.status !== null && statuses.has(product.status))
         .toSorted((a, b) => nameCollator.compare(a.name, b.name))
         .map((product) => ({ category: slug, product }));
-    });
+      return { category: slug, items };
+    })
+    .filter((group) => group.items.length > 0);
 }
 
 export function testQueueCount(products: readonly Product[]): number {

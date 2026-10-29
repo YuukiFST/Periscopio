@@ -58,8 +58,8 @@ test("the list holds the opened Produtos of every Categoria, newest first and on
   await page.goto("/monitor");
   await recentButton(page).click();
   await expect(recentList(page).getByRole("link")).toHaveText([
-    /^Huan\s*Mouses\s*₩\s*239\.000$/,
-    /^EDGE 60HE Pro\s*Teclados\s*₩\s*229\.000$/,
+    /^Huan\s*WLMouse · Mouses\s*₩\s*239\.000$/,
+    /^EDGE 60HE Pro\s*ATK · Teclados\s*₩\s*229\.000$/,
   ]);
   // The photos are decorative, next to each name.
   await expect(recentList(page).locator("img")).toHaveCount(2);
