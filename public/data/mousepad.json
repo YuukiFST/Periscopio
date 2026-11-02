@@ -40,10 +40,17 @@
       "multiple": false,
       "options": [
         {
-          "value": "unreleased",
+          "value": "arrived",
           "label": {
-            "ko": "미출시",
-            "en": "Unreleased"
+            "ko": "제품 도착",
+            "en": "Arrived"
+          }
+        },
+        {
+          "value": "earlyAccess",
+          "label": {
+            "ko": "선 공개",
+            "en": "Early Access"
           }
         },
         {
@@ -61,10 +68,10 @@
           }
         },
         {
-          "value": "arrived",
+          "value": "reviewed",
           "label": {
-            "ko": "제품 도착",
-            "en": "Arrived"
+            "ko": "공개 완료",
+            "en": "Reviewed"
           }
         },
         {
@@ -75,17 +82,10 @@
           }
         },
         {
-          "value": "earlyAccess",
+          "value": "unreleased",
           "label": {
-            "ko": "선 공개",
-            "en": "Early Access"
-          }
-        },
-        {
-          "value": "reviewed",
-          "label": {
-            "ko": "공개 완료",
-            "en": "Reviewed"
+            "ko": "미출시",
+            "en": "Unreleased"
           }
         }
       ]
@@ -102,10 +102,10 @@
       "multiple": false,
       "options": [
         {
-          "value": "unreleased",
+          "value": "DISCONTINUED",
           "label": {
-            "ko": "미출시",
-            "en": "Unreleased"
+            "ko": "단종",
+            "en": "Discontinued"
           }
         },
         {
@@ -116,10 +116,10 @@
           }
         },
         {
-          "value": "DISCONTINUED",
+          "value": "unreleased",
           "label": {
-            "ko": "단종",
-            "en": "Discontinued"
+            "ko": "미출시",
+            "en": "Unreleased"
           }
         }
       ]
@@ -143,13 +143,6 @@
           }
         },
         {
-          "value": "RECOMMENDED",
-          "label": {
-            "ko": "추천",
-            "en": "Recommend"
-          }
-        },
-        {
           "value": "MILD_RECOMMENDATION",
           "label": {
             "ko": "추천까지는",
@@ -161,6 +154,13 @@
           "label": {
             "ko": "추천안함",
             "en": "Not Recommend"
+          }
+        },
+        {
+          "value": "RECOMMENDED",
+          "label": {
+            "ko": "추천",
+            "en": "Recommend"
           }
         },
         {
@@ -394,13 +394,6 @@
       "multiple": false,
       "options": [
         {
-          "value": "S",
-          "label": {
-            "ko": "S",
-            "en": "S"
-          }
-        },
-        {
           "value": "A",
           "label": {
             "ko": "A",
@@ -440,6 +433,13 @@
           "label": {
             "ko": "F",
             "en": "F"
+          }
+        },
+        {
+          "value": "S",
+          "label": {
+            "ko": "S",
+            "en": "S"
           }
         }
       ]
@@ -456,13 +456,6 @@
       "multiple": false,
       "options": [
         {
-          "value": "S",
-          "label": {
-            "ko": "S",
-            "en": "S"
-          }
-        },
-        {
           "value": "A",
           "label": {
             "ko": "A",
@@ -502,6 +495,13 @@
           "label": {
             "ko": "F",
             "en": "F"
+          }
+        },
+        {
+          "value": "S",
+          "label": {
+            "ko": "S",
+            "en": "S"
           }
         }
       ]
@@ -518,13 +518,6 @@
       "multiple": false,
       "options": [
         {
-          "value": "S",
-          "label": {
-            "ko": "S",
-            "en": "S"
-          }
-        },
-        {
           "value": "A",
           "label": {
             "ko": "A",
@@ -564,6 +557,13 @@
           "label": {
             "ko": "F",
             "en": "F"
+          }
+        },
+        {
+          "value": "S",
+          "label": {
+            "ko": "S",
+            "en": "S"
           }
         }
       ]
@@ -580,13 +580,6 @@
       "multiple": false,
       "options": [
         {
-          "value": "S",
-          "label": {
-            "ko": "S",
-            "en": "S"
-          }
-        },
-        {
           "value": "A",
           "label": {
             "ko": "A",
@@ -626,6 +619,13 @@
           "label": {
             "ko": "F",
             "en": "F"
+          }
+        },
+        {
+          "value": "S",
+          "label": {
+            "ko": "S",
+            "en": "S"
           }
         }
       ]
@@ -653,13 +653,6 @@
       "multiple": false,
       "options": [
         {
-          "value": "S",
-          "label": {
-            "ko": "S",
-            "en": "S"
-          }
-        },
-        {
           "value": "A",
           "label": {
             "ko": "A",
@@ -699,6 +692,13 @@
           "label": {
             "ko": "F",
             "en": "F"
+          }
+        },
+        {
+          "value": "S",
+          "label": {
+            "ko": "S",
+            "en": "S"
           }
         }
       ]
@@ -715,13 +715,6 @@
       "multiple": false,
       "options": [
         {
-          "value": "S",
-          "label": {
-            "ko": "S",
-            "en": "S"
-          }
-        },
-        {
           "value": "A",
           "label": {
             "ko": "A",
@@ -761,6 +754,13 @@
           "label": {
             "ko": "F",
             "en": "F"
+          }
+        },
+        {
+          "value": "S",
+          "label": {
+            "ko": "S",
+            "en": "S"
           }
         }
       ]
@@ -777,13 +777,6 @@
       "multiple": false,
       "options": [
         {
-          "value": "S",
-          "label": {
-            "ko": "S",
-            "en": "S"
-          }
-        },
-        {
           "value": "A",
           "label": {
             "ko": "A",
@@ -823,6 +816,13 @@
           "label": {
             "ko": "F",
             "en": "F"
+          }
+        },
+        {
+          "value": "S",
+          "label": {
+            "ko": "S",
+            "en": "S"
           }
         }
       ]
@@ -848,13 +848,6 @@
       "multiple": false,
       "options": [
         {
-          "value": "S",
-          "label": {
-            "ko": "S",
-            "en": "S"
-          }
-        },
-        {
           "value": "A",
           "label": {
             "ko": "A",
@@ -894,6 +887,13 @@
           "label": {
             "ko": "F",
             "en": "F"
+          }
+        },
+        {
+          "value": "S",
+          "label": {
+            "ko": "S",
+            "en": "S"
           }
         }
       ]
@@ -910,13 +910,6 @@
       "multiple": false,
       "options": [
         {
-          "value": "S",
-          "label": {
-            "ko": "S",
-            "en": "S"
-          }
-        },
-        {
           "value": "A",
           "label": {
             "ko": "A",
@@ -956,6 +949,13 @@
           "label": {
             "ko": "F",
             "en": "F"
+          }
+        },
+        {
+          "value": "S",
+          "label": {
+            "ko": "S",
+            "en": "S"
           }
         }
       ]
@@ -6164,7 +6164,7 @@
         "ko": "판패드",
         "en": "PAN PAD"
       },
-      "priceKrw": 44000,
+      "priceKrw": 44400,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -6234,7 +6234,7 @@
         "ko": "판패드",
         "en": "PAN PAD"
       },
-      "priceKrw": 54900,
+      "priceKrw": 55400,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -6430,7 +6430,7 @@
         "ko": "판패드",
         "en": "PAN PAD"
       },
-      "priceKrw": 54900,
+      "priceKrw": 55400,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -6781,7 +6781,7 @@
         "ko": "판패드",
         "en": "PAN PAD"
       },
-      "priceKrw": 57900,
+      "priceKrw": 58400,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,

@@ -40,10 +40,17 @@
       "multiple": false,
       "options": [
         {
-          "value": "unreleased",
+          "value": "arrived",
           "label": {
-            "ko": "미출시",
-            "en": "Unreleased"
+            "ko": "제품 도착",
+            "en": "Arrived"
+          }
+        },
+        {
+          "value": "earlyAccess",
+          "label": {
+            "ko": "선 공개",
+            "en": "Early Access"
           }
         },
         {
@@ -61,10 +68,10 @@
           }
         },
         {
-          "value": "arrived",
+          "value": "reviewed",
           "label": {
-            "ko": "제품 도착",
-            "en": "Arrived"
+            "ko": "공개 완료",
+            "en": "Reviewed"
           }
         },
         {
@@ -75,17 +82,10 @@
           }
         },
         {
-          "value": "earlyAccess",
+          "value": "unreleased",
           "label": {
-            "ko": "선 공개",
-            "en": "Early Access"
-          }
-        },
-        {
-          "value": "reviewed",
-          "label": {
-            "ko": "공개 완료",
-            "en": "Reviewed"
+            "ko": "미출시",
+            "en": "Unreleased"
           }
         }
       ]
@@ -102,10 +102,10 @@
       "multiple": false,
       "options": [
         {
-          "value": "unreleased",
+          "value": "DISCONTINUED",
           "label": {
-            "ko": "미출시",
-            "en": "Unreleased"
+            "ko": "단종",
+            "en": "Discontinued"
           }
         },
         {
@@ -116,10 +116,10 @@
           }
         },
         {
-          "value": "DISCONTINUED",
+          "value": "unreleased",
           "label": {
-            "ko": "단종",
-            "en": "Discontinued"
+            "ko": "미출시",
+            "en": "Unreleased"
           }
         }
       ]
@@ -143,13 +143,6 @@
           }
         },
         {
-          "value": "RECOMMENDED",
-          "label": {
-            "ko": "추천",
-            "en": "Recommend"
-          }
-        },
-        {
           "value": "MILD_RECOMMENDATION",
           "label": {
             "ko": "추천까지는",
@@ -161,6 +154,13 @@
           "label": {
             "ko": "추천안함",
             "en": "Not Recommend"
+          }
+        },
+        {
+          "value": "RECOMMENDED",
+          "label": {
+            "ko": "추천",
+            "en": "Recommend"
           }
         },
         {
@@ -702,13 +702,6 @@
       "multiple": false,
       "options": [
         {
-          "value": "S",
-          "label": {
-            "ko": "S",
-            "en": "S"
-          }
-        },
-        {
           "value": "A",
           "label": {
             "ko": "A",
@@ -741,6 +734,13 @@
           "label": {
             "ko": "F",
             "en": "F"
+          }
+        },
+        {
+          "value": "S",
+          "label": {
+            "ko": "S",
+            "en": "S"
           }
         }
       ]
@@ -1433,7 +1433,7 @@
         "en": "GEONWORKS"
       },
       "priceKrw": 600,
-      "status": "testing",
+      "status": "earlyAccess",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_oFLR9OP",
       "image": "/images/23bb7f93-289b-438d-96fd-c5eb734ed29d.avif",
@@ -1621,7 +1621,7 @@
         "ko": "게이트론",
         "en": "GATERON"
       },
-      "priceKrw": 78800,
+      "priceKrw": 79300,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -1863,7 +1863,7 @@
         "en": "GATERON"
       },
       "priceKrw": 800,
-      "status": "testing",
+      "status": "earlyAccess",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_oCOMOCr",
       "image": "/images/3606641e-4b6c-491c-860f-e5bc35fd01d8.avif",
@@ -1871,11 +1871,13 @@
         "bottomOutForceSpec": 55,
         "bottomOutHarshness": false,
         "category": "리니어",
+        "earlyAccessAt": "2026-10-31T00:00:00.000Z",
         "lowerHousing": [
           "NYLON"
         ],
         "mechanism": "magnetic",
         "polarity": "N",
+        "publicReleaseAt": "2026-11-07T00:00:00.000Z",
         "spring": "싱글",
         "springLength": 20,
         "startingForceSpec": 30,
@@ -2547,7 +2549,7 @@
         "ko": "Unionwell",
         "en": "Unionwell"
       },
-      "priceKrw": 2100,
+      "priceKrw": 2200,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -2709,7 +2711,7 @@
         "ko": "TTC",
         "en": "TTC"
       },
-      "priceKrw": 1000,
+      "priceKrw": 1100,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -3143,7 +3145,7 @@
         "ko": "에버글라이드",
         "en": "EVERGLIDE"
       },
-      "priceKrw": 26600,
+      "priceKrw": 26800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -3329,7 +3331,7 @@
         "ko": "멜긱",
         "en": "MelGeek"
       },
-      "priceKrw": 3400,
+      "priceKrw": 3500,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -3544,7 +3546,7 @@
         "ko": "ugaming",
         "en": "ugaming"
       },
-      "priceKrw": 9900,
+      "priceKrw": 10000,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -3855,7 +3857,7 @@
         "en": "GATERON"
       },
       "priceKrw": 1100,
-      "status": "testing",
+      "status": "earlyAccess",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_oFqUSFN",
       "image": null,
@@ -4181,7 +4183,7 @@
         "ko": "아코",
         "en": "Akko"
       },
-      "priceKrw": 500,
+      "priceKrw": 600,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -5319,7 +5321,7 @@
         "ko": "게이트론",
         "en": "GATERON"
       },
-      "priceKrw": 2900,
+      "priceKrw": 3000,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -5729,7 +5731,7 @@
         "ko": "에버글라이드",
         "en": "EVERGLIDE"
       },
-      "priceKrw": 15100,
+      "priceKrw": 15200,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -5781,7 +5783,7 @@
         "ko": "HMX",
         "en": "HMX"
       },
-      "priceKrw": 8800,
+      "priceKrw": 8900,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
