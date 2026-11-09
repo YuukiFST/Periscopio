@@ -2869,7 +2869,7 @@
         "ko": "젠에임",
         "en": "ZENAIM"
       },
-      "priceKrw": 277300,
+      "priceKrw": 281900,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -3378,7 +3378,7 @@
         "ko": "이와든",
         "en": "EWEADN"
       },
-      "priceKrw": 139900,
+      "priceKrw": 142500,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -3814,7 +3814,7 @@
         "ko": "엠초스",
         "en": "MCHOSE"
       },
-      "priceKrw": 145300,
+      "priceKrw": 148400,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -5042,7 +5042,7 @@
         "ko": "아이락",
         "en": "IROK"
       },
-      "priceKrw": 88200,
+      "priceKrw": 89900,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -5465,7 +5465,7 @@
         "ko": "IPI",
         "en": "IPI"
       },
-      "priceKrw": 71800,
+      "priceKrw": 73200,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -5481,7 +5481,7 @@
         "ko": "어택샤크",
         "en": "AttackShark"
       },
-      "priceKrw": 35600,
+      "priceKrw": 36300,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -5876,7 +5876,20 @@
       "saleStatus": "unreleased",
       "aliUrl": null,
       "image": null,
-      "values": {},
+      "values": {
+        "autoCalibration": false,
+        "dks": false,
+        "hotswap": false,
+        "kkboard": false,
+        "modeTap": false,
+        "palmRest": false,
+        "rapidTrigger": false,
+        "remapping": false,
+        "socd": false,
+        "toggleKey": false,
+        "webDriver": false,
+        "windowsLock": false
+      },
       "firstSeenAt": null,
       "testedAt": null
     },
@@ -5887,7 +5900,7 @@
         "ko": "엠초스",
         "en": "MCHOSE"
       },
-      "priceKrw": 199900,
+      "priceKrw": 203600,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -6556,7 +6569,7 @@
         "ko": "레이저",
         "en": "RAZER"
       },
-      "priceKrw": 306500,
+      "priceKrw": 313100,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -6572,7 +6585,7 @@
         "ko": "Weikav",
         "en": "Weikav"
       },
-      "priceKrw": 79800,
+      "priceKrw": 81300,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -6836,7 +6849,7 @@
         "ko": "게이트론",
         "en": "GATERON"
       },
-      "priceKrw": 360200,
+      "priceKrw": 366900,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -6987,7 +7000,7 @@
         "ko": "ATK",
         "en": "ATK"
       },
-      "priceKrw": 173200,
+      "priceKrw": 177000,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -7797,7 +7810,7 @@
         "ko": "커세어",
         "en": "CORSAIR"
       },
-      "priceKrw": 239900,
+      "priceKrw": 245000,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -8870,7 +8883,7 @@
         "ko": "플라이디지",
         "en": "Flydigi"
       },
-      "priceKrw": 119900,
+      "priceKrw": 122100,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -9133,7 +9146,7 @@
         "ko": "SKYLOONG",
         "en": "SKYLOONG"
       },
-      "priceKrw": 100000,
+      "priceKrw": 102100,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -9445,7 +9458,7 @@
         "ko": "체리",
         "en": "Cherry"
       },
-      "priceKrw": 185300,
+      "priceKrw": 189200,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -10079,7 +10092,7 @@
         "ko": "KBD팬스",
         "en": "KBDFANS"
       },
-      "priceKrw": 71000,
+      "priceKrw": 72600,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -10733,7 +10746,7 @@
         "ko": "에포메이커",
         "en": "EPOMAKER"
       },
-      "priceKrw": 127900,
+      "priceKrw": 130700,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -11123,7 +11136,7 @@
         "ko": "드라이 스튜디오",
         "en": "DRY STUDIO"
       },
-      "priceKrw": 296100,
+      "priceKrw": 301600,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -11310,7 +11323,7 @@
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_oDNOUQM",
-      "image": "/images/cea342c8-d7ae-4286-9f66-7f652337bf2c.avif",
+      "image": "/images/c7db755e-cc75-4123-ad18-05a670beae46.avif",
       "values": {
         "adjustmentUnit": 0.01,
         "autoCalibration": false,
@@ -11781,7 +11794,7 @@
         "ko": "엠초스",
         "en": "MCHOSE"
       },
-      "priceKrw": 52000,
+      "priceKrw": 53000,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -11916,7 +11929,7 @@
         "ko": "zynoo",
         "en": "zynoo"
       },
-      "priceKrw": 230900,
+      "priceKrw": 235200,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -13683,7 +13696,7 @@
         "ko": "ATK",
         "en": "ATK"
       },
-      "priceKrw": 126600,
+      "priceKrw": 129300,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -17129,7 +17142,7 @@
         "ko": "아이큐닉스",
         "en": "IQUNIX"
       },
-      "priceKrw": 225200,
+      "priceKrw": 230100,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -17330,7 +17343,7 @@
       "priceKrw": 480000,
       "status": "testing",
       "saleStatus": "FOR_SALE",
-      "aliUrl": null,
+      "aliUrl": "https://s.click.aliexpress.com/e/_c4tewgj9",
       "image": "/images/e3b27e30-b1eb-4e4a-b9f7-f885cdc508ac.avif",
       "values": {
         "adjustmentUnit": 0.01,
@@ -17377,7 +17390,7 @@
       "priceKrw": 420000,
       "status": "testing",
       "saleStatus": "FOR_SALE",
-      "aliUrl": null,
+      "aliUrl": "https://s.click.aliexpress.com/e/_c4tewgj9",
       "image": "/images/1598ae41-fae4-4813-a405-2572d05e9788.avif",
       "values": {
         "adjustmentUnit": 0.01,
@@ -17385,6 +17398,7 @@
         "connectionOption": "usbTypeC",
         "connectionType": "유선",
         "dks": true,
+        "earlyAccessAt": "2026-11-15T00:00:00.000Z",
         "eyejokerRating": "ANTICIPATING",
         "hotswap": true,
         "housingKeyboard": [
@@ -17403,6 +17417,7 @@
         ],
         "palmRest": false,
         "pollingRate": "8000",
+        "publicReleaseAt": "2026-11-22T00:00:00.000Z",
         "rapidAdjustmentUnit": 0.01,
         "rapidTrigger": true,
         "remapping": true,
@@ -17576,7 +17591,7 @@
         "ko": "아우라",
         "en": "AULA"
       },
-      "priceKrw": 199900,
+      "priceKrw": 203600,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -18625,7 +18640,7 @@
         "ko": "zynoo",
         "en": "zynoo"
       },
-      "priceKrw": 279900,
+      "priceKrw": 285900,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -18913,7 +18928,7 @@
         "ko": "몬스긱",
         "en": "Monsgeek"
       },
-      "priceKrw": 80000,
+      "priceKrw": 81700,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -18950,7 +18965,7 @@
         "ko": "에버글라이드",
         "en": "EVERGLIDE"
       },
-      "priceKrw": 79800,
+      "priceKrw": 81300,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -19016,7 +19031,7 @@
         "ko": "발키리",
         "en": "VALKYRIE"
       },
-      "priceKrw": 51500,
+      "priceKrw": 52500,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -19287,7 +19302,7 @@
         "ko": "우미어",
         "en": "Womier"
       },
-      "priceKrw": 146600,
+      "priceKrw": 149700,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -19542,7 +19557,7 @@
         "ko": "이와든",
         "en": "EWEADN"
       },
-      "priceKrw": 49800,
+      "priceKrw": 50700,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -19660,7 +19675,7 @@
         "ko": "야만부락",
         "en": "Savage Tribe"
       },
-      "priceKrw": 119900,
+      "priceKrw": 122100,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -20542,7 +20557,7 @@
         "ko": "아우라",
         "en": "AULA"
       },
-      "priceKrw": 23800,
+      "priceKrw": 24300,
       "status": "purchased",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -21556,7 +21571,7 @@
         "ko": "keyverse",
         "en": "keyverse"
       },
-      "priceKrw": 79800,
+      "priceKrw": 81300,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c3C7JfTZ",
@@ -21886,7 +21901,7 @@
         "ko": "아우라",
         "en": "AULA"
       },
-      "priceKrw": 45800,
+      "priceKrw": 46700,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -21971,7 +21986,7 @@
         "ko": "멜긱",
         "en": "MelGeek"
       },
-      "priceKrw": 178400,
+      "priceKrw": 181700,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -22029,7 +22044,7 @@
         "ko": "아우라",
         "en": "AULA"
       },
-      "priceKrw": 199900,
+      "priceKrw": 203600,
       "status": "purchased",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -22305,7 +22320,7 @@
         "ko": "아우라",
         "en": "AULA"
       },
-      "priceKrw": 19800,
+      "priceKrw": 20200,
       "status": "purchased",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -22488,7 +22503,7 @@
         "ko": "벨로타",
         "en": "VELOTA"
       },
-      "priceKrw": 187900,
+      "priceKrw": 191400,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -22672,7 +22687,7 @@
         "ko": "우팅",
         "en": "Wooting"
       },
-      "priceKrw": 356900,
+      "priceKrw": 364300,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -23151,7 +23166,7 @@
         "ko": "에이수스",
         "en": "ASUS"
       },
-      "priceKrw": 179900,
+      "priceKrw": 183200,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -23362,7 +23377,7 @@
         "ko": "루민키",
         "en": "LUMINKEY"
       },
-      "priceKrw": 231900,
+      "priceKrw": 236900,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -23395,7 +23410,7 @@
         "ko": "VGN",
         "en": "VGN"
       },
-      "priceKrw": 39800,
+      "priceKrw": 40600,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -23434,7 +23449,7 @@
         "ko": "VGN",
         "en": "VGN"
       },
-      "priceKrw": 59800,
+      "priceKrw": 60900,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -23705,7 +23720,7 @@
         "ko": "이와든",
         "en": "EWEADN"
       },
-      "priceKrw": 73200,
+      "priceKrw": 74700,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -23721,7 +23736,7 @@
         "ko": "PMO",
         "en": "PMO"
       },
-      "priceKrw": 49800,
+      "priceKrw": 50700,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -23897,7 +23912,7 @@
         "ko": "칠키",
         "en": "CHILKEY"
       },
-      "priceKrw": 265200,
+      "priceKrw": 270900,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -24110,7 +24125,7 @@
         "ko": "우미어",
         "en": "Womier"
       },
-      "priceKrw": 161700,
+      "priceKrw": 164700,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -24197,7 +24212,7 @@
         "ko": "ATK",
         "en": "ATK"
       },
-      "priceKrw": 186900,
+      "priceKrw": 190400,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -25607,7 +25622,7 @@
         "ko": "엠초스",
         "en": "MCHOSE"
       },
-      "priceKrw": 49800,
+      "priceKrw": 50800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -25881,7 +25896,7 @@
         "ko": "벨로타",
         "en": "VELOTA"
       },
-      "priceKrw": 259900,
+      "priceKrw": 264700,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -26119,7 +26134,7 @@
         "ko": "멜긱",
         "en": "MelGeek"
       },
-      "priceKrw": 237900,
+      "priceKrw": 242300,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -26257,7 +26272,7 @@
         "ko": "이와든",
         "en": "EWEADN"
       },
-      "priceKrw": 199700,
+      "priceKrw": 203500,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -26671,7 +26686,7 @@
         "ko": "이와든",
         "en": "EWEADN"
       },
-      "priceKrw": 95800,
+      "priceKrw": 97600,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -27915,7 +27930,7 @@
         "ko": "에버글라이드",
         "en": "EVERGLIDE"
       },
-      "priceKrw": 171900,
+      "priceKrw": 175600,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -28135,11 +28150,11 @@
         "ko": "ATK",
         "en": "ATK"
       },
-      "priceKrw": null,
+      "priceKrw": 81700,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
-      "image": null,
+      "image": "/images/55383bfb-b028-4ebc-9c8e-bc95bb57391e.avif",
       "values": {
         "adjustmentUnit": 0.005,
         "autoCalibration": true,
@@ -28147,6 +28162,7 @@
         "connectionType": "유선",
         "detachStroke": 0.01,
         "dks": false,
+        "earlyAccessAt": "2026-11-13T00:00:00.000Z",
         "eyejokerRating": "ANTICIPATING",
         "hotswap": true,
         "housingKeyboard": [
@@ -28164,6 +28180,7 @@
           "leafspring"
         ],
         "palmRest": false,
+        "publicReleaseAt": "2026-11-20T00:00:00.000Z",
         "rapidAdjustmentUnit": 0.005,
         "rapidTrigger": true,
         "remapping": true,
@@ -30598,7 +30615,7 @@
         "ko": "VGN",
         "en": "VGN"
       },
-      "priceKrw": 93200,
+      "priceKrw": 95200,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -30891,7 +30908,7 @@
         "ko": "아우라",
         "en": "AULA"
       },
-      "priceKrw": 113900,
+      "priceKrw": 116000,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -30934,7 +30951,7 @@
         "ko": "PMO",
         "en": "PMO"
       },
-      "priceKrw": 65800,
+      "priceKrw": 67100,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -30967,7 +30984,7 @@
         "ko": "우큐 스튜디오",
         "en": "Wuque Studio"
       },
-      "priceKrw": 199900,
+      "priceKrw": 203600,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -31165,7 +31182,7 @@
         "ko": "에버글라이드",
         "en": "EVERGLIDE"
       },
-      "priceKrw": 198600,
+      "priceKrw": 202800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -31334,7 +31351,7 @@
         "ko": "ATK",
         "en": "ATK"
       },
-      "priceKrw": 186600,
+      "priceKrw": 190600,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -31741,7 +31758,7 @@
         "ko": "루민키",
         "en": "LUMINKEY"
       },
-      "priceKrw": 225200,
+      "priceKrw": 230100,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -31775,7 +31792,7 @@
         "ko": "엠초스",
         "en": "MCHOSE"
       },
-      "priceKrw": 139300,
+      "priceKrw": 141900,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -31867,7 +31884,7 @@
         "ko": "스파크링크",
         "en": "Sparklink"
       },
-      "priceKrw": 135400,
+      "priceKrw": 137600,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -31883,7 +31900,7 @@
         "ko": "레이저",
         "en": "RAZER"
       },
-      "priceKrw": 266500,
+      "priceKrw": 272300,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -32130,7 +32147,7 @@
         "ko": "FL esports",
         "en": "FL esports"
       },
-      "priceKrw": 157700,
+      "priceKrw": 160600,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c3CMAQFF",
@@ -33428,7 +33445,7 @@
         "ko": "루민키",
         "en": "LUMINKEY"
       },
-      "priceKrw": 291900,
+      "priceKrw": 298100,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -35052,7 +35069,7 @@
         "ko": "에버글라이드",
         "en": "EVERGLIDE"
       },
-      "priceKrw": 79800,
+      "priceKrw": 81300,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c3g74MJV",

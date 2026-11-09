@@ -1714,7 +1714,7 @@
         "ko": "에이수스",
         "en": "ASUS"
       },
-      "priceKrw": 625100,
+      "priceKrw": 638500,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -1982,7 +1982,7 @@
         "ko": "애즈락",
         "en": "ASRock"
       },
-      "priceKrw": 931600,
+      "priceKrw": 951600,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -2575,7 +2575,7 @@
         "ko": "레노버",
         "en": "Lenovo"
       },
-      "priceKrw": 399800,
+      "priceKrw": 408400,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -2706,7 +2706,7 @@
         "ko": "알파스캔",
         "en": "Alphascan"
       },
-      "priceKrw": 1106200,
+      "priceKrw": 1130000,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -2994,7 +2994,7 @@
         "ko": "엘지전자",
         "en": "LGE"
       },
-      "priceKrw": null,
+      "priceKrw": 1974400,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -3481,7 +3481,7 @@
         "ko": "MINISFORUM",
         "en": "MINISFORUM"
       },
-      "priceKrw": 287700,
+      "priceKrw": 293900,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -4092,7 +4092,7 @@
         "ko": "애즈락",
         "en": "ASRock"
       },
-      "priceKrw": 931600,
+      "priceKrw": 951600,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -4151,7 +4151,7 @@
         "ko": "EHOMEWEI",
         "en": "EHOMEWEI"
       },
-      "priceKrw": 892800,
+      "priceKrw": 912000,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -4692,7 +4692,7 @@
         "en": "LGE"
       },
       "priceKrw": 2110000,
-      "status": "earlyAccess",
+      "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
       "image": "/images/2c5a33bb-3f9c-407e-998c-ed6463be4fc2.avif",
@@ -4703,12 +4703,17 @@
         ],
         "audioReturnChannel": "noneConfirmed",
         "bfi": false,
+        "colorDeAvg": 3.75,
+        "colorGamutBt2020Measured": 75.2,
+        "colorGamutDciP3Measured": 99.1,
         "colorGamutDcip3Spec": 99.5,
+        "colorGamutSrgbBench": 99.9,
+        "colorVolumeDciP3Measured": 95.77,
         "displayPortCount": 1,
         "displayPortLinkClass": "dp2_1Uhbr20_80",
         "displayStreamCompression": "supported",
         "earlyAccessAt": "2026-10-30T00:00:00.000Z",
-        "eyejokerRating": "ANTICIPATING",
+        "eyejokerRating": "HIGHLY_RECOMMENDED",
         "hdmiLinkClass": "hdmi2_1Frl6_48",
         "hdmiPortCount": 2,
         "hdrCertification": "displayHdrTrueBlack500",
@@ -4716,19 +4721,31 @@
           "hdr10",
           "hdr10Plus"
         ],
+        "hdrFullFieldBrightnessMeasured": 336,
+        "hdrPeak10PercentMeasured": 589,
+        "hdrPeak2PercentMeasured": 1349,
         "heightAdjustMm": 110,
+        "inputLagMonitor": 0.53,
         "kvmType": "noneConfirmed",
+        "maxBrightnessHdrMeasured": 1384,
         "maxBrightnessHdrSpec": 1500,
+        "maxBrightnessSdrMeasured": 340,
         "maxBrightnessSdrSpec": 335,
         "multiViewSupport": [
           "pip",
           "pbp"
         ],
+        "overallRatingMonitor": "FLAWLESS",
+        "overshootAverage": 24.8,
+        "overshootMax": 182.5,
         "panelMaker": "LGD",
         "panelType": "RGB_TANDEM_OLED",
         "publicReleaseAt": "2026-11-06T00:00:00.000Z",
         "refreshRate": 165,
         "resolution": "5K2K",
+        "responseAverage": 3.71,
+        "responseAverageRgb10": 0.15,
+        "responseMax": 1.16,
         "sizeInch": 39,
         "standAdjustments": [
           "tilt",
@@ -4741,7 +4758,7 @@
         "vesaMountPattern": "vesa100x100"
       },
       "firstSeenAt": null,
-      "testedAt": null
+      "testedAt": "2026-11-09T19:27:21.592Z"
     },
     {
       "id": "2929f2fa-cd2f-4860-b483-1f263778bad2",
@@ -4949,7 +4966,7 @@
         "ko": "에이서",
         "en": "ACER"
       },
-      "priceKrw": 1731300,
+      "priceKrw": 1768500,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -5280,7 +5297,7 @@
         "ko": "에이서",
         "en": "ACER"
       },
-      "priceKrw": 932900,
+      "priceKrw": 953000,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -5338,7 +5355,7 @@
         "ko": "알파스캔",
         "en": "Alphascan"
       },
-      "priceKrw": 1425700,
+      "priceKrw": 1453500,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -5546,7 +5563,7 @@
         "ko": "TCL",
         "en": "TCL"
       },
-      "priceKrw": 800200,
+      "priceKrw": 815000,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -5848,33 +5865,48 @@
         "en": "ANTGAMER"
       },
       "priceKrw": 1990000,
-      "status": "earlyAccess",
+      "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
       "image": "/images/0c0c3d9c-2e79-488c-98be-d29ddeaf98e1.avif",
       "values": {
         "bfi": true,
+        "colorDeAvg": 2.97,
+        "colorGamutBt2020Measured": 77.8,
+        "colorGamutDciP3Measured": 94.6,
+        "colorGamutSrgbBench": 99.5,
         "colorGamutSrgbSpec": 99,
+        "colorVolumeDciP3Measured": 84.09,
+        "contrastMeasured": 1187,
         "displayPortCount": 2,
         "displayPortLinkClass": "dp1_4Hbr3_32_4",
         "earlyAccessAt": "2026-10-28T06:00:00.000Z",
-        "eyejokerRating": "ANTICIPATING",
+        "eyejokerRating": "RECOMMENDED",
         "hdmiPortCount": 2,
         "hdrCertification": "displayHdr400",
+        "inputLagMonitor": 0.72,
         "maxBrightnessHdrSpec": 400,
+        "maxBrightnessSdrMeasured": 556,
         "maxBrightnessSdrSpec": 400,
+        "overallRatingMonitor": "TIER_1",
+        "overshootAverage": 8.7,
+        "overshootMax": 23,
         "panelMaker": "AUO",
         "panelType": "FAST_TN",
         "publicReleaseAt": "2026-11-04T00:00:00.000Z",
         "refreshRate": 750,
         "resolution": "FHD",
+        "responseAverage": 2.93,
+        "responseAverageRgb10": 1.54,
+        "responseMax": 4.94,
         "sizeInch": 24.1,
         "standType": "included",
         "usbCVideo": false,
-        "vesaMountPattern": "vesa100x100"
+        "vesaMountPattern": "vesa100x100",
+        "vrrFlickerGrade": "moderate"
       },
       "firstSeenAt": null,
-      "testedAt": null
+      "testedAt": "2026-11-09T19:27:21.592Z"
     },
     {
       "id": "3d797139-4eee-48c4-8613-fab0ea73b056",
@@ -6038,7 +6070,7 @@
         "ko": "델",
         "en": "Dell"
       },
-      "priceKrw": 1466000,
+      "priceKrw": 1497500,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -6235,7 +6267,7 @@
         "ko": "델",
         "en": "Dell"
       },
-      "priceKrw": 3998300,
+      "priceKrw": 4084200,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -6616,7 +6648,7 @@
         "ko": "에이수스",
         "en": "ASUS"
       },
-      "priceKrw": 3597100,
+      "priceKrw": 3674400,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -7293,7 +7325,7 @@
         "ko": "ARZOPA",
         "en": "ARZOPA"
       },
-      "priceKrw": 252800,
+      "priceKrw": 258000,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -7318,7 +7350,7 @@
         "en": "ASUS"
       },
       "priceKrw": 1890000,
-      "status": "earlyAccess",
+      "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
       "image": "/images/9b150377-cd6e-4e23-9550-a32fc35331ee.avif",
@@ -7329,12 +7361,18 @@
         ],
         "audioReturnChannel": "noneConfirmed",
         "bfi": true,
+        "bfiOnMaxBrightness": 262,
+        "colorDeAvg": 0.73,
+        "colorGamutBt2020Measured": 71.4,
+        "colorGamutDciP3Measured": 98,
         "colorGamutDcip3Spec": 99,
+        "colorGamutSrgbBench": 99.9,
         "colorGamutSrgbSpec": 130,
+        "colorVolumeDciP3Measured": 96.63,
         "displayPortCount": 1,
         "displayPortLinkClass": "dp2_1Uhbr20_80",
         "earlyAccessAt": "2026-10-29T00:00:00.000Z",
-        "eyejokerRating": "ANTICIPATING",
+        "eyejokerRating": "RECOMMENDED",
         "hdmiLinkClass": "hdmi2_1Frl6_48",
         "hdmiPortCount": 2,
         "hdrCertification": "displayHdrTrueBlack400",
@@ -7342,16 +7380,28 @@
           "hdr10",
           "dolbyVision"
         ],
+        "hdrFullFieldBrightnessMeasured": 232,
+        "hdrPeak10PercentMeasured": 498,
+        "hdrPeak2PercentMeasured": 987,
         "heightAdjustMm": 110,
+        "inputLagMonitor": 0.65,
         "kvmType": "unknownTopology",
         "localDimmingType": "globalDimming",
+        "maxBrightnessHdrMeasured": 987,
         "maxBrightnessHdrSpec": 1000,
+        "maxBrightnessSdrMeasured": 449,
         "maxBrightnessSdrSpec": 250,
+        "overallRatingMonitor": "FLAWLESS",
+        "overshootAverage": 53.4,
+        "overshootMax": 227,
         "panelMaker": "LGD",
         "panelType": "RGB_TANDEM_OLED",
         "publicReleaseAt": "2026-11-05T00:00:00.000Z",
         "refreshRate": 240,
         "resolution": "UHD",
+        "responseAverage": 2.93,
+        "responseAverageRgb10": 0.2,
+        "responseMax": 4.24,
         "screenCoating": "glossy",
         "sizeInch": 27,
         "standAdjustments": [
@@ -7366,7 +7416,7 @@
         "vesaMountPattern": "vesa100x100"
       },
       "firstSeenAt": null,
-      "testedAt": null
+      "testedAt": "2026-11-09T19:27:21.592Z"
     },
     {
       "id": "57972272-f174-4829-bfe4-ac4e0ee23c38",
@@ -7569,7 +7619,7 @@
         "ko": "레노버",
         "en": "Lenovo"
       },
-      "priceKrw": 839600,
+      "priceKrw": 857700,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -8418,7 +8468,7 @@
         "ko": "MSI",
         "en": "MSI"
       },
-      "priceKrw": 731700,
+      "priceKrw": 747400,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -8474,7 +8524,7 @@
         "ko": "Intehill",
         "en": "Intehill"
       },
-      "priceKrw": 585100,
+      "priceKrw": 597700,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -8591,7 +8641,7 @@
         "ko": "애플",
         "en": "Apple"
       },
-      "priceKrw": 4396800,
+      "priceKrw": 4491300,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -8622,7 +8672,7 @@
         "ko": "애즈락",
         "en": "ASRock"
       },
-      "priceKrw": 1267300,
+      "priceKrw": 1288100,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -8736,7 +8786,7 @@
         "ko": "알파스캔",
         "en": "Alphascan"
       },
-      "priceKrw": 373200,
+      "priceKrw": 381200,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -8827,7 +8877,7 @@
         "ko": "에이서",
         "en": "ACER"
       },
-      "priceKrw": 1066200,
+      "priceKrw": 1089100,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -8918,7 +8968,7 @@
         "ko": "벤큐",
         "en": "BenQ"
       },
-      "priceKrw": 1199500,
+      "priceKrw": 1225200,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -9681,7 +9731,7 @@
         "ko": "벤큐",
         "en": "BenQ"
       },
-      "priceKrw": 1132800,
+      "priceKrw": 1157200,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -9712,7 +9762,7 @@
         "ko": "TCL",
         "en": "TCL"
       },
-      "priceKrw": 640100,
+      "priceKrw": 652000,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -9975,7 +10025,7 @@
         "ko": "에이수스",
         "en": "ASUS"
       },
-      "priceKrw": 1279100,
+      "priceKrw": 1305300,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -10058,7 +10108,7 @@
         "ko": "에이서",
         "en": "ACER"
       },
-      "priceKrw": 932900,
+      "priceKrw": 953000,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -10272,7 +10322,7 @@
         "ko": "ARZOPA",
         "en": "ARZOPA"
       },
-      "priceKrw": 193200,
+      "priceKrw": 197400,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -10497,7 +10547,7 @@
         "ko": "뷰소닉",
         "en": "ViewSonic"
       },
-      "priceKrw": 373200,
+      "priceKrw": 381200,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -10614,7 +10664,7 @@
         "ko": "TCL",
         "en": "TCL"
       },
-      "priceKrw": 1300400,
+      "priceKrw": 1324600,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -10770,7 +10820,7 @@
         "ko": "ZEUSLAP",
         "en": "ZEUSLAP"
       },
-      "priceKrw": 239900,
+      "priceKrw": 245000,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -10915,7 +10965,7 @@
         "ko": "벤큐",
         "en": "BenQ"
       },
-      "priceKrw": 1599300,
+      "priceKrw": 1633700,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -11344,7 +11394,7 @@
         "ko": "에이서",
         "en": "ACER"
       },
-      "priceKrw": 1732600,
+      "priceKrw": 1769800,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -11405,7 +11455,7 @@
         "ko": "알파스캔",
         "en": "Alphascan"
       },
-      "priceKrw": 660100,
+      "priceKrw": 672400,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -11459,7 +11509,7 @@
         "ko": "알파스캔",
         "en": "Alphascan"
       },
-      "priceKrw": 749400,
+      "priceKrw": 764000,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -11829,7 +11879,7 @@
         "ko": "MSI",
         "en": "MSI"
       },
-      "priceKrw": 209900,
+      "priceKrw": 213800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -12595,7 +12645,7 @@
         "ko": "에이서",
         "en": "ACER"
       },
-      "priceKrw": 1066200,
+      "priceKrw": 1089100,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -12832,7 +12882,7 @@
         "ko": "WIMAXIT",
         "en": "WIMAXIT"
       },
-      "priceKrw": 278500,
+      "priceKrw": 284500,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -13071,7 +13121,7 @@
         "ko": "엘지전자",
         "en": "LGE"
       },
-      "priceKrw": 1999100,
+      "priceKrw": 2042100,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -13878,7 +13928,7 @@
         "ko": "애즈락",
         "en": "ASRock"
       },
-      "priceKrw": 531800,
+      "priceKrw": 543200,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -14013,7 +14063,7 @@
         "ko": "KYY",
         "en": "KYY"
       },
-      "priceKrw": 170600,
+      "priceKrw": 174200,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -14037,7 +14087,7 @@
         "ko": "MSI",
         "en": "MSI"
       },
-      "priceKrw": 839600,
+      "priceKrw": 857700,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -14747,7 +14797,7 @@
         "ko": "에이서",
         "en": "ACER"
       },
-      "priceKrw": 1199500,
+      "priceKrw": 1225200,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -14771,7 +14821,7 @@
         "ko": "에이서",
         "en": "ACER"
       },
-      "priceKrw": 1199500,
+      "priceKrw": 1225200,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -15041,7 +15091,7 @@
         "ko": "필립스",
         "en": "Philips"
       },
-      "priceKrw": 1200300,
+      "priceKrw": 1222600,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -15069,7 +15119,7 @@
         "ko": "에이서",
         "en": "ACER"
       },
-      "priceKrw": 1999100,
+      "priceKrw": 2042100,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -15269,7 +15319,7 @@
         "ko": "알파스캔",
         "en": "Alphascan"
       },
-      "priceKrw": 1262700,
+      "priceKrw": 1288700,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -15512,7 +15562,7 @@
         "ko": "TCL",
         "en": "TCL"
       },
-      "priceKrw": 740100,
+      "priceKrw": 753900,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -15809,7 +15859,7 @@
         "ko": "에이수스",
         "en": "ASUS"
       },
-      "priceKrw": 2930700,
+      "priceKrw": 2993700,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -15850,7 +15900,7 @@
         "ko": "삼성전자",
         "en": "Samsung"
       },
-      "priceKrw": 1732600,
+      "priceKrw": 1769800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -16111,7 +16161,7 @@
         "ko": "ARZOPA",
         "en": "ARZOPA"
       },
-      "priceKrw": 106600,
+      "priceKrw": 108900,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -16204,7 +16254,7 @@
         "ko": "에이수스",
         "en": "ASUS"
       },
-      "priceKrw": 1731300,
+      "priceKrw": 1768500,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -16345,7 +16395,7 @@
         "ko": "MSI",
         "en": "MSI"
       },
-      "priceKrw": 1425700,
+      "priceKrw": 1453500,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -16680,7 +16730,7 @@
         "ko": "ARZOPA",
         "en": "ARZOPA"
       },
-      "priceKrw": 173200,
+      "priceKrw": 177000,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -16748,7 +16798,7 @@
         "ko": "에이수스",
         "en": "ASUS"
       },
-      "priceKrw": 1464700,
+      "priceKrw": 1496200,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -17070,7 +17120,7 @@
         "ko": "삼성전자",
         "en": "Samsung"
       },
-      "priceKrw": 2798800,
+      "priceKrw": 2858900,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -17115,7 +17165,7 @@
         "ko": "에이수스",
         "en": "ASUS"
       },
-      "priceKrw": 1051500,
+      "priceKrw": 1074100,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -17202,7 +17252,7 @@
         "ko": "NexiGo",
         "en": "NexiGo"
       },
-      "priceKrw": 625100,
+      "priceKrw": 638500,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -17276,7 +17326,7 @@
         "ko": "에이서",
         "en": "ACER"
       },
-      "priceKrw": 1466000,
+      "priceKrw": 1497500,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -17766,7 +17816,7 @@
         "ko": "레노버",
         "en": "Lenovo"
       },
-      "priceKrw": 666400,
+      "priceKrw": 680700,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -17873,7 +17923,7 @@
         "ko": "TCL",
         "en": "TCL"
       },
-      "priceKrw": 800200,
+      "priceKrw": 815000,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
