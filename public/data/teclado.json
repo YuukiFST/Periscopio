@@ -40,17 +40,10 @@
       "multiple": false,
       "options": [
         {
-          "value": "arrived",
+          "value": "unreleased",
           "label": {
-            "ko": "제품 도착",
-            "en": "Arrived"
-          }
-        },
-        {
-          "value": "earlyAccess",
-          "label": {
-            "ko": "선 공개",
-            "en": "Early Access"
+            "ko": "미출시",
+            "en": "Unreleased"
           }
         },
         {
@@ -68,10 +61,10 @@
           }
         },
         {
-          "value": "reviewed",
+          "value": "arrived",
           "label": {
-            "ko": "공개 완료",
-            "en": "Reviewed"
+            "ko": "제품 도착",
+            "en": "Arrived"
           }
         },
         {
@@ -82,10 +75,17 @@
           }
         },
         {
-          "value": "unreleased",
+          "value": "earlyAccess",
           "label": {
-            "ko": "미출시",
-            "en": "Unreleased"
+            "ko": "선 공개",
+            "en": "Early Access"
+          }
+        },
+        {
+          "value": "reviewed",
+          "label": {
+            "ko": "공개 완료",
+            "en": "Reviewed"
           }
         }
       ]
@@ -102,10 +102,10 @@
       "multiple": false,
       "options": [
         {
-          "value": "DISCONTINUED",
+          "value": "unreleased",
           "label": {
-            "ko": "단종",
-            "en": "Discontinued"
+            "ko": "미출시",
+            "en": "Unreleased"
           }
         },
         {
@@ -116,10 +116,10 @@
           }
         },
         {
-          "value": "unreleased",
+          "value": "DISCONTINUED",
           "label": {
-            "ko": "미출시",
-            "en": "Unreleased"
+            "ko": "단종",
+            "en": "Discontinued"
           }
         }
       ]
@@ -143,6 +143,13 @@
           }
         },
         {
+          "value": "RECOMMENDED",
+          "label": {
+            "ko": "추천",
+            "en": "Recommend"
+          }
+        },
+        {
           "value": "MILD_RECOMMENDATION",
           "label": {
             "ko": "추천까지는",
@@ -154,13 +161,6 @@
           "label": {
             "ko": "추천안함",
             "en": "Not Recommend"
-          }
-        },
-        {
-          "value": "RECOMMENDED",
-          "label": {
-            "ko": "추천",
-            "en": "Recommend"
           }
         },
         {
@@ -219,6 +219,27 @@
       "multiple": false,
       "options": [
         {
+          "value": "sparklink",
+          "label": {
+            "ko": "스파크링크",
+            "en": "SparkLink"
+          }
+        },
+        {
+          "value": "arbitor",
+          "label": {
+            "ko": "아비터",
+            "en": "arbitor"
+          }
+        },
+        {
+          "value": "Rongyuan",
+          "label": {
+            "ko": "롱위안",
+            "en": "Rongyuan"
+          }
+        },
+        {
           "value": "Beiying",
           "label": {
             "ko": "베이잉",
@@ -247,17 +268,10 @@
           }
         },
         {
-          "value": "Rongyuan",
+          "value": "자체 솔루션",
           "label": {
-            "ko": "롱위안",
-            "en": "Rongyuan"
-          }
-        },
-        {
-          "value": "arbitor",
-          "label": {
-            "ko": "아비터",
-            "en": "arbitor"
+            "ko": "자체 솔루션",
+            "en": "In-house"
           }
         },
         {
@@ -265,20 +279,6 @@
           "label": {
             "ko": "기타",
             "en": "etc"
-          }
-        },
-        {
-          "value": "sparklink",
-          "label": {
-            "ko": "스파크링크",
-            "en": "SparkLink"
-          }
-        },
-        {
-          "value": "자체 솔루션",
-          "label": {
-            "ko": "자체 솔루션",
-            "en": "In-house"
           }
         }
       ]
@@ -357,6 +357,13 @@
       "multiple": false,
       "options": [
         {
+          "value": "유선",
+          "label": {
+            "ko": "유선",
+            "en": "Wired"
+          }
+        },
+        {
           "value": "무선",
           "label": {
             "ko": "무선",
@@ -368,13 +375,6 @@
           "label": {
             "ko": "유무선",
             "en": "Wired/Wireless"
-          }
-        },
-        {
-          "value": "유선",
-          "label": {
-            "ko": "유선",
-            "en": "Wired"
           }
         }
       ]
@@ -391,6 +391,27 @@
       "multiple": false,
       "options": [
         {
+          "value": "32000",
+          "label": {
+            "ko": "32000",
+            "en": "32000"
+          }
+        },
+        {
+          "value": "16000",
+          "label": {
+            "ko": "16000",
+            "en": "16000"
+          }
+        },
+        {
+          "value": "8000",
+          "label": {
+            "ko": "8000",
+            "en": "8000"
+          }
+        },
+        {
           "value": "1000",
           "label": {
             "ko": "1000",
@@ -402,27 +423,6 @@
           "label": {
             "ko": "125",
             "en": "125"
-          }
-        },
-        {
-          "value": "16000",
-          "label": {
-            "ko": "16000",
-            "en": "16000"
-          }
-        },
-        {
-          "value": "32000",
-          "label": {
-            "ko": "32000",
-            "en": "32000"
-          }
-        },
-        {
-          "value": "8000",
-          "label": {
-            "ko": "8000",
-            "en": "8000"
           }
         }
       ]
@@ -447,6 +447,20 @@
       "unit": null,
       "multiple": false,
       "options": [
+        {
+          "value": "tkl",
+          "label": {
+            "ko": "TKL",
+            "en": "TKL"
+          }
+        },
+        {
+          "value": "full",
+          "label": {
+            "ko": "FULL",
+            "en": "FULL"
+          }
+        },
         {
           "value": "60%",
           "label": {
@@ -481,20 +495,6 @@
             "ko": "기타",
             "en": "etc"
           }
-        },
-        {
-          "value": "full",
-          "label": {
-            "ko": "FULL",
-            "en": "FULL"
-          }
-        },
-        {
-          "value": "tkl",
-          "label": {
-            "ko": "TKL",
-            "en": "TKL"
-          }
         }
       ]
     },
@@ -510,6 +510,13 @@
       "multiple": true,
       "options": [
         {
+          "value": "자석축",
+          "label": {
+            "ko": "자석축",
+            "en": "Magnetic Switch"
+          }
+        },
+        {
           "value": "광축",
           "label": {
             "ko": "광축",
@@ -524,13 +531,6 @@
           }
         },
         {
-          "value": "멤브레인",
-          "label": {
-            "ko": "멤브레인",
-            "en": "Membrane"
-          }
-        },
-        {
           "value": "무접점",
           "label": {
             "ko": "무접점",
@@ -538,10 +538,10 @@
           }
         },
         {
-          "value": "자석축",
+          "value": "멤브레인",
           "label": {
-            "ko": "자석축",
-            "en": "Magnetic Switch"
+            "ko": "멤브레인",
+            "en": "Membrane"
           }
         }
       ]
@@ -558,10 +558,10 @@
       "multiple": false,
       "options": [
         {
-          "value": "광축",
+          "value": "자석축",
           "label": {
-            "ko": "광축",
-            "en": "Optical Switch"
+            "ko": "자석축",
+            "en": "Magnetic Switch"
           }
         },
         {
@@ -572,10 +572,10 @@
           }
         },
         {
-          "value": "멤브레인",
+          "value": "광축",
           "label": {
-            "ko": "멤브레인",
-            "en": "Membrane"
+            "ko": "광축",
+            "en": "Optical Switch"
           }
         },
         {
@@ -586,10 +586,10 @@
           }
         },
         {
-          "value": "자석축",
+          "value": "멤브레인",
           "label": {
-            "ko": "자석축",
-            "en": "Magnetic Switch"
+            "ko": "멤브레인",
+            "en": "Membrane"
           }
         }
       ]
@@ -613,17 +613,17 @@
           }
         },
         {
-          "value": "lowProfile",
-          "label": {
-            "ko": "Low Profile",
-            "en": "Low Profile"
-          }
-        },
-        {
           "value": "oemProfile",
           "label": {
             "ko": "OEM 프로파일",
             "en": "OEM Profile"
+          }
+        },
+        {
+          "value": "lowProfile",
+          "label": {
+            "ko": "Low Profile",
+            "en": "Low Profile"
           }
         }
       ]
@@ -639,6 +639,13 @@
       "unit": null,
       "multiple": false,
       "options": [
+        {
+          "value": "true",
+          "label": {
+            "ko": "O",
+            "en": "O"
+          }
+        },
         {
           "value": "false",
           "label": {
@@ -658,13 +665,6 @@
           "label": {
             "ko": "RGB",
             "en": "RGB"
-          }
-        },
-        {
-          "value": "true",
-          "label": {
-            "ko": "O",
-            "en": "O"
           }
         }
       ]
@@ -815,17 +815,17 @@
       "multiple": true,
       "options": [
         {
+          "value": "plastic",
+          "label": {
+            "ko": "플라스틱",
+            "en": "Plastic"
+          }
+        },
+        {
           "value": "aluminum",
           "label": {
             "ko": "알루미늄",
             "en": "Aluminum"
-          }
-        },
-        {
-          "value": "custom",
-          "label": {
-            "ko": "커스텀",
-            "en": "Custom"
           }
         },
         {
@@ -836,17 +836,17 @@
           }
         },
         {
+          "value": "custom",
+          "label": {
+            "ko": "커스텀",
+            "en": "Custom"
+          }
+        },
+        {
           "value": "other",
           "label": {
             "ko": "기타",
             "en": "Other"
-          }
-        },
-        {
-          "value": "plastic",
-          "label": {
-            "ko": "플라스틱",
-            "en": "Plastic"
           }
         }
       ]
@@ -863,13 +863,6 @@
       "multiple": true,
       "options": [
         {
-          "value": "bottom",
-          "label": {
-            "ko": "바텀",
-            "en": "Bottom"
-          }
-        },
-        {
           "value": "gasket",
           "label": {
             "ko": "가스켓",
@@ -877,24 +870,10 @@
           }
         },
         {
-          "value": "leafspring",
+          "value": "tray",
           "label": {
-            "ko": "리프스프링",
-            "en": "Leaf-spring"
-          }
-        },
-        {
-          "value": "oring",
-          "label": {
-            "ko": "거미오링",
-            "en": "O-ring"
-          }
-        },
-        {
-          "value": "sandwitch",
-          "label": {
-            "ko": "샌드위치",
-            "en": "Sandwich"
+            "ko": "트레이",
+            "en": "Tray"
           }
         },
         {
@@ -905,10 +884,31 @@
           }
         },
         {
-          "value": "tray",
+          "value": "leafspring",
           "label": {
-            "ko": "트레이",
-            "en": "Tray"
+            "ko": "리프스프링",
+            "en": "Leaf-spring"
+          }
+        },
+        {
+          "value": "bottom",
+          "label": {
+            "ko": "바텀",
+            "en": "Bottom"
+          }
+        },
+        {
+          "value": "sandwitch",
+          "label": {
+            "ko": "샌드위치",
+            "en": "Sandwich"
+          }
+        },
+        {
+          "value": "oring",
+          "label": {
+            "ko": "거미오링",
+            "en": "O-ring"
           }
         }
       ]
@@ -943,10 +943,10 @@
       "multiple": false,
       "options": [
         {
-          "value": "Battery",
+          "value": "usbTypeC",
           "label": {
-            "ko": "배터리",
-            "en": "Battery"
+            "ko": "USB-C",
+            "en": "USB-C"
           }
         },
         {
@@ -954,13 +954,6 @@
           "label": {
             "ko": "고정형 케이블",
             "en": "Fixed Cable"
-          }
-        },
-        {
-          "value": "ps2",
-          "label": {
-            "ko": "PS/2",
-            "en": "PS/2"
           }
         },
         {
@@ -978,10 +971,17 @@
           }
         },
         {
-          "value": "usbTypeC",
+          "value": "ps2",
           "label": {
-            "ko": "USB-C",
-            "en": "USB-C"
+            "ko": "PS/2",
+            "en": "PS/2"
+          }
+        },
+        {
+          "value": "Battery",
+          "label": {
+            "ko": "배터리",
+            "en": "Battery"
           }
         }
       ]
@@ -1027,17 +1027,17 @@
       "multiple": false,
       "options": [
         {
-          "value": "absDoubleShot",
-          "label": {
-            "ko": "ABS 이중사출",
-            "en": "ABS Double-shot"
-          }
-        },
-        {
           "value": "pbtDoubleShot",
           "label": {
             "ko": "PBT 이중사출",
             "en": "PBT Double-shot"
+          }
+        },
+        {
+          "value": "absDoubleShot",
+          "label": {
+            "ko": "ABS 이중사출",
+            "en": "ABS Double-shot"
           }
         },
         {
@@ -1075,17 +1075,17 @@
           }
         },
         {
-          "value": "cherryPlatePcbMount",
-          "label": {
-            "ko": "체리식 보강판, PCB 결합",
-            "en": "Cherry Plate, PCB Mount"
-          }
-        },
-        {
           "value": "hybridPlateMount",
           "label": {
             "ko": "하이브리드 보강판 결합",
             "en": "Hybrid Plate Mount"
+          }
+        },
+        {
+          "value": "cherryPlatePcbMount",
+          "label": {
+            "ko": "체리식 보강판, PCB 결합",
+            "en": "Cherry Plate, PCB Mount"
           }
         }
       ]
@@ -1111,94 +1111,17 @@
       "multiple": false,
       "options": [
         {
-          "value": "?",
+          "value": "nxplpc5528jbd100(150m)",
           "label": {
-            "ko": "?",
-            "en": "?"
+            "ko": "NXP LPC5528JBD100(150M)",
+            "en": "NXP LPC5528JBD100(150M)"
           }
         },
         {
-          "value": "armcortex600mhz",
+          "value": "visionvs11k17a(48m)",
           "label": {
-            "ko": "ARM Cortex 600MHz",
-            "en": "ARM Cortex 600MHz"
-          }
-        },
-        {
-          "value": "armcortexm0",
-          "label": {
-            "ko": "ARM Cortex M0",
-            "en": "ARM Cortex M0"
-          }
-        },
-        {
-          "value": "armm3mcu",
-          "label": {
-            "ko": "ARM M3 MCU",
-            "en": "ARM M3 MCU"
-          }
-        },
-        {
-          "value": "atkv10h12b1g708h2523",
-          "label": {
-            "ko": "ATK V10H12B1G708H2523",
-            "en": "ATK V10H12B1G708H2523"
-          }
-        },
-        {
-          "value": "atmel128a4uh(32m)",
-          "label": {
-            "ko": "Atmel128A4U-H(32M)",
-            "en": "Atmel128A4U-H(32M)"
-          }
-        },
-        {
-          "value": "atmelmega32u4mu(16m)",
-          "label": {
-            "ko": "ATMEL MEGA32U4-MU(16M)",
-            "en": "ATMEL MEGA32U4-MU(16M)"
-          }
-        },
-        {
-          "value": "byk916",
-          "label": {
-            "ko": "BYK916",
-            "en": "BYK916"
-          }
-        },
-        {
-          "value": "ch32v307rct6(144m)",
-          "label": {
-            "ko": "CH32V307 RCT6(144M)",
-            "en": "CH32V307 RCT6(144M)"
-          }
-        },
-        {
-          "value": "geehyapm32f465ret6(168m)",
-          "label": {
-            "ko": "Geehy APM32F465RET6(168M)",
-            "en": "Geehy APM32F465RET6(168M)"
-          }
-        },
-        {
-          "value": "giadevicegd32f303cgt6(120m)",
-          "label": {
-            "ko": "Giadevice GD32F303 CGT6(120M)",
-            "en": "Giadevice GD32F303 CGT6(120M)"
-          }
-        },
-        {
-          "value": "giadevicegd32f425rgtg(200mhz)",
-          "label": {
-            "ko": "Giadevice GD32F425RGTG(200MHz)",
-            "en": "Giadevice GD32F425RGTG(200MHz)"
-          }
-        },
-        {
-          "value": "holtekht32f12365(96m)",
-          "label": {
-            "ko": "HOLTEK HT32F12365(96M)",
-            "en": "HOLTEK HT32F12365(96M)"
+            "ko": "Vision VS11K17A(48M)",
+            "en": "Vision VS11K17A(48M)"
           }
         },
         {
@@ -1209,195 +1132,6 @@
           }
         },
         {
-          "value": "holtekht68fb560[8bit",
-          "label": {
-            "ko": "HOLTEK HT68FB560 (16M 내부 / 12M 외부)",
-            "en": "HOLTEK HT68FB560 (16M 내부 / 12M 외부)"
-          }
-        },
-        {
-          "value": "nordicnrf52833(64m)",
-          "label": {
-            "ko": "Nordic nRF52833(64M)",
-            "en": "Nordic nRF52833(64M)"
-          }
-        },
-        {
-          "value": "nordicnrf52840(64m)",
-          "label": {
-            "ko": "Nordic nRF52840(64M)",
-            "en": "Nordic nRF52840(64M)"
-          }
-        },
-        {
-          "value": "nuc123sd4bn0[armcortexm0(72m)]",
-          "label": {
-            "ko": "NUC123SD4BN0[ARM Cortex-M0(72M)]",
-            "en": "NUC123SD4BN0[ARM Cortex-M0(72M)]"
-          }
-        },
-        {
-          "value": "nuvotonm484s1dae2u(192m)",
-          "label": {
-            "ko": "NUVOTON M484S1DAE2U(192M)",
-            "en": "NUVOTON M484S1DAE2U(192M)"
-          }
-        },
-        {
-          "value": "nuvotonm484sidae(192m)",
-          "label": {
-            "ko": "NUVOTON M484SIDAE(192M)",
-            "en": "NUVOTON M484SIDAE(192M)"
-          }
-        },
-        {
-          "value": "nuvotonm484sidae2u(192m)",
-          "label": {
-            "ko": "NUVOTON M484SIDAE2U(192M)",
-            "en": "NUVOTON M484SIDAE2U(192M)"
-          }
-        },
-        {
-          "value": "nuvotonnuc123sd4an0(72m)",
-          "label": {
-            "ko": "Nuvoton NUC123SD4AN0(72M)",
-            "en": "Nuvoton NUC123SD4AN0(72M)"
-          }
-        },
-        {
-          "value": "nuvotonnuc123sd4bn0(72m)+m0518ld2ae(50m)",
-          "label": {
-            "ko": "NUVOTON NUC123SD4BN0(72M) + M0518LD2AE(50M)",
-            "en": "NUVOTON NUC123SD4BN0(72M) + M0518LD2AE(50M)"
-          }
-        },
-        {
-          "value": "nuvotonnuc1261sg4ae(72m)",
-          "label": {
-            "ko": "Nuvoton NUC1261SG4AE(72M)",
-            "en": "Nuvoton NUC1261SG4AE(72M)"
-          }
-        },
-        {
-          "value": "nxp9080(32m)",
-          "label": {
-            "ko": "NXP 9080(32M)",
-            "en": "NXP 9080(32M)"
-          }
-        },
-        {
-          "value": "nxplpc11u37f(50m)",
-          "label": {
-            "ko": "NXP LPC11U37F(50M)",
-            "en": "NXP LPC11U37F(50M)"
-          }
-        },
-        {
-          "value": "nxplpc11u68j(50m)",
-          "label": {
-            "ko": "NXP LPC11U68J(50M)",
-            "en": "NXP LPC11U68J(50M)"
-          }
-        },
-        {
-          "value": "nxplpc11u68jbd100(50m)",
-          "label": {
-            "ko": "NXP LPC11U68JBD100(50M)",
-            "en": "NXP LPC11U68JBD100(50M)"
-          }
-        },
-        {
-          "value": "nxplpc54605j512bd100(180m)",
-          "label": {
-            "ko": "NXP LPC54605j512BD100(180M)",
-            "en": "NXP LPC54605j512BD100(180M)"
-          }
-        },
-        {
-          "value": "nxplpc5465j512bd100(220m)",
-          "label": {
-            "ko": "NXP LPC5465J512BD100(220M)",
-            "en": "NXP LPC5465J512BD100(220M)"
-          }
-        },
-        {
-          "value": "nxplpc5516(150m)",
-          "label": {
-            "ko": "NXP LPC5516(150M)",
-            "en": "NXP LPC5516(150M)"
-          }
-        },
-        {
-          "value": "nxplpc5516jbd100(150m)",
-          "label": {
-            "ko": "NXP LPC5516JBD100(150M)",
-            "en": "NXP LPC5516JBD100(150M)"
-          }
-        },
-        {
-          "value": "nxplpc5516jbd64(150m)",
-          "label": {
-            "ko": "NXP LPC5516JBD64(150M)",
-            "en": "NXP LPC5516JBD64(150M)"
-          }
-        },
-        {
-          "value": "nxplpc5528(150m)",
-          "label": {
-            "ko": "NXP LPC5528(150M)",
-            "en": "NXP LPC5528(150M)"
-          }
-        },
-        {
-          "value": "nxplpc5528jbd100(150m)",
-          "label": {
-            "ko": "NXP LPC5528JBD100(150M)",
-            "en": "NXP LPC5528JBD100(150M)"
-          }
-        },
-        {
-          "value": "razerchroma192v2727",
-          "label": {
-            "ko": "RAZER CHROMA 192 V2727",
-            "en": "RAZER CHROMA 192 V2727"
-          }
-        },
-        {
-          "value": "rc30035302(72m)",
-          "label": {
-            "ko": "RC30-035302(72M)",
-            "en": "RC30-035302(72M)"
-          }
-        },
-        {
-          "value": "riscpic32mzec(200m)",
-          "label": {
-            "ko": "RISC PIC32MZ EC(200M)",
-            "en": "RISC PIC32MZ EC(200M)"
-          }
-        },
-        {
-          "value": "riscvch32v307rct6(144m)+ch32v2036개",
-          "label": {
-            "ko": "RISC-V CH32V307RCT6(144M) + CH32V203 6개",
-            "en": "RISC-V CH32V307RCT6(144M) + CH32V203 x6"
-          }
-        },
-        {
-          "value": "riscvch32v307wcu6(144m)",
-          "label": {
-            "ko": "RISC-V CH32V307WCU6(144M)",
-            "en": "RISC-V CH32V307WCU6(144M)"
-          }
-        },
-        {
-          "value": "ry7203n48cc2214cc",
-          "label": {
-            "ko": "RY7203 N48C-C 2214-CC",
-            "en": "RY7203 N48C-C 2214-CC"
-          }
-        },
-        {
           "value": "spmstm32u5a5rjt6(160m)",
           "label": {
             "ko": "SPM STM32U5A5 RJT6(160M)",
@@ -1405,10 +1139,10 @@
           }
         },
         {
-          "value": "stm32f103rbt6(72m)",
+          "value": "nuvotonnuc123sd4bn0(72m)+m0518ld2ae(50m)",
           "label": {
-            "ko": "STM32F103 RBT6(72M)",
-            "en": "STM32F103 RBT6(72M)"
+            "ko": "NUVOTON NUC123SD4BN0(72M) + M0518LD2AE(50M)",
+            "en": "NUVOTON NUC123SD4BN0(72M) + M0518LD2AE(50M)"
           }
         },
         {
@@ -1433,10 +1167,87 @@
           }
         },
         {
-          "value": "stm32l412rb(80m)",
+          "value": "nordicnrf52833(64m)",
           "label": {
-            "ko": "STM32L412RB(80M)",
-            "en": "STM32L412RB(80M)"
+            "ko": "Nordic nRF52833(64M)",
+            "en": "Nordic nRF52833(64M)"
+          }
+        },
+        {
+          "value": "nxplpc5516(150m)",
+          "label": {
+            "ko": "NXP LPC5516(150M)",
+            "en": "NXP LPC5516(150M)"
+          }
+        },
+        {
+          "value": "armm3mcu",
+          "label": {
+            "ko": "ARM M3 MCU",
+            "en": "ARM M3 MCU"
+          }
+        },
+        {
+          "value": "giadevicegd32f303cgt6(120m)",
+          "label": {
+            "ko": "Giadevice GD32F303 CGT6(120M)",
+            "en": "Giadevice GD32F303 CGT6(120M)"
+          }
+        },
+        {
+          "value": "holtekht32f12365(96m)",
+          "label": {
+            "ko": "HOLTEK HT32F12365(96M)",
+            "en": "HOLTEK HT32F12365(96M)"
+          }
+        },
+        {
+          "value": "riscpic32mzec(200m)",
+          "label": {
+            "ko": "RISC PIC32MZ EC(200M)",
+            "en": "RISC PIC32MZ EC(200M)"
+          }
+        },
+        {
+          "value": "nxplpc54605j512bd100(180m)",
+          "label": {
+            "ko": "NXP LPC54605j512BD100(180M)",
+            "en": "NXP LPC54605j512BD100(180M)"
+          }
+        },
+        {
+          "value": "nuvotonnuc1261sg4ae(72m)",
+          "label": {
+            "ko": "Nuvoton NUC1261SG4AE(72M)",
+            "en": "Nuvoton NUC1261SG4AE(72M)"
+          }
+        },
+        {
+          "value": "wchch32v307(144m)",
+          "label": {
+            "ko": "WCH CH32V307(144M)",
+            "en": "WCH CH32V307(144M)"
+          }
+        },
+        {
+          "value": "rc30035302(72m)",
+          "label": {
+            "ko": "RC30-035302(72M)",
+            "en": "RC30-035302(72M)"
+          }
+        },
+        {
+          "value": "riscvch32v307wcu6(144m)",
+          "label": {
+            "ko": "RISC-V CH32V307WCU6(144M)",
+            "en": "RISC-V CH32V307WCU6(144M)"
+          }
+        },
+        {
+          "value": "atmel128a4uh(32m)",
+          "label": {
+            "ko": "Atmel128A4U-H(32M)",
+            "en": "Atmel128A4U-H(32M)"
           }
         },
         {
@@ -1444,6 +1255,48 @@
           "label": {
             "ko": "STM32L412 RBT6(80M)",
             "en": "STM32L412 RBT6(80M)"
+          }
+        },
+        {
+          "value": "nuvotonm484s1dae2u(192m)",
+          "label": {
+            "ko": "NUVOTON M484S1DAE2U(192M)",
+            "en": "NUVOTON M484S1DAE2U(192M)"
+          }
+        },
+        {
+          "value": "nxplpc5516jbd64(150m)",
+          "label": {
+            "ko": "NXP LPC5516JBD64(150M)",
+            "en": "NXP LPC5516JBD64(150M)"
+          }
+        },
+        {
+          "value": "riscvch32v307rct6(144m)+ch32v2036개",
+          "label": {
+            "ko": "RISC-V CH32V307RCT6(144M) + CH32V203 6개",
+            "en": "RISC-V CH32V307RCT6(144M) + CH32V203 x6"
+          }
+        },
+        {
+          "value": "ry7203n48cc2214cc",
+          "label": {
+            "ko": "RY7203 N48C-C 2214-CC",
+            "en": "RY7203 N48C-C 2214-CC"
+          }
+        },
+        {
+          "value": "stm32f103rbt6(72m)",
+          "label": {
+            "ko": "STM32F103 RBT6(72M)",
+            "en": "STM32F103 RBT6(72M)"
+          }
+        },
+        {
+          "value": "stm32l412rb(80m)",
+          "label": {
+            "ko": "STM32L412RB(80M)",
+            "en": "STM32L412RB(80M)"
           }
         },
         {
@@ -1475,24 +1328,171 @@
           }
         },
         {
-          "value": "visionvs11k17a(48m)",
-          "label": {
-            "ko": "Vision VS11K17A(48M)",
-            "en": "Vision VS11K17A(48M)"
-          }
-        },
-        {
-          "value": "wchch32v307(144m)",
-          "label": {
-            "ko": "WCH CH32V307(144M)",
-            "en": "WCH CH32V307(144M)"
-          }
-        },
-        {
           "value": "wchicch32v305(144m)",
           "label": {
             "ko": "WCH-IC CH32V305(144M)",
             "en": "WCH-IC CH32V305(144M)"
+          }
+        },
+        {
+          "value": "armcortexm0",
+          "label": {
+            "ko": "ARM Cortex M0",
+            "en": "ARM Cortex M0"
+          }
+        },
+        {
+          "value": "atkv10h12b1g708h2523",
+          "label": {
+            "ko": "ATK V10H12B1G708H2523",
+            "en": "ATK V10H12B1G708H2523"
+          }
+        },
+        {
+          "value": "atmelmega32u4mu(16m)",
+          "label": {
+            "ko": "ATMEL MEGA32U4-MU(16M)",
+            "en": "ATMEL MEGA32U4-MU(16M)"
+          }
+        },
+        {
+          "value": "byk916",
+          "label": {
+            "ko": "BYK916",
+            "en": "BYK916"
+          }
+        },
+        {
+          "value": "ch32v307rct6(144m)",
+          "label": {
+            "ko": "CH32V307 RCT6(144M)",
+            "en": "CH32V307 RCT6(144M)"
+          }
+        },
+        {
+          "value": "geehyapm32f465ret6(168m)",
+          "label": {
+            "ko": "Geehy APM32F465RET6(168M)",
+            "en": "Geehy APM32F465RET6(168M)"
+          }
+        },
+        {
+          "value": "giadevicegd32f425rgtg(200mhz)",
+          "label": {
+            "ko": "Giadevice GD32F425RGTG(200MHz)",
+            "en": "Giadevice GD32F425RGTG(200MHz)"
+          }
+        },
+        {
+          "value": "holtekht68fb560[8bit",
+          "label": {
+            "ko": "HOLTEK HT68FB560 (16M 내부 / 12M 외부)",
+            "en": "HOLTEK HT68FB560 (16M 내부 / 12M 외부)"
+          }
+        },
+        {
+          "value": "nuc123sd4bn0[armcortexm0(72m)]",
+          "label": {
+            "ko": "NUC123SD4BN0[ARM Cortex-M0(72M)]",
+            "en": "NUC123SD4BN0[ARM Cortex-M0(72M)]"
+          }
+        },
+        {
+          "value": "nuvotonm484sidae(192m)",
+          "label": {
+            "ko": "NUVOTON M484SIDAE(192M)",
+            "en": "NUVOTON M484SIDAE(192M)"
+          }
+        },
+        {
+          "value": "nuvotonm484sidae2u(192m)",
+          "label": {
+            "ko": "NUVOTON M484SIDAE2U(192M)",
+            "en": "NUVOTON M484SIDAE2U(192M)"
+          }
+        },
+        {
+          "value": "nxp9080(32m)",
+          "label": {
+            "ko": "NXP 9080(32M)",
+            "en": "NXP 9080(32M)"
+          }
+        },
+        {
+          "value": "nxplpc11u37f(50m)",
+          "label": {
+            "ko": "NXP LPC11U37F(50M)",
+            "en": "NXP LPC11U37F(50M)"
+          }
+        },
+        {
+          "value": "nxplpc11u68j(50m)",
+          "label": {
+            "ko": "NXP LPC11U68J(50M)",
+            "en": "NXP LPC11U68J(50M)"
+          }
+        },
+        {
+          "value": "nxplpc11u68jbd100(50m)",
+          "label": {
+            "ko": "NXP LPC11U68JBD100(50M)",
+            "en": "NXP LPC11U68JBD100(50M)"
+          }
+        },
+        {
+          "value": "nxplpc5465j512bd100(220m)",
+          "label": {
+            "ko": "NXP LPC5465J512BD100(220M)",
+            "en": "NXP LPC5465J512BD100(220M)"
+          }
+        },
+        {
+          "value": "nxplpc5516jbd100(150m)",
+          "label": {
+            "ko": "NXP LPC5516JBD100(150M)",
+            "en": "NXP LPC5516JBD100(150M)"
+          }
+        },
+        {
+          "value": "nxplpc5528(150m)",
+          "label": {
+            "ko": "NXP LPC5528(150M)",
+            "en": "NXP LPC5528(150M)"
+          }
+        },
+        {
+          "value": "nordicnrf52840(64m)",
+          "label": {
+            "ko": "Nordic nRF52840(64M)",
+            "en": "Nordic nRF52840(64M)"
+          }
+        },
+        {
+          "value": "nuvotonnuc123sd4an0(72m)",
+          "label": {
+            "ko": "Nuvoton NUC123SD4AN0(72M)",
+            "en": "Nuvoton NUC123SD4AN0(72M)"
+          }
+        },
+        {
+          "value": "razerchroma192v2727",
+          "label": {
+            "ko": "RAZER CHROMA 192 V2727",
+            "en": "RAZER CHROMA 192 V2727"
+          }
+        },
+        {
+          "value": "armcortex600mhz",
+          "label": {
+            "ko": "ARM Cortex 600MHz",
+            "en": "ARM Cortex 600MHz"
+          }
+        },
+        {
+          "value": "?",
+          "label": {
+            "ko": "?",
+            "en": "?"
           }
         }
       ]
@@ -1650,52 +1650,10 @@
       "multiple": false,
       "options": [
         {
-          "value": "1000",
+          "value": "8000",
           "label": {
-            "ko": "1000",
-            "en": "1000"
-          }
-        },
-        {
-          "value": "125",
-          "label": {
-            "ko": "125",
-            "en": "125"
-          }
-        },
-        {
-          "value": "1333",
-          "label": {
-            "ko": "1333",
-            "en": "1333"
-          }
-        },
-        {
-          "value": "1600",
-          "label": {
-            "ko": "1600",
-            "en": "1600"
-          }
-        },
-        {
-          "value": "2000",
-          "label": {
-            "ko": "2000",
-            "en": "2000"
-          }
-        },
-        {
-          "value": "250",
-          "label": {
-            "ko": "250",
-            "en": "250"
-          }
-        },
-        {
-          "value": "2666",
-          "label": {
-            "ko": "2666",
-            "en": "2666"
+            "ko": "8000",
+            "en": "8000"
           }
         },
         {
@@ -1706,6 +1664,41 @@
           }
         },
         {
+          "value": "2666",
+          "label": {
+            "ko": "2666",
+            "en": "2666"
+          }
+        },
+        {
+          "value": "2000",
+          "label": {
+            "ko": "2000",
+            "en": "2000"
+          }
+        },
+        {
+          "value": "1600",
+          "label": {
+            "ko": "1600",
+            "en": "1600"
+          }
+        },
+        {
+          "value": "1333",
+          "label": {
+            "ko": "1333",
+            "en": "1333"
+          }
+        },
+        {
+          "value": "1000",
+          "label": {
+            "ko": "1000",
+            "en": "1000"
+          }
+        },
+        {
           "value": "500",
           "label": {
             "ko": "500",
@@ -1713,10 +1706,17 @@
           }
         },
         {
-          "value": "8000",
+          "value": "250",
           "label": {
-            "ko": "8000",
-            "en": "8000"
+            "ko": "250",
+            "en": "250"
+          }
+        },
+        {
+          "value": "125",
+          "label": {
+            "ko": "125",
+            "en": "125"
           }
         }
       ]
@@ -2869,7 +2869,7 @@
         "ko": "젠에임",
         "en": "ZENAIM"
       },
-      "priceKrw": 281900,
+      "priceKrw": 274100,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -3378,7 +3378,7 @@
         "ko": "이와든",
         "en": "EWEADN"
       },
-      "priceKrw": 142500,
+      "priceKrw": 139800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -3814,7 +3814,7 @@
         "ko": "엠초스",
         "en": "MCHOSE"
       },
-      "priceKrw": 148400,
+      "priceKrw": 145600,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -5042,7 +5042,7 @@
         "ko": "아이락",
         "en": "IROK"
       },
-      "priceKrw": 89900,
+      "priceKrw": 88200,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -5465,7 +5465,7 @@
         "ko": "IPI",
         "en": "IPI"
       },
-      "priceKrw": 73200,
+      "priceKrw": 71800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -5481,7 +5481,7 @@
         "ko": "어택샤크",
         "en": "AttackShark"
       },
-      "priceKrw": 36300,
+      "priceKrw": 35600,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -5608,6 +5608,11 @@
         "detachStroke": 0.005,
         "dks": false,
         "effectiveUpdateRate": "8000",
+        "emWPrRtAvgD0": 0.3728168316831686,
+        "emWPrRtSdD0": 0.059699354971567135,
+        "emWRealPerfD0": 4090,
+        "emWRlRtAvgD0": 0.755533663366337,
+        "emWRlRtSdD0": 0.08554360451090645,
         "eyejokerRating": "HIGHLY_RECOMMENDED",
         "hotswap": true,
         "housingKeyboard": [
@@ -5900,7 +5905,7 @@
         "ko": "엠초스",
         "en": "MCHOSE"
       },
-      "priceKrw": 203600,
+      "priceKrw": 199800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -6569,7 +6574,7 @@
         "ko": "레이저",
         "en": "RAZER"
       },
-      "priceKrw": 313100,
+      "priceKrw": 307200,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -6585,7 +6590,7 @@
         "ko": "Weikav",
         "en": "Weikav"
       },
-      "priceKrw": 81300,
+      "priceKrw": 79800,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -6849,7 +6854,7 @@
         "ko": "게이트론",
         "en": "GATERON"
       },
-      "priceKrw": 366900,
+      "priceKrw": 360100,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -7000,7 +7005,7 @@
         "ko": "ATK",
         "en": "ATK"
       },
-      "priceKrw": 177000,
+      "priceKrw": 173600,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -7810,7 +7815,7 @@
         "ko": "커세어",
         "en": "CORSAIR"
       },
-      "priceKrw": 245000,
+      "priceKrw": 240500,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -8883,7 +8888,7 @@
         "ko": "플라이디지",
         "en": "Flydigi"
       },
-      "priceKrw": 122100,
+      "priceKrw": 119800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -9146,7 +9151,7 @@
         "ko": "SKYLOONG",
         "en": "SKYLOONG"
       },
-      "priceKrw": 102100,
+      "priceKrw": 100200,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -9458,7 +9463,7 @@
         "ko": "체리",
         "en": "Cherry"
       },
-      "priceKrw": 189200,
+      "priceKrw": 185700,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -10092,7 +10097,7 @@
         "ko": "KBD팬스",
         "en": "KBDFANS"
       },
-      "priceKrw": 72600,
+      "priceKrw": 71200,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -10746,7 +10751,7 @@
         "ko": "에포메이커",
         "en": "EPOMAKER"
       },
-      "priceKrw": 130700,
+      "priceKrw": 128200,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -11136,7 +11141,7 @@
         "ko": "드라이 스튜디오",
         "en": "DRY STUDIO"
       },
-      "priceKrw": 301600,
+      "priceKrw": 296100,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -11794,7 +11799,7 @@
         "ko": "엠초스",
         "en": "MCHOSE"
       },
-      "priceKrw": 53000,
+      "priceKrw": 52000,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -11929,7 +11934,7 @@
         "ko": "zynoo",
         "en": "zynoo"
       },
-      "priceKrw": 235200,
+      "priceKrw": 230800,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -13657,29 +13662,29 @@
         "keyboardMechanism": [
           "자석축"
         ],
-        "keyboardPcbAvgWired": 0.13,
+        "keyboardPcbAvgWired": 0.14370198019801983,
         "kkboard": false,
         "mcu": "wchch32v307(144m)",
         "minStroke": 0.1,
         "modeTap": true,
         "multiKeyDelay": false,
         "overallRatingKeyboard": "FLAWLESS",
-        "overallResponseSpeed": 0.13,
+        "overallResponseSpeed": 0.14,
         "overallStddev": 0.04,
         "palmRest": false,
-        "pcbAvgDetach": 0.13,
+        "pcbAvgDetach": 0.14389009900990093,
         "pollingRate": "8000",
         "publicReleaseAt": "2025-01-01T00:00:00",
         "rapidAdjustmentUnit": 0.05,
         "rapidTrigger": true,
-        "realPerformance": 7880,
+        "realPerformance": 7745,
         "remapping": true,
         "simultaneousInput": true,
         "socd": true,
         "solution": "자체 솔루션",
         "stabilizer": "cherryPcbMount",
-        "stddevDetach": 0.04,
-        "stddevWired": 0.04,
+        "stddevDetach": 0.037260240814234555,
+        "stddevWired": 0.037023959275518506,
         "strokeErrorRate": 3.51,
         "strokeMeasured": 0.19,
         "toggleKey": true,
@@ -13696,7 +13701,7 @@
         "ko": "ATK",
         "en": "ATK"
       },
-      "priceKrw": 129300,
+      "priceKrw": 126900,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -14902,11 +14907,11 @@
         "debounceTime": 1,
         "dks": true,
         "effectiveUpdateRate": "8000",
-        "emWPrRtAvgD0": 0.8314693069306948,
-        "emWPrRtSdD0": 0.07501908370089318,
-        "emWRealPerfD0": 5390,
-        "emWRlRtAvgD0": 0.913485148514851,
-        "emWRlRtSdD0": 0.041371754333858216,
+        "emWPrRtAvgD0": 0.3119485148514848,
+        "emWPrRtSdD0": 0.052015052303262754,
+        "emWRealPerfD0": 4860,
+        "emWRlRtAvgD0": 0.7838396039603956,
+        "emWRlRtSdD0": 0.06867101955392704,
         "eyejokerRating": "HIGHLY_RECOMMENDED",
         "hotswap": true,
         "housingKeyboard": [
@@ -17142,7 +17147,7 @@
         "ko": "아이큐닉스",
         "en": "IQUNIX"
       },
-      "priceKrw": 230100,
+      "priceKrw": 225800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -17388,7 +17393,7 @@
         "en": "MelGeek"
       },
       "priceKrw": 420000,
-      "status": "testing",
+      "status": "earlyAccess",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c4tewgj9",
       "image": "/images/1598ae41-fae4-4813-a405-2572d05e9788.avif",
@@ -17591,7 +17596,7 @@
         "ko": "아우라",
         "en": "AULA"
       },
-      "priceKrw": 203600,
+      "priceKrw": 199800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -18640,7 +18645,7 @@
         "ko": "zynoo",
         "en": "zynoo"
       },
-      "priceKrw": 285900,
+      "priceKrw": 280500,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -18729,6 +18734,11 @@
         "detachStroke": 0.05,
         "dks": true,
         "effectiveUpdateRate": "8000",
+        "emWPrRtAvgD0": 0.32795346534653436,
+        "emWPrRtSdD0": 0.04148864586264687,
+        "emWRealPerfD0": 3980,
+        "emWRlRtAvgD0": 1.4710029702970284,
+        "emWRlRtSdD0": 0.27953639659421864,
         "eyejokerRating": "HIGHLY_RECOMMENDED",
         "hotswap": true,
         "housingFrontHeight": 29,
@@ -18928,7 +18938,7 @@
         "ko": "몬스긱",
         "en": "Monsgeek"
       },
-      "priceKrw": 81700,
+      "priceKrw": 80100,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -18965,7 +18975,7 @@
         "ko": "에버글라이드",
         "en": "EVERGLIDE"
       },
-      "priceKrw": 81300,
+      "priceKrw": 79800,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -19031,7 +19041,7 @@
         "ko": "발키리",
         "en": "VALKYRIE"
       },
-      "priceKrw": 52500,
+      "priceKrw": 51500,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -19302,7 +19312,7 @@
         "ko": "우미어",
         "en": "Womier"
       },
-      "priceKrw": 149700,
+      "priceKrw": 146900,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -19557,7 +19567,7 @@
         "ko": "이와든",
         "en": "EWEADN"
       },
-      "priceKrw": 50700,
+      "priceKrw": 49800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -19675,7 +19685,7 @@
         "ko": "야만부락",
         "en": "Savage Tribe"
       },
-      "priceKrw": 122100,
+      "priceKrw": 119800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -20378,6 +20388,11 @@
         "detachStroke": 0.001,
         "dks": true,
         "effectiveUpdateRate": "8000",
+        "emWPrRtAvgD0": 0.34633861386138604,
+        "emWPrRtSdD0": 0.047509188210442546,
+        "emWRealPerfD0": 5780,
+        "emWRlRtAvgD0": 2.1199099009900997,
+        "emWRlRtSdD0": 0.052201900509673826,
         "eyejokerRating": "RECOMMENDED",
         "hotswap": true,
         "housingKeyboard": [
@@ -20557,7 +20572,7 @@
         "ko": "아우라",
         "en": "AULA"
       },
-      "priceKrw": 24300,
+      "priceKrw": 23800,
       "status": "purchased",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -21571,7 +21586,7 @@
         "ko": "keyverse",
         "en": "keyverse"
       },
-      "priceKrw": 81300,
+      "priceKrw": 79800,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c3C7JfTZ",
@@ -21901,7 +21916,7 @@
         "ko": "아우라",
         "en": "AULA"
       },
-      "priceKrw": 46700,
+      "priceKrw": 45800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -21986,7 +22001,7 @@
         "ko": "멜긱",
         "en": "MelGeek"
       },
-      "priceKrw": 181700,
+      "priceKrw": 178400,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -22044,7 +22059,7 @@
         "ko": "아우라",
         "en": "AULA"
       },
-      "priceKrw": 203600,
+      "priceKrw": 199800,
       "status": "purchased",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -22320,7 +22335,7 @@
         "ko": "아우라",
         "en": "AULA"
       },
-      "priceKrw": 20200,
+      "priceKrw": 19800,
       "status": "purchased",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -22503,7 +22518,7 @@
         "ko": "벨로타",
         "en": "VELOTA"
       },
-      "priceKrw": 191400,
+      "priceKrw": 187800,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -22687,7 +22702,7 @@
         "ko": "우팅",
         "en": "Wooting"
       },
-      "priceKrw": 364300,
+      "priceKrw": 353600,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -23166,7 +23181,7 @@
         "ko": "에이수스",
         "en": "ASUS"
       },
-      "priceKrw": 183200,
+      "priceKrw": 179800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -23377,7 +23392,7 @@
         "ko": "루민키",
         "en": "LUMINKEY"
       },
-      "priceKrw": 236900,
+      "priceKrw": 232400,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -23410,7 +23425,7 @@
         "ko": "VGN",
         "en": "VGN"
       },
-      "priceKrw": 40600,
+      "priceKrw": 39800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -23449,7 +23464,7 @@
         "ko": "VGN",
         "en": "VGN"
       },
-      "priceKrw": 60900,
+      "priceKrw": 59800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -23720,7 +23735,7 @@
         "ko": "이와든",
         "en": "EWEADN"
       },
-      "priceKrw": 74700,
+      "priceKrw": 73300,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -23736,7 +23751,7 @@
         "ko": "PMO",
         "en": "PMO"
       },
-      "priceKrw": 50700,
+      "priceKrw": 49800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -23785,11 +23800,11 @@
         "detachStroke": 0.001,
         "dks": true,
         "effectiveUpdateRate": "8000",
-        "emWPrRtAvgD0": 2.530977227722774,
-        "emWPrRtSdD0": 0.08397945573992417,
-        "emWRealPerfD0": 4425,
-        "emWRlRtAvgD0": 1.4942702970297033,
-        "emWRlRtSdD0": 0.052900571867156354,
+        "emWPrRtAvgD0": 0.3883415841584155,
+        "emWPrRtSdD0": 0.05233437006938888,
+        "emWRealPerfD0": 5315,
+        "emWRlRtAvgD0": 0.7554168316831673,
+        "emWRlRtSdD0": 0.05588231546778436,
         "eyejokerRating": "RECOMMENDED",
         "firmwareVersion": "1.0.5",
         "hotswap": true,
@@ -23912,7 +23927,7 @@
         "ko": "칠키",
         "en": "CHILKEY"
       },
-      "priceKrw": 270900,
+      "priceKrw": 265800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -24125,7 +24140,7 @@
         "ko": "우미어",
         "en": "Womier"
       },
-      "priceKrw": 164700,
+      "priceKrw": 161600,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -24212,7 +24227,7 @@
         "ko": "ATK",
         "en": "ATK"
       },
-      "priceKrw": 190400,
+      "priceKrw": 186800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -25622,7 +25637,7 @@
         "ko": "엠초스",
         "en": "MCHOSE"
       },
-      "priceKrw": 50800,
+      "priceKrw": 49800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -25896,7 +25911,7 @@
         "ko": "벨로타",
         "en": "VELOTA"
       },
-      "priceKrw": 264700,
+      "priceKrw": 259800,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -26134,7 +26149,7 @@
         "ko": "멜긱",
         "en": "MelGeek"
       },
-      "priceKrw": 242300,
+      "priceKrw": 237800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -26272,7 +26287,7 @@
         "ko": "이와든",
         "en": "EWEADN"
       },
-      "priceKrw": 203500,
+      "priceKrw": 199700,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -26686,7 +26701,7 @@
         "ko": "이와든",
         "en": "EWEADN"
       },
-      "priceKrw": 97600,
+      "priceKrw": 95800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -27930,7 +27945,7 @@
         "ko": "에버글라이드",
         "en": "EVERGLIDE"
       },
-      "priceKrw": 175600,
+      "priceKrw": 172300,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -28150,8 +28165,8 @@
         "ko": "ATK",
         "en": "ATK"
       },
-      "priceKrw": 81700,
-      "status": "testing",
+      "priceKrw": 80100,
+      "status": "earlyAccess",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
       "image": "/images/55383bfb-b028-4ebc-9c8e-bc95bb57391e.avif",
@@ -30615,7 +30630,7 @@
         "ko": "VGN",
         "en": "VGN"
       },
-      "priceKrw": 95200,
+      "priceKrw": 93400,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -30908,7 +30923,7 @@
         "ko": "아우라",
         "en": "AULA"
       },
-      "priceKrw": 116000,
+      "priceKrw": 113800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -30951,7 +30966,7 @@
         "ko": "PMO",
         "en": "PMO"
       },
-      "priceKrw": 67100,
+      "priceKrw": 65800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -30984,7 +30999,7 @@
         "ko": "우큐 스튜디오",
         "en": "Wuque Studio"
       },
-      "priceKrw": 203600,
+      "priceKrw": 199800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -31182,7 +31197,7 @@
         "ko": "에버글라이드",
         "en": "EVERGLIDE"
       },
-      "priceKrw": 202800,
+      "priceKrw": 199100,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -31351,7 +31366,7 @@
         "ko": "ATK",
         "en": "ATK"
       },
-      "priceKrw": 190600,
+      "priceKrw": 187000,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -31758,7 +31773,7 @@
         "ko": "루민키",
         "en": "LUMINKEY"
       },
-      "priceKrw": 230100,
+      "priceKrw": 225800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -31792,7 +31807,7 @@
         "ko": "엠초스",
         "en": "MCHOSE"
       },
-      "priceKrw": 141900,
+      "priceKrw": 139200,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -31884,7 +31899,7 @@
         "ko": "스파크링크",
         "en": "Sparklink"
       },
-      "priceKrw": 137600,
+      "priceKrw": 133800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -31900,7 +31915,7 @@
         "ko": "레이저",
         "en": "RAZER"
       },
-      "priceKrw": 272300,
+      "priceKrw": 267200,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -32147,7 +32162,7 @@
         "ko": "FL esports",
         "en": "FL esports"
       },
-      "priceKrw": 160600,
+      "priceKrw": 157600,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c3CMAQFF",
@@ -33445,7 +33460,7 @@
         "ko": "루민키",
         "en": "LUMINKEY"
       },
-      "priceKrw": 298100,
+      "priceKrw": 292600,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -35069,7 +35084,7 @@
         "ko": "에버글라이드",
         "en": "EVERGLIDE"
       },
-      "priceKrw": 81300,
+      "priceKrw": 79800,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c3g74MJV",

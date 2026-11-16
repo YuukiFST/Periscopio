@@ -315,7 +315,7 @@
         {
           "value": "DUHD",
           "label": {
-            "ko": "DUHD (7680×2160)",
+            "ko": "DUHD",
             "en": "Dual UHD (7680×2160)"
           }
         },
@@ -336,21 +336,21 @@
         {
           "value": "RES2240X1400",
           "label": {
-            "ko": "2.2K (2240×1400)",
+            "ko": "2.2K",
             "en": "2.2K (2240×1400)"
           }
         },
         {
           "value": "RES2880X1800",
           "label": {
-            "ko": "2.8K (2880×1800)",
+            "ko": "2.8K",
             "en": "2.8K (2880×1800)"
           }
         },
         {
           "value": "RES5120X2880",
           "label": {
-            "ko": "5K (5120×2880)",
+            "ko": "5K",
             "en": "5K (5120×2880)"
           }
         },
@@ -1525,6 +1525,28 @@
       "decimals": null
     },
     {
+      "key": "hdrPeak10PercentMeasured",
+      "group": "bench",
+      "label": {
+        "ko": "HDR 피크 10%",
+        "en": "HDR Peak 10%"
+      },
+      "type": "number",
+      "unit": "cd/m²",
+      "decimals": 0
+    },
+    {
+      "key": "hdrFullFieldBrightnessMeasured",
+      "group": "bench",
+      "label": {
+        "ko": "HDR 100% 밝기",
+        "en": "HDR Full-field Brightness"
+      },
+      "type": "number",
+      "unit": "cd/m²",
+      "decimals": 0
+    },
+    {
       "key": "colorGamutBt2020Measured",
       "group": "bench",
       "label": {
@@ -1563,28 +1585,6 @@
       "label": {
         "ko": "HDR 피크 2%",
         "en": "HDR Peak 2%"
-      },
-      "type": "number",
-      "unit": "cd/m²",
-      "decimals": 0
-    },
-    {
-      "key": "hdrPeak10PercentMeasured",
-      "group": "bench",
-      "label": {
-        "ko": "HDR 피크 10%",
-        "en": "HDR Peak 10%"
-      },
-      "type": "number",
-      "unit": "cd/m²",
-      "decimals": 0
-    },
-    {
-      "key": "hdrFullFieldBrightnessMeasured",
-      "group": "bench",
-      "label": {
-        "ko": "HDR 100% 밝기",
-        "en": "HDR Full-field Brightness"
       },
       "type": "number",
       "unit": "cd/m²",
@@ -1714,7 +1714,7 @@
         "ko": "에이수스",
         "en": "ASUS"
       },
-      "priceKrw": 638500,
+      "priceKrw": 626500,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -1982,7 +1982,7 @@
         "ko": "애즈락",
         "en": "ASRock"
       },
-      "priceKrw": 951600,
+      "priceKrw": 933800,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -2190,6 +2190,38 @@
         "vesaMountPattern": "vesa100x100"
       },
       "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "07b034bd-e2db-4fd8-b20b-46cc15fe73fb",
+      "name": "221V8LS/93",
+      "manufacturer": {
+        "ko": "필립스",
+        "en": "Philips"
+      },
+      "priceKrw": null,
+      "status": "arrived",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": null,
+      "values": {
+        "displayPortCount": 0,
+        "hdmiLinkClass": "hdmi1_4",
+        "hdmiPortCount": 1,
+        "maxBrightnessSdrSpec": 250,
+        "panelType": "VA",
+        "refreshRate": 75,
+        "resolution": "FHD",
+        "screenCoating": "matteAntiGlare",
+        "sizeInch": 21.5,
+        "standAdjustments": [
+          "tilt"
+        ],
+        "standType": "included",
+        "usbCVideo": false,
+        "vesaMountPattern": "vesa100x100"
+      },
+      "firstSeenAt": "2026-11-16T19:13:21.419Z",
       "testedAt": null
     },
     {
@@ -2575,7 +2607,7 @@
         "ko": "레노버",
         "en": "Lenovo"
       },
-      "priceKrw": 408400,
+      "priceKrw": 400800,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -2706,7 +2738,7 @@
         "ko": "알파스캔",
         "en": "Alphascan"
       },
-      "priceKrw": 1130000,
+      "priceKrw": 1108800,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -2995,7 +3027,7 @@
         "en": "LGE"
       },
       "priceKrw": 1974400,
-      "status": "testing",
+      "status": "earlyAccess",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
       "image": "/images/1cfc99df-f466-4438-8a1c-4c382087eac9.avif",
@@ -3010,6 +3042,8 @@
         "displayPortCount": 1,
         "displayPortLinkClass": "dp2_1Uhbr20_80",
         "displayStreamCompression": "supported",
+        "earlyAccessAt": "2026-11-13T00:00:00.000Z",
+        "eyejokerRating": "ANTICIPATING",
         "hdmiPortCount": 2,
         "hdrCertification": "displayHdr1000",
         "hdrFormatSupport": [
@@ -3022,6 +3056,7 @@
         "maxBrightnessHdrSpec": 1250,
         "maxBrightnessSdrSpec": 750,
         "panelType": "IPS",
+        "publicReleaseAt": "2026-11-20T00:00:00.000Z",
         "refreshRate": 165,
         "resolution": "RES5120X2880",
         "screenCoating": "matteAntiGlare",
@@ -3049,7 +3084,7 @@
         "en": "LGE"
       },
       "priceKrw": 950000,
-      "status": "purchased",
+      "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
       "image": "/images/2ee2c7e3-4ca6-4315-aa1c-ebc3f427aa6d.avif",
@@ -3481,7 +3516,7 @@
         "ko": "MINISFORUM",
         "en": "MINISFORUM"
       },
-      "priceKrw": 293900,
+      "priceKrw": 288400,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -4092,7 +4127,7 @@
         "ko": "애즈락",
         "en": "ASRock"
       },
-      "priceKrw": 951600,
+      "priceKrw": 933800,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -4151,7 +4186,7 @@
         "ko": "EHOMEWEI",
         "en": "EHOMEWEI"
       },
-      "priceKrw": 912000,
+      "priceKrw": 894900,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -4736,8 +4771,8 @@
           "pbp"
         ],
         "overallRatingMonitor": "FLAWLESS",
-        "overshootAverage": 24.8,
-        "overshootMax": 182.5,
+        "overshootAverage": 0,
+        "overshootMax": 0,
         "panelMaker": "LGD",
         "panelType": "RGB_TANDEM_OLED",
         "publicReleaseAt": "2026-11-06T00:00:00.000Z",
@@ -4863,7 +4898,7 @@
         "en": "MSI"
       },
       "priceKrw": null,
-      "status": "arrived",
+      "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
       "image": "/images/621140a8-7110-458e-b3b0-d120e80cb48f.avif",
@@ -4966,7 +5001,7 @@
         "ko": "에이서",
         "en": "ACER"
       },
-      "priceKrw": 1768500,
+      "priceKrw": 1735300,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -5297,7 +5332,7 @@
         "ko": "에이서",
         "en": "ACER"
       },
-      "priceKrw": 953000,
+      "priceKrw": 935100,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -5355,7 +5390,7 @@
         "ko": "알파스캔",
         "en": "Alphascan"
       },
-      "priceKrw": 1453500,
+      "priceKrw": 1410800,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -5563,7 +5598,7 @@
         "ko": "TCL",
         "en": "TCL"
       },
-      "priceKrw": 815000,
+      "priceKrw": 799900,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -6070,7 +6105,7 @@
         "ko": "델",
         "en": "Dell"
       },
-      "priceKrw": 1497500,
+      "priceKrw": 1469500,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -6267,7 +6302,7 @@
         "ko": "델",
         "en": "Dell"
       },
-      "priceKrw": 4084200,
+      "priceKrw": 4007700,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -6386,6 +6421,46 @@
       "testedAt": null
     },
     {
+      "id": "47979698-082b-431e-8076-a6a5c3377f21",
+      "name": "Ultragear 32GK850G",
+      "manufacturer": {
+        "ko": "엘지전자",
+        "en": "LGE"
+      },
+      "priceKrw": null,
+      "status": "arrived",
+      "saleStatus": "DISCONTINUED",
+      "aliUrl": null,
+      "image": null,
+      "values": {
+        "adaptiveSync": [
+          "gsync"
+        ],
+        "displayPortCount": 1,
+        "displayPortLinkClass": "dp1_2Hbr2_21_6",
+        "hdmiLinkClass": "hdmi1_4",
+        "hdmiPortCount": 1,
+        "heightAdjustMm": 110,
+        "maxBrightnessSdrSpec": 350,
+        "panelType": "VA",
+        "refreshRate": 165,
+        "resolution": "QHD",
+        "screenCoating": "matteAntiGlare",
+        "sizeInch": 31.5,
+        "standAdjustments": [
+          "tilt",
+          "height",
+          "swivel",
+          "pivot"
+        ],
+        "standType": "included",
+        "usbCVideo": false,
+        "vesaMountPattern": "vesa100x100"
+      },
+      "firstSeenAt": "2026-11-16T19:13:21.419Z",
+      "testedAt": null
+    },
+    {
       "id": "47c6db5f-1e95-4f33-bf91-acec5ebac511",
       "name": "MAG 275QF e20",
       "manufacturer": {
@@ -6393,7 +6468,7 @@
         "en": "MSI"
       },
       "priceKrw": 239000,
-      "status": "purchased",
+      "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
       "image": "/images/2582d4f7-ad14-40ce-8c05-a1fc88aa9a79.avif",
@@ -6648,7 +6723,7 @@
         "ko": "에이수스",
         "en": "ASUS"
       },
-      "priceKrw": 3674400,
+      "priceKrw": 3605600,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -7325,7 +7400,7 @@
         "ko": "ARZOPA",
         "en": "ARZOPA"
       },
-      "priceKrw": 258000,
+      "priceKrw": 250500,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -7392,8 +7467,6 @@
         "maxBrightnessSdrMeasured": 449,
         "maxBrightnessSdrSpec": 250,
         "overallRatingMonitor": "FLAWLESS",
-        "overshootAverage": 53.4,
-        "overshootMax": 227,
         "panelMaker": "LGD",
         "panelType": "RGB_TANDEM_OLED",
         "publicReleaseAt": "2026-11-05T00:00:00.000Z",
@@ -7619,7 +7692,7 @@
         "ko": "레노버",
         "en": "Lenovo"
       },
-      "priceKrw": 857700,
+      "priceKrw": 841600,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -8251,6 +8324,50 @@
       "testedAt": null
     },
     {
+      "id": "6342711a-771b-4307-92ee-eaa2b61b0ca2",
+      "name": "Ultragear 27GP950",
+      "manufacturer": {
+        "ko": "엘지전자",
+        "en": "LGE"
+      },
+      "priceKrw": 1090000,
+      "status": "arrived",
+      "saleStatus": "DISCONTINUED",
+      "aliUrl": null,
+      "image": null,
+      "values": {
+        "adaptiveSync": [
+          "gsyncCompatible",
+          "freeSyncPremiumPro"
+        ],
+        "colorGamutDcip3Spec": 98,
+        "displayPortCount": 1,
+        "displayPortLinkClass": "dp1_4Hbr3_32_4",
+        "hdmiPortCount": 2,
+        "hdrCertification": "displayHdr600",
+        "hdrFormatSupport": [
+          "hdr10"
+        ],
+        "heightAdjustMm": 110,
+        "maxBrightnessSdrSpec": 400,
+        "panelType": "NANO_IPS",
+        "refreshRate": 160,
+        "resolution": "UHD",
+        "screenCoating": "matteAntiGlare",
+        "sizeInch": 27,
+        "standAdjustments": [
+          "tilt",
+          "height",
+          "pivot"
+        ],
+        "standType": "included",
+        "usbCVideo": false,
+        "vesaMountPattern": "vesa100x100"
+      },
+      "firstSeenAt": "2026-11-16T19:13:21.419Z",
+      "testedAt": null
+    },
+    {
       "id": "6386f006-306d-4a8f-82a7-f259d4eea57e",
       "name": "UDEA EDGE ED2420GX",
       "manufacturer": {
@@ -8444,8 +8561,8 @@
         "maxBrightnessSdrMeasured": 328,
         "maxBrightnessSdrSpec": 335,
         "overallRatingMonitor": "FLAWLESS",
-        "overshootAverage": 1.1,
-        "overshootMax": 4,
+        "overshootAverage": 0,
+        "overshootMax": 0,
         "panelType": "WOLED",
         "publicReleaseAt": "2026-02-14T14:22:00.000Z",
         "refreshRate": 280,
@@ -8468,7 +8585,7 @@
         "ko": "MSI",
         "en": "MSI"
       },
-      "priceKrw": 747400,
+      "priceKrw": 733400,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -8524,7 +8641,7 @@
         "ko": "Intehill",
         "en": "Intehill"
       },
-      "priceKrw": 597700,
+      "priceKrw": 586500,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -8641,7 +8758,7 @@
         "ko": "애플",
         "en": "Apple"
       },
-      "priceKrw": 4491300,
+      "priceKrw": 4407200,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -8672,7 +8789,7 @@
         "ko": "애즈락",
         "en": "ASRock"
       },
-      "priceKrw": 1288100,
+      "priceKrw": 1252400,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -8751,6 +8868,38 @@
       "testedAt": null
     },
     {
+      "id": "6ba2c5a5-cc52-4321-be9c-c71423798b41",
+      "name": "PANTHEON U32C60PB",
+      "manufacturer": {
+        "ko": "래안텍",
+        "en": "RAEANtech"
+      },
+      "priceKrw": null,
+      "status": "arrived",
+      "saleStatus": "DISCONTINUED",
+      "aliUrl": null,
+      "image": null,
+      "values": {
+        "adaptiveSync": [
+          "freesync"
+        ],
+        "colorGamutSrgbSpec": 100,
+        "maxBrightnessSdrSpec": 350,
+        "panelType": "IPS",
+        "refreshRate": 60,
+        "resolution": "UHD",
+        "sizeInch": 32,
+        "standAdjustments": [
+          "tilt"
+        ],
+        "standType": "included",
+        "usbCVideo": true,
+        "vesaMountPattern": "vesa100x100"
+      },
+      "firstSeenAt": "2026-11-16T19:13:21.419Z",
+      "testedAt": null
+    },
+    {
       "id": "6baaeafd-e457-4f24-8bd5-b2196ff6a036",
       "name": "PA2580F",
       "manufacturer": {
@@ -8786,7 +8935,7 @@
         "ko": "알파스캔",
         "en": "Alphascan"
       },
-      "priceKrw": 381200,
+      "priceKrw": 374000,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -8877,7 +9026,7 @@
         "ko": "에이서",
         "en": "ACER"
       },
-      "priceKrw": 1089100,
+      "priceKrw": 1068700,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -8968,7 +9117,7 @@
         "ko": "벤큐",
         "en": "BenQ"
       },
-      "priceKrw": 1225200,
+      "priceKrw": 1202300,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -9346,6 +9495,40 @@
         "vesaMountPattern": "vesa100x100"
       },
       "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "775175d8-3835-4c7a-bc95-766e49c66066",
+      "name": "Smart Monitor M5 S27AM500NK",
+      "manufacturer": {
+        "ko": "삼성전자",
+        "en": "Samsung"
+      },
+      "priceKrw": 288900,
+      "status": "arrived",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": null,
+      "values": {
+        "displayPortCount": 0,
+        "hdmiLinkClass": "hdmi2_0Tmds18",
+        "hdmiPortCount": 2,
+        "hdrFormatSupport": [
+          "hdr10"
+        ],
+        "maxBrightnessSdrSpec": 250,
+        "panelType": "VA",
+        "refreshRate": 60,
+        "resolution": "FHD",
+        "sizeInch": 27,
+        "standAdjustments": [
+          "tilt"
+        ],
+        "standType": "included",
+        "usbCVideo": false,
+        "vesaMountPattern": "vesa100x100"
+      },
+      "firstSeenAt": "2026-11-16T19:13:21.419Z",
       "testedAt": null
     },
     {
@@ -9731,7 +9914,7 @@
         "ko": "벤큐",
         "en": "BenQ"
       },
-      "priceKrw": 1157200,
+      "priceKrw": 1135500,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -9762,7 +9945,7 @@
         "ko": "TCL",
         "en": "TCL"
       },
-      "priceKrw": 652000,
+      "priceKrw": 639900,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -10025,7 +10208,7 @@
         "ko": "에이수스",
         "en": "ASUS"
       },
-      "priceKrw": 1305300,
+      "priceKrw": 1267200,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -10108,7 +10291,7 @@
         "ko": "에이서",
         "en": "ACER"
       },
-      "priceKrw": 953000,
+      "priceKrw": 935100,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -10322,7 +10505,7 @@
         "ko": "ARZOPA",
         "en": "ARZOPA"
       },
-      "priceKrw": 197400,
+      "priceKrw": 193700,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -10423,6 +10606,27 @@
         "vesaMountPattern": "vesa100x100"
       },
       "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "8c8f5589-0ada-4763-9b33-153f68cb23c1",
+      "name": "AG241Q",
+      "manufacturer": {
+        "ko": "아오공",
+        "en": "Aogong"
+      },
+      "priceKrw": 219800,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": null,
+      "values": {
+        "panelType": "TN",
+        "refreshRate": 540,
+        "resolution": "FHD",
+        "sizeInch": 24.1
+      },
+      "firstSeenAt": "2026-11-16T19:13:21.419Z",
       "testedAt": null
     },
     {
@@ -10547,7 +10751,7 @@
         "ko": "뷰소닉",
         "en": "ViewSonic"
       },
-      "priceKrw": 381200,
+      "priceKrw": 374000,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -10658,13 +10862,58 @@
       "testedAt": null
     },
     {
+      "id": "90a69cd6-f908-466a-99a2-56b3f4fb32ae",
+      "name": "TFG27Q24FM180ZMW",
+      "manufacturer": {
+        "ko": "한성컴퓨터",
+        "en": "HANSUNG"
+      },
+      "priceKrw": 299000,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": null,
+      "values": {
+        "adaptiveSync": [
+          "gsyncCompatible",
+          "freesync"
+        ],
+        "colorGamutDcip3Spec": 97,
+        "colorGamutSrgbSpec": 100,
+        "displayPortCount": 1,
+        "hdmiPortCount": 2,
+        "localDimmingType": "miniLed",
+        "maxBrightnessHdrSpec": 1000,
+        "maxBrightnessSdrSpec": 450,
+        "multiViewSupport": [
+          "pip",
+          "pbp"
+        ],
+        "panelType": "VA",
+        "refreshRate": 240,
+        "resolution": "QHD",
+        "screenCoating": "nonglare",
+        "sizeInch": 27,
+        "standAdjustments": [
+          "tilt",
+          "height",
+          "swivel",
+          "pivot"
+        ],
+        "standType": "included",
+        "vesaMountPattern": "vesa100x100"
+      },
+      "firstSeenAt": "2026-11-16T19:13:21.419Z",
+      "testedAt": null
+    },
+    {
       "id": "90ed2e93-2ca7-41b6-805e-51e47c114acf",
       "name": "32X3B",
       "manufacturer": {
         "ko": "TCL",
         "en": "TCL"
       },
-      "priceKrw": 1324600,
+      "priceKrw": 1300000,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -10820,8 +11069,8 @@
         "ko": "ZEUSLAP",
         "en": "ZEUSLAP"
       },
-      "priceKrw": 245000,
-      "status": "proposed",
+      "priceKrw": 240500,
+      "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
       "image": null,
@@ -10965,7 +11214,7 @@
         "ko": "벤큐",
         "en": "BenQ"
       },
-      "priceKrw": 1633700,
+      "priceKrw": 1603100,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -11394,7 +11643,7 @@
         "ko": "에이서",
         "en": "ACER"
       },
-      "priceKrw": 1769800,
+      "priceKrw": 1736700,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -11455,7 +11704,7 @@
         "ko": "알파스캔",
         "en": "Alphascan"
       },
-      "priceKrw": 672400,
+      "priceKrw": 659900,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -11509,7 +11758,7 @@
         "ko": "알파스캔",
         "en": "Alphascan"
       },
-      "priceKrw": 764000,
+      "priceKrw": 741600,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -11879,7 +12128,7 @@
         "ko": "MSI",
         "en": "MSI"
       },
-      "priceKrw": 213800,
+      "priceKrw": 209800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -12645,7 +12894,7 @@
         "ko": "에이서",
         "en": "ACER"
       },
-      "priceKrw": 1089100,
+      "priceKrw": 1068700,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -12882,7 +13131,7 @@
         "ko": "WIMAXIT",
         "en": "WIMAXIT"
       },
-      "priceKrw": 284500,
+      "priceKrw": 279200,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -12976,6 +13225,46 @@
         "vesaMountPattern": "vesa100x100"
       },
       "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "b5d5d82b-bfa2-4a89-b9a4-302804c74c98",
+      "name": "25x",
+      "manufacturer": {
+        "ko": "HP",
+        "en": "HP"
+      },
+      "priceKrw": null,
+      "status": "arrived",
+      "saleStatus": "DISCONTINUED",
+      "aliUrl": null,
+      "image": null,
+      "values": {
+        "adaptiveSync": [
+          "freesync",
+          "gsyncCompatible"
+        ],
+        "displayPortCount": 1,
+        "displayPortLinkClass": "dp1_2Hbr2_21_6",
+        "hdmiLinkClass": "hdmi2_0Tmds18",
+        "hdmiPortCount": 1,
+        "maxBrightnessSdrSpec": 400,
+        "panelType": "TN",
+        "refreshRate": 144,
+        "resolution": "FHD",
+        "screenCoating": "matteAntiGlare",
+        "sizeInch": 24.5,
+        "standAdjustments": [
+          "tilt",
+          "height",
+          "swivel",
+          "pivot"
+        ],
+        "standType": "included",
+        "usbCVideo": false,
+        "vesaMountPattern": "vesa100x100"
+      },
+      "firstSeenAt": "2026-11-16T19:13:21.419Z",
       "testedAt": null
     },
     {
@@ -13121,7 +13410,7 @@
         "ko": "엘지전자",
         "en": "LGE"
       },
-      "priceKrw": 2042100,
+      "priceKrw": 2003900,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -13928,7 +14217,7 @@
         "ko": "애즈락",
         "en": "ASRock"
       },
-      "priceKrw": 543200,
+      "priceKrw": 533000,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -14063,7 +14352,7 @@
         "ko": "KYY",
         "en": "KYY"
       },
-      "priceKrw": 174200,
+      "priceKrw": 171000,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -14087,7 +14376,7 @@
         "ko": "MSI",
         "en": "MSI"
       },
-      "priceKrw": 857700,
+      "priceKrw": 841600,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -14142,6 +14431,43 @@
         "standType": "included"
       },
       "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "c591157e-4efb-4254-ae32-b27eb945a2c7",
+      "name": "MyView 32SR70U",
+      "manufacturer": {
+        "ko": "엘지전자",
+        "en": "LGE"
+      },
+      "priceKrw": 699000,
+      "status": "arrived",
+      "saleStatus": "DISCONTINUED",
+      "aliUrl": null,
+      "image": null,
+      "values": {
+        "adaptiveSync": [
+          "none"
+        ],
+        "colorGamutDcip3Spec": 95,
+        "displayPortCount": 0,
+        "hdmiLinkClass": "hdmi2_0Tmds18",
+        "hdmiPortCount": 2,
+        "hdrFormatSupport": [
+          "hdr10"
+        ],
+        "maxBrightnessSdrSpec": 350,
+        "panelType": "IPS",
+        "refreshRate": 60,
+        "resolution": "UHD",
+        "screenCoating": "matteAntiGlare",
+        "sizeInch": 31.5,
+        "standType": "included",
+        "usbCPowerDeliveryW": 45,
+        "usbCVideo": true,
+        "vesaMountPattern": "vesa100x100"
+      },
+      "firstSeenAt": "2026-11-16T19:13:21.419Z",
       "testedAt": null
     },
     {
@@ -14797,7 +15123,7 @@
         "ko": "에이서",
         "en": "ACER"
       },
-      "priceKrw": 1225200,
+      "priceKrw": 1202300,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -14821,7 +15147,7 @@
         "ko": "에이서",
         "en": "ACER"
       },
-      "priceKrw": 1225200,
+      "priceKrw": 1202300,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -15091,7 +15417,7 @@
         "ko": "필립스",
         "en": "Philips"
       },
-      "priceKrw": 1222600,
+      "priceKrw": 1200000,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -15119,7 +15445,7 @@
         "ko": "에이서",
         "en": "ACER"
       },
-      "priceKrw": 2042100,
+      "priceKrw": 2003900,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -15274,6 +15600,44 @@
       "testedAt": null
     },
     {
+      "id": "d93e36fd-4fb1-4a70-bebb-ab97c9109309",
+      "name": "27P3A Pro",
+      "manufacturer": {
+        "ko": "TCL",
+        "en": "TCL"
+      },
+      "priceKrw": 407600,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": null,
+      "values": {
+        "adaptiveSync": [
+          "gsyncCompatible",
+          "freesync"
+        ],
+        "colorGamutDcip3Spec": 98.5,
+        "colorGamutSrgbSpec": 99,
+        "localDimmingType": "miniLed",
+        "localDimmingZones": 1196,
+        "maxBrightnessHdrSpec": 1200,
+        "maxBrightnessSdrSpec": 450,
+        "panelType": "QD_IPS_MINILED",
+        "refreshRate": 320,
+        "resolution": "QHD",
+        "sizeInch": 27,
+        "standAdjustments": [
+          "tilt",
+          "height",
+          "swivel",
+          "pivot"
+        ],
+        "standType": "included"
+      },
+      "firstSeenAt": "2026-11-16T19:13:21.419Z",
+      "testedAt": null
+    },
+    {
       "id": "d97009e4-9380-450f-9f75-21acb8bb2d89",
       "name": "TFG24F24T",
       "manufacturer": {
@@ -15319,7 +15683,7 @@
         "ko": "알파스캔",
         "en": "Alphascan"
       },
-      "priceKrw": 1288700,
+      "priceKrw": 1251000,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -15562,7 +15926,7 @@
         "ko": "TCL",
         "en": "TCL"
       },
-      "priceKrw": 753900,
+      "priceKrw": 739900,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -15574,6 +15938,51 @@
         "sizeInch": 27
       },
       "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "db93c7cc-470e-41c1-8ce1-00923c4d348c",
+      "name": "UltraSharp U2718Q",
+      "manufacturer": {
+        "ko": "델",
+        "en": "Dell"
+      },
+      "priceKrw": null,
+      "status": "arrived",
+      "saleStatus": "DISCONTINUED",
+      "aliUrl": null,
+      "image": null,
+      "values": {
+        "adaptiveSync": [
+          "none"
+        ],
+        "colorGamutDcip3Spec": 80.7,
+        "colorGamutSrgbSpec": 99.9,
+        "displayPortCount": 2,
+        "displayPortLinkClass": "dp1_2Hbr2_21_6",
+        "hdmiLinkClass": "hdmi2_0Tmds18",
+        "hdmiPortCount": 1,
+        "hdrFormatSupport": [
+          "hdr10"
+        ],
+        "heightAdjustMm": 130,
+        "maxBrightnessSdrSpec": 350,
+        "panelType": "IPS",
+        "refreshRate": 60,
+        "resolution": "UHD",
+        "screenCoating": "matteAntiGlare",
+        "sizeInch": 27,
+        "standAdjustments": [
+          "tilt",
+          "height",
+          "swivel",
+          "pivot"
+        ],
+        "standType": "included",
+        "usbCVideo": false,
+        "vesaMountPattern": "vesa100x100"
+      },
+      "firstSeenAt": "2026-11-16T19:13:21.419Z",
       "testedAt": null
     },
     {
@@ -15859,7 +16268,7 @@
         "ko": "에이수스",
         "en": "ASUS"
       },
-      "priceKrw": 2993700,
+      "priceKrw": 2937700,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -15900,7 +16309,7 @@
         "ko": "삼성전자",
         "en": "Samsung"
       },
-      "priceKrw": 1769800,
+      "priceKrw": 1736700,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -16161,7 +16570,7 @@
         "ko": "ARZOPA",
         "en": "ARZOPA"
       },
-      "priceKrw": 108900,
+      "priceKrw": 106900,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -16254,7 +16663,7 @@
         "ko": "에이수스",
         "en": "ASUS"
       },
-      "priceKrw": 1768500,
+      "priceKrw": 1735300,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -16395,7 +16804,7 @@
         "ko": "MSI",
         "en": "MSI"
       },
-      "priceKrw": 1453500,
+      "priceKrw": 1410800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -16730,7 +17139,7 @@
         "ko": "ARZOPA",
         "en": "ARZOPA"
       },
-      "priceKrw": 177000,
+      "priceKrw": 173700,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -16798,7 +17207,7 @@
         "ko": "에이수스",
         "en": "ASUS"
       },
-      "priceKrw": 1496200,
+      "priceKrw": 1468200,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -16865,7 +17274,7 @@
         "ko": "앤트게이머",
         "en": "ANTGAMER"
       },
-      "priceKrw": null,
+      "priceKrw": 495000,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -16882,6 +17291,7 @@
         "displayPortCount": 1,
         "displayPortLinkClass": "dp1_4Hbr3_32_4",
         "displayStreamCompression": "supported",
+        "earlyAccessAt": "2026-11-17T00:00:00.000Z",
         "hdmiLinkClass": "hdmi2_1Frl6_48",
         "hdmiPortCount": 2,
         "hdrCertification": "displayHdr400",
@@ -16894,6 +17304,7 @@
         "maxBrightnessHdrSpec": 400,
         "maxBrightnessSdrSpec": 400,
         "panelType": "FAST_IPS",
+        "publicReleaseAt": "2026-11-24T00:00:00.000Z",
         "refreshRate": 160,
         "resolution": "UHD",
         "screenCoating": "nonglare",
@@ -17120,7 +17531,7 @@
         "ko": "삼성전자",
         "en": "Samsung"
       },
-      "priceKrw": 2858900,
+      "priceKrw": 2805400,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -17165,7 +17576,7 @@
         "ko": "에이수스",
         "en": "ASUS"
       },
-      "priceKrw": 1074100,
+      "priceKrw": 1054000,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -17252,7 +17663,7 @@
         "ko": "NexiGo",
         "en": "NexiGo"
       },
-      "priceKrw": 638500,
+      "priceKrw": 626500,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -17326,7 +17737,7 @@
         "ko": "에이서",
         "en": "ACER"
       },
-      "priceKrw": 1497500,
+      "priceKrw": 1469500,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -17816,7 +18227,7 @@
         "ko": "레노버",
         "en": "Lenovo"
       },
-      "priceKrw": 680700,
+      "priceKrw": 667900,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -17923,7 +18334,7 @@
         "ko": "TCL",
         "en": "TCL"
       },
-      "priceKrw": 815000,
+      "priceKrw": 799900,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,

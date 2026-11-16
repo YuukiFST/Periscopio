@@ -1182,7 +1182,7 @@
         "ko": "우큐 스튜디오",
         "en": "Wuque Studio"
       },
-      "priceKrw": 2500,
+      "priceKrw": 2400,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -1202,7 +1202,7 @@
         "ko": "게이트론",
         "en": "GATERON"
       },
-      "priceKrw": 1200,
+      "priceKrw": 1100,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -1288,7 +1288,7 @@
         "ko": "ugaming",
         "en": "ugaming"
       },
-      "priceKrw": null,
+      "priceKrw": 1000,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -1296,8 +1296,10 @@
       "values": {
         "bottomOutForceSpec": 47,
         "category": "리니어",
+        "earlyAccessAt": "2026-11-29T00:00:00.000Z",
         "mechanism": "magnetic",
         "polarity": "N",
+        "publicReleaseAt": "2026-12-06T00:00:00.000Z",
         "springLength": 22,
         "startingForceSpec": 35,
         "totalTravelSpec": 3.4,
@@ -1371,11 +1373,13 @@
         "bottomOutForceSpec": 60,
         "bottomOutHarshness": false,
         "category": "리니어",
+        "earlyAccessAt": "2026-11-23T00:00:00.000Z",
         "lowerHousing": [
           "NYLON"
         ],
         "mechanism": "magnetic",
         "polarity": "N",
+        "publicReleaseAt": "2026-11-30T00:00:00.000Z",
         "spring": "싱글(비자성)",
         "startingForceSpec": 40,
         "stem": "POM",
@@ -1395,7 +1399,7 @@
         "en": "GEONWORKS"
       },
       "priceKrw": 600,
-      "status": "testing",
+      "status": "earlyAccess",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_oFp5mbd",
       "image": "/images/d01fc7dd-77ad-42de-9374-42ec5c97f005.avif",
@@ -1403,12 +1407,14 @@
         "bottomOutForceSpec": 40,
         "bottomOutHarshness": true,
         "category": "리니어",
+        "earlyAccessAt": "2026-11-13T00:00:00.000Z",
         "eyejokerRating": "ANTICIPATING",
         "lowerHousing": [
           "NYLON"
         ],
         "mechanism": "magnetic",
         "polarity": "N",
+        "publicReleaseAt": "2026-11-20T00:00:00.000Z",
         "spring": "싱글(비자성)",
         "springLength": 15,
         "stem": "POM",
@@ -1652,7 +1658,7 @@
         "ko": "게이트론",
         "en": "GATERON"
       },
-      "priceKrw": 81000,
+      "priceKrw": 79500,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -1673,11 +1679,13 @@
       "priceKrw": 600,
       "status": "testing",
       "saleStatus": "FOR_SALE",
-      "aliUrl": null,
+      "aliUrl": "https://s.click.aliexpress.com/e/_c44pre9D",
       "image": "/images/bfd7a34d-e2d3-4f76-a6ab-6bb9e2a5ab82.avif",
       "values": {
         "category": "리니어",
+        "earlyAccessAt": "2026-11-17T00:00:00.000Z",
         "mechanism": "magnetic",
+        "publicReleaseAt": "2026-11-24T00:00:00.000Z",
         "totalTravelSpec": 3.5
       },
       "firstSeenAt": null,
@@ -1698,12 +1706,14 @@
       "values": {
         "bottomOutHarshness": true,
         "category": "리니어",
+        "earlyAccessAt": "2026-11-19T00:00:00.000Z",
         "eyejokerRating": "ANTICIPATING",
         "lowerHousing": [
           "NYLON"
         ],
         "mechanism": "magnetic",
         "polarity": "N",
+        "publicReleaseAt": "2026-11-26T00:00:00.000Z",
         "spring": "싱글",
         "springLength": 20,
         "startingForceSpec": 35,
@@ -1722,17 +1732,19 @@
         "ko": "TTC",
         "en": "TTC"
       },
-      "priceKrw": 1200,
+      "priceKrw": 1100,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
       "image": "/images/9ec5ddc5-0ced-4df7-95cf-3b63422ac794.avif",
       "values": {
         "category": "리니어",
+        "earlyAccessAt": "2026-11-18T00:00:00.000Z",
         "lowerHousing": [
           "PC"
         ],
         "mechanism": "magnetic",
+        "publicReleaseAt": "2026-11-25T00:00:00.000Z",
         "spring": "싱글",
         "springLength": 21,
         "startingForceSpec": 35,
@@ -1752,7 +1764,7 @@
         "ko": "우큐 스튜디오",
         "en": "Wuque Studio"
       },
-      "priceKrw": 1400,
+      "priceKrw": 1300,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -1839,7 +1851,7 @@
         "ko": "듀훅",
         "en": "DUHUK"
       },
-      "priceKrw": null,
+      "priceKrw": 600,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -1847,10 +1859,12 @@
       "values": {
         "bottomOutForceSpec": 42,
         "category": "리니어",
+        "earlyAccessAt": "2026-11-29T00:00:00.000Z",
         "lowerHousing": [
           "PA66"
         ],
         "mechanism": "magnetic",
+        "publicReleaseAt": "2026-12-06T00:00:00.000Z",
         "spring": "싱글(비자성)",
         "springLength": 15.5,
         "startingForceSpec": 35,
@@ -1971,10 +1985,12 @@
       "values": {
         "bottomOutForceSpec": 35,
         "category": "리니어",
+        "earlyAccessAt": "2026-11-22T00:00:00.000Z",
         "lowerHousing": [
           "PC"
         ],
         "polarity": "N",
+        "publicReleaseAt": "2026-11-29T00:00:00.000Z",
         "startingForceSpec": 27,
         "stem": "POM",
         "totalTravelSpec": 2.8,
@@ -1992,7 +2008,7 @@
         "ko": "듀록",
         "en": "DUROCK"
       },
-      "priceKrw": 800,
+      "priceKrw": 700,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -2001,11 +2017,13 @@
         "actuationForceSpec": 35,
         "bottomOutForceSpec": 48,
         "category": "리니어",
+        "earlyAccessAt": "2026-11-26T00:00:00.000Z",
         "lowerHousing": [
           "PC"
         ],
         "mechanism": "magnetic",
         "polarity": "N",
+        "publicReleaseAt": "2026-12-03T00:00:00.000Z",
         "spring": "SUS",
         "springLength": 15.5,
         "startingForceSpec": 35,
@@ -2049,7 +2067,7 @@
         "ko": "우팅",
         "en": "Wooting"
       },
-      "priceKrw": 17000,
+      "priceKrw": 800,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -2058,11 +2076,13 @@
         "bottomOutForceSpec": 48,
         "bottomOutHarshness": false,
         "category": "리니어",
+        "earlyAccessAt": "2026-11-30T00:00:00.000Z",
         "eyejokerRating": "ANTICIPATING",
         "lowerHousing": [
           "PA66"
         ],
         "polarity": "N",
+        "publicReleaseAt": "2026-12-07T00:00:00.000Z",
         "spring": "싱글(비자성)",
         "springLength": 21.3,
         "startingForceSpec": 34,
@@ -2134,7 +2154,7 @@
         "ko": "게이트론",
         "en": "GATERON"
       },
-      "priceKrw": 1200,
+      "priceKrw": 1100,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -2156,7 +2176,7 @@
         "en": "GATERON"
       },
       "priceKrw": 1000,
-      "status": "testing",
+      "status": "earlyAccess",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_olBDFIB",
       "image": null,
@@ -2189,32 +2209,49 @@
         "en": "Haimu"
       },
       "priceKrw": 200,
-      "status": "earlyAccess",
+      "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
       "image": "/images/fa476248-eb5a-4f8f-97dc-5b5a3327dff4.avif",
       "values": {
+        "bottomOutForce": 64.50354,
         "bottomOutForceSpec": 50,
         "bottomOutHarshness": false,
         "category": "리니어",
         "earlyAccessAt": "2026-11-05T00:00:00.000Z",
+        "eyejokerRating": "MILD_RECOMMENDATION",
+        "hallPressedHorizontalVariationPercent": 5.337141327145344,
+        "hallPressedVerticalVariationPercent": 3.2147084352560675,
+        "hallResolutionSteps": 6337,
+        "hallWobbleVariationPercent": "5.6%",
+        "horizontalAverage": 0.048,
+        "horizontalDeviation": 0.006,
         "lowerHousing": [
           "POM"
         ],
+        "measurementDeviationSummary": "±4.6gf",
         "mechanism": "magnetic",
+        "overallAverage": 0.077,
+        "overallRatingKeyboardSwitch": "UNRATED",
         "polarity": "N",
         "publicReleaseAt": "2026-11-12T00:00:00.000Z",
+        "resolutionPerMm": 153,
         "spring": "싱글",
         "springLength": 15,
+        "startingForce": 26.49,
         "startingForceSpec": 40,
         "stem": "POM",
         "totalTravelSpec": 4,
+        "travelDistance": 4.1332492,
+        "travelMeasurementDeviationMm": 0.030851135599196316,
         "upperHousing": [
           "PC"
-        ]
+        ],
+        "verticalAverage": 0.105,
+        "verticalDeviation": 0.021
       },
       "firstSeenAt": null,
-      "testedAt": null
+      "testedAt": "2026-11-16T19:13:21.419Z"
     },
     {
       "id": "46ec624d-bcb7-4e87-aa0b-35a57bb56f56",
@@ -2252,21 +2289,23 @@
         "en": "Wooting"
       },
       "priceKrw": 900,
-      "status": "testing",
+      "status": "earlyAccess",
       "saleStatus": "FOR_SALE",
-      "aliUrl": null,
+      "aliUrl": "https://s.click.aliexpress.com/e/_c4bRvaNl",
       "image": "/images/4391ff5f-6779-4dba-91a7-83f092ec5d34.avif",
       "values": {
         "actuationForceSpec": 42,
         "bottomOutForceSpec": 54,
         "bottomOutHarshness": true,
         "category": "리니어",
+        "earlyAccessAt": "2026-11-14T00:00:00.000Z",
         "eyejokerRating": "ANTICIPATING",
         "lowerHousing": [
           "NYLON"
         ],
         "mechanism": "magnetic",
         "polarity": "N",
+        "publicReleaseAt": "2026-11-21T00:00:00.000Z",
         "spring": "싱글(비자성)",
         "springLength": 22,
         "startingForceSpec": 42,
@@ -2333,33 +2372,51 @@
         "en": "GATERON"
       },
       "priceKrw": 900,
-      "status": "earlyAccess",
+      "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
       "image": "/images/e6ce4dcc-38e0-47e2-9ecf-2112ccada421.avif",
       "values": {
         "actuationForceSpec": 30,
+        "bottomOutForce": 54.923140000000004,
         "bottomOutForceSpec": 50,
         "bottomOutHarshness": false,
         "category": "리니어",
         "earlyAccessAt": "2026-11-06T00:00:00.000Z",
+        "eyejokerRating": "NO_RECOMMENDATION",
+        "hallPressedHorizontalVariationPercent": 2.0618556701030926,
+        "hallPressedVerticalVariationPercent": 1.2848190822720957,
+        "hallResolutionSteps": 12368,
+        "hallWobbleVariationPercent": "2.4%",
+        "horizontalAverage": 0.103,
+        "horizontalDeviation": 0.005,
         "lowerHousing": [
           "NYLON"
         ],
+        "measurementDeviationSummary": "±2.4gf",
         "mechanism": "magnetic",
+        "overallAverage": 0.081,
+        "overallRatingKeyboardSwitch": "UNRATED",
         "polarity": "N",
         "publicReleaseAt": "2026-11-13T00:00:00.000Z",
+        "resolutionPerMm": 308,
         "spring": "싱글",
         "springLength": 20,
+        "startingForce": 30.0323,
         "startingForceSpec": 30,
         "stem": "POM",
         "totalTravelSpec": 4.1,
+        "travelDistance": 4.011132399999999,
+        "travelMeasurementDeviationMm": 0.02726585450412293,
         "upperHousing": [
           "PC"
-        ]
+        ],
+        "verticalAverage": 0.058,
+        "verticalDeviation": 0.019,
+        "wobble": "B"
       },
       "firstSeenAt": null,
-      "testedAt": null
+      "testedAt": "2026-11-16T19:13:21.419Z"
     },
     {
       "id": "5820c7ef-971a-4deb-89b7-eb278cba9a6f",
@@ -2503,7 +2560,7 @@
         "ko": "게이트론",
         "en": "GATERON"
       },
-      "priceKrw": 1200,
+      "priceKrw": 1100,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_ootJAj5",
@@ -2761,7 +2818,7 @@
         "ko": "TTC",
         "en": "TTC"
       },
-      "priceKrw": 1100,
+      "priceKrw": 1000,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -2951,7 +3008,7 @@
         "ko": "MZ Studio",
         "en": "MZ Studio"
       },
-      "priceKrw": 500,
+      "priceKrw": 400,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -3122,15 +3179,17 @@
         "en": "FL CMMK"
       },
       "priceKrw": 800,
-      "status": "testing",
+      "status": "earlyAccess",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
       "image": "/images/dea167ba-9f8a-47a3-9c2e-3b127af413b3.avif",
       "values": {
         "bottomOutHarshness": false,
         "category": "리니어",
+        "earlyAccessAt": "2026-11-14T00:00:00.000Z",
         "eyejokerRating": "ANTICIPATING",
-        "mechanism": "magnetic"
+        "mechanism": "magnetic",
+        "publicReleaseAt": "2026-11-21T00:00:00.000Z"
       },
       "firstSeenAt": null,
       "testedAt": null
@@ -3195,7 +3254,7 @@
         "ko": "에버글라이드",
         "en": "EVERGLIDE"
       },
-      "priceKrw": 27300,
+      "priceKrw": 26800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -3264,7 +3323,7 @@
         "en": "LATENPOW"
       },
       "priceKrw": 200,
-      "status": "testing",
+      "status": "earlyAccess",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_oDxzyMR",
       "image": "/images/538a043a-6b4d-4a70-addf-63cd505fbf5a.avif",
@@ -3272,12 +3331,14 @@
         "actuationForceSpec": 45,
         "bottomOutHarshness": false,
         "category": "리니어",
+        "earlyAccessAt": "2026-11-15T00:00:00.000Z",
         "eyejokerRating": "ANTICIPATING",
         "lowerHousing": [
           "PA66"
         ],
         "mechanism": "magnetic",
         "polarity": "N",
+        "publicReleaseAt": "2026-11-22T00:00:00.000Z",
         "spring": "싱글",
         "stem": "POM",
         "totalTravelSpec": 3.8,
@@ -3429,7 +3490,7 @@
         "en": "LATENPOW"
       },
       "priceKrw": 600,
-      "status": "testing",
+      "status": "earlyAccess",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
       "image": "/images/ad323338-51cf-4373-acd0-0e4a9d6da27e.avif",
@@ -3438,8 +3499,10 @@
         "bottomOutForceSpec": 50,
         "bottomOutHarshness": false,
         "category": "리니어",
+        "earlyAccessAt": "2026-11-15T00:00:00.000Z",
         "mechanism": "magnetic",
         "polarity": "N",
+        "publicReleaseAt": "2026-11-22T00:00:00.000Z",
         "totalTravelSpec": 3.5,
         "upperHousing": [
           "PC"
@@ -3464,12 +3527,13 @@
         "bottomOutForceSpec": 55,
         "bottomOutHarshness": false,
         "category": "리니어",
-        "eyejokerRating": "ANTICIPATING",
+        "earlyAccessAt": "2026-12-01T00:00:00.000Z",
         "lowerHousing": [
           "NYLON"
         ],
         "mechanism": "magnetic",
         "polarity": "N",
+        "publicReleaseAt": "2026-12-08T00:00:00.000Z",
         "springLength": 15,
         "startingForceSpec": 45,
         "stem": "POM",
@@ -3497,10 +3561,12 @@
         "actuationForceSpec": 40,
         "bottomOutForceSpec": 48,
         "category": "택타일",
+        "earlyAccessAt": "2026-11-27T00:00:00.000Z",
         "lowerHousing": [
           "NYLON"
         ],
         "mechanism": "mechanic",
+        "publicReleaseAt": "2026-12-04T00:00:00.000Z",
         "spring": "금도금",
         "springLength": 22,
         "stem": "POM",
@@ -3528,11 +3594,13 @@
         "bottomOutForceSpec": 46,
         "bottomOutHarshness": false,
         "category": "리니어",
+        "earlyAccessAt": "2026-11-21T00:00:00.000Z",
         "lowerHousing": [
           "NYLON"
         ],
         "mechanism": "magnetic",
         "polarity": "N",
+        "publicReleaseAt": "2026-11-28T00:00:00.000Z",
         "springLength": 20,
         "startingForceSpec": 36,
         "stem": "POM",
@@ -3596,7 +3664,7 @@
         "ko": "ugaming",
         "en": "ugaming"
       },
-      "priceKrw": 10200,
+      "priceKrw": 10000,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -3666,8 +3734,10 @@
         "bottomOutForceSpec": 60,
         "bottomOutHarshness": false,
         "category": "리니어",
+        "earlyAccessAt": "2026-11-27T00:00:00.000Z",
         "mechanism": "magnetic",
         "polarity": "S",
+        "publicReleaseAt": "2026-12-04T00:00:00.000Z",
         "startingForceSpec": 40,
         "totalTravelSpec": 4
       },
@@ -3681,7 +3751,7 @@
         "ko": "Unionwell",
         "en": "Unionwell"
       },
-      "priceKrw": null,
+      "priceKrw": 1100,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -3691,11 +3761,13 @@
         "bottomOutForceSpec": 45,
         "bottomOutHarshness": true,
         "category": "리니어",
+        "earlyAccessAt": "2026-11-28T00:00:00.000Z",
         "lowerHousing": [
           "POM"
         ],
         "mechanism": "magnetic",
         "polarity": "N",
+        "publicReleaseAt": "2026-12-05T00:00:00.000Z",
         "spring": "SUS",
         "springLength": 21,
         "startingForceSpec": 35,
@@ -3732,7 +3804,7 @@
         "en": "OUTEMU"
       },
       "priceKrw": 500,
-      "status": "testing",
+      "status": "earlyAccess",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
       "image": "/images/ab9178f8-03a9-4bab-84c5-f8ffa8daeab6.avif",
@@ -3845,7 +3917,7 @@
         "ko": "우큐 스튜디오",
         "en": "Wuque Studio"
       },
-      "priceKrw": 1200,
+      "priceKrw": 1100,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -3877,7 +3949,7 @@
         "ko": "우큐 스튜디오",
         "en": "Wuque Studio"
       },
-      "priceKrw": 2700,
+      "priceKrw": 2600,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -3885,10 +3957,12 @@
       "values": {
         "bottomOutHarshness": false,
         "category": "리니어",
+        "earlyAccessAt": "2026-11-20T00:00:00.000Z",
         "lowerHousing": [
           "PC"
         ],
         "polarity": "N",
+        "publicReleaseAt": "2026-11-27T00:00:00.000Z",
         "spring": "싱글",
         "springLength": 18,
         "startingForceSpec": 35,
@@ -3994,9 +4068,11 @@
       "values": {
         "bottomOutHarshness": true,
         "category": "리니어",
+        "earlyAccessAt": "2026-11-18T00:00:00.000Z",
         "eyejokerRating": "ANTICIPATING",
         "mechanism": "magnetic",
         "polarity": "N",
+        "publicReleaseAt": "2026-11-25T00:00:00.000Z",
         "totalTravelSpec": 3.4
       },
       "firstSeenAt": null,
@@ -4018,11 +4094,13 @@
         "actuationForceSpec": 35,
         "bottomOutHarshness": false,
         "category": "리니어",
+        "earlyAccessAt": "2026-11-26T00:00:00.000Z",
         "lowerHousing": [
           "PC"
         ],
         "mechanism": "magnetic",
         "polarity": "N",
+        "publicReleaseAt": "2026-12-03T00:00:00.000Z",
         "spring": "러버돔",
         "startingForceSpec": 45,
         "stem": "POM",
@@ -4087,7 +4165,7 @@
         "en": "GEONWORKS"
       },
       "priceKrw": 600,
-      "status": "arrived",
+      "status": "earlyAccess",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_o2CiisB",
       "image": null,
@@ -4158,7 +4236,7 @@
         "en": "GATERON"
       },
       "priceKrw": 1000,
-      "status": "testing",
+      "status": "earlyAccess",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
       "image": "/images/f0dbbb8c-983a-4f64-b3c2-6bbc762f7544.avif",
@@ -4166,11 +4244,13 @@
         "bottomOutForceSpec": 50,
         "bottomOutHarshness": false,
         "category": "리니어",
+        "earlyAccessAt": "2026-11-16T00:00:00.000Z",
         "lowerHousing": [
           "PA66"
         ],
         "mechanism": "magnetic",
         "polarity": "N",
+        "publicReleaseAt": "2026-11-23T00:00:00.000Z",
         "spring": "싱글",
         "startingForceSpec": 30,
         "stem": "POM",
@@ -4190,7 +4270,7 @@
         "en": "UR STUDIO"
       },
       "priceKrw": 600,
-      "status": "testing",
+      "status": "earlyAccess",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c4dgF3u9",
       "image": "/images/daf7fdea-67ef-4760-8fac-0e1cafeca31d.avif",
@@ -4258,7 +4338,7 @@
         "ko": "아코",
         "en": "Akko"
       },
-      "priceKrw": 600,
+      "priceKrw": 500,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -4309,10 +4389,12 @@
         "bottomOutForceSpec": 47,
         "bottomOutHarshness": false,
         "category": "리니어",
+        "earlyAccessAt": "2026-11-25T00:00:00.000Z",
         "lowerHousing": [
           "PC"
         ],
         "mechanism": "magnetic",
+        "publicReleaseAt": "2026-12-02T00:00:00.000Z",
         "springLength": 16,
         "stem": "POM",
         "totalTravelSpec": 3.4,
@@ -4350,7 +4432,7 @@
         "en": "GATERON"
       },
       "priceKrw": 1300,
-      "status": "testing",
+      "status": "earlyAccess",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_oogIieT",
       "image": null,
@@ -4535,10 +4617,12 @@
         "bottomOutForceSpec": 45,
         "bottomOutHarshness": false,
         "category": "리니어",
+        "earlyAccessAt": "2026-11-22T00:00:00.000Z",
         "lowerHousing": [
           "PC"
         ],
         "polarity": "N",
+        "publicReleaseAt": "2026-11-29T00:00:00.000Z",
         "startingForceSpec": 37,
         "stem": "POM",
         "totalTravelSpec": 2.8,
@@ -4626,7 +4710,9 @@
       "image": "/images/68c6b386-4f35-4342-9d37-945b223b42ba.avif",
       "values": {
         "category": "리니어",
+        "earlyAccessAt": "2026-11-24T00:00:00.000Z",
         "mechanism": "magnetic",
+        "publicReleaseAt": "2026-12-01T00:00:00.000Z",
         "stem": "POM",
         "totalTravelSpec": 3.3
       },
@@ -4649,10 +4735,12 @@
         "bottomOutForceSpec": 45,
         "bottomOutHarshness": false,
         "category": "리니어",
+        "earlyAccessAt": "2026-11-21T00:00:00.000Z",
         "lowerHousing": [
           "PC"
         ],
         "polarity": "N",
+        "publicReleaseAt": "2026-11-28T00:00:00.000Z",
         "startingForceSpec": 35,
         "stem": "POM",
         "totalTravelSpec": 3.3,
@@ -4688,7 +4776,7 @@
         "ko": "우큐 스튜디오",
         "en": "Wuque Studio"
       },
-      "priceKrw": 1400,
+      "priceKrw": 1300,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -4697,10 +4785,12 @@
         "bottomOutForceSpec": 50,
         "bottomOutHarshness": false,
         "category": "리니어",
+        "earlyAccessAt": "2026-11-20T00:00:00.000Z",
         "lowerHousing": [
           "PA66"
         ],
         "mechanism": "magnetic",
+        "publicReleaseAt": "2026-11-27T00:00:00.000Z",
         "springLength": 18,
         "startingForceSpec": 35,
         "stem": "POM",
@@ -4855,7 +4945,7 @@
         "ko": "TTC",
         "en": "TTC"
       },
-      "priceKrw": 2300,
+      "priceKrw": 2200,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -4954,20 +5044,22 @@
         "ko": "게이트론",
         "en": "GATERON"
       },
-      "priceKrw": 2200,
-      "status": "testing",
+      "priceKrw": 2100,
+      "status": "earlyAccess",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
       "image": "/images/2b53f16b-a88d-423b-a0e8-1f4085981917.avif",
       "values": {
         "bottomOutForceSpec": 50,
         "category": "리니어",
+        "earlyAccessAt": "2026-11-16T00:00:00.000Z",
         "eyejokerRating": "ANTICIPATING",
         "lowerHousing": [
           "PA66"
         ],
         "mechanism": "magnetic",
         "polarity": "N",
+        "publicReleaseAt": "2026-11-23T00:00:00.000Z",
         "spring": "싱글",
         "springLength": 20,
         "startingForceSpec": 36,
@@ -5037,7 +5129,7 @@
         "en": "Gravastar"
       },
       "priceKrw": 2500,
-      "status": "testing",
+      "status": "earlyAccess",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c4ooN7f7",
       "image": "/images/aec60f45-01d7-45d5-99f1-9ada33a13a69.avif",
@@ -5069,11 +5161,13 @@
         "bottomOutForceSpec": 60,
         "bottomOutHarshness": false,
         "category": "리니어",
+        "earlyAccessAt": "2026-11-23T00:00:00.000Z",
         "lowerHousing": [
           "NYLON"
         ],
         "mechanism": "magnetic",
         "polarity": "N",
+        "publicReleaseAt": "2026-11-30T00:00:00.000Z",
         "spring": "싱글(비자성)",
         "startingForceSpec": 40,
         "stem": "POM",
@@ -5149,12 +5243,14 @@
       "values": {
         "bottomOutHarshness": true,
         "category": "리니어",
+        "earlyAccessAt": "2026-11-19T00:00:00.000Z",
         "eyejokerRating": "ANTICIPATING",
         "lowerHousing": [
           "NYLON"
         ],
         "mechanism": "magnetic",
         "polarity": "N",
+        "publicReleaseAt": "2026-11-26T00:00:00.000Z",
         "spring": "싱글",
         "springLength": 18,
         "startingForceSpec": 32,
@@ -5202,7 +5298,7 @@
         "ko": "UR STUDIO",
         "en": "UR STUDIO"
       },
-      "priceKrw": null,
+      "priceKrw": 1000,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -5212,11 +5308,13 @@
         "bottomOutForceSpec": 50,
         "bottomOutHarshness": false,
         "category": "리니어",
+        "earlyAccessAt": "2026-11-30T00:00:00.000Z",
         "lowerHousing": [
           "PC"
         ],
         "mechanism": "magnetic",
         "polarity": "N",
+        "publicReleaseAt": "2026-12-07T00:00:00.000Z",
         "spring": "SUS",
         "springLength": 22,
         "startingForceSpec": 35,
@@ -5236,7 +5334,7 @@
         "ko": "우큐 스튜디오",
         "en": "Wuque Studio"
       },
-      "priceKrw": 1400,
+      "priceKrw": 1300,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -5312,7 +5410,7 @@
         "ko": "듀훅",
         "en": "DUHUK"
       },
-      "priceKrw": null,
+      "priceKrw": 600,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -5320,10 +5418,12 @@
       "values": {
         "bottomOutForceSpec": 42,
         "category": "리니어",
+        "earlyAccessAt": "2026-11-28T00:00:00.000Z",
         "lowerHousing": [
           "PA66"
         ],
         "mechanism": "magnetic",
+        "publicReleaseAt": "2026-12-05T00:00:00.000Z",
         "spring": "싱글(비자성)",
         "springLength": 15.5,
         "startingForceSpec": 35,
@@ -5350,7 +5450,9 @@
       "image": "/images/03b760da-6057-4760-b3df-bb4e9f6c68d6.avif",
       "values": {
         "category": "리니어",
+        "earlyAccessAt": "2026-11-25T00:00:00.000Z",
         "mechanism": "magnetic",
+        "publicReleaseAt": "2026-12-02T00:00:00.000Z",
         "startingForceSpec": 35,
         "totalTravelSpec": 3.5,
         "upperHousing": [
@@ -5368,19 +5470,21 @@
         "en": "OFF Studio x TNT"
       },
       "priceKrw": 700,
-      "status": "testing",
+      "status": "earlyAccess",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
       "image": "/images/a6e722f8-bf1c-4bbd-85d0-35d777c7b66a.avif",
       "values": {
         "bottomOutForceSpec": 50,
         "category": "리니어",
+        "earlyAccessAt": "2026-11-13T00:00:00.000Z",
         "eyejokerRating": "ANTICIPATING",
         "lowerHousing": [
           "PA66"
         ],
         "mechanism": "magnetic",
         "polarity": "N",
+        "publicReleaseAt": "2026-11-20T00:00:00.000Z",
         "spring": "SUS",
         "springLength": 18,
         "startingForceSpec": 35,
@@ -5408,11 +5512,13 @@
       "values": {
         "bottomOutForceSpec": 45,
         "category": "리니어",
+        "earlyAccessAt": "2026-11-24T00:00:00.000Z",
         "lowerHousing": [
           "PA66"
         ],
         "mechanism": "magnetic",
         "polarity": "N",
+        "publicReleaseAt": "2026-12-01T00:00:00.000Z",
         "spring": "싱글",
         "springLength": 22,
         "startingForceSpec": 33,
@@ -5472,7 +5578,7 @@
         "ko": "타이거 게이밍",
         "en": "ESPTiger"
       },
-      "priceKrw": 1000,
+      "priceKrw": 900,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -5481,9 +5587,11 @@
         "actuationForceSpec": 33,
         "bottomOutForceSpec": 50,
         "category": "리니어",
+        "earlyAccessAt": "2026-11-17T00:00:00.000Z",
         "eyejokerRating": "ANTICIPATING",
         "mechanism": "magnetic",
         "polarity": "N",
+        "publicReleaseAt": "2026-11-24T00:00:00.000Z",
         "spring": "싱글",
         "springLength": 16,
         "startingForceSpec": 33,
@@ -5500,31 +5608,51 @@
         "en": "GEONWORKS"
       },
       "priceKrw": 300,
-      "status": "earlyAccess",
+      "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
       "image": "/images/39f21646-35f8-4812-a508-4deca1bad01f.avif",
       "values": {
+        "bottomOutForce": 62.931200000000004,
         "bottomOutForceSpec": 45,
         "bottomOutHarshness": false,
         "category": "리니어",
         "earlyAccessAt": "2026-11-04T00:00:00.000Z",
+        "eyejokerRating": "MILD_RECOMMENDATION",
+        "hallPressedHorizontalVariationPercent": 0.9850514127711051,
+        "hallPressedVerticalVariationPercent": 1.0913342860854878,
+        "hallResolutionSteps": 11561,
+        "hallWobbleVariationPercent": "1.1%",
+        "horizontalAverage": 0.038,
+        "horizontalDeviation": 0.007,
+        "keyboardSwitchResolutionSummary": "1,271 (σ:43)",
         "lowerHousing": [
           "NYLON"
         ],
+        "measurementDeviationSummary": "±5.6gf",
         "mechanism": "magnetic",
+        "overallAverage": 0.039,
+        "overallRatingKeyboardSwitch": "UNRATED",
         "polarity": "N",
         "publicReleaseAt": "2026-11-11T00:00:00.000Z",
+        "resolutionDeviation": 43,
+        "resolutionPerMm": 302,
+        "resolutionSwitch": 1271,
         "spring": "싱글",
         "springLength": 15.8,
+        "startingForce": 33.130375,
         "stem": "POM",
         "totalTravelSpec": 3.8,
+        "travelDistance": 3.8324816,
+        "travelMeasurementDeviationMm": 0.019324998728072272,
         "upperHousing": [
           "PC"
-        ]
+        ],
+        "verticalAverage": 0.04,
+        "verticalDeviation": 0.005
       },
       "firstSeenAt": null,
-      "testedAt": null
+      "testedAt": "2026-11-16T19:13:21.419Z"
     },
     {
       "id": "ea898f6b-6a86-465b-afdc-4a8c230a45fb",
@@ -5664,7 +5792,7 @@
         "ko": "우큐 스튜디오",
         "en": "Wuque Studio"
       },
-      "priceKrw": 2500,
+      "priceKrw": 2400,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -5720,32 +5848,50 @@
         "en": "GATERON"
       },
       "priceKrw": 800,
-      "status": "earlyAccess",
+      "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
       "image": "/images/cec41190-0d6f-4a2c-b23c-36f5b7552be5.avif",
       "values": {
+        "bottomOutForce": 52.72608,
         "bottomOutForceSpec": 50,
         "bottomOutHarshness": false,
         "category": "리니어",
         "earlyAccessAt": "2026-11-07T00:00:00.000Z",
+        "eyejokerRating": "NO_RECOMMENDATION",
+        "hallPressedHorizontalVariationPercent": 3.038187159043223,
+        "hallPressedVerticalVariationPercent": 2.835333613092755,
+        "hallResolutionSteps": 12133,
+        "hallWobbleVariationPercent": "2.9%",
+        "horizontalAverage": 0.139,
+        "horizontalDeviation": 0.019,
         "lowerHousing": [
           "NYLON"
         ],
+        "measurementDeviationSummary": "±1.9gf",
         "mechanism": "magnetic",
+        "overallAverage": 0.127,
+        "overallRatingKeyboardSwitch": "UNRATED",
         "polarity": "N",
         "publicReleaseAt": "2026-11-14T00:00:00.000Z",
+        "resolutionPerMm": 303,
         "spring": "싱글",
         "springLength": 20,
+        "startingForce": 33.04394,
         "startingForceSpec": 38,
         "stem": "POM",
         "totalTravelSpec": 4.1,
+        "travelDistance": 4.0091035999999995,
+        "travelMeasurementDeviationMm": 0.05077221942204211,
         "upperHousing": [
           "PC"
-        ]
+        ],
+        "verticalAverage": 0.114,
+        "verticalDeviation": 0.025,
+        "wobble": "D"
       },
       "firstSeenAt": null,
-      "testedAt": null
+      "testedAt": "2026-11-16T19:13:21.419Z"
     },
     {
       "id": "f857e54c-3d3b-4a51-9913-ff632d8626c7",
@@ -5814,7 +5960,7 @@
         "ko": "에버글라이드",
         "en": "EVERGLIDE"
       },
-      "priceKrw": 15500,
+      "priceKrw": 15200,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -5838,7 +5984,7 @@
         "ko": "ugaming",
         "en": "ugaming"
       },
-      "priceKrw": 2500,
+      "priceKrw": 2400,
       "status": "testing",
       "saleStatus": "DISCONTINUED",
       "aliUrl": null,
@@ -5866,7 +6012,7 @@
         "ko": "HMX",
         "en": "HMX"
       },
-      "priceKrw": 9100,
+      "priceKrw": 8900,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,

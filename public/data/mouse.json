@@ -40,10 +40,17 @@
       "multiple": false,
       "options": [
         {
-          "value": "unreleased",
+          "value": "arrived",
           "label": {
-            "ko": "미출시",
-            "en": "Unreleased"
+            "ko": "제품 도착",
+            "en": "Arrived"
+          }
+        },
+        {
+          "value": "earlyAccess",
+          "label": {
+            "ko": "선 공개",
+            "en": "Early Access"
           }
         },
         {
@@ -61,10 +68,10 @@
           }
         },
         {
-          "value": "arrived",
+          "value": "reviewed",
           "label": {
-            "ko": "제품 도착",
-            "en": "Arrived"
+            "ko": "공개 완료",
+            "en": "Reviewed"
           }
         },
         {
@@ -75,17 +82,10 @@
           }
         },
         {
-          "value": "earlyAccess",
+          "value": "unreleased",
           "label": {
-            "ko": "선 공개",
-            "en": "Early Access"
-          }
-        },
-        {
-          "value": "reviewed",
-          "label": {
-            "ko": "공개 완료",
-            "en": "Reviewed"
+            "ko": "미출시",
+            "en": "Unreleased"
           }
         }
       ]
@@ -102,10 +102,10 @@
       "multiple": false,
       "options": [
         {
-          "value": "unreleased",
+          "value": "DISCONTINUED",
           "label": {
-            "ko": "미출시",
-            "en": "Unreleased"
+            "ko": "단종",
+            "en": "Discontinued"
           }
         },
         {
@@ -116,10 +116,10 @@
           }
         },
         {
-          "value": "DISCONTINUED",
+          "value": "unreleased",
           "label": {
-            "ko": "단종",
-            "en": "Discontinued"
+            "ko": "미출시",
+            "en": "Unreleased"
           }
         }
       ]
@@ -143,13 +143,6 @@
           }
         },
         {
-          "value": "RECOMMENDED",
-          "label": {
-            "ko": "추천",
-            "en": "Recommend"
-          }
-        },
-        {
           "value": "MILD_RECOMMENDATION",
           "label": {
             "ko": "추천까지는",
@@ -161,6 +154,13 @@
           "label": {
             "ko": "추천안함",
             "en": "Not Recommend"
+          }
+        },
+        {
+          "value": "RECOMMENDED",
+          "label": {
+            "ko": "추천",
+            "en": "Recommend"
           }
         },
         {
@@ -308,27 +308,6 @@
       "multiple": false,
       "options": [
         {
-          "value": "8000",
-          "label": {
-            "ko": "8000",
-            "en": "8000"
-          }
-        },
-        {
-          "value": "4000",
-          "label": {
-            "ko": "4000",
-            "en": "4000"
-          }
-        },
-        {
-          "value": "2000",
-          "label": {
-            "ko": "2000",
-            "en": "2000"
-          }
-        },
-        {
           "value": "1000",
           "label": {
             "ko": "1000",
@@ -343,10 +322,31 @@
           }
         },
         {
+          "value": "2000",
+          "label": {
+            "ko": "2000",
+            "en": "2000"
+          }
+        },
+        {
+          "value": "4000",
+          "label": {
+            "ko": "4000",
+            "en": "4000"
+          }
+        },
+        {
           "value": "500",
           "label": {
             "ko": "500",
             "en": "500"
+          }
+        },
+        {
+          "value": "8000",
+          "label": {
+            "ko": "8000",
+            "en": "8000"
           }
         }
       ]
@@ -363,13 +363,6 @@
       "multiple": false,
       "options": [
         {
-          "value": "유선",
-          "label": {
-            "ko": "유선",
-            "en": "Wired"
-          }
-        },
-        {
           "value": "무선",
           "label": {
             "ko": "무선",
@@ -381,6 +374,13 @@
           "label": {
             "ko": "유무선",
             "en": "Wired/Wireless"
+          }
+        },
+        {
+          "value": "유선",
+          "label": {
+            "ko": "유선",
+            "en": "Wired"
           }
         }
       ]
@@ -396,20 +396,6 @@
       "unit": null,
       "multiple": true,
       "options": [
-        {
-          "value": "POLYMER",
-          "label": {
-            "ko": "플라스틱",
-            "en": "Plastic"
-          }
-        },
-        {
-          "value": "MAGNESIUM_ALLOY",
-          "label": {
-            "ko": "마그네슘 합금",
-            "en": "Magnesium Alloy"
-          }
-        },
         {
           "value": "ALUMINUM",
           "label": {
@@ -432,10 +418,24 @@
           }
         },
         {
+          "value": "MAGNESIUM_ALLOY",
+          "label": {
+            "ko": "마그네슘 합금",
+            "en": "Magnesium Alloy"
+          }
+        },
+        {
           "value": "OTHER",
           "label": {
             "ko": "기타",
             "en": "Other"
+          }
+        },
+        {
+          "value": "POLYMER",
+          "label": {
+            "ko": "플라스틱",
+            "en": "Plastic"
           }
         }
       ]
@@ -507,17 +507,17 @@
       "multiple": false,
       "options": [
         {
-          "value": "yes",
-          "label": {
-            "ko": "예",
-            "en": "Yes"
-          }
-        },
-        {
           "value": "no",
           "label": {
             "ko": "아니오",
             "en": "No"
+          }
+        },
+        {
+          "value": "yes",
+          "label": {
+            "ko": "예",
+            "en": "Yes"
           }
         },
         {
@@ -548,388 +548,10 @@
       "multiple": false,
       "options": [
         {
-          "value": "realtekrtl8762gkh",
+          "value": "AMD3V1",
           "label": {
-            "ko": "Realtek RTL8762GKH",
-            "en": "Realtek RTL8762GKH"
-          }
-        },
-        {
-          "value": "nuvotonm483sidae",
-          "label": {
-            "ko": "Nuvoton M483SIDAE",
-            "en": "Nuvoton M483SIDAE"
-          }
-        },
-        {
-          "value": "nuevom27p8v",
-          "label": {
-            "ko": "Nuevo M27P8V",
-            "en": "Nuevo M27P8V"
-          }
-        },
-        {
-          "value": "nuvotonm484sidae(192m)+texasinstruments(ti)cc2642r(48m)",
-          "label": {
-            "ko": "Nuvoton M484SIDAE(192M) +  Texas Instruments(TI) CC2642R(48M)",
-            "en": "Nuvoton M484SIDAE(192M) +  Texas Instruments(TI) CC2642R(48M)"
-          }
-        },
-        {
-          "value": "p352903n1",
-          "label": {
-            "ko": "P352903N1",
-            "en": "P352903N1"
-          }
-        },
-        {
-          "value": "realtekrtl8782gkh",
-          "label": {
-            "ko": "Realtek RTL8782GKH",
-            "en": "Realtek RTL8782GKH"
-          }
-        },
-        {
-          "value": "sh87f880505",
-          "label": {
-            "ko": "SH87F880505",
-            "en": "SH87F880505"
-          }
-        },
-        {
-          "value": "stm32f042g6",
-          "label": {
-            "ko": "STM32F042G6",
-            "en": "STM32F042G6"
-          }
-        },
-        {
-          "value": "stm32f102arm",
-          "label": {
-            "ko": "STM32F102 ARM",
-            "en": "STM32F102 ARM"
-          }
-        },
-        {
-          "value": "surpassmastercontrol",
-          "label": {
-            "ko": "Surpass Master Control",
-            "en": "Surpass Master Control"
-          }
-        },
-        {
-          "value": "telinktlsr8355",
-          "label": {
-            "ko": "Telink TLSR8355",
-            "en": "Telink TLSR8355"
-          }
-        },
-        {
-          "value": "vgnry66080tf13",
-          "label": {
-            "ko": "VGN RY66080TF13",
-            "en": "VGN RY66080TF13"
-          }
-        },
-        {
-          "value": "vtqmqmeqk",
-          "label": {
-            "ko": "VTQMQMEQK",
-            "en": "VTQMQMEQK"
-          }
-        },
-        {
-          "value": "aw30010a",
-          "label": {
-            "ko": "AW30010A",
-            "en": "AW30010A"
-          }
-        },
-        {
-          "value": "nearlink",
-          "label": {
-            "ko": "NearLINK",
-            "en": "NearLINK"
-          }
-        },
-        {
-          "value": "huaweivtqq0mavk",
-          "label": {
-            "ko": "Huawei VTQQ0MAVK",
-            "en": "Huawei VTQQ0MAVK"
-          }
-        },
-        {
-          "value": "stm32f103t6u6a",
-          "label": {
-            "ko": "STM32F103T6U6A",
-            "en": "STM32F103T6U6A"
-          }
-        },
-        {
-          "value": "holtekht32f52341",
-          "label": {
-            "ko": "Holtek HT32F52341",
-            "en": "Holtek HT32F52341"
-          }
-        },
-        {
-          "value": "holtekht32f52352",
-          "label": {
-            "ko": "Holtek HT32F52352",
-            "en": "Holtek HT32F52352"
-          }
-        },
-        {
-          "value": "stm32f072c8",
-          "label": {
-            "ko": "STM32F072C8",
-            "en": "STM32F072C8"
-          }
-        },
-        {
-          "value": "stm32f103cbt",
-          "label": {
-            "ko": "STM32F103CBT",
-            "en": "STM32F103CBT"
-          }
-        },
-        {
-          "value": "stm32f103cbt6",
-          "label": {
-            "ko": "STM32F103CBT6",
-            "en": "STM32F103CBT6"
-          }
-        },
-        {
-          "value": "stm32f733iek6",
-          "label": {
-            "ko": "STM32F733 IEK6",
-            "en": "STM32F733 IEK6"
-          }
-        },
-        {
-          "value": "bekenbk3633",
-          "label": {
-            "ko": "Beken BK3633",
-            "en": "Beken BK3633"
-          }
-        },
-        {
-          "value": "realtekrtl87620gkh",
-          "label": {
-            "ko": "Realtek RTL87620GKH",
-            "en": "Realtek RTL87620GKH"
-          }
-        },
-        {
-          "value": "panchippan1080ua3c",
-          "label": {
-            "ko": "Panchip PAN1080UA3C",
-            "en": "Panchip PAN1080UA3C"
-          }
-        },
-        {
-          "value": "compxtechcx52850se",
-          "label": {
-            "ko": "CompX Tech CX52850SE",
-            "en": "CompX Tech CX52850SE"
-          }
-        },
-        {
-          "value": "compxtechcx52860",
-          "label": {
-            "ko": "CompX Tech CX52860",
-            "en": "CompX Tech CX52860"
-          }
-        },
-        {
-          "value": "nxplpc5528",
-          "label": {
-            "ko": "NXP LPC5528",
-            "en": "NXP LPC5528"
-          }
-        },
-        {
-          "value": "nxplpc51u68",
-          "label": {
-            "ko": "NXP LPC51U68",
-            "en": "NXP LPC51U68"
-          }
-        },
-        {
-          "value": "nxplpc11u35",
-          "label": {
-            "ko": "NXP LPC11U35",
-            "en": "NXP LPC11U35"
-          }
-        },
-        {
-          "value": "cypresscy7c6435648ltxc",
-          "label": {
-            "ko": "Cypress CY7C64356-48LTXC",
-            "en": "Cypress CY7C64356-48LTXC"
-          }
-        },
-        {
-          "value": "arm32mo",
-          "label": {
-            "ko": "ARM32 MO",
-            "en": "ARM32 MO"
-          }
-        },
-        {
-          "value": "stm32l412",
-          "label": {
-            "ko": "STM32L412",
-            "en": "STM32L412"
-          }
-        },
-        {
-          "value": "compxtechcx52850",
-          "label": {
-            "ko": "CompX Tech CX52850",
-            "en": "CompX Tech CX52850"
-          }
-        },
-        {
-          "value": "cypresscy7c64356",
-          "label": {
-            "ko": "Cypress CY7C64356",
-            "en": "Cypress CY7C64356"
-          }
-        },
-        {
-          "value": "nordicnrf54h20",
-          "label": {
-            "ko": "Nordic nRF54H20",
-            "en": "Nordic nRF54H20"
-          }
-        },
-        {
-          "value": "nordicnrf54l15",
-          "label": {
-            "ko": "Nordic nRF54L15",
-            "en": "Nordic nRF54L15"
-          }
-        },
-        {
-          "value": "nordicnrf52840",
-          "label": {
-            "ko": "Nordic nRF52840",
-            "en": "Nordic nRF52840"
-          }
-        },
-        {
-          "value": "nordicnrf52833",
-          "label": {
-            "ko": "Nordic nRF52833",
-            "en": "Nordic nRF52833"
-          }
-        },
-        {
-          "value": "nordicnrf52832",
-          "label": {
-            "ko": "Nordic nRF52832",
-            "en": "Nordic nRF52832"
-          }
-        },
-        {
-          "value": "nordicnrf52820",
-          "label": {
-            "ko": "Nordic nRF52820",
-            "en": "Nordic nRF52820"
-          }
-        },
-        {
-          "value": "nordicnrf51802",
-          "label": {
-            "ko": "Nordic nRF51802",
-            "en": "Nordic nRF51802"
-          }
-        },
-        {
-          "value": "nordicnrf52810",
-          "label": {
-            "ko": "Nordic nRF52810",
-            "en": "Nordic nRF52810"
-          }
-        },
-        {
-          "value": "nordicnrf53832",
-          "label": {
-            "ko": "Nordic nRF53832",
-            "en": "Nordic nRF53832"
-          }
-        },
-        {
-          "value": "pixartpar2862",
-          "label": {
-            "ko": "Pixart PAR2862",
-            "en": "Pixart PAR2862"
-          }
-        },
-        {
-          "value": "cypresscy7c64215",
-          "label": {
-            "ko": "Cypress CY7C64215",
-            "en": "Cypress CY7C64215"
-          }
-        },
-        {
-          "value": "cypresscy7c663743",
-          "label": {
-            "ko": "Cypress CY7C663743",
-            "en": "Cypress CY7C663743"
-          }
-        },
-        {
-          "value": "stm32l100",
-          "label": {
-            "ko": "STM32L100",
-            "en": "STM32L100"
-          }
-        },
-        {
-          "value": "realteknuvi",
-          "label": {
-            "ko": "Realtek NUVI",
-            "en": "Realtek NUVI"
-          }
-        },
-        {
-          "value": "realtekrtl8762g",
-          "label": {
-            "ko": "Realtek RTL8762G",
-            "en": "Realtek RTL8762G"
-          }
-        },
-        {
-          "value": "airohaab1623mn",
-          "label": {
-            "ko": "Airoha AB1623MN",
-            "en": "Airoha AB1623MN"
-          }
-        },
-        {
-          "value": "pixartpar2863",
-          "label": {
-            "ko": "Pixart PAR2863FJ",
-            "en": "Pixart PAR2863FJ"
-          }
-        },
-        {
-          "value": "nordicnrf54lm20",
-          "label": {
-            "ko": "Nordic nRF54LM20",
-            "en": "Nordic nRF54LM20"
-          }
-        },
-        {
-          "value": "VTQL0UYVM",
-          "label": {
-            "ko": "VTQL0UYVM",
-            "en": "VTQL0UYVM"
+            "ko": "AMD3V1",
+            "en": "AMD3V1"
           }
         },
         {
@@ -937,90 +559,6 @@
           "label": {
             "ko": "EP2P41F10E",
             "en": "EP2P41F10E"
-          }
-        },
-        {
-          "value": "XC Tech XC68240",
-          "label": {
-            "ko": "XC Tech XC68240",
-            "en": "XC Tech XC68240"
-          }
-        },
-        {
-          "value": "VGN RY66080TF15",
-          "label": {
-            "ko": "VGN RY66080TF15",
-            "en": "VGN RY66080TF13VGN RY66080TF15"
-          }
-        },
-        {
-          "value": "XQW010 2542 SAP",
-          "label": {
-            "ko": "XQW010 2542 SAP",
-            "en": "XQW010 2542 SAP"
-          }
-        },
-        {
-          "value": "wchCh32v305Gbu6NordicNrf52840",
-          "label": {
-            "ko": "WCH CH32V305 GBU6 + Nordic nRF52840",
-            "en": "WCH CH32V305 GBU6 + Nordic nRF52840"
-          }
-        },
-        {
-          "value": "logitechNxlogi",
-          "label": {
-            "ko": "Logitech NxLOGI",
-            "en": "Logitech NxLOGI"
-          }
-        },
-        {
-          "value": "atkOne",
-          "label": {
-            "ko": "ATK ONE",
-            "en": "ATK ONE"
-          }
-        },
-        {
-          "value": "telinkTl3228",
-          "label": {
-            "ko": "Telink TL3228",
-            "en": "Telink TL3228"
-          }
-        },
-        {
-          "value": "compxtechCx52850f",
-          "label": {
-            "ko": "CX52850F",
-            "en": "CX52850F"
-          }
-        },
-        {
-          "value": "stm32f723vey6tr",
-          "label": {
-            "ko": "STM32F723VEY6TR",
-            "en": "STM32F723VEY6TR"
-          }
-        },
-        {
-          "value": "pixartPar2863",
-          "label": {
-            "ko": "PixArt PAR2863 (suffix unspecified)",
-            "en": "PixArt PAR2863 (suffix unspecified)"
-          }
-        },
-        {
-          "value": "inphicOm6239",
-          "label": {
-            "ko": "INPHIC OM6239",
-            "en": "INPHIC OM6239"
-          }
-        },
-        {
-          "value": "inphicKp950b",
-          "label": {
-            "ko": "INPHIC KP950B",
-            "en": "INPHIC KP950B"
           }
         },
         {
@@ -1045,17 +583,66 @@
           }
         },
         {
-          "value": "nordicNrf54lSeriesUnspecified",
+          "value": "VGN RY66080TF15",
           "label": {
-            "ko": "Nordic nRF54L series (exact model undisclosed)",
-            "en": "Nordic nRF54L series (exact model undisclosed)"
+            "ko": "VGN RY66080TF15",
+            "en": "VGN RY66080TF13VGN RY66080TF15"
           }
         },
         {
-          "value": "realtekModelUnspecified",
+          "value": "VTQL0UYVM",
           "label": {
-            "ko": "Realtek (model undisclosed)",
-            "en": "Realtek (model undisclosed)"
+            "ko": "VTQL0UYVM",
+            "en": "VTQL0UYVM"
+          }
+        },
+        {
+          "value": "XC Tech XC68240",
+          "label": {
+            "ko": "XC Tech XC68240",
+            "en": "XC Tech XC68240"
+          }
+        },
+        {
+          "value": "XQW010 2542 SAP",
+          "label": {
+            "ko": "XQW010 2542 SAP",
+            "en": "XQW010 2542 SAP"
+          }
+        },
+        {
+          "value": "airohaab1623mn",
+          "label": {
+            "ko": "Airoha AB1623MN",
+            "en": "Airoha AB1623MN"
+          }
+        },
+        {
+          "value": "arm32mo",
+          "label": {
+            "ko": "ARM32 MO",
+            "en": "ARM32 MO"
+          }
+        },
+        {
+          "value": "atkOne",
+          "label": {
+            "ko": "ATK ONE",
+            "en": "ATK ONE"
+          }
+        },
+        {
+          "value": "aw30010a",
+          "label": {
+            "ko": "AW30010A",
+            "en": "AW30010A"
+          }
+        },
+        {
+          "value": "bekenbk3633",
+          "label": {
+            "ko": "Beken BK3633",
+            "en": "Beken BK3633"
           }
         },
         {
@@ -1066,10 +653,423 @@
           }
         },
         {
-          "value": "AMD3V1",
+          "value": "compxtechCx52850f",
           "label": {
-            "ko": "AMD3V1",
-            "en": "AMD3V1"
+            "ko": "CX52850F",
+            "en": "CX52850F"
+          }
+        },
+        {
+          "value": "compxtechcx52850",
+          "label": {
+            "ko": "CompX Tech CX52850",
+            "en": "CompX Tech CX52850"
+          }
+        },
+        {
+          "value": "compxtechcx52850se",
+          "label": {
+            "ko": "CompX Tech CX52850SE",
+            "en": "CompX Tech CX52850SE"
+          }
+        },
+        {
+          "value": "compxtechcx52860",
+          "label": {
+            "ko": "CompX Tech CX52860",
+            "en": "CompX Tech CX52860"
+          }
+        },
+        {
+          "value": "cypresscy7c64215",
+          "label": {
+            "ko": "Cypress CY7C64215",
+            "en": "Cypress CY7C64215"
+          }
+        },
+        {
+          "value": "cypresscy7c64356",
+          "label": {
+            "ko": "Cypress CY7C64356",
+            "en": "Cypress CY7C64356"
+          }
+        },
+        {
+          "value": "cypresscy7c6435648ltxc",
+          "label": {
+            "ko": "Cypress CY7C64356-48LTXC",
+            "en": "Cypress CY7C64356-48LTXC"
+          }
+        },
+        {
+          "value": "cypresscy7c663743",
+          "label": {
+            "ko": "Cypress CY7C663743",
+            "en": "Cypress CY7C663743"
+          }
+        },
+        {
+          "value": "holtekht32f52341",
+          "label": {
+            "ko": "Holtek HT32F52341",
+            "en": "Holtek HT32F52341"
+          }
+        },
+        {
+          "value": "holtekht32f52352",
+          "label": {
+            "ko": "Holtek HT32F52352",
+            "en": "Holtek HT32F52352"
+          }
+        },
+        {
+          "value": "huaweivtqq0mavk",
+          "label": {
+            "ko": "Huawei VTQQ0MAVK",
+            "en": "Huawei VTQQ0MAVK"
+          }
+        },
+        {
+          "value": "inphicKp950b",
+          "label": {
+            "ko": "INPHIC KP950B",
+            "en": "INPHIC KP950B"
+          }
+        },
+        {
+          "value": "inphicOm6239",
+          "label": {
+            "ko": "INPHIC OM6239",
+            "en": "INPHIC OM6239"
+          }
+        },
+        {
+          "value": "logitechNxlogi",
+          "label": {
+            "ko": "Logitech NxLOGI",
+            "en": "Logitech NxLOGI"
+          }
+        },
+        {
+          "value": "nearlink",
+          "label": {
+            "ko": "NearLINK",
+            "en": "NearLINK"
+          }
+        },
+        {
+          "value": "nordicNrf54lSeriesUnspecified",
+          "label": {
+            "ko": "Nordic nRF54L series (exact model undisclosed)",
+            "en": "Nordic nRF54L series (exact model undisclosed)"
+          }
+        },
+        {
+          "value": "nordicnrf51802",
+          "label": {
+            "ko": "Nordic nRF51802",
+            "en": "Nordic nRF51802"
+          }
+        },
+        {
+          "value": "nordicnrf52810",
+          "label": {
+            "ko": "Nordic nRF52810",
+            "en": "Nordic nRF52810"
+          }
+        },
+        {
+          "value": "nordicnrf52820",
+          "label": {
+            "ko": "Nordic nRF52820",
+            "en": "Nordic nRF52820"
+          }
+        },
+        {
+          "value": "nordicnrf52832",
+          "label": {
+            "ko": "Nordic nRF52832",
+            "en": "Nordic nRF52832"
+          }
+        },
+        {
+          "value": "nordicnrf52833",
+          "label": {
+            "ko": "Nordic nRF52833",
+            "en": "Nordic nRF52833"
+          }
+        },
+        {
+          "value": "nordicnrf52840",
+          "label": {
+            "ko": "Nordic nRF52840",
+            "en": "Nordic nRF52840"
+          }
+        },
+        {
+          "value": "nordicnrf53832",
+          "label": {
+            "ko": "Nordic nRF53832",
+            "en": "Nordic nRF53832"
+          }
+        },
+        {
+          "value": "nordicnrf54h20",
+          "label": {
+            "ko": "Nordic nRF54H20",
+            "en": "Nordic nRF54H20"
+          }
+        },
+        {
+          "value": "nordicnrf54l15",
+          "label": {
+            "ko": "Nordic nRF54L15",
+            "en": "Nordic nRF54L15"
+          }
+        },
+        {
+          "value": "nordicnrf54lm20",
+          "label": {
+            "ko": "Nordic nRF54LM20",
+            "en": "Nordic nRF54LM20"
+          }
+        },
+        {
+          "value": "nuevom27p8v",
+          "label": {
+            "ko": "Nuevo M27P8V",
+            "en": "Nuevo M27P8V"
+          }
+        },
+        {
+          "value": "nuvotonm483sidae",
+          "label": {
+            "ko": "Nuvoton M483SIDAE",
+            "en": "Nuvoton M483SIDAE"
+          }
+        },
+        {
+          "value": "nuvotonm484sidae(192m)+texasinstruments(ti)cc2642r(48m)",
+          "label": {
+            "ko": "Nuvoton M484SIDAE(192M) +  Texas Instruments(TI) CC2642R(48M)",
+            "en": "Nuvoton M484SIDAE(192M) +  Texas Instruments(TI) CC2642R(48M)"
+          }
+        },
+        {
+          "value": "nxplpc11u35",
+          "label": {
+            "ko": "NXP LPC11U35",
+            "en": "NXP LPC11U35"
+          }
+        },
+        {
+          "value": "nxplpc51u68",
+          "label": {
+            "ko": "NXP LPC51U68",
+            "en": "NXP LPC51U68"
+          }
+        },
+        {
+          "value": "nxplpc5528",
+          "label": {
+            "ko": "NXP LPC5528",
+            "en": "NXP LPC5528"
+          }
+        },
+        {
+          "value": "p352903n1",
+          "label": {
+            "ko": "P352903N1",
+            "en": "P352903N1"
+          }
+        },
+        {
+          "value": "panchippan1080ua3c",
+          "label": {
+            "ko": "Panchip PAN1080UA3C",
+            "en": "Panchip PAN1080UA3C"
+          }
+        },
+        {
+          "value": "pixartPar2863",
+          "label": {
+            "ko": "PixArt PAR2863 (suffix unspecified)",
+            "en": "PixArt PAR2863 (suffix unspecified)"
+          }
+        },
+        {
+          "value": "pixartpar2862",
+          "label": {
+            "ko": "Pixart PAR2862",
+            "en": "Pixart PAR2862"
+          }
+        },
+        {
+          "value": "pixartpar2863",
+          "label": {
+            "ko": "Pixart PAR2863FJ",
+            "en": "Pixart PAR2863FJ"
+          }
+        },
+        {
+          "value": "realtekModelUnspecified",
+          "label": {
+            "ko": "Realtek (model undisclosed)",
+            "en": "Realtek (model undisclosed)"
+          }
+        },
+        {
+          "value": "realteknuvi",
+          "label": {
+            "ko": "Realtek NUVI",
+            "en": "Realtek NUVI"
+          }
+        },
+        {
+          "value": "realtekrtl87620gkh",
+          "label": {
+            "ko": "Realtek RTL87620GKH",
+            "en": "Realtek RTL87620GKH"
+          }
+        },
+        {
+          "value": "realtekrtl8762g",
+          "label": {
+            "ko": "Realtek RTL8762G",
+            "en": "Realtek RTL8762G"
+          }
+        },
+        {
+          "value": "realtekrtl8762gkh",
+          "label": {
+            "ko": "Realtek RTL8762GKH",
+            "en": "Realtek RTL8762GKH"
+          }
+        },
+        {
+          "value": "realtekrtl8782gkh",
+          "label": {
+            "ko": "Realtek RTL8782GKH",
+            "en": "Realtek RTL8782GKH"
+          }
+        },
+        {
+          "value": "sh87f880505",
+          "label": {
+            "ko": "SH87F880505",
+            "en": "SH87F880505"
+          }
+        },
+        {
+          "value": "stm32f042g6",
+          "label": {
+            "ko": "STM32F042G6",
+            "en": "STM32F042G6"
+          }
+        },
+        {
+          "value": "stm32f072c8",
+          "label": {
+            "ko": "STM32F072C8",
+            "en": "STM32F072C8"
+          }
+        },
+        {
+          "value": "stm32f102arm",
+          "label": {
+            "ko": "STM32F102 ARM",
+            "en": "STM32F102 ARM"
+          }
+        },
+        {
+          "value": "stm32f103cbt",
+          "label": {
+            "ko": "STM32F103CBT",
+            "en": "STM32F103CBT"
+          }
+        },
+        {
+          "value": "stm32f103cbt6",
+          "label": {
+            "ko": "STM32F103CBT6",
+            "en": "STM32F103CBT6"
+          }
+        },
+        {
+          "value": "stm32f103t6u6a",
+          "label": {
+            "ko": "STM32F103T6U6A",
+            "en": "STM32F103T6U6A"
+          }
+        },
+        {
+          "value": "stm32f723vey6tr",
+          "label": {
+            "ko": "STM32F723VEY6TR",
+            "en": "STM32F723VEY6TR"
+          }
+        },
+        {
+          "value": "stm32f733iek6",
+          "label": {
+            "ko": "STM32F733 IEK6",
+            "en": "STM32F733 IEK6"
+          }
+        },
+        {
+          "value": "stm32l100",
+          "label": {
+            "ko": "STM32L100",
+            "en": "STM32L100"
+          }
+        },
+        {
+          "value": "stm32l412",
+          "label": {
+            "ko": "STM32L412",
+            "en": "STM32L412"
+          }
+        },
+        {
+          "value": "surpassmastercontrol",
+          "label": {
+            "ko": "Surpass Master Control",
+            "en": "Surpass Master Control"
+          }
+        },
+        {
+          "value": "telinkTl3228",
+          "label": {
+            "ko": "Telink TL3228",
+            "en": "Telink TL3228"
+          }
+        },
+        {
+          "value": "telinktlsr8355",
+          "label": {
+            "ko": "Telink TLSR8355",
+            "en": "Telink TLSR8355"
+          }
+        },
+        {
+          "value": "vgnry66080tf13",
+          "label": {
+            "ko": "VGN RY66080TF13",
+            "en": "VGN RY66080TF13"
+          }
+        },
+        {
+          "value": "vtqmqmeqk",
+          "label": {
+            "ko": "VTQMQMEQK",
+            "en": "VTQMQMEQK"
+          }
+        },
+        {
+          "value": "wchCh32v305Gbu6NordicNrf52840",
+          "label": {
+            "ko": "WCH CH32V305 GBU6 + Nordic nRF52840",
+            "en": "WCH CH32V305 GBU6 + Nordic nRF52840"
           }
         }
       ]
@@ -1085,6 +1085,20 @@
       "unit": null,
       "multiple": false,
       "options": [
+        {
+          "value": "100",
+          "label": {
+            "ko": "100mAh",
+            "en": "100mAh"
+          }
+        },
+        {
+          "value": "1000",
+          "label": {
+            "ko": "1000mAh",
+            "en": "1000mAh"
+          }
+        },
         {
           "value": "200",
           "label": {
@@ -1219,6 +1233,20 @@
           }
         },
         {
+          "value": "475",
+          "label": {
+            "ko": "475mAh",
+            "en": "475mAh"
+          }
+        },
+        {
+          "value": "480",
+          "label": {
+            "ko": "480mAh",
+            "en": "480mAh"
+          }
+        },
+        {
           "value": "500",
           "label": {
             "ko": "500mAh",
@@ -1233,6 +1261,13 @@
           }
         },
         {
+          "value": "530",
+          "label": {
+            "ko": "530mAh",
+            "en": "530mAh"
+          }
+        },
+        {
           "value": "550",
           "label": {
             "ko": "550mAh",
@@ -1244,6 +1279,13 @@
           "label": {
             "ko": "600mAh",
             "en": "600mAh"
+          }
+        },
+        {
+          "value": "650",
+          "label": {
+            "ko": "650mAh",
+            "en": "650mAh"
           }
         },
         {
@@ -1282,13 +1324,6 @@
           }
         },
         {
-          "value": "1000",
-          "label": {
-            "ko": "1000mAh",
-            "en": "1000mAh"
-          }
-        },
-        {
           "value": "AA",
           "label": {
             "ko": "AA",
@@ -1300,41 +1335,6 @@
           "label": {
             "ko": "X",
             "en": "X"
-          }
-        },
-        {
-          "value": "480",
-          "label": {
-            "ko": "480mAh",
-            "en": "480mAh"
-          }
-        },
-        {
-          "value": "475",
-          "label": {
-            "ko": "475mAh",
-            "en": "475mAh"
-          }
-        },
-        {
-          "value": "530",
-          "label": {
-            "ko": "530mAh",
-            "en": "530mAh"
-          }
-        },
-        {
-          "value": "100",
-          "label": {
-            "ko": "100mAh",
-            "en": "100mAh"
-          }
-        },
-        {
-          "value": "650",
-          "label": {
-            "ko": "650mAh",
-            "en": "650mAh"
           }
         }
       ]
@@ -1350,90 +1350,6 @@
       "unit": null,
       "multiple": false,
       "options": [
-        {
-          "value": "paw3955gt",
-          "label": {
-            "ko": "PAW3955 GT",
-            "en": "PAW3955 GT"
-          }
-        },
-        {
-          "value": "paw3955hs",
-          "label": {
-            "ko": "PAW3955 HS",
-            "en": "PAW3955 HS"
-          }
-        },
-        {
-          "value": "paw3955master",
-          "label": {
-            "ko": "PAW3955 Master",
-            "en": "PAW3955 Master"
-          }
-        },
-        {
-          "value": "paw3955plus",
-          "label": {
-            "ko": "PAW3955+",
-            "en": "PAW3955+"
-          }
-        },
-        {
-          "value": "paw3955prime",
-          "label": {
-            "ko": "PAW3955 PRIME",
-            "en": "PAW3955 PRIME"
-          }
-        },
-        {
-          "value": "paw3955ti",
-          "label": {
-            "ko": "PAW3955 Ti",
-            "en": "PAW3955 Ti"
-          }
-        },
-        {
-          "value": "paw3955turbo",
-          "label": {
-            "ko": "PAW3955 Turbo",
-            "en": "PAW3955 Turbo"
-          }
-        },
-        {
-          "value": "paw3955ultimate",
-          "label": {
-            "ko": "PAW3955 Ultimate",
-            "en": "PAW3955 Ultimate"
-          }
-        },
-        {
-          "value": "paw3955xm",
-          "label": {
-            "ko": "PAW3955XM",
-            "en": "PAW3955XM"
-          }
-        },
-        {
-          "value": "pawnexti",
-          "label": {
-            "ko": "PAW NEXT I",
-            "en": "PAW NEXT I"
-          }
-        },
-        {
-          "value": "pmw3320",
-          "label": {
-            "ko": "am010",
-            "en": "PMW3320"
-          }
-        },
-        {
-          "value": "pmw3359",
-          "label": {
-            "ko": "PMW3359",
-            "en": "PMW3359"
-          }
-        },
         {
           "value": "1855",
           "label": {
@@ -1470,6 +1386,13 @@
           }
         },
         {
+          "value": "PAW NEXT I",
+          "label": {
+            "ko": "PAW NEXT I",
+            "en": "PAW NEXT I"
+          }
+        },
+        {
           "value": "PAW3395Extreme",
           "label": {
             "ko": "PAW3395 Extreme",
@@ -1491,6 +1414,27 @@
           }
         },
         {
+          "value": "PixArt 3065",
+          "label": {
+            "ko": "PixArt 3065",
+            "en": "PixArt 3065"
+          }
+        },
+        {
+          "value": "PixArt PAW3392",
+          "label": {
+            "ko": "PixArt PAW3392",
+            "en": "PixArt PAW3392"
+          }
+        },
+        {
+          "value": "ROCCAT Pro-Aim R3",
+          "label": {
+            "ko": "ROCCAT Pro-Aim R3",
+            "en": "ROCCAT Pro-Aim R3"
+          }
+        },
+        {
           "value": "ROG AimPoint Pro 65K",
           "label": {
             "ko": "ROG AimPoint Pro 65K",
@@ -1502,6 +1446,20 @@
           "label": {
             "ko": "SG8670",
             "en": "SG8670"
+          }
+        },
+        {
+          "value": "TrueMove42KPro",
+          "label": {
+            "ko": "TrueMove 42K Pro",
+            "en": "TrueMove 42K Pro"
+          }
+        },
+        {
+          "value": "XS-2",
+          "label": {
+            "ko": "XS-2",
+            "en": "XS-2"
           }
         },
         {
@@ -1610,181 +1568,6 @@
           }
         },
         {
-          "value": "pmw3366",
-          "label": {
-            "ko": "PMW3366",
-            "en": "PMW3366"
-          }
-        },
-        {
-          "value": "pmw3399",
-          "label": {
-            "ko": "PMW3399",
-            "en": "PMW3399"
-          }
-        },
-        {
-          "value": "razer5g",
-          "label": {
-            "ko": "Razer 5G",
-            "en": "Razer 5G"
-          }
-        },
-        {
-          "value": "spcp180a",
-          "label": {
-            "ko": "SPCP180A",
-            "en": "SPCP180A"
-          }
-        },
-        {
-          "value": "truemove26k",
-          "label": {
-            "ko": "TrueMove 26K",
-            "en": "TrueMove 26K"
-          }
-        },
-        {
-          "value": "truemove30kpro",
-          "label": {
-            "ko": "TrueMove 30K Pro",
-            "en": "TrueMove 30K Pro"
-          }
-        },
-        {
-          "value": "truemoveair",
-          "label": {
-            "ko": "TrueMove AIR",
-            "en": "TrueMove AIR"
-          }
-        },
-        {
-          "value": "truemovecore",
-          "label": {
-            "ko": "TrueMove Core",
-            "en": "TrueMove Core"
-          }
-        },
-        {
-          "value": "truemovepro",
-          "label": {
-            "ko": "TrueMove PRO",
-            "en": "TrueMove PRO"
-          }
-        },
-        {
-          "value": "truemovepro+",
-          "label": {
-            "ko": "TrueMove PRO+",
-            "en": "TrueMove PRO+"
-          }
-        },
-        {
-          "value": "vaxeecore1",
-          "label": {
-            "ko": "VAXEE Core1",
-            "en": "VAXEE Core1"
-          }
-        },
-        {
-          "value": "XS-2",
-          "label": {
-            "ko": "XS-2",
-            "en": "XS-2"
-          }
-        },
-        {
-          "value": "pixart3327",
-          "label": {
-            "ko": "PixArt 3327",
-            "en": "PixArt 3327"
-          }
-        },
-        {
-          "value": "paw3955evo",
-          "label": {
-            "ko": "PAW3955 EVO",
-            "en": "PAW3955 EVO"
-          }
-        },
-        {
-          "value": "paw3950U1F95A",
-          "label": {
-            "ko": "PAW3950 U+1F95A",
-            "en": "PAW3950 U+1F95A"
-          }
-        },
-        {
-          "value": "gloriousBamf30",
-          "label": {
-            "ko": "Glorious BAMF 3.0 (2025)",
-            "en": "Glorious BAMF 3.0 (2025)"
-          }
-        },
-        {
-          "value": "paw3955max60k",
-          "label": {
-            "ko": "PAW3955MAX (60K device configuration)",
-            "en": "PAW3955MAX (60K device configuration)"
-          }
-        },
-        {
-          "value": "paw3955max52k",
-          "label": {
-            "ko": "PAW3955MAX (52K device configuration)",
-            "en": "PAW3955MAX (52K device configuration)"
-          }
-        },
-        {
-          "value": "xero",
-          "label": {
-            "ko": "XERO",
-            "en": "XERO"
-          }
-        },
-        {
-          "value": "xheroai",
-          "label": {
-            "ko": "Xhero AI",
-            "en": "Xhero AI"
-          }
-        },
-        {
-          "value": "xs1",
-          "label": {
-            "ko": "XS-1",
-            "en": "XS-1"
-          }
-        },
-        {
-          "value": "TrueMove42KPro",
-          "label": {
-            "ko": "TrueMove 42K Pro",
-            "en": "TrueMove 42K Pro"
-          }
-        },
-        {
-          "value": "hero2_48k",
-          "label": {
-            "ko": "HERO 2 (48K)",
-            "en": "HERO 2 (48K)"
-          }
-        },
-        {
-          "value": "hyperxPerformance42k",
-          "label": {
-            "ko": "HyperX Performance (42K)",
-            "en": "HyperX Performance (42K)"
-          }
-        },
-        {
-          "value": "paw3395Extreme36k",
-          "label": {
-            "ko": "PAW3395 Extreme (36K)",
-            "en": "PAW3395 Extreme (36K)"
-          }
-        },
-        {
           "value": "focusprogen2",
           "label": {
             "ko": "Focus PRO Gen 2",
@@ -1796,6 +1579,13 @@
           "label": {
             "ko": "FOCUS X 26K",
             "en": "FOCUS X 26K"
+          }
+        },
+        {
+          "value": "gloriousBamf30",
+          "label": {
+            "ko": "Glorious BAMF 3.0 (2025)",
+            "en": "Glorious BAMF 3.0 (2025)"
           }
         },
         {
@@ -1834,10 +1624,24 @@
           }
         },
         {
+          "value": "hero2_48k",
+          "label": {
+            "ko": "HERO 2 (48K)",
+            "en": "HERO 2 (48K)"
+          }
+        },
+        {
           "value": "hero8k",
           "label": {
             "ko": "HERO 8K",
             "en": "HERO 8K"
+          }
+        },
+        {
+          "value": "hyperxPerformance42k",
+          "label": {
+            "ko": "HyperX Performance (42K)",
+            "en": "HyperX Performance (42K)"
           }
         },
         {
@@ -1974,6 +1778,13 @@
           }
         },
         {
+          "value": "paw3395Extreme36k",
+          "label": {
+            "ko": "PAW3395 Extreme (36K)",
+            "en": "PAW3395 Extreme (36K)"
+          }
+        },
+        {
           "value": "paw3395se",
           "label": {
             "ko": "PAW3395 SE",
@@ -2006,6 +1817,13 @@
           "label": {
             "ko": "PAW3950 (42K)",
             "en": "PAW3950 (42K)"
+          }
+        },
+        {
+          "value": "paw3950U1F95A",
+          "label": {
+            "ko": "PAW3950 U+1F95A",
+            "en": "PAW3950 U+1F95A"
           }
         },
         {
@@ -2072,13 +1890,6 @@
           }
         },
         {
-          "value": "pmw3360",
-          "label": {
-            "ko": "PMW3360",
-            "en": "PMW3360"
-          }
-        },
-        {
           "value": "paw3950ultra",
           "label": {
             "ko": "PAW3950 Ultra (42K)",
@@ -2107,31 +1918,220 @@
           }
         },
         {
-          "value": "PixArt PAW3392",
+          "value": "paw3955evo",
           "label": {
-            "ko": "PixArt PAW3392",
-            "en": "PixArt PAW3392"
+            "ko": "PAW3955 EVO",
+            "en": "PAW3955 EVO"
           }
         },
         {
-          "value": "PixArt 3065",
+          "value": "paw3955gt",
           "label": {
-            "ko": "PixArt 3065",
-            "en": "PixArt 3065"
+            "ko": "PAW3955 GT",
+            "en": "PAW3955 GT"
           }
         },
         {
-          "value": "ROCCAT Pro-Aim R3",
+          "value": "paw3955hs",
           "label": {
-            "ko": "ROCCAT Pro-Aim R3",
-            "en": "ROCCAT Pro-Aim R3"
+            "ko": "PAW3955 HS",
+            "en": "PAW3955 HS"
           }
         },
         {
-          "value": "PAW NEXT I",
+          "value": "paw3955master",
+          "label": {
+            "ko": "PAW3955 Master",
+            "en": "PAW3955 Master"
+          }
+        },
+        {
+          "value": "paw3955max52k",
+          "label": {
+            "ko": "PAW3955MAX (52K device configuration)",
+            "en": "PAW3955MAX (52K device configuration)"
+          }
+        },
+        {
+          "value": "paw3955max60k",
+          "label": {
+            "ko": "PAW3955MAX (60K device configuration)",
+            "en": "PAW3955MAX (60K device configuration)"
+          }
+        },
+        {
+          "value": "paw3955plus",
+          "label": {
+            "ko": "PAW3955+",
+            "en": "PAW3955+"
+          }
+        },
+        {
+          "value": "paw3955prime",
+          "label": {
+            "ko": "PAW3955 PRIME",
+            "en": "PAW3955 PRIME"
+          }
+        },
+        {
+          "value": "paw3955ti",
+          "label": {
+            "ko": "PAW3955 Ti",
+            "en": "PAW3955 Ti"
+          }
+        },
+        {
+          "value": "paw3955turbo",
+          "label": {
+            "ko": "PAW3955 Turbo",
+            "en": "PAW3955 Turbo"
+          }
+        },
+        {
+          "value": "paw3955ultimate",
+          "label": {
+            "ko": "PAW3955 Ultimate",
+            "en": "PAW3955 Ultimate"
+          }
+        },
+        {
+          "value": "paw3955xm",
+          "label": {
+            "ko": "PAW3955XM",
+            "en": "PAW3955XM"
+          }
+        },
+        {
+          "value": "pawnexti",
           "label": {
             "ko": "PAW NEXT I",
             "en": "PAW NEXT I"
+          }
+        },
+        {
+          "value": "pixart3327",
+          "label": {
+            "ko": "PixArt 3327",
+            "en": "PixArt 3327"
+          }
+        },
+        {
+          "value": "pmw3320",
+          "label": {
+            "ko": "am010",
+            "en": "PMW3320"
+          }
+        },
+        {
+          "value": "pmw3359",
+          "label": {
+            "ko": "PMW3359",
+            "en": "PMW3359"
+          }
+        },
+        {
+          "value": "pmw3360",
+          "label": {
+            "ko": "PMW3360",
+            "en": "PMW3360"
+          }
+        },
+        {
+          "value": "pmw3366",
+          "label": {
+            "ko": "PMW3366",
+            "en": "PMW3366"
+          }
+        },
+        {
+          "value": "pmw3399",
+          "label": {
+            "ko": "PMW3399",
+            "en": "PMW3399"
+          }
+        },
+        {
+          "value": "razer5g",
+          "label": {
+            "ko": "Razer 5G",
+            "en": "Razer 5G"
+          }
+        },
+        {
+          "value": "spcp180a",
+          "label": {
+            "ko": "SPCP180A",
+            "en": "SPCP180A"
+          }
+        },
+        {
+          "value": "truemove26k",
+          "label": {
+            "ko": "TrueMove 26K",
+            "en": "TrueMove 26K"
+          }
+        },
+        {
+          "value": "truemove30kpro",
+          "label": {
+            "ko": "TrueMove 30K Pro",
+            "en": "TrueMove 30K Pro"
+          }
+        },
+        {
+          "value": "truemoveair",
+          "label": {
+            "ko": "TrueMove AIR",
+            "en": "TrueMove AIR"
+          }
+        },
+        {
+          "value": "truemovecore",
+          "label": {
+            "ko": "TrueMove Core",
+            "en": "TrueMove Core"
+          }
+        },
+        {
+          "value": "truemovepro",
+          "label": {
+            "ko": "TrueMove PRO",
+            "en": "TrueMove PRO"
+          }
+        },
+        {
+          "value": "truemovepro+",
+          "label": {
+            "ko": "TrueMove PRO+",
+            "en": "TrueMove PRO+"
+          }
+        },
+        {
+          "value": "vaxeecore1",
+          "label": {
+            "ko": "VAXEE Core1",
+            "en": "VAXEE Core1"
+          }
+        },
+        {
+          "value": "xero",
+          "label": {
+            "ko": "XERO",
+            "en": "XERO"
+          }
+        },
+        {
+          "value": "xheroai",
+          "label": {
+            "ko": "Xhero AI",
+            "en": "Xhero AI"
+          }
+        },
+        {
+          "value": "xs1",
+          "label": {
+            "ko": "XS-1",
+            "en": "XS-1"
           }
         }
       ]
@@ -2148,17 +2148,269 @@
       "multiple": false,
       "options": [
         {
-          "value": "kailhGm80",
+          "value": "01f",
           "label": {
-            "ko": "카일 GM 8.0",
-            "en": "Kailh GM 8.0"
+            "ko": "옴론 재팬 01F",
+            "en": "Omron Japan 01F"
           }
         },
         {
-          "value": "raesha",
+          "value": "20m",
           "label": {
-            "ko": "RAESHA 광축(오렌지)",
-            "en": "RAESHA Optical (Orange)"
+            "ko": "후아노 20M",
+            "en": "Huano 20M"
+          }
+        },
+        {
+          "value": "2pin Silent switch",
+          "label": {
+            "ko": "2핀 저소음",
+            "en": "2pin Silent switch"
+          }
+        },
+        {
+          "value": "50m",
+          "label": {
+            "ko": "옴론 차이나 50M",
+            "en": "Omron China 50M"
+          }
+        },
+        {
+          "value": "50mD2fcFK",
+          "label": {
+            "ko": "옴론 차이나 D2FC-F-K(50M)",
+            "en": "Omron China D2FC-F-K (50M)"
+          }
+        },
+        {
+          "value": "60m",
+          "label": {
+            "ko": "옴론 차이나 D2FC-F-K(60M)",
+            "en": "Omron China D2FC-F-K (60M)"
+          }
+        },
+        {
+          "value": "80m",
+          "label": {
+            "ko": "카일 80m",
+            "en": "Kailh 80M"
+          }
+        },
+        {
+          "value": "Huano 120M",
+          "label": {
+            "ko": "Huano 120M",
+            "en": "Huano 120M"
+          }
+        },
+        {
+          "value": "Huano 3M",
+          "label": {
+            "ko": "Huano 3M",
+            "en": "Huano 3M"
+          }
+        },
+        {
+          "value": "Huano 80M",
+          "label": {
+            "ko": "Huano 80M",
+            "en": "Huano 80M"
+          }
+        },
+        {
+          "value": "Incott x Huano Purple",
+          "label": {
+            "ko": "Incott x Huano Purple",
+            "en": "Incott x Huano Purple"
+          }
+        },
+        {
+          "value": "Keychron MagOptic",
+          "label": {
+            "ko": "Keychron MagOptic",
+            "en": "Keychron MagOptic"
+          }
+        },
+        {
+          "value": "TTC Green Dragon Dustproof",
+          "label": {
+            "ko": "TTC Green Dragon Dustproof",
+            "en": "TTC Green Dragon Dustproof"
+          }
+        },
+        {
+          "value": "Turtle Beach Titan Optical",
+          "label": {
+            "ko": "Turtle Beach Titan Optical",
+            "en": "Turtle Beach Titan Optical"
+          }
+        },
+        {
+          "value": "asus70m",
+          "label": {
+            "ko": "ASUS 70M",
+            "en": "ASUS 70M"
+          }
+        },
+        {
+          "value": "asusRog2",
+          "label": {
+            "ko": "ROG Micro Switch II(100M)",
+            "en": "ROG Micro Switch II (100M)"
+          }
+        },
+        {
+          "value": "atkCustomOptical",
+          "label": {
+            "ko": "ATK Custom Optical",
+            "en": "ATK Custom Optical"
+          }
+        },
+        {
+          "value": "atkLightBlade",
+          "label": {
+            "ko": "ATK Light Blade",
+            "en": "ATK Light Blade"
+          }
+        },
+        {
+          "value": "atkSwiftlight",
+          "label": {
+            "ko": "ATK Swiftlight (150M)",
+            "en": "ATK Swiftlight (150M)"
+          }
+        },
+        {
+          "value": "attacksharkTmr",
+          "label": {
+            "ko": "ATTACK SHARK TMR Magnetic",
+            "en": "ATTACK SHARK TMR Magnetic"
+          }
+        },
+        {
+          "value": "aulaSshsElectromagnetic",
+          "label": {
+            "ko": "AULA SSHS Electromagnetic",
+            "en": "AULA SSHS Electromagnetic"
+          }
+        },
+        {
+          "value": "blueOpticalSwitch",
+          "label": {
+            "ko": "BLUE OPTICAL SWITCH",
+            "en": "Blue Optical Switch"
+          }
+        },
+        {
+          "value": "d2fcF7n10m",
+          "label": {
+            "ko": "옴론 차이나 D2FC-F-7N(10M)",
+            "en": "Omron China D2FC-F-7N (10M)"
+          }
+        },
+        {
+          "value": "d2fcF7n60m",
+          "label": {
+            "ko": "옴론 차이나 D2FC-F-7N(60M)",
+            "en": "Omron China D2FC-F-7N (60M)"
+          }
+        },
+        {
+          "value": "d2fp",
+          "label": {
+            "ko": "옴론 광축(D2FP)",
+            "en": "Omron Optical (D2FP)"
+          }
+        },
+        {
+          "value": "dragonClaw80m",
+          "label": {
+            "ko": "DRAGON CLAW - 80M",
+            "en": "Dragon Claw 80M"
+          }
+        },
+        {
+          "value": "feOptical",
+          "label": {
+            "ko": "FE 광축",
+            "en": "FE Optical"
+          }
+        },
+        {
+          "value": "gWolvesTmrMagnetic",
+          "label": {
+            "ko": "G-Wolves TMR Magnetic",
+            "en": "G-Wolves TMR Magnetic"
+          }
+        },
+        {
+          "value": "genericOptical",
+          "label": {
+            "ko": "광축",
+            "en": "Optical"
+          }
+        },
+        {
+          "value": "huano Silent",
+          "label": {
+            "ko": "후아노 저소음",
+            "en": "huano Silent"
+          }
+        },
+        {
+          "value": "huanoBlue",
+          "label": {
+            "ko": "후아노 청축",
+            "en": "Huano Blue"
+          }
+        },
+        {
+          "value": "huanoBlueShellPinkDot",
+          "label": {
+            "ko": "후아노 블루쉘 핑크닷",
+            "en": "Huano Blue Shell Pink Dot"
+          }
+        },
+        {
+          "value": "huanoBlueShellWhiteDotV2",
+          "label": {
+            "ko": "Huano Blue Shell White Dot V2",
+            "en": "Huano Blue Shell White Dot V2"
+          }
+        },
+        {
+          "value": "huanoIceBerryPinkDot",
+          "label": {
+            "ko": "후아노 아이스베리 핑크닷",
+            "en": "Huano Ice Berry Pink Dot"
+          }
+        },
+        {
+          "value": "huanoMechanical100m",
+          "label": {
+            "ko": "Huano Mechanical (100M)",
+            "en": "Huano Mechanical (100M)"
+          }
+        },
+        {
+          "value": "huanoPink",
+          "label": {
+            "ko": "후아노 핑크",
+            "en": "Huano Pink"
+          }
+        },
+        {
+          "value": "huanoTransparentBlueShellPinkDot",
+          "label": {
+            "ko": "후아노 투명 블루쉘 핑크닷",
+            "en": "Huano Transparent Blue Shell Pink Dot"
+          }
+        },
+        {
+          "value": "huanoTransparentBlueShellYellowDot Silent switch",
+          "label": {
+            "ko": "후아노투명블루쉘 옐로닷  저소음",
+            "en": "huanoTransparentBlueShellYellowDot Silent switch"
           }
         },
         {
@@ -2169,10 +2421,87 @@
           }
         },
         {
-          "value": "switch37775b1b96",
+          "value": "huanoTransparentShellPinkDot",
           "label": {
-            "ko": "LK 옐로우닷",
-            "en": "LK Yellow Dot"
+            "ko": "후아노 투명쉘 핑크닷",
+            "en": "Huano Transparent Shell Pink Dot"
+          }
+        },
+        {
+          "value": "huanoTransparentShellWhiteDot",
+          "label": {
+            "ko": "후아노 투명쉘 화이트닷",
+            "en": "Huano Transparent Shell White Dot"
+          }
+        },
+        {
+          "value": "hyperxCustom100m",
+          "label": {
+            "ko": "HyperX Custom Switch 100M",
+            "en": "HyperX Custom Switch 100M"
+          }
+        },
+        {
+          "value": "hyperxOptical",
+          "label": {
+            "ko": "HyperX Optical",
+            "en": "HyperX Optical"
+          }
+        },
+        {
+          "value": "incottHuanoPurple",
+          "label": {
+            "ko": "Incott x Huano Purple",
+            "en": "Incott x Huano Purple"
+          }
+        },
+        {
+          "value": "kailhGm80",
+          "label": {
+            "ko": "카일 GM 8.0",
+            "en": "Kailh GM 8.0"
+          }
+        },
+        {
+          "value": "kailhGoOptical",
+          "label": {
+            "ko": "카일 GO 광축",
+            "en": "Kailh GO Optical"
+          }
+        },
+        {
+          "value": "kailhGx",
+          "label": {
+            "ko": "카일 GX",
+            "en": "Kailh GX"
+          }
+        },
+        {
+          "value": "kailhOptical",
+          "label": {
+            "ko": "카일 광축",
+            "en": "Kailh Optical"
+          }
+        },
+        {
+          "value": "kailhSilent5m",
+          "label": {
+            "ko": "Kailh Silent 5M",
+            "en": "Kailh Silent 5M"
+          }
+        },
+        {
+          "value": "kailhWhiteBlade",
+          "label": {
+            "ko": "Kailh White Blade",
+            "en": "Kailh White Blade"
+          }
+        },
+        {
+          "value": "logitechLightforceOmronOptical",
+          "label": {
+            "ko": "Logitech LIGHTFORCE(옴론 광축)",
+            "en": "Logitech LIGHTFORCE (Omron Optical)"
           }
         },
         {
@@ -2197,10 +2526,136 @@
           }
         },
         {
+          "value": "omron100m",
+          "label": {
+            "ko": "Omron 100M (part number unspecified)",
+            "en": "Omron 100M (part number unspecified)"
+          }
+        },
+        {
+          "value": "omronChina20m",
+          "label": {
+            "ko": "옴론 차이나 20M",
+            "en": "Omron China 20M"
+          }
+        },
+        {
+          "value": "omronChinaG120m",
+          "label": {
+            "ko": "옴론 차이나 D2FC-F-7N(G1) 20M",
+            "en": "Omron China D2FC-F-7N (G1) 20M"
+          }
+        },
+        {
+          "value": "omronD2fcF7n100m",
+          "label": {
+            "ko": "옴론 차이나 D2FC-F-7N(100M)",
+            "en": "Omron China D2FC-F-7N (100M)"
+          }
+        },
+        {
+          "value": "omronD2fcF7n20m",
+          "label": {
+            "ko": "옴론 차이나 D2FC-F-7N(20M)",
+            "en": "Omron China D2FC-F-7N (20M)"
+          }
+        },
+        {
+          "value": "omronD2ls21",
+          "label": {
+            "ko": "Omron D2LS-21 (20M)",
+            "en": "Omron D2LS-21 (20M)"
+          }
+        },
+        {
+          "value": "omronMechanical",
+          "label": {
+            "ko": "Omron Mechanical",
+            "en": "Omron Mechanical"
+          }
+        },
+        {
+          "value": "omronMechanical100m",
+          "label": {
+            "ko": "Omron Mechanical 100M (part unspecified)",
+            "en": "Omron Mechanical 100M (part unspecified)"
+          }
+        },
+        {
+          "value": "omronOptical",
+          "label": {
+            "ko": "옴론 광축",
+            "en": "Omron Optical"
+          }
+        },
+        {
+          "value": "omronOpticalD2fpFn2",
+          "label": {
+            "ko": "옴론 광축(D2FP-FN2)",
+            "en": "Omron Optical (D2FP-FN2)"
+          }
+        },
+        {
+          "value": "pulsarOptical",
+          "label": {
+            "ko": "펄사 광축",
+            "en": "Pulsar Optical"
+          }
+        },
+        {
+          "value": "raesha",
+          "label": {
+            "ko": "RAESHA 광축(오렌지)",
+            "en": "RAESHA Optical (Orange)"
+          }
+        },
+        {
+          "value": "raeshaOpticalUnspecified",
+          "label": {
+            "ko": "RAESHA Optical (90M, subtype unspecified)",
+            "en": "RAESHA Optical (90M, subtype unspecified)"
+          }
+        },
+        {
+          "value": "rapooOptical",
+          "label": {
+            "ko": "라푸 광축",
+            "en": "Rapoo Optical"
+          }
+        },
+        {
+          "value": "rawmHyperClickOpticalMagnetic",
+          "label": {
+            "ko": "RAWM Hyper Click Optical & Magnetic",
+            "en": "RAWM Hyper Click Optical & Magnetic"
+          }
+        },
+        {
           "value": "razer4",
           "label": {
             "ko": "RAZER 옵티컬 4세대",
             "en": "Razer Optical Gen-4"
+          }
+        },
+        {
+          "value": "razerOpticalGen2",
+          "label": {
+            "ko": "RAZER 옵티컬 2세대(RAESHA)",
+            "en": "Razer Optical Gen-2 (RAESHA)"
+          }
+        },
+        {
+          "value": "razerOpticalGen3",
+          "label": {
+            "ko": "Razer Optical Gen-3 (OEM unspecified)",
+            "en": "Razer Optical Gen-3 (OEM unspecified)"
+          }
+        },
+        {
+          "value": "razerOpticalGen3Raesha",
+          "label": {
+            "ko": "RAZER 옵티컬 3세대(RAESHA)",
+            "en": "Razer Optical Gen-3 (RAESHA)"
           }
         },
         {
@@ -2211,10 +2666,164 @@
           }
         },
         {
+          "value": "spdt",
+          "label": {
+            "ko": "후아노 SPDT",
+            "en": "Huano SPDT"
+          }
+        },
+        {
+          "value": "steelseriesMechanical80m",
+          "label": {
+            "ko": "SteelSeries Mechanical 80M",
+            "en": "SteelSeries Mechanical 80M"
+          }
+        },
+        {
+          "value": "steelseriesOptical100m",
+          "label": {
+            "ko": "SteelSeries Optical (100M)",
+            "en": "SteelSeries Optical (100M)"
+          }
+        },
+        {
+          "value": "switch0d3209a9a9",
+          "label": {
+            "ko": "후아노 투명블루쉘 레드닷",
+            "en": "Huano Transparent Blue Shell Red Dot"
+          }
+        },
+        {
+          "value": "switch0f73ef7a6f",
+          "label": {
+            "ko": "RAZER 기계식 50M",
+            "en": "Razer Mechanical 50M"
+          }
+        },
+        {
+          "value": "switch1009a2485e",
+          "label": {
+            "ko": "카일,옴론 광축",
+            "en": "Kailh/Omron Optical"
+          }
+        },
+        {
+          "value": "switch37775b1b96",
+          "label": {
+            "ko": "LK 옐로우닷",
+            "en": "LK Yellow Dot"
+          }
+        },
+        {
+          "value": "switch46e1d996c2",
+          "label": {
+            "ko": "옴론 재팬",
+            "en": "Omron Japan"
+          }
+        },
+        {
+          "value": "switch676c4f2094",
+          "label": {
+            "ko": "후아노 투명 핑크쉘 핑크닷",
+            "en": "Huano Transparent Pink Shell Pink Dot"
+          }
+        },
+        {
+          "value": "switch694d901c7a",
+          "label": {
+            "ko": "레이샤 광축 3세대",
+            "en": "RAESHA Optical Gen-3"
+          }
+        },
+        {
+          "value": "switch99847bff93",
+          "label": {
+            "ko": "후아노 블루쉘 화이트닷",
+            "en": "Huano Blue Shell White Dot"
+          }
+        },
+        {
+          "value": "switchafb5f44f38",
+          "label": {
+            "ko": "후아노 블루쉘 레드닷",
+            "en": "Huano Blue Shell Red Dot"
+          }
+        },
+        {
+          "value": "switchc981c6d6fb",
+          "label": {
+            "ko": "후아노 투명옐로쉘 화이트닷",
+            "en": "Huano Transparent Yellow Shell White Dot"
+          }
+        },
+        {
+          "value": "switchd88ab33aa9",
+          "label": {
+            "ko": "RAZER 기계식 2세대(Kailh)",
+            "en": "Razer Mechanical Gen-2 (Kailh)"
+          }
+        },
+        {
+          "value": "switchf106449120",
+          "label": {
+            "ko": "자체 설계 광축",
+            "en": "Self-developed Optical"
+          }
+        },
+        {
+          "value": "switchfb35adeb18",
+          "label": {
+            "ko": "카일 레드쉘 레드닷",
+            "en": "Kailh Red Shell Red Dot"
+          }
+        },
+        {
+          "value": "swordGmX",
+          "label": {
+            "ko": "카일 Sword GM X",
+            "en": "Kailh Sword GM X"
+          }
+        },
+        {
+          "value": "ttc100m",
+          "label": {
+            "ko": "TTC 방진 골드 100M",
+            "en": "TTC Gold Dustproof 100M"
+          }
+        },
+        {
+          "value": "ttc30mGeneric",
+          "label": {
+            "ko": "TTC 30M (unspecified series)",
+            "en": "TTC 30M (unspecified series)"
+          }
+        },
+        {
           "value": "ttc60m",
           "label": {
             "ko": "TTC 골드 방진 60M",
             "en": "TTC Gold Dustproof 60M"
+          }
+        },
+        {
+          "value": "ttc80mGeneric",
+          "label": {
+            "ko": "TTC 80M (unspecified series)",
+            "en": "TTC 80M (unspecified series)"
+          }
+        },
+        {
+          "value": "ttcGold80m",
+          "label": {
+            "ko": "TTC 골드 방진 80M",
+            "en": "TTC Gold Dustproof 80M"
+          }
+        },
+        {
+          "value": "ttcOptical",
+          "label": {
+            "ko": "TTC 광축",
+            "en": "TTC Optical"
           }
         },
         {
@@ -2237,615 +2846,6 @@
             "ko": "Zippy DF3-P1L1 (60 M)",
             "en": "Zippy DF3-P1L1 (60M)"
           }
-        },
-        {
-          "value": "switch694d901c7a",
-          "label": {
-            "ko": "레이샤 광축 3세대",
-            "en": "RAESHA Optical Gen-3"
-          }
-        },
-        {
-          "value": "switchd88ab33aa9",
-          "label": {
-            "ko": "RAZER 기계식 2세대(Kailh)",
-            "en": "Razer Mechanical Gen-2 (Kailh)"
-          }
-        },
-        {
-          "value": "50mD2fcFK",
-          "label": {
-            "ko": "옴론 차이나 D2FC-F-K(50M)",
-            "en": "Omron China D2FC-F-K (50M)"
-          }
-        },
-        {
-          "value": "60m",
-          "label": {
-            "ko": "옴론 차이나 D2FC-F-K(60M)",
-            "en": "Omron China D2FC-F-K (60M)"
-          }
-        },
-        {
-          "value": "d2fcF7n10m",
-          "label": {
-            "ko": "옴론 차이나 D2FC-F-7N(10M)",
-            "en": "Omron China D2FC-F-7N (10M)"
-          }
-        },
-        {
-          "value": "d2fp",
-          "label": {
-            "ko": "옴론 광축(D2FP)",
-            "en": "Omron Optical (D2FP)"
-          }
-        },
-        {
-          "value": "switch46e1d996c2",
-          "label": {
-            "ko": "옴론 재팬",
-            "en": "Omron Japan"
-          }
-        },
-        {
-          "value": "01f",
-          "label": {
-            "ko": "옴론 재팬 01F",
-            "en": "Omron Japan 01F"
-          }
-        },
-        {
-          "value": "80m",
-          "label": {
-            "ko": "카일 80m",
-            "en": "Kailh 80M"
-          }
-        },
-        {
-          "value": "switch0f73ef7a6f",
-          "label": {
-            "ko": "RAZER 기계식 50M",
-            "en": "Razer Mechanical 50M"
-          }
-        },
-        {
-          "value": "switchfb35adeb18",
-          "label": {
-            "ko": "카일 레드쉘 레드닷",
-            "en": "Kailh Red Shell Red Dot"
-          }
-        },
-        {
-          "value": "Incott x Huano Purple",
-          "label": {
-            "ko": "Incott x Huano Purple",
-            "en": "Incott x Huano Purple"
-          }
-        },
-        {
-          "value": "switch1009a2485e",
-          "label": {
-            "ko": "카일,옴론 광축",
-            "en": "Kailh/Omron Optical"
-          }
-        },
-        {
-          "value": "20m",
-          "label": {
-            "ko": "후아노 20M",
-            "en": "Huano 20M"
-          }
-        },
-        {
-          "value": "spdt",
-          "label": {
-            "ko": "후아노 SPDT",
-            "en": "Huano SPDT"
-          }
-        },
-        {
-          "value": "switchafb5f44f38",
-          "label": {
-            "ko": "후아노 블루쉘 레드닷",
-            "en": "Huano Blue Shell Red Dot"
-          }
-        },
-        {
-          "value": "switch99847bff93",
-          "label": {
-            "ko": "후아노 블루쉘 화이트닷",
-            "en": "Huano Blue Shell White Dot"
-          }
-        },
-        {
-          "value": "omronOptical",
-          "label": {
-            "ko": "옴론 광축",
-            "en": "Omron Optical"
-          }
-        },
-        {
-          "value": "huanoTransparentBlueShellPinkDot",
-          "label": {
-            "ko": "후아노 투명 블루쉘 핑크닷",
-            "en": "Huano Transparent Blue Shell Pink Dot"
-          }
-        },
-        {
-          "value": "pulsarOptical",
-          "label": {
-            "ko": "펄사 광축",
-            "en": "Pulsar Optical"
-          }
-        },
-        {
-          "value": "omronD2fcF7n20m",
-          "label": {
-            "ko": "옴론 차이나 D2FC-F-7N(20M)",
-            "en": "Omron China D2FC-F-7N (20M)"
-          }
-        },
-        {
-          "value": "huanoPink",
-          "label": {
-            "ko": "후아노 핑크",
-            "en": "Huano Pink"
-          }
-        },
-        {
-          "value": "razerOpticalGen2",
-          "label": {
-            "ko": "RAZER 옵티컬 2세대(RAESHA)",
-            "en": "Razer Optical Gen-2 (RAESHA)"
-          }
-        },
-        {
-          "value": "razerOpticalGen3Raesha",
-          "label": {
-            "ko": "RAZER 옵티컬 3세대(RAESHA)",
-            "en": "Razer Optical Gen-3 (RAESHA)"
-          }
-        },
-        {
-          "value": "omronChina20m",
-          "label": {
-            "ko": "옴론 차이나 20M",
-            "en": "Omron China 20M"
-          }
-        },
-        {
-          "value": "asus70m",
-          "label": {
-            "ko": "ASUS 70M",
-            "en": "ASUS 70M"
-          }
-        },
-        {
-          "value": "omronChinaG120m",
-          "label": {
-            "ko": "옴론 차이나 D2FC-F-7N(G1) 20M",
-            "en": "Omron China D2FC-F-7N (G1) 20M"
-          }
-        },
-        {
-          "value": "kailhGx",
-          "label": {
-            "ko": "카일 GX",
-            "en": "Kailh GX"
-          }
-        },
-        {
-          "value": "huanoBlue",
-          "label": {
-            "ko": "후아노 청축",
-            "en": "Huano Blue"
-          }
-        },
-        {
-          "value": "feOptical",
-          "label": {
-            "ko": "FE 광축",
-            "en": "FE Optical"
-          }
-        },
-        {
-          "value": "logitechLightforceOmronOptical",
-          "label": {
-            "ko": "Logitech LIGHTFORCE(옴론 광축)",
-            "en": "Logitech LIGHTFORCE (Omron Optical)"
-          }
-        },
-        {
-          "value": "genericOptical",
-          "label": {
-            "ko": "광축",
-            "en": "Optical"
-          }
-        },
-        {
-          "value": "kailhOptical",
-          "label": {
-            "ko": "카일 광축",
-            "en": "Kailh Optical"
-          }
-        },
-        {
-          "value": "huanoTransparentShellWhiteDot",
-          "label": {
-            "ko": "후아노 투명쉘 화이트닷",
-            "en": "Huano Transparent Shell White Dot"
-          }
-        },
-        {
-          "value": "ttcOptical",
-          "label": {
-            "ko": "TTC 광축",
-            "en": "TTC Optical"
-          }
-        },
-        {
-          "value": "omronD2fcF7n100m",
-          "label": {
-            "ko": "옴론 차이나 D2FC-F-7N(100M)",
-            "en": "Omron China D2FC-F-7N (100M)"
-          }
-        },
-        {
-          "value": "omronOpticalD2fpFn2",
-          "label": {
-            "ko": "옴론 광축(D2FP-FN2)",
-            "en": "Omron Optical (D2FP-FN2)"
-          }
-        },
-        {
-          "value": "huanoTransparentShellPinkDot",
-          "label": {
-            "ko": "후아노 투명쉘 핑크닷",
-            "en": "Huano Transparent Shell Pink Dot"
-          }
-        },
-        {
-          "value": "atkLightBlade",
-          "label": {
-            "ko": "ATK Light Blade",
-            "en": "ATK Light Blade"
-          }
-        },
-        {
-          "value": "incottHuanoPurple",
-          "label": {
-            "ko": "Incott x Huano Purple",
-            "en": "Incott x Huano Purple"
-          }
-        },
-        {
-          "value": "ttcGold80m",
-          "label": {
-            "ko": "TTC 골드 방진 80M",
-            "en": "TTC Gold Dustproof 80M"
-          }
-        },
-        {
-          "value": "ttc100m",
-          "label": {
-            "ko": "TTC 방진 골드 100M",
-            "en": "TTC Gold Dustproof 100M"
-          }
-        },
-        {
-          "value": "rapooOptical",
-          "label": {
-            "ko": "라푸 광축",
-            "en": "Rapoo Optical"
-          }
-        },
-        {
-          "value": "50m",
-          "label": {
-            "ko": "옴론 차이나 50M",
-            "en": "Omron China 50M"
-          }
-        },
-        {
-          "value": "switchf106449120",
-          "label": {
-            "ko": "자체 설계 광축",
-            "en": "Self-developed Optical"
-          }
-        },
-        {
-          "value": "kailhGoOptical",
-          "label": {
-            "ko": "카일 GO 광축",
-            "en": "Kailh GO Optical"
-          }
-        },
-        {
-          "value": "swordGmX",
-          "label": {
-            "ko": "카일 Sword GM X",
-            "en": "Kailh Sword GM X"
-          }
-        },
-        {
-          "value": "huanoBlueShellPinkDot",
-          "label": {
-            "ko": "후아노 블루쉘 핑크닷",
-            "en": "Huano Blue Shell Pink Dot"
-          }
-        },
-        {
-          "value": "huanoIceBerryPinkDot",
-          "label": {
-            "ko": "후아노 아이스베리 핑크닷",
-            "en": "Huano Ice Berry Pink Dot"
-          }
-        },
-        {
-          "value": "switch676c4f2094",
-          "label": {
-            "ko": "후아노 투명 핑크쉘 핑크닷",
-            "en": "Huano Transparent Pink Shell Pink Dot"
-          }
-        },
-        {
-          "value": "switch0d3209a9a9",
-          "label": {
-            "ko": "후아노 투명블루쉘 레드닷",
-            "en": "Huano Transparent Blue Shell Red Dot"
-          }
-        },
-        {
-          "value": "switchc981c6d6fb",
-          "label": {
-            "ko": "후아노 투명옐로쉘 화이트닷",
-            "en": "Huano Transparent Yellow Shell White Dot"
-          }
-        },
-        {
-          "value": "asusRog2",
-          "label": {
-            "ko": "ROG Micro Switch II(100M)",
-            "en": "ROG Micro Switch II (100M)"
-          }
-        },
-        {
-          "value": "blueOpticalSwitch",
-          "label": {
-            "ko": "BLUE OPTICAL SWITCH",
-            "en": "Blue Optical Switch"
-          }
-        },
-        {
-          "value": "d2fcF7n60m",
-          "label": {
-            "ko": "옴론 차이나 D2FC-F-7N(60M)",
-            "en": "Omron China D2FC-F-7N (60M)"
-          }
-        },
-        {
-          "value": "dragonClaw80m",
-          "label": {
-            "ko": "DRAGON CLAW - 80M",
-            "en": "Dragon Claw 80M"
-          }
-        },
-        {
-          "value": "huanoTransparentBlueShellYellowDot Silent switch",
-          "label": {
-            "ko": "후아노투명블루쉘 옐로닷  저소음",
-            "en": "huanoTransparentBlueShellYellowDot Silent switch"
-          }
-        },
-        {
-          "value": "2pin Silent switch",
-          "label": {
-            "ko": "2핀 저소음",
-            "en": "2pin Silent switch"
-          }
-        },
-        {
-          "value": "huano Silent",
-          "label": {
-            "ko": "후아노 저소음",
-            "en": "huano Silent"
-          }
-        },
-        {
-          "value": "atkCustomOptical",
-          "label": {
-            "ko": "ATK Custom Optical",
-            "en": "ATK Custom Optical"
-          }
-        },
-        {
-          "value": "hyperxOptical",
-          "label": {
-            "ko": "HyperX Optical",
-            "en": "HyperX Optical"
-          }
-        },
-        {
-          "value": "huanoMechanical100m",
-          "label": {
-            "ko": "Huano Mechanical (100M)",
-            "en": "Huano Mechanical (100M)"
-          }
-        },
-        {
-          "value": "huanoBlueShellWhiteDotV2",
-          "label": {
-            "ko": "Huano Blue Shell White Dot V2",
-            "en": "Huano Blue Shell White Dot V2"
-          }
-        },
-        {
-          "value": "omronMechanical100m",
-          "label": {
-            "ko": "Omron Mechanical 100M (part unspecified)",
-            "en": "Omron Mechanical 100M (part unspecified)"
-          }
-        },
-        {
-          "value": "omronMechanical",
-          "label": {
-            "ko": "Omron Mechanical",
-            "en": "Omron Mechanical"
-          }
-        },
-        {
-          "value": "atkSwiftlight",
-          "label": {
-            "ko": "ATK Swiftlight (150M)",
-            "en": "ATK Swiftlight (150M)"
-          }
-        },
-        {
-          "value": "steelseriesMechanical80m",
-          "label": {
-            "ko": "SteelSeries Mechanical 80M",
-            "en": "SteelSeries Mechanical 80M"
-          }
-        },
-        {
-          "value": "raeshaOpticalUnspecified",
-          "label": {
-            "ko": "RAESHA Optical (90M, subtype unspecified)",
-            "en": "RAESHA Optical (90M, subtype unspecified)"
-          }
-        },
-        {
-          "value": "kailhWhiteBlade",
-          "label": {
-            "ko": "Kailh White Blade",
-            "en": "Kailh White Blade"
-          }
-        },
-        {
-          "value": "gWolvesTmrMagnetic",
-          "label": {
-            "ko": "G-Wolves TMR Magnetic",
-            "en": "G-Wolves TMR Magnetic"
-          }
-        },
-        {
-          "value": "omronD2ls21",
-          "label": {
-            "ko": "Omron D2LS-21 (20M)",
-            "en": "Omron D2LS-21 (20M)"
-          }
-        },
-        {
-          "value": "aulaSshsElectromagnetic",
-          "label": {
-            "ko": "AULA SSHS Electromagnetic",
-            "en": "AULA SSHS Electromagnetic"
-          }
-        },
-        {
-          "value": "kailhSilent5m",
-          "label": {
-            "ko": "Kailh Silent 5M",
-            "en": "Kailh Silent 5M"
-          }
-        },
-        {
-          "value": "omron100m",
-          "label": {
-            "ko": "Omron 100M (part number unspecified)",
-            "en": "Omron 100M (part number unspecified)"
-          }
-        },
-        {
-          "value": "attacksharkTmr",
-          "label": {
-            "ko": "ATTACK SHARK TMR Magnetic",
-            "en": "ATTACK SHARK TMR Magnetic"
-          }
-        },
-        {
-          "value": "ttc80mGeneric",
-          "label": {
-            "ko": "TTC 80M (unspecified series)",
-            "en": "TTC 80M (unspecified series)"
-          }
-        },
-        {
-          "value": "ttc30mGeneric",
-          "label": {
-            "ko": "TTC 30M (unspecified series)",
-            "en": "TTC 30M (unspecified series)"
-          }
-        },
-        {
-          "value": "razerOpticalGen3",
-          "label": {
-            "ko": "Razer Optical Gen-3 (OEM unspecified)",
-            "en": "Razer Optical Gen-3 (OEM unspecified)"
-          }
-        },
-        {
-          "value": "hyperxCustom100m",
-          "label": {
-            "ko": "HyperX Custom Switch 100M",
-            "en": "HyperX Custom Switch 100M"
-          }
-        },
-        {
-          "value": "Huano 80M",
-          "label": {
-            "ko": "Huano 80M",
-            "en": "Huano 80M"
-          }
-        },
-        {
-          "value": "Huano 3M",
-          "label": {
-            "ko": "Huano 3M",
-            "en": "Huano 3M"
-          }
-        },
-        {
-          "value": "TTC Green Dragon Dustproof",
-          "label": {
-            "ko": "TTC Green Dragon Dustproof",
-            "en": "TTC Green Dragon Dustproof"
-          }
-        },
-        {
-          "value": "Keychron MagOptic",
-          "label": {
-            "ko": "Keychron MagOptic",
-            "en": "Keychron MagOptic"
-          }
-        },
-        {
-          "value": "Huano 120M",
-          "label": {
-            "ko": "Huano 120M",
-            "en": "Huano 120M"
-          }
-        },
-        {
-          "value": "Turtle Beach Titan Optical",
-          "label": {
-            "ko": "Turtle Beach Titan Optical",
-            "en": "Turtle Beach Titan Optical"
-          }
-        },
-        {
-          "value": "rawmHyperClickOpticalMagnetic",
-          "label": {
-            "ko": "RAWM Hyper Click Optical & Magnetic",
-            "en": "RAWM Hyper Click Optical & Magnetic"
-          }
-        },
-        {
-          "value": "steelseriesOptical100m",
-          "label": {
-            "ko": "SteelSeries Optical (100M)",
-            "en": "SteelSeries Optical (100M)"
-          }
         }
       ]
     },
@@ -2860,6 +2860,230 @@
       "unit": null,
       "multiple": false,
       "options": [
+        {
+          "value": "CF White 2-pin",
+          "label": {
+            "ko": "CF White 2-pin",
+            "en": "CF White 2-pin"
+          }
+        },
+        {
+          "value": "chanfenBeige",
+          "label": {
+            "ko": "ChanFen 베이지",
+            "en": "chanfenBeige"
+          }
+        },
+        {
+          "value": "chanfenBlack",
+          "label": {
+            "ko": "ChanFen 흑축",
+            "en": "chanfenBlack"
+          }
+        },
+        {
+          "value": "chanfenMicroSwitch",
+          "label": {
+            "ko": "ChanFen 마이크로 스위치",
+            "en": "chanfenMicroSwitch"
+          }
+        },
+        {
+          "value": "chanfenRed",
+          "label": {
+            "ko": "ChanFen 적축",
+            "en": "chanfenRed"
+          }
+        },
+        {
+          "value": "chanfenWhite",
+          "label": {
+            "ko": "ChanFen 백축",
+            "en": "chanfenWhite"
+          }
+        },
+        {
+          "value": "chanfenWhiteColor",
+          "label": {
+            "ko": "ChanFen 화이트",
+            "en": "chanfenWhiteColor"
+          }
+        },
+        {
+          "value": "himakeWhiteDot",
+          "label": {
+            "ko": "HIMAKE 화이트닷",
+            "en": "himakeWhiteDot"
+          }
+        },
+        {
+          "value": "huano",
+          "label": {
+            "ko": "후아노",
+            "en": "huano"
+          }
+        },
+        {
+          "value": "huano Silent",
+          "label": {
+            "ko": "후아노 저소음",
+            "en": "huano Silent"
+          }
+        },
+        {
+          "value": "huanoBlackShellWhiteDot",
+          "label": {
+            "ko": "후아노 블랙쉘 화이트닷",
+            "en": "huanoBlackShellWhiteDot"
+          }
+        },
+        {
+          "value": "huanoBlueShellPinkDot",
+          "label": {
+            "ko": "후아노 블루쉘 핑크닷",
+            "en": "huanoBlueShellPinkDot"
+          }
+        },
+        {
+          "value": "huanoGreen",
+          "label": {
+            "ko": "후아노 녹축",
+            "en": "huanoGreen"
+          }
+        },
+        {
+          "value": "huanoMicroPinkDot",
+          "label": {
+            "ko": "후아노 마이크로 핑크닷",
+            "en": "huanoMicroPinkDot"
+          }
+        },
+        {
+          "value": "huanoMicroSwitch",
+          "label": {
+            "ko": "후아노 마이크로 스위치",
+            "en": "huanoMicroSwitch"
+          }
+        },
+        {
+          "value": "huanoMicroWhite",
+          "label": {
+            "ko": "후아노 마이크로 백축",
+            "en": "huanoMicroWhite"
+          }
+        },
+        {
+          "value": "huanoMicroWhiteDot",
+          "label": {
+            "ko": "후아노 마이크로 화이트 닷",
+            "en": "huanoMicroWhiteDot"
+          }
+        },
+        {
+          "value": "huanoMiniBlackShellYellowDot",
+          "label": {
+            "ko": "Huano Mini Black Shell Yellow Dot",
+            "en": "Huano Mini Black Shell Yellow Dot"
+          }
+        },
+        {
+          "value": "huanoRed",
+          "label": {
+            "ko": "후아노 적축",
+            "en": "huanoRed"
+          }
+        },
+        {
+          "value": "huanoWhite",
+          "label": {
+            "ko": "후아노 백축",
+            "en": "huanoWhite"
+          }
+        },
+        {
+          "value": "huanoWhiteDot",
+          "label": {
+            "ko": "후아노 화이트닷",
+            "en": "huanoWhiteDot"
+          }
+        },
+        {
+          "value": "huanoWhitePlungerUnspecified",
+          "label": {
+            "ko": "Huano White Plunger (model unspecified)",
+            "en": "Huano White Plunger (model unspecified)"
+          }
+        },
+        {
+          "value": "huanoYellow",
+          "label": {
+            "ko": "후아노 황축",
+            "en": "huanoYellow"
+          }
+        },
+        {
+          "value": "huanyuGeneric",
+          "label": {
+            "ko": "Huanyu (unspecified model)",
+            "en": "Huanyu (unspecified model)"
+          }
+        },
+        {
+          "value": "kailh",
+          "label": {
+            "ko": "카일",
+            "en": "kailh"
+          }
+        },
+        {
+          "value": "kailhBlack",
+          "label": {
+            "ko": "카일 흑축",
+            "en": "kailhBlack"
+          }
+        },
+        {
+          "value": "kailhBlue",
+          "label": {
+            "ko": "카일 청축",
+            "en": "kailhBlue"
+          }
+        },
+        {
+          "value": "kailhGm20",
+          "label": {
+            "ko": "카일 GM 2.0",
+            "en": "kailhGm20"
+          }
+        },
+        {
+          "value": "kailhGrayShellRedPlunger",
+          "label": {
+            "ko": "카일 그레이쉘 레드 플런저",
+            "en": "Kailh gray-shell red-plunger"
+          }
+        },
+        {
+          "value": "kailhHiMiniGreenDot",
+          "label": {
+            "ko": "카일 하이 미니 그린닷",
+            "en": "kailhHiMiniGreenDot"
+          }
+        },
+        {
+          "value": "kailhMicroDot",
+          "label": {
+            "ko": "카일 마이크로 닷",
+            "en": "kailhMicroDot"
+          }
+        },
+        {
+          "value": "kailhMicroSwitch",
+          "label": {
+            "ko": "카일 마이크로 스위치",
+            "en": "kailhMicroSwitch"
+          }
+        },
         {
           "value": "kailhMicroWhiteShellRed",
           "label": {
@@ -2886,6 +3110,13 @@
           "label": {
             "ko": "카일 레드쉘 블랙닷",
             "en": "kailhRedShellBlackDot"
+          }
+        },
+        {
+          "value": "kailhSurfaceMountGreenPlunger",
+          "label": {
+            "ko": "Kailh surface-mount green-plunger",
+            "en": "Kailh surface-mount green-plunger"
           }
         },
         {
@@ -2980,6 +3211,13 @@
           }
         },
         {
+          "value": "ttcBrownShellBluePlunger2Pin",
+          "label": {
+            "ko": "TTC brown-shell blue-plunger 2-pin",
+            "en": "TTC brown-shell blue-plunger 2-pin"
+          }
+        },
+        {
           "value": "ttcGreen",
           "label": {
             "ko": "TTC 녹축",
@@ -3034,244 +3272,6 @@
             "ko": "환락?",
             "en": "unknownMaybeHuanle"
           }
-        },
-        {
-          "value": "huano Silent",
-          "label": {
-            "ko": "후아노 저소음",
-            "en": "huano Silent"
-          }
-        },
-        {
-          "value": "huanoWhitePlungerUnspecified",
-          "label": {
-            "ko": "Huano White Plunger (model unspecified)",
-            "en": "Huano White Plunger (model unspecified)"
-          }
-        },
-        {
-          "value": "huanoMiniBlackShellYellowDot",
-          "label": {
-            "ko": "Huano Mini Black Shell Yellow Dot",
-            "en": "Huano Mini Black Shell Yellow Dot"
-          }
-        },
-        {
-          "value": "ttcBrownShellBluePlunger2Pin",
-          "label": {
-            "ko": "TTC brown-shell blue-plunger 2-pin",
-            "en": "TTC brown-shell blue-plunger 2-pin"
-          }
-        },
-        {
-          "value": "kailhSurfaceMountGreenPlunger",
-          "label": {
-            "ko": "Kailh surface-mount green-plunger",
-            "en": "Kailh surface-mount green-plunger"
-          }
-        },
-        {
-          "value": "huanyuGeneric",
-          "label": {
-            "ko": "Huanyu (unspecified model)",
-            "en": "Huanyu (unspecified model)"
-          }
-        },
-        {
-          "value": "chanfenBeige",
-          "label": {
-            "ko": "ChanFen 베이지",
-            "en": "chanfenBeige"
-          }
-        },
-        {
-          "value": "chanfenBlack",
-          "label": {
-            "ko": "ChanFen 흑축",
-            "en": "chanfenBlack"
-          }
-        },
-        {
-          "value": "chanfenMicroSwitch",
-          "label": {
-            "ko": "ChanFen 마이크로 스위치",
-            "en": "chanfenMicroSwitch"
-          }
-        },
-        {
-          "value": "chanfenRed",
-          "label": {
-            "ko": "ChanFen 적축",
-            "en": "chanfenRed"
-          }
-        },
-        {
-          "value": "chanfenWhite",
-          "label": {
-            "ko": "ChanFen 백축",
-            "en": "chanfenWhite"
-          }
-        },
-        {
-          "value": "chanfenWhiteColor",
-          "label": {
-            "ko": "ChanFen 화이트",
-            "en": "chanfenWhiteColor"
-          }
-        },
-        {
-          "value": "himakeWhiteDot",
-          "label": {
-            "ko": "HIMAKE 화이트닷",
-            "en": "himakeWhiteDot"
-          }
-        },
-        {
-          "value": "huano",
-          "label": {
-            "ko": "후아노",
-            "en": "huano"
-          }
-        },
-        {
-          "value": "huanoBlackShellWhiteDot",
-          "label": {
-            "ko": "후아노 블랙쉘 화이트닷",
-            "en": "huanoBlackShellWhiteDot"
-          }
-        },
-        {
-          "value": "huanoBlueShellPinkDot",
-          "label": {
-            "ko": "후아노 블루쉘 핑크닷",
-            "en": "huanoBlueShellPinkDot"
-          }
-        },
-        {
-          "value": "huanoGreen",
-          "label": {
-            "ko": "후아노 녹축",
-            "en": "huanoGreen"
-          }
-        },
-        {
-          "value": "huanoMicroPinkDot",
-          "label": {
-            "ko": "후아노 마이크로 핑크닷",
-            "en": "huanoMicroPinkDot"
-          }
-        },
-        {
-          "value": "huanoMicroSwitch",
-          "label": {
-            "ko": "후아노 마이크로 스위치",
-            "en": "huanoMicroSwitch"
-          }
-        },
-        {
-          "value": "huanoMicroWhite",
-          "label": {
-            "ko": "후아노 마이크로 백축",
-            "en": "huanoMicroWhite"
-          }
-        },
-        {
-          "value": "huanoMicroWhiteDot",
-          "label": {
-            "ko": "후아노 마이크로 화이트 닷",
-            "en": "huanoMicroWhiteDot"
-          }
-        },
-        {
-          "value": "huanoRed",
-          "label": {
-            "ko": "후아노 적축",
-            "en": "huanoRed"
-          }
-        },
-        {
-          "value": "huanoWhite",
-          "label": {
-            "ko": "후아노 백축",
-            "en": "huanoWhite"
-          }
-        },
-        {
-          "value": "huanoWhiteDot",
-          "label": {
-            "ko": "후아노 화이트닷",
-            "en": "huanoWhiteDot"
-          }
-        },
-        {
-          "value": "huanoYellow",
-          "label": {
-            "ko": "후아노 황축",
-            "en": "huanoYellow"
-          }
-        },
-        {
-          "value": "kailh",
-          "label": {
-            "ko": "카일",
-            "en": "kailh"
-          }
-        },
-        {
-          "value": "kailhBlack",
-          "label": {
-            "ko": "카일 흑축",
-            "en": "kailhBlack"
-          }
-        },
-        {
-          "value": "kailhBlue",
-          "label": {
-            "ko": "카일 청축",
-            "en": "kailhBlue"
-          }
-        },
-        {
-          "value": "kailhGm20",
-          "label": {
-            "ko": "카일 GM 2.0",
-            "en": "kailhGm20"
-          }
-        },
-        {
-          "value": "kailhGrayShellRedPlunger",
-          "label": {
-            "ko": "카일 그레이쉘 레드 플런저",
-            "en": "Kailh gray-shell red-plunger"
-          }
-        },
-        {
-          "value": "kailhHiMiniGreenDot",
-          "label": {
-            "ko": "카일 하이 미니 그린닷",
-            "en": "kailhHiMiniGreenDot"
-          }
-        },
-        {
-          "value": "kailhMicroDot",
-          "label": {
-            "ko": "카일 마이크로 닷",
-            "en": "kailhMicroDot"
-          }
-        },
-        {
-          "value": "kailhMicroSwitch",
-          "label": {
-            "ko": "카일 마이크로 스위치",
-            "en": "kailhMicroSwitch"
-          }
-        },
-        {
-          "value": "CF White 2-pin",
-          "label": {
-            "ko": "CF White 2-pin",
-            "en": "CF White 2-pin"
-          }
         }
       ]
     },
@@ -3295,6 +3295,48 @@
       "unit": null,
       "multiple": false,
       "options": [
+        {
+          "value": "ALPS Black 11mm",
+          "label": {
+            "ko": "ALPS Black 11mm",
+            "en": "ALPS Black 11mm"
+          }
+        },
+        {
+          "value": "CF Black 12mm",
+          "label": {
+            "ko": "CF Black 12mm",
+            "en": "CF Black 12mm"
+          }
+        },
+        {
+          "value": "Huano",
+          "label": {
+            "ko": "Huano",
+            "en": "Huano"
+          }
+        },
+        {
+          "value": "Kailh",
+          "label": {
+            "ko": "Kailh",
+            "en": "Kailh"
+          }
+        },
+        {
+          "value": "TTC Optical",
+          "label": {
+            "ko": "TTC 옵티컬",
+            "en": "TTC Optical"
+          }
+        },
+        {
+          "value": "alps",
+          "label": {
+            "ko": "ALPS",
+            "en": "ALPS"
+          }
+        },
         {
           "value": "alps8mm",
           "label": {
@@ -3338,13 +3380,6 @@
           }
         },
         {
-          "value": "fSwitch9mm",
-          "label": {
-            "ko": "F-Switch 9mm",
-            "en": "F-Switch 9mm"
-          }
-        },
-        {
           "value": "fSwitch10mm",
           "label": {
             "ko": "F-Switch 10mm",
@@ -3380,17 +3415,24 @@
           }
         },
         {
+          "value": "fSwitch9mm",
+          "label": {
+            "ko": "F-Switch 9mm",
+            "en": "F-Switch 9mm"
+          }
+        },
+        {
+          "value": "fSwitchBrownGreen11mm",
+          "label": {
+            "ko": "F-Switch Brown Green Core 11mm",
+            "en": "F-Switch Brown Green Core 11mm"
+          }
+        },
+        {
           "value": "fSwitchDustproof",
           "label": {
             "ko": "F-Switch 방진",
             "en": "F-Switch Dustproof"
-          }
-        },
-        {
-          "value": "fSwitchDustproof9mm",
-          "label": {
-            "ko": "F-Switch 방진 9mm",
-            "en": "F-Switch Dustproof 9mm"
           }
         },
         {
@@ -3412,6 +3454,13 @@
           "label": {
             "ko": "F-Switch 방진 13mm",
             "en": "F-Switch Dustproof 13mm"
+          }
+        },
+        {
+          "value": "fSwitchDustproof9mm",
+          "label": {
+            "ko": "F-Switch 방진 9mm",
+            "en": "F-Switch Dustproof 9mm"
           }
         },
         {
@@ -3471,20 +3520,6 @@
           }
         },
         {
-          "value": "kailhBlack6mm",
-          "label": {
-            "ko": "카일 블랙 6mm",
-            "en": "Kailh Black 6mm"
-          }
-        },
-        {
-          "value": "kailhBlack9mm",
-          "label": {
-            "ko": "카일 블랙 9mm",
-            "en": "Kailh Black 9mm"
-          }
-        },
-        {
           "value": "kailhBlack10mm",
           "label": {
             "ko": "카일 블랙 10mm",
@@ -3503,6 +3538,20 @@
           "label": {
             "ko": "카일 블랙 15mm",
             "en": "Kailh Black 15mm"
+          }
+        },
+        {
+          "value": "kailhBlack6mm",
+          "label": {
+            "ko": "카일 블랙 6mm",
+            "en": "Kailh Black 6mm"
+          }
+        },
+        {
+          "value": "kailhBlack9mm",
+          "label": {
+            "ko": "카일 블랙 9mm",
+            "en": "Kailh Black 9mm"
           }
         },
         {
@@ -3534,20 +3583,6 @@
           }
         },
         {
-          "value": "kailhDustproofBlack9mm",
-          "label": {
-            "ko": "카일 방진 블랙 9mm",
-            "en": "Kailh Dustproof Black 9mm"
-          }
-        },
-        {
-          "value": "ttcYellow",
-          "label": {
-            "ko": "TTC Yellow",
-            "en": "TTC Yellow"
-          }
-        },
-        {
           "value": "kailhDustproofBlack10mm",
           "label": {
             "ko": "카일 방진 블랙 10mm",
@@ -3562,10 +3597,10 @@
           }
         },
         {
-          "value": "kailhDustproofBlue7mm",
+          "value": "kailhDustproofBlack9mm",
           "label": {
-            "ko": "카일 방진 블루 7mm",
-            "en": "Kailh Dustproof Blue 7mm"
+            "ko": "카일 방진 블랙 9mm",
+            "en": "Kailh Dustproof Black 9mm"
           }
         },
         {
@@ -3573,6 +3608,20 @@
           "label": {
             "ko": "카일 방진 블루 13mm",
             "en": "Kailh Dustproof Blue 13mm"
+          }
+        },
+        {
+          "value": "kailhDustproofBlue7mm",
+          "label": {
+            "ko": "카일 방진 블루 7mm",
+            "en": "Kailh Dustproof Blue 7mm"
+          }
+        },
+        {
+          "value": "kailhDustproofRed11mm",
+          "label": {
+            "ko": "카일 방진 레드 11mm",
+            "en": "kailhDustproofRed11mm"
           }
         },
         {
@@ -3611,10 +3660,38 @@
           }
         },
         {
+          "value": "kailhGE50",
+          "label": {
+            "ko": "Kailh GE5.0",
+            "en": "Kailh GE5.0"
+          }
+        },
+        {
           "value": "kailhGE50T1",
           "label": {
             "ko": "카일 GE50 T1",
             "en": "Kailh GE50 T1"
+          }
+        },
+        {
+          "value": "kailhGrayBlackCore5mm",
+          "label": {
+            "ko": "Kailh Gray Black Core 5mm",
+            "en": "Kailh Gray Black Core 5mm"
+          }
+        },
+        {
+          "value": "kailhGrayTeal12mm",
+          "label": {
+            "ko": "Kailh gray/teal core 12mm",
+            "en": "Kailh gray/teal core 12mm"
+          }
+        },
+        {
+          "value": "kailhGrayTeal15mm",
+          "label": {
+            "ko": "Kailh gray/teal core 15mm",
+            "en": "Kailh gray/teal core 15mm"
           }
         },
         {
@@ -3632,17 +3709,17 @@
           }
         },
         {
-          "value": "lamzu8mm",
-          "label": {
-            "ko": "LAMZU 8mm",
-            "en": "LAMZU 8mm"
-          }
-        },
-        {
           "value": "lamzu11mm",
           "label": {
             "ko": "LAMZU 11mm",
             "en": "LAMZU 11mm"
+          }
+        },
+        {
+          "value": "lamzu8mm",
+          "label": {
+            "ko": "LAMZU 8mm",
+            "en": "LAMZU 8mm"
           }
         },
         {
@@ -3664,13 +3741,6 @@
           "label": {
             "ko": "펄사 블루",
             "en": "Pulsar Blue"
-          }
-        },
-        {
-          "value": "pulsarBlue9mm",
-          "label": {
-            "ko": "펄사 블루 9mm",
-            "en": "Pulsar Blue 9mm"
           }
         },
         {
@@ -3702,17 +3772,10 @@
           }
         },
         {
-          "value": "pulsarDustproof8mm",
+          "value": "pulsarBlue9mm",
           "label": {
-            "ko": "펄사 방진 8mm",
-            "en": "Pulsar Dustproof 8mm"
-          }
-        },
-        {
-          "value": "pulsarDustproof9mm",
-          "label": {
-            "ko": "펄사 방진 9mm",
-            "en": "Pulsar Dustproof 9mm"
+            "ko": "펄사 블루 9mm",
+            "en": "Pulsar Blue 9mm"
           }
         },
         {
@@ -3734,6 +3797,20 @@
           "label": {
             "ko": "펄사 방진 14mm",
             "en": "Pulsar Dustproof 14mm"
+          }
+        },
+        {
+          "value": "pulsarDustproof8mm",
+          "label": {
+            "ko": "펄사 방진 8mm",
+            "en": "Pulsar Dustproof 8mm"
+          }
+        },
+        {
+          "value": "pulsarDustproof9mm",
+          "label": {
+            "ko": "펄사 방진 9mm",
+            "en": "Pulsar Dustproof 9mm"
           }
         },
         {
@@ -3807,13 +3884,6 @@
           }
         },
         {
-          "value": "ttc9mm",
-          "label": {
-            "ko": "TTC 9mm",
-            "en": "TTC 9mm"
-          }
-        },
-        {
           "value": "ttc12mm",
           "label": {
             "ko": "TTC 12mm",
@@ -3828,6 +3898,13 @@
           }
         },
         {
+          "value": "ttc9mm",
+          "label": {
+            "ko": "TTC 9mm",
+            "en": "TTC 9mm"
+          }
+        },
+        {
           "value": "ttcBlack",
           "label": {
             "ko": "TTC 블랙",
@@ -3835,17 +3912,24 @@
           }
         },
         {
-          "value": "ttcBlack4mm",
-          "label": {
-            "ko": "TTC 블랙 4mm",
-            "en": "TTC Black 4mm"
-          }
-        },
-        {
           "value": "ttcBlack126mm",
           "label": {
             "ko": "TTC 블랙 12.6mm",
             "en": "TTC Black 12.6mm"
+          }
+        },
+        {
+          "value": "ttcBlack45mm",
+          "label": {
+            "ko": "TTC Black 4.5mm",
+            "en": "TTC Black 4.5mm"
+          }
+        },
+        {
+          "value": "ttcBlack4mm",
+          "label": {
+            "ko": "TTC 블랙 4mm",
+            "en": "TTC Black 4mm"
           }
         },
         {
@@ -3870,6 +3954,13 @@
           }
         },
         {
+          "value": "ttcBlueWhite8mm",
+          "label": {
+            "ko": "TTC Blue / White Core 8mm",
+            "en": "TTC Blue / White Core 8mm"
+          }
+        },
+        {
           "value": "ttcDustproof12mm",
           "label": {
             "ko": "TTC 방진 12mm",
@@ -3881,27 +3972,6 @@
           "label": {
             "ko": "TTC 방진 골드",
             "en": "TTC Dustproof Gold"
-          }
-        },
-        {
-          "value": "ttcDustproofGold7mm",
-          "label": {
-            "ko": "TTC 방진 골드 7mm",
-            "en": "TTC Dustproof Gold 7mm"
-          }
-        },
-        {
-          "value": "ttcDustproofGold8mm",
-          "label": {
-            "ko": "TTC 방진 골드 8mm",
-            "en": "TTC Dustproof Gold 8mm"
-          }
-        },
-        {
-          "value": "ttcDustproofGold9mm",
-          "label": {
-            "ko": "TTC 방진 골드 9mm",
-            "en": "TTC Dustproof Gold 9mm"
           }
         },
         {
@@ -3947,6 +4017,27 @@
           }
         },
         {
+          "value": "ttcDustproofGold7mm",
+          "label": {
+            "ko": "TTC 방진 골드 7mm",
+            "en": "TTC Dustproof Gold 7mm"
+          }
+        },
+        {
+          "value": "ttcDustproofGold8mm",
+          "label": {
+            "ko": "TTC 방진 골드 8mm",
+            "en": "TTC Dustproof Gold 8mm"
+          }
+        },
+        {
+          "value": "ttcDustproofGold9mm",
+          "label": {
+            "ko": "TTC 방진 골드 9mm",
+            "en": "TTC Dustproof Gold 9mm"
+          }
+        },
+        {
           "value": "ttcDustproofSilver",
           "label": {
             "ko": "TTC 방진 실버",
@@ -3982,20 +4073,6 @@
           }
         },
         {
-          "value": "ttcDustproofWhite8mm",
-          "label": {
-            "ko": "TTC 방진 화이트 8mm",
-            "en": "TTC Dustproof White 8mm"
-          }
-        },
-        {
-          "value": "ttcDustproofWhite9mm",
-          "label": {
-            "ko": "TTC 방진 화이트 9mm",
-            "en": "TTC Dustproof White 9mm"
-          }
-        },
-        {
           "value": "ttcDustproofWhite10mm",
           "label": {
             "ko": "TTC 방진 화이트 10mm",
@@ -4017,17 +4094,24 @@
           }
         },
         {
+          "value": "ttcDustproofWhite8mm",
+          "label": {
+            "ko": "TTC 방진 화이트 8mm",
+            "en": "TTC Dustproof White 8mm"
+          }
+        },
+        {
+          "value": "ttcDustproofWhite9mm",
+          "label": {
+            "ko": "TTC 방진 화이트 9mm",
+            "en": "TTC Dustproof White 9mm"
+          }
+        },
+        {
           "value": "ttcGold",
           "label": {
             "ko": "TTC 골드",
             "en": "TTC Gold"
-          }
-        },
-        {
-          "value": "ttcGold9mm",
-          "label": {
-            "ko": "TTC 골드 9mm",
-            "en": "TTC Gold 9mm"
           }
         },
         {
@@ -4059,6 +4143,13 @@
           }
         },
         {
+          "value": "ttcGold9mm",
+          "label": {
+            "ko": "TTC 골드 9mm",
+            "en": "TTC Gold 9mm"
+          }
+        },
+        {
           "value": "ttcGoldNonDustproof",
           "label": {
             "ko": "TTC 골드(방진 X)",
@@ -4070,6 +4161,13 @@
           "label": {
             "ko": "TTC 실버",
             "en": "TTC Silver"
+          }
+        },
+        {
+          "value": "ttcSilver10mm",
+          "label": {
+            "ko": "TTC 실버 10mm",
+            "en": "TTC Silver 10mm"
           }
         },
         {
@@ -4087,31 +4185,10 @@
           }
         },
         {
-          "value": "ttcSilver10mm",
-          "label": {
-            "ko": "TTC 실버 10mm",
-            "en": "TTC Silver 10mm"
-          }
-        },
-        {
           "value": "ttcWhite",
           "label": {
             "ko": "TTC 화이트",
             "en": "TTC White"
-          }
-        },
-        {
-          "value": "ttcWhite8mm",
-          "label": {
-            "ko": "TTC 화이트 8mm",
-            "en": "TTC White 8mm"
-          }
-        },
-        {
-          "value": "ttcWhite9mm",
-          "label": {
-            "ko": "TTC 화이트 9mm",
-            "en": "TTC White 9mm"
           }
         },
         {
@@ -4143,6 +4220,27 @@
           }
         },
         {
+          "value": "ttcWhite8mm",
+          "label": {
+            "ko": "TTC 화이트 8mm",
+            "en": "TTC White 8mm"
+          }
+        },
+        {
+          "value": "ttcWhite9mm",
+          "label": {
+            "ko": "TTC 화이트 9mm",
+            "en": "TTC White 9mm"
+          }
+        },
+        {
+          "value": "ttcYellow",
+          "label": {
+            "ko": "TTC Yellow",
+            "en": "TTC Yellow"
+          }
+        },
+        {
           "value": "unknown",
           "label": {
             "ko": "알 수 없음",
@@ -4161,104 +4259,6 @@
           "label": {
             "ko": "ZOWIE 옵티컬",
             "en": "ZOWIE Optical"
-          }
-        },
-        {
-          "value": "kailhDustproofRed11mm",
-          "label": {
-            "ko": "카일 방진 레드 11mm",
-            "en": "kailhDustproofRed11mm"
-          }
-        },
-        {
-          "value": "alps",
-          "label": {
-            "ko": "ALPS",
-            "en": "ALPS"
-          }
-        },
-        {
-          "value": "kailhGE50",
-          "label": {
-            "ko": "Kailh GE5.0",
-            "en": "Kailh GE5.0"
-          }
-        },
-        {
-          "value": "fSwitchBrownGreen11mm",
-          "label": {
-            "ko": "F-Switch Brown Green Core 11mm",
-            "en": "F-Switch Brown Green Core 11mm"
-          }
-        },
-        {
-          "value": "ttcBlack45mm",
-          "label": {
-            "ko": "TTC Black 4.5mm",
-            "en": "TTC Black 4.5mm"
-          }
-        },
-        {
-          "value": "kailhGrayBlackCore5mm",
-          "label": {
-            "ko": "Kailh Gray Black Core 5mm",
-            "en": "Kailh Gray Black Core 5mm"
-          }
-        },
-        {
-          "value": "kailhGrayTeal15mm",
-          "label": {
-            "ko": "Kailh gray/teal core 15mm",
-            "en": "Kailh gray/teal core 15mm"
-          }
-        },
-        {
-          "value": "kailhGrayTeal12mm",
-          "label": {
-            "ko": "Kailh gray/teal core 12mm",
-            "en": "Kailh gray/teal core 12mm"
-          }
-        },
-        {
-          "value": "ttcBlueWhite8mm",
-          "label": {
-            "ko": "TTC Blue / White Core 8mm",
-            "en": "TTC Blue / White Core 8mm"
-          }
-        },
-        {
-          "value": "Huano",
-          "label": {
-            "ko": "Huano",
-            "en": "Huano"
-          }
-        },
-        {
-          "value": "CF Black 12mm",
-          "label": {
-            "ko": "CF Black 12mm",
-            "en": "CF Black 12mm"
-          }
-        },
-        {
-          "value": "Kailh",
-          "label": {
-            "ko": "Kailh",
-            "en": "Kailh"
-          }
-        },
-        {
-          "value": "ALPS Black 11mm",
-          "label": {
-            "ko": "ALPS Black 11mm",
-            "en": "ALPS Black 11mm"
-          }
-        },
-        {
-          "value": "TTC Optical",
-          "label": {
-            "ko": "TTC 옵티컬",
-            "en": "TTC Optical"
           }
         }
       ]
@@ -4319,6 +4319,13 @@
       "multiple": false,
       "options": [
         {
+          "value": "microusb",
+          "label": {
+            "ko": "Micro USB",
+            "en": "Micro USB"
+          }
+        },
+        {
           "value": "usbTypeC",
           "label": {
             "ko": "USB-C",
@@ -4326,17 +4333,10 @@
           }
         },
         {
-          "value": "일체형",
+          "value": "마그네틱",
           "label": {
-            "ko": "일체형",
-            "en": "일체형"
-          }
-        },
-        {
-          "value": "microusb",
-          "label": {
-            "ko": "Micro USB",
-            "en": "Micro USB"
+            "ko": "마그네틱",
+            "en": "마그네틱"
           }
         },
         {
@@ -4347,10 +4347,10 @@
           }
         },
         {
-          "value": "마그네틱",
+          "value": "일체형",
           "label": {
-            "ko": "마그네틱",
-            "en": "마그네틱"
+            "ko": "일체형",
+            "en": "일체형"
           }
         }
       ]
@@ -4367,13 +4367,6 @@
       "multiple": false,
       "options": [
         {
-          "value": "single",
-          "label": {
-            "ko": "고정값",
-            "en": "Fixed value"
-          }
-        },
-        {
           "value": "options",
           "label": {
             "ko": "선택값",
@@ -4385,6 +4378,13 @@
           "label": {
             "ko": "범위",
             "en": "Range"
+          }
+        },
+        {
+          "value": "single",
+          "label": {
+            "ko": "고정값",
+            "en": "Fixed value"
           }
         }
       ]
@@ -5283,7 +5283,7 @@
         "ko": "라푸",
         "en": "RAPOO"
       },
-      "priceKrw": 81300,
+      "priceKrw": 79800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -5415,7 +5415,7 @@
         "ko": "VGN",
         "en": "VGN"
       },
-      "priceKrw": 28300,
+      "priceKrw": 27800,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c4UrtAu7",
@@ -5580,7 +5580,7 @@
         "ko": "글로리어스",
         "en": "Glorious"
       },
-      "priceKrw": 217800,
+      "priceKrw": 213700,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -5816,7 +5816,7 @@
         "ko": "발키리",
         "en": "VALKYRIE"
       },
-      "priceKrw": 10000,
+      "priceKrw": 9800,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -5918,7 +5918,7 @@
         "ko": "엠초스",
         "en": "MCHOSE"
       },
-      "priceKrw": 57000,
+      "priceKrw": 55900,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -5960,7 +5960,7 @@
         "ko": "어택샤크",
         "en": "AttackShark"
       },
-      "priceKrw": 49700,
+      "priceKrw": 48800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -6062,7 +6062,7 @@
         "ko": "아우라",
         "en": "AULA"
       },
-      "priceKrw": 30400,
+      "priceKrw": 29800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -6109,7 +6109,7 @@
         "ko": "ATK",
         "en": "ATK"
       },
-      "priceKrw": 142900,
+      "priceKrw": 140200,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -6338,7 +6338,7 @@
         "ko": "에임원",
         "en": "AIM1"
       },
-      "priceKrw": 146000,
+      "priceKrw": 142000,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -6431,7 +6431,7 @@
         "ko": "Mivix",
         "en": "Mivix"
       },
-      "priceKrw": 66700,
+      "priceKrw": 65500,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -7086,7 +7086,7 @@
         "ko": "NovelKeys",
         "en": "NovelKeys"
       },
-      "priceKrw": 115700,
+      "priceKrw": 113600,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -7329,7 +7329,7 @@
         "ko": "KYSONA",
         "en": "KYSONA"
       },
-      "priceKrw": 62600,
+      "priceKrw": 61400,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c3dvATT1",
@@ -7339,6 +7339,7 @@
         "battery": "500",
         "dpiMax": 26000,
         "dpiStep": 50,
+        "earlyAccessAt": "2026-11-18T00:00:00.000Z",
         "encoder": "ttcDustproofSilver",
         "firmwareVersion": "ID2524_v301",
         "height": 40,
@@ -7356,6 +7357,7 @@
         ],
         "mouseMcu": "panchippan1080ua3c",
         "port": "usbTypeC",
+        "publicReleaseAt": "2026-11-25T00:00:00.000Z",
         "sensor": "paw3395",
         "sensorLodMode": "options",
         "sensorLodOptions": "1.0, 2.0 mm",
@@ -7433,7 +7435,7 @@
         "ko": "엠초스",
         "en": "MCHOSE"
       },
-      "priceKrw": 46700,
+      "priceKrw": 45800,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -7674,7 +7676,7 @@
         "ko": "어택샤크",
         "en": "AttackShark"
       },
-      "priceKrw": 108900,
+      "priceKrw": 106900,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -7762,7 +7764,7 @@
         "ko": "펄사",
         "en": "Pulsar"
       },
-      "priceKrw": 190500,
+      "priceKrw": 187000,
       "status": "arrived",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -8095,7 +8097,7 @@
         "ko": "산와 서플라이",
         "en": "Sanwa Supply"
       },
-      "priceKrw": 47300,
+      "priceKrw": 46000,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -8261,7 +8263,7 @@
         "ko": "키크론",
         "en": "Keychron"
       },
-      "priceKrw": 128600,
+      "priceKrw": 125100,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -8593,7 +8595,7 @@
         "ko": "간스",
         "en": "GANSS"
       },
-      "priceKrw": 40600,
+      "priceKrw": 39800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -8622,7 +8624,7 @@
         "ko": "ATK",
         "en": "ATK"
       },
-      "priceKrw": 71700,
+      "priceKrw": 70400,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c2vNiPcp",
@@ -8878,7 +8880,7 @@
         "ko": "WL마우스",
         "en": "WLMouse"
       },
-      "priceKrw": 211000,
+      "priceKrw": 207100,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -9015,7 +9017,7 @@
         "ko": "ATK",
         "en": "ATK"
       },
-      "priceKrw": 122100,
+      "priceKrw": 119800,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -9096,18 +9098,23 @@
         "ko": "VGN",
         "en": "VGN"
       },
-      "priceKrw": 74700,
-      "status": "earlyAccess",
+      "priceKrw": 73300,
+      "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c42PjeQP",
       "image": "/images/555a2172-36e8-402a-8cb1-27fda942913a.avif",
       "values": {
         "acceleration": 50,
         "battery": "800",
+        "clickGhosting": false,
+        "detachAvgWired": 0.20061683168316857,
+        "detachAvgWireless": 0.3304930693069306,
+        "detachStddevWired": 0.03726871533118653,
+        "detachStddevWireless": 0.054619806108152945,
         "dpiMax": 36000,
         "earlyAccessAt": "2026-11-06T00:00:00.000Z",
         "encoder": "ttcDustproofGold",
-        "eyejokerRating": "ANTICIPATING",
+        "eyejokerRating": "RECOMMENDED",
         "height": 39.4,
         "holeBody": "no",
         "housingMouse": [
@@ -9115,6 +9122,7 @@
         ],
         "ips": 650,
         "length": 119,
+        "lodMin": 0.7,
         "maxPollingRate": "8000",
         "maxWidth": 63.3,
         "mouseConnection": "유무선",
@@ -9122,17 +9130,53 @@
           "POLYMER"
         ],
         "mouseMcu": "nordicnrf54l15",
+        "optimalResponseSpeed": 0.3291945544554457,
+        "optimalStddev": 0.04387495192008315,
+        "overallRatingMouse": "TIER_0",
+        "pcbAvgOptimal": 0.3278960396039602,
+        "pcbAvgOptimalDetach": 0.3304930693069306,
+        "pcbAvgWired": 0.2011534653465345,
+        "pcbAvgWireless": 0.3278960396039602,
+        "pcbStddevOptimal": 0.05460453762160907,
+        "pcbStddevOptimalDetach": 0.054619806108152945,
+        "pcbStddevWired": 0.03817595029675985,
+        "pcbStddevWireless": 0.05460453762160907,
         "port": "usbTypeC",
         "publicReleaseAt": "2026-11-13T00:00:00.000Z",
         "sensor": "paw3395Extreme36k",
+        "sensorAvg": 0.36793636363636345,
+        "sensorAvgMotionSyncOff": 0.36793636363636345,
+        "sensorAvgMotionSyncOn": 0.3763909090909092,
+        "sensorAvgWired": 0.2308090909090909,
+        "sensorAvgWiredMotionSyncOff": 0.24069090909090915,
+        "sensorAvgWiredMotionSyncOn": 0.2308090909090909,
+        "sensorAvgWireless": 0.36793636363636345,
+        "sensorAvgWirelessMotionSyncOff": 0.36793636363636345,
+        "sensorAvgWirelessMotionSyncOn": 0.3763909090909092,
+        "sensorDeviationMotionSyncOff": 0.05679953221201854,
+        "sensorDeviationMotionSyncOn": 0.05421004527082101,
+        "sensorDeviationOpt": 0.05679953221201854,
+        "sensorDeviationWired": 0.05423107050634779,
+        "sensorDeviationWiredMotionSyncOff": 0.05429728696630087,
+        "sensorDeviationWiredMotionSyncOn": 0.05423107050634779,
+        "sensorDeviationWireless": 0.05679953221201854,
+        "sensorDeviationWirelessMotionSyncOff": 0.05679953221201854,
+        "sensorDeviationWirelessMotionSyncOn": 0.05421004527082101,
         "sensorLodMode": "options",
         "sideSwitch": "ttcMicroSwitch",
+        "slamClick": false,
+        "slamClickPressAvg": 3.6346346534653455,
+        "slamClickPressStddev": 0.056438630362165426,
+        "slamClickPrevention": false,
+        "slamClickReleaseAvg": 3.803922772277225,
+        "slamClickReleaseStddev": 0.059173666007356046,
+        "slamClickResponseSpeed": 3.719278712871292,
         "switch": "omronD2fcF7n100m",
         "weight": 51,
         "wheelSwitch": "2핀택트"
       },
       "firstSeenAt": null,
-      "testedAt": null
+      "testedAt": "2026-11-16T19:13:21.419Z"
     },
     {
       "id": "2798c34e-2eb9-4385-97e1-b533a8e5f125",
@@ -9237,7 +9281,7 @@
         "ko": "자운코닉",
         "en": "Zaunkoenig"
       },
-      "priceKrw": 539100,
+      "priceKrw": 529000,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -9279,7 +9323,7 @@
         "ko": "VGN",
         "en": "VGN"
       },
-      "priceKrw": 108800,
+      "priceKrw": 106700,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -9587,7 +9631,7 @@
         "ko": "Fiberaim",
         "en": "Fiberaim"
       },
-      "priceKrw": 285300,
+      "priceKrw": 276900,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -10071,7 +10115,7 @@
         "ko": "펄사",
         "en": "Pulsar"
       },
-      "priceKrw": 176900,
+      "priceKrw": 173600,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -10402,7 +10446,7 @@
         "ko": "ATK",
         "en": "ATK"
       },
-      "priceKrw": 136100,
+      "priceKrw": 133600,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -10440,7 +10484,7 @@
         "ko": "ATK",
         "en": "ATK"
       },
-      "priceKrw": 88500,
+      "priceKrw": 86800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -10480,7 +10524,7 @@
         "ko": "IPI",
         "en": "IPI"
       },
-      "priceKrw": 81300,
+      "priceKrw": 79800,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -10489,6 +10533,7 @@
         "acceleration": 60,
         "battery": "300",
         "dpiMax": 40000,
+        "earlyAccessAt": "2026-11-24T00:00:00.000Z",
         "height": 40,
         "holeBody": "no",
         "housingMouse": [
@@ -10503,6 +10548,7 @@
           "POLYMER"
         ],
         "port": "usbTypeC",
+        "publicReleaseAt": "2026-12-01T00:00:00.000Z",
         "sensor": "paw3955",
         "weight": 63
       },
@@ -10690,7 +10736,7 @@
         "ko": "아코",
         "en": "Akko"
       },
-      "priceKrw": 68100,
+      "priceKrw": 66800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -10766,7 +10812,7 @@
         "ko": "벤큐 조위",
         "en": "BenQ Zowie"
       },
-      "priceKrw": 204200,
+      "priceKrw": 200400,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -10989,7 +11035,7 @@
         "ko": "GamaKay",
         "en": "GamaKay"
       },
-      "priceKrw": 81700,
+      "priceKrw": 80100,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -11397,7 +11443,7 @@
         "ko": "아코",
         "en": "Akko"
       },
-      "priceKrw": 60900,
+      "priceKrw": 59800,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -11678,7 +11724,7 @@
         "ko": "펄사",
         "en": "Pulsar"
       },
-      "priceKrw": 188200,
+      "priceKrw": 183000,
       "status": "arrived",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -11702,7 +11748,7 @@
         "ko": "VICTKONG",
         "en": "VICTKONG"
       },
-      "priceKrw": 16100,
+      "priceKrw": 15800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -12295,18 +12341,23 @@
         "ko": "VGN",
         "en": "VGN"
       },
-      "priceKrw": 81500,
-      "status": "earlyAccess",
+      "priceKrw": 80000,
+      "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c383f45H",
       "image": "/images/90173e14-0a24-442f-b286-c185622cbe97.avif",
       "values": {
         "acceleration": 50,
         "battery": "500",
+        "clickGhosting": false,
+        "detachAvgWired": 0.23077920792079204,
+        "detachAvgWireless": 0.3583623762376233,
+        "detachStddevWired": 0.052073993084919584,
+        "detachStddevWireless": 0.06587073577832007,
         "dpiMax": 42000,
         "earlyAccessAt": "2026-11-05T00:00:00.000Z",
         "encoder": "ttcDustproofGold",
-        "eyejokerRating": "ANTICIPATING",
+        "eyejokerRating": "RECOMMENDED",
         "height": 39.4,
         "holeBody": "no",
         "housingMouse": [
@@ -12314,6 +12365,7 @@
         ],
         "ips": 750,
         "length": 119,
+        "lodMin": 0.5,
         "maxPollingRate": "8000",
         "maxWidth": 63.3,
         "mouseConnection": "유무선",
@@ -12321,16 +12373,52 @@
           "POLYMER"
         ],
         "mouseMcu": "nordicnrf54l15",
+        "optimalResponseSpeed": 0.36377277227722815,
+        "optimalStddev": 0.05306016201732303,
+        "overallRatingMouse": "FLAWLESS",
+        "pcbAvgOptimal": 0.36918316831683184,
+        "pcbAvgOptimalDetach": 0.3583623762376233,
+        "pcbAvgWired": 0.23297821782178205,
+        "pcbAvgWireless": 0.36918316831683184,
+        "pcbStddevOptimal": 0.06672848126357998,
+        "pcbStddevOptimalDetach": 0.06587073577832007,
+        "pcbStddevWired": 0.05325484704191256,
+        "pcbStddevWireless": 0.06672848126357998,
         "port": "usbTypeC",
         "publicReleaseAt": "2026-11-12T00:00:00.000Z",
         "sensor": "PAW3950Extreme",
+        "sensorAvg": 0.3570909090909092,
+        "sensorAvgMotionSyncOff": 0.3570909090909092,
+        "sensorAvgMotionSyncOn": 0.4652272727272729,
+        "sensorAvgWired": 0.24427272727272725,
+        "sensorAvgWiredMotionSyncOff": 0.24427272727272725,
+        "sensorAvgWiredMotionSyncOn": 0.34751818181818184,
+        "sensorAvgWireless": 0.3570909090909092,
+        "sensorAvgWirelessMotionSyncOff": 0.3570909090909092,
+        "sensorAvgWirelessMotionSyncOn": 0.4652272727272729,
+        "sensorDeviationMotionSyncOff": 0.05434511694289737,
+        "sensorDeviationMotionSyncOn": 0.061269695770704714,
+        "sensorDeviationOpt": 0.05434511694289737,
+        "sensorDeviationWired": 0.05550150024031441,
+        "sensorDeviationWiredMotionSyncOff": 0.05550150024031441,
+        "sensorDeviationWiredMotionSyncOn": 0.06924866021916065,
+        "sensorDeviationWireless": 0.05434511694289737,
+        "sensorDeviationWirelessMotionSyncOff": 0.05434511694289737,
+        "sensorDeviationWirelessMotionSyncOn": 0.061269695770704714,
         "sideSwitch": "ttcMicroSwitch",
+        "slamClick": false,
+        "slamClickPressAvg": 8.35012962962963,
+        "slamClickPressStddev": 0.0896942776495396,
+        "slamClickPrevention": true,
+        "slamClickReleaseAvg": 8.354064814814809,
+        "slamClickReleaseStddev": 0.19179227477465632,
+        "slamClickResponseSpeed": 8.352097222222223,
         "switch": "vgnXKailh",
         "weight": 47,
         "wheelSwitch": "2핀 택트"
       },
       "firstSeenAt": null,
-      "testedAt": null
+      "testedAt": "2026-11-16T19:13:21.419Z"
     },
     {
       "id": "3d5c077e-43d6-4492-a5c9-ebd73907e5d1",
@@ -12762,6 +12850,7 @@
         "battery": "300",
         "dpiMax": 32000,
         "dpiStep": 50,
+        "earlyAccessAt": "2026-11-19T00:00:00.000Z",
         "encoder": "pulsarBlue",
         "height": 41.8,
         "holeBody": "yesBottom",
@@ -12778,6 +12867,7 @@
         ],
         "mouseMcu": "wchCh32v305Gbu6NordicNrf52840",
         "port": "usbTypeC",
+        "publicReleaseAt": "2026-11-26T00:00:00.000Z",
         "sensor": "xs1",
         "sensorLodMode": "options",
         "sensorLodOptions": "0.7, 1, 2",
@@ -12796,7 +12886,7 @@
         "ko": "Kzzi",
         "en": "Kzzi"
       },
-      "priceKrw": 16100,
+      "priceKrw": 15800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -12832,7 +12922,7 @@
         "ko": "VGN",
         "en": "VGN"
       },
-      "priceKrw": 40700,
+      "priceKrw": 39900,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -12979,8 +13069,8 @@
         "ko": "람주",
         "en": "LAMZU"
       },
-      "priceKrw": 173000,
-      "status": "proposed",
+      "priceKrw": 169800,
+      "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
       "image": "/images/981137af-9a95-4377-b99d-71f634167341.avif",
@@ -13135,7 +13225,7 @@
         "ko": "VGN",
         "en": "VGN"
       },
-      "priceKrw": 34400,
+      "priceKrw": 33800,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c4UrtAu7",
@@ -13256,8 +13346,8 @@
         "ko": "앵그리마오",
         "en": "Angry Miao"
       },
-      "priceKrw": 217800,
-      "status": "testing",
+      "priceKrw": 213700,
+      "status": "earlyAccess",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c3FFonAT",
       "image": "/images/4f3e13a0-d869-43c0-92ae-8c84b9758167.avif",
@@ -13401,8 +13491,8 @@
         "ko": "RAWM",
         "en": "RAWM"
       },
-      "priceKrw": 122500,
-      "status": "testing",
+      "priceKrw": 120200,
+      "status": "earlyAccess",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c4nEVHNH",
       "image": "/images/c322409b-618f-4ad9-a472-030fabaa0e4e.avif",
@@ -13410,6 +13500,7 @@
         "acceleration": 50,
         "battery": "500",
         "dpiMax": 30000,
+        "earlyAccessAt": "2026-11-16T00:00:00.000Z",
         "encoder": "raeshaOptical",
         "height": 40,
         "holeBody": "no",
@@ -13423,6 +13514,7 @@
         "mouseConnection": "유무선",
         "mouseMcu": "nordicNrf54lSeriesUnspecified",
         "port": "usbTypeC",
+        "publicReleaseAt": "2026-11-23T00:00:00.000Z",
         "sensor": "paw3950",
         "sensorLodMode": "options",
         "sensorLodOptions": "0.7, 1.0, 2.0 mm",
@@ -13747,7 +13839,7 @@
         "ko": "레노버",
         "en": "Lenovo"
       },
-      "priceKrw": 44600,
+      "priceKrw": 43800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -13782,7 +13874,7 @@
         "ko": "VGN",
         "en": "VGN"
       },
-      "priceKrw": 81700,
+      "priceKrw": 80100,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -13978,7 +14070,7 @@
         "ko": "다모샥",
         "en": "Darmoshark"
       },
-      "priceKrw": 132300,
+      "priceKrw": 129800,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -14173,7 +14265,7 @@
         "ko": "매드캣츠",
         "en": "Mad Catz"
       },
-      "priceKrw": 204200,
+      "priceKrw": 200400,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -14211,7 +14303,7 @@
         "ko": "커세어",
         "en": "CORSAIR"
       },
-      "priceKrw": 177000,
+      "priceKrw": 173700,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -14324,19 +14416,24 @@
         "ko": "펄사",
         "en": "Pulsar"
       },
-      "priceKrw": 245000,
-      "status": "earlyAccess",
+      "priceKrw": 240400,
+      "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
       "image": "/images/fa2cdc71-8cda-4d72-8d8b-b6935fa00947.avif",
       "values": {
         "acceleration": 70,
         "battery": "500",
+        "clickGhosting": false,
+        "detachAvgWired": 1.041665346534654,
+        "detachAvgWireless": 1.352037623762377,
+        "detachStddevWired": 0.08510271538249514,
+        "detachStddevWireless": 0.07532414816859063,
         "dpiMax": 42000,
         "dpiStep": 1,
         "earlyAccessAt": "2026-11-07T00:00:00.000Z",
         "encoder": "ttcDustproofGold",
-        "eyejokerRating": "ANTICIPATING",
+        "eyejokerRating": "RECOMMENDED",
         "height": 42.1,
         "holeBody": "no",
         "housingMouse": [
@@ -14344,6 +14441,7 @@
         ],
         "ips": 800,
         "length": 123.5,
+        "lodMin": 0.4,
         "maxPollingRate": "8000",
         "maxWidth": 66.3,
         "mouseConnection": "유무선",
@@ -14351,18 +14449,54 @@
           "POLYMER"
         ],
         "mouseMcu": "pixartpar2863",
+        "optimalResponseSpeed": 0.9136757425742578,
+        "optimalStddev": 0.053858069398188345,
+        "overallRatingMouse": "FLAWLESS",
+        "pcbAvgOptimal": 0.47531386138613885,
+        "pcbAvgOptimalDetach": 1.352037623762377,
+        "pcbAvgWired": 0.29195940594059394,
+        "pcbAvgWireless": 0.47531386138613885,
+        "pcbStddevOptimal": 0.07522100445242859,
+        "pcbStddevOptimalDetach": 0.07532414816859063,
+        "pcbStddevWired": 0.08174206798738952,
+        "pcbStddevWireless": 0.07522100445242859,
         "port": "usbTypeC",
         "publicReleaseAt": "2026-11-14T00:00:00.000Z",
         "sensor": "XS-2",
+        "sensorAvg": 0.48374545454545465,
+        "sensorAvgMotionSyncOff": 0.48374545454545465,
+        "sensorAvgMotionSyncOn": 0.5823909090909093,
+        "sensorAvgWired": 0.2504363636363636,
+        "sensorAvgWiredMotionSyncOff": 0.2504363636363636,
+        "sensorAvgWiredMotionSyncOn": 0.330781818181818,
+        "sensorAvgWireless": 0.48374545454545465,
+        "sensorAvgWirelessMotionSyncOff": 0.48374545454545465,
+        "sensorAvgWirelessMotionSyncOn": 0.5823909090909093,
+        "sensorDeviationMotionSyncOff": 0.08805137305869035,
+        "sensorDeviationMotionSyncOn": 0.11686605350917743,
+        "sensorDeviationOpt": 0.08805137305869035,
+        "sensorDeviationWired": 0.07174798410506386,
+        "sensorDeviationWiredMotionSyncOff": 0.07174798410506386,
+        "sensorDeviationWiredMotionSyncOn": 0.04915640748360497,
+        "sensorDeviationWireless": 0.08805137305869035,
+        "sensorDeviationWirelessMotionSyncOff": 0.08805137305869035,
+        "sensorDeviationWirelessMotionSyncOn": 0.11686605350917743,
         "sensorLodMode": "range",
         "sensorLodOptions": "0.7~1.7 mm (0.1 mm step)",
         "sideSwitch": "huanoMicroSwitch",
+        "slamClick": false,
+        "slamClickPressAvg": 7.662683098591557,
+        "slamClickPressStddev": 0.29285999562638476,
+        "slamClickPrevention": true,
+        "slamClickReleaseAvg": 7.758954225352105,
+        "slamClickReleaseStddev": 0.6020784756677722,
+        "slamClickResponseSpeed": 7.710818661971827,
         "switch": "pulsarOptical",
         "weight": 51,
         "wheelSwitch": "2핀 택"
       },
       "firstSeenAt": "2026-10-28T13:17:31.774Z",
-      "testedAt": null
+      "testedAt": "2026-11-16T19:13:21.419Z"
     },
     {
       "id": "4815eba1-bc34-4db9-9432-4af64145de93",
@@ -14387,7 +14521,7 @@
         "ko": "라푸",
         "en": "RAPOO"
       },
-      "priceKrw": 75700,
+      "priceKrw": 74300,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -14464,7 +14598,7 @@
         "ko": "VGN",
         "en": "VGN"
       },
-      "priceKrw": 20200,
+      "priceKrw": 19800,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c4UrtAu7",
@@ -14660,7 +14794,7 @@
         "ko": "머신아이크",
         "en": "Machenike"
       },
-      "priceKrw": 20200,
+      "priceKrw": 19800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -15060,7 +15194,7 @@
         "ko": "글로리어스",
         "en": "Glorious"
       },
-      "priceKrw": 217800,
+      "priceKrw": 213700,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -15215,7 +15349,7 @@
         "ko": "zynoo",
         "en": "zynoo"
       },
-      "priceKrw": 107800,
+      "priceKrw": 105800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -15690,7 +15824,7 @@
         "ko": "이와든",
         "en": "EWEADN"
       },
-      "priceKrw": 95200,
+      "priceKrw": 93400,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -15926,6 +16060,22 @@
         "weight": 54
       },
       "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "546814cf-c773-48e1-a116-2da812b123a4",
+      "name": "P1",
+      "manufacturer": {
+        "ko": "펄사",
+        "en": "Pulsar"
+      },
+      "priceKrw": null,
+      "status": "unreleased",
+      "saleStatus": "unreleased",
+      "aliUrl": null,
+      "image": null,
+      "values": {},
+      "firstSeenAt": "2026-11-16T19:13:21.419Z",
       "testedAt": null
     },
     {
@@ -16859,7 +17009,7 @@
         "ko": "아자즈",
         "en": "AJAZZ"
       },
-      "priceKrw": 30400,
+      "priceKrw": 29800,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -16939,7 +17089,7 @@
         "ko": "레이저",
         "en": "RAZER"
       },
-      "priceKrw": 245000,
+      "priceKrw": 240500,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -17279,7 +17429,7 @@
         "ko": "펄사",
         "en": "Pulsar"
       },
-      "priceKrw": 188200,
+      "priceKrw": 183000,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -17467,7 +17617,7 @@
         "ko": "아자즈",
         "en": "AJAZZ"
       },
-      "priceKrw": 40600,
+      "priceKrw": 39800,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c4ETab4j",
@@ -17477,6 +17627,7 @@
         "battery": "400",
         "dpiMax": 26000,
         "dpiStep": 50,
+        "earlyAccessAt": "2026-11-23T00:00:00.000Z",
         "encoder": "fSwitch",
         "height": 37.7,
         "holeBody": "no",
@@ -17493,6 +17644,7 @@
         ],
         "mouseMcu": "compxModelUnspecified",
         "port": "usbTypeC",
+        "publicReleaseAt": "2026-11-30T00:00:00.000Z",
         "sensor": "paw3395",
         "sensorLodMode": "options",
         "sensorLodOptions": "1.0, 2.0 mm",
@@ -17599,6 +17751,22 @@
         "wheelSwitch": "카일 흑축"
       },
       "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "605fc6df-643b-4360-a00d-7052c9d4fa57",
+      "name": "VT2 RT MASTER V3",
+      "manufacturer": {
+        "ko": "라푸",
+        "en": "RAPOO"
+      },
+      "priceKrw": null,
+      "status": "unreleased",
+      "saleStatus": "unreleased",
+      "aliUrl": null,
+      "image": null,
+      "values": {},
+      "firstSeenAt": "2026-11-16T19:13:21.419Z",
       "testedAt": null
     },
     {
@@ -17724,7 +17892,7 @@
         "ko": "지울브스",
         "en": "G-Wolves"
       },
-      "priceKrw": 216500,
+      "priceKrw": 212400,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -17856,7 +18024,7 @@
         "ko": "라푸",
         "en": "RAPOO"
       },
-      "priceKrw": 71100,
+      "priceKrw": 69800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -17916,7 +18084,7 @@
         "ko": "이와든",
         "en": "EWEADN"
       },
-      "priceKrw": 8100,
+      "priceKrw": 8000,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -17950,7 +18118,7 @@
         "ko": "다모샥",
         "en": "Darmoshark"
       },
-      "priceKrw": 102100,
+      "priceKrw": 100200,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -18419,7 +18587,7 @@
         "ko": "OYREIN",
         "en": "OYREIN"
       },
-      "priceKrw": 120000,
+      "priceKrw": 117800,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -18500,7 +18668,7 @@
         "ko": "라푸",
         "en": "RAPOO"
       },
-      "priceKrw": 108900,
+      "priceKrw": 106900,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -18655,18 +18823,21 @@
         "ko": "엠초스",
         "en": "MCHOSE"
       },
-      "priceKrw": 65100,
-      "status": "earlyAccess",
+      "priceKrw": 63900,
+      "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c36IX4Or",
       "image": "/images/a444c092-d408-4775-b3ed-d723fe0beb51.avif",
       "values": {
         "acceleration": 60,
         "battery": "500",
+        "clickGhosting": false,
+        "detachAvgWireless": 1.850263366336633,
+        "detachStddevWireless": 0.2965449992476133,
         "dpiMax": 50000,
         "earlyAccessAt": "2026-11-04T00:00:00.000Z",
         "encoder": "ttcGold",
-        "eyejokerRating": "ANTICIPATING",
+        "eyejokerRating": "RECOMMENDED",
         "height": 39.8,
         "holeBody": "no",
         "housingMouse": [
@@ -18681,17 +18852,46 @@
           "POLYMER"
         ],
         "mouseMcu": "nordicnrf54l15",
+        "optimalResponseSpeed": 1.279859900990098,
+        "optimalStddev": 0.04490374662961138,
+        "overallRatingMouse": "TIER_0",
+        "pcbAvgOptimal": 1.2808069306930685,
+        "pcbAvgOptimalDetach": 1.2789128712871296,
+        "pcbAvgWireless": 1.8466485148514855,
+        "pcbStddevOptimal": 0.0546648234449039,
+        "pcbStddevOptimalDetach": 0.05242879501954305,
+        "pcbStddevWireless": 0.2921267191178286,
         "port": "usbTypeC",
         "publicReleaseAt": "2026-11-11T00:00:00.000Z",
         "sensor": "paw3955ti",
+        "sensorAvg": 0.4056545454545454,
+        "sensorAvgMotionSyncOff": 0.4056545454545454,
+        "sensorAvgMotionSyncOn": 0.49134545454545436,
+        "sensorAvgWired": 0.24068181818181825,
+        "sensorAvgWiredMotionSyncOff": 0.24068181818181825,
+        "sensorAvgWiredMotionSyncOn": 0.3431545454545453,
+        "sensorAvgWireless": 0.4056545454545454,
+        "sensorAvgWirelessMotionSyncOff": 0.4056545454545454,
+        "sensorAvgWirelessMotionSyncOn": 0.49134545454545436,
+        "sensorDeviationMotionSyncOff": 0.07585745440251572,
+        "sensorDeviationMotionSyncOn": 0.06615786029897613,
+        "sensorDeviationOpt": 0.07585745440251572,
+        "sensorDeviationWired": 0.051259576811324085,
+        "sensorDeviationWiredMotionSyncOff": 0.051259576811324085,
+        "sensorDeviationWiredMotionSyncOn": 0.04982737224451424,
+        "sensorDeviationWireless": 0.07585745440251572,
+        "sensorDeviationWirelessMotionSyncOff": 0.07585745440251572,
+        "sensorDeviationWirelessMotionSyncOn": 0.06615786029897613,
         "sensorLodOptions": "0.5",
         "sideSwitch": "kailhMicroSwitch",
+        "slamClick": true,
+        "slamClickPrevention": false,
         "switch": "omronD2fcF7n100m",
         "weight": 59,
         "wheelSwitch": "후아노 백축"
       },
       "firstSeenAt": null,
-      "testedAt": null
+      "testedAt": "2026-11-16T19:13:21.419Z"
     },
     {
       "id": "692975c4-6f16-4c58-98b5-65c0d9ad6562",
@@ -19183,8 +19383,8 @@
         "ko": "ATK",
         "en": "ATK"
       },
-      "priceKrw": 88500,
-      "status": "testing",
+      "priceKrw": 86800,
+      "status": "earlyAccess",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
       "image": "/images/418fd23d-e274-4ab0-b385-4f21e0addd58.avif",
@@ -19229,7 +19429,7 @@
         "ko": "미오닉스",
         "en": "Mionix"
       },
-      "priceKrw": 326700,
+      "priceKrw": 320600,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -19601,7 +19801,7 @@
         "ko": "싸이록스",
         "en": "ScyRox"
       },
-      "priceKrw": 52800,
+      "priceKrw": 51800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -19846,7 +20046,7 @@
         "ko": "ATK",
         "en": "ATK"
       },
-      "priceKrw": 18100,
+      "priceKrw": 17800,
       "status": "purchased",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -19982,7 +20182,7 @@
         "ko": "Nyfter",
         "en": "Nyfter"
       },
-      "priceKrw": 121400,
+      "priceKrw": 117900,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -20112,7 +20312,7 @@
         "ko": "닌젓소",
         "en": "Ninjutso"
       },
-      "priceKrw": 132300,
+      "priceKrw": 129800,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -20190,7 +20390,7 @@
         "ko": "엔드게임기어",
         "en": "EndGame Gear"
       },
-      "priceKrw": 177000,
+      "priceKrw": 173700,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -20234,7 +20434,7 @@
         "ko": "싸이록스",
         "en": "ScyRox"
       },
-      "priceKrw": 71100,
+      "priceKrw": 69800,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -20303,7 +20503,7 @@
         "ko": "라푸",
         "en": "RAPOO"
       },
-      "priceKrw": 73500,
+      "priceKrw": 72100,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -20668,7 +20868,7 @@
         "ko": "KYSONA",
         "en": "KYSONA"
       },
-      "priceKrw": 96600,
+      "priceKrw": 94800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -20848,7 +21048,7 @@
         "ko": "VGN",
         "en": "VGN"
       },
-      "priceKrw": 102100,
+      "priceKrw": 100200,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -20857,6 +21057,7 @@
         "acceleration": 60,
         "battery": "500",
         "dpiMax": 50000,
+        "earlyAccessAt": "2026-11-22T00:00:00.000Z",
         "encoder": "ttcDustproofGold",
         "height": 37.8,
         "holeBody": "no",
@@ -20873,6 +21074,7 @@
         ],
         "mouseMcu": "nordicnrf54lm20",
         "port": "usbTypeC",
+        "publicReleaseAt": "2026-11-29T00:00:00.000Z",
         "sensor": "PAW3955Extreme",
         "switch": "kailhOptical",
         "weight": 56
@@ -20956,7 +21158,7 @@
         "ko": "라푸",
         "en": "RAPOO"
       },
-      "priceKrw": 40600,
+      "priceKrw": 39800,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -21098,7 +21300,7 @@
         "en": "Steelseries"
       },
       "priceKrw": 279000,
-      "status": "testing",
+      "status": "earlyAccess",
       "saleStatus": "unreleased",
       "aliUrl": "https://s.click.aliexpress.com/e/_c4BfgSsn",
       "image": "/images/9b4a7e3c-0d13-4722-9eb0-ac971211b270.avif",
@@ -21106,6 +21308,7 @@
         "acceleration": 70,
         "dpiMax": 42000,
         "dpiStep": 1,
+        "earlyAccessAt": "2026-11-15T00:00:00.000Z",
         "eyejokerRating": "ANTICIPATING",
         "height": 36.2,
         "holeBody": "no",
@@ -21120,6 +21323,7 @@
         "mouseMaterial": [
           "POLYMER"
         ],
+        "publicReleaseAt": "2026-11-22T00:00:00.000Z",
         "sensor": "TrueMove42KPro",
         "sensorLodMode": "range",
         "sensorLodOptions": "0.7",
@@ -21136,7 +21340,7 @@
         "ko": "엠초스",
         "en": "MCHOSE"
       },
-      "priceKrw": 121200,
+      "priceKrw": 118900,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -21172,7 +21376,7 @@
         "ko": "VGN",
         "en": "VGN"
       },
-      "priceKrw": 102000,
+      "priceKrw": 100100,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c3iA3xn3",
@@ -21332,7 +21536,7 @@
         "ko": "다얼유",
         "en": "DAREU"
       },
-      "priceKrw": 122500,
+      "priceKrw": 120200,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -21374,7 +21578,7 @@
         "ko": "레이저",
         "en": "RAZER"
       },
-      "priceKrw": 1820200,
+      "priceKrw": 1786100,
       "status": "reviewed",
       "saleStatus": "DISCONTINUED",
       "aliUrl": null,
@@ -21444,7 +21648,7 @@
         "ko": "라푸",
         "en": "RAPOO"
       },
-      "priceKrw": 60900,
+      "priceKrw": 59800,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c3dmOG9P",
@@ -21703,7 +21907,7 @@
         "ko": "ATK",
         "en": "ATK"
       },
-      "priceKrw": 61200,
+      "priceKrw": 60100,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -21742,7 +21946,7 @@
         "ko": "Ausdom",
         "en": "Ausdom"
       },
-      "priceKrw": 48700,
+      "priceKrw": 47800,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -21818,7 +22022,7 @@
         "ko": "Huawei",
         "en": "Huawei"
       },
-      "priceKrw": 26300,
+      "priceKrw": 25800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -21906,7 +22110,7 @@
         "ko": "멜긱",
         "en": "MelGeek"
       },
-      "priceKrw": 121100,
+      "priceKrw": 118800,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -22186,7 +22390,7 @@
         "ko": "라푸",
         "en": "RAPOO"
       },
-      "priceKrw": 60900,
+      "priceKrw": 59800,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c3tnIkyl",
@@ -22340,7 +22544,7 @@
         "ko": "펄사",
         "en": "Pulsar"
       },
-      "priceKrw": 190500,
+      "priceKrw": 187000,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -22886,7 +23090,7 @@
         "ko": "ATK",
         "en": "ATK"
       },
-      "priceKrw": 136100,
+      "priceKrw": 133600,
       "status": "arrived",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -23036,7 +23240,7 @@
         "ko": "ATK",
         "en": "ATK"
       },
-      "priceKrw": 26300,
+      "priceKrw": 25800,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -23103,7 +23307,7 @@
         "ko": "ATK",
         "en": "ATK"
       },
-      "priceKrw": 71700,
+      "priceKrw": 70400,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c4ewURI5",
@@ -23270,7 +23474,7 @@
         "ko": "ProtoArc",
         "en": "ProtoArc"
       },
-      "priceKrw": 122500,
+      "priceKrw": 120200,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -23295,7 +23499,7 @@
         "ko": "VGN",
         "en": "VGN"
       },
-      "priceKrw": 33900,
+      "priceKrw": 33300,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c309FpP5",
@@ -23397,7 +23601,7 @@
         "ko": "ATK",
         "en": "ATK"
       },
-      "priceKrw": 88500,
+      "priceKrw": 86800,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -23696,7 +23900,7 @@
         "ko": "파이널마우스",
         "en": "Finalmouse"
       },
-      "priceKrw": 243700,
+      "priceKrw": 239100,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -24113,7 +24317,7 @@
         "ko": "VGN",
         "en": "VGN"
       },
-      "priceKrw": 46700,
+      "priceKrw": 45800,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c4UrtAu7",
@@ -24241,7 +24445,7 @@
         "ko": "와이즈아울",
         "en": "WAIZOWL"
       },
-      "priceKrw": 109900,
+      "priceKrw": 107800,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -24387,7 +24591,7 @@
         "ko": "VGN",
         "en": "VGN"
       },
-      "priceKrw": 95300,
+      "priceKrw": 93500,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -24396,6 +24600,7 @@
         "acceleration": 50,
         "battery": "500",
         "dpiMax": 42000,
+        "earlyAccessAt": "2026-11-21T00:00:00.000Z",
         "encoder": "ttcDustproofGold",
         "height": 37.8,
         "housingMouse": [
@@ -24408,6 +24613,7 @@
         "mouseConnection": "유무선",
         "mouseMcu": "nordicnrf54lm20",
         "port": "usbTypeC",
+        "publicReleaseAt": "2026-11-28T00:00:00.000Z",
         "sensor": "PAW3950Extreme",
         "switch": "kailhOptical",
         "weight": 56
@@ -24524,7 +24730,7 @@
         "ko": "ATK",
         "en": "ATK"
       },
-      "priceKrw": 101700,
+      "priceKrw": 99800,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -25094,7 +25300,7 @@
         "ko": "엠초스",
         "en": "MCHOSE"
       },
-      "priceKrw": 70800,
+      "priceKrw": 69500,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -25583,7 +25789,7 @@
         "ko": "엠초스",
         "en": "MCHOSE"
       },
-      "priceKrw": 76200,
+      "priceKrw": 74800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -25754,7 +25960,7 @@
         "ko": "인픽",
         "en": "inphic"
       },
-      "priceKrw": 21400,
+      "priceKrw": 21000,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -25886,7 +26092,7 @@
         "ko": "에디파이어",
         "en": "Edifier"
       },
-      "priceKrw": 60900,
+      "priceKrw": 59800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -26866,7 +27072,7 @@
         "ko": "XBAB Tech",
         "en": "XBAB Tech"
       },
-      "priceKrw": 230100,
+      "priceKrw": 225800,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -27328,7 +27534,7 @@
         "en": "UNIUS"
       },
       "priceKrw": 170000,
-      "status": "testing",
+      "status": "earlyAccess",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
       "image": "/images/024d60b5-84b5-4382-b3a6-8bb9d76fdd6b.avif",
@@ -27375,7 +27581,7 @@
         "ko": "벤큐 조위",
         "en": "BenQ Zowie"
       },
-      "priceKrw": 204200,
+      "priceKrw": 200400,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -27411,7 +27617,7 @@
         "ko": "인픽",
         "en": "inphic"
       },
-      "priceKrw": 21400,
+      "priceKrw": 21000,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -27441,7 +27647,7 @@
         "ko": "지울브스",
         "en": "G-Wolves"
       },
-      "priceKrw": 182400,
+      "priceKrw": 179000,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -28219,7 +28425,7 @@
         "ko": "다모샥",
         "en": "Darmoshark"
       },
-      "priceKrw": 81700,
+      "priceKrw": 80200,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -28532,7 +28738,7 @@
         "ko": "엠초스",
         "en": "MCHOSE"
       },
-      "priceKrw": 60900,
+      "priceKrw": 59800,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -29426,7 +29632,7 @@
         "ko": "VGN",
         "en": "VGN"
       },
-      "priceKrw": 102000,
+      "priceKrw": 100100,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -29614,7 +29820,7 @@
         "ko": "VGN",
         "en": "VGN"
       },
-      "priceKrw": 28300,
+      "priceKrw": 27800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -29844,7 +30050,7 @@
         "ko": "CRDRAKO",
         "en": "CRDRAKO"
       },
-      "priceKrw": 120000,
+      "priceKrw": 117800,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -30662,7 +30868,7 @@
         "ko": "커세어",
         "en": "CORSAIR"
       },
-      "priceKrw": 93900,
+      "priceKrw": 92200,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -30694,7 +30900,7 @@
         "ko": "ATK",
         "en": "ATK"
       },
-      "priceKrw": 40800,
+      "priceKrw": 40100,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -30858,7 +31064,7 @@
         "ko": "포니지",
         "en": "PWNAGE"
       },
-      "priceKrw": 216500,
+      "priceKrw": 212400,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -31517,7 +31723,7 @@
         "ko": "GXTrust",
         "en": "GXTrust"
       },
-      "priceKrw": 45500,
+      "priceKrw": 44200,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -31609,7 +31815,7 @@
         "ko": "다모샥",
         "en": "Darmoshark"
       },
-      "priceKrw": 166800,
+      "priceKrw": 161900,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -31648,7 +31854,7 @@
         "ko": "제임스동키",
         "en": "jamesdonkey"
       },
-      "priceKrw": 81300,
+      "priceKrw": 79800,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -31722,7 +31928,7 @@
         "ko": "람주",
         "en": "LAMZU"
       },
-      "priceKrw": 162800,
+      "priceKrw": 159800,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -32432,7 +32638,7 @@
         "ko": "VGN",
         "en": "VGN"
       },
-      "priceKrw": 60900,
+      "priceKrw": 59800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -32541,7 +32747,7 @@
         "ko": "엠초스",
         "en": "MCHOSE"
       },
-      "priceKrw": 70800,
+      "priceKrw": 69500,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -32551,6 +32757,7 @@
         "battery": "500",
         "dpiMax": 26000,
         "dpiStep": 50,
+        "earlyAccessAt": "2026-11-20T00:00:00.000Z",
         "encoder": "ttcDustproofGold",
         "firmwareVersion": "5.42.1.0",
         "height": 39.8,
@@ -32568,6 +32775,7 @@
         ],
         "mouseMcu": "realtekrtl8762gkh",
         "port": "usbTypeC",
+        "publicReleaseAt": "2026-11-27T00:00:00.000Z",
         "sensor": "paw3395",
         "sensorLodMode": "options",
         "sensorLodOptions": "1.0, 2.0 mm",
@@ -32951,7 +33159,7 @@
         "ko": "이와든",
         "en": "EWEADN"
       },
-      "priceKrw": 65100,
+      "priceKrw": 63900,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -32983,7 +33191,7 @@
         "ko": "ATK",
         "en": "ATK"
       },
-      "priceKrw": 88500,
+      "priceKrw": 86800,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c3J876Cj",
@@ -33099,7 +33307,7 @@
         "ko": "ATK",
         "en": "ATK"
       },
-      "priceKrw": 136100,
+      "priceKrw": 133600,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -33172,7 +33380,7 @@
         "ko": "KYSONA",
         "en": "KYSONA"
       },
-      "priceKrw": 62600,
+      "priceKrw": 61400,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -33276,7 +33484,7 @@
         "ko": "ATK",
         "en": "ATK"
       },
-      "priceKrw": 122100,
+      "priceKrw": 119800,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -33473,7 +33681,7 @@
         "ko": "엠초스",
         "en": "MCHOSE"
       },
-      "priceKrw": 107600,
+      "priceKrw": 105500,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -33863,7 +34071,7 @@
         "ko": "VGN",
         "en": "VGN"
       },
-      "priceKrw": 85400,
+      "priceKrw": 83800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -33891,7 +34099,7 @@
         "ko": "다모샥",
         "en": "Darmoshark"
       },
-      "priceKrw": 142500,
+      "priceKrw": 139800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -34080,7 +34288,7 @@
         "ko": "싸이록스",
         "en": "ScyRox"
       },
-      "priceKrw": 52800,
+      "priceKrw": 51800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -34313,7 +34521,7 @@
         "ko": "KYSONA",
         "en": "KYSONA"
       },
-      "priceKrw": 62600,
+      "priceKrw": 61400,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -34354,7 +34562,7 @@
         "ko": "아자즈",
         "en": "AJAZZ"
       },
-      "priceKrw": 76200,
+      "priceKrw": 74800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -34434,7 +34642,7 @@
         "ko": "아자즈",
         "en": "AJAZZ"
       },
-      "priceKrw": 62600,
+      "priceKrw": 61400,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -34469,8 +34677,8 @@
         "ko": "VGN",
         "en": "VGN"
       },
-      "priceKrw": 81500,
-      "status": "testing",
+      "priceKrw": 80000,
+      "status": "earlyAccess",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
       "image": "/images/20712169-1cab-4205-bf73-b1a1edf16d3e.avif",
@@ -34478,6 +34686,7 @@
         "acceleration": 50,
         "battery": "800",
         "dpiMax": 42000,
+        "earlyAccessAt": "2026-11-14T00:00:00.000Z",
         "eyejokerRating": "ANTICIPATING",
         "housingMouse": [
           "대칭"
@@ -34490,6 +34699,7 @@
         ],
         "mouseMcu": "vgnry66080tf13",
         "port": "usbTypeC",
+        "publicReleaseAt": "2026-11-21T00:00:00.000Z",
         "sensor": "PAW3950Extreme"
       },
       "firstSeenAt": null,
@@ -34563,7 +34773,7 @@
         "ko": "ATK",
         "en": "ATK"
       },
-      "priceKrw": 61200,
+      "priceKrw": 60100,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -34605,7 +34815,7 @@
         "ko": "엠초스",
         "en": "MCHOSE"
       },
-      "priceKrw": 65100,
+      "priceKrw": 63900,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -34880,7 +35090,7 @@
         "ko": "VGN",
         "en": "VGN"
       },
-      "priceKrw": 60900,
+      "priceKrw": 59800,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c4UrtAu7",
@@ -34953,7 +35163,7 @@
         "ko": "엔드게임기어",
         "en": "EndGame Gear"
       },
-      "priceKrw": 177000,
+      "priceKrw": 173700,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -35041,7 +35251,7 @@
         "ko": "GamaKay",
         "en": "GamaKay"
       },
-      "priceKrw": 32700,
+      "priceKrw": 32000,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -35108,7 +35318,7 @@
         "en": "VGN"
       },
       "priceKrw": 24900,
-      "status": "testing",
+      "status": "earlyAccess",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
       "image": "/images/c2b8a2a7-c3e6-49ff-b284-82acf36faec4.avif",
@@ -35445,7 +35655,7 @@
         "ko": "라푸",
         "en": "RAPOO"
       },
-      "priceKrw": 77600,
+      "priceKrw": 76100,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -36181,7 +36391,7 @@
         "ko": "ATK",
         "en": "ATK"
       },
-      "priceKrw": 40800,
+      "priceKrw": 40100,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -36210,7 +36420,7 @@
         "ko": "지울브스",
         "en": "G-Wolves"
       },
-      "priceKrw": 216500,
+      "priceKrw": 212400,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -36294,7 +36504,7 @@
         "ko": "인픽",
         "en": "inphic"
       },
-      "priceKrw": 95600,
+      "priceKrw": 93800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -36536,7 +36746,7 @@
         "ko": "지울브스",
         "en": "G-Wolves"
       },
-      "priceKrw": 179700,
+      "priceKrw": 176300,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -37100,7 +37310,7 @@
         "ko": "펄사",
         "en": "Pulsar"
       },
-      "priceKrw": 176900,
+      "priceKrw": 173600,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -37125,7 +37335,7 @@
         "ko": "VGN",
         "en": "VGN"
       },
-      "priceKrw": 58900,
+      "priceKrw": 57800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -37427,6 +37637,22 @@
         "wheelSwitch": "2핀 택트"
       },
       "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "f90ac39a-d094-41e9-907f-2e97bfe9f596",
+      "name": "VT2 RT V3",
+      "manufacturer": {
+        "ko": "라푸",
+        "en": "RAPOO"
+      },
+      "priceKrw": null,
+      "status": "unreleased",
+      "saleStatus": "unreleased",
+      "aliUrl": null,
+      "image": null,
+      "values": {},
+      "firstSeenAt": "2026-11-16T19:13:21.419Z",
       "testedAt": null
     },
     {
@@ -37933,7 +38159,7 @@
         "ko": "어택샤크",
         "en": "AttackShark"
       },
-      "priceKrw": 127300,
+      "priceKrw": 124900,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -38003,7 +38229,7 @@
         "ko": "레오보그",
         "en": "LEOBOG"
       },
-      "priceKrw": 16100,
+      "priceKrw": 15800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,

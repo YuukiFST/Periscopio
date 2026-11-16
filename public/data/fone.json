@@ -40,17 +40,10 @@
       "multiple": false,
       "options": [
         {
-          "value": "arrived",
+          "value": "unreleased",
           "label": {
-            "ko": "제품 도착",
-            "en": "Arrived"
-          }
-        },
-        {
-          "value": "earlyAccess",
-          "label": {
-            "ko": "선 공개",
-            "en": "Early Access"
+            "ko": "미출시",
+            "en": "Unreleased"
           }
         },
         {
@@ -68,10 +61,10 @@
           }
         },
         {
-          "value": "reviewed",
+          "value": "arrived",
           "label": {
-            "ko": "공개 완료",
-            "en": "Reviewed"
+            "ko": "제품 도착",
+            "en": "Arrived"
           }
         },
         {
@@ -82,10 +75,17 @@
           }
         },
         {
-          "value": "unreleased",
+          "value": "earlyAccess",
           "label": {
-            "ko": "미출시",
-            "en": "Unreleased"
+            "ko": "선 공개",
+            "en": "Early Access"
+          }
+        },
+        {
+          "value": "reviewed",
+          "label": {
+            "ko": "공개 완료",
+            "en": "Reviewed"
           }
         }
       ]
@@ -102,10 +102,10 @@
       "multiple": false,
       "options": [
         {
-          "value": "DISCONTINUED",
+          "value": "unreleased",
           "label": {
-            "ko": "단종",
-            "en": "Discontinued"
+            "ko": "미출시",
+            "en": "Unreleased"
           }
         },
         {
@@ -116,10 +116,10 @@
           }
         },
         {
-          "value": "unreleased",
+          "value": "DISCONTINUED",
           "label": {
-            "ko": "미출시",
-            "en": "Unreleased"
+            "ko": "단종",
+            "en": "Discontinued"
           }
         }
       ]
@@ -143,6 +143,13 @@
           }
         },
         {
+          "value": "RECOMMENDED",
+          "label": {
+            "ko": "추천",
+            "en": "Recommend"
+          }
+        },
+        {
           "value": "MILD_RECOMMENDATION",
           "label": {
             "ko": "추천까지는",
@@ -154,13 +161,6 @@
           "label": {
             "ko": "추천안함",
             "en": "Not Recommend"
-          }
-        },
-        {
-          "value": "RECOMMENDED",
-          "label": {
-            "ko": "추천",
-            "en": "Recommend"
           }
         },
         {
@@ -789,7 +789,7 @@
         "ko": "NiceHCK",
         "en": "NiceHCK"
       },
-      "priceKrw": 17700,
+      "priceKrw": 17400,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -824,7 +824,7 @@
         "ko": "Jabra",
         "en": "Jabra"
       },
-      "priceKrw": 381200,
+      "priceKrw": 374000,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -850,7 +850,7 @@
         "ko": "Final Audio",
         "en": "Final Audio"
       },
-      "priceKrw": 175600,
+      "priceKrw": 172300,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -884,13 +884,42 @@
       "testedAt": null
     },
     {
+      "id": "03a9e27a-8a9a-437e-973b-023852691068",
+      "name": "Op.24",
+      "manufacturer": {
+        "ko": "ooopusX",
+        "en": "ooopusX"
+      },
+      "priceKrw": 37700,
+      "status": "arrived",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": null,
+      "values": {
+        "earphoneAnc": false,
+        "earphoneCable": "2-pin 분리형, 3.5mm",
+        "earphoneConnection": "WIRED",
+        "earphoneDriverConfiguration": "2DD+4BA",
+        "earphoneDriverDiameter": "10mm+8mm DD + 4BA",
+        "earphoneMicrophone": [
+          "WITHOUT_MIC"
+        ],
+        "earphoneSourceConnector": [
+          "PLUG_35MM"
+        ],
+        "earphoneWearType": "OVER_EAR"
+      },
+      "firstSeenAt": "2026-11-16T19:13:21.419Z",
+      "testedAt": null
+    },
+    {
       "id": "043676ad-25ca-4c9a-a6f8-6fb1f2722643",
       "name": "Trinity",
       "manufacturer": {
         "ko": "아즈라",
         "en": "AZLA"
       },
-      "priceKrw": 27100,
+      "priceKrw": 26600,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -942,7 +971,7 @@
         "en": "Moondrop"
       },
       "priceKrw": 35000,
-      "status": "purchased",
+      "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
       "image": null,
@@ -965,7 +994,8 @@
         "earphoneSourceConnector": [
           "PLUG_35MM"
         ],
-        "earphoneWearType": "OVER_EAR"
+        "earphoneWearType": "OVER_EAR",
+        "eyejokerRating": "ANTICIPATING"
       },
       "firstSeenAt": null,
       "testedAt": null
@@ -1120,7 +1150,7 @@
         "ko": "RAPTGO",
         "en": "RAPTGO"
       },
-      "priceKrw": 216500,
+      "priceKrw": 212400,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -1198,7 +1228,7 @@
         "ko": "CrinEar",
         "en": "CrinEar"
       },
-      "priceKrw": 476500,
+      "priceKrw": 467600,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c3EeN12B",
@@ -1525,7 +1555,7 @@
         "ko": "Bose",
         "en": "Bose"
       },
-      "priceKrw": 407100,
+      "priceKrw": 399400,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -1552,7 +1582,7 @@
         "ko": "BLON",
         "en": "BLON"
       },
-      "priceKrw": 54400,
+      "priceKrw": 53400,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -1589,7 +1619,7 @@
         "ko": "에이수스",
         "en": "ASUS"
       },
-      "priceKrw": 149700,
+      "priceKrw": 146900,
       "status": "arrived",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -1664,7 +1694,7 @@
         "ko": "Yincrow",
         "en": "Yincrow"
       },
-      "priceKrw": 13600,
+      "priceKrw": 13400,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -1698,7 +1728,7 @@
         "ko": "ZiiGaat",
         "en": "ZiiGaat"
       },
-      "priceKrw": 379800,
+      "priceKrw": 372700,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c4KfANBp",
@@ -1725,6 +1755,22 @@
         "earphoneWearType": "OVER_EAR"
       },
       "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "10e11584-e9d1-4d15-bf51-9028a53f2971",
+      "name": "karen 케이블",
+      "manufacturer": {
+        "ko": "Tripowin",
+        "en": "Tripowin"
+      },
+      "priceKrw": null,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": null,
+      "values": {},
+      "firstSeenAt": "2026-11-16T19:13:21.419Z",
       "testedAt": null
     },
     {
@@ -1870,13 +1916,31 @@
       "testedAt": null
     },
     {
+      "id": "135b2167-0931-4fd8-9b90-7a25d5011ec3",
+      "name": "IE 시리즈 MMCX 케이블 3.5mm 플러그",
+      "manufacturer": {
+        "ko": "젠하이저",
+        "en": "Sennheiser"
+      },
+      "priceKrw": 129000,
+      "status": "proposed",
+      "saleStatus": "DISCONTINUED",
+      "aliUrl": null,
+      "image": "/images/b2778550-5c61-4547-a4a5-b4c83af58196.avif",
+      "values": {
+        "earphoneAnc": false
+      },
+      "firstSeenAt": "2026-11-16T19:13:21.419Z",
+      "testedAt": null
+    },
+    {
       "id": "1545510c-e3e4-4e29-b100-2555706c0d09",
       "name": "Ola",
       "manufacturer": {
         "ko": "TANCHJIM",
         "en": "TANCHJIM"
       },
-      "priceKrw": 47600,
+      "priceKrw": 46800,
       "status": "proposed",
       "saleStatus": "DISCONTINUED",
       "aliUrl": "https://s.click.aliexpress.com/e/_c4akkTBr",
@@ -1913,7 +1977,7 @@
         "ko": "레이저",
         "en": "RAZER"
       },
-      "priceKrw": 272300,
+      "priceKrw": 267200,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -2032,7 +2096,7 @@
         "ko": "JBL",
         "en": "JBL"
       },
-      "priceKrw": 408400,
+      "priceKrw": 400700,
       "status": "arrived",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -2109,7 +2173,7 @@
         "ko": "탕주",
         "en": "TANGZU"
       },
-      "priceKrw": 107600,
+      "priceKrw": 105500,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -2145,7 +2209,7 @@
         "ko": "TANCHJIM",
         "en": "TANCHJIM"
       },
-      "priceKrw": 16100,
+      "priceKrw": 15800,
       "status": "arrived",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -2301,7 +2365,7 @@
         "ko": "SIVGA",
         "en": "SIVGA"
       },
-      "priceKrw": 223300,
+      "priceKrw": 219100,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -2422,7 +2486,7 @@
         "ko": "키위이어스",
         "en": "KiwiEars"
       },
-      "priceKrw": 162000,
+      "priceKrw": 159000,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -2574,7 +2638,7 @@
         "ko": "Huawei",
         "en": "Huawei"
       },
-      "priceKrw": 295300,
+      "priceKrw": 289900,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -2600,7 +2664,7 @@
         "ko": "Pula Audio",
         "en": "Pula Audio"
       },
-      "priceKrw": 27200,
+      "priceKrw": 26700,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -2637,7 +2701,7 @@
         "ko": "소니",
         "en": "Sony"
       },
-      "priceKrw": 449200,
+      "priceKrw": 440800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -2731,7 +2795,7 @@
         "ko": "TANCHJIM",
         "en": "TANCHJIM"
       },
-      "priceKrw": 272300,
+      "priceKrw": 267200,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -2765,7 +2829,7 @@
         "ko": "수월우",
         "en": "Moondrop"
       },
-      "priceKrw": 13600,
+      "priceKrw": 13300,
       "status": "arrived",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -2798,7 +2862,7 @@
         "ko": "QKZ",
         "en": "QKZ"
       },
-      "priceKrw": 53100,
+      "priceKrw": 52100,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -2875,7 +2939,7 @@
         "ko": "ZiiGaat",
         "en": "ZiiGaat"
       },
-      "priceKrw": 47600,
+      "priceKrw": 46800,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c3ZCdvKH",
@@ -2950,7 +3014,7 @@
         "ko": "SIVGA",
         "en": "SIVGA"
       },
-      "priceKrw": 121200,
+      "priceKrw": 118900,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -2987,7 +3051,7 @@
         "ko": "Binary Acoustics",
         "en": "Binary Acoustics"
       },
-      "priceKrw": 319900,
+      "priceKrw": 313900,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -3086,7 +3150,7 @@
         "ko": "Juzear",
         "en": "Juzear"
       },
-      "priceKrw": 147000,
+      "priceKrw": 144300,
       "status": "arrived",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -3123,7 +3187,7 @@
         "ko": "7Hz",
         "en": "7Hz"
       },
-      "priceKrw": 202800,
+      "priceKrw": 199100,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -3159,7 +3223,7 @@
         "ko": "DUNU",
         "en": "DUNU"
       },
-      "priceKrw": 340300,
+      "priceKrw": 334000,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -3194,7 +3258,7 @@
         "ko": "Nothing",
         "en": "Nothing"
       },
-      "priceKrw": 243700,
+      "priceKrw": 239100,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -3222,7 +3286,7 @@
         "ko": "Denon",
         "en": "Denon"
       },
-      "priceKrw": 475100,
+      "priceKrw": 466200,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -3396,7 +3460,7 @@
         "ko": "DUNU",
         "en": "DUNU"
       },
-      "priceKrw": 107600,
+      "priceKrw": 105500,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c3ZoswOZ",
@@ -3531,7 +3595,7 @@
         "ko": "ARTTI",
         "en": "ARTTI"
       },
-      "priceKrw": 90900,
+      "priceKrw": 89200,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -3649,7 +3713,7 @@
         "ko": "Juzear",
         "en": "Juzear"
       },
-      "priceKrw": 251800,
+      "priceKrw": 247100,
       "status": "arrived",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -3700,26 +3764,6 @@
         "eyejokerRating": "HIGHLY_RECOMMENDED",
         "overallRatingEarphone": "FLAWLESS",
         "publicReleaseAt": "2026-07-31T18:43:00.000Z"
-      },
-      "firstSeenAt": null,
-      "testedAt": null
-    },
-    {
-      "id": "35828524-a962-45e4-8cf0-4d17a1fbc346",
-      "name": "CHU3",
-      "manufacturer": {
-        "ko": "수월우",
-        "en": "Moondrop"
-      },
-      "priceKrw": null,
-      "status": "testing",
-      "saleStatus": "FOR_SALE",
-      "aliUrl": null,
-      "image": null,
-      "values": {
-        "earphoneAnc": false,
-        "earphoneConnection": "WIRED",
-        "eyejokerRating": "ANTICIPATING"
       },
       "firstSeenAt": null,
       "testedAt": null
@@ -3780,7 +3824,7 @@
         "ko": "LETSHUOER",
         "en": "LETSHUOER"
       },
-      "priceKrw": 257300,
+      "priceKrw": 252500,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -3886,7 +3930,7 @@
         "ko": "7Hz",
         "en": "7Hz"
       },
-      "priceKrw": 80300,
+      "priceKrw": 78800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c4LqIE6p",
@@ -4090,7 +4134,7 @@
         "ko": "NiceHCK",
         "en": "NiceHCK"
       },
-      "priceKrw": 39500,
+      "priceKrw": 38700,
       "status": "arrived",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -4123,7 +4167,7 @@
         "ko": "beyerdynamic",
         "en": "beyerdynamic"
       },
-      "priceKrw": 204200,
+      "priceKrw": 200400,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -4204,7 +4248,7 @@
         "ko": "심갓",
         "en": "SIMGOT"
       },
-      "priceKrw": 298100,
+      "priceKrw": 292600,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c36hJqbF",
@@ -4486,7 +4530,7 @@
         "ko": "앤커",
         "en": "ANKER"
       },
-      "priceKrw": 136100,
+      "priceKrw": 133600,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -4547,7 +4591,7 @@
         "ko": "키위이어스",
         "en": "KiwiEars"
       },
-      "priceKrw": 366200,
+      "priceKrw": 359400,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -4582,7 +4626,7 @@
         "ko": "KZ",
         "en": "KZ"
       },
-      "priceKrw": 23100,
+      "priceKrw": 22700,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c2IIgPF9",
@@ -4695,7 +4739,7 @@
         "ko": "FATfreq",
         "en": "FATfreq"
       },
-      "priceKrw": 325400,
+      "priceKrw": 319300,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -4937,7 +4981,7 @@
         "ko": "수월우",
         "en": "Moondrop"
       },
-      "priceKrw": 148400,
+      "priceKrw": 145600,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -4973,7 +5017,7 @@
         "ko": "KZ",
         "en": "KZ"
       },
-      "priceKrw": 24500,
+      "priceKrw": 24000,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c3I96SuP",
@@ -5122,7 +5166,7 @@
         "ko": "ZiiGaat",
         "en": "ZiiGaat"
       },
-      "priceKrw": 339000,
+      "priceKrw": 332600,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c3ShBeRd",
@@ -5159,7 +5203,7 @@
         "en": "Samsung AKG"
       },
       "priceKrw": 23800,
-      "status": "arrived",
+      "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
       "image": "/images/6f8b146b-46e2-4e8e-a2f3-0299b48e393b.avif",
@@ -5194,7 +5238,7 @@
         "ko": "FIIO",
         "en": "FIIO"
       },
-      "priceKrw": 27200,
+      "priceKrw": 26700,
       "status": "proposed",
       "saleStatus": "DISCONTINUED",
       "aliUrl": null,
@@ -5230,7 +5274,7 @@
         "ko": "DUNU",
         "en": "DUNU"
       },
-      "priceKrw": 162000,
+      "priceKrw": 159000,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c3rP36nj",
@@ -5268,7 +5312,7 @@
         "ko": "Juzear",
         "en": "Juzear"
       },
-      "priceKrw": 74900,
+      "priceKrw": 73500,
       "status": "arrived",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -5403,7 +5447,7 @@
         "ko": "Venture Electronics",
         "en": "Venture Electronics"
       },
-      "priceKrw": 6800,
+      "priceKrw": 6700,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -5436,7 +5480,7 @@
         "ko": "스틸시리즈",
         "en": "Steelseries"
       },
-      "priceKrw": 217800,
+      "priceKrw": 213700,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -5472,7 +5516,7 @@
         "ko": "ZiiGaat",
         "en": "ZiiGaat"
       },
-      "priceKrw": 243700,
+      "priceKrw": 239100,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c2yUzClt",
@@ -5508,7 +5552,7 @@
         "ko": "TINHIFI",
         "en": "TINHIFI"
       },
-      "priceKrw": 18900,
+      "priceKrw": 18600,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -5766,7 +5810,7 @@
         "ko": "젠하이저",
         "en": "Sennheiser"
       },
-      "priceKrw": 408400,
+      "priceKrw": 400700,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -5931,7 +5975,7 @@
         "ko": "Final Audio",
         "en": "Final Audio"
       },
-      "priceKrw": 17000,
+      "priceKrw": 16600,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -5997,7 +6041,7 @@
         "ko": "삼성전자",
         "en": "Samsung"
       },
-      "priceKrw": 340300,
+      "priceKrw": 334000,
       "status": "arrived",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -6072,7 +6116,7 @@
         "ko": "TRZK",
         "en": "TRZK"
       },
-      "priceKrw": 74900,
+      "priceKrw": 73500,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -6115,13 +6159,31 @@
       "testedAt": null
     },
     {
+      "id": "60e523c8-0297-4bd3-a518-cc57243d5bd3",
+      "name": "MT1 MAX",
+      "manufacturer": {
+        "ko": "TRN",
+        "en": "TRN"
+      },
+      "priceKrw": 31000,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/c68f0632-0430-40ca-9882-cb598bc3f785.avif",
+      "values": {
+        "earphoneAnc": false
+      },
+      "firstSeenAt": "2026-11-16T19:13:21.419Z",
+      "testedAt": null
+    },
+    {
       "id": "610fcbc3-fafc-4790-b9d2-9d2864d63d0d",
       "name": "C3 MKII",
       "manufacturer": {
         "ko": "TINHIFI",
         "en": "TINHIFI"
       },
-      "priceKrw": 66700,
+      "priceKrw": 65500,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -6157,7 +6219,7 @@
         "ko": "TANCHJIM",
         "en": "TANCHJIM"
       },
-      "priceKrw": 381200,
+      "priceKrw": 374000,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -6247,7 +6309,7 @@
         "ko": "Kefine",
         "en": "Kefine"
       },
-      "priceKrw": 66700,
+      "priceKrw": 65500,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c391aA0P",
@@ -6318,7 +6380,7 @@
         "ko": "탕주",
         "en": "TANGZU"
       },
-      "priceKrw": 270900,
+      "priceKrw": 265800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -6394,7 +6456,7 @@
         "ko": "Bowers & Wilkins",
         "en": "Bowers & Wilkins"
       },
-      "priceKrw": 543200,
+      "priceKrw": 533000,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -6422,7 +6484,7 @@
         "ko": "GK",
         "en": "GK"
       },
-      "priceKrw": 27100,
+      "priceKrw": 26600,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c3vZxT0f",
@@ -6502,7 +6564,7 @@
         "ko": "트루스이어",
         "en": "TRUTHEAR"
       },
-      "priceKrw": 122500,
+      "priceKrw": 120200,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -6575,7 +6637,7 @@
         "ko": "7Hz",
         "en": "7Hz"
       },
-      "priceKrw": 311800,
+      "priceKrw": 305900,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -6647,7 +6709,7 @@
         "ko": "Kefine",
         "en": "Kefine"
       },
-      "priceKrw": 102100,
+      "priceKrw": 100200,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -6683,7 +6745,7 @@
         "ko": "EPZ",
         "en": "EPZ"
       },
-      "priceKrw": 40300,
+      "priceKrw": 39500,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c4MlJtl3",
@@ -6798,7 +6860,7 @@
         "ko": "Kefine",
         "en": "Kefine"
       },
-      "priceKrw": 73500,
+      "priceKrw": 72100,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c3UkTXPF",
@@ -7019,7 +7081,7 @@
         "ko": "DITA Audio",
         "en": "DITA Audio"
       },
-      "priceKrw": 216500,
+      "priceKrw": 212400,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -7055,7 +7117,7 @@
         "ko": "FIIO",
         "en": "FIIO"
       },
-      "priceKrw": 24500,
+      "priceKrw": 24000,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -7122,7 +7184,7 @@
         "ko": "RAPTGO",
         "en": "RAPTGO"
       },
-      "priceKrw": 270900,
+      "priceKrw": 265800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -7158,7 +7220,7 @@
         "ko": "하이디션 게이밍",
         "en": "Hidition Gaming"
       },
-      "priceKrw": 175600,
+      "priceKrw": 172300,
       "status": "reviewed",
       "saleStatus": "DISCONTINUED",
       "aliUrl": null,
@@ -7196,7 +7258,7 @@
         "ko": "심갓",
         "en": "SIMGOT"
       },
-      "priceKrw": 298100,
+      "priceKrw": 292600,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c382fysl",
@@ -7229,7 +7291,7 @@
         "ko": "HZSOUND",
         "en": "HZSOUND"
       },
-      "priceKrw": 108900,
+      "priceKrw": 106900,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -7256,7 +7318,7 @@
         "ko": "키위이어스",
         "en": "KiwiEars"
       },
-      "priceKrw": 230100,
+      "priceKrw": 225800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -7293,7 +7355,7 @@
         "ko": "Fosi Audio",
         "en": "Fosi Audio"
       },
-      "priceKrw": 122500,
+      "priceKrw": 120200,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c3fvD8Qt",
@@ -7327,7 +7389,7 @@
         "ko": "DUNU",
         "en": "DUNU"
       },
-      "priceKrw": 394800,
+      "priceKrw": 387400,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -7414,7 +7476,7 @@
         "ko": "TRN",
         "en": "TRN"
       },
-      "priceKrw": 27200,
+      "priceKrw": 26700,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -7460,7 +7522,7 @@
         "ko": "Rose Technics",
         "en": "Rose Technics"
       },
-      "priceKrw": 99400,
+      "priceKrw": 97500,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -7547,7 +7609,7 @@
         "en": "KiwiEars"
       },
       "priceKrw": 96000,
-      "status": "arrived",
+      "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
       "image": "/images/d20522a3-0528-4de2-bf9c-ad94b810cdc2.avif",
@@ -7577,7 +7639,7 @@
         "ko": "TANCHJIM",
         "en": "TANCHJIM"
       },
-      "priceKrw": 29900,
+      "priceKrw": 29400,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -7626,7 +7688,7 @@
         "ko": "소니",
         "en": "Sony"
       },
-      "priceKrw": 272300,
+      "priceKrw": 267200,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -7652,7 +7714,7 @@
         "ko": "QKZ",
         "en": "QKZ"
       },
-      "priceKrw": 25900,
+      "priceKrw": 25400,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c30cTNHb",
@@ -7699,7 +7761,7 @@
         "ko": "ZiiGaat",
         "en": "ZiiGaat"
       },
-      "priceKrw": 108900,
+      "priceKrw": 106900,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -7730,7 +7792,7 @@
         "ko": "NiceHCK",
         "en": "NiceHCK"
       },
-      "priceKrw": 39500,
+      "priceKrw": 38700,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -7775,7 +7837,7 @@
         "ko": "마키나오디오",
         "en": "MAKINAaudio"
       },
-      "priceKrw": 189200,
+      "priceKrw": 185700,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -7848,7 +7910,7 @@
         "ko": "캔퍼",
         "en": "Canpur"
       },
-      "priceKrw": 182400,
+      "priceKrw": 179000,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -7966,7 +8028,7 @@
         "ko": "Shanling",
         "en": "Shanling"
       },
-      "priceKrw": 62600,
+      "priceKrw": 61400,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -8003,7 +8065,7 @@
         "ko": "OnePlus",
         "en": "OnePlus"
       },
-      "priceKrw": 245000,
+      "priceKrw": 240500,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -8032,7 +8094,7 @@
         "ko": "Juzear",
         "en": "Juzear"
       },
-      "priceKrw": 408400,
+      "priceKrw": 400800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -8070,7 +8132,7 @@
         "ko": "TANCHJIM",
         "en": "TANCHJIM"
       },
-      "priceKrw": 177000,
+      "priceKrw": 173700,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -8156,7 +8218,7 @@
         "ko": "레이저",
         "en": "RAZER"
       },
-      "priceKrw": 177000,
+      "priceKrw": 173700,
       "status": "arrived",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -8179,13 +8241,31 @@
       "testedAt": null
     },
     {
+      "id": "8c6c9203-bda1-4ccc-b439-10f1c6a38b54",
+      "name": "SoundForm",
+      "manufacturer": {
+        "ko": "벨킨",
+        "en": "belkin"
+      },
+      "priceKrw": 46900,
+      "status": "arrived",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/1e1ebbd6-4200-4648-b16f-f54e6af510a6.avif",
+      "values": {
+        "earphoneAnc": true
+      },
+      "firstSeenAt": "2026-11-16T19:13:21.419Z",
+      "testedAt": null
+    },
+    {
       "id": "8cffba00-e84d-4d2b-b109-9838b98674c4",
       "name": "Galaxy Buds4 Pro",
       "manufacturer": {
         "ko": "삼성전자",
         "en": "Samsung"
       },
-      "priceKrw": 340300,
+      "priceKrw": 334000,
       "status": "arrived",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -8212,7 +8292,7 @@
         "ko": "GEEK WOLD",
         "en": "GEEK WOLD"
       },
-      "priceKrw": 74900,
+      "priceKrw": 73500,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -8269,7 +8349,7 @@
         "ko": "Feaulle",
         "en": "Feaulle"
       },
-      "priceKrw": 38300,
+      "priceKrw": 37600,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c35TNRYp",
@@ -8352,13 +8432,29 @@
       "testedAt": null
     },
     {
+      "id": "92b74cea-85f1-4de2-9d0d-744bded24a70",
+      "name": "GreyBunny 케이블",
+      "manufacturer": {
+        "ko": "용세",
+        "en": "Yongse"
+      },
+      "priceKrw": null,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": null,
+      "values": {},
+      "firstSeenAt": "2026-11-16T19:13:21.419Z",
+      "testedAt": null
+    },
+    {
       "id": "92fd8b98-d333-4e13-af44-76717e8a0128",
       "name": "EAH-AZ80",
       "manufacturer": {
         "ko": "Technics",
         "en": "Technics"
       },
-      "priceKrw": 408400,
+      "priceKrw": 400800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -8420,7 +8516,7 @@
         "ko": "Questyle",
         "en": "Questyle"
       },
-      "priceKrw": 56900,
+      "priceKrw": 55800,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -8464,7 +8560,7 @@
         "ko": "Google",
         "en": "Google"
       },
-      "priceKrw": 311800,
+      "priceKrw": 305900,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -8490,7 +8586,7 @@
         "ko": "ZiiGaat",
         "en": "ZiiGaat"
       },
-      "priceKrw": 311800,
+      "priceKrw": 305900,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c4lUyEIx",
@@ -8512,13 +8608,31 @@
       "testedAt": null
     },
     {
+      "id": "9741dfe0-d9ad-4409-92ad-4a0f9b73fe64",
+      "name": "SES-G20BKSV",
+      "manufacturer": {
+        "ko": "삼성전자",
+        "en": "Samsung"
+      },
+      "priceKrw": 12000,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/457d95b9-bef6-4111-a851-a680cba63454.avif",
+      "values": {
+        "earphoneAnc": false
+      },
+      "firstSeenAt": "2026-11-16T19:13:21.419Z",
+      "testedAt": null
+    },
+    {
       "id": "9756c1aa-72e9-4f42-a414-72b1d2ef7510",
       "name": "x 0DiBi Vivace",
       "manufacturer": {
         "ko": "Tripowin",
         "en": "Tripowin"
       },
-      "priceKrw": 39500,
+      "priceKrw": 38700,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c3PR5vpl",
@@ -8568,7 +8682,7 @@
         "ko": "qdc × FitEar",
         "en": "qdc × FitEar"
       },
-      "priceKrw": 332200,
+      "priceKrw": 326000,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -8616,7 +8730,7 @@
         "ko": "XENNS",
         "en": "XENNS"
       },
-      "priceKrw": 488700,
+      "priceKrw": 479600,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c4ag2jFp",
@@ -8691,7 +8805,7 @@
         "ko": "애플",
         "en": "Apple"
       },
-      "priceKrw": 339000,
+      "priceKrw": 332600,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -8801,7 +8915,7 @@
         "ko": "TRN",
         "en": "TRN"
       },
-      "priceKrw": 285900,
+      "priceKrw": 280500,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c2ybK5Kd",
@@ -8836,7 +8950,7 @@
         "ko": "Shure",
         "en": "Shure"
       },
-      "priceKrw": 1360000,
+      "priceKrw": 1334600,
       "status": "reviewed",
       "saleStatus": "DISCONTINUED",
       "aliUrl": null,
@@ -8920,7 +9034,7 @@
         "ko": "DUNU",
         "en": "DUNU"
       },
-      "priceKrw": 136100,
+      "priceKrw": 133600,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -8956,7 +9070,7 @@
         "ko": "Devialet",
         "en": "Devialet"
       },
-      "priceKrw": 611300,
+      "priceKrw": 599800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -8985,7 +9099,7 @@
         "ko": "SuperTFZ",
         "en": "SuperTFZ"
       },
-      "priceKrw": 107600,
+      "priceKrw": 105500,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -9018,7 +9132,7 @@
         "ko": "7Hz",
         "en": "7Hz"
       },
-      "priceKrw": 202800,
+      "priceKrw": 199100,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c3oXXNuv",
@@ -9104,7 +9218,7 @@
         "ko": "ZiiGaat",
         "en": "ZiiGaat"
       },
-      "priceKrw": 31300,
+      "priceKrw": 30700,
       "status": "proposed",
       "saleStatus": "DISCONTINUED",
       "aliUrl": null,
@@ -9131,7 +9245,7 @@
         "ko": "NF ACOUS",
         "en": "NF ACOUS"
       },
-      "priceKrw": 107500,
+      "priceKrw": 105500,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -9216,7 +9330,7 @@
         "ko": "Technics",
         "en": "Technics"
       },
-      "priceKrw": 408400,
+      "priceKrw": 400800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -9245,7 +9359,7 @@
         "ko": "Tipsy",
         "en": "Tipsy"
       },
-      "priceKrw": 257300,
+      "priceKrw": 252500,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -9342,7 +9456,7 @@
         "en": "Sony"
       },
       "priceKrw": 29900,
-      "status": "arrived",
+      "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
       "image": "/images/0fd4da19-07df-4391-b661-4e9a71b10b18.avif",
@@ -9369,7 +9483,7 @@
         "ko": "SOFTEARS",
         "en": "SOFTEARS"
       },
-      "priceKrw": 381200,
+      "priceKrw": 374100,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -9405,7 +9519,7 @@
         "ko": "HiBy",
         "en": "HiBy"
       },
-      "priceKrw": 66700,
+      "priceKrw": 65500,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -9476,7 +9590,7 @@
         "ko": "에이수스",
         "en": "ASUS"
       },
-      "priceKrw": 313100,
+      "priceKrw": 307200,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -9502,7 +9616,7 @@
         "ko": "JBL",
         "en": "JBL"
       },
-      "priceKrw": 136100,
+      "priceKrw": 133500,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -9530,7 +9644,7 @@
         "ko": "LETSHUOER",
         "en": "LETSHUOER"
       },
-      "priceKrw": 257300,
+      "priceKrw": 252500,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -9562,7 +9676,7 @@
     },
     {
       "id": "a89d0052-f6f3-4d9a-a597-1e403aa28961",
-      "name": "EDX PRO",
+      "name": "EDX PRO Cyan",
       "manufacturer": {
         "ko": "KZ",
         "en": "KZ"
@@ -9658,7 +9772,7 @@
         "ko": "Creative",
         "en": "Creative"
       },
-      "priceKrw": 95300,
+      "priceKrw": 93500,
       "status": "arrived",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -9716,7 +9830,7 @@
         "ko": "Meze Audio",
         "en": "Meze Audio"
       },
-      "priceKrw": 216500,
+      "priceKrw": 212400,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -9791,7 +9905,7 @@
         "ko": "DUNU",
         "en": "DUNU"
       },
-      "priceKrw": 258700,
+      "priceKrw": 253800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -9851,7 +9965,7 @@
         "ko": "ZiiGaat",
         "en": "ZiiGaat"
       },
-      "priceKrw": 447900,
+      "priceKrw": 439500,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c4PWulsj",
@@ -9920,7 +10034,7 @@
         "ko": "DUNU",
         "en": "DUNU"
       },
-      "priceKrw": 108900,
+      "priceKrw": 106900,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -9957,7 +10071,7 @@
         "ko": "FAAEAL",
         "en": "FAAEAL"
       },
-      "priceKrw": 15700,
+      "priceKrw": 15400,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -9990,7 +10104,7 @@
         "ko": "키위이어스",
         "en": "KiwiEars"
       },
-      "priceKrw": 121200,
+      "priceKrw": 118900,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -10027,7 +10141,7 @@
         "ko": "Kefine",
         "en": "Kefine"
       },
-      "priceKrw": 121200,
+      "priceKrw": 118900,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c3TdqDwd",
@@ -10066,7 +10180,7 @@
         "ko": "Punch Audio",
         "en": "Punch Audio"
       },
-      "priceKrw": 447900,
+      "priceKrw": 439500,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -10136,7 +10250,7 @@
         "ko": "트루스이어",
         "en": "TRUTHEAR"
       },
-      "priceKrw": 107600,
+      "priceKrw": 105500,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -10222,7 +10336,7 @@
         "ko": "CVJ",
         "en": "CVJ"
       },
-      "priceKrw": 108900,
+      "priceKrw": 106900,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -10257,7 +10371,7 @@
         "ko": "AFUL",
         "en": "AFUL"
       },
-      "priceKrw": 298100,
+      "priceKrw": 292600,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c4p4nutP",
@@ -10338,7 +10452,7 @@
         "ko": "심갓",
         "en": "SIMGOT"
       },
-      "priceKrw": 65200,
+      "priceKrw": 64000,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c3uhYQsP",
@@ -10386,7 +10500,7 @@
         "ko": "NiceHCK",
         "en": "NiceHCK"
       },
-      "priceKrw": 36700,
+      "priceKrw": 36100,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -10424,7 +10538,7 @@
         "ko": "키위이어스",
         "en": "KiwiEars"
       },
-      "priceKrw": 407100,
+      "priceKrw": 399400,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -10458,7 +10572,7 @@
         "ko": "Binary Acoustics",
         "en": "Binary Acoustics"
       },
-      "priceKrw": 270900,
+      "priceKrw": 265800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -10492,7 +10606,7 @@
         "ko": "AFUL",
         "en": "AFUL"
       },
-      "priceKrw": 325400,
+      "priceKrw": 319300,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c3BFSQ3T",
@@ -10527,7 +10641,7 @@
         "ko": "ZiiGaat",
         "en": "ZiiGaat"
       },
-      "priceKrw": 270900,
+      "priceKrw": 265800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -10644,7 +10758,7 @@
         "ko": "KZ",
         "en": "KZ"
       },
-      "priceKrw": 55800,
+      "priceKrw": 54800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c4k0YkB5",
@@ -10677,7 +10791,7 @@
         "ko": "Juzear",
         "en": "Juzear"
       },
-      "priceKrw": 149800,
+      "priceKrw": 147000,
       "status": "arrived",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -10906,7 +11020,7 @@
         "ko": "Hidizs",
         "en": "Hidizs"
       },
-      "priceKrw": 257300,
+      "priceKrw": 252500,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -10943,7 +11057,7 @@
         "ko": "EPZ",
         "en": "EPZ"
       },
-      "priceKrw": 706600,
+      "priceKrw": 693300,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -10999,7 +11113,7 @@
         "ko": "TANCHJIM",
         "en": "TANCHJIM"
       },
-      "priceKrw": 48500,
+      "priceKrw": 47600,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c3xrZV5N",
@@ -11051,7 +11165,7 @@
         "ko": "CCA",
         "en": "CCA"
       },
-      "priceKrw": 66700,
+      "priceKrw": 65400,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -11087,7 +11201,7 @@
         "ko": "HE",
         "en": "HE"
       },
-      "priceKrw": 107600,
+      "priceKrw": 105500,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -11174,7 +11288,7 @@
         "ko": "Kefine",
         "en": "Kefine"
       },
-      "priceKrw": 175600,
+      "priceKrw": 172300,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c4Delojd",
@@ -11208,7 +11322,7 @@
         "ko": "Noble Audio",
         "en": "Noble Audio"
       },
-      "priceKrw": 611300,
+      "priceKrw": 599800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -11236,7 +11350,7 @@
         "ko": "수월우",
         "en": "Moondrop"
       },
-      "priceKrw": 134800,
+      "priceKrw": 132300,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c4Os4ilX",
@@ -11302,8 +11416,8 @@
         "ko": "Sound Rhyme",
         "en": "Sound Rhyme"
       },
-      "priceKrw": 243700,
-      "status": "proposed",
+      "priceKrw": 239100,
+      "status": "arrived",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
       "image": "/images/55dcd0de-31a0-4d25-8e98-64bc8d04ca15.avif",
@@ -11336,7 +11450,7 @@
         "ko": "OnePlus",
         "en": "OnePlus"
       },
-      "priceKrw": 163400,
+      "priceKrw": 160300,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -11365,7 +11479,7 @@
         "ko": "AFUL",
         "en": "AFUL"
       },
-      "priceKrw": 162000,
+      "priceKrw": 159000,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c3k436NP",
@@ -11402,7 +11516,7 @@
         "ko": "Juzear",
         "en": "Juzear"
       },
-      "priceKrw": 159300,
+      "priceKrw": 156300,
       "status": "arrived",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -11484,7 +11598,7 @@
         "ko": "EPZ",
         "en": "EPZ"
       },
-      "priceKrw": 476500,
+      "priceKrw": 467600,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -11749,7 +11863,7 @@
         "ko": "7Hz",
         "en": "7Hz"
       },
-      "priceKrw": 47600,
+      "priceKrw": 46700,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c3kPFa3h",
@@ -11798,7 +11912,7 @@
         "ko": "Bose",
         "en": "Bose"
       },
-      "priceKrw": 407100,
+      "priceKrw": 399400,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -11822,7 +11936,7 @@
         "ko": "EPZ",
         "en": "EPZ"
       },
-      "priceKrw": 101000,
+      "priceKrw": 99100,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -11906,7 +12020,7 @@
         "ko": "심갓",
         "en": "SIMGOT"
       },
-      "priceKrw": 298100,
+      "priceKrw": 292600,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c3ovGFeV",
@@ -11942,7 +12056,7 @@
         "ko": "Kefine",
         "en": "Kefine"
       },
-      "priceKrw": 257300,
+      "priceKrw": 252500,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c3bzPMqv",
@@ -12078,7 +12192,7 @@
         "ko": "키위이어스",
         "en": "KiwiEars"
       },
-      "priceKrw": 68100,
+      "priceKrw": 66800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -12254,6 +12368,22 @@
       "testedAt": null
     },
     {
+      "id": "ed972f8e-7fbe-4079-815c-94f6de178dfb",
+      "name": "IE 900",
+      "manufacturer": {
+        "ko": "젠하이저",
+        "en": "Sennheiser"
+      },
+      "priceKrw": 1990000,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/ad4a4082-f590-4c54-8f4b-87f9ad58b9db.avif",
+      "values": {},
+      "firstSeenAt": "2026-11-16T19:13:21.419Z",
+      "testedAt": null
+    },
+    {
       "id": "edc79591-7112-4234-83e3-57fa010fbf81",
       "name": "Earpod",
       "manufacturer": {
@@ -12295,7 +12425,7 @@
         "ko": "Padsmith",
         "en": "Padsmith"
       },
-      "priceKrw": 156600,
+      "priceKrw": 153600,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -12321,7 +12451,7 @@
         "ko": "키위이어스",
         "en": "KiwiEars"
       },
-      "priceKrw": 270900,
+      "priceKrw": 265800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -12352,13 +12482,31 @@
       "testedAt": null
     },
     {
+      "id": "efa2254a-6575-434a-abac-13dfe1eb3fba",
+      "name": "F1 PRO",
+      "manufacturer": {
+        "ko": "NiceHCK",
+        "en": "NiceHCK"
+      },
+      "priceKrw": 143000,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/8132d49c-e8a6-4ac3-8f53-9f0756f8d627.avif",
+      "values": {
+        "earphoneAnc": false
+      },
+      "firstSeenAt": "2026-11-16T19:13:21.419Z",
+      "testedAt": null
+    },
+    {
       "id": "f107bbb2-8d3d-4e64-819e-329b356d4947",
       "name": "Arete II",
       "manufacturer": {
         "ko": "ZiiGaat",
         "en": "ZiiGaat"
       },
-      "priceKrw": 379800,
+      "priceKrw": 372700,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c39bsw8r",
@@ -12458,8 +12606,8 @@
         "ko": "파나소닉",
         "en": "Panasonic"
       },
-      "priceKrw": 14500,
-      "status": "arrived",
+      "priceKrw": 14100,
+      "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
       "image": "/images/47b07d5b-afb0-4394-a7b7-0b96e7e5307f.avif",
@@ -12493,7 +12641,7 @@
         "ko": "로지텍",
         "en": "Logitech"
       },
-      "priceKrw": 313100,
+      "priceKrw": 307200,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -12520,7 +12668,7 @@
         "ko": "애플",
         "en": "Apple"
       },
-      "priceKrw": 339000,
+      "priceKrw": 332600,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -12548,7 +12696,7 @@
         "ko": "Temperament",
         "en": "Temperament"
       },
-      "priceKrw": 67000,
+      "priceKrw": 65700,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -12583,7 +12731,7 @@
         "ko": "소니",
         "en": "Sony"
       },
-      "priceKrw": 408400,
+      "priceKrw": 400800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -12612,7 +12760,7 @@
         "ko": "LETSHUOER",
         "en": "LETSHUOER"
       },
-      "priceKrw": 134800,
+      "priceKrw": 132300,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c2QOery1",
@@ -12743,7 +12891,7 @@
         "ko": "Binary Acoustics",
         "en": "Binary Acoustics"
       },
-      "priceKrw": 379800,
+      "priceKrw": 372700,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
