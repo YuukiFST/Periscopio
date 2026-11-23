@@ -1,16 +1,16 @@
 {
-  "updatedAt": "2026-11-16T19:13:21.419Z",
+  "updatedAt": "2026-11-23T20:50:02.736Z",
   "counts": {
-    "mouse": 663,
-    "teclado": 606,
-    "monitor": 476,
-    "mousepad": 225,
+    "mouse": 667,
+    "teclado": 623,
+    "monitor": 480,
+    "mousepad": 226,
     "switch": 175,
-    "fone": 328
+    "fone": 336
   },
   "krwBrl": {
-    "rate": 0.004274,
-    "date": "2026-11-16",
+    "rate": 0.0044467,
+    "date": "2026-11-23",
     "source": "Frankfurter (Banco Central Europeu)"
   }
 }

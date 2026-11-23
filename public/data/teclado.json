@@ -40,10 +40,17 @@
       "multiple": false,
       "options": [
         {
-          "value": "unreleased",
+          "value": "arrived",
           "label": {
-            "ko": "미출시",
-            "en": "Unreleased"
+            "ko": "제품 도착",
+            "en": "Arrived"
+          }
+        },
+        {
+          "value": "earlyAccess",
+          "label": {
+            "ko": "선 공개",
+            "en": "Early Access"
           }
         },
         {
@@ -61,10 +68,10 @@
           }
         },
         {
-          "value": "arrived",
+          "value": "reviewed",
           "label": {
-            "ko": "제품 도착",
-            "en": "Arrived"
+            "ko": "공개 완료",
+            "en": "Reviewed"
           }
         },
         {
@@ -75,17 +82,10 @@
           }
         },
         {
-          "value": "earlyAccess",
+          "value": "unreleased",
           "label": {
-            "ko": "선 공개",
-            "en": "Early Access"
-          }
-        },
-        {
-          "value": "reviewed",
-          "label": {
-            "ko": "공개 완료",
-            "en": "Reviewed"
+            "ko": "미출시",
+            "en": "Unreleased"
           }
         }
       ]
@@ -102,10 +102,10 @@
       "multiple": false,
       "options": [
         {
-          "value": "unreleased",
+          "value": "DISCONTINUED",
           "label": {
-            "ko": "미출시",
-            "en": "Unreleased"
+            "ko": "단종",
+            "en": "Discontinued"
           }
         },
         {
@@ -116,10 +116,10 @@
           }
         },
         {
-          "value": "DISCONTINUED",
+          "value": "unreleased",
           "label": {
-            "ko": "단종",
-            "en": "Discontinued"
+            "ko": "미출시",
+            "en": "Unreleased"
           }
         }
       ]
@@ -143,13 +143,6 @@
           }
         },
         {
-          "value": "RECOMMENDED",
-          "label": {
-            "ko": "추천",
-            "en": "Recommend"
-          }
-        },
-        {
           "value": "MILD_RECOMMENDATION",
           "label": {
             "ko": "추천까지는",
@@ -161,6 +154,13 @@
           "label": {
             "ko": "추천안함",
             "en": "Not Recommend"
+          }
+        },
+        {
+          "value": "RECOMMENDED",
+          "label": {
+            "ko": "추천",
+            "en": "Recommend"
           }
         },
         {
@@ -219,27 +219,6 @@
       "multiple": false,
       "options": [
         {
-          "value": "sparklink",
-          "label": {
-            "ko": "스파크링크",
-            "en": "SparkLink"
-          }
-        },
-        {
-          "value": "arbitor",
-          "label": {
-            "ko": "아비터",
-            "en": "arbitor"
-          }
-        },
-        {
-          "value": "Rongyuan",
-          "label": {
-            "ko": "롱위안",
-            "en": "Rongyuan"
-          }
-        },
-        {
           "value": "Beiying",
           "label": {
             "ko": "베이잉",
@@ -268,10 +247,38 @@
           }
         },
         {
-          "value": "자체 솔루션",
+          "value": "Rongyuan",
           "label": {
-            "ko": "자체 솔루션",
-            "en": "In-house"
+            "ko": "롱위안",
+            "en": "Rongyuan"
+          }
+        },
+        {
+          "value": "arbitor",
+          "label": {
+            "ko": "아비터",
+            "en": "arbitor"
+          }
+        },
+        {
+          "value": "bityuan",
+          "label": {
+            "ko": "BITYUAN",
+            "en": "BITYUAN"
+          }
+        },
+        {
+          "value": "bykb",
+          "label": {
+            "ko": "BYKB",
+            "en": "BYKB"
+          }
+        },
+        {
+          "value": "duckbread",
+          "label": {
+            "ko": "DUCKBREAD",
+            "en": "DUCKBREAD"
           }
         },
         {
@@ -279,6 +286,48 @@
           "label": {
             "ko": "기타",
             "en": "etc"
+          }
+        },
+        {
+          "value": "evision",
+          "label": {
+            "ko": "EVISION",
+            "en": "EVISION"
+          }
+        },
+        {
+          "value": "gtech",
+          "label": {
+            "ko": "GTECH",
+            "en": "GTECH"
+          }
+        },
+        {
+          "value": "hfd",
+          "label": {
+            "ko": "HFD",
+            "en": "HFD"
+          }
+        },
+        {
+          "value": "sparklink",
+          "label": {
+            "ko": "스파크링크",
+            "en": "SparkLink"
+          }
+        },
+        {
+          "value": "viaqmk",
+          "label": {
+            "ko": "VIA/QMK",
+            "en": "VIA/QMK"
+          }
+        },
+        {
+          "value": "자체 솔루션",
+          "label": {
+            "ko": "자체 솔루션",
+            "en": "In-house"
           }
         }
       ]
@@ -357,13 +406,6 @@
       "multiple": false,
       "options": [
         {
-          "value": "유선",
-          "label": {
-            "ko": "유선",
-            "en": "Wired"
-          }
-        },
-        {
           "value": "무선",
           "label": {
             "ko": "무선",
@@ -375,6 +417,13 @@
           "label": {
             "ko": "유무선",
             "en": "Wired/Wireless"
+          }
+        },
+        {
+          "value": "유선",
+          "label": {
+            "ko": "유선",
+            "en": "Wired"
           }
         }
       ]
@@ -391,27 +440,6 @@
       "multiple": false,
       "options": [
         {
-          "value": "32000",
-          "label": {
-            "ko": "32000",
-            "en": "32000"
-          }
-        },
-        {
-          "value": "16000",
-          "label": {
-            "ko": "16000",
-            "en": "16000"
-          }
-        },
-        {
-          "value": "8000",
-          "label": {
-            "ko": "8000",
-            "en": "8000"
-          }
-        },
-        {
           "value": "1000",
           "label": {
             "ko": "1000",
@@ -423,6 +451,27 @@
           "label": {
             "ko": "125",
             "en": "125"
+          }
+        },
+        {
+          "value": "16000",
+          "label": {
+            "ko": "16000",
+            "en": "16000"
+          }
+        },
+        {
+          "value": "32000",
+          "label": {
+            "ko": "32000",
+            "en": "32000"
+          }
+        },
+        {
+          "value": "8000",
+          "label": {
+            "ko": "8000",
+            "en": "8000"
           }
         }
       ]
@@ -447,20 +496,6 @@
       "unit": null,
       "multiple": false,
       "options": [
-        {
-          "value": "tkl",
-          "label": {
-            "ko": "TKL",
-            "en": "TKL"
-          }
-        },
-        {
-          "value": "full",
-          "label": {
-            "ko": "FULL",
-            "en": "FULL"
-          }
-        },
         {
           "value": "60%",
           "label": {
@@ -495,6 +530,20 @@
             "ko": "기타",
             "en": "etc"
           }
+        },
+        {
+          "value": "full",
+          "label": {
+            "ko": "FULL",
+            "en": "FULL"
+          }
+        },
+        {
+          "value": "tkl",
+          "label": {
+            "ko": "TKL",
+            "en": "TKL"
+          }
         }
       ]
     },
@@ -510,13 +559,6 @@
       "multiple": true,
       "options": [
         {
-          "value": "자석축",
-          "label": {
-            "ko": "자석축",
-            "en": "Magnetic Switch"
-          }
-        },
-        {
           "value": "광축",
           "label": {
             "ko": "광축",
@@ -531,6 +573,13 @@
           }
         },
         {
+          "value": "멤브레인",
+          "label": {
+            "ko": "멤브레인",
+            "en": "Membrane"
+          }
+        },
+        {
           "value": "무접점",
           "label": {
             "ko": "무접점",
@@ -538,10 +587,10 @@
           }
         },
         {
-          "value": "멤브레인",
+          "value": "자석축",
           "label": {
-            "ko": "멤브레인",
-            "en": "Membrane"
+            "ko": "자석축",
+            "en": "Magnetic Switch"
           }
         }
       ]
@@ -558,10 +607,10 @@
       "multiple": false,
       "options": [
         {
-          "value": "자석축",
+          "value": "광축",
           "label": {
-            "ko": "자석축",
-            "en": "Magnetic Switch"
+            "ko": "광축",
+            "en": "Optical Switch"
           }
         },
         {
@@ -572,10 +621,10 @@
           }
         },
         {
-          "value": "광축",
+          "value": "멤브레인",
           "label": {
-            "ko": "광축",
-            "en": "Optical Switch"
+            "ko": "멤브레인",
+            "en": "Membrane"
           }
         },
         {
@@ -586,10 +635,10 @@
           }
         },
         {
-          "value": "멤브레인",
+          "value": "자석축",
           "label": {
-            "ko": "멤브레인",
-            "en": "Membrane"
+            "ko": "자석축",
+            "en": "Magnetic Switch"
           }
         }
       ]
@@ -613,17 +662,17 @@
           }
         },
         {
-          "value": "oemProfile",
-          "label": {
-            "ko": "OEM 프로파일",
-            "en": "OEM Profile"
-          }
-        },
-        {
           "value": "lowProfile",
           "label": {
             "ko": "Low Profile",
             "en": "Low Profile"
+          }
+        },
+        {
+          "value": "oemProfile",
+          "label": {
+            "ko": "OEM 프로파일",
+            "en": "OEM Profile"
           }
         }
       ]
@@ -639,13 +688,6 @@
       "unit": null,
       "multiple": false,
       "options": [
-        {
-          "value": "true",
-          "label": {
-            "ko": "O",
-            "en": "O"
-          }
-        },
         {
           "value": "false",
           "label": {
@@ -665,6 +707,13 @@
           "label": {
             "ko": "RGB",
             "en": "RGB"
+          }
+        },
+        {
+          "value": "true",
+          "label": {
+            "ko": "O",
+            "en": "O"
           }
         }
       ]
@@ -815,24 +864,10 @@
       "multiple": true,
       "options": [
         {
-          "value": "plastic",
-          "label": {
-            "ko": "플라스틱",
-            "en": "Plastic"
-          }
-        },
-        {
           "value": "aluminum",
           "label": {
             "ko": "알루미늄",
             "en": "Aluminum"
-          }
-        },
-        {
-          "value": "mixed",
-          "label": {
-            "ko": "혼합",
-            "en": "Mixed"
           }
         },
         {
@@ -843,10 +878,24 @@
           }
         },
         {
+          "value": "mixed",
+          "label": {
+            "ko": "혼합",
+            "en": "Mixed"
+          }
+        },
+        {
           "value": "other",
           "label": {
             "ko": "기타",
             "en": "Other"
+          }
+        },
+        {
+          "value": "plastic",
+          "label": {
+            "ko": "플라스틱",
+            "en": "Plastic"
           }
         }
       ]
@@ -863,24 +912,17 @@
       "multiple": true,
       "options": [
         {
+          "value": "bottom",
+          "label": {
+            "ko": "바텀",
+            "en": "Bottom"
+          }
+        },
+        {
           "value": "gasket",
           "label": {
             "ko": "가스켓",
             "en": "Gasket"
-          }
-        },
-        {
-          "value": "tray",
-          "label": {
-            "ko": "트레이",
-            "en": "Tray"
-          }
-        },
-        {
-          "value": "top",
-          "label": {
-            "ko": "탑",
-            "en": "Top"
           }
         },
         {
@@ -891,10 +933,10 @@
           }
         },
         {
-          "value": "bottom",
+          "value": "oring",
           "label": {
-            "ko": "바텀",
-            "en": "Bottom"
+            "ko": "거미오링",
+            "en": "O-ring"
           }
         },
         {
@@ -905,10 +947,17 @@
           }
         },
         {
-          "value": "oring",
+          "value": "top",
           "label": {
-            "ko": "거미오링",
-            "en": "O-ring"
+            "ko": "탑",
+            "en": "Top"
+          }
+        },
+        {
+          "value": "tray",
+          "label": {
+            "ko": "트레이",
+            "en": "Tray"
           }
         }
       ]
@@ -943,10 +992,10 @@
       "multiple": false,
       "options": [
         {
-          "value": "usbTypeC",
+          "value": "Battery",
           "label": {
-            "ko": "USB-C",
-            "en": "USB-C"
+            "ko": "배터리",
+            "en": "Battery"
           }
         },
         {
@@ -954,6 +1003,13 @@
           "label": {
             "ko": "고정형 케이블",
             "en": "Fixed Cable"
+          }
+        },
+        {
+          "value": "ps2",
+          "label": {
+            "ko": "PS/2",
+            "en": "PS/2"
           }
         },
         {
@@ -971,17 +1027,10 @@
           }
         },
         {
-          "value": "ps2",
+          "value": "usbTypeC",
           "label": {
-            "ko": "PS/2",
-            "en": "PS/2"
-          }
-        },
-        {
-          "value": "Battery",
-          "label": {
-            "ko": "배터리",
-            "en": "Battery"
+            "ko": "USB-C",
+            "en": "USB-C"
           }
         }
       ]
@@ -1027,17 +1076,17 @@
       "multiple": false,
       "options": [
         {
-          "value": "pbtDoubleShot",
-          "label": {
-            "ko": "PBT 이중사출",
-            "en": "PBT Double-shot"
-          }
-        },
-        {
           "value": "absDoubleShot",
           "label": {
             "ko": "ABS 이중사출",
             "en": "ABS Double-shot"
+          }
+        },
+        {
+          "value": "pbtDoubleShot",
+          "label": {
+            "ko": "PBT 이중사출",
+            "en": "PBT Double-shot"
           }
         },
         {
@@ -1075,17 +1124,17 @@
           }
         },
         {
-          "value": "hybridPlateMount",
-          "label": {
-            "ko": "하이브리드 보강판 결합",
-            "en": "Hybrid Plate Mount"
-          }
-        },
-        {
           "value": "cherryPlatePcbMount",
           "label": {
             "ko": "체리식 보강판, PCB 결합",
             "en": "Cherry Plate, PCB Mount"
+          }
+        },
+        {
+          "value": "hybridPlateMount",
+          "label": {
+            "ko": "하이브리드 보강판 결합",
+            "en": "Hybrid Plate Mount"
           }
         }
       ]
@@ -1111,227 +1160,17 @@
       "multiple": false,
       "options": [
         {
-          "value": "nxplpc5528jbd100(150m)",
+          "value": "?",
           "label": {
-            "ko": "NXP LPC5528JBD100(150M)",
-            "en": "NXP LPC5528JBD100(150M)"
+            "ko": "?",
+            "en": "?"
           }
         },
         {
-          "value": "visionvs11k17a(48m)",
+          "value": "armcortex600mhz",
           "label": {
-            "ko": "Vision VS11K17A(48M)",
-            "en": "Vision VS11K17A(48M)"
-          }
-        },
-        {
-          "value": "holtekht32f52352(48m)",
-          "label": {
-            "ko": "HOLTEK HT32F52352(48M)",
-            "en": "HOLTEK HT32F52352(48M)"
-          }
-        },
-        {
-          "value": "spmstm32u5a5rjt6(160m)",
-          "label": {
-            "ko": "SPM STM32U5A5 RJT6(160M)",
-            "en": "SPM STM32U5A5 RJT6(160M)"
-          }
-        },
-        {
-          "value": "nuvotonnuc123sd4bn0(72m)+m0518ld2ae(50m)",
-          "label": {
-            "ko": "NUVOTON NUC123SD4BN0(72M) + M0518LD2AE(50M)",
-            "en": "NUVOTON NUC123SD4BN0(72M) + M0518LD2AE(50M)"
-          }
-        },
-        {
-          "value": "stm32f103vct6(72m)+stm32f103rct6(72m)",
-          "label": {
-            "ko": "STM32F103 VCT6(72M) + STM32F103 RCT6(72M)",
-            "en": "STM32F103 VCT6(72M) + STM32F103 RCT6(72M)"
-          }
-        },
-        {
-          "value": "stm32g070cbt6(64m)+n52833(64m)",
-          "label": {
-            "ko": "STM32G070 CBT6(64M) + N52833(64M)",
-            "en": "STM32G070 CBT6(64M) + N52833(64M)"
-          }
-        },
-        {
-          "value": "stm32l100r8t6(32m)",
-          "label": {
-            "ko": "STM32L100 R8T6(32M)",
-            "en": "STM32L100 R8T6(32M)"
-          }
-        },
-        {
-          "value": "nordicnrf52833(64m)",
-          "label": {
-            "ko": "Nordic nRF52833(64M)",
-            "en": "Nordic nRF52833(64M)"
-          }
-        },
-        {
-          "value": "nxplpc5516(150m)",
-          "label": {
-            "ko": "NXP LPC5516(150M)",
-            "en": "NXP LPC5516(150M)"
-          }
-        },
-        {
-          "value": "armm3mcu",
-          "label": {
-            "ko": "ARM M3 MCU",
-            "en": "ARM M3 MCU"
-          }
-        },
-        {
-          "value": "giadevicegd32f303cgt6(120m)",
-          "label": {
-            "ko": "Giadevice GD32F303 CGT6(120M)",
-            "en": "Giadevice GD32F303 CGT6(120M)"
-          }
-        },
-        {
-          "value": "holtekht32f12365(96m)",
-          "label": {
-            "ko": "HOLTEK HT32F12365(96M)",
-            "en": "HOLTEK HT32F12365(96M)"
-          }
-        },
-        {
-          "value": "riscpic32mzec(200m)",
-          "label": {
-            "ko": "RISC PIC32MZ EC(200M)",
-            "en": "RISC PIC32MZ EC(200M)"
-          }
-        },
-        {
-          "value": "nxplpc54605j512bd100(180m)",
-          "label": {
-            "ko": "NXP LPC54605j512BD100(180M)",
-            "en": "NXP LPC54605j512BD100(180M)"
-          }
-        },
-        {
-          "value": "nuvotonnuc1261sg4ae(72m)",
-          "label": {
-            "ko": "Nuvoton NUC1261SG4AE(72M)",
-            "en": "Nuvoton NUC1261SG4AE(72M)"
-          }
-        },
-        {
-          "value": "wchch32v307(144m)",
-          "label": {
-            "ko": "WCH CH32V307(144M)",
-            "en": "WCH CH32V307(144M)"
-          }
-        },
-        {
-          "value": "rc30035302(72m)",
-          "label": {
-            "ko": "RC30-035302(72M)",
-            "en": "RC30-035302(72M)"
-          }
-        },
-        {
-          "value": "riscvch32v307wcu6(144m)",
-          "label": {
-            "ko": "RISC-V CH32V307WCU6(144M)",
-            "en": "RISC-V CH32V307WCU6(144M)"
-          }
-        },
-        {
-          "value": "atmel128a4uh(32m)",
-          "label": {
-            "ko": "Atmel128A4U-H(32M)",
-            "en": "Atmel128A4U-H(32M)"
-          }
-        },
-        {
-          "value": "stm32l412rbt6(80m)",
-          "label": {
-            "ko": "STM32L412 RBT6(80M)",
-            "en": "STM32L412 RBT6(80M)"
-          }
-        },
-        {
-          "value": "nuvotonm484s1dae2u(192m)",
-          "label": {
-            "ko": "NUVOTON M484S1DAE2U(192M)",
-            "en": "NUVOTON M484S1DAE2U(192M)"
-          }
-        },
-        {
-          "value": "nxplpc5516jbd64(150m)",
-          "label": {
-            "ko": "NXP LPC5516JBD64(150M)",
-            "en": "NXP LPC5516JBD64(150M)"
-          }
-        },
-        {
-          "value": "riscvch32v307rct6(144m)+ch32v2036개",
-          "label": {
-            "ko": "RISC-V CH32V307RCT6(144M) + CH32V203 6개",
-            "en": "RISC-V CH32V307RCT6(144M) + CH32V203 x6"
-          }
-        },
-        {
-          "value": "ry7203n48cc2214cc",
-          "label": {
-            "ko": "RY7203 N48C-C 2214-CC",
-            "en": "RY7203 N48C-C 2214-CC"
-          }
-        },
-        {
-          "value": "stm32f103rbt6(72m)",
-          "label": {
-            "ko": "STM32F103 RBT6(72M)",
-            "en": "STM32F103 RBT6(72M)"
-          }
-        },
-        {
-          "value": "stm32l412rb(80m)",
-          "label": {
-            "ko": "STM32L412RB(80M)",
-            "en": "STM32L412RB(80M)"
-          }
-        },
-        {
-          "value": "stm32l4p5rgt6(120m)",
-          "label": {
-            "ko": "STM32L4P5 RGT6(120M)",
-            "en": "STM32L4P5 RGT6(120M)"
-          }
-        },
-        {
-          "value": "stm32u595rit6(160mhz)",
-          "label": {
-            "ko": "STM32U595RIT6 (160MHz)",
-            "en": "STM32U595RIT6 (160MHz)"
-          }
-        },
-        {
-          "value": "vgndrm32f100(ep5889)",
-          "label": {
-            "ko": "VGN DRM32F100(ep5889)",
-            "en": "VGN DRM32F100(ep5889)"
-          }
-        },
-        {
-          "value": "visionvs11k09a1(48m)",
-          "label": {
-            "ko": "VISION VS11K09A-1(48M)",
-            "en": "VISION VS11K09A-1(48M)"
-          }
-        },
-        {
-          "value": "wchicch32v305(144m)",
-          "label": {
-            "ko": "WCH-IC CH32V305(144M)",
-            "en": "WCH-IC CH32V305(144M)"
+            "ko": "ARM Cortex 600MHz",
+            "en": "ARM Cortex 600MHz"
           }
         },
         {
@@ -1342,10 +1181,24 @@
           }
         },
         {
+          "value": "armm3mcu",
+          "label": {
+            "ko": "ARM M3 MCU",
+            "en": "ARM M3 MCU"
+          }
+        },
+        {
           "value": "atkv10h12b1g708h2523",
           "label": {
             "ko": "ATK V10H12B1G708H2523",
             "en": "ATK V10H12B1G708H2523"
+          }
+        },
+        {
+          "value": "atmel128a4uh(32m)",
+          "label": {
+            "ko": "Atmel128A4U-H(32M)",
+            "en": "Atmel128A4U-H(32M)"
           }
         },
         {
@@ -1377,10 +1230,31 @@
           }
         },
         {
+          "value": "giadevicegd32f303cgt6(120m)",
+          "label": {
+            "ko": "Giadevice GD32F303 CGT6(120M)",
+            "en": "Giadevice GD32F303 CGT6(120M)"
+          }
+        },
+        {
           "value": "giadevicegd32f425rgtg(200mhz)",
           "label": {
             "ko": "Giadevice GD32F425RGTG(200MHz)",
             "en": "Giadevice GD32F425RGTG(200MHz)"
+          }
+        },
+        {
+          "value": "holtekht32f12365(96m)",
+          "label": {
+            "ko": "HOLTEK HT32F12365(96M)",
+            "en": "HOLTEK HT32F12365(96M)"
+          }
+        },
+        {
+          "value": "holtekht32f52352(48m)",
+          "label": {
+            "ko": "HOLTEK HT32F52352(48M)",
+            "en": "HOLTEK HT32F52352(48M)"
           }
         },
         {
@@ -1391,10 +1265,31 @@
           }
         },
         {
+          "value": "nordicnrf52833(64m)",
+          "label": {
+            "ko": "Nordic nRF52833(64M)",
+            "en": "Nordic nRF52833(64M)"
+          }
+        },
+        {
+          "value": "nordicnrf52840(64m)",
+          "label": {
+            "ko": "Nordic nRF52840(64M)",
+            "en": "Nordic nRF52840(64M)"
+          }
+        },
+        {
           "value": "nuc123sd4bn0[armcortexm0(72m)]",
           "label": {
             "ko": "NUC123SD4BN0[ARM Cortex-M0(72M)]",
             "en": "NUC123SD4BN0[ARM Cortex-M0(72M)]"
+          }
+        },
+        {
+          "value": "nuvotonm484s1dae2u(192m)",
+          "label": {
+            "ko": "NUVOTON M484S1DAE2U(192M)",
+            "en": "NUVOTON M484S1DAE2U(192M)"
           }
         },
         {
@@ -1409,6 +1304,27 @@
           "label": {
             "ko": "NUVOTON M484SIDAE2U(192M)",
             "en": "NUVOTON M484SIDAE2U(192M)"
+          }
+        },
+        {
+          "value": "nuvotonnuc123sd4an0(72m)",
+          "label": {
+            "ko": "Nuvoton NUC123SD4AN0(72M)",
+            "en": "Nuvoton NUC123SD4AN0(72M)"
+          }
+        },
+        {
+          "value": "nuvotonnuc123sd4bn0(72m)+m0518ld2ae(50m)",
+          "label": {
+            "ko": "NUVOTON NUC123SD4BN0(72M) + M0518LD2AE(50M)",
+            "en": "NUVOTON NUC123SD4BN0(72M) + M0518LD2AE(50M)"
+          }
+        },
+        {
+          "value": "nuvotonnuc1261sg4ae(72m)",
+          "label": {
+            "ko": "Nuvoton NUC1261SG4AE(72M)",
+            "en": "Nuvoton NUC1261SG4AE(72M)"
           }
         },
         {
@@ -1440,10 +1356,24 @@
           }
         },
         {
+          "value": "nxplpc54605j512bd100(180m)",
+          "label": {
+            "ko": "NXP LPC54605j512BD100(180M)",
+            "en": "NXP LPC54605j512BD100(180M)"
+          }
+        },
+        {
           "value": "nxplpc5465j512bd100(220m)",
           "label": {
             "ko": "NXP LPC5465J512BD100(220M)",
             "en": "NXP LPC5465J512BD100(220M)"
+          }
+        },
+        {
+          "value": "nxplpc5516(150m)",
+          "label": {
+            "ko": "NXP LPC5516(150M)",
+            "en": "NXP LPC5516(150M)"
           }
         },
         {
@@ -1454,6 +1384,13 @@
           }
         },
         {
+          "value": "nxplpc5516jbd64(150m)",
+          "label": {
+            "ko": "NXP LPC5516JBD64(150M)",
+            "en": "NXP LPC5516JBD64(150M)"
+          }
+        },
+        {
           "value": "nxplpc5528(150m)",
           "label": {
             "ko": "NXP LPC5528(150M)",
@@ -1461,17 +1398,10 @@
           }
         },
         {
-          "value": "nordicnrf52840(64m)",
+          "value": "nxplpc5528jbd100(150m)",
           "label": {
-            "ko": "Nordic nRF52840(64M)",
-            "en": "Nordic nRF52840(64M)"
-          }
-        },
-        {
-          "value": "nuvotonnuc123sd4an0(72m)",
-          "label": {
-            "ko": "Nuvoton NUC123SD4AN0(72M)",
-            "en": "Nuvoton NUC123SD4AN0(72M)"
+            "ko": "NXP LPC5528JBD100(150M)",
+            "en": "NXP LPC5528JBD100(150M)"
           }
         },
         {
@@ -1482,20 +1412,161 @@
           }
         },
         {
-          "value": "armcortex600mhz",
+          "value": "rc30035302(72m)",
           "label": {
-            "ko": "ARM Cortex 600MHz",
-            "en": "ARM Cortex 600MHz"
+            "ko": "RC30-035302(72M)",
+            "en": "RC30-035302(72M)"
           }
         },
         {
-          "value": "?",
+          "value": "riscpic32mzec(200m)",
           "label": {
-            "ko": "?",
-            "en": "?"
+            "ko": "RISC PIC32MZ EC(200M)",
+            "en": "RISC PIC32MZ EC(200M)"
+          }
+        },
+        {
+          "value": "riscvch32v307rct6(144m)+ch32v2036개",
+          "label": {
+            "ko": "RISC-V CH32V307RCT6(144M) + CH32V203 6개",
+            "en": "RISC-V CH32V307RCT6(144M) + CH32V203 x6"
+          }
+        },
+        {
+          "value": "riscvch32v307wcu6(144m)",
+          "label": {
+            "ko": "RISC-V CH32V307WCU6(144M)",
+            "en": "RISC-V CH32V307WCU6(144M)"
+          }
+        },
+        {
+          "value": "ry7203n48cc2214cc",
+          "label": {
+            "ko": "RY7203 N48C-C 2214-CC",
+            "en": "RY7203 N48C-C 2214-CC"
+          }
+        },
+        {
+          "value": "spmstm32u5a5rjt6(160m)",
+          "label": {
+            "ko": "SPM STM32U5A5 RJT6(160M)",
+            "en": "SPM STM32U5A5 RJT6(160M)"
+          }
+        },
+        {
+          "value": "stm32f103rbt6(72m)",
+          "label": {
+            "ko": "STM32F103 RBT6(72M)",
+            "en": "STM32F103 RBT6(72M)"
+          }
+        },
+        {
+          "value": "stm32f103vct6(72m)+stm32f103rct6(72m)",
+          "label": {
+            "ko": "STM32F103 VCT6(72M) + STM32F103 RCT6(72M)",
+            "en": "STM32F103 VCT6(72M) + STM32F103 RCT6(72M)"
+          }
+        },
+        {
+          "value": "stm32g070cbt6(64m)+n52833(64m)",
+          "label": {
+            "ko": "STM32G070 CBT6(64M) + N52833(64M)",
+            "en": "STM32G070 CBT6(64M) + N52833(64M)"
+          }
+        },
+        {
+          "value": "stm32l100r8t6(32m)",
+          "label": {
+            "ko": "STM32L100 R8T6(32M)",
+            "en": "STM32L100 R8T6(32M)"
+          }
+        },
+        {
+          "value": "stm32l412rb(80m)",
+          "label": {
+            "ko": "STM32L412RB(80M)",
+            "en": "STM32L412RB(80M)"
+          }
+        },
+        {
+          "value": "stm32l412rbt6(80m)",
+          "label": {
+            "ko": "STM32L412 RBT6(80M)",
+            "en": "STM32L412 RBT6(80M)"
+          }
+        },
+        {
+          "value": "stm32l4p5rgt6(120m)",
+          "label": {
+            "ko": "STM32L4P5 RGT6(120M)",
+            "en": "STM32L4P5 RGT6(120M)"
+          }
+        },
+        {
+          "value": "stm32u595rit6(160mhz)",
+          "label": {
+            "ko": "STM32U595RIT6 (160MHz)",
+            "en": "STM32U595RIT6 (160MHz)"
+          }
+        },
+        {
+          "value": "vgndrm32f100(ep5889)",
+          "label": {
+            "ko": "VGN DRM32F100(ep5889)",
+            "en": "VGN DRM32F100(ep5889)"
+          }
+        },
+        {
+          "value": "visionvs11k09a1(48m)",
+          "label": {
+            "ko": "VISION VS11K09A-1(48M)",
+            "en": "VISION VS11K09A-1(48M)"
+          }
+        },
+        {
+          "value": "visionvs11k17a(48m)",
+          "label": {
+            "ko": "Vision VS11K17A(48M)",
+            "en": "Vision VS11K17A(48M)"
+          }
+        },
+        {
+          "value": "wchch32v307(144m)",
+          "label": {
+            "ko": "WCH CH32V307(144M)",
+            "en": "WCH CH32V307(144M)"
+          }
+        },
+        {
+          "value": "wchicch32v305(144m)",
+          "label": {
+            "ko": "WCH-IC CH32V305(144M)",
+            "en": "WCH-IC CH32V305(144M)"
           }
         }
       ]
+    },
+    {
+      "key": "emWOvRtAvgD0",
+      "group": "bench",
+      "label": {
+        "ko": "전자석 종합 응답속도",
+        "en": "Electromagnet overall response"
+      },
+      "type": "number",
+      "unit": "ms",
+      "decimals": 2
+    },
+    {
+      "key": "emWOvRtSdD0",
+      "group": "bench",
+      "label": {
+        "ko": "전자석 종합 표준편차",
+        "en": "Electromagnet overall std dev"
+      },
+      "type": "number",
+      "unit": "ms",
+      "decimals": 2
     },
     {
       "key": "emWPrRtAvgD0",
@@ -1650,38 +1721,17 @@
       "multiple": false,
       "options": [
         {
-          "value": "8000",
+          "value": "1000",
           "label": {
-            "ko": "8000",
-            "en": "8000"
+            "ko": "1000",
+            "en": "1000"
           }
         },
         {
-          "value": "4000",
+          "value": "125",
           "label": {
-            "ko": "4000",
-            "en": "4000"
-          }
-        },
-        {
-          "value": "2666",
-          "label": {
-            "ko": "2666",
-            "en": "2666"
-          }
-        },
-        {
-          "value": "2000",
-          "label": {
-            "ko": "2000",
-            "en": "2000"
-          }
-        },
-        {
-          "value": "1600",
-          "label": {
-            "ko": "1600",
-            "en": "1600"
+            "ko": "125",
+            "en": "125"
           }
         },
         {
@@ -1692,17 +1742,17 @@
           }
         },
         {
-          "value": "1000",
+          "value": "1600",
           "label": {
-            "ko": "1000",
-            "en": "1000"
+            "ko": "1600",
+            "en": "1600"
           }
         },
         {
-          "value": "500",
+          "value": "2000",
           "label": {
-            "ko": "500",
-            "en": "500"
+            "ko": "2000",
+            "en": "2000"
           }
         },
         {
@@ -1713,10 +1763,31 @@
           }
         },
         {
-          "value": "125",
+          "value": "2666",
           "label": {
-            "ko": "125",
-            "en": "125"
+            "ko": "2666",
+            "en": "2666"
+          }
+        },
+        {
+          "value": "4000",
+          "label": {
+            "ko": "4000",
+            "en": "4000"
+          }
+        },
+        {
+          "value": "500",
+          "label": {
+            "ko": "500",
+            "en": "500"
+          }
+        },
+        {
+          "value": "8000",
+          "label": {
+            "ko": "8000",
+            "en": "8000"
           }
         }
       ]
@@ -2785,8 +2856,48 @@
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
       "image": null,
-      "values": {},
+      "values": {
+        "autoCalibration": false,
+        "connectionOption": "usbTypeC",
+        "connectionType": "유선",
+        "dks": true,
+        "hotswap": false,
+        "housingKeyboard": [
+          "aluminum"
+        ],
+        "keyboardLayout": "65%",
+        "keyboardMechanism": [
+          "자석축"
+        ],
+        "kkboard": false,
+        "measuredSwitchType": "자석축",
+        "modeTap": true,
+        "palmRest": false,
+        "pollingRate": "8000",
+        "rapidTrigger": false,
+        "remapping": true,
+        "socd": true,
+        "toggleKey": true,
+        "webDriver": true,
+        "windowsLock": false
+      },
       "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "03d28d40-8900-48fc-adde-0347b872152f",
+      "name": "MagneonX WXRT81",
+      "manufacturer": {
+        "ko": "지클릭커",
+        "en": "g-clicker"
+      },
+      "priceKrw": 89800,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/7699bcb3-1180-4fce-a231-67ee4000fa72.avif",
+      "values": {},
+      "firstSeenAt": "2026-11-23T20:50:02.736Z",
       "testedAt": null
     },
     {
@@ -2869,7 +2980,7 @@
         "ko": "젠에임",
         "en": "ZENAIM"
       },
-      "priceKrw": 274100,
+      "priceKrw": 277500,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -2947,11 +3058,6 @@
         "connectionType": "유선",
         "detachStroke": 0.001,
         "dks": true,
-        "emWPrRtAvgD0": 2.6465198019801974,
-        "emWPrRtSdD0": 0.07256940756828785,
-        "emWRealPerfD0": 4635,
-        "emWRlRtAvgD0": 0.9147099009900984,
-        "emWRlRtSdD0": 0.05415152924703212,
         "eyejokerRating": "MILD_RECOMMENDATION",
         "firmwareVersion": "0.1.1.0",
         "hotswap": true,
@@ -3124,6 +3230,22 @@
         "windowsLock": false
       },
       "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "061dd7a9-517e-4456-bd85-1e818ef9f94b",
+      "name": "HERO 87 HE",
+      "manufacturer": {
+        "ko": "아우라",
+        "en": "AULA"
+      },
+      "priceKrw": 79000,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/bd28def7-1b7d-46d5-9692-de034aa8cbda.avif",
+      "values": {},
+      "firstSeenAt": "2026-11-23T20:50:02.736Z",
       "testedAt": null
     },
     {
@@ -3378,7 +3500,7 @@
         "ko": "이와든",
         "en": "EWEADN"
       },
-      "priceKrw": 139800,
+      "priceKrw": 140600,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -3814,7 +3936,7 @@
         "ko": "엠초스",
         "en": "MCHOSE"
       },
-      "priceKrw": 145600,
+      "priceKrw": 146500,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -4216,6 +4338,22 @@
       "testedAt": null
     },
     {
+      "id": "10bcc5de-fff2-41a5-bc66-b7ec965279a6",
+      "name": "QBZ 75 HE",
+      "manufacturer": {
+        "ko": "IPI",
+        "en": "IPI"
+      },
+      "priceKrw": null,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/16a6d2c5-bca9-4c81-aa68-844264d09d84.avif",
+      "values": {},
+      "firstSeenAt": "2026-11-23T20:50:02.736Z",
+      "testedAt": null
+    },
+    {
       "id": "1158bb58-eb74-4c7c-8a7d-268f21e5547e",
       "name": "60 ATLAS(V2)",
       "manufacturer": {
@@ -4238,11 +4376,6 @@
         "detachStroke": 0.005,
         "dks": true,
         "effectiveUpdateRate": "8000",
-        "emWPrRtAvgD0": 0.5389504950495049,
-        "emWPrRtSdD0": 0.07081913600508973,
-        "emWRealPerfD0": 5665,
-        "emWRlRtAvgD0": 0.6860237623762386,
-        "emWRlRtSdD0": 0.039532157980021736,
         "eyejokerRating": "RECOMMENDED",
         "hotswap": true,
         "key10PressResponseTime": 0.16453631840796015,
@@ -4602,11 +4735,6 @@
         "detachStroke": 0.01,
         "dks": true,
         "effectiveUpdateRate": "8000",
-        "emWPrRtAvgD0": 3.489958415841585,
-        "emWPrRtSdD0": 0.21083075248063285,
-        "emWRealPerfD0": 3520,
-        "emWRlRtAvgD0": 0.48954257425742576,
-        "emWRlRtSdD0": 0.05062682994425859,
         "eyejokerRating": "RECOMMENDED",
         "firmwareVersion": "3.82",
         "hotswap": true,
@@ -5036,13 +5164,29 @@
       "testedAt": null
     },
     {
+      "id": "1a94bb95-fedb-4874-a5e3-cdcbde44d54b",
+      "name": "F68",
+      "manufacturer": {
+        "ko": "프리울프",
+        "en": "FREEWOLF"
+      },
+      "priceKrw": 45300,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": "https://s.click.aliexpress.com/e/_c3qP2yIZ",
+      "image": null,
+      "values": {},
+      "firstSeenAt": "2026-11-23T20:50:02.736Z",
+      "testedAt": null
+    },
+    {
       "id": "1af46458-80d0-4360-b991-41398f0e17f7",
       "name": "MG75V2",
       "manufacturer": {
         "ko": "아이락",
         "en": "IROK"
       },
-      "priceKrw": 88200,
+      "priceKrw": 88700,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -5087,11 +5231,6 @@
         "detachStroke": 0.1,
         "dks": true,
         "effectiveUpdateRate": "8000",
-        "emWPrRtAvgD0": 0.6107445544554455,
-        "emWPrRtSdD0": 0.07874402755947046,
-        "emWRealPerfD0": 5220,
-        "emWRlRtAvgD0": 0.9222762376237617,
-        "emWRlRtSdD0": 0.04236923890803927,
         "eyejokerRating": "MILD_RECOMMENDATION",
         "hotswap": true,
         "housingKeyboard": [
@@ -5465,7 +5604,7 @@
         "ko": "IPI",
         "en": "IPI"
       },
-      "priceKrw": 71800,
+      "priceKrw": 72200,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -5481,7 +5620,7 @@
         "ko": "어택샤크",
         "en": "AttackShark"
       },
-      "priceKrw": 35600,
+      "priceKrw": 35800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -5608,6 +5747,8 @@
         "detachStroke": 0.005,
         "dks": false,
         "effectiveUpdateRate": "8000",
+        "emWOvRtAvgD0": 0.5641752475247527,
+        "emWOvRtSdD0": 0.052279603212605226,
         "emWPrRtAvgD0": 0.3728168316831686,
         "emWPrRtSdD0": 0.059699354971567135,
         "emWRealPerfD0": 4090,
@@ -5888,7 +6029,7 @@
         "kkboard": false,
         "modeTap": false,
         "palmRest": false,
-        "rapidTrigger": false,
+        "rapidTrigger": true,
         "remapping": false,
         "socd": false,
         "toggleKey": false,
@@ -5905,7 +6046,7 @@
         "ko": "엠초스",
         "en": "MCHOSE"
       },
-      "priceKrw": 199800,
+      "priceKrw": 200900,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -6107,6 +6248,22 @@
         "windowsLock": false
       },
       "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "22567e13-9802-49d9-86e8-5ca6c0217ee9",
+      "name": "Huntsman V3 Pro Mini 8KHz",
+      "manufacturer": {
+        "ko": "레이저",
+        "en": "RAZER"
+      },
+      "priceKrw": 289000,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/379f53b1-ea02-4270-a7bd-55100ce2b736.avif",
+      "values": {},
+      "firstSeenAt": "2026-11-23T20:50:02.736Z",
       "testedAt": null
     },
     {
@@ -6574,7 +6731,7 @@
         "ko": "레이저",
         "en": "RAZER"
       },
-      "priceKrw": 307200,
+      "priceKrw": 309000,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -6590,7 +6747,7 @@
         "ko": "Weikav",
         "en": "Weikav"
       },
-      "priceKrw": 79800,
+      "priceKrw": 80200,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -6854,7 +7011,7 @@
         "ko": "게이트론",
         "en": "GATERON"
       },
-      "priceKrw": 360100,
+      "priceKrw": 362000,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -6945,11 +7102,6 @@
         "detachStrokeMeasured": 0.21,
         "dks": true,
         "effectiveUpdateRate": "1000",
-        "emWPrRtAvgD0": 2.2804435643564362,
-        "emWPrRtSdD0": 0.3068495056086058,
-        "emWRealPerfD0": 945,
-        "emWRlRtAvgD0": 1.9636564356435633,
-        "emWRlRtSdD0": 0.3025987373154736,
         "eyejokerRating": "MILD_RECOMMENDATION",
         "firmwareVersion": "2.8.1",
         "hotswap": true,
@@ -7005,7 +7157,7 @@
         "ko": "ATK",
         "en": "ATK"
       },
-      "priceKrw": 173600,
+      "priceKrw": 174600,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -7057,11 +7209,6 @@
         "detachStroke": 0.01,
         "dks": true,
         "effectiveUpdateRate": "8000",
-        "emWPrRtAvgD0": 0.8804950495049495,
-        "emWPrRtSdD0": 0.07364595849885701,
-        "emWRealPerfD0": 4450,
-        "emWRlRtAvgD0": 1.3871544554455417,
-        "emWRlRtSdD0": 0.057460067106053586,
         "eyejokerRating": "RECOMMENDED",
         "firmwareVersion": "1.5.0",
         "hotswap": true,
@@ -7516,11 +7663,6 @@
         "detachStroke": 0.1,
         "dks": false,
         "effectiveUpdateRate": "8000",
-        "emWPrRtAvgD0": 4.102047524752482,
-        "emWPrRtSdD0": 0.25382604887586396,
-        "emWRealPerfD0": 980,
-        "emWRlRtAvgD0": 6.671250495049514,
-        "emWRlRtSdD0": 0.34460894701261113,
         "eyejokerRating": "MILD_RECOMMENDATION",
         "firmwareVersion": "177.1.16",
         "hotswap": true,
@@ -7815,7 +7957,7 @@
         "ko": "커세어",
         "en": "CORSAIR"
       },
-      "priceKrw": 240500,
+      "priceKrw": 241800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -8433,15 +8575,31 @@
       "testedAt": null
     },
     {
+      "id": "3027bacc-8870-48c3-8241-398101266955",
+      "name": "MK60 Galaxy",
+      "manufacturer": {
+        "ko": "모크블레이드",
+        "en": "MorkBlade"
+      },
+      "priceKrw": null,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": null,
+      "values": {},
+      "firstSeenAt": "2026-11-23T20:50:02.736Z",
+      "testedAt": null
+    },
+    {
       "id": "3079a8f1-889d-4657-9900-f38f8e75cdf8",
-      "name": "Transition 106",
+      "name": "Transition Lite 106",
       "manufacturer": {
         "ko": "스웨그키",
         "en": "Swagkey"
       },
-      "priceKrw": null,
-      "status": "unreleased",
-      "saleStatus": "unreleased",
+      "priceKrw": 106000,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
       "aliUrl": null,
       "image": "/images/d2a850e4-7541-4707-9cee-8cc7c10aeac8.avif",
       "values": {
@@ -8888,7 +9046,7 @@
         "ko": "플라이디지",
         "en": "Flydigi"
       },
-      "priceKrw": 119800,
+      "priceKrw": 120500,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -9151,7 +9309,7 @@
         "ko": "SKYLOONG",
         "en": "SKYLOONG"
       },
-      "priceKrw": 100200,
+      "priceKrw": 100800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -9282,11 +9440,6 @@
         "detachStroke": 0.001,
         "dks": true,
         "effectiveUpdateRate": "8000",
-        "emWPrRtAvgD0": 6.164588118811882,
-        "emWPrRtSdD0": 0.08243558936218531,
-        "emWRealPerfD0": 3550,
-        "emWRlRtAvgD0": 4.384189108910889,
-        "emWRlRtSdD0": 0.07970402477009866,
         "eyejokerRating": "RECOMMENDED",
         "firmwareVersion": "1.03",
         "hotswap": false,
@@ -9463,7 +9616,7 @@
         "ko": "체리",
         "en": "Cherry"
       },
-      "priceKrw": 185700,
+      "priceKrw": 186800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -9915,6 +10068,22 @@
       "testedAt": null
     },
     {
+      "id": "3cd77f04-7782-426a-a28b-e5f7f5e3f4a1",
+      "name": "MK1088K",
+      "manufacturer": {
+        "ko": "앱코",
+        "en": "ABKO"
+      },
+      "priceKrw": 35900,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/2bb3080f-1346-4f19-a2b7-5e867040bd04.avif",
+      "values": {},
+      "firstSeenAt": "2026-11-23T20:50:02.736Z",
+      "testedAt": null
+    },
+    {
       "id": "3d819ab1-3e21-40aa-96b8-262805afcefe",
       "name": "APEX PRO mini",
       "manufacturer": {
@@ -10097,7 +10266,7 @@
         "ko": "KBD팬스",
         "en": "KBDFANS"
       },
-      "priceKrw": 71200,
+      "priceKrw": 71600,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -10407,11 +10576,6 @@
         "detachStroke": 0.1,
         "dks": false,
         "effectiveUpdateRate": "8000",
-        "emWPrRtAvgD0": 4.012530693069307,
-        "emWPrRtSdD0": 0.21729082931288207,
-        "emWRealPerfD0": 1165,
-        "emWRlRtAvgD0": 3.893224752475245,
-        "emWRlRtSdD0": 0.28353960727253896,
         "eyejokerRating": "MILD_RECOMMENDATION",
         "firmwareVersion": "181.1.16",
         "hotswap": true,
@@ -10751,7 +10915,7 @@
         "ko": "에포메이커",
         "en": "EPOMAKER"
       },
-      "priceKrw": 128200,
+      "priceKrw": 129000,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -11072,11 +11236,13 @@
         "detachStroke": 0.001,
         "dks": true,
         "effectiveUpdateRate": "8000",
-        "emWPrRtAvgD0": 0.7709485148514835,
-        "emWPrRtSdD0": 0.06501012352826804,
-        "emWRealPerfD0": 4875,
-        "emWRlRtAvgD0": 0.6787306930693071,
-        "emWRlRtSdD0": 0.053959746167401006,
+        "emWOvRtAvgD0": 1.23312425742574,
+        "emWOvRtSdD0": 0.037312092320847826,
+        "emWPrRtAvgD0": 0.34633861386138604,
+        "emWPrRtSdD0": 0.047509188210442546,
+        "emWRealPerfD0": 5780,
+        "emWRlRtAvgD0": 2.1199099009900997,
+        "emWRlRtSdD0": 0.052201900509673826,
         "eyejokerRating": "MILD_RECOMMENDATION",
         "firmwareVersion": "1.1.2.0",
         "hotswap": true,
@@ -11141,7 +11307,7 @@
         "ko": "드라이 스튜디오",
         "en": "DRY STUDIO"
       },
-      "priceKrw": 296100,
+      "priceKrw": 297600,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -11543,6 +11709,8 @@
         "detachStroke": 0.05,
         "dks": true,
         "effectiveUpdateRate": "8000",
+        "emWOvRtAvgD0": 0.35970099009900997,
+        "emWOvRtSdD0": 0.030356107562506025,
         "emWPrRtAvgD0": 0.4083841584158414,
         "emWPrRtSdD0": 0.04417166049208895,
         "emWRealPerfD0": 6670,
@@ -11799,7 +11967,7 @@
         "ko": "엠초스",
         "en": "MCHOSE"
       },
-      "priceKrw": 52000,
+      "priceKrw": 52300,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -11934,7 +12102,7 @@
         "ko": "zynoo",
         "en": "zynoo"
       },
-      "priceKrw": 230800,
+      "priceKrw": 232100,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -12615,11 +12783,6 @@
         "detachStroke": 0.001,
         "dks": false,
         "effectiveUpdateRate": "8000",
-        "emWPrRtAvgD0": 0.7428475247524748,
-        "emWPrRtSdD0": 0.07539035391991601,
-        "emWRealPerfD0": 5055,
-        "emWRlRtAvgD0": 0.49820396039603926,
-        "emWRlRtSdD0": 0.04561520052535919,
         "eyejokerRating": "RECOMMENDED",
         "hotswap": true,
         "housingKeyboard": [
@@ -13662,29 +13825,29 @@
         "keyboardMechanism": [
           "자석축"
         ],
-        "keyboardPcbAvgWired": 0.14370198019801983,
+        "keyboardPcbAvgWired": 0.14081287128712872,
         "kkboard": false,
         "mcu": "wchch32v307(144m)",
         "minStroke": 0.1,
         "modeTap": true,
         "multiKeyDelay": false,
         "overallRatingKeyboard": "FLAWLESS",
-        "overallResponseSpeed": 0.14,
+        "overallResponseSpeed": 0.15,
         "overallStddev": 0.04,
         "palmRest": false,
-        "pcbAvgDetach": 0.14389009900990093,
+        "pcbAvgDetach": 0.1509326732673266,
         "pollingRate": "8000",
         "publicReleaseAt": "2025-01-01T00:00:00",
         "rapidAdjustmentUnit": 0.05,
         "rapidTrigger": true,
-        "realPerformance": 7745,
+        "realPerformance": 7150,
         "remapping": true,
         "simultaneousInput": true,
         "socd": true,
         "solution": "자체 솔루션",
         "stabilizer": "cherryPcbMount",
-        "stddevDetach": 0.037260240814234555,
-        "stddevWired": 0.037023959275518506,
+        "stddevDetach": 0.04022133591951751,
+        "stddevWired": 0.04018198247371681,
         "strokeErrorRate": 3.51,
         "strokeMeasured": 0.19,
         "toggleKey": true,
@@ -13701,7 +13864,7 @@
         "ko": "ATK",
         "en": "ATK"
       },
-      "priceKrw": 126900,
+      "priceKrw": 127600,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -13932,11 +14095,6 @@
         "detachStrokeMeasured": 1,
         "dks": true,
         "effectiveUpdateRate": "8000",
-        "emWPrRtAvgD0": 0.6044019801980196,
-        "emWPrRtSdD0": 0.06692598835184198,
-        "emWRealPerfD0": 5805,
-        "emWRlRtAvgD0": 0.790454455445543,
-        "emWRlRtSdD0": 0.03933829420602896,
         "eyejokerRating": "RECOMMENDED",
         "firmwareVersion": "2.2.0",
         "hotswap": true,
@@ -14127,6 +14285,22 @@
         "windowsLock": true
       },
       "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "59a13b03-f29c-478c-9f5d-86e048a728e3",
+      "name": "AK99",
+      "manufacturer": {
+        "ko": "앱코",
+        "en": "ABKO"
+      },
+      "priceKrw": 59000,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/5e544af0-a577-454a-b2ff-21593ff12d8f.avif",
+      "values": {},
+      "firstSeenAt": "2026-11-23T20:50:02.736Z",
       "testedAt": null
     },
     {
@@ -14907,6 +15081,8 @@
         "debounceTime": 1,
         "dks": true,
         "effectiveUpdateRate": "8000",
+        "emWOvRtAvgD0": 0.5478940594059414,
+        "emWOvRtSdD0": 0.04366912229410003,
         "emWPrRtAvgD0": 0.3119485148514848,
         "emWPrRtSdD0": 0.052015052303262754,
         "emWRealPerfD0": 4860,
@@ -15570,11 +15746,6 @@
         "connectionType": "유선",
         "detachStroke": 0.1,
         "dks": true,
-        "emWPrRtAvgD0": 4.323163366336637,
-        "emWPrRtSdD0": 0.5139676590015747,
-        "emWRealPerfD0": 555,
-        "emWRlRtAvgD0": 3.5382851485148525,
-        "emWRlRtSdD0": 0.51988499859068,
         "eyejokerRating": "MILD_RECOMMENDATION",
         "hotswap": true,
         "housingKeyboard": [
@@ -15908,11 +16079,6 @@
         "detachStrokeMeasured": 0.03,
         "dks": true,
         "effectiveUpdateRate": "8000",
-        "emWPrRtAvgD0": 1.0725613861386163,
-        "emWPrRtSdD0": 0.08205452602777616,
-        "emWRealPerfD0": 3695,
-        "emWRlRtAvgD0": 1.5564316831683191,
-        "emWRlRtSdD0": 0.07399752328032604,
         "eyejokerRating": "HIGHLY_RECOMMENDED",
         "hotswap": true,
         "housingKeyboard": [
@@ -15984,11 +16150,6 @@
         "detachStrokeMeasured": 0.12,
         "dks": false,
         "effectiveUpdateRate": "8000",
-        "emWPrRtAvgD0": 1.5467485148514863,
-        "emWPrRtSdD0": 0.07777678216748869,
-        "emWRealPerfD0": 3650,
-        "emWRlRtAvgD0": 2.2107504950495063,
-        "emWRlRtSdD0": 0.07990644978708987,
         "eyejokerRating": "MILD_RECOMMENDATION",
         "hotswap": true,
         "housingKeyboard": [
@@ -17147,7 +17308,7 @@
         "ko": "아이큐닉스",
         "en": "IQUNIX"
       },
-      "priceKrw": 225800,
+      "priceKrw": 227100,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -17226,11 +17387,6 @@
         "detachStroke": 0.001,
         "dks": true,
         "effectiveUpdateRate": "8000",
-        "emWPrRtAvgD0": 0.9871762376237613,
-        "emWPrRtSdD0": 0.0703451225532562,
-        "emWRealPerfD0": 4685,
-        "emWRlRtAvgD0": 1.1677396039603962,
-        "emWRlRtSdD0": 0.05442104386801797,
         "eyejokerRating": "RECOMMENDED",
         "firmwareVersion": "1.0.3.1",
         "hotswap": true,
@@ -17393,22 +17549,32 @@
         "en": "MelGeek"
       },
       "priceKrw": 420000,
-      "status": "earlyAccess",
+      "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c4tewgj9",
       "image": "/images/1598ae41-fae4-4813-a405-2572d05e9788.avif",
       "values": {
         "adjustmentUnit": 0.01,
         "autoCalibration": true,
+        "bottomDeadzone": 0.17239122499999998,
+        "bottomDeadzoneStddev": 0.0030479593443810734,
         "connectionOption": "usbTypeC",
         "connectionType": "유선",
         "dks": true,
         "earlyAccessAt": "2026-11-15T00:00:00.000Z",
-        "eyejokerRating": "ANTICIPATING",
+        "emWOvRtAvgD0": 0.5715990099009906,
+        "emWOvRtSdD0": 0.025981345154733746,
+        "emWPrRtAvgD0": 0.3663940594059412,
+        "emWPrRtSdD0": 0.03873961265257721,
+        "emWRealPerfD0": 7380,
+        "emWRlRtAvgD0": 0.7768039603960395,
+        "emWRlRtSdD0": 0.039185660947841885,
+        "eyejokerRating": "RECOMMENDED",
         "hotswap": true,
         "housingKeyboard": [
           "aluminum"
         ],
+        "keyGhosting": false,
         "keyboardLayout": "60%",
         "keyboardMechanism": [
           "자석축"
@@ -17420,21 +17586,31 @@
         "mounting": [
           "gasket"
         ],
+        "multiKeyDelay": false,
+        "overallRatingKeyboard": "FLAWLESS",
         "palmRest": false,
         "pollingRate": "8000",
         "publicReleaseAt": "2026-11-22T00:00:00.000Z",
         "rapidAdjustmentUnit": 0.01,
         "rapidTrigger": true,
+        "realPerformance": 5230,
         "remapping": true,
+        "simultaneousInput": false,
         "socd": true,
+        "solWPrRtAvg": 0.6489818181818183,
+        "solWPrRtSd": 0.04974406895996962,
+        "solWRealPerf": 5780,
         "solution": "자체 솔루션",
+        "strokeErrorRate": 1.3970124999999998,
+        "strokeMeasured": 0.1264882,
+        "strokeMeasuredStddev": 0.023395804199898743,
         "switchType": "Flip King of Magnetic White Switch",
         "toggleKey": true,
         "webDriver": true,
         "windowsLock": true
       },
       "firstSeenAt": null,
-      "testedAt": null
+      "testedAt": "2026-11-23T20:50:02.736Z"
     },
     {
       "id": "712cf037-5f66-4d3b-a7af-9b48a5df28bc",
@@ -17596,7 +17772,7 @@
         "ko": "아우라",
         "en": "AULA"
       },
-      "priceKrw": 199800,
+      "priceKrw": 200900,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -18201,6 +18377,22 @@
       "testedAt": null
     },
     {
+      "id": "799daacf-078b-41e1-bca1-f58625ac03af",
+      "name": "HERO68 XS",
+      "manufacturer": {
+        "ko": "아우라",
+        "en": "AULA"
+      },
+      "priceKrw": 58900,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": "https://s.click.aliexpress.com/e/_c4d0FWXx",
+      "image": "/images/02211d98-9186-4f43-9ce4-66ac22f1c4c9.avif",
+      "values": {},
+      "firstSeenAt": "2026-11-23T20:50:02.736Z",
+      "testedAt": null
+    },
+    {
       "id": "79df996d-0a3d-4e3b-8b24-3dfcca9a8ec4",
       "name": "ET65",
       "manufacturer": {
@@ -18645,7 +18837,7 @@
         "ko": "zynoo",
         "en": "zynoo"
       },
-      "priceKrw": 280500,
+      "priceKrw": 282200,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -18734,6 +18926,8 @@
         "detachStroke": 0.05,
         "dks": true,
         "effectiveUpdateRate": "8000",
+        "emWOvRtAvgD0": 0.8994782178217832,
+        "emWOvRtSdD0": 0.1412936150862825,
         "emWPrRtAvgD0": 0.32795346534653436,
         "emWPrRtSdD0": 0.04148864586264687,
         "emWRealPerfD0": 3980,
@@ -18938,7 +19132,7 @@
         "ko": "몬스긱",
         "en": "Monsgeek"
       },
-      "priceKrw": 80100,
+      "priceKrw": 80600,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -18975,7 +19169,7 @@
         "ko": "에버글라이드",
         "en": "EVERGLIDE"
       },
-      "priceKrw": 79800,
+      "priceKrw": 80200,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -19041,7 +19235,7 @@
         "ko": "발키리",
         "en": "VALKYRIE"
       },
-      "priceKrw": 51500,
+      "priceKrw": 51800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -19312,7 +19506,7 @@
         "ko": "우미어",
         "en": "Womier"
       },
-      "priceKrw": 146900,
+      "priceKrw": 147800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -19492,19 +19686,21 @@
         "adjustmentUnit": 0.01,
         "angleAdjustment": "3단계",
         "autoCalibration": false,
-        "bottomDeadzone": 0.01,
-        "bottomDeadzoneStddev": 0.02,
+        "bottomDeadzone": 0.009644499999999967,
+        "bottomDeadzoneStddev": 0.0024746689360108294,
         "connectionOption": "usbTypeC",
         "connectionType": "유선",
         "debounceTime": 1,
         "detachStroke": 0.02,
         "dks": true,
         "effectiveUpdateRate": "8000",
-        "emWPrRtAvgD0": 1.549278217821781,
-        "emWPrRtSdD0": 0.07430267788833918,
-        "emWRealPerfD0": 4285,
-        "emWRlRtAvgD0": 1.3846643564356431,
-        "emWRlRtSdD0": 0.06111044389708436,
+        "emWOvRtAvgD0": 1.5249326732673247,
+        "emWOvRtSdD0": 0.04894998378606092,
+        "emWPrRtAvgD0": 1.4169435643564348,
+        "emWPrRtSdD0": 0.07115428629803325,
+        "emWRealPerfD0": 4245,
+        "emWRlRtAvgD0": 1.6329217821782187,
+        "emWRlRtSdD0": 0.06463094636864769,
         "eyejokerRating": "RECOMMENDED",
         "firmwareVersion": "108",
         "hotswap": true,
@@ -19550,8 +19746,9 @@
         "stabilizer": "cherryPlateMount",
         "stddevDetach": 0.04616344120453409,
         "stddevWired": 0.0467278353187747,
-        "strokeErrorRate": 4.93,
-        "strokeMeasured": 0.12,
+        "strokeErrorRate": 4.251703749999998,
+        "strokeMeasured": 0.22817600000000002,
+        "strokeMeasuredStddev": 0.025682368496694384,
         "switchType": "KTEK",
         "toggleKey": true,
         "webDriver": true,
@@ -19567,7 +19764,7 @@
         "ko": "이와든",
         "en": "EWEADN"
       },
-      "priceKrw": 49800,
+      "priceKrw": 50100,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -19685,7 +19882,7 @@
         "ko": "야만부락",
         "en": "Savage Tribe"
       },
-      "priceKrw": 119800,
+      "priceKrw": 120500,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -20388,11 +20585,13 @@
         "detachStroke": 0.001,
         "dks": true,
         "effectiveUpdateRate": "8000",
-        "emWPrRtAvgD0": 0.34633861386138604,
-        "emWPrRtSdD0": 0.047509188210442546,
-        "emWRealPerfD0": 5780,
-        "emWRlRtAvgD0": 2.1199099009900997,
-        "emWRlRtSdD0": 0.052201900509673826,
+        "emWOvRtAvgD0": 0.5113985148514854,
+        "emWOvRtSdD0": 0.02759229063968466,
+        "emWPrRtAvgD0": 0.2315782178217824,
+        "emWPrRtSdD0": 0.039496187568769325,
+        "emWRealPerfD0": 6845,
+        "emWRlRtAvgD0": 0.7912188118811878,
+        "emWRlRtSdD0": 0.044829960837450944,
         "eyejokerRating": "RECOMMENDED",
         "hotswap": true,
         "housingKeyboard": [
@@ -20411,7 +20610,7 @@
         "keyboardMechanism": [
           "자석축"
         ],
-        "keyboardPcbAvgWired": 0.13191386138613867,
+        "keyboardPcbAvgWired": 0.11729504950495048,
         "kkboard": false,
         "led": "rgb",
         "mcu": "armcortex600mhz",
@@ -20423,22 +20622,22 @@
         ],
         "multiKeyDelay": false,
         "overallRatingKeyboard": "FLAWLESS",
-        "overallResponseSpeed": 0.13,
+        "overallResponseSpeed": 0.12,
         "overallStddev": 0.04,
         "palmRest": false,
-        "pcbAvgDetach": 0.13422277227722776,
+        "pcbAvgDetach": 0.11522871287128723,
         "pollingRate": "8000",
         "publicReleaseAt": "2026-10-25T07:21:00.000Z",
         "rapidAdjustmentUnit": 0.001,
         "rapidTrigger": true,
-        "realPerformance": 7875,
+        "realPerformance": 7545,
         "remapping": true,
         "simultaneousInput": false,
         "socd": true,
         "solution": "sparklink",
         "soundAbsorption": "스위치패드, PET, Poron 샌드위치폼, 하부폼",
-        "stddevDetach": 0.03577109398091851,
-        "stddevWired": 0.037081279549261645,
+        "stddevDetach": 0.03804057457748091,
+        "stddevWired": 0.03817116317673424,
         "strokeErrorRate": 1.2229599999999987,
         "strokeMeasured": 0.0165022,
         "strokeMeasuredStddev": 0.011431880762149332,
@@ -20572,7 +20771,7 @@
         "ko": "아우라",
         "en": "AULA"
       },
-      "priceKrw": 23800,
+      "priceKrw": 23900,
       "status": "purchased",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -21384,11 +21583,6 @@
         "detachStroke": 0.001,
         "dks": true,
         "effectiveUpdateRate": "8000",
-        "emWPrRtAvgD0": 0.7644554455445544,
-        "emWPrRtSdD0": 0.0689747872938165,
-        "emWRealPerfD0": 5295,
-        "emWRlRtAvgD0": 0.5428633663366337,
-        "emWRlRtSdD0": 0.0447786320212831,
         "eyejokerRating": "RECOMMENDED",
         "hotswap": true,
         "housingKeyboard": [
@@ -21586,7 +21780,7 @@
         "ko": "keyverse",
         "en": "keyverse"
       },
-      "priceKrw": 79800,
+      "priceKrw": 80200,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c3C7JfTZ",
@@ -21916,7 +22110,7 @@
         "ko": "아우라",
         "en": "AULA"
       },
-      "priceKrw": 45800,
+      "priceKrw": 46100,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -21949,11 +22143,6 @@
         "connectionType": "유선",
         "dks": true,
         "effectiveUpdateRate": "8000",
-        "emWPrRtAvgD0": 1.466441584158416,
-        "emWPrRtSdD0": 0.09901556560033277,
-        "emWRealPerfD0": 3200,
-        "emWRlRtAvgD0": 2.3640128712871307,
-        "emWRlRtSdD0": 0.08206198353233164,
         "eyejokerRating": "MILD_RECOMMENDATION",
         "hotswap": false,
         "housingKeyboard": [
@@ -22001,7 +22190,7 @@
         "ko": "멜긱",
         "en": "MelGeek"
       },
-      "priceKrw": 178400,
+      "priceKrw": 179300,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -22059,17 +22248,19 @@
         "ko": "아우라",
         "en": "AULA"
       },
-      "priceKrw": 199800,
-      "status": "purchased",
+      "priceKrw": 200900,
+      "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
       "image": "/images/40f68754-1e17-49a6-9548-4929c4b4cb88.avif",
       "values": {
         "adjustmentUnit": 0.001,
+        "autoCalibration": false,
         "connectionOption": "usbTypeC",
         "connectionType": "유선",
         "detachStroke": 0.001,
         "dks": true,
+        "hotswap": true,
         "housingKeyboard": [
           "aluminum"
         ],
@@ -22077,12 +22268,15 @@
         "keyboardMechanism": [
           "자석축"
         ],
+        "kkboard": false,
         "led": "rgb",
+        "measuredSwitchType": "자석축",
         "minStroke": 0.001,
         "modeTap": true,
         "mounting": [
           "gasket"
         ],
+        "palmRest": false,
         "pollingRate": "8000",
         "rapidAdjustmentUnit": 0.001,
         "rapidTrigger": true,
@@ -22090,9 +22284,11 @@
         "socd": true,
         "solution": "sparklink",
         "soundAbsorption": "PET, PORON, IXPE 포함 5중 흡음 구조",
+        "stabilizer": "cherryPlateMount",
         "switchType": "冠泰黑曜磁轴",
         "toggleKey": true,
-        "webDriver": true
+        "webDriver": true,
+        "windowsLock": false
       },
       "firstSeenAt": null,
       "testedAt": null
@@ -22169,6 +22365,22 @@
         "windowsLock": false
       },
       "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "9f867bc5-d166-49e1-bed4-ab62b38c03c6",
+      "name": "Magneon GRT61",
+      "manufacturer": {
+        "ko": "지클릭커",
+        "en": "g-clicker"
+      },
+      "priceKrw": 49800,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/f762b037-0daa-4af2-9d34-361f46f7bf86.avif",
+      "values": {},
+      "firstSeenAt": "2026-11-23T20:50:02.736Z",
       "testedAt": null
     },
     {
@@ -22335,7 +22547,7 @@
         "ko": "아우라",
         "en": "AULA"
       },
-      "priceKrw": 19800,
+      "priceKrw": 19900,
       "status": "purchased",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -22518,7 +22730,7 @@
         "ko": "벨로타",
         "en": "VELOTA"
       },
-      "priceKrw": 187800,
+      "priceKrw": 188800,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -22639,11 +22851,6 @@
         "detachStroke": 0.1,
         "dks": true,
         "effectiveUpdateRate": "8000",
-        "emWPrRtAvgD0": 1.327611881188118,
-        "emWPrRtSdD0": 0.07411190266254881,
-        "emWRealPerfD0": 3320,
-        "emWRlRtAvgD0": 0.8607970297029697,
-        "emWRlRtSdD0": 0.10403364550527842,
         "eyejokerRating": "RECOMMENDED",
         "firmwareVersion": "V570",
         "hotswap": true,
@@ -22702,7 +22909,7 @@
         "ko": "우팅",
         "en": "Wooting"
       },
-      "priceKrw": 353600,
+      "priceKrw": 353900,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -22734,6 +22941,22 @@
         "webDriver": true
       },
       "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "a4ec0c0d-0c5e-4511-8385-60b56cb33ba6",
+      "name": "AG0302",
+      "manufacturer": {
+        "ko": "에이투",
+        "en": "ATWO"
+      },
+      "priceKrw": 59900,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": null,
+      "values": {},
+      "firstSeenAt": "2026-11-23T20:50:02.736Z",
       "testedAt": null
     },
     {
@@ -23181,7 +23404,7 @@
         "ko": "에이수스",
         "en": "ASUS"
       },
-      "priceKrw": 179800,
+      "priceKrw": 180800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -23392,7 +23615,7 @@
         "ko": "루민키",
         "en": "LUMINKEY"
       },
-      "priceKrw": 232400,
+      "priceKrw": 233800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -23425,7 +23648,7 @@
         "ko": "VGN",
         "en": "VGN"
       },
-      "priceKrw": 39800,
+      "priceKrw": 40000,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -23464,7 +23687,7 @@
         "ko": "VGN",
         "en": "VGN"
       },
-      "priceKrw": 59800,
+      "priceKrw": 60100,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -23735,7 +23958,7 @@
         "ko": "이와든",
         "en": "EWEADN"
       },
-      "priceKrw": 73300,
+      "priceKrw": 73800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -23751,7 +23974,7 @@
         "ko": "PMO",
         "en": "PMO"
       },
-      "priceKrw": 49800,
+      "priceKrw": 50100,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -23800,6 +24023,8 @@
         "detachStroke": 0.001,
         "dks": true,
         "effectiveUpdateRate": "8000",
+        "emWOvRtAvgD0": 0.571879207920792,
+        "emWOvRtSdD0": 0.038524208196851914,
         "emWPrRtAvgD0": 0.3883415841584155,
         "emWPrRtSdD0": 0.05233437006938888,
         "emWRealPerfD0": 5315,
@@ -23825,7 +24050,7 @@
         "keyboardMechanism": [
           "자석축"
         ],
-        "keyboardPcbAvgWired": 0.13,
+        "keyboardPcbAvgWired": 0.1313594059405939,
         "kkboard": false,
         "led": "rgb",
         "minStroke": 0.001,
@@ -23837,23 +24062,23 @@
         ],
         "multiKeyDelay": false,
         "overallRatingKeyboard": "FLAWLESS",
-        "overallResponseSpeed": 0.14,
+        "overallResponseSpeed": 0.12,
         "overallStddev": 0.04,
         "palmRest": false,
-        "pcbAvgDetach": 0.14,
+        "pcbAvgDetach": 0.11757821782178222,
         "pollingRate": "8000",
         "profile": "oemProfile",
         "publicReleaseAt": "2025-07-11T10:21:00",
         "rapidAdjustmentUnit": 0.001,
         "rapidTrigger": true,
-        "realPerformance": 7770,
+        "realPerformance": 7605,
         "remapping": true,
         "simultaneousInput": false,
         "socd": true,
         "solution": "sparklink",
         "stabilizer": "cherryPlateMount",
-        "stddevDetach": 0.04,
-        "stddevWired": 0.04,
+        "stddevDetach": 0.0383427006593634,
+        "stddevWired": 0.03730041986921023,
         "strokeErrorRate": 4.24,
         "strokeMeasured": 0.15,
         "switchType": "Mork Ice (Gateron Jade AIR) / Snow Blade (Custom Gateron Jade POM)",
@@ -23927,7 +24152,7 @@
         "ko": "칠키",
         "en": "CHILKEY"
       },
-      "priceKrw": 265800,
+      "priceKrw": 267400,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -23976,11 +24201,6 @@
         "detachStrokeMeasured": 0.16,
         "dks": true,
         "effectiveUpdateRate": "8000",
-        "emWPrRtAvgD0": 5.041677227722764,
-        "emWPrRtSdD0": 0.3618500164873815,
-        "emWRealPerfD0": 945,
-        "emWRlRtAvgD0": 2.234565346534655,
-        "emWRlRtSdD0": 0.26226730409858046,
         "eyejokerRating": "RECOMMENDED",
         "hotswap": true,
         "housingKeyboard": [
@@ -24140,7 +24360,7 @@
         "ko": "우미어",
         "en": "Womier"
       },
-      "priceKrw": 161600,
+      "priceKrw": 162500,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -24227,7 +24447,7 @@
         "ko": "ATK",
         "en": "ATK"
       },
-      "priceKrw": 186800,
+      "priceKrw": 187800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -24971,6 +25191,22 @@
       "testedAt": null
     },
     {
+      "id": "ba67ad5f-52dc-4feb-9d6f-e0823d57a5bc",
+      "name": "Mercury V60 Ultra",
+      "manufacturer": {
+        "ko": "그라바스타",
+        "en": "Gravastar"
+      },
+      "priceKrw": 309000,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": "https://s.click.aliexpress.com/e/_c342VoVP",
+      "image": "/images/f1b0b878-ccad-4392-b329-3e0979d57d00.avif",
+      "values": {},
+      "firstSeenAt": "2026-11-23T20:50:02.736Z",
+      "testedAt": null
+    },
+    {
       "id": "ba7d9fb6-5e40-496e-9dcc-435a768fb127",
       "name": "Hi75",
       "manufacturer": {
@@ -25031,6 +25267,47 @@
         "windowsLock": false
       },
       "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "bac9c59a-6acd-471b-99b8-6550fc7ba892",
+      "name": "SAMSARA 65HE",
+      "manufacturer": {
+        "ko": "디자이너 스튜디오",
+        "en": "Designer Studio"
+      },
+      "priceKrw": null,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": null,
+      "values": {
+        "adjustmentUnit": 0.001,
+        "autoCalibration": false,
+        "connectionOption": "usbTypeC",
+        "connectionType": "유선",
+        "detachStroke": 0.005,
+        "dks": true,
+        "hotswap": true,
+        "keyboardMechanism": [
+          "자석축"
+        ],
+        "kkboard": false,
+        "measuredSwitchType": "자석축",
+        "minStroke": 0.005,
+        "modeTap": true,
+        "palmRest": false,
+        "pollingRate": "8000",
+        "rapidAdjustmentUnit": 0.001,
+        "rapidTrigger": true,
+        "remapping": true,
+        "socd": true,
+        "solution": "sparklink",
+        "toggleKey": true,
+        "webDriver": true,
+        "windowsLock": true
+      },
+      "firstSeenAt": "2026-11-23T20:50:02.736Z",
       "testedAt": null
     },
     {
@@ -25527,6 +25804,22 @@
       "testedAt": null
     },
     {
+      "id": "bfc4f93c-cfe8-435e-9da4-3e3131ff8789",
+      "name": "CMF104",
+      "manufacturer": {
+        "ko": "콕스",
+        "en": "COX"
+      },
+      "priceKrw": 74000,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/e3c60091-23b5-430d-8985-18c6b9bd68fb.avif",
+      "values": {},
+      "firstSeenAt": "2026-11-23T20:50:02.736Z",
+      "testedAt": null
+    },
+    {
       "id": "bfe8440c-33e0-494f-979b-8f9dd42db8eb",
       "name": "A75HE 8K",
       "manufacturer": {
@@ -25577,11 +25870,6 @@
         "detachStroke": 0.01,
         "dks": true,
         "effectiveUpdateRate": "8000",
-        "emWPrRtAvgD0": 0.9759752475247527,
-        "emWPrRtSdD0": 0.07153950913665107,
-        "emWRealPerfD0": 5020,
-        "emWRlRtAvgD0": 0.8297722772277226,
-        "emWRlRtSdD0": 0.04773691955786045,
         "eyejokerRating": "RECOMMENDED",
         "firmwareVersion": "V1.1.2",
         "hotswap": false,
@@ -25637,7 +25925,7 @@
         "ko": "엠초스",
         "en": "MCHOSE"
       },
-      "priceKrw": 49800,
+      "priceKrw": 50100,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -25911,7 +26199,7 @@
         "ko": "벨로타",
         "en": "VELOTA"
       },
-      "priceKrw": 259800,
+      "priceKrw": 261200,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -26149,7 +26437,7 @@
         "ko": "멜긱",
         "en": "MelGeek"
       },
-      "priceKrw": 237800,
+      "priceKrw": 239100,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -26287,7 +26575,7 @@
         "ko": "이와든",
         "en": "EWEADN"
       },
-      "priceKrw": 199700,
+      "priceKrw": 200800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -26502,11 +26790,13 @@
         "detachStrokeMeasured": 0.2,
         "dks": true,
         "effectiveUpdateRate": "4000",
-        "emWPrRtAvgD0": 1.1396881188118813,
-        "emWPrRtSdD0": 0.08435521756313887,
-        "emWRealPerfD0": 4345,
-        "emWRlRtAvgD0": 0.968243564356435,
-        "emWRlRtSdD0": 0.05446510448991488,
+        "emWOvRtAvgD0": 1.6494465346534668,
+        "emWOvRtSdD0": 0.043969759104572556,
+        "emWPrRtAvgD0": 0.4571861386138614,
+        "emWPrRtSdD0": 0.051735800710810596,
+        "emWRealPerfD0": 4835,
+        "emWRlRtAvgD0": 2.841706930693069,
+        "emWRlRtSdD0": 0.07001177589410709,
         "eyejokerRating": "RECOMMENDED",
         "firmwareVersion": "alpha v6",
         "hotswap": true,
@@ -26701,7 +26991,7 @@
         "ko": "이와든",
         "en": "EWEADN"
       },
-      "priceKrw": 95800,
+      "priceKrw": 96300,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -26835,11 +27125,6 @@
         "detachStrokeMeasured": 0.05,
         "dks": true,
         "effectiveUpdateRate": "8000",
-        "emWPrRtAvgD0": 20.26532772277228,
-        "emWPrRtSdD0": 0.1898587607497428,
-        "emWRealPerfD0": 810,
-        "emWRlRtAvgD0": 39.76671881188116,
-        "emWRlRtSdD0": 2.5878944666346424,
         "eyejokerRating": "HIGHLY_RECOMMENDED",
         "firmwareVersion": "118",
         "hotswap": true,
@@ -27175,6 +27460,22 @@
         "windowsLock": false
       },
       "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "cace8c9e-c8c5-4b60-afb2-97c928d6c9de",
+      "name": "HM61Z",
+      "manufacturer": {
+        "ko": "HM",
+        "en": "HM"
+      },
+      "priceKrw": null,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": null,
+      "values": {},
+      "firstSeenAt": "2026-11-23T20:50:02.736Z",
       "testedAt": null
     },
     {
@@ -27945,7 +28246,7 @@
         "ko": "에버글라이드",
         "en": "EVERGLIDE"
       },
-      "priceKrw": 172300,
+      "priceKrw": 173300,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -28165,28 +28466,40 @@
         "ko": "ATK",
         "en": "ATK"
       },
-      "priceKrw": 80100,
-      "status": "earlyAccess",
+      "priceKrw": 80600,
+      "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
       "image": "/images/55383bfb-b028-4ebc-9c8e-bc95bb57391e.avif",
       "values": {
         "adjustmentUnit": 0.005,
         "autoCalibration": true,
+        "bottomDeadzone": 0.27115360000000005,
+        "bottomDeadzoneStddev": 0.005764788483791668,
         "connectionOption": "usbTypeC",
         "connectionType": "유선",
         "detachStroke": 0.01,
         "dks": false,
         "earlyAccessAt": "2026-11-13T00:00:00.000Z",
-        "eyejokerRating": "ANTICIPATING",
+        "eyejokerRating": "RECOMMENDED",
         "hotswap": true,
         "housingKeyboard": [
           "plastic"
         ],
+        "key10PressResponseTime": 0.1849594059405941,
+        "key10PressStandardDeviation": 0.04088476120337497,
+        "key10PullStandardDeviation": 0.04201814655290264,
+        "key10ResponseTime": 0.30566831683168305,
+        "key6PressResponseTime": 0.1828821782178219,
+        "key6PressStandardDeviation": 0.041375711285297295,
+        "key6PullResponseTime": 0.303046534653465,
+        "key6PullStandardDeviation": 0.04138877272634884,
+        "keyGhosting": false,
         "keyboardLayout": "65%",
         "keyboardMechanism": [
           "자석축"
         ],
+        "keyboardPcbAvgWired": 0.18654950495049502,
         "kkboard": false,
         "measuredSwitchType": "자석축",
         "minStroke": 0.1,
@@ -28194,18 +28507,30 @@
         "mounting": [
           "leafspring"
         ],
+        "multiKeyDelay": false,
+        "overallRatingKeyboard": "FLAWLESS",
+        "overallResponseSpeed": 0.25,
+        "overallStddev": 0.04,
         "palmRest": false,
+        "pcbAvgDetach": 0.30436237623762313,
         "publicReleaseAt": "2026-11-20T00:00:00.000Z",
         "rapidAdjustmentUnit": 0.005,
         "rapidTrigger": true,
+        "realPerformance": 6935,
         "remapping": true,
+        "simultaneousInput": false,
         "socd": true,
+        "stddevDetach": 0.04146805248057491,
+        "stddevWired": 0.041425992997084896,
+        "strokeErrorRate": 0.8027750000000003,
+        "strokeMeasured": 0.18226560000000003,
+        "strokeMeasuredStddev": 0.011856834866017154,
         "toggleKey": true,
         "webDriver": true,
         "windowsLock": true
       },
       "firstSeenAt": null,
-      "testedAt": null
+      "testedAt": "2026-11-23T20:50:02.736Z"
     },
     {
       "id": "d03df85c-0e41-4b9d-ab38-331bdd781c43",
@@ -28534,11 +28859,6 @@
         "detachStroke": 0.001,
         "dks": true,
         "effectiveUpdateRate": "8000",
-        "emWPrRtAvgD0": 0.5752524752475251,
-        "emWPrRtSdD0": 0.07482871939535246,
-        "emWRealPerfD0": 5085,
-        "emWRlRtAvgD0": 0.4629267326732672,
-        "emWRlRtSdD0": 0.04544883510164862,
         "eyejokerRating": "RECOMMENDED",
         "firmwareVersion": "1.02",
         "hotswap": true,
@@ -28742,11 +29062,6 @@
         "detachStroke": 0.01,
         "dks": true,
         "effectiveUpdateRate": "8000",
-        "emWPrRtAvgD0": 1.0083683168316837,
-        "emWPrRtSdD0": 0.09155929197340858,
-        "emWRealPerfD0": 4595,
-        "emWRlRtAvgD0": 0.7106435643564346,
-        "emWRlRtSdD0": 0.047555862754710534,
         "eyejokerRating": "MILD_RECOMMENDATION",
         "firmwareVersion": "1.3.42",
         "hotswap": true,
@@ -28948,11 +29263,6 @@
         "detachStroke": 0.005,
         "dks": true,
         "effectiveUpdateRate": "8000",
-        "emWPrRtAvgD0": 3.7332000000000014,
-        "emWPrRtSdD0": 0.10530254197565533,
-        "emWRealPerfD0": 2815,
-        "emWRlRtAvgD0": 0.9449128712871286,
-        "emWRlRtSdD0": 0.0990333393841563,
         "eyejokerRating": "RECOMMENDED",
         "firmwareVersion": "ID3131_V503",
         "hotswap": true,
@@ -29348,11 +29658,6 @@
         "detachStroke": 0.001,
         "dks": true,
         "effectiveUpdateRate": "8000",
-        "emWPrRtAvgD0": 0.7019900990099011,
-        "emWPrRtSdD0": 0.07828638654205457,
-        "emWRealPerfD0": 4625,
-        "emWRlRtAvgD0": 0.4654346534653463,
-        "emWRlRtSdD0": 0.05148078741049584,
         "eyejokerRating": "RECOMMENDED",
         "hotswap": true,
         "housingKeyboard": [
@@ -30630,7 +30935,7 @@
         "ko": "VGN",
         "en": "VGN"
       },
-      "priceKrw": 93400,
+      "priceKrw": 93900,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -30724,11 +31029,6 @@
         "detachStroke": 0.005,
         "dks": false,
         "effectiveUpdateRate": "4000",
-        "emWPrRtAvgD0": 2.5590049504950523,
-        "emWPrRtSdD0": 0.43692393584932687,
-        "emWRealPerfD0": 2050,
-        "emWRlRtAvgD0": 1.092535643564356,
-        "emWRlRtSdD0": 0.08353645802070629,
         "eyejokerRating": "NO_RECOMMENDATION",
         "firmwareVersion": "3.20.08",
         "hotswap": false,
@@ -30856,11 +31156,6 @@
         "connectionType": "유선",
         "dks": true,
         "effectiveUpdateRate": "8000",
-        "emWPrRtAvgD0": 0.8010356435643569,
-        "emWPrRtSdD0": 0.07480239788627314,
-        "emWRealPerfD0": 4850,
-        "emWRlRtAvgD0": 0.8012574257425763,
-        "emWRlRtSdD0": 0.04907973981899186,
         "eyejokerRating": "RECOMMENDED",
         "hotswap": true,
         "housingKeyboard": [
@@ -30923,7 +31218,7 @@
         "ko": "아우라",
         "en": "AULA"
       },
-      "priceKrw": 113800,
+      "priceKrw": 114400,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -30966,7 +31261,7 @@
         "ko": "PMO",
         "en": "PMO"
       },
-      "priceKrw": 65800,
+      "priceKrw": 66200,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -30999,7 +31294,7 @@
         "ko": "우큐 스튜디오",
         "en": "Wuque Studio"
       },
-      "priceKrw": 199800,
+      "priceKrw": 200900,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -31197,7 +31492,7 @@
         "ko": "에버글라이드",
         "en": "EVERGLIDE"
       },
-      "priceKrw": 199100,
+      "priceKrw": 200200,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -31366,7 +31661,7 @@
         "ko": "ATK",
         "en": "ATK"
       },
-      "priceKrw": 187000,
+      "priceKrw": 188100,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -31773,7 +32068,7 @@
         "ko": "루민키",
         "en": "LUMINKEY"
       },
-      "priceKrw": 225800,
+      "priceKrw": 227100,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -31807,7 +32102,7 @@
         "ko": "엠초스",
         "en": "MCHOSE"
       },
-      "priceKrw": 139200,
+      "priceKrw": 140000,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -31840,6 +32135,22 @@
         "windowsLock": false
       },
       "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "e58baa52-2471-4052-a9cd-7d985f1353fa",
+      "name": "eX99 TMR 8K",
+      "manufacturer": {
+        "ko": "키크론",
+        "en": "Keychron"
+      },
+      "priceKrw": 109000,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/4ccd1f31-15ed-4841-8a9b-f15ed4b480b2.avif",
+      "values": {},
+      "firstSeenAt": "2026-11-23T20:50:02.736Z",
       "testedAt": null
     },
     {
@@ -31899,7 +32210,7 @@
         "ko": "스파크링크",
         "en": "Sparklink"
       },
-      "priceKrw": 133800,
+      "priceKrw": 135500,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -31915,7 +32226,7 @@
         "ko": "레이저",
         "en": "RAZER"
       },
-      "priceKrw": 267200,
+      "priceKrw": 268700,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -32162,7 +32473,7 @@
         "ko": "FL esports",
         "en": "FL esports"
       },
-      "priceKrw": 157600,
+      "priceKrw": 158500,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c3CMAQFF",
@@ -33056,11 +33367,6 @@
         "detachStroke": 0.1,
         "dks": false,
         "effectiveUpdateRate": "8000",
-        "emWPrRtAvgD0": 1.2647594059405947,
-        "emWPrRtSdD0": 0.07102641075958761,
-        "emWRealPerfD0": 4660,
-        "emWRlRtAvgD0": 0.9607831683168316,
-        "emWRlRtSdD0": 0.05457866984310772,
         "eyejokerRating": "MILD_RECOMMENDATION",
         "hotswap": true,
         "housingKeyboard": [
@@ -33087,8 +33393,8 @@
         "mounting": [
           "gasket"
         ],
-        "multiKeyDelay": false,
-        "overallRatingKeyboard": "TIER_0",
+        "multiKeyDelay": true,
+        "overallRatingKeyboard": "TIER_1",
         "overallResponseSpeed": 0.24,
         "overallStddev": 0.06,
         "palmRest": false,
@@ -33172,6 +33478,22 @@
         "windowsLock": false
       },
       "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "f0eeeace-9012-454f-babe-9bef9d12f08b",
+      "name": "MagneonX XRT87",
+      "manufacturer": {
+        "ko": "지클릭커",
+        "en": "g-clicker"
+      },
+      "priceKrw": 79800,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/07546576-15f1-488c-be3d-1be02772cb68.avif",
+      "values": {},
+      "firstSeenAt": "2026-11-23T20:50:02.736Z",
       "testedAt": null
     },
     {
@@ -33460,7 +33782,7 @@
         "ko": "루민키",
         "en": "LUMINKEY"
       },
-      "priceKrw": 292600,
+      "priceKrw": 294200,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -33887,11 +34209,6 @@
         "connectionOption": "usbTypeC",
         "connectionType": "유선",
         "dks": false,
-        "emWPrRtAvgD0": 3.4020297029702955,
-        "emWPrRtSdD0": 0.3022538718993187,
-        "emWRealPerfD0": 955,
-        "emWRlRtAvgD0": 4.777172277227723,
-        "emWRlRtSdD0": 0.29911478644338496,
         "eyejokerRating": "MILD_RECOMMENDATION",
         "hotswap": true,
         "keyGhosting": false,
@@ -34587,11 +34904,6 @@
         "debounceTime": 1,
         "detachStroke": 0.02,
         "dks": true,
-        "emWPrRtAvgD0": 1.460865346534653,
-        "emWPrRtSdD0": 0.07247009411965462,
-        "emWRealPerfD0": 4975,
-        "emWRlRtAvgD0": 1.1170326732673277,
-        "emWRlRtSdD0": 0.04804080280800681,
         "eyejokerRating": "MILD_RECOMMENDATION",
         "firmwareVersion": "106",
         "hotswap": true,
@@ -34782,11 +35094,6 @@
         "detachStrokeMeasured": 0.04,
         "dks": true,
         "effectiveUpdateRate": "8000",
-        "emWPrRtAvgD0": 2.3139475247524754,
-        "emWPrRtSdD0": 0.0930929814053802,
-        "emWRealPerfD0": 3380,
-        "emWRlRtAvgD0": 1.4270643564356436,
-        "emWRlRtSdD0": 0.07833705303399643,
         "eyejokerRating": "MILD_RECOMMENDATION",
         "firmwareVersion": "1.0.7",
         "hotswap": true,
@@ -35084,7 +35391,7 @@
         "ko": "에버글라이드",
         "en": "EVERGLIDE"
       },
-      "priceKrw": 79800,
+      "priceKrw": 80200,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c3g74MJV",

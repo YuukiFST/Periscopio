@@ -1075,6 +1075,82 @@
       ]
     },
     {
+      "key": "mouseSolution",
+      "group": "spec",
+      "label": {
+        "ko": "솔루션",
+        "en": "Solution"
+      },
+      "type": "enum",
+      "unit": null,
+      "multiple": false,
+      "options": [
+        {
+          "value": "bitmouse",
+          "label": {
+            "ko": "BITMOUSE",
+            "en": "BITMOUSE"
+          }
+        },
+        {
+          "value": "compx",
+          "label": {
+            "ko": "COMPX",
+            "en": "COMPX"
+          }
+        },
+        {
+          "value": "etc",
+          "label": {
+            "ko": "기타",
+            "en": "etc"
+          }
+        },
+        {
+          "value": "evision",
+          "label": {
+            "ko": "EVISION",
+            "en": "EVISION"
+          }
+        },
+        {
+          "value": "hechi",
+          "label": {
+            "ko": "HECHI",
+            "en": "HECHI"
+          }
+        },
+        {
+          "value": "holtek",
+          "label": {
+            "ko": "HOLTEK",
+            "en": "HOLTEK"
+          }
+        },
+        {
+          "value": "sparklink",
+          "label": {
+            "ko": "스파크링크",
+            "en": "SparkLink"
+          }
+        },
+        {
+          "value": "waizowl",
+          "label": {
+            "ko": "WAIZOWL",
+            "en": "WAIZOWL"
+          }
+        },
+        {
+          "value": "자체 솔루션",
+          "label": {
+            "ko": "자체 솔루션",
+            "en": "In-house"
+          }
+        }
+      ]
+    },
+    {
       "key": "battery",
       "group": "spec",
       "label": {
@@ -5283,7 +5359,7 @@
         "ko": "라푸",
         "en": "RAPOO"
       },
-      "priceKrw": 79800,
+      "priceKrw": 80200,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -5415,7 +5491,7 @@
         "ko": "VGN",
         "en": "VGN"
       },
-      "priceKrw": 27800,
+      "priceKrw": 28000,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c4UrtAu7",
@@ -5580,7 +5656,7 @@
         "ko": "글로리어스",
         "en": "Glorious"
       },
-      "priceKrw": 213700,
+      "priceKrw": 215000,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -5816,7 +5892,7 @@
         "ko": "발키리",
         "en": "VALKYRIE"
       },
-      "priceKrw": 9800,
+      "priceKrw": 9900,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -5918,7 +5994,7 @@
         "ko": "엠초스",
         "en": "MCHOSE"
       },
-      "priceKrw": 55900,
+      "priceKrw": 56200,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -5960,7 +6036,7 @@
         "ko": "어택샤크",
         "en": "AttackShark"
       },
-      "priceKrw": 48800,
+      "priceKrw": 49100,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -6062,7 +6138,7 @@
         "ko": "아우라",
         "en": "AULA"
       },
-      "priceKrw": 29800,
+      "priceKrw": 30000,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -6109,7 +6185,7 @@
         "ko": "ATK",
         "en": "ATK"
       },
-      "priceKrw": 140200,
+      "priceKrw": 141100,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -6338,7 +6414,7 @@
         "ko": "에임원",
         "en": "AIM1"
       },
-      "priceKrw": 142000,
+      "priceKrw": 143800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -6431,7 +6507,7 @@
         "ko": "Mivix",
         "en": "Mivix"
       },
-      "priceKrw": 65500,
+      "priceKrw": 65800,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -7086,7 +7162,7 @@
         "ko": "NovelKeys",
         "en": "NovelKeys"
       },
-      "priceKrw": 113600,
+      "priceKrw": 114200,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -7329,8 +7405,8 @@
         "ko": "KYSONA",
         "en": "KYSONA"
       },
-      "priceKrw": 61400,
-      "status": "testing",
+      "priceKrw": 61800,
+      "status": "earlyAccess",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c3dvATT1",
       "image": "/images/1184275c-6960-4ebc-8f79-17bc5413b045.avif",
@@ -7435,7 +7511,7 @@
         "ko": "엠초스",
         "en": "MCHOSE"
       },
-      "priceKrw": 45800,
+      "priceKrw": 46100,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -7676,7 +7752,7 @@
         "ko": "어택샤크",
         "en": "AttackShark"
       },
-      "priceKrw": 106900,
+      "priceKrw": 107500,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -7764,7 +7840,7 @@
         "ko": "펄사",
         "en": "Pulsar"
       },
-      "priceKrw": 187000,
+      "priceKrw": 188000,
       "status": "arrived",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -8097,7 +8173,7 @@
         "ko": "산와 서플라이",
         "en": "Sanwa Supply"
       },
-      "priceKrw": 46000,
+      "priceKrw": 46600,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -8263,7 +8339,7 @@
         "ko": "키크론",
         "en": "Keychron"
       },
-      "priceKrw": 125100,
+      "priceKrw": 126700,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -8595,7 +8671,7 @@
         "ko": "간스",
         "en": "GANSS"
       },
-      "priceKrw": 39800,
+      "priceKrw": 40000,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -8624,7 +8700,7 @@
         "ko": "ATK",
         "en": "ATK"
       },
-      "priceKrw": 70400,
+      "priceKrw": 70800,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c2vNiPcp",
@@ -8880,7 +8956,7 @@
         "ko": "WL마우스",
         "en": "WLMouse"
       },
-      "priceKrw": 207100,
+      "priceKrw": 208300,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -9017,7 +9093,7 @@
         "ko": "ATK",
         "en": "ATK"
       },
-      "priceKrw": 119800,
+      "priceKrw": 120500,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -9098,7 +9174,7 @@
         "ko": "VGN",
         "en": "VGN"
       },
-      "priceKrw": 73300,
+      "priceKrw": 73800,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c42PjeQP",
@@ -9281,7 +9357,7 @@
         "ko": "자운코닉",
         "en": "Zaunkoenig"
       },
-      "priceKrw": 529000,
+      "priceKrw": 532100,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -9323,7 +9399,7 @@
         "ko": "VGN",
         "en": "VGN"
       },
-      "priceKrw": 106700,
+      "priceKrw": 107400,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -9631,7 +9707,7 @@
         "ko": "Fiberaim",
         "en": "Fiberaim"
       },
-      "priceKrw": 276900,
+      "priceKrw": 277200,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -10115,7 +10191,7 @@
         "ko": "펄사",
         "en": "Pulsar"
       },
-      "priceKrw": 173600,
+      "priceKrw": 174600,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -10446,7 +10522,7 @@
         "ko": "ATK",
         "en": "ATK"
       },
-      "priceKrw": 133600,
+      "priceKrw": 134300,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -10484,7 +10560,7 @@
         "ko": "ATK",
         "en": "ATK"
       },
-      "priceKrw": 86800,
+      "priceKrw": 87300,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -10524,7 +10600,7 @@
         "ko": "IPI",
         "en": "IPI"
       },
-      "priceKrw": 79800,
+      "priceKrw": 80200,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -10736,7 +10812,7 @@
         "ko": "아코",
         "en": "Akko"
       },
-      "priceKrw": 66800,
+      "priceKrw": 67200,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -10812,7 +10888,7 @@
         "ko": "벤큐 조위",
         "en": "BenQ Zowie"
       },
-      "priceKrw": 200400,
+      "priceKrw": 201500,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -11035,7 +11111,7 @@
         "ko": "GamaKay",
         "en": "GamaKay"
       },
-      "priceKrw": 80100,
+      "priceKrw": 80600,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -11443,7 +11519,7 @@
         "ko": "아코",
         "en": "Akko"
       },
-      "priceKrw": 59800,
+      "priceKrw": 60100,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -11724,7 +11800,7 @@
         "ko": "펄사",
         "en": "Pulsar"
       },
-      "priceKrw": 183000,
+      "priceKrw": 185300,
       "status": "arrived",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -11748,7 +11824,7 @@
         "ko": "VICTKONG",
         "en": "VICTKONG"
       },
-      "priceKrw": 15800,
+      "priceKrw": 15900,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -12341,7 +12417,7 @@
         "ko": "VGN",
         "en": "VGN"
       },
-      "priceKrw": 80000,
+      "priceKrw": 80500,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c383f45H",
@@ -12841,7 +12917,7 @@
         "en": "Pulsar"
       },
       "priceKrw": 199000,
-      "status": "testing",
+      "status": "earlyAccess",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
       "image": "/images/7da97cd6-66e3-4b6b-b417-0ca6d4b3839c.avif",
@@ -12886,7 +12962,7 @@
         "ko": "Kzzi",
         "en": "Kzzi"
       },
-      "priceKrw": 15800,
+      "priceKrw": 15900,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -12922,7 +12998,7 @@
         "ko": "VGN",
         "en": "VGN"
       },
-      "priceKrw": 39900,
+      "priceKrw": 40200,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -13069,7 +13145,7 @@
         "ko": "람주",
         "en": "LAMZU"
       },
-      "priceKrw": 169800,
+      "priceKrw": 170700,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -13225,7 +13301,7 @@
         "ko": "VGN",
         "en": "VGN"
       },
-      "priceKrw": 33800,
+      "priceKrw": 34000,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c4UrtAu7",
@@ -13346,17 +13422,22 @@
         "ko": "앵그리마오",
         "en": "Angry Miao"
       },
-      "priceKrw": 213700,
-      "status": "earlyAccess",
+      "priceKrw": 215000,
+      "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c3FFonAT",
       "image": "/images/4f3e13a0-d869-43c0-92ae-8c84b9758167.avif",
       "values": {
         "acceleration": 50,
         "battery": "340",
+        "clickGhosting": false,
+        "detachAvgWired": 0.19071980198019794,
+        "detachAvgWireless": 0.3038831683168314,
+        "detachStddevWired": 0.03914919044925546,
+        "detachStddevWireless": 0.035393826919692846,
         "dpiMax": 30000,
         "earlyAccessAt": "2026-11-12T00:00:00.000Z",
-        "eyejokerRating": "ANTICIPATING",
+        "eyejokerRating": "RECOMMENDED",
         "height": 38.6,
         "holeBody": "yes",
         "housingMouse": [
@@ -13372,16 +13453,47 @@
           "POLYMER"
         ],
         "mouseMcu": "AMD3V1",
+        "optimalResponseSpeed": 0.3083935643564356,
+        "optimalStddev": 0.02083022623302794,
+        "overallRatingMouse": "TIER_0",
+        "pcbAvgOptimal": 0.3129039603960403,
+        "pcbAvgOptimalDetach": 0.3038831683168314,
+        "pcbAvgWired": 0.1968673267326733,
+        "pcbAvgWireless": 0.3129039603960403,
+        "pcbStddevOptimal": 0.03745986213861413,
+        "pcbStddevOptimalDetach": 0.035393826919692846,
+        "pcbStddevWired": 0.03874673057791336,
+        "pcbStddevWireless": 0.03745986213861413,
         "port": "usbTypeC",
         "publicReleaseAt": "2026-11-19T00:00:00.000Z",
         "sensor": "paw3950",
+        "sensorAvg": 0.3300545454545455,
+        "sensorAvgMotionSyncOff": 0.3300545454545455,
+        "sensorAvgMotionSyncOn": 0.3329727272727273,
+        "sensorAvgWired": 0.25078181818181816,
+        "sensorAvgWiredMotionSyncOff": 0.25078181818181816,
+        "sensorAvgWiredMotionSyncOn": 0.3512909090909091,
+        "sensorAvgWireless": 0.3300545454545455,
+        "sensorAvgWirelessMotionSyncOff": 0.3300545454545455,
+        "sensorAvgWirelessMotionSyncOn": 0.3329727272727273,
+        "sensorDeviationMotionSyncOff": 0.042333059585674855,
+        "sensorDeviationMotionSyncOn": 0.03861357723790219,
+        "sensorDeviationOpt": 0.042333059585674855,
+        "sensorDeviationWired": 0.037562646295145594,
+        "sensorDeviationWiredMotionSyncOff": 0.037562646295145594,
+        "sensorDeviationWiredMotionSyncOn": 0.030156062395040133,
+        "sensorDeviationWireless": 0.042333059585674855,
+        "sensorDeviationWirelessMotionSyncOff": 0.042333059585674855,
+        "sensorDeviationWirelessMotionSyncOn": 0.03861357723790219,
         "sensorLodMode": "options",
         "sensorLodOptions": "0.7, 1.0, 2.0 mm",
+        "slamClick": false,
+        "slamClickPrevention": false,
         "switch": "ttcV2",
         "weight": 47
       },
       "firstSeenAt": null,
-      "testedAt": null
+      "testedAt": "2026-11-23T20:50:02.736Z"
     },
     {
       "id": "4431aa54-0e53-49a1-ae09-28daac798985",
@@ -13491,17 +13603,23 @@
         "ko": "RAWM",
         "en": "RAWM"
       },
-      "priceKrw": 120200,
-      "status": "earlyAccess",
+      "priceKrw": 120900,
+      "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c4nEVHNH",
       "image": "/images/c322409b-618f-4ad9-a472-030fabaa0e4e.avif",
       "values": {
         "acceleration": 50,
         "battery": "500",
+        "clickGhosting": false,
+        "detachAvgWired": 0.3628831683168319,
+        "detachAvgWireless": 0.5898752475247537,
+        "detachStddevWired": 0.10944972268536074,
+        "detachStddevWireless": 0.2802932415676538,
         "dpiMax": 30000,
         "earlyAccessAt": "2026-11-16T00:00:00.000Z",
         "encoder": "raeshaOptical",
+        "eyejokerRating": "MILD_RECOMMENDATION",
         "height": 40,
         "holeBody": "no",
         "housingMouse": [
@@ -13513,16 +13631,52 @@
         "maxWidth": 63.9,
         "mouseConnection": "유무선",
         "mouseMcu": "nordicNrf54lSeriesUnspecified",
+        "optimalResponseSpeed": 0.6119282178217819,
+        "optimalStddev": 0.2043849831383592,
+        "overallRatingMouse": "TIER_0",
+        "pcbAvgOptimal": 0.6339811881188118,
+        "pcbAvgOptimalDetach": 0.5898752475247537,
+        "pcbAvgWired": 0.4168603960396038,
+        "pcbAvgWireless": 0.6339811881188118,
+        "pcbStddevOptimal": 0.2860127197936078,
+        "pcbStddevOptimalDetach": 0.2802932415676538,
+        "pcbStddevWired": 0.11930171135619315,
+        "pcbStddevWireless": 0.2860127197936078,
         "port": "usbTypeC",
         "publicReleaseAt": "2026-11-23T00:00:00.000Z",
         "sensor": "paw3950",
+        "sensorAvg": 0.37098181818181797,
+        "sensorAvgMotionSyncOff": 0.37098181818181797,
+        "sensorAvgMotionSyncOn": 0.44942727272727273,
+        "sensorAvgWired": 0.23539999999999986,
+        "sensorAvgWiredMotionSyncOff": 0.23539999999999986,
+        "sensorAvgWiredMotionSyncOn": 0.33424545454545457,
+        "sensorAvgWireless": 0.37098181818181797,
+        "sensorAvgWirelessMotionSyncOff": 0.37098181818181797,
+        "sensorAvgWirelessMotionSyncOn": 0.44942727272727273,
+        "sensorDeviationMotionSyncOff": 0.0612912542801962,
+        "sensorDeviationMotionSyncOn": 0.07872107943306819,
+        "sensorDeviationOpt": 0.0612912542801962,
+        "sensorDeviationWired": 0.051928482287924356,
+        "sensorDeviationWiredMotionSyncOff": 0.051928482287924356,
+        "sensorDeviationWiredMotionSyncOn": 0.05333056199755638,
+        "sensorDeviationWireless": 0.0612912542801962,
+        "sensorDeviationWirelessMotionSyncOff": 0.0612912542801962,
+        "sensorDeviationWirelessMotionSyncOn": 0.07872107943306819,
         "sensorLodMode": "options",
         "sensorLodOptions": "0.7, 1.0, 2.0 mm",
+        "slamClick": false,
+        "slamClickPressAvg": 24.317144554455464,
+        "slamClickPressStddev": 4.097610052152359,
+        "slamClickPrevention": false,
+        "slamClickReleaseAvg": 4.496239603960397,
+        "slamClickReleaseStddev": 4.222187980958492,
+        "slamClickResponseSpeed": 14.406692079207904,
         "switch": "rawmHyperClickOpticalMagnetic",
         "weight": 54
       },
       "firstSeenAt": null,
-      "testedAt": null
+      "testedAt": "2026-11-23T20:50:02.736Z"
     },
     {
       "id": "45636a8e-db16-408e-a7c0-6a576c2fce2e",
@@ -13839,7 +13993,7 @@
         "ko": "레노버",
         "en": "Lenovo"
       },
-      "priceKrw": 43800,
+      "priceKrw": 44000,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -13874,7 +14028,7 @@
         "ko": "VGN",
         "en": "VGN"
       },
-      "priceKrw": 80100,
+      "priceKrw": 80600,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -14070,7 +14224,7 @@
         "ko": "다모샥",
         "en": "Darmoshark"
       },
-      "priceKrw": 129800,
+      "priceKrw": 130500,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -14265,7 +14419,7 @@
         "ko": "매드캣츠",
         "en": "Mad Catz"
       },
-      "priceKrw": 200400,
+      "priceKrw": 201500,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -14297,13 +14451,29 @@
       "testedAt": null
     },
     {
+      "id": "47087fbd-d522-4a8d-8223-078dca958bbe",
+      "name": "SABRE v3 PRO Ultralight Wireless",
+      "manufacturer": {
+        "ko": "커세어",
+        "en": "CORSAIR"
+      },
+      "priceKrw": 199000,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/d8eeb7be-c7bb-4f29-9d8b-cd90b980056d.avif",
+      "values": {},
+      "firstSeenAt": "2026-11-23T20:50:02.736Z",
+      "testedAt": null
+    },
+    {
       "id": "4759fe8e-60c0-4dcb-bf78-ad13a6975e5b",
       "name": "NIGHTSWORD v2 WIRELESS SD",
       "manufacturer": {
         "ko": "커세어",
         "en": "CORSAIR"
       },
-      "priceKrw": 173700,
+      "priceKrw": 174700,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -14416,7 +14586,7 @@
         "ko": "펄사",
         "en": "Pulsar"
       },
-      "priceKrw": 240400,
+      "priceKrw": 241800,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -14521,7 +14691,7 @@
         "ko": "라푸",
         "en": "RAPOO"
       },
-      "priceKrw": 74300,
+      "priceKrw": 74700,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -14598,7 +14768,7 @@
         "ko": "VGN",
         "en": "VGN"
       },
-      "priceKrw": 19800,
+      "priceKrw": 19900,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c4UrtAu7",
@@ -14794,7 +14964,7 @@
         "ko": "머신아이크",
         "en": "Machenike"
       },
-      "priceKrw": 19800,
+      "priceKrw": 19900,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -15194,7 +15364,7 @@
         "ko": "글로리어스",
         "en": "Glorious"
       },
-      "priceKrw": 213700,
+      "priceKrw": 215000,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -15349,7 +15519,7 @@
         "ko": "zynoo",
         "en": "zynoo"
       },
-      "priceKrw": 105800,
+      "priceKrw": 106400,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -15824,7 +15994,7 @@
         "ko": "이와든",
         "en": "EWEADN"
       },
-      "priceKrw": 93400,
+      "priceKrw": 93900,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -17009,7 +17179,7 @@
         "ko": "아자즈",
         "en": "AJAZZ"
       },
-      "priceKrw": 29800,
+      "priceKrw": 30000,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -17089,7 +17259,7 @@
         "ko": "레이저",
         "en": "RAZER"
       },
-      "priceKrw": 240500,
+      "priceKrw": 241800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -17429,7 +17599,7 @@
         "ko": "펄사",
         "en": "Pulsar"
       },
-      "priceKrw": 183000,
+      "priceKrw": 185300,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -17617,8 +17787,8 @@
         "ko": "아자즈",
         "en": "AJAZZ"
       },
-      "priceKrw": 39800,
-      "status": "testing",
+      "priceKrw": 40000,
+      "status": "earlyAccess",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c4ETab4j",
       "image": "/images/08a86a94-9eeb-4ca6-950a-46b34b8e75f9.avif",
@@ -17761,11 +17931,34 @@
         "en": "RAPOO"
       },
       "priceKrw": null,
-      "status": "unreleased",
+      "status": "testing",
       "saleStatus": "unreleased",
       "aliUrl": null,
       "image": null,
-      "values": {},
+      "values": {
+        "acceleration": 60,
+        "battery": "300",
+        "dpiMax": 60000,
+        "dpiStep": 1,
+        "encoder": "raeshaOpticalDustproofEncoder",
+        "holeBody": "no",
+        "housingMouse": [
+          "대칭"
+        ],
+        "ips": 750,
+        "maxPollingRate": "8000",
+        "mouseConnection": "유무선",
+        "mouseMaterial": [
+          "POLYMER"
+        ],
+        "mouseMcu": "Nordic nRF54LM20A",
+        "port": "usbTypeC",
+        "sensor": "paw3955ultimate",
+        "sensorLodMode": "range",
+        "sensorLodOptions": "0.7~1.7 mm (11 steps)",
+        "sideSwitch": "kailhMicroSwitch",
+        "wheelSwitch": "2핀택트"
+      },
       "firstSeenAt": "2026-11-16T19:13:21.419Z",
       "testedAt": null
     },
@@ -17892,7 +18085,7 @@
         "ko": "지울브스",
         "en": "G-Wolves"
       },
-      "priceKrw": 212400,
+      "priceKrw": 213600,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -18024,7 +18217,7 @@
         "ko": "라푸",
         "en": "RAPOO"
       },
-      "priceKrw": 69800,
+      "priceKrw": 70200,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -18118,7 +18311,7 @@
         "ko": "다모샥",
         "en": "Darmoshark"
       },
-      "priceKrw": 100200,
+      "priceKrw": 100800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -18587,7 +18780,7 @@
         "ko": "OYREIN",
         "en": "OYREIN"
       },
-      "priceKrw": 117800,
+      "priceKrw": 118400,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -18668,7 +18861,7 @@
         "ko": "라푸",
         "en": "RAPOO"
       },
-      "priceKrw": 106900,
+      "priceKrw": 107500,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -18823,7 +19016,7 @@
         "ko": "엠초스",
         "en": "MCHOSE"
       },
-      "priceKrw": 63900,
+      "priceKrw": 64300,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c36IX4Or",
@@ -19383,19 +19576,24 @@
         "ko": "ATK",
         "en": "ATK"
       },
-      "priceKrw": 86800,
-      "status": "earlyAccess",
+      "priceKrw": 87300,
+      "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
       "image": "/images/418fd23d-e274-4ab0-b385-4f21e0addd58.avif",
       "values": {
         "acceleration": 75,
         "battery": "300",
+        "clickGhosting": false,
+        "detachAvgWired": 0.23320693069306944,
+        "detachAvgWireless": 0.3001188118811884,
+        "detachStddevWired": 0.04894777729846922,
+        "detachStddevWireless": 0.055013389392490286,
         "dpiMax": 50000,
         "dpiStep": 1,
         "earlyAccessAt": "2026-11-10T00:00:00.000Z",
         "encoder": "ttcGold",
-        "eyejokerRating": "ANTICIPATING",
+        "eyejokerRating": "HIGHLY_RECOMMENDED",
         "firmwareVersion": "1.21",
         "height": 38.8,
         "holeBody": "no",
@@ -19404,6 +19602,7 @@
         ],
         "ips": 850,
         "length": 118.2,
+        "lodMin": 0.5,
         "maxPollingRate": "8000",
         "maxWidth": 62.4,
         "mouseConnection": "유무선",
@@ -19411,16 +19610,52 @@
           "POLYMER"
         ],
         "mouseMcu": "nordicnrf54lm20",
+        "optimalResponseSpeed": 0.30455643564356466,
+        "optimalStddev": 0.049523809487025956,
+        "overallRatingMouse": "FLAWLESS",
+        "pcbAvgOptimal": 0.30899405940594027,
+        "pcbAvgOptimalDetach": 0.3001188118811884,
+        "pcbAvgWired": 0.23144851485148515,
+        "pcbAvgWireless": 0.30899405940594027,
+        "pcbStddevOptimal": 0.05745231310870804,
+        "pcbStddevOptimalDetach": 0.055013389392490286,
+        "pcbStddevWired": 0.051201019315853996,
+        "pcbStddevWireless": 0.05745231310870804,
         "port": "usbTypeC",
         "publicReleaseAt": "2026-11-17T00:00:00.000Z",
         "sensor": "paw3955master",
+        "sensorAvg": 0.33186363636363636,
+        "sensorAvgMotionSyncOff": 0.33186363636363636,
+        "sensorAvgMotionSyncOn": 0.43171818181818167,
+        "sensorAvgWired": 0.23436363636363633,
+        "sensorAvgWiredMotionSyncOff": 0.23436363636363633,
+        "sensorAvgWiredMotionSyncOn": 0.32849090909090894,
+        "sensorAvgWireless": 0.33186363636363636,
+        "sensorAvgWirelessMotionSyncOff": 0.33186363636363636,
+        "sensorAvgWirelessMotionSyncOn": 0.43171818181818167,
+        "sensorDeviationMotionSyncOff": 0.04748386850915836,
+        "sensorDeviationMotionSyncOn": 0.045440696981326766,
+        "sensorDeviationOpt": 0.04748386850915836,
+        "sensorDeviationWired": 0.0537848791310392,
+        "sensorDeviationWiredMotionSyncOff": 0.0537848791310392,
+        "sensorDeviationWiredMotionSyncOn": 0.048360905596180115,
+        "sensorDeviationWireless": 0.04748386850915836,
+        "sensorDeviationWirelessMotionSyncOff": 0.04748386850915836,
+        "sensorDeviationWirelessMotionSyncOn": 0.045440696981326766,
         "sensorLodMode": "range",
         "sensorLodOptions": "0.7~1.7 mm (0.1 mm step, 11 levels)",
+        "slamClick": false,
+        "slamClickPressAvg": 8.668577227722775,
+        "slamClickPressStddev": 0.2645376397561602,
+        "slamClickPrevention": true,
+        "slamClickReleaseAvg": 8.661368316831682,
+        "slamClickReleaseStddev": 0.2645729961339696,
+        "slamClickResponseSpeed": 8.664972772277237,
         "switch": "atkCustomOptical",
         "weight": 37
       },
       "firstSeenAt": null,
-      "testedAt": null
+      "testedAt": "2026-11-23T20:50:02.736Z"
     },
     {
       "id": "6cca67f5-6c06-4e4d-a342-c460acd47831",
@@ -19429,7 +19664,7 @@
         "ko": "미오닉스",
         "en": "Mionix"
       },
-      "priceKrw": 320600,
+      "priceKrw": 322500,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -19801,7 +20036,7 @@
         "ko": "싸이록스",
         "en": "ScyRox"
       },
-      "priceKrw": 51800,
+      "priceKrw": 52100,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -20046,7 +20281,7 @@
         "ko": "ATK",
         "en": "ATK"
       },
-      "priceKrw": 17800,
+      "priceKrw": 17900,
       "status": "purchased",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -20182,7 +20417,7 @@
         "ko": "Nyfter",
         "en": "Nyfter"
       },
-      "priceKrw": 117900,
+      "priceKrw": 118000,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -20312,7 +20547,7 @@
         "ko": "닌젓소",
         "en": "Ninjutso"
       },
-      "priceKrw": 129800,
+      "priceKrw": 130500,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -20390,7 +20625,7 @@
         "ko": "엔드게임기어",
         "en": "EndGame Gear"
       },
-      "priceKrw": 173700,
+      "priceKrw": 174700,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -20434,7 +20669,7 @@
         "ko": "싸이록스",
         "en": "ScyRox"
       },
-      "priceKrw": 69800,
+      "priceKrw": 70200,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -20503,7 +20738,7 @@
         "ko": "라푸",
         "en": "RAPOO"
       },
-      "priceKrw": 72100,
+      "priceKrw": 72500,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -20868,7 +21103,7 @@
         "ko": "KYSONA",
         "en": "KYSONA"
       },
-      "priceKrw": 94800,
+      "priceKrw": 95400,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -21048,8 +21283,8 @@
         "ko": "VGN",
         "en": "VGN"
       },
-      "priceKrw": 100200,
-      "status": "testing",
+      "priceKrw": 100800,
+      "status": "earlyAccess",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
       "image": "/images/ce1ff5a4-03aa-40b8-9559-a1563d7b5351.avif",
@@ -21158,7 +21393,7 @@
         "ko": "라푸",
         "en": "RAPOO"
       },
-      "priceKrw": 39800,
+      "priceKrw": 40000,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -21300,16 +21535,19 @@
         "en": "Steelseries"
       },
       "priceKrw": 279000,
-      "status": "earlyAccess",
+      "status": "reviewed",
       "saleStatus": "unreleased",
       "aliUrl": "https://s.click.aliexpress.com/e/_c4BfgSsn",
       "image": "/images/9b4a7e3c-0d13-4722-9eb0-ac971211b270.avif",
       "values": {
         "acceleration": 70,
+        "clickGhosting": false,
+        "detachAvgWireless": 8.214252475247534,
+        "detachStddevWireless": 0.10088270131477556,
         "dpiMax": 42000,
         "dpiStep": 1,
         "earlyAccessAt": "2026-11-15T00:00:00.000Z",
-        "eyejokerRating": "ANTICIPATING",
+        "eyejokerRating": "RECOMMENDED",
         "height": 36.2,
         "holeBody": "no",
         "housingMouse": [
@@ -21323,15 +21561,43 @@
         "mouseMaterial": [
           "POLYMER"
         ],
+        "optimalResponseSpeed": 4.323057920792081,
+        "optimalStddev": 0.05982834241455245,
+        "overallRatingMouse": "TIER_2",
+        "pcbAvgOptimal": 0.4318633663366342,
+        "pcbAvgOptimalDetach": 8.214252475247534,
+        "pcbAvgWireless": 0.4318633663366342,
+        "pcbStddevOptimal": 0.059098417198774886,
+        "pcbStddevOptimalDetach": 0.10088270131477556,
+        "pcbStddevWireless": 0.059098417198774886,
         "publicReleaseAt": "2026-11-22T00:00:00.000Z",
         "sensor": "TrueMove42KPro",
+        "sensorAvg": 0.4511,
+        "sensorAvgMotionSyncOff": 0.4511,
+        "sensorAvgMotionSyncOn": 0.6046000000000001,
+        "sensorAvgWireless": 0.4511,
+        "sensorAvgWirelessMotionSyncOff": 0.4511,
+        "sensorAvgWirelessMotionSyncOn": 0.6046000000000001,
+        "sensorDeviationMotionSyncOff": 0.06546504271885735,
+        "sensorDeviationMotionSyncOn": 0.3183968135975781,
+        "sensorDeviationOpt": 0.06546504271885735,
+        "sensorDeviationWireless": 0.06546504271885735,
+        "sensorDeviationWirelessMotionSyncOff": 0.06546504271885735,
+        "sensorDeviationWirelessMotionSyncOn": 0.3183968135975781,
         "sensorLodMode": "range",
         "sensorLodOptions": "0.7",
+        "slamClick": false,
+        "slamClickPressAvg": 6.182228712871287,
+        "slamClickPressStddev": 0.31316588804177975,
+        "slamClickPrevention": false,
+        "slamClickReleaseAvg": 20.032216831683172,
+        "slamClickReleaseStddev": 0.37049088324570084,
+        "slamClickResponseSpeed": 13.10722277227723,
         "switch": "steelseriesOptical100m",
         "weight": 49
       },
       "firstSeenAt": null,
-      "testedAt": null
+      "testedAt": "2026-11-23T20:50:02.736Z"
     },
     {
       "id": "7a05de9e-7529-436c-867d-85f8adbe918c",
@@ -21340,7 +21606,7 @@
         "ko": "엠초스",
         "en": "MCHOSE"
       },
-      "priceKrw": 118900,
+      "priceKrw": 119600,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -21376,7 +21642,7 @@
         "ko": "VGN",
         "en": "VGN"
       },
-      "priceKrw": 100100,
+      "priceKrw": 100600,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c3iA3xn3",
@@ -21536,7 +21802,7 @@
         "ko": "다얼유",
         "en": "DAREU"
       },
-      "priceKrw": 120200,
+      "priceKrw": 120900,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -21578,7 +21844,7 @@
         "ko": "레이저",
         "en": "RAZER"
       },
-      "priceKrw": 1786100,
+      "priceKrw": 1796400,
       "status": "reviewed",
       "saleStatus": "DISCONTINUED",
       "aliUrl": null,
@@ -21648,7 +21914,7 @@
         "ko": "라푸",
         "en": "RAPOO"
       },
-      "priceKrw": 59800,
+      "priceKrw": 60100,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c3dmOG9P",
@@ -21907,7 +22173,7 @@
         "ko": "ATK",
         "en": "ATK"
       },
-      "priceKrw": 60100,
+      "priceKrw": 60400,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -21946,7 +22212,7 @@
         "ko": "Ausdom",
         "en": "Ausdom"
       },
-      "priceKrw": 47800,
+      "priceKrw": 48100,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -22022,7 +22288,7 @@
         "ko": "Huawei",
         "en": "Huawei"
       },
-      "priceKrw": 25800,
+      "priceKrw": 25900,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -22110,7 +22376,7 @@
         "ko": "멜긱",
         "en": "MelGeek"
       },
-      "priceKrw": 118800,
+      "priceKrw": 119500,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -22390,7 +22656,7 @@
         "ko": "라푸",
         "en": "RAPOO"
       },
-      "priceKrw": 59800,
+      "priceKrw": 60100,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c3tnIkyl",
@@ -22544,7 +22810,7 @@
         "ko": "펄사",
         "en": "Pulsar"
       },
-      "priceKrw": 187000,
+      "priceKrw": 188000,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -23090,7 +23356,7 @@
         "ko": "ATK",
         "en": "ATK"
       },
-      "priceKrw": 133600,
+      "priceKrw": 134300,
       "status": "arrived",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -23240,7 +23506,7 @@
         "ko": "ATK",
         "en": "ATK"
       },
-      "priceKrw": 25800,
+      "priceKrw": 25900,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -23307,7 +23573,7 @@
         "ko": "ATK",
         "en": "ATK"
       },
-      "priceKrw": 70400,
+      "priceKrw": 70800,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c4ewURI5",
@@ -23474,7 +23740,7 @@
         "ko": "ProtoArc",
         "en": "ProtoArc"
       },
-      "priceKrw": 120200,
+      "priceKrw": 120900,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -23499,7 +23765,7 @@
         "ko": "VGN",
         "en": "VGN"
       },
-      "priceKrw": 33300,
+      "priceKrw": 33500,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c309FpP5",
@@ -23601,7 +23867,7 @@
         "ko": "ATK",
         "en": "ATK"
       },
-      "priceKrw": 86800,
+      "priceKrw": 87300,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -23900,7 +24166,7 @@
         "ko": "파이널마우스",
         "en": "Finalmouse"
       },
-      "priceKrw": 239100,
+      "priceKrw": 240500,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -23926,6 +24192,22 @@
         "weight": 38
       },
       "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "8bbab3db-f022-4e32-87fe-ab3302fff098",
+      "name": "MG10A",
+      "manufacturer": {
+        "ko": "앱코",
+        "en": "ABKO"
+      },
+      "priceKrw": 49000,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/b7e5806c-d02b-4524-9cb6-e4252b60758c.avif",
+      "values": {},
+      "firstSeenAt": "2026-11-23T20:50:02.736Z",
       "testedAt": null
     },
     {
@@ -24317,7 +24599,7 @@
         "ko": "VGN",
         "en": "VGN"
       },
-      "priceKrw": 45800,
+      "priceKrw": 46100,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c4UrtAu7",
@@ -24445,7 +24727,7 @@
         "ko": "와이즈아울",
         "en": "WAIZOWL"
       },
-      "priceKrw": 107800,
+      "priceKrw": 108400,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -24591,8 +24873,8 @@
         "ko": "VGN",
         "en": "VGN"
       },
-      "priceKrw": 93500,
-      "status": "testing",
+      "priceKrw": 94000,
+      "status": "earlyAccess",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
       "image": "/images/c6700edf-34b9-4ce6-b208-37d8f514b378.avif",
@@ -24730,7 +25012,7 @@
         "ko": "ATK",
         "en": "ATK"
       },
-      "priceKrw": 99800,
+      "priceKrw": 100300,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -25300,7 +25582,7 @@
         "ko": "엠초스",
         "en": "MCHOSE"
       },
-      "priceKrw": 69500,
+      "priceKrw": 69900,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -25789,7 +26071,7 @@
         "ko": "엠초스",
         "en": "MCHOSE"
       },
-      "priceKrw": 74800,
+      "priceKrw": 75200,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -25960,7 +26242,7 @@
         "ko": "인픽",
         "en": "inphic"
       },
-      "priceKrw": 21000,
+      "priceKrw": 21100,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -26092,7 +26374,7 @@
         "ko": "에디파이어",
         "en": "Edifier"
       },
-      "priceKrw": 59800,
+      "priceKrw": 60100,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -27072,7 +27354,7 @@
         "ko": "XBAB Tech",
         "en": "XBAB Tech"
       },
-      "priceKrw": 225800,
+      "priceKrw": 227100,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -27534,18 +27816,24 @@
         "en": "UNIUS"
       },
       "priceKrw": 170000,
-      "status": "earlyAccess",
+      "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
       "image": "/images/024d60b5-84b5-4382-b3a6-8bb9d76fdd6b.avif",
       "values": {
         "acceleration": 50,
         "battery": "200",
+        "clickGhosting": false,
+        "debounce": 14,
+        "detachAvgWired": 0.7942801980198009,
+        "detachAvgWireless": 0.77,
+        "detachStddevWired": 0.1713402835768588,
+        "detachStddevWireless": 0.17,
         "dpiMax": 30000,
         "dpiStep": 50,
         "earlyAccessAt": "2026-11-11T00:00:00.000Z",
         "encoder": "fSwitchDustproofYellow",
-        "eyejokerRating": "ANTICIPATING",
+        "eyejokerRating": "RECOMMENDED",
         "firmwareVersion": "0.0.0.15",
         "height": 38.5,
         "holeBody": "yes",
@@ -27554,6 +27842,7 @@
         ],
         "ips": 750,
         "length": 119.5,
+        "lodMin": 0.7,
         "maxPollingRate": "8000",
         "maxWidth": 64,
         "mouseConnection": "유무선",
@@ -27561,18 +27850,37 @@
           "CARBON_FIBER"
         ],
         "mouseMcu": "nordicnrf52840",
+        "optimalResponseSpeed": 0.700412871287128,
+        "optimalStddev": 0.16261833484018187,
+        "overallRatingMouse": "TIER_0",
+        "pcbAvgOptimal": 0.6065455445544553,
+        "pcbAvgOptimalDetach": 0.7942801980198009,
+        "pcbAvgWired": 0.6065455445544553,
+        "pcbAvgWireless": 0.61,
+        "pcbStddevOptimal": 0.15340128055589572,
+        "pcbStddevOptimalDetach": 0.1713402835768588,
+        "pcbStddevWired": 0.15340128055589572,
+        "pcbStddevWireless": 0.19,
         "port": "usbTypeC",
         "publicReleaseAt": "2026-11-18T00:00:00.000Z",
         "sensor": "paw3950",
+        "sensorAvg": 1.1479516129032261,
+        "sensorAvgWired": 1.1479516129032261,
+        "sensorAvgWireless": 1.15,
+        "sensorDeviationOpt": 0.15253150149726924,
+        "sensorDeviationWired": 0.15253150149726924,
+        "sensorDeviationWireless": 0.15,
         "sensorLodMode": "options",
         "sensorLodOptions": "0.7, 1.0, 2.0 mm",
         "sideSwitch": "kailhMicroSwitch",
+        "slamClick": false,
+        "slamClickPrevention": true,
         "switch": "switchc981c6d6fb",
         "weight": 39,
         "wheelSwitch": "후아노 백축"
       },
       "firstSeenAt": null,
-      "testedAt": null
+      "testedAt": "2026-11-23T20:50:02.736Z"
     },
     {
       "id": "a545f904-1d7d-4129-b885-f5d02584ed1d",
@@ -27581,7 +27889,7 @@
         "ko": "벤큐 조위",
         "en": "BenQ Zowie"
       },
-      "priceKrw": 200400,
+      "priceKrw": 201500,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -27617,7 +27925,7 @@
         "ko": "인픽",
         "en": "inphic"
       },
-      "priceKrw": 21000,
+      "priceKrw": 21100,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -27647,7 +27955,7 @@
         "ko": "지울브스",
         "en": "G-Wolves"
       },
-      "priceKrw": 179000,
+      "priceKrw": 180000,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -28425,7 +28733,7 @@
         "ko": "다모샥",
         "en": "Darmoshark"
       },
-      "priceKrw": 80200,
+      "priceKrw": 80600,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -28738,7 +29046,7 @@
         "ko": "엠초스",
         "en": "MCHOSE"
       },
-      "priceKrw": 59800,
+      "priceKrw": 60100,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -29632,7 +29940,7 @@
         "ko": "VGN",
         "en": "VGN"
       },
-      "priceKrw": 100100,
+      "priceKrw": 100600,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -29820,7 +30128,7 @@
         "ko": "VGN",
         "en": "VGN"
       },
-      "priceKrw": 27800,
+      "priceKrw": 28000,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -30050,7 +30358,7 @@
         "ko": "CRDRAKO",
         "en": "CRDRAKO"
       },
-      "priceKrw": 117800,
+      "priceKrw": 118400,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -30868,7 +31176,7 @@
         "ko": "커세어",
         "en": "CORSAIR"
       },
-      "priceKrw": 92200,
+      "priceKrw": 92700,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -30900,7 +31208,7 @@
         "ko": "ATK",
         "en": "ATK"
       },
-      "priceKrw": 40100,
+      "priceKrw": 40300,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -31064,7 +31372,7 @@
         "ko": "포니지",
         "en": "PWNAGE"
       },
-      "priceKrw": 212400,
+      "priceKrw": 213600,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -31815,7 +32123,7 @@
         "ko": "다모샥",
         "en": "Darmoshark"
       },
-      "priceKrw": 161900,
+      "priceKrw": 162100,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -31848,13 +32156,29 @@
       "testedAt": null
     },
     {
+      "id": "c90f2016-c29d-4927-b805-ac5c33b8ca83",
+      "name": "CarbonX",
+      "manufacturer": {
+        "ko": "에포메이커",
+        "en": "EPOMAKER"
+      },
+      "priceKrw": 41400,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/b5053d5d-7f54-44b1-a68f-6bdb0fd4e217.avif",
+      "values": {},
+      "firstSeenAt": "2026-11-23T20:50:02.736Z",
+      "testedAt": null
+    },
+    {
       "id": "ca364803-20d0-4aa5-ba41-4aeda41f97fc",
       "name": "RSR7 Ultra",
       "manufacturer": {
         "ko": "제임스동키",
         "en": "jamesdonkey"
       },
-      "priceKrw": 79800,
+      "priceKrw": 80200,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -31928,7 +32252,7 @@
         "ko": "람주",
         "en": "LAMZU"
       },
-      "priceKrw": 159800,
+      "priceKrw": 160700,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -32638,7 +32962,7 @@
         "ko": "VGN",
         "en": "VGN"
       },
-      "priceKrw": 59800,
+      "priceKrw": 60100,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -32747,8 +33071,8 @@
         "ko": "엠초스",
         "en": "MCHOSE"
       },
-      "priceKrw": 69500,
-      "status": "testing",
+      "priceKrw": 69900,
+      "status": "earlyAccess",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
       "image": "/images/16c87db4-cfff-4bf7-9d24-c6ef28d058dc.avif",
@@ -33159,7 +33483,7 @@
         "ko": "이와든",
         "en": "EWEADN"
       },
-      "priceKrw": 63900,
+      "priceKrw": 64300,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -33191,7 +33515,7 @@
         "ko": "ATK",
         "en": "ATK"
       },
-      "priceKrw": 86800,
+      "priceKrw": 87300,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c3J876Cj",
@@ -33307,7 +33631,7 @@
         "ko": "ATK",
         "en": "ATK"
       },
-      "priceKrw": 133600,
+      "priceKrw": 134300,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -33380,7 +33704,7 @@
         "ko": "KYSONA",
         "en": "KYSONA"
       },
-      "priceKrw": 61400,
+      "priceKrw": 61800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -33484,7 +33808,7 @@
         "ko": "ATK",
         "en": "ATK"
       },
-      "priceKrw": 119800,
+      "priceKrw": 120500,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -33681,7 +34005,7 @@
         "ko": "엠초스",
         "en": "MCHOSE"
       },
-      "priceKrw": 105500,
+      "priceKrw": 106100,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -34071,7 +34395,7 @@
         "ko": "VGN",
         "en": "VGN"
       },
-      "priceKrw": 83800,
+      "priceKrw": 84300,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -34099,7 +34423,7 @@
         "ko": "다모샥",
         "en": "Darmoshark"
       },
-      "priceKrw": 139800,
+      "priceKrw": 140600,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -34288,7 +34612,7 @@
         "ko": "싸이록스",
         "en": "ScyRox"
       },
-      "priceKrw": 51800,
+      "priceKrw": 52100,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -34521,7 +34845,7 @@
         "ko": "KYSONA",
         "en": "KYSONA"
       },
-      "priceKrw": 61400,
+      "priceKrw": 61800,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -34562,7 +34886,7 @@
         "ko": "아자즈",
         "en": "AJAZZ"
       },
-      "priceKrw": 74800,
+      "priceKrw": 75200,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -34642,7 +34966,7 @@
         "ko": "아자즈",
         "en": "AJAZZ"
       },
-      "priceKrw": 61400,
+      "priceKrw": 61800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -34677,17 +35001,22 @@
         "ko": "VGN",
         "en": "VGN"
       },
-      "priceKrw": 80000,
-      "status": "earlyAccess",
+      "priceKrw": 80500,
+      "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
       "image": "/images/20712169-1cab-4205-bf73-b1a1edf16d3e.avif",
       "values": {
         "acceleration": 50,
         "battery": "800",
+        "clickGhosting": false,
+        "detachAvgWired": 0.5957079207920792,
+        "detachAvgWireless": 0.9963455445544561,
+        "detachStddevWired": 0.29488862276841254,
+        "detachStddevWireless": 0.2873532796604802,
         "dpiMax": 42000,
         "earlyAccessAt": "2026-11-14T00:00:00.000Z",
-        "eyejokerRating": "ANTICIPATING",
+        "eyejokerRating": "RECOMMENDED",
         "housingMouse": [
           "대칭"
         ],
@@ -34698,12 +35027,43 @@
           "POLYMER"
         ],
         "mouseMcu": "vgnry66080tf13",
+        "optimalResponseSpeed": 0.9960995049504957,
+        "optimalStddev": 0.2705054807185335,
+        "overallRatingMouse": "TIER_0",
+        "pcbAvgOptimal": 0.9958534653465339,
+        "pcbAvgOptimalDetach": 0.9963455445544561,
+        "pcbAvgWired": 0.5932237623762378,
+        "pcbAvgWireless": 0.9958534653465339,
+        "pcbStddevOptimal": 0.29021604160491055,
+        "pcbStddevOptimalDetach": 0.2873532796604802,
+        "pcbStddevWired": 0.2942953615526228,
+        "pcbStddevWireless": 0.29021604160491055,
         "port": "usbTypeC",
         "publicReleaseAt": "2026-11-21T00:00:00.000Z",
-        "sensor": "PAW3950Extreme"
+        "sensor": "PAW3950Extreme",
+        "sensorAvg": 0.37683636363636386,
+        "sensorAvgMotionSyncOff": 0.37683636363636386,
+        "sensorAvgMotionSyncOn": 0.5935090909090912,
+        "sensorAvgWired": 0.16413636363636372,
+        "sensorAvgWiredMotionSyncOff": 0.16413636363636372,
+        "sensorAvgWiredMotionSyncOn": 0.2532636363636363,
+        "sensorAvgWireless": 0.37683636363636386,
+        "sensorAvgWirelessMotionSyncOff": 0.37683636363636386,
+        "sensorAvgWirelessMotionSyncOn": 0.5935090909090912,
+        "sensorDeviationMotionSyncOff": 0.07662559829488827,
+        "sensorDeviationMotionSyncOn": 0.07620698434402137,
+        "sensorDeviationOpt": 0.07662559829488827,
+        "sensorDeviationWired": 0.0480706822904332,
+        "sensorDeviationWiredMotionSyncOff": 0.0480706822904332,
+        "sensorDeviationWiredMotionSyncOn": 0.04328440350492149,
+        "sensorDeviationWireless": 0.07662559829488827,
+        "sensorDeviationWirelessMotionSyncOff": 0.07662559829488827,
+        "sensorDeviationWirelessMotionSyncOn": 0.07620698434402137,
+        "slamClick": false,
+        "slamClickPrevention": false
       },
       "firstSeenAt": null,
-      "testedAt": null
+      "testedAt": "2026-11-23T20:50:02.736Z"
     },
     {
       "id": "e326ccdc-34d2-4367-9785-5af52a352174",
@@ -34773,7 +35133,7 @@
         "ko": "ATK",
         "en": "ATK"
       },
-      "priceKrw": 60100,
+      "priceKrw": 60400,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -34815,7 +35175,7 @@
         "ko": "엠초스",
         "en": "MCHOSE"
       },
-      "priceKrw": 63900,
+      "priceKrw": 64300,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -35035,6 +35395,22 @@
       "testedAt": null
     },
     {
+      "id": "e53123c5-de4b-4e12-9cf7-28885a313b00",
+      "name": "X2 Crazy Litght 2",
+      "manufacturer": {
+        "ko": "펄사",
+        "en": "Pulsar"
+      },
+      "priceKrw": null,
+      "status": "testing",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": null,
+      "values": {},
+      "firstSeenAt": "2026-11-23T20:50:02.736Z",
+      "testedAt": null
+    },
+    {
       "id": "e54937ef-55f1-4b4f-bb67-d0b7db29cd9e",
       "name": "Katana Superlight",
       "manufacturer": {
@@ -35090,7 +35466,7 @@
         "ko": "VGN",
         "en": "VGN"
       },
-      "priceKrw": 59800,
+      "priceKrw": 60100,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": "https://s.click.aliexpress.com/e/_c4UrtAu7",
@@ -35163,7 +35539,7 @@
         "ko": "엔드게임기어",
         "en": "EndGame Gear"
       },
-      "priceKrw": 173700,
+      "priceKrw": 174700,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -35251,7 +35627,7 @@
         "ko": "GamaKay",
         "en": "GamaKay"
       },
-      "priceKrw": 32000,
+      "priceKrw": 32200,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -35318,17 +35694,23 @@
         "en": "VGN"
       },
       "priceKrw": 24900,
-      "status": "earlyAccess",
+      "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
       "image": "/images/c2b8a2a7-c3e6-49ff-b284-82acf36faec4.avif",
       "values": {
         "acceleration": 35,
         "battery": "800",
+        "clickGhosting": false,
+        "detachAvgWired": 1.5853930693069316,
+        "detachAvgWireless": 2.6328950495049472,
+        "detachStddevWired": 0.29012530401737363,
+        "detachStddevWireless": 0.4134253447940351,
         "dpiMax": 12000,
         "dpiStep": 50,
         "earlyAccessAt": "2026-11-14T00:00:00.000Z",
         "encoder": "ttcDustproofGold",
+        "eyejokerRating": "MILD_RECOMMENDATION",
         "height": 38,
         "holeBody": "no",
         "housingMouse": [
@@ -35336,6 +35718,7 @@
         ],
         "ips": 300,
         "length": 118,
+        "lodMin": 1.1,
         "maxPollingRate": "1000",
         "maxWidth": 61,
         "mouseConnection": "유무선",
@@ -35343,17 +35726,46 @@
           "POLYMER"
         ],
         "mouseMcu": "compxtechcx52850",
+        "optimalResponseSpeed": 2.630714356435642,
+        "optimalStddev": 0.3864640849449125,
+        "overallRatingMouse": "TIER_1",
+        "pcbAvgOptimal": 2.6285336633663356,
+        "pcbAvgOptimalDetach": 2.6328950495049472,
+        "pcbAvgWired": 1.584663366336633,
+        "pcbAvgWireless": 2.6285336633663356,
+        "pcbStddevOptimal": 0.4226064870848335,
+        "pcbStddevOptimalDetach": 0.4134253447940351,
+        "pcbStddevWired": 0.29029059108389305,
+        "pcbStddevWireless": 0.4226064870848335,
         "port": "usbTypeC",
         "publicReleaseAt": "2026-11-21T00:00:00.000Z",
         "sensor": "paw3311",
+        "sensorAvg": 1.8213727272727276,
+        "sensorAvgMotionSyncOff": 1.8366363636363636,
+        "sensorAvgMotionSyncOn": 1.8213727272727276,
+        "sensorAvgWired": 1.554354545454545,
+        "sensorAvgWiredMotionSyncOn": 1.554354545454545,
+        "sensorAvgWireless": 1.8213727272727276,
+        "sensorAvgWirelessMotionSyncOff": 1.8366363636363636,
+        "sensorAvgWirelessMotionSyncOn": 1.8213727272727276,
+        "sensorDeviationMotionSyncOff": 0.4360034346668869,
+        "sensorDeviationMotionSyncOn": 0.36866722760606724,
+        "sensorDeviationOpt": 0.36866722760606724,
+        "sensorDeviationWired": 0.27125273643742914,
+        "sensorDeviationWiredMotionSyncOn": 0.27125273643742914,
+        "sensorDeviationWireless": 0.36866722760606724,
+        "sensorDeviationWirelessMotionSyncOff": 0.4360034346668869,
+        "sensorDeviationWirelessMotionSyncOn": 0.36866722760606724,
         "sensorLodMode": "single",
         "sideSwitch": "huanoMicroSwitch",
+        "slamClick": false,
+        "slamClickPrevention": false,
         "switch": "huanoTransparentGreenShellWhiteDot",
         "weight": 56,
         "wheelSwitch": "2핀택트"
       },
       "firstSeenAt": "2026-10-28T13:17:31.774Z",
-      "testedAt": null
+      "testedAt": "2026-11-23T20:50:02.736Z"
     },
     {
       "id": "e8d75eb5-b8fd-4561-83b5-d624895043de",
@@ -35655,7 +36067,7 @@
         "ko": "라푸",
         "en": "RAPOO"
       },
-      "priceKrw": 76100,
+      "priceKrw": 76600,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -36391,7 +36803,7 @@
         "ko": "ATK",
         "en": "ATK"
       },
-      "priceKrw": 40100,
+      "priceKrw": 40300,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -36420,7 +36832,7 @@
         "ko": "지울브스",
         "en": "G-Wolves"
       },
-      "priceKrw": 212400,
+      "priceKrw": 213600,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -36504,7 +36916,7 @@
         "ko": "인픽",
         "en": "inphic"
       },
-      "priceKrw": 93800,
+      "priceKrw": 94300,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -36746,7 +37158,7 @@
         "ko": "지울브스",
         "en": "G-Wolves"
       },
-      "priceKrw": 176300,
+      "priceKrw": 177400,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -37310,7 +37722,7 @@
         "ko": "펄사",
         "en": "Pulsar"
       },
-      "priceKrw": 173600,
+      "priceKrw": 174600,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -37335,7 +37747,7 @@
         "ko": "VGN",
         "en": "VGN"
       },
-      "priceKrw": 57800,
+      "priceKrw": 58100,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -37647,11 +38059,31 @@
         "en": "RAPOO"
       },
       "priceKrw": null,
-      "status": "unreleased",
+      "status": "testing",
       "saleStatus": "unreleased",
       "aliUrl": null,
       "image": null,
-      "values": {},
+      "values": {
+        "acceleration": 60,
+        "battery": "800",
+        "dpiMax": 60000,
+        "dpiStep": 1,
+        "encoder": "raeshaOpticalDustproofEncoder",
+        "holeBody": "no",
+        "housingMouse": [
+          "대칭"
+        ],
+        "ips": 750,
+        "maxPollingRate": "8000",
+        "mouseConnection": "유무선",
+        "mouseMcu": "Nordic nRF54LM20A",
+        "port": "usbTypeC",
+        "sensor": "paw3955ultimate",
+        "sensorLodMode": "range",
+        "sensorLodOptions": "0.7~1.7 mm (11 steps)",
+        "sideSwitch": "huanoMicroSwitch",
+        "wheelSwitch": "2핀택트"
+      },
       "firstSeenAt": "2026-11-16T19:13:21.419Z",
       "testedAt": null
     },
@@ -38159,7 +38591,7 @@
         "ko": "어택샤크",
         "en": "AttackShark"
       },
-      "priceKrw": 124900,
+      "priceKrw": 125600,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -38229,7 +38661,7 @@
         "ko": "레오보그",
         "en": "LEOBOG"
       },
-      "priceKrw": 15800,
+      "priceKrw": 15900,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,

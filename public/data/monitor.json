@@ -40,17 +40,10 @@
       "multiple": false,
       "options": [
         {
-          "value": "arrived",
+          "value": "unreleased",
           "label": {
-            "ko": "제품 도착",
-            "en": "Arrived"
-          }
-        },
-        {
-          "value": "earlyAccess",
-          "label": {
-            "ko": "선 공개",
-            "en": "Early Access"
+            "ko": "미출시",
+            "en": "Unreleased"
           }
         },
         {
@@ -68,10 +61,10 @@
           }
         },
         {
-          "value": "reviewed",
+          "value": "arrived",
           "label": {
-            "ko": "공개 완료",
-            "en": "Reviewed"
+            "ko": "제품 도착",
+            "en": "Arrived"
           }
         },
         {
@@ -82,10 +75,17 @@
           }
         },
         {
-          "value": "unreleased",
+          "value": "earlyAccess",
           "label": {
-            "ko": "미출시",
-            "en": "Unreleased"
+            "ko": "선 공개",
+            "en": "Early Access"
+          }
+        },
+        {
+          "value": "reviewed",
+          "label": {
+            "ko": "공개 완료",
+            "en": "Reviewed"
           }
         }
       ]
@@ -102,10 +102,10 @@
       "multiple": false,
       "options": [
         {
-          "value": "DISCONTINUED",
+          "value": "unreleased",
           "label": {
-            "ko": "단종",
-            "en": "Discontinued"
+            "ko": "미출시",
+            "en": "Unreleased"
           }
         },
         {
@@ -116,10 +116,10 @@
           }
         },
         {
-          "value": "unreleased",
+          "value": "DISCONTINUED",
           "label": {
-            "ko": "미출시",
-            "en": "Unreleased"
+            "ko": "단종",
+            "en": "Discontinued"
           }
         }
       ]
@@ -143,6 +143,13 @@
           }
         },
         {
+          "value": "RECOMMENDED",
+          "label": {
+            "ko": "추천",
+            "en": "Recommend"
+          }
+        },
+        {
           "value": "MILD_RECOMMENDATION",
           "label": {
             "ko": "추천까지는",
@@ -154,13 +161,6 @@
           "label": {
             "ko": "추천안함",
             "en": "Not Recommend"
-          }
-        },
-        {
-          "value": "RECOMMENDED",
-          "label": {
-            "ko": "추천",
-            "en": "Recommend"
           }
         },
         {
@@ -292,34 +292,6 @@
       "multiple": false,
       "options": [
         {
-          "value": "5K2K",
-          "label": {
-            "ko": "5K2K",
-            "en": "5K2K (5120×2160)"
-          }
-        },
-        {
-          "value": "6K",
-          "label": {
-            "ko": "6K",
-            "en": "6K"
-          }
-        },
-        {
-          "value": "DQHD",
-          "label": {
-            "ko": "DQHD",
-            "en": "Dual QHD (5120×1440)"
-          }
-        },
-        {
-          "value": "DUHD",
-          "label": {
-            "ko": "DUHD",
-            "en": "Dual UHD (7680×2160)"
-          }
-        },
-        {
           "value": "FHD",
           "label": {
             "ko": "FHD",
@@ -331,6 +303,41 @@
           "label": {
             "ko": "QHD",
             "en": "QHD (2560×1440)"
+          }
+        },
+        {
+          "value": "UHD",
+          "label": {
+            "ko": "UHD",
+            "en": "UHD (3840×2160)"
+          }
+        },
+        {
+          "value": "UWQHD",
+          "label": {
+            "ko": "UWQHD",
+            "en": "UWQHD (3440×1440)"
+          }
+        },
+        {
+          "value": "DQHD",
+          "label": {
+            "ko": "DQHD",
+            "en": "Dual QHD (5120×1440)"
+          }
+        },
+        {
+          "value": "5K2K",
+          "label": {
+            "ko": "5K2K",
+            "en": "5K2K (5120×2160)"
+          }
+        },
+        {
+          "value": "6K",
+          "label": {
+            "ko": "6K",
+            "en": "6K"
           }
         },
         {
@@ -348,24 +355,17 @@
           }
         },
         {
+          "value": "DUHD",
+          "label": {
+            "ko": "DUHD",
+            "en": "Dual UHD (7680×2160)"
+          }
+        },
+        {
           "value": "RES5120X2880",
           "label": {
             "ko": "5K",
             "en": "5K (5120×2880)"
-          }
-        },
-        {
-          "value": "UHD",
-          "label": {
-            "ko": "UHD",
-            "en": "UHD (3840×2160)"
-          }
-        },
-        {
-          "value": "UWQHD",
-          "label": {
-            "ko": "UWQHD",
-            "en": "UWQHD (3440×1440)"
           }
         }
       ]
@@ -382,17 +382,10 @@
       "multiple": false,
       "options": [
         {
-          "value": "E_TN",
+          "value": "TN",
           "label": {
-            "ko": "E-TN",
-            "en": "E-TN"
-          }
-        },
-        {
-          "value": "FAST_IPS",
-          "label": {
-            "ko": "Fast IPS",
-            "en": "Fast IPS"
+            "ko": "TN",
+            "en": "TN"
           }
         },
         {
@@ -403,10 +396,31 @@
           }
         },
         {
+          "value": "E_TN",
+          "label": {
+            "ko": "E-TN",
+            "en": "E-TN"
+          }
+        },
+        {
+          "value": "VA",
+          "label": {
+            "ko": "VA",
+            "en": "VA"
+          }
+        },
+        {
           "value": "IPS",
           "label": {
             "ko": "IPS",
             "en": "IPS"
+          }
+        },
+        {
+          "value": "FAST_IPS",
+          "label": {
+            "ko": "Fast IPS",
+            "en": "Fast IPS"
           }
         },
         {
@@ -417,17 +431,10 @@
           }
         },
         {
-          "value": "OLED",
+          "value": "RAPID_IPS",
           "label": {
-            "ko": "OLED",
-            "en": "OLED"
-          }
-        },
-        {
-          "value": "PENTA_TANDEM_QD_OLED",
-          "label": {
-            "ko": "Penta Tandem QD-OLED",
-            "en": "Penta Tandem QD-OLED"
+            "ko": "Rapid IPS",
+            "en": "Rapid IPS"
           }
         },
         {
@@ -445,24 +452,17 @@
           }
         },
         {
-          "value": "QD_OLED",
+          "value": "OLED",
           "label": {
-            "ko": "QD-OLED",
-            "en": "QD-OLED"
+            "ko": "OLED",
+            "en": "OLED"
           }
         },
         {
-          "value": "RAPID_IPS",
+          "value": "WOLED",
           "label": {
-            "ko": "Rapid IPS",
-            "en": "Rapid IPS"
-          }
-        },
-        {
-          "value": "RGB_TANDEM_OLED",
-          "label": {
-            "ko": "RGB-Stripe Tandem OLED",
-            "en": "RGB-Stripe Tandem OLED"
+            "ko": "WOLED",
+            "en": "WOLED"
           }
         },
         {
@@ -473,24 +473,24 @@
           }
         },
         {
-          "value": "TN",
+          "value": "RGB_TANDEM_OLED",
           "label": {
-            "ko": "TN",
-            "en": "TN"
+            "ko": "RGB-Stripe Tandem OLED",
+            "en": "RGB-Stripe Tandem OLED"
           }
         },
         {
-          "value": "VA",
+          "value": "QD_OLED",
           "label": {
-            "ko": "VA",
-            "en": "VA"
+            "ko": "QD-OLED",
+            "en": "QD-OLED"
           }
         },
         {
-          "value": "WOLED",
+          "value": "PENTA_TANDEM_QD_OLED",
           "label": {
-            "ko": "WOLED",
-            "en": "WOLED"
+            "ko": "Penta Tandem QD-OLED",
+            "en": "Penta Tandem QD-OLED"
           }
         }
       ]
@@ -529,17 +529,31 @@
       "multiple": false,
       "options": [
         {
-          "value": "displayHdr1000",
+          "value": "displayHdrTrueBlack400",
           "label": {
-            "ko": "DisplayHDR 1000",
-            "en": "DisplayHDR 1000"
+            "ko": "DisplayHDR True Black 400",
+            "en": "DisplayHDR True Black 400"
           }
         },
         {
-          "value": "displayHdr1400",
+          "value": "displayHdrTrueBlack500",
           "label": {
-            "ko": "DisplayHDR 1400",
-            "en": "DisplayHDR 1400"
+            "ko": "DisplayHDR True Black 500",
+            "en": "DisplayHDR True Black 500"
+          }
+        },
+        {
+          "value": "displayHdrTrueBlack600",
+          "label": {
+            "ko": "DisplayHDR True Black 600",
+            "en": "DisplayHDR True Black 600"
+          }
+        },
+        {
+          "value": "displayHdrTrueBlack1000",
+          "label": {
+            "ko": "DisplayHDR True Black 1000",
+            "en": "DisplayHDR True Black 1000"
           }
         },
         {
@@ -564,31 +578,17 @@
           }
         },
         {
-          "value": "displayHdrTrueBlack1000",
+          "value": "displayHdr1000",
           "label": {
-            "ko": "DisplayHDR True Black 1000",
-            "en": "DisplayHDR True Black 1000"
+            "ko": "DisplayHDR 1000",
+            "en": "DisplayHDR 1000"
           }
         },
         {
-          "value": "displayHdrTrueBlack400",
+          "value": "displayHdr1400",
           "label": {
-            "ko": "DisplayHDR True Black 400",
-            "en": "DisplayHDR True Black 400"
-          }
-        },
-        {
-          "value": "displayHdrTrueBlack500",
-          "label": {
-            "ko": "DisplayHDR True Black 500",
-            "en": "DisplayHDR True Black 500"
-          }
-        },
-        {
-          "value": "displayHdrTrueBlack600",
-          "label": {
-            "ko": "DisplayHDR True Black 600",
-            "en": "DisplayHDR True Black 600"
+            "ko": "DisplayHDR 1400",
+            "en": "DisplayHDR 1400"
           }
         }
       ]
@@ -656,17 +656,10 @@
       "multiple": true,
       "options": [
         {
-          "value": "freeSyncPremium",
+          "value": "gsync",
           "label": {
-            "ko": "프리싱크 프리미엄",
-            "en": "FreeSync Premium"
-          }
-        },
-        {
-          "value": "freeSyncPremiumPro",
-          "label": {
-            "ko": "프리싱크 프리미엄 프로",
-            "en": "FreeSync Premium PRO"
+            "ko": "지싱크",
+            "en": "G-SYNC"
           }
         },
         {
@@ -677,31 +670,10 @@
           }
         },
         {
-          "value": "gSyncUltimate",
+          "value": "none",
           "label": {
-            "ko": "지싱크 울티메이트",
-            "en": "G-SYNC ULTIMATE"
-          }
-        },
-        {
-          "value": "gsync",
-          "label": {
-            "ko": "지싱크",
-            "en": "G-SYNC"
-          }
-        },
-        {
-          "value": "gsyncCompatible",
-          "label": {
-            "ko": "G-SYNC 호환",
-            "en": "G-SYNC Compatible"
-          }
-        },
-        {
-          "value": "gsyncCompatibleVerify",
-          "label": {
-            "ko": "G-SYNC 호환 인증",
-            "en": "G-SYNC Compatible Verify"
+            "ko": "없음",
+            "en": "None"
           }
         },
         {
@@ -712,10 +684,38 @@
           }
         },
         {
-          "value": "none",
+          "value": "gsyncCompatible",
           "label": {
-            "ko": "없음",
-            "en": "None"
+            "ko": "G-SYNC 호환",
+            "en": "G-SYNC Compatible"
+          }
+        },
+        {
+          "value": "freeSyncPremiumPro",
+          "label": {
+            "ko": "프리싱크 프리미엄 프로",
+            "en": "FreeSync Premium PRO"
+          }
+        },
+        {
+          "value": "freeSyncPremium",
+          "label": {
+            "ko": "프리싱크 프리미엄",
+            "en": "FreeSync Premium"
+          }
+        },
+        {
+          "value": "gSyncUltimate",
+          "label": {
+            "ko": "지싱크 울티메이트",
+            "en": "G-SYNC ULTIMATE"
+          }
+        },
+        {
+          "value": "gsyncCompatibleVerify",
+          "label": {
+            "ko": "G-SYNC 호환 인증",
+            "en": "G-SYNC Compatible Verify"
           }
         }
       ]
@@ -743,31 +743,10 @@
       "multiple": false,
       "options": [
         {
-          "value": "hdmi1_4",
+          "value": "hdmi2_1Frl6_48",
           "label": {
-            "ko": "HDMI 1.4",
-            "en": "HDMI 1.4"
-          }
-        },
-        {
-          "value": "hdmi2_0Tmds18",
-          "label": {
-            "ko": "HDMI 2.0 / 18Gbps",
-            "en": "HDMI 2.0 / 18Gbps"
-          }
-        },
-        {
-          "value": "hdmi2_1Frl3_24",
-          "label": {
-            "ko": "HDMI 2.1 FRL3 / 24Gbps",
-            "en": "HDMI 2.1 FRL3 / 24Gbps"
-          }
-        },
-        {
-          "value": "hdmi2_1Frl4_32",
-          "label": {
-            "ko": "HDMI 2.1 FRL4 / 32Gbps",
-            "en": "HDMI 2.1 FRL4 / 32Gbps"
+            "ko": "HDMI 2.1 FRL6 / 48Gbps",
+            "en": "HDMI 2.1 FRL6 / 48Gbps"
           }
         },
         {
@@ -778,10 +757,17 @@
           }
         },
         {
-          "value": "hdmi2_1Frl6_48",
+          "value": "hdmi2_1Frl4_32",
           "label": {
-            "ko": "HDMI 2.1 FRL6 / 48Gbps",
-            "en": "HDMI 2.1 FRL6 / 48Gbps"
+            "ko": "HDMI 2.1 FRL4 / 32Gbps",
+            "en": "HDMI 2.1 FRL4 / 32Gbps"
+          }
+        },
+        {
+          "value": "hdmi2_1Frl3_24",
+          "label": {
+            "ko": "HDMI 2.1 FRL3 / 24Gbps",
+            "en": "HDMI 2.1 FRL3 / 24Gbps"
           }
         },
         {
@@ -789,6 +775,20 @@
           "label": {
             "ko": "HDMI 2.1 TMDS / 18Gbps",
             "en": "HDMI 2.1 TMDS / 18Gbps"
+          }
+        },
+        {
+          "value": "hdmi2_0Tmds18",
+          "label": {
+            "ko": "HDMI 2.0 / 18Gbps",
+            "en": "HDMI 2.0 / 18Gbps"
+          }
+        },
+        {
+          "value": "hdmi1_4",
+          "label": {
+            "ko": "HDMI 1.4",
+            "en": "HDMI 1.4"
           }
         }
       ]
@@ -816,31 +816,10 @@
       "multiple": false,
       "options": [
         {
-          "value": "dp1_1Hbr_10_8",
+          "value": "dp2_1Uhbr20_80",
           "label": {
-            "ko": "DP 1.1 HBR / 10.8Gbps",
-            "en": "DP 1.1 HBR / 10.8Gbps"
-          }
-        },
-        {
-          "value": "dp1_2Hbr2_21_6",
-          "label": {
-            "ko": "DP 1.2 HBR2 / 21.6Gbps",
-            "en": "DP 1.2 HBR2 / 21.6Gbps"
-          }
-        },
-        {
-          "value": "dp1_4Hbr3_32_4",
-          "label": {
-            "ko": "DP 1.4 HBR3 / 32.4Gbps",
-            "en": "DP 1.4 HBR3 / 32.4Gbps"
-          }
-        },
-        {
-          "value": "dp2_1Uhbr10_40",
-          "label": {
-            "ko": "DP 2.1 UHBR10 / 40Gbps",
-            "en": "DP 2.1 UHBR10 / 40Gbps"
+            "ko": "DP 2.1 UHBR20 / 80Gbps",
+            "en": "DP 2.1 UHBR20 / 80Gbps"
           }
         },
         {
@@ -851,10 +830,31 @@
           }
         },
         {
-          "value": "dp2_1Uhbr20_80",
+          "value": "dp2_1Uhbr10_40",
           "label": {
-            "ko": "DP 2.1 UHBR20 / 80Gbps",
-            "en": "DP 2.1 UHBR20 / 80Gbps"
+            "ko": "DP 2.1 UHBR10 / 40Gbps",
+            "en": "DP 2.1 UHBR10 / 40Gbps"
+          }
+        },
+        {
+          "value": "dp1_4Hbr3_32_4",
+          "label": {
+            "ko": "DP 1.4 HBR3 / 32.4Gbps",
+            "en": "DP 1.4 HBR3 / 32.4Gbps"
+          }
+        },
+        {
+          "value": "dp1_2Hbr2_21_6",
+          "label": {
+            "ko": "DP 1.2 HBR2 / 21.6Gbps",
+            "en": "DP 1.2 HBR2 / 21.6Gbps"
+          }
+        },
+        {
+          "value": "dp1_1Hbr_10_8",
+          "label": {
+            "ko": "DP 1.1 HBR / 10.8Gbps",
+            "en": "DP 1.1 HBR / 10.8Gbps"
           }
         }
       ]
@@ -871,17 +871,17 @@
       "multiple": false,
       "options": [
         {
-          "value": "modeDependent",
-          "label": {
-            "ko": "조건부/모드별",
-            "en": "Mode-dependent"
-          }
-        },
-        {
           "value": "noneConfirmed",
           "label": {
             "ko": "없음",
             "en": "None"
+          }
+        },
+        {
+          "value": "supported",
+          "label": {
+            "ko": "지원",
+            "en": "Supported"
           }
         },
         {
@@ -892,10 +892,10 @@
           }
         },
         {
-          "value": "supported",
+          "value": "modeDependent",
           "label": {
-            "ko": "지원",
-            "en": "Supported"
+            "ko": "조건부/모드별",
+            "en": "Mode-dependent"
           }
         }
       ]
@@ -932,24 +932,24 @@
       "multiple": false,
       "options": [
         {
-          "value": "dualUsbC",
-          "label": {
-            "ko": "듀얼 USB‑C KVM",
-            "en": "Dual USB-C KVM"
-          }
-        },
-        {
-          "value": "manualUsbSwitch",
-          "label": {
-            "ko": "수동 USB 전환",
-            "en": "Manual USB Switch"
-          }
-        },
-        {
           "value": "noneConfirmed",
           "label": {
             "ko": "없음",
             "en": "None"
+          }
+        },
+        {
+          "value": "usbBPlusUsbC",
+          "label": {
+            "ko": "USB‑B + USB‑C KVM",
+            "en": "USB-B + USB-C KVM"
+          }
+        },
+        {
+          "value": "dualUsbC",
+          "label": {
+            "ko": "듀얼 USB‑C KVM",
+            "en": "Dual USB-C KVM"
           }
         },
         {
@@ -960,17 +960,17 @@
           }
         },
         {
+          "value": "manualUsbSwitch",
+          "label": {
+            "ko": "수동 USB 전환",
+            "en": "Manual USB Switch"
+          }
+        },
+        {
           "value": "unknownTopology",
           "label": {
             "ko": "KVM 있음, 구조 미확인",
             "en": "KVM, topology unknown"
-          }
-        },
-        {
-          "value": "usbBPlusUsbC",
-          "label": {
-            "ko": "USB‑B + USB‑C KVM",
-            "en": "USB-B + USB-C KVM"
           }
         }
       ]
@@ -1021,13 +1021,6 @@
       "multiple": true,
       "options": [
         {
-          "value": "noneConfirmed",
-          "label": {
-            "ko": "없음",
-            "en": "None"
-          }
-        },
-        {
           "value": "pbp",
           "label": {
             "ko": "PbP",
@@ -1047,6 +1040,13 @@
             "ko": "4분할 PbP",
             "en": "Quad PbP"
           }
+        },
+        {
+          "value": "noneConfirmed",
+          "label": {
+            "ko": "없음",
+            "en": "None"
+          }
         }
       ]
     },
@@ -1062,13 +1062,6 @@
       "multiple": true,
       "options": [
         {
-          "value": "dolbyVision",
-          "label": {
-            "ko": "Dolby Vision",
-            "en": "Dolby Vision"
-          }
-        },
-        {
           "value": "hdr10",
           "label": {
             "ko": "HDR10",
@@ -1080,6 +1073,13 @@
           "label": {
             "ko": "HDR10+",
             "en": "HDR10+"
+          }
+        },
+        {
+          "value": "dolbyVision",
+          "label": {
+            "ko": "Dolby Vision",
+            "en": "Dolby Vision"
           }
         },
         {
@@ -1103,6 +1103,13 @@
       "multiple": false,
       "options": [
         {
+          "value": "globalDimming",
+          "label": {
+            "ko": "글로벌 디밍",
+            "en": "Global Dimming"
+          }
+        },
+        {
           "value": "edgeLocalDimming",
           "label": {
             "ko": "엣지 로컬디밍",
@@ -1114,13 +1121,6 @@
           "label": {
             "ko": "FALD",
             "en": "FALD"
-          }
-        },
-        {
-          "value": "globalDimming",
-          "label": {
-            "ko": "글로벌 디밍",
-            "en": "Global Dimming"
           }
         },
         {
@@ -1155,13 +1155,6 @@
       "multiple": false,
       "options": [
         {
-          "value": "armOnly",
-          "label": {
-            "ko": "모니터암 전제",
-            "en": "Arm-only"
-          }
-        },
-        {
           "value": "included",
           "label": {
             "ko": "기본 스탠드 포함",
@@ -1181,6 +1174,13 @@
             "ko": "별매/옵션",
             "en": "Optional Stand"
           }
+        },
+        {
+          "value": "armOnly",
+          "label": {
+            "ko": "모니터암 전제",
+            "en": "Arm-only"
+          }
         }
       ]
     },
@@ -1196,10 +1196,10 @@
       "multiple": true,
       "options": [
         {
-          "value": "cableManagement",
+          "value": "tilt",
           "label": {
-            "ko": "케이블 정리",
-            "en": "Cable Management"
+            "ko": "틸트",
+            "en": "Tilt"
           }
         },
         {
@@ -1207,6 +1207,13 @@
           "label": {
             "ko": "높낮이",
             "en": "Height"
+          }
+        },
+        {
+          "value": "swivel",
+          "label": {
+            "ko": "스위블",
+            "en": "Swivel"
           }
         },
         {
@@ -1224,17 +1231,10 @@
           }
         },
         {
-          "value": "swivel",
+          "value": "cableManagement",
           "label": {
-            "ko": "스위블",
-            "en": "Swivel"
-          }
-        },
-        {
-          "value": "tilt",
-          "label": {
-            "ko": "틸트",
-            "en": "Tilt"
+            "ko": "케이블 정리",
+            "en": "Cable Management"
           }
         }
       ]
@@ -1262,24 +1262,17 @@
       "multiple": false,
       "options": [
         {
-          "value": "adapterRequired",
-          "label": {
-            "ko": "어댑터 필요",
-            "en": "Adapter Required"
-          }
-        },
-        {
-          "value": "custom",
-          "label": {
-            "ko": "특수 규격",
-            "en": "Custom"
-          }
-        },
-        {
           "value": "noneConfirmed",
           "label": {
             "ko": "없음",
             "en": "None"
+          }
+        },
+        {
+          "value": "vesa75x75",
+          "label": {
+            "ko": "75×75",
+            "en": "75x75"
           }
         },
         {
@@ -1304,10 +1297,17 @@
           }
         },
         {
-          "value": "vesa75x75",
+          "value": "adapterRequired",
           "label": {
-            "ko": "75×75",
-            "en": "75x75"
+            "ko": "어댑터 필요",
+            "en": "Adapter Required"
+          }
+        },
+        {
+          "value": "custom",
+          "label": {
+            "ko": "특수 규격",
+            "en": "Custom"
           }
         }
       ]
@@ -1324,45 +1324,10 @@
       "multiple": false,
       "options": [
         {
-          "value": "antiReflection",
-          "label": {
-            "ko": "반사 방지",
-            "en": "Anti-reflection"
-          }
-        },
-        {
-          "value": "etchedGlass",
-          "label": {
-            "ko": "에칭 글래스",
-            "en": "Etched Glass"
-          }
-        },
-        {
           "value": "glossy",
           "label": {
             "ko": "글레어",
             "en": "Glossy"
-          }
-        },
-        {
-          "value": "heavyMatteAntiGlare",
-          "label": {
-            "ko": "강한 무광 AG",
-            "en": "Heavy Matte Anti-glare"
-          }
-        },
-        {
-          "value": "matteAntiGlare",
-          "label": {
-            "ko": "무광 AG",
-            "en": "Matte Anti-glare"
-          }
-        },
-        {
-          "value": "nonglare",
-          "label": {
-            "ko": "논글레어",
-            "en": "Non-Glare"
           }
         },
         {
@@ -1377,6 +1342,41 @@
           "label": {
             "ko": "세미매트",
             "en": "Semi-matte"
+          }
+        },
+        {
+          "value": "matteAntiGlare",
+          "label": {
+            "ko": "무광 AG",
+            "en": "Matte Anti-glare"
+          }
+        },
+        {
+          "value": "heavyMatteAntiGlare",
+          "label": {
+            "ko": "강한 무광 AG",
+            "en": "Heavy Matte Anti-glare"
+          }
+        },
+        {
+          "value": "etchedGlass",
+          "label": {
+            "ko": "에칭 글래스",
+            "en": "Etched Glass"
+          }
+        },
+        {
+          "value": "antiReflection",
+          "label": {
+            "ko": "반사 방지",
+            "en": "Anti-reflection"
+          }
+        },
+        {
+          "value": "nonglare",
+          "label": {
+            "ko": "논글레어",
+            "en": "Non-Glare"
           }
         }
       ]
@@ -1602,6 +1602,13 @@
       "multiple": false,
       "options": [
         {
+          "value": "none",
+          "label": {
+            "ko": "거의 없음",
+            "en": "None"
+          }
+        },
+        {
           "value": "minor",
           "label": {
             "ko": "약함",
@@ -1613,13 +1620,6 @@
           "label": {
             "ko": "보통",
             "en": "Moderate"
-          }
-        },
-        {
-          "value": "none",
-          "label": {
-            "ko": "거의 없음",
-            "en": "None"
           }
         },
         {
@@ -1650,17 +1650,17 @@
           }
         },
         {
-          "value": "fair",
-          "label": {
-            "ko": "보통",
-            "en": "Fair"
-          }
-        },
-        {
           "value": "good",
           "label": {
             "ko": "좋음",
             "en": "Good"
+          }
+        },
+        {
+          "value": "fair",
+          "label": {
+            "ko": "보통",
+            "en": "Fair"
           }
         },
         {
@@ -1714,7 +1714,7 @@
         "ko": "에이수스",
         "en": "ASUS"
       },
-      "priceKrw": 626500,
+      "priceKrw": 630100,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -1982,7 +1982,7 @@
         "ko": "애즈락",
         "en": "ASRock"
       },
-      "priceKrw": 933800,
+      "priceKrw": 939200,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -2607,7 +2607,7 @@
         "ko": "레노버",
         "en": "Lenovo"
       },
-      "priceKrw": 400800,
+      "priceKrw": 403100,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -2738,7 +2738,7 @@
         "ko": "알파스캔",
         "en": "Alphascan"
       },
-      "priceKrw": 1108800,
+      "priceKrw": 1115200,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -3027,7 +3027,7 @@
         "en": "LGE"
       },
       "priceKrw": 1974400,
-      "status": "earlyAccess",
+      "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
       "image": "/images/1cfc99df-f466-4438-8a1c-4c382087eac9.avif",
@@ -3038,27 +3038,45 @@
         ],
         "audioReturnChannel": "noneConfirmed",
         "bfi": true,
+        "colorDeAvg": 3.34,
+        "colorGamutBt2020Measured": 89.4,
+        "colorGamutDciP3Measured": 99.3,
         "colorGamutDcip3Spec": 99,
+        "colorGamutSrgbBench": 100,
+        "colorVolumeDciP3Measured": 94.77,
+        "contrastMeasured": 1131,
         "displayPortCount": 1,
         "displayPortLinkClass": "dp2_1Uhbr20_80",
         "displayStreamCompression": "supported",
         "earlyAccessAt": "2026-11-13T00:00:00.000Z",
-        "eyejokerRating": "ANTICIPATING",
+        "eyejokerRating": "RECOMMENDED",
         "hdmiPortCount": 2,
         "hdrCertification": "displayHdr1000",
         "hdrFormatSupport": [
           "hdr10"
         ],
+        "hdrFullFieldBrightnessMeasured": 998,
+        "hdrPeak10PercentMeasured": 986,
+        "hdrPeak2PercentMeasured": 866,
         "heightAdjustMm": 130,
+        "inputLagMonitor": 0.36,
         "kvmType": "noneConfirmed",
         "localDimmingType": "miniLed",
         "localDimmingZones": 2304,
+        "maxBrightnessHdrMeasured": 998,
         "maxBrightnessHdrSpec": 1250,
+        "maxBrightnessSdrMeasured": 735,
         "maxBrightnessSdrSpec": 750,
+        "overallRatingMonitor": "TIER_0",
+        "overshootAverage": 13.8,
+        "overshootMax": 107.3,
         "panelType": "IPS",
         "publicReleaseAt": "2026-11-20T00:00:00.000Z",
         "refreshRate": 165,
         "resolution": "RES5120X2880",
+        "responseAverage": 5.1,
+        "responseAverageRgb10": 1.71,
+        "responseMax": 5.83,
         "screenCoating": "matteAntiGlare",
         "sizeInch": 27,
         "standAdjustments": [
@@ -3074,7 +3092,7 @@
         "vesaMountPattern": "vesa100x100"
       },
       "firstSeenAt": null,
-      "testedAt": null
+      "testedAt": "2026-11-23T20:50:02.736Z"
     },
     {
       "id": "13d03e61-6a65-48d3-89c1-30e8ccdb89d7",
@@ -3516,7 +3534,7 @@
         "ko": "MINISFORUM",
         "en": "MINISFORUM"
       },
-      "priceKrw": 288400,
+      "priceKrw": 290100,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -4127,7 +4145,7 @@
         "ko": "애즈락",
         "en": "ASRock"
       },
-      "priceKrw": 933800,
+      "priceKrw": 939200,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -4186,7 +4204,7 @@
         "ko": "EHOMEWEI",
         "en": "EHOMEWEI"
       },
-      "priceKrw": 894900,
+      "priceKrw": 900100,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -5001,7 +5019,7 @@
         "ko": "에이서",
         "en": "ACER"
       },
-      "priceKrw": 1735300,
+      "priceKrw": 1745300,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -5332,7 +5350,7 @@
         "ko": "에이서",
         "en": "ACER"
       },
-      "priceKrw": 935100,
+      "priceKrw": 940500,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -5390,7 +5408,7 @@
         "ko": "알파스캔",
         "en": "Alphascan"
       },
-      "priceKrw": 1410800,
+      "priceKrw": 1405900,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -5598,7 +5616,7 @@
         "ko": "TCL",
         "en": "TCL"
       },
-      "priceKrw": 799900,
+      "priceKrw": 804200,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -5731,6 +5749,22 @@
         "standType": "included"
       },
       "firstSeenAt": null,
+      "testedAt": null
+    },
+    {
+      "id": "39832ea0-ee03-4e50-89d3-1bc7f15cbe2d",
+      "name": "ROG Strix XG259CMS",
+      "manufacturer": {
+        "ko": "에이수스",
+        "en": "ASUS"
+      },
+      "priceKrw": 401700,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": "https://s.click.aliexpress.com/e/_c3ICSe9P",
+      "image": "/images/edefa789-2bc0-484d-87c5-2b577c45557c.avif",
+      "values": {},
+      "firstSeenAt": "2026-11-23T20:50:02.736Z",
       "testedAt": null
     },
     {
@@ -6105,7 +6139,7 @@
         "ko": "델",
         "en": "Dell"
       },
-      "priceKrw": 1469500,
+      "priceKrw": 1478000,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -6302,7 +6336,7 @@
         "ko": "델",
         "en": "Dell"
       },
-      "priceKrw": 4007700,
+      "priceKrw": 4030800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -6636,6 +6670,22 @@
       "testedAt": null
     },
     {
+      "id": "4a819430-6410-46ea-ae77-9e97551cade7",
+      "name": "TFG24F24P",
+      "manufacturer": {
+        "ko": "한성컴퓨터",
+        "en": "HANSUNG"
+      },
+      "priceKrw": 139000,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/1a7069bf-cff5-446c-bb8d-82ef14c95f99.avif",
+      "values": {},
+      "firstSeenAt": "2026-11-23T20:50:02.736Z",
+      "testedAt": null
+    },
+    {
       "id": "4ad98e3e-754c-4c2d-bc5a-454bd7f2e151",
       "name": "SMACO 244F",
       "manufacturer": {
@@ -6723,7 +6773,7 @@
         "ko": "에이수스",
         "en": "ASUS"
       },
-      "priceKrw": 3605600,
+      "priceKrw": 3626400,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -7400,7 +7450,7 @@
         "ko": "ARZOPA",
         "en": "ARZOPA"
       },
-      "priceKrw": 250500,
+      "priceKrw": 250700,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -7692,7 +7742,7 @@
         "ko": "레노버",
         "en": "Lenovo"
       },
-      "priceKrw": 841600,
+      "priceKrw": 846500,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -8585,7 +8635,7 @@
         "ko": "MSI",
         "en": "MSI"
       },
-      "priceKrw": 733400,
+      "priceKrw": 737600,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -8641,7 +8691,7 @@
         "ko": "Intehill",
         "en": "Intehill"
       },
-      "priceKrw": 586500,
+      "priceKrw": 589800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -8758,7 +8808,7 @@
         "ko": "애플",
         "en": "Apple"
       },
-      "priceKrw": 4407200,
+      "priceKrw": 4432500,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -8789,7 +8839,7 @@
         "ko": "애즈락",
         "en": "ASRock"
       },
-      "priceKrw": 1252400,
+      "priceKrw": 1268200,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -8935,7 +8985,7 @@
         "ko": "알파스캔",
         "en": "Alphascan"
       },
-      "priceKrw": 374000,
+      "priceKrw": 376200,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -9026,7 +9076,7 @@
         "ko": "에이서",
         "en": "ACER"
       },
-      "priceKrw": 1068700,
+      "priceKrw": 1074900,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -9117,7 +9167,7 @@
         "ko": "벤큐",
         "en": "BenQ"
       },
-      "priceKrw": 1202300,
+      "priceKrw": 1209200,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -9914,7 +9964,7 @@
         "ko": "벤큐",
         "en": "BenQ"
       },
-      "priceKrw": 1135500,
+      "priceKrw": 1142000,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -9945,7 +9995,7 @@
         "ko": "TCL",
         "en": "TCL"
       },
-      "priceKrw": 639900,
+      "priceKrw": 643300,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -10208,7 +10258,7 @@
         "ko": "에이수스",
         "en": "ASUS"
       },
-      "priceKrw": 1267200,
+      "priceKrw": 1268100,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -10291,7 +10341,7 @@
         "ko": "에이서",
         "en": "ACER"
       },
-      "priceKrw": 935100,
+      "priceKrw": 940500,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -10505,7 +10555,7 @@
         "ko": "ARZOPA",
         "en": "ARZOPA"
       },
-      "priceKrw": 193700,
+      "priceKrw": 194800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -10615,7 +10665,7 @@
         "ko": "아오공",
         "en": "Aogong"
       },
-      "priceKrw": 219800,
+      "priceKrw": 221000,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -10751,7 +10801,7 @@
         "ko": "뷰소닉",
         "en": "ViewSonic"
       },
-      "priceKrw": 374000,
+      "priceKrw": 376200,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -10913,7 +10963,7 @@
         "ko": "TCL",
         "en": "TCL"
       },
-      "priceKrw": 1300000,
+      "priceKrw": 1306900,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -11069,7 +11119,7 @@
         "ko": "ZEUSLAP",
         "en": "ZEUSLAP"
       },
-      "priceKrw": 240500,
+      "priceKrw": 241800,
       "status": "testing",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -11214,7 +11264,7 @@
         "ko": "벤큐",
         "en": "BenQ"
       },
-      "priceKrw": 1603100,
+      "priceKrw": 1612300,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -11643,7 +11693,7 @@
         "ko": "에이서",
         "en": "ACER"
       },
-      "priceKrw": 1736700,
+      "priceKrw": 1746700,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -11704,7 +11754,7 @@
         "ko": "알파스캔",
         "en": "Alphascan"
       },
-      "priceKrw": 659900,
+      "priceKrw": 663400,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -11758,7 +11808,7 @@
         "ko": "알파스캔",
         "en": "Alphascan"
       },
-      "priceKrw": 741600,
+      "priceKrw": 739000,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -12128,7 +12178,7 @@
         "ko": "MSI",
         "en": "MSI"
       },
-      "priceKrw": 209800,
+      "priceKrw": 211000,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -12894,7 +12944,7 @@
         "ko": "에이서",
         "en": "ACER"
       },
-      "priceKrw": 1068700,
+      "priceKrw": 1074900,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -13131,7 +13181,7 @@
         "ko": "WIMAXIT",
         "en": "WIMAXIT"
       },
-      "priceKrw": 279200,
+      "priceKrw": 280800,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -13410,7 +13460,7 @@
         "ko": "엘지전자",
         "en": "LGE"
       },
-      "priceKrw": 2003900,
+      "priceKrw": 2015400,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -14217,7 +14267,7 @@
         "ko": "애즈락",
         "en": "ASRock"
       },
-      "priceKrw": 533000,
+      "priceKrw": 536100,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -14352,7 +14402,7 @@
         "ko": "KYY",
         "en": "KYY"
       },
-      "priceKrw": 171000,
+      "priceKrw": 172000,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -14376,7 +14426,7 @@
         "ko": "MSI",
         "en": "MSI"
       },
-      "priceKrw": 841600,
+      "priceKrw": 846500,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -15002,6 +15052,22 @@
       "testedAt": null
     },
     {
+      "id": "d031dbac-9c2c-4285-bdae-75296e539704",
+      "name": "에브니아 24M2N2200PK",
+      "manufacturer": {
+        "ko": "필립스",
+        "en": "Philips"
+      },
+      "priceKrw": 163000,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/695d7942-6b49-490f-82b0-af1230feeb3a.avif",
+      "values": {},
+      "firstSeenAt": "2026-11-23T20:50:02.736Z",
+      "testedAt": null
+    },
+    {
       "id": "d09bddcf-6e9c-458e-8d14-cdf782f4f2a9",
       "name": "XG27UQDMS",
       "manufacturer": {
@@ -15117,13 +15183,29 @@
       "testedAt": null
     },
     {
+      "id": "d3098569-dc7a-430f-8bab-4f05ed85fd76",
+      "name": "오디세이 G5 G55H S34HG552",
+      "manufacturer": {
+        "ko": "삼성전자",
+        "en": "Samsung"
+      },
+      "priceKrw": 451200,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/def5ee8d-35d6-4130-bb6a-28c1f61b3007.avif",
+      "values": {},
+      "firstSeenAt": "2026-11-23T20:50:02.736Z",
+      "testedAt": null
+    },
+    {
       "id": "d3444512-165f-472b-b29b-a525d0744435",
       "name": "CE320QK G",
       "manufacturer": {
         "ko": "에이서",
         "en": "ACER"
       },
-      "priceKrw": 1202300,
+      "priceKrw": 1209200,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -15147,7 +15229,7 @@
         "ko": "에이서",
         "en": "ACER"
       },
-      "priceKrw": 1202300,
+      "priceKrw": 1209200,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -15417,7 +15499,7 @@
         "ko": "필립스",
         "en": "Philips"
       },
-      "priceKrw": 1200000,
+      "priceKrw": 1206400,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -15445,7 +15527,7 @@
         "ko": "에이서",
         "en": "ACER"
       },
-      "priceKrw": 2003900,
+      "priceKrw": 2015400,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -15683,7 +15765,7 @@
         "ko": "알파스캔",
         "en": "Alphascan"
       },
-      "priceKrw": 1251000,
+      "priceKrw": 1252000,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -15926,7 +16008,7 @@
         "ko": "TCL",
         "en": "TCL"
       },
-      "priceKrw": 739900,
+      "priceKrw": 743900,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -16268,7 +16350,7 @@
         "ko": "에이수스",
         "en": "ASUS"
       },
-      "priceKrw": 2937700,
+      "priceKrw": 2954600,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -16309,7 +16391,7 @@
         "ko": "삼성전자",
         "en": "Samsung"
       },
-      "priceKrw": 1736700,
+      "priceKrw": 1746700,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -16570,7 +16652,7 @@
         "ko": "ARZOPA",
         "en": "ARZOPA"
       },
-      "priceKrw": 106900,
+      "priceKrw": 107500,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -16663,7 +16745,7 @@
         "ko": "에이수스",
         "en": "ASUS"
       },
-      "priceKrw": 1735300,
+      "priceKrw": 1745300,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -16804,7 +16886,7 @@
         "ko": "MSI",
         "en": "MSI"
       },
-      "priceKrw": 1410800,
+      "priceKrw": 1405900,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -17139,7 +17221,7 @@
         "ko": "ARZOPA",
         "en": "ARZOPA"
       },
-      "priceKrw": 173700,
+      "priceKrw": 174700,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -17207,7 +17289,7 @@
         "ko": "에이수스",
         "en": "ASUS"
       },
-      "priceKrw": 1468200,
+      "priceKrw": 1476600,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -17275,7 +17357,7 @@
         "en": "ANTGAMER"
       },
       "priceKrw": 495000,
-      "status": "testing",
+      "status": "earlyAccess",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
       "image": "/images/93031ceb-9d60-4b34-ae6a-e8a7920da216.avif",
@@ -17531,7 +17613,7 @@
         "ko": "삼성전자",
         "en": "Samsung"
       },
-      "priceKrw": 2805400,
+      "priceKrw": 2821500,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -17576,7 +17658,7 @@
         "ko": "에이수스",
         "en": "ASUS"
       },
-      "priceKrw": 1054000,
+      "priceKrw": 1060100,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -17663,7 +17745,7 @@
         "ko": "NexiGo",
         "en": "NexiGo"
       },
-      "priceKrw": 626500,
+      "priceKrw": 630100,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -17737,7 +17819,7 @@
         "ko": "에이서",
         "en": "ACER"
       },
-      "priceKrw": 1469500,
+      "priceKrw": 1477900,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -18227,7 +18309,7 @@
         "ko": "레노버",
         "en": "Lenovo"
       },
-      "priceKrw": 667900,
+      "priceKrw": 671800,
       "status": "unreleased",
       "saleStatus": "unreleased",
       "aliUrl": null,
@@ -18334,7 +18416,7 @@
         "ko": "TCL",
         "en": "TCL"
       },
-      "priceKrw": 799900,
+      "priceKrw": 804200,
       "status": "proposed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,

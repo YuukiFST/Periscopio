@@ -1205,6 +1205,22 @@
       "testedAt": null
     },
     {
+      "id": "0a506f50-f385-4e01-936e-6a46441bd4c4",
+      "name": "eS PD170",
+      "manufacturer": {
+        "ko": "펄사",
+        "en": "Pulsar"
+      },
+      "priceKrw": 68000,
+      "status": "proposed",
+      "saleStatus": "FOR_SALE",
+      "aliUrl": null,
+      "image": "/images/052c009b-3ae5-4a41-8ec4-98e04daca766.avif",
+      "values": {},
+      "firstSeenAt": "2026-11-23T20:50:02.736Z",
+      "testedAt": null
+    },
+    {
       "id": "0a65a04b-101c-4dfb-a8b3-7f36523d6559",
       "name": "GP5",
       "manufacturer": {
@@ -6164,7 +6180,7 @@
         "ko": "판패드",
         "en": "PAN PAD"
       },
-      "priceKrw": 44400,
+      "priceKrw": 44600,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -6234,7 +6250,7 @@
         "ko": "판패드",
         "en": "PAN PAD"
       },
-      "priceKrw": 55400,
+      "priceKrw": 55700,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -6430,7 +6446,7 @@
         "ko": "판패드",
         "en": "PAN PAD"
       },
-      "priceKrw": 55400,
+      "priceKrw": 55700,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
@@ -6781,7 +6797,7 @@
         "ko": "판패드",
         "en": "PAN PAD"
       },
-      "priceKrw": 58400,
+      "priceKrw": 58700,
       "status": "reviewed",
       "saleStatus": "FOR_SALE",
       "aliUrl": null,
